@@ -1,0 +1,38 @@
+addslashes($str)
+nl2br($str)
+explode("seperator",$str)
+implode('seperator',$str)
+htmlentities($str)
+ucfirst($str)
+lcfirst($str)
+trim($str,charlist)
+ltrim($str)
+rtrim($str)
+
+chr('ascii')
+ord(value)
+
+str_pad($str,"times",'value')
+str_repeat(value,times)
+str_replace("world",'rajesh','hello world')
+str_ireplace('world','raj','hello world')	// case sensitive
+str_shuffle($str)
+str_spilt($str,times)
+str_word_count($str)
+
+strstr($str,value,boolean)
+stristr
+strchr
+strrchr($str,value)
+strtrv($str)
+
+strip_tags($str)
+stripslashes($str)
+strpos($str,value)
+strlen($str)
+strtoupper($str)
+strtolower($str)
+substr($str,startindex,endindex)
+substr_replace($str,replaceword, position)
+ucwords($str)
+substr_count($str,value)

@@ -1,0 +1,36 @@
+<%= %> jsp expression
+<%   %> jsp scriplet
+<%!  %> jsp declaration // while using functions
+<%@ page import= "      .*"%> // to import class or package
+
+on the server, goto dynamic web project create it, goto webinfo create file.jsp, also javaresource create a package and class file
+execute the class programs, and also add it to the jsp file
+
+
+<%=request.getHeader("User-Agent")%> 
+Mozilla/5.0 (Windows NT 6.1; Win64; x64; Trident/7.0; rv:11.0) like Gecko 
+
+<%= request.getLocale() %>
+en_US
+
+<jsp:include page="headfile.html" /> //to add header file
+<jsp:include page="footerfile.jsp"/>// ro add footer file
+
+DROP DOWN LIST
+<select name="country">
+ <option>Brazil</option>
+<option>japan</option>
+<option>india</option>
+</select>
+
+FORMS
+
+Html file:
+First name: <input type="text" name="firstname"/>
+Last name: <input type="text" name="lastname"/>
+
+Jsp file:
+the student details confirmed
+<%= request.getParameter("firstname")%> <%= request.getParameter("lastname")%>
+or
+${param.firstname} ${param.lastname}
