@@ -56,6 +56,9 @@ NUMBER:
     Infinity (and -infinty) represents great (or less) than anything.      isFinite(number);    //checks whether its not infinity
     NaN represents a non number type                isNan(number);     //checks whether is not number
 
+OPEARATOR:
+Destructing assignmet: var [a,b]=[1,2]; 
+                       var sample=[a,b]; sample=[1,2];      a=1,b=2    
     
 CONDITIONS:
     if
@@ -200,6 +203,7 @@ Object .assign: copy and append object to existing(given) object
 - you can merge more than one object eg: Object.assign(obj2, obj1.1,obj1.2)
     
 
+
 Sets: collection of unique values
     var mySet = new Set();
     mySet.add(1).add(2).delete(1).clear();;
@@ -278,6 +282,11 @@ GENERATOR:
         console.log(generator.next());            //{value:2,done:false}
         console.log(generator.next());            //{value:3,done:false}    
         console.log(generator.next());            //{value:undefined,done:true}
+
+ERRORS:
+    1.Syntax error-   eg. Unexpected token 
+    2.Reference error eg. a is not defined
+    3.Type error      eg. a is not a function
                     
 
 

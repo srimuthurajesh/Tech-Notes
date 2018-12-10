@@ -1,0 +1,39 @@
+Install composer
+composer create_project laravel/laravel projectname
+
+php artisan serve
+php artisan down; php artisan up;
+
+php artisaan make:controller controllername;
+php artisan make:controller -r controllername;
+php artisaan make:model modelname;
+php artisaan make:model -m modelname;
+php artisan migrate;
+php artisaan make:seeder seedname;
+php artisaan db:seed seedname;
+
+php artisan migrate:refresh;
+
+
+Controller created in - /app/http/controller/....
+Model created in - /app/...
+migration files created in - /database/migration/..
+Route files created in - /routes/web.php
+
+->put debug=false 	//force hide error msg
+blad template engine	{{$var}}
+
+composer require “laravelcollective/htlml”:”n5.3.0”
+
+@extends(‘layout.layoutname’);
+
+@section(‘body’)
+---
+--
+@stop
+
+
+
+
+
+

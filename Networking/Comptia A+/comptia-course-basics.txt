@@ -1,0 +1,29 @@
+Professor Messer COMPTia Courses
+
+Mother board:
+Bus-width is proportional to bandwidth of it
+1 MHz-1 million cycles per second, 1 GHz-1000 MHz
+PCI stands for Peripheral Component Interconnect
+PCI x-Extended designed for servers
+PCI-e express is seen new boards. V3.0 1gbs v4.0 is 2gbs
+CNR-communication and networking riser
+
+
+Rams:
+SIMM-Single inline Memory module
+RIMM-Rambus Inline memory module
+DIMM-Dual inline memory module ddr 184pins ddr2/3 240pins
+SO-DIMM small outline- used in mobiles and laptops
+
+ROM- PROM, EPROM, EEPROM
+RAM-Static Ram, Dynamic RAM, SDRAM-Synchronous (not use now)
+DDR-double data rate
+
+
+Memory devices
+Master Boot Record- use 512kb, it contains table of primary partition and disk signature and 			    direction to starting OS.
+
+
+USB(universal serial bus)	Version 1.1 is 1.5mbps(3m) to 12mbps(5m) 
+					Version 2.0 is 480mbps (5m)
+					Version 3.0 is 4.8gbps (3m)
