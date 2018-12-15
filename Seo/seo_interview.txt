@@ -1,0 +1,104 @@
+Search engine optimization:
+	it abbreviates search engine optimization, it is methodology or we can say techniques that make the website to get high rank in unpaid organic list of search engines
+
+Two Types of SEO are:
+1.On Page Optimization	
+    a) Getting indexed and keywords
+    b) meta title- 65-75 chars
+    c) meta description -150-170 words
+	<head>
+       <title></title>
+<meta name=”description” content=”text here”>
+<meta name=”keyword” content=”text here”>
+<meta name=”author” content=”text here”>
+</head>
+    d) meta keyword -200 words
+    e) image optimization- links
+    f) Link building- www.exp.com/11/5.html www.exp.com/class/second.html
+    g) bound linking(outbound links)
+    h) backlink(inbound links)
+    i) social media
+    j) robots.txt -   Disallow/bin    Robots.txt is a text file used to give instructions to the search engine crawlers about the caching and indexing of a webpage, domain, directory or a file of a website.
+    k) site map .xml  -allows webmaster to inform search engine about url, it make perfect robot.txt
+    l) No follow No index- <meta name="robots" content="noindex, nofollow">
+<a href=”http://www.fictivepage.com/page-you-dont-want-to-show” rel=”nofollow”>
+    m) contents-350-450 words
+    n) canoni cal ization- redirecting website
+                    301 redirect: It is a method of redirecting user from the old page url to the new page url permanent redirect
+                    302 redirect: It is a method of redirecting user from the old page url to the new page url temporarily redirect
+<link href="http://www.example.com/canonical-version-of-page/" rel="canonical" />
+
+
+
+2.Off Page Optimization
+    a. Unrelated keywords
+    b. Keyword stacking and keyword stuffing
+    c. hidden text, tiny text, hidden links
+    d. cloaking- tricking search engine content presented to the  search engine spider is different from that presented to the user's browser.
+    e. Doorway or gateway pages
+    f. canonical
+    g. mirror site- copying entire website with or without permission
+
+SEM: it is promoting the website by paid results
+
+Google updates: 
+    • mobile friendly 2
+    • adwords shakeup
+    • mobilegeddon-2015
+    • panda 2011- has focused on quality content, proper design, proper speed, proper use of images and many more.
+    • penguin 2011- violated by using black hat techniques like cloaking and stuffing.
+    • humming bird- 2013
+
+ppc-pay per click
+cpc-cost per click
+cpm- cost per impression
+
+Google Sandbox:
+Google Sandbox is an imaginary area where new and less authoritative sites are kept for a specified time period until they establish themselves of being displayed on the search results. 
+
+Anchor text:
+Click-able text written on  hyperlink is known as Anchor Text.
+
+301 redirect: It is a method of redirecting user from the old page url to the new page url permanent redirect
+302 redirect: It is a method of redirecting user from the old page url to the new page url temporarily redirect
+
+methods would you apply for decreasing the loading time of a website?
+I would use external style sheets, 
+less images (unless necessary), 
+optimize the images and decrease the file sizes of the image without reducing the quality of the image, 
+use CSS sprites to reduce HTTP requests etc.
+
+Search engines find it harder to parse the contents presented using Flash. I would suggest the client to use an alternative to flash like HTML 5.
+
+keyword stemming:  The process of finding out the root word from the search query is referred as keywords stemming.
+keyword density   ( Total number of keyword/ total number of words in your article) multiply by 100.
+
+Page rank is calculated on the basis of quality inbound links from other website or webpages to our webpage or a website.
+
+SERP (Search Engine Result page) is the placement of the website or web-pages which is returned by the search engine after a search query or attribute.
+
+Webmaster tool is a service provided by Google from where you can get backlink information, crawl errors, search queries, Indexing data, CTR etc.
+
+
+LSI: LSI stands for Latent Semantic Indexing. It is a data retrieval technique which finds connection between words and the use of synonyms while fetching data from the index.
+
+Bounce rate(first page): is the percentage of people who leaves a particular website just after visiting a single page on this 
+Exit rate (one of the page): refers to the percentage of people who leaves from a particular page.
+
+Cross Linking: page a to b, b to c, c to a, have to do it cautionly with related topics if not google identifieds it as scam
+
+SEO tools:
+	Google analytic, keyword search, Alexa, open site explorer, Google Webmaster.
+	Google analytics
+	Google search console
+	Moz.com
+	Google keyword planner
+	Screaming Frog
+	Google
+	Bing webmaster tools
+	Keywordtool.io
+	Google trends
+	Chrome Developer tools
+	Wayback machine
+	Hootsuite
+	SEO quake toolbar,Web developer tool GT metrix -examine page speed and diagnose
