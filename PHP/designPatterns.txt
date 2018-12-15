@@ -1,7 +1,5 @@
 Singleton
 
-A Class has one instance, It provides a global access point to it, Following code will explain about singleton concept.
-
 <?php
    class Singleton {
       public static function getInstance() {
