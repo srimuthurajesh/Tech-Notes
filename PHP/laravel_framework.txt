@@ -1,4 +1,5 @@
-Install composer
+Install composer - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 composer create_project laravel/laravel projectname
 
 php artisan serve

@@ -1,0 +1,9 @@
+ANGULAR
+
+npm install –g @angular/cli		#to install angular cli
+ng –version						#to check angular cli version
+ng new projectname				#to create new angular project
+ng serve						#to run the project
+ng g module modulename			#to create new module
+ng g component componentname	#to create new component
+
