@@ -9,7 +9,7 @@ PHP - Hypertext-pre-processor
 <% %>, <script language=php > are deployed in previous versions
 <? ?> it is not preferable, need to change short_open_tag in php.ini
 -If a file is pure php code it is preferable to omit php closing tag at end of file
-<?php echo “welcome to php”; ?>
+<?php echo "welcome to php"; ?>
 <?php  ‘welcome to php’ ?>
 
 //comments
@@ -23,7 +23,7 @@ DATAYPE : 	Loosely typed language, no datatypes syntax
 					can be written in decimal, hexadecimal (prefixed with 0x), and
 					octal notation (prefixed with 0), and can include + / - signs
 				b)float  - real number, eqv to C lang ‘double’. 2.2E–308 to 1.8E+308
-				c)string, - series of char. $str=”rajesh”; $str[1];  $str{1};	//a
+				c)string, - series of char. $str="rajesh"; $str[1];  $str{1};	//a
 					heredoc- $string = <<<EOK rajesh EOK;
 				d)boolean -true or false, case sensitive, ((bool) other datatype) type-casting
 			2.Compound – object,	
@@ -172,10 +172,12 @@ FUNCTION:
 	function chaining: $obj->func1()->func2();	// func1 should return $this
 
 COOKIES: text files stored on client computer
-	setcookie(“cookiename”,”cookevalue”,”expirytime”);
-	setcookie(“cookiename”,”time()-3600”);
-	$_COOKIE(“cookiename”);			//getcookies
-	setcookie(“cookiename”,null,expirytime);	//remove cookie
+	setcookie("cookiename","cookevalue","expirytime",path,url,https,httponly);
+	secure way --> setcookie("cookiename","cookevalue","expirytime",'/',null,null,true);
+	
+	eg: setcookie("name","rajesh","time()-3600");
+	$_COOKIE("cookiename");			//getcookies
+	setcookie("cookiename",null,expirytime);	//remove cookie
 
 SESSION: creates file in a temp folder in server, 32 hexadecimal number as unique id. A cookie called PHPSESSID is sent to client browser,
 	session_start();	
@@ -188,8 +190,8 @@ HTTP-superGlobals:
 	$_REQUEST[‘varname’];
 
 FILES HANDLING:
-	<fom action=”” method=”post” enctype=”multipart/form-data”>
-		<input type=”file” name=”image”>
+	<fom action="" method="post" enctype="multipart/form-data">
+		<input type="file" name="image">
 $_FILES[‘image’][‘name’],
 $_FILES[‘image’][‘type’] 
 $_FILES[‘image’][‘size’] 

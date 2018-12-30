@@ -1,0 +1,137 @@
+CASCADING STYLE SHEET:
+	cascading refers to 	- CSS applies one style on top of another style
+	stylesheets refers to 	- control look and feel of web documents
+
+THREE WAYS TO INSERT CSS:
+	1.Inline   				<p style="color:blue; margin-left:40px;">Hello CSS</p>  
+	2.Internal(embedded)   	<head><style>  p{color:blue}  </style></head>  
+	3.External	 			<head><link rel="stylesheet" type="text/css" href="style.css"> </head>  
+	
+	Cascading Hierrachy :	1.Inline css,  2.Externa&internal css 3.Browser default 
+	
+COLOR: 150 standard colors https://www.w3schools.com/colors/colors_names.asp
+		we can give color by,	1.By a color name. 		color: blue;
+								2.By hexadecimal value	color: #9000A1;
+								3.By RGB				color: rgb{0,220,98};
+								4.By RGBA				color: rgba(255,99,71,0);
+								5.By HSL				color: hsl(hue,saturation,lightness);
+								6.By HSLA				color: hsla(hue,saturation,lightness,alpha)
+
+CSS UNITS:
+	1.em - current font size-1em
+	2.%  - current font size - 100%
+	3.px - one pixel in screen
+	4.pt - points used in print media- 0.72inch = 1pt
+
+
+CSS PROPERTIES:
+	BACKGROUND:
+		background-color: #b0d4de; 
+		background-image: url("paper1.gif");
+		background-repeat: repeat-x; background-repeat: repeat-y;background-repeat: no-repeat;    
+		background-attachment:fixed;   background-attachment:scrolled;
+		background-position:centre; /* top, left, right bottom*/
+		shorthand=  background: #ffffff url("img_tree.png") no-repeat right top;
+		background-clip: border-box;	background-clip: padding-box;	background-clip: content-box;	//background filling upto
+		background-origin: border-box;	background-origin: padding-box;	background-origin: content-box;	//background filling from
+		background-size: auto;			backgrounf-size: 100px 200px;									//background image size
+
+	BORDER:
+		border-style : dotted,dashed,solid,double,groove,ridge,inset,outse,none,hide
+		border-top-style:dotted; border-right-style:dotted; border-left-style:dotted; border-bottom-style:solid;		
+		border-width : 2px 4px;
+		border-color : red;
+		shorthand= border:5px solid black;
+		border-radius:5px;		/* we can create a circle */
+
+	MARGIN:
+		margin:10px; margin-top:auto; margin:inherit;
+	PADDING:
+		padding:10px; padding-top:auto; padding:inherit;
+		box-sizing:border-box;	/*will not increase div width becz of paddings*/
+	HEIGHT & WIDTH:
+		max-width 400px; min-height:auto;	//if screen minimize it will not go beyond those height width
+	BOX MODEL:
+		Html element consider as box in order of margin-> border-> padding-> content		
+		Total width	 = (margin-left)+(margin-right)	+(padding-left)	+(padding-right) +content width	
+		Total height = (margin-top)	+(margin-bottom)+(padding-top)	+(padding-bottom)+content height	
+	OUTLINE:
+		It locates above border. Its size wil no effect in box model, but outline will increase decrease in size
+		outline-style : dotted,dashed,solid,double,groove,ridge,inset,outset,none,hidden
+		outline-color : red; outline-width:10px;
+		shorthand= outline : 3px solid red;
+		outline-offset : 10px;	adds a space between outline and border
+	TEXT:	
+		text-align : center,rigth,left,justify;			/*also apply for div inside div,img etc*/
+		text-decoration: overline,line-through,underline;
+		text-transform: uppercase,lowercase,captilize
+		text-indent : 5px;	/*first line auto tab space */ 
+		letter-spacing : 3px; word-spacing : 3px; line-height : 1.8;
+		direction : rtl;
+		text-shadow : 3px 2px red;
+		text-overflow : clip,ellipsis,"---","..."
+		white-space: nowrap, normal,pre;
+
+	FONT:
+		Two types of font family: 1.generic familty 2.font family
+		font-style : normal,italic,oblique;
+		font-size : 10px;
+		font-weight : normal, bold;
+		font-variant : normal,small-caps,initial,inherit
+	CSS LINKS:
+		a:link a:visited a:hover a:active {color:red}
+	LISTS:
+		list-style-type: lower-alpha, circle, square,none; 
+		list-style-image: url("logo.jpg"), none; /* that picture */
+		list-style-position: inside,outside;
+	DISPLAY:
+		Block level elements  - <div><h><p><fieldset><form><hr><li><ol><ul><table><pre>
+		Inline level elements - <span><a><img>
+		display : block			/*cover entire horizontal*/	
+		display : inline		/*cover only the content horizontal*/
+		display : inline-block	/*behave like inline, but we can appy width*/
+		display : none			/*removed from Dom*/
+		visibility : none 		/*just hide from Dom*/
+	POSITION:
+		position : static;		/*default html elements position*/
+		position : relative;	/*position relative to its default position*/
+		position : fixed;		/*position fixed to the browser or viewport*/
+		position : absolute;	/*should have parent as relative-position elemtn, otherwise it beacome fixed, parent element as browser*/
+		position : sticky;		/*will not scroll even if it get out of scrolled out of page*/
+		z-index : -1;			/*can overlap position to anything*/
+	CSS OVERFLOW:
+		overflow: visible,hidden,scroll,auto(increase div size to text);	/*not only text, it is also apply for image*/
+		overflow-x : hidden; overflow-y : scroll;
+	FLOAT:
+		float : rigth,left,none,inherit;
+		clear :left,right,both,none;  /*can control which side we can avoid element can be float*/
+	CSS COMBINATORS:
+		descendant selector (space)		div p {color:red}	
+		child selector (>)				div>p {color:red}
+		adjacent sibling selector (+)	div+p {color:red} 
+		general sibling selector (~)	div~p {color:red}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
