@@ -1,0 +1,52 @@
+print("Hello, World!")
+
+-Indentation mandatory 
+COMMENTS:	#shell comment
+			"""......."""		#multiline docstring
+			
+VARIABLES:
+	a=7
+	print(a)
+	
+DATATYPES:
+	Number:	a)int- is a whole number, positive,negative,no decimel, no length limit.
+			b)float - positive,negative, have decimals
+			c)complex	
+	String : 	array of bytes representing uncode, so we can access string by [3] and [2:3]
+				works both double & single quotes						
+
+TYPECASTING:
+	int(),float(),str()
+
+INPUT:
+	x=input();
+
+OPERATORS:	
+    Arithmetic operators -> 	+ - * / % ** //
+    Assignment operators -> 	= += -= *= /= %= //= **= &= |= ^= >>= <<=
+    Comparison operators ->		== != > < >= <=
+    Logical operators	 ->		and or not
+    Identity operators 	 ->		is  is not
+    Membership operators ->		in	not in
+    Bitwise operators	 ->		& | ^ ~ << >>
+
+COLLECTIONS:
+	List -	ordered, changeable, dublicate allowed
+			['raj','arun']	#square bracket and an access by variable[index]
+			thislist = list(("apple", "banana", "cherry")) or thislist = ["apple","banana","cherry"]
+			len(variable),variable.append(values),variable.insert(key,value),variable.remove(value), del variable[index],variable.clear(),	
+	
+	Tupple - 	ordered, unchangeble, dublicate allowed
+				('raj','arun')	#bracket and can access by variable[index]
+				thistuple = tuple(("apple", "banana", "cherry")) or thislist = ("apple", "banana", "cherry")	
+				len(variable), variable.count(value), variable.index(value)
+				
+	Set		-	unordered,	
+				{'raj','arun'}	#curly bracket and an access by variable[index]
+			
+	Dictionary	    
+
+			
+
+if 5 > 2:
+  print("Five is greater than two!")
