@@ -1,0 +1,75 @@
+import numpy as np
+
+ADV over list
+	less memory,fast,convenient
+
+
+Example for numpy takes less memory:
+	import numpy as np
+	import time
+	import sys
+	S=range(1000)
+	print(sys.getsizeof(5)*len(S))		#28000
+	D=np.arange(1000)
+	print(D.size*D.itemsize)			#8000
+
+Example for numpy is speed:
+	import numpy as np
+	import sys
+	import time
+	SIZE = 1000000
+	L1 = range(SIZE)
+	L2 = range(SIZE)
+	A1 = np.arange(SIZE)		
+	A2 = np.arange(SIZE)		
+	start = time.time()
+	result = [(x,y) for x,y in zip(L1,L2)]
+	print((time.time()-start)*1000)			#171.86236381530762
+	start=time.time()
+	result=A1+A2
+	print((time.time()-start)*1000)			#55.86600303649902
+
+
+a=np.array([1,2,3])	#single dim array
+b=np.array([(1,2,3),(1,2,3)])	#multi dim array
+
+print(b[0,2])		#gives '2'. 0 means first array position second value
+print(b[0:,2])		#takes both array return second position element
+print(a.ndim)		#gives number of dimension
+print(a.itemsize)	#memory allocated
+print(a.dtype)		#gives datatype
+print(a.size)		#gives length of array
+print(a.shape)		#gives rows coloums of array
+a.reshape(4,2)		#converts a array in given rows columns
+np.linspace(1,3,5)	#it print [1, 1.5, 2, 2.5, 3]   five values
+a.max()
+a.min()
+a.sum()
+
+a=np.array([(1,2,3),(3,4,5)])
+a.sum(axis=0)		#gives (4,6,8)
+a.sum(axis=1)		#gives (6,12)
+
+np.sqrt(a)		#gives square root for each value in array
+np.std(a)		#find single mean value for all values in array
+
+ADDITION:
+	a+b			#gives addition of two arrays
+	a-b
+	a*b
+	a/b
+
+CONCATENATING
+	np.hstack((a,b))	#combine two rows in two array
+	np.vstack((a,b))	#combine two columns in two array
+	a.ravel()			#combine two rows in same array
+
+EXPONENTIAL LOG: e^n log10
+	np.exp(np.array([1,2,3]))		#gives e^1 e^2 e^3
+	np.log(np.array([1,2,3]))
+	np.log10(np.array([1,2,3]))	
+	
+		
+
+
+

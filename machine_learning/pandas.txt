@@ -1,0 +1,40 @@
+import pandas as pd
+
+web_stat = {'Day':[1,2,3,4,5,6],"Visitots":[1000,700,6000,1000,400,350],'Bounce rate':[20,25,23,15,10,34]}
+df = pd.DataFrame(web_stat)
+print(df)
+
+
+	1. SLICING
+		print(df.head(2))	#gives only first two rows
+		print(df.tail(2))	#gives only last two rows
+		
+	2. MERGING
+		df1 = pd.DataFrame({"HP1":[80,90,70,60],"Inf_rate":[2,1,2,3],"IND_GDP":[50,45,45,67]},index=[2001,2001,2003,2004])
+		df2 = pd.DataFrame({"HP1":[80,90,70,60],"Inf_rate":[2,1,2,3],"IND_GDP":[50,45,45,67]},index=[2005,2006,2007,2008])
+		merge = pd.merge(df1,df2)
+		merge = pd.merge(df1,df2,on="HP1")
+		print(merge)		
+	
+	3.JOINING (it is Nan, if no row available while joining)
+		df1=pd.DataFrame({"Int_rate":[2,1,2,3],"IND_GDP":[50,45,45,67]},index=[2001,2002,2003,2004])
+		df2=pd.DataFrame({"Low_tier":[50,45,67,34],"Unemployement":[1,3,5,6]},index=[2002,2003,2004,2005])		
+		joined=df1.join(df2)
+		print(joined)
+		
+	4.CHANGE INDEX & HEADERS
+		df=pd.DataFrame({'Day':[1,2,3],'visitors':[200,100,300],"Bound_rate":[20,45,30]})
+		df.set_index("Day",inplace=True)			#set Day as the index
+		df.rename(columns:{'Visitors':'Users'})		#renaming header
+		print(df)
+		
+	5.CONCATENATION
+		df1=pd.DataFrame({"Int_rate":[2,1,2,3],"IND_GDP":[50,45,45,67]},index=[2001,2002,2003,2004])
+		df2=pd.DataFrame({"Low_tier":[50,45,67,34],"Unemployement":[1,3,5,6]},index=[2002,2003,2004,2005])		
+		concat = pd.concat([df1,df2])
+		print(concat)
+
+
+DATA MUNGING:
+	csv_file = pd.read_csv('FILE_PATH',index_col=0)
+	csv_file.to_html('output_file_name.html')
