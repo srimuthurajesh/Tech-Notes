@@ -1,8 +1,17 @@
 import pandas as pd
 
-web_stat = {'Day':[1,2,3,4,5,6],"Visitots":[1000,700,6000,1000,400,350],'Bounce rate':[20,25,23,15,10,34]}
-df = pd.DataFrame(web_stat)
-print(df)
+PRIMARY OBJECT TYPE
+	#DATAFRAME: rows & columns lik spreadsheet
+	#SERIES: a single column 
+
+DATA DIRECTLY GIVEN:
+	web_stat = {'Day':[1,2,3,4,5,6],"Visitots":[1000,700,6000,1000,400,350],'Bounce rate':[20,25,23,15,10,34]}
+	df = pd.DataFrame(web_stat)
+	print(df)			#print entire data as array
+	print(df.shape)		#return (num_of_rows,num_of_columns)
+DATA FROM CSV:
+	data = pd.read_csv('sales.csv',index_col=0)		#index_col=>an imaginary column 0,1,2 will be removed
+
 
 
 	1. SLICING

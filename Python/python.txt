@@ -3,7 +3,8 @@ print("Hello, World!")
 -Indentation mandatory 
 COMMENTS:	#shell comment
 			"""......."""		#multiline docstring
-			
+
+ESCAPE SPECIAL CHAR: \' \" \t \n \\			
 VARIABLES:
 	a=7
 	print(a)
@@ -12,9 +13,13 @@ DATATYPES:
 	Number:	a)int- is a whole number, positive,negative,no decimel, no length limit.
 			b)float - positive,negative, have decimals
 			c)complex	
+	
 	String : 	array of bytes representing uncode, so we can access string by [3] and [2:3]
-				works both double & single quotes						
-
+				works both double & single quotes & ('''....''' and """"...."""") for multiline string
+				concat(+), len(string), string.upper(),string.lower(), 
+				a list() of characters(behave as list), but string are immutable	
+				'Hello %s'%('rajesh')				
+	Boolean :	True,False  #5 is 5 return True, 5 is not "5" return True
 TYPECASTING:
 	int(),float(),str()
 
@@ -31,22 +36,143 @@ OPERATORS:
     Bitwise operators	 ->		& | ^ ~ << >>
 
 COLLECTIONS:
-	List -	ordered, changeable, dublicate allowed
-			['raj','arun']	#square bracket and an access by variable[index]
-			thislist = list(("apple", "banana", "cherry")) or thislist = ["apple","banana","cherry"]
-			len(variable),variable.append(values),variable.insert(key,value),variable.remove(value), del variable[index],variable.clear(),	
-	
-	Tupple - 	ordered, unchangeble, dublicate allowed
-				('raj','arun')	#bracket and can access by variable[index]
-				thistuple = tuple(("apple", "banana", "cherry")) or thislist = ("apple", "banana", "cherry")	
-				len(variable), variable.count(value), variable.index(value)
+	List 		-	ordered, changeable, dublicate allowed
+					['raj','arun']	#square bracket and an access by variable[index]
+					thislist = list(("apple", "banana", "cherry")) or thislist = ["apple","banana","cherry"]
+					unpacking list->  name,age = ['rajesh',24]  #can access it by calling name and age
+					len(variable),variable.append(values),variable.insert(key,value),variable.remove(value), del variable[index],variable.clear(),	
+					zip:  name=['rajesh','arun']  age=[24,21,'gun']		zip(name,age,'gun')	#will give list of tuples [('rajesh','24'),('arun','21'),('gun','gun')]				
+					copy: import copy  list2 = copy.deepcopy(list1)	
+						
+	Tupple 		- 	same like list, but dublicate not allowed
+					('raj','arun')	#bracket and can access by variable[index]
+					thistuple = tuple(("apple", "banana", "cherry")) or thislist = ("apple", "banana", "cherry")	
+					len(variable), variable.count(value), variable.index(value)
 				
-	Set		-	unordered,	
-				{'raj','arun'}	#curly bracket and an access by variable[index]
+	Set			-	unordered,	
+					{'raj','arun'}	#curly bracket and an access by variable[index]
 			
-	Dictionary	    
+	Dictionary	- 	same like set, but has key-value pair  car = {'wheel':1,'window':2}		#key can be any dataType
+					car.keys()			#will give list of key 		['wheel','window']	
+					car.items()			#will give list of value 	[1,2]	
+					car.items()		    """will give list of tuples 	[('wheel', 1), ('window', 2)] and we can use it in for loop"""  for key,val in car.items():
+	 				car.get('wheel',0)	#return wheel value if it not exist, return default value 0 as we given	
+					car.setdefault('engine','good')		#set new value, if that key not exist, otherwise it does nothing
+					  
 
 			
+CONDITION STATEMENTS:
+	if 5 > 2:
+	  	print("Five is greater than two!")
+	elif 5 < 2: 
+		print("Five is smaller than two!")
+	else
+		print('Ada pongayaa')	
 
-if 5 > 2:
-  print("Five is greater than two!")
+LOOP STATEMENTS:
+	for n in lists:
+		print(n)	
+	while n>6:
+		print('yes')
+		n++;		
+	break
+	continue
+	
+FUNCTIONS:
+	def functionName(arg1,arg2=defaultVal):
+		...function body...	
+		return someting
+	
+	#function calling
+	functionName(arg2='val1',arg1='val2')		#function can be called with different arg order, but to mention argname		
+	
+	#variable lenght arguement(*)
+	def add(*num)	#this function can be called add(1),add(1,2), add(1,2,3)
+	
+	#variable lenght arguement while function calling
+	def add(num1,num2,num3)			#function can be called num=[2,4,6] add(*num)	
+	
+	#Anonymous(lamda) function
+	func = lamda arg1: ...fun body...
+
+CLASSES & OBJECTS:
+	class ClassName:
+		num = 4
+		def __init__(self):
+			print('this is constructor')
+		def add(self,x):
+			self.num = self.num + x
+	obj = ClassName()		#creating object
+	obj.num					#accessing variable
+	obj.add(3)	 			#accessing function	
+
+INHERITANCE:
+	class Parent():
+	class Child(Parent):	#child inherited parent	if overriding occurs, current class func overrides parent class function
+	class StepParent:
+	class Child(Parent,StepParent):	#multiple inheritance, if overriding occurs, 1st arg override 2nd arg
+	
+		
+MODULES:
+	import myModule
+	myModule.functionName()		#access function
+	myModule.varName			#access variable
+	import myModule as mx		#we can use module as mx
+	dir(myModule)				#print all functions available in that module		
+	from myModule import variableName	#import particular variables from module
+
+FILE HANDLING:
+	x=create, r=read, a=append, w=write
+	t=textMode, b=binaryMode
+	fileObj = open('filaName.text',rt)
+	fileObj.read()			#return entire file text
+	fileObj.read(n)			#return n number of chars from file
+	fileObj.readline()		#we can read line by line, by calling it after and after
+	for x in fileObj		#loop each line by using file object	
+	fileObj = open('fileName.txt','a')
+	fileObj.write('text')	#append text to existing file	
+	fileObj = open('fileName.txt','w')
+	fileObj.write('text')	#overwrite text to existing file
+	fileObj = open('newFile.txt','x')	#new file will be created
+	fileObj = open('newFile.txt','w')	#create new file if doesnt exist
+	fileObj.close()						#close file object
+	import os
+	os.remove('fileName.txt')			#delete file
+	os.path.exists('fileName.txt')		#check file exist
+	os.rmdir('folderPath')				#remove directory
+	
+EXCEPTION HANDLING:
+	try:
+		number = int(input("What is your fav number?"))
+		print(18/number)
+	except ValueError:
+		print('Make sure you are entering a number')
+	except ZeroDivisionError:
+		print('Dont enter Zero')
+	except:
+		print('something error, but i dunno what')				
+	finally:
+		print('it will print finnaly, whatever happended')
+
+MULTITHREADING:
+	import threading
+	class ClassName(threading.Thread):
+		def run(self):
+			for _ in range(10):
+				print(threading.currentThread().getName())	
+	x=ClassName(name="sending")
+	y=ClassName(name="receiving")
+	x.start()		#it triggers run function
+	y.start()		#it triggers run function
+	
+	
+DEBUGGING:
+	import logging
+	logging.debug('program starts')
+	logging.debug('program ends')	
+	
+	
+	
+	
+BUILT-IN FUNCTIONS:
+	range(start,stop,step)	- return a list			
