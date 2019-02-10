@@ -288,5 +288,6 @@ ERRORS:
     2.Reference error eg. a is not defined
     3.Type error      eg. a is not a function
                     
-
+EVENT BUBBLING:event listeners fires not only on single element, but also fires from all its Dom parents
+EVENT DELEGATION: event listeners fires not only on single element, but also fires from all its Dom decendents
 

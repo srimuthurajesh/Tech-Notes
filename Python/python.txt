@@ -51,6 +51,7 @@ COLLECTIONS:
 				
 	Set			-	unordered,	
 					{'raj','arun'}	#curly bracket and an access by variable[index]
+					we can perfom } |,&,-,+,< between two sets
 			
 	Dictionary	- 	same like set, but has key-value pair  car = {'wheel':1,'window':2}		#key can be any dataType
 					car.keys()			#will give list of key 		['wheel','window']	
@@ -95,6 +96,12 @@ FUNCTIONS:
 	#Anonymous(lamda) function
 	func = lamda arg1: ...fun body...
 
+	Note: function should be defined before calling it
+
+GLOBAL & LOCAL
+	we can use outer function variables, but its overrided value will not reflect after outside,
+	global variableName    #to make changes reflects in outer of the function	
+			
 CLASSES & OBJECTS:
 	class ClassName:
 		num = 4
@@ -125,14 +132,14 @@ FILE HANDLING:
 	x=create, r=read, a=append, w=write
 	t=textMode, b=binaryMode
 	fileObj = open('filaName.text',rt)
-	fileObj.read()			#return entire file text
-	fileObj.read(n)			#return n number of chars from file
-	fileObj.readline()		#we can read line by line, by calling it after and after
-	for x in fileObj		#loop each line by using file object	
+	fileObj.read()						#return entire file text
+	fileObj.read(n)						#return n number of chars from file
+	fileObj.readline()					#we can read line by line, by calling it after and after
+	for x in fileObj					#loop each line by using file object	
 	fileObj = open('fileName.txt','a')
-	fileObj.write('text')	#append text to existing file	
+	fileObj.write('text')				#append text to existing file	
 	fileObj = open('fileName.txt','w')
-	fileObj.write('text')	#overwrite text to existing file
+	fileObj.write('text')				#overwrite text to existing file
 	fileObj = open('newFile.txt','x')	#new file will be created
 	fileObj = open('newFile.txt','w')	#create new file if doesnt exist
 	fileObj.close()						#close file object
@@ -165,6 +172,22 @@ MULTITHREADING:
 	x.start()		#it triggers run function
 	y.start()		#it triggers run function
 	
+	ANOTHER WAY:
+	t1 = threading.Thread(target=func1,args(args1))
+	t2 = threading.Thread(target=func2,args(args1))
+	t1.start()
+	t2.start()
+	t1.join()
+	t2.join()
+
+MULTIPROCESSING
+	import multiprocessing
+	p1 = multiprocessing.Process(target=func1,args(args1))	
+	p1 = multiprocessing.Process(target=func2,args(args1))	
+	p1.start()
+	p2.start()
+	p1.join()
+	p2.join()
 	
 DEBUGGING:
 	import logging
@@ -172,7 +195,27 @@ DEBUGGING:
 	logging.debug('program ends')	
 	
 	
-	
-	
-BUILT-IN FUNCTIONS:
-	range(start,stop,step)	- return a list			
+JSON
+json_dumps(dictVariable)		#json encode
+json_loads(string)				#json decode
+
+__name__
+it will give "__main__" if it called from actual page
+it will give "__anotherPageName__" if it called from another page
+
+
+ITERATOR:
+itr = iter(obj)		#we can call next value by using   next(itr)
+
+GENERATOR: simple way to create an iterator
+	def gen():
+		yield "one"
+		yeild "two"
+	Now we can gen as iterator 	
+
+COMMANDLINE ARGUEMENT:
+	parser = argparse.ArgumentParser()
+	parser.add_arguement("firstargName")
+	args =parser.parse_args()
+	print(arg.firstargName)
+
