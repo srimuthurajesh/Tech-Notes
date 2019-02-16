@@ -1,0 +1,24 @@
+Symmetric Encryption  - single key. eg:DES,3DES,AES,RC4
+Asymmetric Encryption - different key. eg:Diffie-Hellman, RSA
+
+Threat: something potential to do harm to system
+Vulnerability: weakeness that can exploited by attackers, an issue
+Risk : potential for loss or damage by vulnerability
+
+SSL - secure socket layer - enable safe conversation between two parties. eg: https uses ssl
+
+
+Encoding: convert data to desired format
+Hashing:  
+Encryption :
+
+
+Top cyberattacks:
+1.Malware: virus,spyware,adware,trojanhorse,worms
+2.Phishing : clone website links
+3.Password attacks : Bruteforce, dictionary, keylogger 
+4.Distributed deniel of service: 
+5.Man in the middle
+6.Drive by download:
+7.Malvertising
+8.Rogue software	

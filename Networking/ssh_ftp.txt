@@ -1,10 +1,10 @@
-ssh secure shell
+SSH:
 sudo apt-get install ssh
 ifconfig
 sudo ufw status		#firewall status
 
-
-FTP file transfer protocol
+#-------------------------------------------------------------------------------------------------------------------------------	
+FTP: 
 sudo apt-get install vsftpd
 sudo vim /etc/vsftpd.conf
 	local_enable=Yes
