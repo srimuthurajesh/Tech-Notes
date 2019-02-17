@@ -1,0 +1,71 @@
+
+JDK Java development kit:  Compiler+ libraries
+JRE Java runtime environment: Interpreter +JVM
+JVM Java virtual machine: abstract machine, which execute the byte code 
+
+Inheritance: one object or class acquires the properties of another object or class. ie.reusability
+Polymorphism: ability to define entities fields to attain many forms
+Absraction:  method to hide implementation details(hide implementation)
+Encapsulation: wrapping or binding the code and data it manipulates(hide data)
+
+Keywords:All predefined 50 or 53 meaningful words
+Constants: Non changeble value by user, in Java it declare by word final, static
+Variables: Value that can change, basic unit of storage
+Datatype:  Predefined memory location , storage and variable declaration
+String handling: predefined class file, sequence of char or array of char
+Operator: Symbol that perform operations 
+Decision making: allow program to choose different paths of execution, by comparision 
+Loops: enable program execute until condition true
+
+Object oriented Programming:based on object(real world entity)
+Class:Blueprint or template for object
+Object: Instance of a class, an entity which have state and behaviour
+Constructor: a special type method that instialize object
+Garbage Collection: Automatic recycle for object which has no references
+Finalize method: called by garbage colletor before non reference object collected
+Methods: set of instruction or task that perform when it calls
+Array: group of similar datatype variables that are referred to a common name
+Static: used for memory management, have only one copy, not need object to instialize
+This: is a reference that refers to the current object
+Super: is a reference that refers to immediate parent class object
+Final: define an entity that assigned once, cannot be reassigned, overridden, inherited
+Package:group of similar type of classes, interfaces and subpackages
+Import: make classes and interface of another package accessible to the current package. 
+
+Abstract class:  class with keyword abstract, contains both abstract and non abstract method, cannot be instantiated, can be extended. 0-100% abstraction
+Abstact Method:have only declaration, no body. present inside only abstract class
+
+ 
+Interface: is a reference type in Java. to implement 100%abstraction contains no implementation. and require subclasses to provide implementations
+
+
+Exception handling: mechanism to handle runtime error. to maintain normal flow of program
+ object->Throwable->	
+1.Exception (checked) 			eg:a.IOException b.SQLException
+2.Runtime exception(unchecked) 	eg:a.ArithmeticException b.NullPointerException     c.NumberFormatException
+3.Error 						eg:a.virtualMachineError b.IOError c.AnnotationFormatError
+
+
+			
+Multithreading:process of executing multiple programs run concurrently at same time
+Collection: a frame work that store and manipulate group of object
+Remote method invocation: is an API that provides a mechanism to create distributed application in java. The RMI allows an object to invoke methods on an object running in another JVM.
+JDBC: is a java API to connect and execute query with the database
+Serialization:converting object is convert in to bytecode
+Wrapper class-provides mechanism to convert primitive into object and object into primitive.
+Equals:compare the reference of the object
+
+*java beans and enterprise java beans are totally unrelated
+*== and .equals() are not the same. 
+Comparing 2 objects with == means their references are compared and not their values. To compare values .equals() functions is used.
+
+
+
+
+
+String pool: Pool of strings stored in java heap memory
+Java StringBuffer: mutable (modifiable) string. synchronized(thread safe).less efficient
+Java StringBuilder:mutable (modifiable) string. non-sync (not thread safe) more efficient
+Assertion: is a statement in java. It can be used to test your assumptions about the program.
+
+JDBC: allow application to connect relational database

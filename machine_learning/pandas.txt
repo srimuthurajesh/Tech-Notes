@@ -1,48 +1,110 @@
 import pandas as pd
 
-PRIMARY OBJECT TYPE
-	#DATAFRAME: rows & columns lik spreadsheet
-	#SERIES: a single column 
-
 DATA DIRECTLY GIVEN:
-	data_set = {'Day':[1,2,3,4,5,6],"Visitots":[1000,700,6000,1000,400,350],'Sales':[20,25,23,15,10,34]}
+	data_set = {'Day':[1,2,3,4,5,6],"Visitors":[1000,700,6000,1000,400,350],'Sales':[20,25,23,15,10,34]}	#python dictionary
 	df = pd.DataFrame(data_set)
-	print(df)			#print entire data as array
-	print(df.shape)		#return (num_of_rows,num_of_columns)
+	data_set = [{'Day':1,'Visitors':1000,'Sales':20},{'Day':2,'Visitors':700,'Sales':25},{'Day':3,'Visitors':6000,'Sales':23}]  #list of dictionary
+	df = pd.DataFrame(data_set)
+	data_set = [(1,1000,20),(2,700,25),(3,6000,23),(4,1000,15),(5,400,10),(6,350,34)]		#python tuples
+	df = pd.DataFrame(data_set, columns=['Day','Visitors','Sales'])
+	series = pd.Series(['good','avg','poor'],name='columnName')				#create a series list
 
+DATA FROM EXTERNAL:
+	data = pd.read_csv('sales.csv',
+						index_col=0,							
+						skiprows=1,								#remove first row
+						names=[column1,column2,column3],		#assign column names
+						nrows=3,								#read only 3 rows
+						parse_dates=['examDate']				#convert to datetime
+						na_values={"result":["None","Nil"]})	#convert values to Nan		
+	data = pd.write_csv('sales.csv', 
+						index=False,
+						header=False,
+						columns=['marks','result'])
+						
+	df = pd.read_pickle('sales.pkl')
+	df.to_pickle('sales.csv')
+	data = pd.read_excel('sales.xlsx',"sheet1")
+	df.to_excel('sales.xlsx',sheet_name="sheet1")
+	
+DISPLAY DATASET:
+	print(df)					#print entire data as array
+	print(df.shape)				#return (num_of_rows,num_of_columns)
+	print(df.columns)			#return single column of columnNames
+	print(df.columnName.values)	#return single column of particular columnValues
+	print(df.dtypes)			#print datatypes of each column
+	print(df[[columnName1,columnName2]])
+	print(df.describe)			#print statistics of all columns
+	print(df[df['subject']=="maths"])								#user filters
+	print(df[df['subject']=="maths"][df['exam']=="annual"])			#multiple user filters
+	
 DUMMY VARIABLES:
-pd.get_dummies(df.columnName)		#will give a seperated dummy column dataframe	
+	pd.get_dummies(df.columnName)							#will give a seperated dummy column dataframe	
+	df['gender'] = df.gender.astype('category').cat.codes  	#providing unique id for categorical values
 
-DATA FROM CSV:
-	data = pd.read_csv('sales.csv',index_col=0)		#index_col=>an imaginary column 0,1,2 will be removed
-	data = pd.write_csv('sales.csv',index_col=0)
+AGGREGATE FUNCTIONS:
+	print(df.marks.max)		#give max value in column	
+	print(df.marks.min)		#give min value in column	
+	print(df.marks.sum)		#give sum value in column
+	print(df.marks.mean)	#give average value in column	
+	print(df.marks.std)		#give standard deviation in column	
 	
-
-	1. SLICING
-		print(df.head(2))	#gives only first two rows
-		print(df.tail(2))	#gives only last two rows
-	2. MERGING
-		merge = pd.merge(df1,df2)	
-	3.JOINING (it is Nan, if no row available while joining)
-		joined=df1.join(df2)
-	4.CHANGE INDEX & HEADERS
-		df.set_index("Day",inplace=True)			#set Day column as the index
-		df.rename(columns:{'oldName':'newName'})		#renaming header
-	5.CONCATENATION
-		concat = pd.concat([df1,df2])
-	6.DROPING
-		dropped = df.drop([col1,col2],axis='columns')	
-
-DATA MUNGING:
-	csv_file = pd.read_csv('FILE_PATH',index_col=0)
-	csv_file.to_html('output_file_name.html')
+OTHER OPERATIONS:
+	df.set_index('examDate',inplace=True)		#set particular column as index and if u not use inplace, we need to assign this expression to another df variable	
+	df.reset_index(inplace=True)				#to revert set_index
 	
-MISSING DATA HANDLING:
+MISSING DATA HANDLING(MUNGING,WRANGLING):
 	df.dropna()					#drop row, eventhough minimum one NaN NaT is present
 	df.dropna(axis='columns')	#drop column, eventhough minimum one Nan Nat is present	
 	df.dropna(how='all')		#drop row, only if all elements are NaN NaT
 	df.dropna(thresh=2)			#drop row, minimum two NaN NaT present
 	df.dropna(subset=['colum1','colum2'])	#drop if these columns have NaT NaN
-	df.dropna(inplace=True)		#terila 
+	
+	df.fillna(0)							#replace Nan with 0
+	df.fillna({column1:0,event:'No event'})	#replace Nan with diff values in diff columns 
+	df.fillna(method="ffill")				#replace Nan with previous row value
+	df.fillna(method="ffill",limit=2)		#replace only 2 Nan with previous row value
+	df.fillna(method="bfill")				#replace Nan with next row value
+	df.fillna(method="ffill",axis="column")	#replace Nan with previous column value
+	df.fillna(method="bfill",axis="column")	#replace Nan with next column value
+	df.interpolate()						#replace Nan with algorithm
+	
+	df.replace(0,np.NaN)							#replace value with our own values
+	df.replace([0,0.0],np.NaN)						#replace multiple value with our own values
+	df.replace({0:np.NaN,0.00:np.NaN})
+	df.replace({column1:0,column2:0.00},np.NaN)		#replace multiple value with our own values
+	df.replace('[A-Za-z]','',regex=True)			#replace 40km to 40, by replace text to empty
+	df.replace({column1:'[A-Za-z]',column2:'[A-Za-z]'},'',regex=True)
+	df.repalce(['good','averge','poor'],[3,2,1])		#replace those string by number
+	
+GROUPBY
+	g = df.groupby('result')		#give object of three dataframes
+	g.get_group('good')				#give dataframe of good result
+	g.avg()							#give dataframe average of each group columns (SPILT,APPLY,COMBINE)	
+
+CONCAT
+	pd.concat([df,df1],ignore_indx=True)
+	pd.concat([df,df1],ignore_indx=True,axis=1)		#merge two df if it has any same columns
+MERGE
+	pd.merge(df1,df2,on="columnName")				#it will merge,only if the columnName values exist in both df	
+	pd.merge(df1,df2,on="columnName",how="outer")	#it will merge eventhough value noot present, fill it as NaN	
+	pd.merge(df1,df2,on="columnName",how="left")
 	
 	
+MYSQL:
+	pip install sqlalchemy
+	pip install PyMYSQL
+	
+	import sqlalchemy
+	engine = sqlachemy.create_engine('mysql+pymysql://username:password@localhost:8080/databaseName')
+	df = pd.read_sql_table("tableName",engine)
+	
+	query = "SELECT * from tableName"
+	df = pd.read_sql_query(query, engine)
+	
+	df.to_sql(name="tableName",con=engine,index=False,if_exists='append')	
+
+
+
+TIMESERIES:
+	df["2017-01-07":"2017-01-20"]		#return rows between these datetimestamp		

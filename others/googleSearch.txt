@@ -1,0 +1,14 @@
+site:linkedin.com  #to search things in particular site
+@twitter.com	# @ symbol while searching social media
+Double quotes for search exact words eg: "sri muthu rajesh"
+Exclude word from search using hyphen eg: jbl -headphones
+Unknown words use astriek	eg: london * faling down	
+combine search use OR 		eg: jbl OR sm
+specific domain using colon	eg: site:.gov
+search related sites		eg: related:twitter.com
+
+
+Weather: put weather before city name eg:weather chennai
+Dictionary : put define before word eg: define marvellous
+
+

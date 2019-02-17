@@ -69,7 +69,8 @@ Two version of IP:
     IPV6    
 
 
-    IP ROUTING:
+    IP ROUTING: specifying the via route, how data gonna transfer.
+    			directly connected two points, no need of routing.
     1. Static Routing    
     2. Dynamic Routing
             2.a. Interior Fateway Protocol (IGP)
@@ -100,9 +101,9 @@ OSI Layers: Open systems Interconnect Model
 |                 | Network layer      | ipv4,ipv6                                     | Packets    |
 |                 | Transport layer    | tcp,udp                                       | Segments   |
 |-----------------|--------------------|------------------------------------------------------------|
-| Upper layer     | session layer      | session storage                                            |    
-|                 | presentation layer | ascii                                                      |
-|                 | application layer  | http,smtp,ftp                                              |    
+| Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       |    
+|                 | presentation layer | ascii SSL,TLS                                 |   "       	|
+|                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |    
 -----------------------------------------------------------------------------------------------------
 
 1.Lower layer:
@@ -138,10 +139,18 @@ SMTP TCP port 25 & POP TCP port 110
 | HTTPS      | 443         | TCP        |
 -----------------------------------------
 
+LDAP - PORT 389	- Lightweight directory access protocol
+NFS  - PORT 2049 - Network file system
 MAC ADDRESS:
     Media Access Control- physical address identifies hardware interface
     48 bit Hexadecimal
     MM:MM:MM:SS:SS:SS    M-manufacturer id, series number of NIC(network interface card)
+
+
+ADDRESS RESOLUTION PROTOCOL(ARP) - finding physical(mac) address using ip address
+DYNAMIC HOST CONFIGURATION PROTOCOL(DHCP) -PORT 67(Server),68(Client) -  if a new device introduced in network, the server itself assign Network configurations like ip address,subnetmask,DNS IP, gatewaay informations. It uses DORA process.
+DORA - Discover,Offer,Request,Acknowledgement
+
 
 
  
