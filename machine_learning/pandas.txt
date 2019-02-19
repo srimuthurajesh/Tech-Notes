@@ -7,9 +7,9 @@ DATA DIRECTLY GIVEN:
 	df = pd.DataFrame(data_set)
 	data_set = [(1,1000,20),(2,700,25),(3,6000,23),(4,1000,15),(5,400,10),(6,350,34)]		#python tuples
 	df = pd.DataFrame(data_set, columns=['Day','Visitors','Sales'])
-	series = pd.Series(['good','avg','poor'],name='columnName')				#create a series list
+	series = pd.Series(['good','avg','poor'],name='columnName')								#create a series list
 
-DATA FROM EXTERNAL:
+DATA FROM EXTERNAL:		
 	data = pd.read_csv('sales.csv',
 						index_col=0,							
 						skiprows=1,								#remove first row
@@ -40,7 +40,7 @@ DISPLAY DATASET:
 	
 DUMMY VARIABLES:
 	pd.get_dummies(df.columnName)							#will give a seperated dummy column dataframe	
-	df['gender'] = df.gender.astype('category').cat.codes  	#providing unique id for categorical values
+	df['gender'] = df.gender.astype('category').cat.codes	#providing unique id for categorical values
 
 AGGREGATE FUNCTIONS:
 	print(df.marks.max)		#give max value in column	
@@ -54,20 +54,20 @@ OTHER OPERATIONS:
 	df.reset_index(inplace=True)				#to revert set_index
 	
 MISSING DATA HANDLING(MUNGING,WRANGLING):
-	df.dropna()					#drop row, eventhough minimum one NaN NaT is present
-	df.dropna(axis='columns')	#drop column, eventhough minimum one Nan Nat is present	
-	df.dropna(how='all')		#drop row, only if all elements are NaN NaT
-	df.dropna(thresh=2)			#drop row, minimum two NaN NaT present
-	df.dropna(subset=['colum1','colum2'])	#drop if these columns have NaT NaN
+	df.dropna()									#drop row, eventhough minimum one NaN NaT is present
+	df.dropna(axis='columns')					#drop column, eventhough minimum one Nan Nat is present	
+	df.dropna(how='all')						#drop row, only if all elements are NaN NaT
+	df.dropna(thresh=2)							#drop row, minimum two NaN NaT present
+	df.dropna(subset=['colum1','colum2'])		#drop if these columns have NaT NaN
 	
-	df.fillna(0)							#replace Nan with 0
-	df.fillna({column1:0,event:'No event'})	#replace Nan with diff values in diff columns 
-	df.fillna(method="ffill")				#replace Nan with previous row value
-	df.fillna(method="ffill",limit=2)		#replace only 2 Nan with previous row value
-	df.fillna(method="bfill")				#replace Nan with next row value
-	df.fillna(method="ffill",axis="column")	#replace Nan with previous column value
-	df.fillna(method="bfill",axis="column")	#replace Nan with next column value
-	df.interpolate()						#replace Nan with algorithm
+	df.fillna(0)									#replace Nan with 0
+	df.fillna({column1:0,event:'No event'})			#replace Nan with diff values in diff columns 
+	df.fillna(method="ffill")						#replace Nan with previous row value
+	df.fillna(method="ffill",limit=2)				#replace only 2 Nan with previous row value
+	df.fillna(method="bfill")						#replace Nan with next row value
+	df.fillna(method="ffill",axis="column")			#replace Nan with previous column value
+	df.fillna(method="bfill",axis="column")			#replace Nan with next column value
+	df.interpolate()								#replace Nan with algorithm
 	
 	df.replace(0,np.NaN)							#replace value with our own values
 	df.replace([0,0.0],np.NaN)						#replace multiple value with our own values
