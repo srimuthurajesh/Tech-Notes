@@ -37,51 +37,39 @@ Factory
 A Class Simple Creates the object and you want to use that object, Following example will explain about factory design pattern.
 
 <?php
-   class Automobile {
-      private $bikeMake;
-      private $bikeModel;
-      
-      public function __construct($make, $model) {
-         $this->bikeMake = $make;
-         $this->bikeModel = $model;
+   class Car {
+      private $model;
+      public function __construct($model) {
+         $this->model = $model;
       }
-      
-      public function getMakeAndModel() {
-         return $this->bikeMake . ' ' . $this->bikeModel;
+      public function getDelivery() {
+         return $this->model." ready";
+      }
+   }
+   class Bike {
+      private $model;
+      public function __construct($model) {
+         $this->model = $model;
+      }
+      public function getDelivery() {
+         return $this->model." ready";
       }
    }
    
-   class AutomobileFactory {
-      public static function create($make, $model) {
-         return new Automobile($make, $model);
+   class HondaFactory {
+      public static function create($model) {
+      	if($company == 'car')
+	    	return new Car($model);
+      	elseif($company == 'bike')
+      		return new Bike($model);
       }
    }
    
-   $pulsar = AutomobileFactory::create('ktm', 'Pulsar');
-   print_r($pulsar->getMakeAndModel());
+   $car = HondaFactory::create('car');
+   $bike = HondaFactory::create('bike');
+   print_r($car->getDelivery());
+   print_r($bike->getDelivery());
    
-   class Automobile {
-      private $bikeMake;
-      private $bikeModel;
-      
-      public function __construct($make, $model) {
-         $this->bikeMake = $make;
-         $this->bikeModel = $model;
-      }
-      
-      public function getMakeAndModel() {
-         return $this->bikeMake . ' ' . $this->bikeModel;
-      }
-   }
-   
-   class AutomobileFactory {
-      public static function create($make, $model) {
-         return new Automobile($make, $model);
-      }
-   }
-   t$pulsar = AutomobileFactory::create('ktm', 'pulsar');
-   
-   print_r($pulsar->getMakeAndModel()); 
 ?>
 
 The main difficulty with factory pattern is it will increase the complexity and it is not reliable for good programmers.

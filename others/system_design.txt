@@ -1,0 +1,12 @@
+Horizontal - more number of servers
+Vertical - Bigger server
+
+_____________________________________________________________
+| Horizontal scaling 		|	Vertical scaling            |
+|---------------------------|-------------------------------|
+| LoadBalancing required	|	N/a							|
+| Resilient					|   Single point of failure		|
+| Network calls(Rpc)		|	Inter process communication	|
+| Data inconsistence		|	Consistence					|
+| Scales well as user grow	|   Hardware limit				|
+-------------------------------------------------------------

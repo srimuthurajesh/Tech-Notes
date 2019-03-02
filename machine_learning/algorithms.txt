@@ -1,0 +1,32 @@
+CLASSIFICATION:	predict a discrete number of values
+	a.Binary classification
+	b.Multiclass classification
+	Algorithms:    Decision Trees,Logistic Regression,Naive Bayes,K Nearest Neighbors,Linear SVC (Support vector Classifier), etc.
+
+REGRESSION: predict continuos valued output.
+	Algorithm:    Linear Regression,Regression Trees(e.g. Random Forest),Support Vector Regression (SVR), etc.
+
+CLUSTERING:
+
+
+
+
+TYPES OF ML ALGORITHMS:
+1.Supervised
+2.Unsupervised
+3.Semisupervised
+4.Reinforcement
+
+
+
+LINEAR EQUATION
+	putting a line equation in absorbed data. (a.k.a) the line of best fit
+		x-Explanatory variable(independent)
+		y-dependent variable
+		
+		y= mx+c+E
+	
+#-----------------------------------------------------------------------------------	
+DECISION TREE
+	
+		

@@ -1,0 +1,5 @@
+Machine learning needs
+	1. Statistics 		- tells what our goal is
+	2. Calculus    		- tells how to optimize
+	3. Linear algebra 	- execute algorithm in massive datsets
+	4. Probability  	- predict likel outcome
