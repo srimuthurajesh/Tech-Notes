@@ -70,9 +70,10 @@ ARRAY:
 
 CONSTANT : (globally accessible)	
 		define(‘VAR_NAME,’rajesh’);  
-		const VAR_NAME = ‘rajesh’;
-	-can be called without object using scopr resolution operator.  eg.ClassName::VAR_NAME;
-	-while extends, it is called using PARENT::var_name ,  SELF::var_name	
+		const VAR_NAME = ‘rajesh’;  		
+	-should be called without object using scope resolution operator.  eg.ClassName::VAR_NAME;
+	-while extends, it is called using PARENT::var_name ,  
+	-we need SELF::var_name instead of $this->var_name while using in same class	
 
 MAGIC CONSTANTS:
 	__LINE__ 		return line number
@@ -239,16 +240,8 @@ ENCAPSULATION:
 
 - We can access current class variable by $this->variablename;
 
-POLYMORPHISM: abilty to define method in many forms
-	method overriding – Normal happen with same function name
-	method overloading -  using magin functions_call, __set etc
-
-FINAL keyword will avoid overriding	//act as super keyword
-	final method: cannot be overload while being inherited
-	final class: cannot be inherited
-	Parent::methodname();			// act as super function
-
-STATIC:	can call without creating object with scope resolution operator.
+STATIC:	ex:can maintain count how many objects created for the class by incrementing each time.
+	can call without creating object with scope resolution operator.
 	We can declare static as private and protected
 	Static variable      public static $varname;
 	Static method      public static functionname(){
@@ -259,10 +252,24 @@ STATIC:	can call without creating object with scope resolution operator.
 	parent :: methodname();	parent :: variablename();
 	self::methodname(); 		self::variablename();
 	
+	Dont use $this for static, its error
+	
 
 INHERITANCE: php support 	1.single and 
 							2.multilevel inheritance(extend by more than one child)
-	we should parent constructor by using parent::__construt();	
+	we should parent constructor by using parent::__construt();
+	if we need parent class function, parent::functionname();	
+
+
+POLYMORPHISM: abilty to define method in many forms
+	method overriding – Normal happen with same function name
+	method overloading -  using magin functions_call, __set etc
+
+FINAL keyword will avoid overriding	//act as super keyword
+	final method: cannot be overload while being inherited
+	final class: cannot be inherited
+	Parent::methodname();			// act as super function
+
 
 ABSTRACTION: hiding the implementation
 		have abstract and non abstract function
@@ -279,7 +286,7 @@ INTERFACE: 100% abstraction, implements to child class. all function should publ
 		function funcname(){.....}
 	}
 
-TRAIT:same like abstract interface.
+TRAIT:same like abstract interface.(for multiple inheritance)
 	trait A{
 		function functionname();----}
 	class B{
@@ -325,34 +332,47 @@ MYSQL CONNECTION:
 
 	$lastid = mysqli_insert_id($conn);
 
-INDENTATION:
 
-ERROR REPORTING:
-	error_reporting = 0 //make E_ALL
-	ini_set(‘error_reporting’,’E_ALL’);
+AUTOLOADING:
+	import file having below function, and create object directly use it
+	spl_autoload_register(function($var){
+		include $var.’php’;
+	});
+	
+	spl_autoload_register('functionName');	//write the loader function seperately
 
-TYPES OF ERROR:
-	1.Fatal error (E_ERROR) -  cause script to terminate
-	2.warning (E_WARNING)- does not terminate script
-	3.Parse error (E_PARSE) – compile time error
-	4.Notice (E_NOTICE) – due to error in code 
+	function __autoload($funName){
+		require_once($_SERVER["DOCUMENT_ROOT"] . "/classes/$class_name.php")
+	}
+
+NAMESPACE: - can use same class/function name in same file
+	namespace class1;
+	class Hello{} function Hii(){}
+
+	namespace class2;
+	class Hello{} function Hii(){}
+
+	$obj = new class1\Hello();	 class1\Hii():
+	$obj = new class2\Hello();	 class1\Hii():
+
 
 MAGIC METHODS:
-	__set();	- while writing data inaccessible property
-	__get();	-while reading data
-	__isset();	-triggered while called isset() empty()
-	__unset();	-invoke when unsert() used
+	__set();			- while writing data inaccessible property
+	__get();			-while reading data
+	__isset();			-triggered while called isset() empty()
+	__unset();			-invoke when unsert() used
 	__construct()
 	__destruct()
 	__call()
 	__callstatic()
 	__sleep()
 	__wakeup()
-	__tostring()
+	__tostring()		-when echo the object
 	__invoke()
-	__set_state()
+	__set_state()		- print object
 	__clone()
-	__debugInfo()
+	__debugInfo()		- it will call, when using var_dump($obj), we can modify what should print 
+	__invoke()			- call when we simple calling object with ();	
 
 GLOBAL VARIABLE:
 	$GLOBALS		
@@ -370,14 +390,6 @@ GLOBAL VARIABLE:
 	$argc -> number of arg passed to script
 	$argv	-> array of arg passed to script
 
-AUTOLOADING:
-	import file having below function, and create object directly use it
-	spl_autoload_register(function($var){
-		include $var.’php’;
-	});
-	function __autoload($funName){
-		require_once($_SERVER["DOCUMENT_ROOT"] . "/classes/$class_name.php")
-	}
 
 SERVER VARIABLES:
 	$_SERVER[‘PHP_SELF’]			-filename with drectory
@@ -408,16 +420,19 @@ SERVER VARIABLES:
 MAIL: mail($to,$subject,$body,$header);
 XML: simplexml_load_file(‘xmlfile’);
 JSON:	encode(), decode, f
+SERIEALIZE: serialize($obj); unserialize(string);		//make the obj into string, and we can use it with own values
+
 
 TYPES OF EXCEPTION:
-throwable
-	Error
+THROWABLE
+	ERROR -notice,fatal,warning
 		Arithmatic Error
 			divisionByZeroError
 		AssertionError
 		ParseError
 		TypeError
-	Exception
+	
+	EXCEPTION
 		ClosedGeneralException
 		DOMException
 		ErrorException
@@ -440,10 +455,21 @@ throwable
 			UnderFlowException
 			UnExpectedValueException
 
+ERROR REPORTING:
+	error_reporting = 0 //make E_ALL
+	ini_set(‘error_reporting’,’E_ALL’);
+
+TYPES OF ERROR:
+	1.Notice – small, non-critical error  (E_NOTICE, E_USER_NOTICE)
+	2.warning- error does not terminate script (E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED)
+	3.Fatal error -  critical error, cause script to terminate (E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR)
+	3.Parse erro – syntax errorr (E_PARSE)
+	5.Strick standard notices - suggestions	(E_STRICT)
+	
 EXCEPTION HANDLING:
 	try{
 	}
-	catch (Exception $e){
+	catch (Exception $e){ var_dump($e->getTrace();)
 	}
 	Custom exception:
 	try{
