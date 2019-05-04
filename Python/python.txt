@@ -218,4 +218,15 @@ COMMANDLINE ARGUEMENT:
 	parser.add_arguement("firstargName")
 	args =parser.parse_args()
 	print(arg.firstargName)
-
+	
+Find type of object; using syntax   type(object)
+FORLOOP: 
+	ENUMERATE:
+		presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe", "Adams", "Jackson"]
+		for num, name in enumerate(presidents, start=1):
+			print(presidents[num])
+	ZIP:
+		colors = ["red", "green", "blue", "purple"]
+		ratios = [0.2, 0.3, 0.1, 0.4]
+		for color, ratio in zip(colors, ratios):
+			print("{}% {}".format(ratio * 100, color))	

