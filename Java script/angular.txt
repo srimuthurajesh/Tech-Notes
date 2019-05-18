@@ -6,7 +6,7 @@ ng –version						#to check angular cli version
 ng new projectname				#to create new angular project
 ng serve						#to run the project
 ng generate module modulename			#to create new module
-ng generate component componentname		#to create new component
+ng generate component componentname	--spec false	#to create new component
 
 
 /** adding boostrap to the project **/
