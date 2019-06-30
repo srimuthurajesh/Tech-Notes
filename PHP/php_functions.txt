@@ -42,7 +42,7 @@ FUNCTIONS
 	basename()
 	chgrp()
 	chmod()
-	create_function9)
+	create_function()
 	get_class_methods()
 	pathinfo()
 	mkdir()

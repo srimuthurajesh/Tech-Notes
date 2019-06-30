@@ -262,8 +262,8 @@ INHERITANCE: php support 	1.single and
 
 
 POLYMORPHISM: abilty to define method in many forms
-	method overriding – Normal happen with same function name
-	method overloading -  using magin functions_call, __set etc
+	method overriding – php does not allowed two same func names. We can use it in inheritance.
+	method overloading -  only works with magic functions like _call, __set etc
 
 FINAL keyword will avoid overriding	//act as super keyword
 	final method: cannot be overload while being inherited
