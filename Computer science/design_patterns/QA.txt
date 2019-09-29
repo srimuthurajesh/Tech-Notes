@@ -1,0 +1,4 @@
+Design patterns types:
+	creational patterns
+	Structural patterns
+	Behavioural patterns

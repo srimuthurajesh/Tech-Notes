@@ -1,0 +1,41 @@
+SQL- Structured query language
+
+Row is called as “record”
+Each block are called as “cells” or “fields”
+Unique value: can be more than one
+Primary value: only one 
+
+DDL Data Definition Language: create, modify struture of database
+	Create 
+	Alter 
+	Truncate 
+	Drop 
+	Rename 
+
+DML Data Manipuulation Language: CRUD
+	insert 
+	select
+	update 
+	delete  
+	
+DCL Data Control Language: roles & permission 
+	Grant 
+	Revoke
+
+TCL Transactoin Control Language: for transactions
+	Commit
+	Rollback
+	savepoint
+	set transaction
+
+Mysql commandline:
+	mysql –u root –p
+	show databases;
+	use databasename;
+	show tables;
+
+Mysql Engines:
+	InnoDB - current default engine, for concurrecy, transactions, row level locking
+	mysam  - default engine before mysql 5.5, for speed
+	heap ex.csv,archieve
+	

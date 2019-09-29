@@ -5,8 +5,11 @@ ng –version						#to check angular cli version
 
 ng new projectname				#to create new angular project
 ng serve						#to run the project
-ng generate module modulename			#to create new module
-ng generate component componentname	--spec false	#to create new component
+
+ng generate module modulename			
+ng generate component componentname	
+ng generate pipe pipename
+ng generate service servicename
 
 
 /** adding boostrap to the project **/
@@ -18,8 +21,7 @@ angular-cli.json, add "styles": [ "../node_modules/bootstrap/dist/css/bootstrap.
 import { FormsModule } from '@angular/forms';	//in module.ts
 
 #DATA BINDING
-	String interpolation:  {{comments}}
-	function interpolation: {{functionName()}}
+	String/function interpolation:  {{comments}},{{functionName()}}
 	Property binding: [property]="data"
 	Event binding: (event)="expression"
 	Two way binding: [(ngModel)]="data"
@@ -46,10 +48,15 @@ HOW ANGULAR START WORKING:
 	then -> in that bootstrap array we mention the component to load first
 
 #MODULE
-	same like component, has export class but it has module decorator.
-	it has 4 properties: declarations, imports, providers, bootstrap
+	Group the components, directives, pipes, and services
+	it has 4 properties: 
+		1.declarations-array of components created
+		2.imports-array of modules
+		3.providers-array of services, 
+		4.bootstrap-main app component for starting the execution
 
 #DIRECTIVES:
+	Three types of Directives- Component,Structural,Attribute
 	IF ELSE CASE:
 		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
 		<ng-template #anotherTag> <span>else case</span><ng-template>
@@ -59,4 +66,17 @@ HOW ANGULAR START WORKING:
 		<span [ngClass]	="{className: status=='1'}">RAJESH</span>
 	NG-FOR:
 		<span *ngFor="let i of names; let n =index"></span>	
-			
+
+#PIPES  i.e filters
+	{{comments|uppercase}}
+	{{comments|lowercase}}
+	{{6589.23 | currency:"USD"}}
+	{{todaydate | date:'d/M/y'}}
+	{{todaydate | date:'shortTime'}}	
+	{{ jsonval | json }}
+	{{00.54565 | percent}}
+	{{string | slice:2:6}}		
+	
+
+#ROUTING:	
+	

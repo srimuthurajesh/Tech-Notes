@@ -1,0 +1,49 @@
+1.Which directory external modules are stored?
+  	node_modules
+2.How to add external css?
+	angular.cli.json add css file path in style array  
+4.What is decorators?
+	It is a function prefixed with '@' immediately followed by class,property,method,parameter. Perfom modification of class without altering
+5.Building block of Angular
+	Modules :
+	Component :
+	Template :
+	Directives :
+	Data binding :
+	Services : share code in diff components
+	Dependency injection : when component is dependent on another component
+	Routing : navigating to different pages using links
+6.What is transpiling?
+	converting typescript into javscript
+7.What is @input @ouput
+	@input - passing data from parent to child component
+	@output - passing event from child to parent component
+8.What is data binding?
+	property binding
+	event binding
+	two way binding			
+9.Sequence of angular lifecycle
+	OnChange()
+	OnInint()
+	Docheck()
+	AfterContentInit()
+	AferContentChecked()
+	AfterViewInit()
+	AfterViewChecked()
+	OnDestroy()
+10.What is Subscribe method?
+	Whenever subscribe method is called, observable happens	
+11.What is AsyncPipe?
+	When observable or promise return something, we need temporary property to hold the content and then bind to template, but with Ayncpipe we can directly used it in template
+12.Explain Authentication
+	After server side login, json web token JWT is given to client
+13.Explain Authorization
+	User not has access to everything
+14.What are pipes?
+	it is used to change the output of the template data
+15.Why typescript?
+	Js is not fully oops, supports all browser		
+16.What is AOT?
+	Angular Ahead-of-time compiler.				
+
+			 	

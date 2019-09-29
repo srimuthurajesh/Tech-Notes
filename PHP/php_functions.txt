@@ -1,8 +1,8 @@
 FUNCTIONS
-	function_exists()-  Return TRUE if the given function has been defined
-	function_get_args()- Return array of arguements  
+	function_exists()		-  Return TRUE if the given function has been defined
+	function_get_args()		- Return array of arguements  
 	function_get_arg($index)- Return arguement value with given index
-	function_num_arg()- Return number of arguements  
+	function_num_arg()		- Return number of arguements  
 	password_hash()
 	password_verify()
 	var_dumb()
