@@ -1,0 +1,39 @@
+SPRING
+	1998 -2002 by spring.org- Rod johnson
+	interface 21 - old name
+
+- builted by using 	1.Run time polymorphism 
+			2.hasa relationship(interface)
+
+IOC - is a container, at core of spring framework, create object, wire them, manage them, configure them
+Bean - Object inside spring container
+
+LIFE CYCLE OF A BEAN : 
+-> Object created using singleton or prototype. We can mention @scope(value="prototype")
+
+DISPATCHER SERVLET:- front controller & handles entire http request response
+HANDLER MAPPING:- Helps to choose controller
+			1.BeanNameUrlHandlerMapping
+			2.SimpleUrlHandlerMapping
+			3.ControllerClassNameHandlerMapping
+			4.DefaultAnnotationHandlerMapping 
+	
+VIEW RESOLVER:- Maps view name to actual views
+			1.InternalBasedViewResolver
+			2.XmlViewResolver
+			3.ResourceBundleViewResolver
+			4.UrlBasedViewResolver
+			5.VelocityViewResolver
+
+SERVLET MAPPING : indicates which java servlet should used for the given url
+			<servlet-mapping>
+				<servlet-name>dispatcher-search</servlet-name>
+				<url-pattern>/search</url-pattern>			
+			</servlet-mapping>
+
+@Controller
+@RequestMapping
+@ModelAttribute
+@SessionAttribute
+@PathVariable
+	

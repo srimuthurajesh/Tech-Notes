@@ -16,12 +16,6 @@ en_US
 <jsp:include page="headfile.html" /> //to add header file
 <jsp:include page="footerfile.jsp"/>// ro add footer file
 
-DROP DOWN LIST
-<select name="country">
- <option>Brazil</option>
-<option>japan</option>
-<option>india</option>
-</select>
 
 FORMS
 

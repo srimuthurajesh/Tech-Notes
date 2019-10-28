@@ -463,7 +463,7 @@ TYPES OF ERROR:
 	1.Notice – small, non-critical error  (E_NOTICE, E_USER_NOTICE)
 	2.warning- error does not terminate script (E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED)
 	3.Fatal error -  critical error, cause script to terminate (E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR)
-	3.Parse erro – syntax errorr (E_PARSE)
+	3.Parse error – syntax error (E_PARSE)
 	5.Strick standard notices - suggestions	(E_STRICT)
 	
 EXCEPTION HANDLING:
