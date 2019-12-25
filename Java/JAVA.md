@@ -148,7 +148,7 @@ Level myVar = Level.MEDIUM;
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
 
- **Wrapper class**:  wrap around primitive datatype & give object appearence. 
+ **Wrapper class**:  wrap around primitive datatype & give object appearence. \
  Advantages: 
  -call by reference supports only in object
  -serialization supports object
