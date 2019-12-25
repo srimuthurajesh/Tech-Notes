@@ -1,5 +1,5 @@
 Java SE\
-Java EE - servelets, web projects\ 
+Java EE - servelets, web projects \ 
 Java ME\
 
 ```
@@ -33,7 +33,7 @@ service() - handle both get post\
 doGet() - handle get method\
 doPost() - handle post method\
 
-**Call servlet from another servlet:\**
+**Call servlet from another servlet:**
 ``` 
     req.setAttribute("a","3");   //use res.getAttribute("a"); in another servlet
     RequestDispatcher rd = req.getRequestDispatcher("anotherServeletName"); 
