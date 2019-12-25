@@ -1,5 +1,5 @@
 Java SE\
-Java EE  servelets, web projects \ 
+Java EE  servelets, web projects\ 
 Java ME\
 
 ```
