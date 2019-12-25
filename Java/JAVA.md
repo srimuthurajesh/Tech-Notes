@@ -161,10 +161,11 @@ Integer i = Integer.valueOf(a); (or) Integer i =a;
 	interface A {void show();}
 	A obj = new A()->{....}`
 	```
+**Constructor** : used to intinalize the object, has no return type, must have the class name.	cannot inherited, cannot make constructor final 	
 **Object**:   instant of a class
 ``` 
 ClassName obj = new ClassName(); //
-(heap) reference = (stack) instance
+LHS (heap) reference = RHS (stack) instance
 
 ```
 *Anonymous object* : one time use.
@@ -173,14 +174,145 @@ new ClassName().functionName();
 new ClassName().variableName = value`
 ```
 *Functions of object class:*
-5. toString()  - String representation of an Object 
-6. hasCode() - JVM generates a unique numbe
-7. equals(Object obj) - Compares the given object to “this” object 
-8. getClass() - Returns the class object of “this” object ``` Class c = obj.getClass(); c.getClassName();```
-9. finalize() -  called just before an object is garbage collected
-10. clone() - returns a new object
-11. wait(), notify() notifyAll()  - related to Concurrency 
+	1. toString()  - String representation of an Object 
+	2. hasCode() - JVM generates a unique numbe
+	3. equals(Object obj) - Compares the given object to “this” object 
+	4. getClass() - Returns the class object of “this” object ``` Class c = 		obj.getClass(); c.getClassName();```
+	5. finalize() -  called just before an object is garbage collected
+	6. clone() - returns a new object
+	7. wait(), notify() notifyAll()  - related to Concurrency 
 
 *4 ways to create object :*
-12. New keyword
-13. 
+	1. New keyword
+	2. clone()   
+	3. class.forName("classname").newInstance();
+	4. Deserialization while readObject()
+*Garbage collection*: automatic destruction, if no references to an object exist
+									System.gc(); invoke farbage collection.
+it is caused by three ways: 
+	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;
+	2. while assigning reference to other         obj1=obj2
+	3. while using anonymous object
+
+
+*Finalize()* : Called before GC
+
+**Methods**: lines of instruction inside a block with a name and arguement
+pass by reference: done by passing object
+var-arg :  void methodname(int...a){//use as a[];}
+**Encapsulation**: 
+	1. Public- Any class any package
+	2. private - Specified Class
+	3. protected –subsiding class(inheritance)
+	4. Default- Specific package - default if no specifier mentioned
+Note: we cannot use private, protected in class, but we can use in innerclass 
+**Inheritances IS-A**: one class acquires the properties of another class. 
+if I call a constructor of child class, first parent class constructors will execute than only base class constructor
+1. Single inheritance
+2. Multilevel inheritance
+3. Hierarchical inheritance
+*Super keyword* :  ```super.variablename; super.methodname(); super();```
+
+**Polymorphism**: ability to define a method(constructor) in many forms
+*Method overriding* : same method name, same no. of arguements
+*Method overloading* : same method name, diff no. of arguements
+**Abstraction** : Hiding the implementation
+	1. Abstract(0 to 100% ) 
+	2. Interface (100%) 
+					a) Normal interface
+					b) Marker interface - empty body
+					c) Functional interface - have only one method declaration
+
+**Input/Ouput**
+**Serialization** : mechanism of writing obj into byte stream, implement serializable marker interface
+```
+FileOuputStream file = new FileOutputStream(filename);
+ObjectOuputStream out = new ObjectOuputStream(file);
+out.writeObject(object); out.close(); file.close();
+
+FileInputStream file = new FileInputStream(filename);
+ObjectInputStream in = new ObjectInputStream(file);
+in.readObject();  //new object create 
+```
+
+**Exception handling**:  Unexpected event that terminate program
+1. checked expception - ioexception, sqlexception
+2. unchecked exception - nullpointerexception
+3. error - virtual machine error
+```
+try{
+	throw new exception_name(“”);        
+}
+catch(exception e){ }
+catch(arithmeticException|Exception e){} //this is multicatch
+finally{}// occur for sure even though exception handled or not.
+```
+*Throws* :  void methodName throws Exeception{ }
+
+**Muti threading**: concurrent execution, subset process
+```
+1. class MyClass implements Runnable{
+2 .class MyClass extend Thread{
+	public void run(){}
+}
+MyClass obj = new MyClass(); 
+obj.start(); //run func will execute
+```
+*Difference states of Thread :*
+	1. New - obj of thread created but start not yet called
+	2. Runnable - start called but no cpu available, so not running
+	3. Running - start called running
+	4. Blocked/waiting - wait for i/o or another thread
+	5. Terminated/Dead - completed
+	
+*Priority of a Thread*: (Range 1-10) (default-5)
+```
+threadObj.setPriority(8);
+threadObj.setPriority(Thread.MIN_PRIORITY) //1
+threadObj.setPriority(Thread.MAX_PRIORITY) //10
+threadObj.setPriority(Thread.NORM_PRIORITY) //5
+```
+*Synchronized method* - prevent multiple thread execute on it
+*Synchronized block* - synchronized(){ }
+*Static synchronization* - synchronized static void func(){  }
+*Join* : wait for particular thread to complete
+```thread3.join(); thread4.join(200); //wait for 200ms```
+*Yield* : change thread Running to Runnable, give chance to other wait thread
+*Sleep* : ```Thread.sleep(1000);``` //goes to runnable for given time
+*Executer service* : provide thread pool
+```
+ExecutorService execService = Executor.newCacheThreadPool();
+ExecutorService execService = Executor.newFixedThreadPool();
+ExecutorService execService = Executor.newSingleThreadPool();
+```
+Methods in multithreading:
+threadObj.start()- start thread by calling run method
+tObj.getName()- Get thread’s name
+threadObj.getPriority()-Get thread priority
+threadObj.isAlive()- check if thread is running
+threadObj.join()-wait for thread to terminate
+threadObj.wait()- notify and wake up thread
+
+*Inter thread co operation*:  sync threads communicate with each other by:
+1. wait-causes current thread to release lock wait until  notify(), notifyall()
+2. notify()-wakes up a single thread that waiting for object monter 
+3. notifyAll()- wakes up all threads that waiting for object monter
+
+**Collections** : framework/container to access prepackaged data structure.
+1. *List*
+			- ArrayList	- dynamic array
+			- LinkedList - dynamic array with insertion efficient
+			- Vector - thread safe, same like arraylist
+2. *Queue*
+		- Priority queue 
+		- ArrayDeque
+		- ArrayBlocking queue
+3. *Set*
+		- Hashset 
+		- LinkedHasedSet
+		- treeSet	
+4. *Map*
+	-	HashMap - No null allowed
+	-	HashTable - Null allowed, slow, thread safe
+	-	TreeMap
+	-	NavigableMap
