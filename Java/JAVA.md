@@ -322,6 +322,8 @@ threadObj.wait()- notify and wake up thread
 2. notify()-wakes up a single thread that waiting for object monter 
 3. notifyAll()- wakes up all threads that waiting for object monter
 
+---
+
 **Collections** : framework/container to access prepackaged data structure.
 1. *List*
 	- 	ArrayList	- dynamic array
