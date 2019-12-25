@@ -88,7 +88,7 @@ while(st.hasMoreTokens()){
 
 ```
 
-**Operators**
+**Operators** :
 
 |  Operators| Symbols  |
 |--|--|
@@ -113,12 +113,14 @@ Level myVar = Level.MEDIUM;
 **Null** : case sensitive, not falls under any type, null==null is true
 
 **Decisions making**:
+
         1. if(con){ exp1; }
         2. if(con){ exp1; } else{ exp2; }
         3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
         4. Tenary operator-condition ? expersion 1: expersion 2;
 
-**Looping**:       
+**Looping**:
+
         1. while(con){ body; }
         2. do{ body }while(condition);
         3. for(intialize counter;test condition;inc or dec counter){ body; }
