@@ -29,6 +29,13 @@ public class MyServlet extends HttpServlet{
 </web-app>
 ```
 
-service() - both get post\
-doGet() - get method\
-doPost() - post method\
+service() - handle both get post\
+doGet() - handle get method\
+doPost() - handle post method\
+
+**Call servlet from another servlet:\**
+``` 
+    req.setAttribute("a","3");   //use res.getAttribute("a"); in another servlet
+    RequestDispatcher rd = req.getRequestDispatcher("anotherServeletName"); 
+    rd.forward(req,res); 
+```
