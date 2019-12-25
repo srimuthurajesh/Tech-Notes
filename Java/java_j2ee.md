@@ -88,3 +88,12 @@ String username = ctx.getInitParameter("username");
 
 **Annotations** :
 @WebServlet("/url")
+
+---
+**JSP**:
+```
+<%= %> jsp expression
+<%   %> jsp scriplet
+<%!  %> jsp declaration // while using functions
+<%@ page import= "      .*"%> // to import class or package
+```
