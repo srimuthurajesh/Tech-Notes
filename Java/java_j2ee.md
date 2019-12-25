@@ -48,12 +48,16 @@ req.sendRedirect("servletName");  // in browser url get changed
 ```
 
 **Session**:
+```
 HttpSession session = res.getSession();
 session.setAttribute("K","3");
 session.setAttribute("k");
 session.removeAttribute("k");
+```
 
 **Cookies**
+```
 Cookie cookie = new Cookie("k",k);
 res.addCookie(cookie);
 Cookie cookie[] = res.getCookies();
+```
