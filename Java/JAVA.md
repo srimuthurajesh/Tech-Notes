@@ -150,10 +150,10 @@ Note: finalize() - called just before an object is garbage collected. overrides 
 
  **Wrapper class**:  wrap around primitive datatype & give object appearence. \
  Advantages: 
- -call by reference supports only in object
- -serialization supports object
- -collection framework
- -java util package 
+ - call by reference supports only in object
+ - serialization supports object
+ - collection framework
+ - java util package 
  *Autoboxing:* int into integer
 ``` 
 int a=20;
