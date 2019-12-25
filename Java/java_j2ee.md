@@ -1,6 +1,6 @@
 Java SE\
 Java EE servelets, web projects\
-Java ME\
+Java ME
 
 ```
 package myproject;
