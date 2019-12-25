@@ -85,3 +85,6 @@ String username = ctx.getInitParameter("username");
 ServletConfig ctx = getServletConfig();
 String username = ctx.getInitParameter("username");
 ```
+
+**Annotations** :
+@WebServlet("/url")
