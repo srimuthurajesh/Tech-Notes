@@ -24,9 +24,9 @@ System.out.printf(“%d”,$i); //print string stream
 **Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	 
 
 **Comments:** \
-1.Singleline: // \
-2.Multiline: /*.. */ \
-3.Documentation: /**…\*/
+1. Singleline: // \
+2. Multiline: /*.. */ \
+3. Documentation: /**…\*/
 
 **Packages:**  Collection of similar classes, interfaces and sub packages.
 1.built-in packages 	2.userdefined
