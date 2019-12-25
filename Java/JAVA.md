@@ -5,8 +5,8 @@ JVM - execute byte code to machine code
 ```
 import java.Io.*;	//this package used while code in notepad
 class Hello{
-public static void main(String[]args){
-	System.out.println(“hii rajesh kanna”); 
+	public static void main(String[]args){
+		System.out.println(“hii rajesh kanna”); 
 	} 
 }
 ```
