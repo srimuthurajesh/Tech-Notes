@@ -46,6 +46,7 @@ how to import using fully qualified name without import keyword: package classna
 3. Static variable: Declare as static have only one copy
 
 **Datatype:** Predefined memory storage
+
 | Name        | Length           | Size  |
 | ------------- |:-------------:| -----:|
 | byte      | -128 to 127| 1 byte |
