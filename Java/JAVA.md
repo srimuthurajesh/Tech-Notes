@@ -1,6 +1,8 @@
 ## Java
 JDK - Compiler + libraries
+
 JRE - Interpreter + JVM
+
 JVM - execute byte code to machine code
 ```
 import java.Io.*;	//this package used while code in notepad
