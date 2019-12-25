@@ -233,10 +233,12 @@ if I call a constructor of child class, first parent class constructors will exe
 3. Hierarchical inheritance
 *Super keyword* :  ```super.variablename; super.methodname(); super();```
 
-**Polymorphism**: ability to define a method(constructor) in many forms
-*Method overriding* : same method name, same no. of arguements
+**Polymorphism**: ability to define a method(constructor) in many forms\
+*Method overriding* : same method name, same no. of arguements\
 *Method overloading* : same method name, diff no. of arguements
+
 **Abstraction** : Hiding the implementation
+
 	1. Abstract(0 to 100% ) 
 	2. Interface (100%) 
 					a) Normal interface
