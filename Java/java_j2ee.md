@@ -28,3 +28,7 @@ public class MyServlet extends HttpServlet{
  </servlet-mapping>
 </web-app>
 ```
+
+service() - both get post\
+doGet() - get method\
+doPost() - post method\
