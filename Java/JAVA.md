@@ -72,13 +72,13 @@ rajesh=new int[3];
 **String:**  class represents sequence of char
 - implements Serializable, Comparable and CharSequence interfaces
 - *String creation*: 
-- 1. String - by string literal or new keyword 
-- 2. StringBuffer - mutable, thread safe
-- 3. StringBuilder - mutable, no thread safe, efficient
+ 	1. String - by string literal or new keyword 
+ 	2. StringBuffer - mutable, thread safe
+ 	3. StringBuilder - mutable, no thread safe, efficient
 - *String comparision*: 
-- 1. ```s1.equals(s2);```  check for each char are same or not
-- 2. ```s1==s2;```  check address is same or not
-- 3. ```s1.compareTo(s2);``` compare string lexicographically.
+	1. ```s1.equals(s2);```  check for each char are same or not
+	2. ```s1==s2;```  check address is same or not
+	3. ```s1.compareTo(s2);``` compare string lexicographically.
 - *String tokenizer*: break a string into tokens
 ```
 StringTokenizer st = new StringTokenizer("my name is raj");
