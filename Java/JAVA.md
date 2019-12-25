@@ -327,15 +327,15 @@ threadObj.wait()- notify and wake up thread
 	- 	ArrayList	- dynamic array
 	- 	LinkedList - dynamic array with insertion efficient
 	- 	Vector - thread safe, same like arraylist
-2. *Queue*
+2. *Queue* - FIFO
 	- 	Priority queue 
-	- 	ArrayDeque
+	- 	ArrayDeque 
 	- 	ArrayBlocking queue
-3. *Set*
+3. *Set* - does not allow duplicate
 	- 	Hashset 
 	- 	LinkedHasedSet
 	- 	treeSet	
-4. *Map*
+4. *Map* - has string as key
 	-	HashMap - No null allowed
 	-	HashTable - Null allowed, slow, thread safe
 	-	TreeMap
