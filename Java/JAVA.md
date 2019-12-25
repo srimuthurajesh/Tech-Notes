@@ -2,8 +2,6 @@
 JDK - Compiler + libraries
 JRE - Interpreter + JVM
 JVM - execute byte code to machine code
-
-My first program:
 ```
 import java.Io.*;	//this package used while code in notepad
 class Hello{
