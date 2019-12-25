@@ -189,6 +189,7 @@ new ClassName().functionName();
 new ClassName().variableName = value`
 ```
 *Functions of object class:*
+
 	1. toString()  - String representation of an Object 
 	2. hasCode() - JVM generates a unique numbe
 	3. equals(Object obj) - Compares the given object to “this” object 
@@ -198,29 +199,33 @@ new ClassName().variableName = value`
 	7. wait(), notify() notifyAll()  - related to Concurrency 
 
 *4 ways to create object :*
+
 	1. New keyword
 	2. clone()   
 	3. class.forName("classname").newInstance();
 	4. Deserialization while readObject()
+	
 *Garbage collection*: automatic destruction, if no references to an object exist
 									System.gc(); invoke farbage collection.
 it is caused by three ways: 
+
 	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;
 	2. while assigning reference to other         obj1=obj2
 	3. while using anonymous object
-
-
 *Finalize()* : Called before GC
 
 **Methods**: lines of instruction inside a block with a name and arguement
 pass by reference: done by passing object
 var-arg :  void methodname(int...a){//use as a[];}
+
 **Encapsulation**: 
+
 	1. Public- Any class any package
 	2. private - Specified Class
 	3. protected –subsiding class(inheritance)
 	4. Default- Specific package - default if no specifier mentioned
 Note: we cannot use private, protected in class, but we can use in innerclass 
+
 **Inheritances IS-A**: one class acquires the properties of another class. 
 if I call a constructor of child class, first parent class constructors will execute than only base class constructor
 1. Single inheritance
