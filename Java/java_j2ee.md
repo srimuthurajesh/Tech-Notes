@@ -61,3 +61,27 @@ Cookie cookie = new Cookie("k",k);
 res.addCookie(cookie);
 Cookie cookie[] = res.getCookies();
 ```
+
+**ServletContext**
+```
+<context-param>
+  <param-name>username</param-name>
+  <param-value>muthu</param-value>
+</context-param>  
+
+ServletContext ctx = getServletContext();
+String username = ctx.getInitParameter("username");
+```
+**ServletConfig**
+```
+<servlet>
+  <servlet-name>add</servlet-name>
+  <servlet-class>com.AddServlet</servlet-class>
+  <init-param>
+    <param-name>username<param-name>
+    <param-value>muthu<param-value>
+  </init-param>
+</servlet>
+ServletConfig ctx = getServletConfig();
+String username = ctx.getInitParameter("username");
+```
