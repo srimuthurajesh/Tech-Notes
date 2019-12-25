@@ -299,7 +299,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 *Synchronized block* - synchronized(){ }\
 *Static synchronization* - synchronized static void func(){  }\
 *Join* : wait for particular thread to complete
-```thread3.join(); thread4.join(200); //wait for 200ms```
+```thread3.join(); thread4.join(200); //wait for 200ms```\
 *Yield* : change thread Running to Runnable, give chance to other wait thread\
 *Sleep* : ```Thread.sleep(1000);``` //goes to runnable for given time\
 *Executer service* : provide thread pool
@@ -324,17 +324,17 @@ threadObj.wait()- notify and wake up thread
 
 **Collections** : framework/container to access prepackaged data structure.
 1. *List*
-			- ArrayList	- dynamic array
-			- LinkedList - dynamic array with insertion efficient
-			- Vector - thread safe, same like arraylist
+	- 	ArrayList	- dynamic array
+	- 	LinkedList - dynamic array with insertion efficient
+	- 	Vector - thread safe, same like arraylist
 2. *Queue*
-		- Priority queue 
-		- ArrayDeque
-		- ArrayBlocking queue
+	- 	Priority queue 
+	- 	ArrayDeque
+	- 	ArrayBlocking queue
 3. *Set*
-		- Hashset 
-		- LinkedHasedSet
-		- treeSet	
+	- 	Hashset 
+	- 	LinkedHasedSet
+	- 	treeSet	
 4. *Map*
 	-	HashMap - No null allowed
 	-	HashTable - Null allowed, slow, thread safe
