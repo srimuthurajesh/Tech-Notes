@@ -164,6 +164,8 @@ Integer i = Integer.valueOf(a); (or) Integer i =a;
  Integer a = new Integer(3);
  int i = a.intValue(a);  (or) int j=a;
  ```
+ 
+---
 
 **Object oriented programming**
 **Class**: template or blueprint for object (contains states & behaviour)
@@ -245,6 +247,8 @@ if I call a constructor of child class, first parent class constructors will exe
 					b) Marker interface - empty body
 					c) Functional interface - have only one method declaration
 
+---
+
 **Input/Ouput**
 **Serialization** : mechanism of writing obj into byte stream, implement serializable marker interface
 ```
@@ -256,6 +260,9 @@ FileInputStream file = new FileInputStream(filename);
 ObjectInputStream in = new ObjectInputStream(file);
 in.readObject();  //new object create 
 ```
+
+
+---
 
 **Exception handling**:  Unexpected event that terminate program
 1. checked expception - ioexception, sqlexception
@@ -270,6 +277,9 @@ catch(arithmeticException|Exception e){} //this is multicatch
 finally{}// occur for sure even though exception handled or not.
 ```
 *Throws* :  void methodName throws Exeception{ }
+
+
+---
 
 **Muti threading**: concurrent execution, subset process
 ```
