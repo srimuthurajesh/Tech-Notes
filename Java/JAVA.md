@@ -86,8 +86,10 @@ while(st.hasMoreTokens()){
 	st.nextToken(); //prints //my //name //is //raj
 }
 
-**Operators**
 ```
+
+**Operators**
+
 |  Operators| Symbols  |
 |--|--|
 |Arithmetic Operator  |**+ - * / %**  |
