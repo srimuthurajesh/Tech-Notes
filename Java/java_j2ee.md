@@ -1,5 +1,5 @@
 Java SE\
-Java EE - servelets, web projects \ 
+Java EE  servelets, web projects \ 
 Java ME\
 
 ```
@@ -32,6 +32,7 @@ public class MyServlet extends HttpServlet{
 service() - handle both get post\
 doGet() - handle get method\
 doPost() - handle post method\
+
 
 **Call servlet from another servlet:**
 ``` 
