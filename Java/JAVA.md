@@ -154,7 +154,7 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - serialization supports object
  - collection framework
  - java util package 
- *Autoboxing:* int into integer
+ \*Autoboxing:* int into integer
 ``` 
 int a=20;
 Integer i = Integer.valueOf(a); (or) Integer i =a;
@@ -175,7 +175,8 @@ Integer i = Integer.valueOf(a); (or) Integer i =a;
 	interface A {void show();}
 	A obj = new A()->{....}`
 	```
-**Constructor** : used to intinalize the object, has no return type, must have the class name.	cannot inherited, cannot make constructor final 	
+**Constructor** : used to intinalize the object, has no return type, must have the class name.cannot inherited, cannot make constructor final 	
+
 **Object**:   instant of a class
 ``` 
 ClassName obj = new ClassName(); //
