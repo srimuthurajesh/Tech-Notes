@@ -63,7 +63,11 @@ how to import using fully qualified name without import keyword: package classna
 Byte -> short -> int -> long -> float -> double
 
 **Array:** Group of similar datatype variables to a variable name
-```int rajesh[]; rajesh=new int[3]; (or) int rajesh[]=new int[3];```
+```
+int rajesh[]; 
+rajesh=new int[3]; 
+(or) int rajesh[]=new int[3];
+```
 
 **String:**  class represents sequence of char
 - implements Serializable, Comparable and CharSequence interfaces
