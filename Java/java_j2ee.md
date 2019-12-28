@@ -92,8 +92,8 @@ String username = ctx.getInitParameter("username");
 ---
 **JSP**:
 ```
-<%= %> jsp expression
-<%   %> jsp scriplet
-<%!  %> jsp declaration // while using functions
-<%@ page import= "      .*"%> // to import class or package
+<%@  %> jsp directive   // <%@ page import= "      .*"%> // to import class or package
+<%!  %> jsp declaration // int a =0;
+<%   %> jsp scriplet    // a= c+ d; 
+<%=  %> jsp expression  // equals to out.println();
 ```
