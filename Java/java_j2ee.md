@@ -121,7 +121,7 @@ session - HttpSession\
 application - (ServletContext)\
 config - (ServletConfig)
 
-**JSTL - Java standard tag libray**
-<%@ taglib prefix="c" url="http://java.sun.com/jsp/jstl/core" %>
+**JSTL - Java standard tag libray**:
+<%@ taglib prefix="c" url="http://java.sun.com/jsp/jstl/core" %> \
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
 
