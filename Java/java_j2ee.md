@@ -96,8 +96,8 @@ String username = ctx.getInitParameter("username");
 <%   %> jsp scriplet    // a= c+ d; 
 <%=  %> jsp expression  // equals to out.println();
 <%@  %> jsp directive   // <%@ page import= "      .*"%> // to import class or package
-                           <%@ include
-                           <%@ taglib   
+                           <%@ include file= "" %>
+                           <%@ taglib uri="url" prefix="fx" %>    <fx:h1>
 ```
 **Attributes for @page**:\
 language="any scripting lang"\
@@ -106,9 +106,18 @@ import="importList"\
 session="true|false"\
 autoFlush="true|false"\
 contentType="ctinfo"\
-errorPage="error_url"\
-isErrorPage="true|false"\
+errorPage="error_url" //for exception handling\
+isErrorPage="true|false" <%exception >\
 info="information"\
 isELIgnored="true|false"\
 isThreadSafe="true|false"
+
+**Implicit objects available in jsp**:
+request (HttpServletRequest)\
+response (HttpServletResponse)\
+pageContext (PageContext)\
+out (JspWriter) - PrintWriter object\
+session - HttpSession\
+application - (ServletContext)\
+config - (ServletConfig)
 
