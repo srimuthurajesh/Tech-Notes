@@ -112,7 +112,7 @@ info="information"\
 isELIgnored="true|false"\
 isThreadSafe="true|false"
 
-**Implicit objects available in jsp**:
+**Implicit objects available in jsp**:\
 request (HttpServletRequest)\
 response (HttpServletResponse)\
 pageContext (PageContext)\
@@ -121,7 +121,18 @@ session - HttpSession\
 application - (ServletContext)\
 config - (ServletConfig)
 
-**JSTL - Java standard tag libray**:
-<%@ taglib prefix="c" url="http://java.sun.com/jsp/jstl/core" %> \
+**JSTL - Java standard tag libray**:\
+```
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> \
+<c:out value="hello world"/>
+<c:out value="${attributeName}"/>
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
-
+```
+**Sql tags**:\
+```
+<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3307/mysql" user="root" password=""/>
+<sql:query var="rs" dataSource="${db}">select * from user_details</sql:query>
+<c:foreach items="${rs.rows}" var="obj">
+  <c:out value="${obj.name}"></c:out>
+</c:foreach>
+```
