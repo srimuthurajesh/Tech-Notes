@@ -121,3 +121,5 @@ session - HttpSession\
 application - (ServletContext)\
 config - (ServletConfig)
 
+**JSTL - Java standard tag libray**
+${attributeName}     //call the jsp via requestDispatcher & setattribute
