@@ -128,7 +128,7 @@ config - (ServletConfig)
 <c:out value="${attributeName}"/>
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
 ```
-**Sql tags**:\
+**Sql tags**:
 ```
 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3307/mysql" user="root" password=""/>
 <sql:query var="rs" dataSource="${db}">select * from user_details</sql:query>
