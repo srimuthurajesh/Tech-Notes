@@ -92,8 +92,23 @@ String username = ctx.getInitParameter("username");
 ---
 **JSP**:
 ```
-<%@  %> jsp directive   // <%@ page import= "      .*"%> // to import class or package
 <%!  %> jsp declaration // int a =0;
 <%   %> jsp scriplet    // a= c+ d; 
 <%=  %> jsp expression  // equals to out.println();
+<%@  %> jsp directive   // <%@ page import= "      .*"%> // to import class or package
+                           <%@ include
+                           <%@ taglib   
 ```
+**Attributes for @page**:\
+language="any scripting lang"\
+extends="className"\
+import="importList"\
+session="true|false"\
+autoFlush="true|false"\
+contentType="ctinfo"\
+errorPage="error_url"\
+isErrorPage="true|false"\
+info="information"\
+isELIgnored="true|false"\
+isThreadSafe="true|false"
+
