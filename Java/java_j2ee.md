@@ -120,7 +120,7 @@ out (JspWriter) - PrintWriter object\
 session - HttpSession\
 application - (ServletContext)\
 config - (ServletConfig)
-
+---
 **JSTL - Java standard tag libray**:\
 ```
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> \
@@ -128,11 +128,19 @@ config - (ServletConfig)
 <c:out value="${attributeName}"/>
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
 ```
-**Sql tags**:
+**JSTL Sql tags**:
 ```
 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3307/mysql" user="root" password=""/>
 <sql:query var="rs" dataSource="${db}">select * from user_details</sql:query>
 <c:foreach items="${rs.rows}" var="obj">
   <c:out value="${obj.name}"></c:out>
 </c:foreach>
+```
+**JSTL function tags**:
+```
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+${fn:length(str)}
+${fn:split(str,",")}
+${fn:indexOf(str,"world")}
+${fn:contains(str,"world")}
 ```
