@@ -120,6 +120,7 @@ out (JspWriter) - PrintWriter object\
 session - HttpSession\
 application - (ServletContext)\
 config - (ServletConfig)
+
 ---
 **JSTL - Java standard tag libray**:\
 ```
