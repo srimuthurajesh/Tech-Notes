@@ -31,7 +31,7 @@ public class MyServlet extends HttpServlet{
 
 service() - handle both get post\
 doGet() - handle get method\
-doPost() - handle post method\
+doPost() - handle post method
 
 
 **Call servlet from another servlet:**
@@ -124,7 +124,7 @@ config - (ServletConfig)
 ---
 **JSTL - Java standard tag libray**:\
 ```
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> \
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <c:out value="hello world"/>
 <c:out value="${attributeName}"/>
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
