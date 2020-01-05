@@ -96,3 +96,9 @@ foo.age=25
   <property name="age" value="${foo.age}">
 </bean>
 ```
+
+**Bean scope**:
+```
+<bean id="" class="" scope="singleton">
+<bean id="" class="" scope="prototype">
+```
