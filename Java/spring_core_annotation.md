@@ -50,7 +50,7 @@ context.getBean("class1", Class1.class);
 
 **Destroy-method**: ```@PreDestroy```
 
-**Bean Scope **: 
+**Bean Scope**: 
 ```
 @Scope("singleton")
 @Scope("prototype")
