@@ -36,3 +36,16 @@ context.getBean("class1", Class1.class);
     @Autowired
     Class2 class;
 ```
+
+**Various other Annotations**:
+
+**Qualifier**: remove ambiquity of bean name
+```
+@Autowired
+@Qualifier("beanId")
+```
+**Component**: define the class as bean ```@Component```
+
+**Init-method**: ```@PostContruct```
+
+**Destroy-method**: ```@PreDestroy```
