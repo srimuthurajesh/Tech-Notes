@@ -58,4 +58,21 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
     <constructor-arg ref="class2Id">
   </bean>
  ```
- 
+ **XML setter injection**:
+1. create constructor injector
+  ```
+  class ClassName{
+    Class2 class2;
+    void setClass2(Class2 class2){
+        this.class2 = class2;
+    }
+  }
+  ```
+ 2. create xml file
+ ```
+  <bean id="class2Id" class="com.Class2">
+  </bean>
+  <bean id="beanId" class="com.ClassName">
+      <property name="class2" ref="class2Id">
+  </bean> 
+```
