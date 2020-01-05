@@ -102,3 +102,7 @@ foo.age=25
 <bean id="" class="" scope="singleton">
 <bean id="" class="" scope="prototype">
 ```
+**Bean lifecycle**:
+```
+<bean id="" class="" init-method="" destroy-method=""> 
+```
