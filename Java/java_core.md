@@ -352,3 +352,15 @@ threadObj.wait()- notify and wake up thread
 	-	HashTable - Null allowed, slow, thread safe
 	-	TreeMap
 	-	NavigableMap
+
+
+**Annotations**:
+1. Built-In Java Annotations used in Java code
+	a. @Override
+	b. @SuppressWarnings
+	c. @Deprecated
+2. Built-In Java Annotations used in other annotations
+	a. @Target
+	b. @Retention
+	c. @Inherited
+	d. @Documented
