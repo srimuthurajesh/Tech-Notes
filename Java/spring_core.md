@@ -76,3 +76,23 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
       <property name="class2" ref="class2Id">
   </bean> 
 ```
+**XML literal injection**
+```
+  <bean id="beanId" class="com.ClassName">
+      <property name="email" value="sri@gmail.com">
+  </bean>
+```
+**XML property file injection**
+1. create properties file
+```
+foo.email=raj@gmail.com
+foo.age=25
+```
+2. Mention in bean xml
+```
+<context:property-placeholder location="user.properties">
+<bean id="beanId" class="com.ClassName">
+  <property name="email" value="${foo.email}">
+  <property name="age" value="${foo.age}">
+</bean>
+```
