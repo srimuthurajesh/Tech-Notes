@@ -89,7 +89,7 @@ foo.age=25
 ```
 <bean id="" class="" init-method="" destroy-method=""> 
 ```
-** Enable Annotaion support**
+**Enable Annotaion support**
 ```
 <context:annotation-config />
 ```
