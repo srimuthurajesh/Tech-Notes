@@ -49,3 +49,9 @@ context.getBean("class1", Class1.class);
 **Init-method**: ```@PostContruct```
 
 **Destroy-method**: ```@PreDestroy```
+
+**Bean Scope **: 
+```
+@Scope("singleton")
+@Scope("prototype")
+@Component
