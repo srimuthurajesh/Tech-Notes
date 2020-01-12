@@ -1,6 +1,7 @@
 **AOP** : Aspects of programming means cross cutting concerns
 
-Note: we should use @EnableAspectJAutoProxy before @Configuration file.
+Note: we should use @EnableAspectJAutoProxy before @Configuration file
+<aop:aspectj-autoproxy> in xml config file        
 
 **@Aspect** - declare class 
 
