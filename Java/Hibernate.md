@@ -65,5 +65,18 @@ query.list();
 @OneToMany(fetch=fetchType.LAZY);
 @OneToMany(fetch=fetchType.EAGER)
 ```
+**Unidirection&Bidirectional**: 
 
- 
+**OneToOne,ManyToOne,OneToMany**:
+```
+@OneToOne
+@JoinColumn(name="student_detail_id")
+private StudentDetail studentDetail;
+```
+**ManyToMany**:
+```
+@ManyToMany
+@JoinTable(name="student_join",joinColumns=@JoinColumn(name="student_id"),
+                               inverseJoinColumns=@JoinColumn("student_details_id"))
+
+```
