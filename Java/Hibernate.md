@@ -38,17 +38,15 @@ session.getTransaction().commit();
 @Column - specify details of column. name,length,nullable,unique
  
 **Query interface**: 
-1. list
-2. executeQuery
-3. executeUpdate
-4. setParameter
-5. setFirstResult
-6. setMaxResult
+1. list 
+2. executeUpdate - use for delete & update
+3. setParameter - replace :values in query
+4. setFirstResult - limit start
+5. setMaxResult - limit end
 ```
-session.createQuery("from student").list();
-session.createQuery("from students where s.lastname='muthu'").list();
-session.createQuery("update student set email='rajesh@gmail.com'").executeQuery();
-session.createQuery("delete from student s where s.lastname='muthu'").executeUpdate();
-
+Query query = session.createQuery("from student s where lastname=:givenLastName");
+query.setParamter("givenLastName","muthu");
+query.setFirstResult(5);query.setMaxResult(10);
+query.list();
 ```
  
