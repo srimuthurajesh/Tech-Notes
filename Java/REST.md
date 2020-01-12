@@ -18,6 +18,7 @@
 5. @PATCH - partial update
 
 **HTTP code**
+
 Code | Message
 --- | --- 
 1xx|information
