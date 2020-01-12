@@ -1,17 +1,19 @@
-REST-Representation state transfer
-	has set of constraints, such as being stateless,uniform interface
+**REST**
+- Representation state transfer
+- has set of constraints, such as being stateless,uniform interface
 
 
-principls:
-RESOURCES-easy directory structure URL
-REPRESENTATION-json xml to represent data object
-MESSAGE - use http method
-STATELESS - 
+**Principls:**
+- RESOURCES-easy directory structure URL
+- REPRESENTATION-json xml to represent data object
+- MESSAGE - use http method
+- STATELESS - 
 
-@POST- non-idempotent method, used to create resource
-@GET
-@PUT - update/modify resource
-@DELETE
+@POST -create - non-idempotent method, used to create resource
+@GET - retrieve
+@PUT - update
+@DELETE - remove
+@PATCH - partial update
 
 Idempotent - all others http method
 Non-idempotent method - Post method
