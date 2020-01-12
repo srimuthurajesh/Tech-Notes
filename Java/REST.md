@@ -17,18 +17,19 @@
 5. @PATCH - partial update
 
 **HTTP code**
-|Code|Message|
-|---|---|
-|1xx|information|
-|2xx|success|
-|3xx|rediretion|
+|Code|Message
+|---|---
+|1xx|information
+|2xx|success
+|3xx|rediretion
 |4xx|client error,not found|
 |5xx|server error|
  
-2xx 
-3xx 
-4xx 	
-5xx 
+ 
+ Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 @Path("/sample")
 @QueryParam 
