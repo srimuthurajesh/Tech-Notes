@@ -17,7 +17,23 @@
   </init-param>
 </web-app>
 ```
-
+**1a.DispatcherServletInitializer.java**
+```
+public class DispatcherServletInitializer{
+	@Override
+	protected Class<?>[] getRootConfigClasses(){
+		return null;
+	}
+	@Override
+	protected Class<?>[] getServletConfigClasses(){
+		return new Class[]{HomeController.class};
+	}
+	@Override
+	protected String[] getServletMapping(){
+		return new String[]{"/"};
+	}
+}
+```
 **2. Configure dispatcher-servlet.xml**
 ```
 <beans>
@@ -29,7 +45,21 @@
   </bean>
 </beans>
 ```
-
+**2a. DispatcherServlet.java**
+```
+@Configuration
+@EnableWebMvc //it is <mvc:annotaion-driven/>
+@ComponentScan(basePackages="org.myApp")
+public class DispatcherServlet(){
+	@Bean
+	public ViewResolver viewResolver(){
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.prefix("WEB-INF/view/");
+		viewResolver.suffix(".jsp");
+		return viewSolver;
+	}
+}
+```
 **3. Create controller class**
 ```
 @Controller  
