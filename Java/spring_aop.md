@@ -5,12 +5,20 @@ Note: we should use @EnableAspectJAutoProxy before @Configuration file.
 **@Aspect** - declare class 
 
 **Types of Advice:**
-1. @Before - 
-2. @AfterReturning
-3. @AfterThrowing
-4. @AfterFinally
-5. @AroundAdvice
-@Before("execution(public void org.controller.display())")
+1. @Before - run before method
+2. @AfterReturning - run after method(if success)
+3. @AfterThrowing - run after method(if exception)
+4. @AfterFinally - run after method(both success/exception)
+5. @Around - run after and before method (using joinpoint.proceed())
+```
+@Around("execution(public void org.controller.display())")
+void aroundMethod(JointPoint jp){
+  Object[] args = jp.getArgs();
+  sysout("before execution of function");
+  Object result = jp.proceed(args);   //method executes
+  sysout("after execution of function");
+}
+```
 
 **@Pointcut**: enable reuse of pointcut
 ```
