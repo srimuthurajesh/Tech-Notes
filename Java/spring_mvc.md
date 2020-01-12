@@ -41,11 +41,20 @@ public class HelloController {
     }     
 }  
 ```
-### Model interface:
+---
+**Model interface:**
 ```
 public String display(Model m){
   m.addAllAttributes(Collection<?> arg);
   m.addAttribute("attributeName",attributeValue);
   return "pageName";
+}
+```
+**ModelAndView class:**
+```
+public ModelAndView display(){
+  ModelAndView m = new ModelAndView("pageName");
+  m.addObject("objectName",objValue);
+  return m;
 }
 ```
