@@ -37,7 +37,7 @@ Code | Message
 @Consumes - array of string of MIME type
 @ExceptionHandler - a method to handle all exception with not found httml message
 ```
-**FILE UPLOAD:**
+**File upload:**
 ```
 @POST
 @Consumes(MediaType.MULTIPART_FORM_DATA)
