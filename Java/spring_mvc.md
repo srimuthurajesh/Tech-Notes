@@ -1,4 +1,4 @@
-- follows MVC design pattern
+- Follows MVC design pattern
 
 **1. Configure web.xml**
 ```
