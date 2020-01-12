@@ -30,10 +30,10 @@ session.beginTransaction();
 session.save(persistantObj);
 session.getTransaction().commit();
 ```
-**Annotations:**
-@Entity - make class as entity bean/
-@Table - specify details of table. name,catalogue,schema,unique constraints/
-@Id - to mention primary key for persistant class/
-@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE/
+**Annotations:**\
+@Entity - make class as entity bean\
+@Table - specify details of table. name,catalogue,schema,unique constraints\
+@Id - to mention primary key for persistant class\
+@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE\
 @Column - specify details of column. name,length,nullable,unique
  
