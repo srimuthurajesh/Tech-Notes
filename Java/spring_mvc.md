@@ -26,7 +26,7 @@ public class DispatcherServletInitializer{
 	}
 	@Override
 	protected Class<?>[] getServletConfigClasses(){
-		return new Class[]{HomeController.class};
+		return new Class[]{DispatcherServlet.class};
 	}
 	@Override
 	protected String[] getServletMapping(){
