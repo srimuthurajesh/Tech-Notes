@@ -36,7 +36,14 @@ session.getTransaction().commit();
 @Id - to mention primary key for persistant class\
 @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE\
 @Column - specify details of column. name,length,nullable,unique
- 
+cascade - applies same operation to related entities
+
+**Object status in Hibernate**:
+1. Transient - Not associate with session(new object)
+2. Persistent - associate with session(while save, saveOrUpdate)
+3. Removed - remove(),delete()
+4. Detached - removed from session(clear,close)
+
 **Query interface**: 
 1. list 
 2. executeUpdate - use for delete & update
