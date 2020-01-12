@@ -81,14 +81,16 @@ public ModelAndView display(){
 @RequestMapping()                             //handles default url
 @GetMapping(value=".display")                 //shortcuts. also use PostMapping,PutMapping,DeleteMapping,PatchMapping
 ```
-3. @RequestParam - get request parameters
+3. **@RequestParam** - get request parameters
 ```
 @RequestMapping(value = "user") 
 String display(@RequestParam("id") String personId)       //id will come in post parameters
 String display(@RequestParam(value="id",required = false, defaultValue = "John") String personId)
 ```
-4. @PathVariable - extracts value from url
+4. **@PathVariable** - extracts value from url
 ```
 @RequestMapping(value = "user/{id}") 
 String display(@PathVariable("id") String personId)      
 ```
+5. **@SessionAttribute**:
+6. **@Qualifier("beanName")**: avoid ambiguity
