@@ -31,5 +31,5 @@ session.save(persistantObj);
 session.getTransaction().commit();
 ```
 **Annotations:**
-@Id - to mention primary key for persistant class
-@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE
+ @Id - to mention primary key for persistant class
+ @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE
