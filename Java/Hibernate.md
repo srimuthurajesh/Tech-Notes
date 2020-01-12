@@ -57,7 +57,13 @@ query.list();
 4. Detached - removed from session(clear,close)
 
 **Cascade**: apply same operation to related entities
-```@OneToOne(cascade=CascadeType.ALL)  - DETACH,MERGE,PERSIST,REFRESH,REMOVE```
-
+```
+@OneToOne(cascade=CascadeType.ALL)  - DETACH,MERGE,PERSIST,REFRESH,REMOVE
+```
+**Eager & lazy loading:** mention whether to retreive related entities or not
+```
+@OneToMany(fetch=fetchType.LAZY);
+@OneToMany(fetch=fetchType.EAGER)
+```
 
  
