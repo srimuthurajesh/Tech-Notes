@@ -9,14 +9,14 @@
 - MESSAGE - use http method
 - STATELESS - 
 
-@POST -create - non-idempotent method, used to create resource
-@GET - retrieve
-@PUT - update
-@DELETE - remove
-@PATCH - partial update
+- @POST -create - non-idempotent method, used to create resource
+- @GET - retrieve
+- @PUT - update
+- @DELETE - remove
+- @PATCH - partial update
 
-Idempotent - all others http method
-Non-idempotent method - Post method
+- Idempotent - all others http method
+- Non-idempotent method - Post method
 
 @Path("/sample")
 @QueryParam 
