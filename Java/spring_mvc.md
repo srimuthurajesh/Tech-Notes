@@ -29,3 +29,15 @@
   </bean>
 </beans>
 ```
+
+**3. Create controller class**
+```
+@Controller  
+public class HelloController {  
+@RequestMapping("/display")  
+    public String display()  
+    {  
+        return "index";  
+    }     
+}  
+```
