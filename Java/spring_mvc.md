@@ -58,3 +58,13 @@ public ModelAndView display(){
   return m;
 }
 ```
+---
+**Annotaions**:
+1. **@RequestMapping** - handles http request and map to controler methods(or class) 
+```
+@RequestMapping(value={"/display","/show"})   //handles multiple url
+```
+        
+2. @Controller
+3. @PathVariable
+4. @RequestParam
