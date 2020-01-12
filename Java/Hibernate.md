@@ -37,3 +37,18 @@ session.getTransaction().commit();
 @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE\
 @Column - specify details of column. name,length,nullable,unique
  
+**Query interface**: 
+1. list
+2. executeQuery
+3. executeUpdate
+4. setParameter
+5. setFirstResult
+6. setMaxResult
+```
+session.createQuery("from student").list();
+session.createQuery("from students where s.lastname='muthu'").list();
+session.createQuery("update student set email='rajesh@gmail.com'").executeQuery();
+session.createQuery("delete from student s where s.lastname='muthu'").executeUpdate();
+
+```
+ 
