@@ -1,6 +1,7 @@
 - **Hibernate** : framework for database interactions.
 - **ORM tool** : programming technique that maps the object to the data stored in the database.
 - **JPA tool** :  provides functionality and standard to ORM tools.
+- **dialect** : specify the type of database
 
 1. create persistant class
 2. create hiberate.cfg.xml
@@ -36,13 +37,6 @@ session.getTransaction().commit();
 @Id - to mention primary key for persistant class\
 @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE\
 @Column - specify details of column. name,length,nullable,unique
-cascade - applies same operation to related entities
-
-**Object status in Hibernate**:
-1. Transient - Not associate with session(new object)
-2. Persistent - associate with session(while save, saveOrUpdate)
-3. Removed - remove(),delete()
-4. Detached - removed from session(clear,close)
 
 **Query interface**: 
 1. list 
@@ -56,4 +50,14 @@ query.setParamter("givenLastName","muthu");
 query.setFirstResult(5);query.setMaxResult(10);
 query.list();
 ```
+**Object status in Hibernate**:
+1. Transient - Not associate with session(new object)
+2. Persistent - associate with session(while save, saveOrUpdate)
+3. Removed - remove(),delete()
+4. Detached - removed from session(clear,close)
+
+**Cascade**: apply same operation to related entities
+```@OneToOne(cascade=CascadeType.ALL)  - DETACH,MERGE,PERSIST,REFRESH,REMOVE```
+
+
  
