@@ -19,3 +19,8 @@
     </session-factory>
 </hibernate-configuration>
 ```
+3.create main class
+```
+SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml").addAnnotatedCLass(Student.class)
+```
