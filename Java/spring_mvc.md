@@ -42,6 +42,19 @@ public class HelloController {
 }  
 ```
 ---
+**HANDLER MAPPING**:- Helps to choose controller
+1. BeanNameUrlHandlerMapping
+2. SimpleUrlHandlerMapping
+3. ControllerClassNameHandlerMapping
+4. DefaultAnnotationHandlerMapping 
+	
+**VIEW RESOLVER**:- Maps view name to actual views
+1. InternalBasedViewResolver
+2. XmlViewResolver
+3. ResourceBundleViewResolver
+4. UrlBasedViewResolver
+5. VelocityViewResolver
+      
 **Model interface:**
 ```
 public String display(Model m){
