@@ -17,11 +17,18 @@
 5. @PATCH - partial update
 
 **HTTP code**
-|1xx |information|
-2xx success
-3xx rediretion
-4xx client error, not found	
-5xx server error
+| Code  | Message   |
+|---|---|
+|1xx|information|
+|2xx|success|
+|3xx|rediretion|
+|4xx|client error,not found|
+|5xx|server error|
+ 
+2xx 
+3xx 
+4xx 	
+5xx 
 
 @Path("/sample")
 @QueryParam 
