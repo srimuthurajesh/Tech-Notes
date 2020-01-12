@@ -22,5 +22,11 @@
 3.create main class
 ```
 SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml").addAnnotatedCLass(Student.class)
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedCLass(Student.class)
+                .buildSessionFactory();
+Session session = factory.getCurrentSession();
+session.beginTransaction();
+session.save(persistantObj);
+session.getTransaction().commit();
 ```
