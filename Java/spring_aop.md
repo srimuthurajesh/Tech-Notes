@@ -53,3 +53,23 @@ public void display(JointPoint jointPoint){
  log.warn("log message");
  log.trace("log message");
 ```
+---
+
+**Spring security:**
+1. Create SecurityWebApplicationInitializer.java
+```
+public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+}
+```
+2. create SecurityConfig.java
+```
+@Configuration
+@EnableWebSecurity
+public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication().withUser("john").password("secret123").roles("EMPLOYEE");
+		auth.inMemoryAuthentication().withUser("mary").password("secret123").roles("MANAGER");
+  }
+}
+```
