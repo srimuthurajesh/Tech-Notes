@@ -42,3 +42,14 @@ public void display(JointPoint jointPoint){
 }
 
 ```
+---
+**LOGGER**
+```
+ private Logger log = Logger.getLogger(getClass().getName());
+ log.info("log message");
+ log.fatal("log message");
+ log.debug("log message");
+ log.error("log message");
+ log.warn("log message");
+ log.trace("log message");
+```
