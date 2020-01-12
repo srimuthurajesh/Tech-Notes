@@ -26,10 +26,13 @@ Code|Message
 5xx|server error
  
  
- Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+ Code | Message
+--- | --- 
+1xx|information
+2xx|success
+3xx|rediretion
+4xx|client error,not found
+5xx|server error
 
 @Path("/sample")
 @QueryParam 
