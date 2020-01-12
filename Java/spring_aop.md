@@ -4,4 +4,26 @@ Note: we should use @EnableAspectJAutoProxy before @Configuration file.
 
 **@Aspect** - declare class 
 
-**Pointcut** - @Before("execution(public void org.controller.display())")
+@Before("execution(public void org.controller.display())")
+
+**@Pointcut**: enable reuse of pointcut
+```
+@Pointcut("execution(public void org.controller.display())")
+void reuseMethod(){}
+@Before("reuseMethod()")
+void methodName2(){
+}
+@Before("reuseMethod()")
+void methodName3(){
+}
+```
+**@Order** : gives order of execution to aspect class
+
+**Access method details**:
+```
+public void display(JointPoint jointPoint){
+  MethodSignature methodSig = (MethodSignature) jointPoint.getSignature();
+  Object[] args = joinPoint.getArgs();  //get arguements 
+}
+
+```
