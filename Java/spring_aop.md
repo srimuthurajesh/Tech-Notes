@@ -4,6 +4,12 @@ Note: we should use @EnableAspectJAutoProxy before @Configuration file.
 
 **@Aspect** - declare class 
 
+**Types of Advice:**
+1. @Before - 
+2. @AfterReturning
+3. @AfterThrowing
+4. @AfterFinally
+5. @AroundAdvice
 @Before("execution(public void org.controller.display())")
 
 **@Pointcut**: enable reuse of pointcut
