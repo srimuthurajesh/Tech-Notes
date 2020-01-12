@@ -1,6 +1,7 @@
 **REST**
 - Representation state transfer
 - has set of constraints, such as being stateless,uniform interface
+- controlling request based on http method not url
 
 
 **Principls:**
@@ -17,15 +18,6 @@
 5. @PATCH - partial update
 
 **HTTP code**
-Code|Message
----|---
-1xx|information
-2xx|success
-3xx|rediretion
-4xx|client error,not found
-5xx|server error
- 
- 
  Code | Message
 --- | --- 
 1xx|information
@@ -34,21 +26,22 @@ Code|Message
 4xx|client error,not found
 5xx|server error
 
+**Annotations:**
+```
+@RestController - extension of controller, handles Req Res
 @Path("/sample")
 @QueryParam 
 @PathParam
 @Produces - specify MIME media type  like text/xml,text/json
 @Consumes - array of string of MIME type
-
-
-SECURITY:
-base64 encode for authentication
-
-FILE UPLOAD:
+@ExceptionHandler - a method to handle all exception with not found httml message
+```
+**FILE UPLOAD:**
+```
 @POST
 @Consumes(MediaType.MULTIPART_FORM_DATA)
 public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
-
-REST VS SOAP
-Rest - architectural style, Representation state transfer, No WSDL file
+```
+**REST VS SOAP**\
+Rest - architectural style, Representation state transfer, No WSDL file\
 Soap - protocol, simple object access protocol
