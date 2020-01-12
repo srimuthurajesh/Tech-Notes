@@ -64,7 +64,18 @@ public ModelAndView display(){
 2. **@RequestMapping** - handles http request and map to controler methods(or class) 
 ```
 @RequestMapping(value={"/display","/show"})   //handles multiple url
+@RequestMapping(method = RequestMethod.GET)   //handles based on http get,post,delete,put,patch
+@RequestMapping()                             //handles default url
+@GetMapping(value=".display")                 //shortcuts. also use PostMapping,PutMapping,DeleteMapping,PatchMapping
 ```
-        
-3. @PathVariable
-4. @RequestParam
+3. @RequestParam - get request parameters
+```
+@RequestMapping(value = "user") 
+String display(@RequestParam("id") String personId)       //id will come in post parameters
+String display(@RequestParam(value="id",required = false, defaultValue = "John") String personId)
+```
+4. @PathVariable - extracts value from url
+```
+@RequestMapping(value = "user/{id}") 
+String display(@PathVariable("id") String personId)      
+```
