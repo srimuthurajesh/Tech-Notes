@@ -28,6 +28,8 @@ docker rm container_id
 docker run -i -t -d container_id            #i=interactive, -t=pseudo-tty -d=detach run in background
 docker run containerName initial_command
 docker exec container_id command            #execute the given command
+docker attach container_id                  #enter into shell
+docker run host_port:container_port container_id
 ```
 **Docker history**
 ```
@@ -64,4 +66,23 @@ Docker build
 ```
 docker build -t image_name
 docker build -t image_name --no-cache=true
+```
+**Docker link**: ```docker run --link redis container_id```
+**yml file:**
+```
+# docker-compose.yml
+version: '2'
+
+services:
+  web:
+    build: .
+    # build from Dockerfile
+    context: ./Path
+    dockerfile: Dockerfile
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: redis
 ```
