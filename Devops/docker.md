@@ -68,6 +68,7 @@ docker build -t image_name
 docker build -t image_name --no-cache=true
 ```
 **Docker link**: ```docker run --link redis container_id```
+
 **yml file:**
 ```
 # docker-compose.yml
@@ -85,4 +86,40 @@ services:
      - .:/code
   redis:
     image: redis
+    image: ubuntu
+    image: a4bc65fd
+```
+**Docker-compose**
+```
+docker-compose up
+docker-compose down
+
+docker-compose start
+docker-compose stop
+docker-compose pause
+docker-compose unpause
+docker-compose build          #rebuild all image
+
+#log
+docker-compose ps
+docker-compose log container_id
+```
+
+**Docker network types**:
+1. closed/None/Null network - not allowed to connect outer http
+2. Bridge network
+3. Host network - open & access to all host machine network connection
+4. Overlay network - running docker in swarm mode
+
+```
+docker run -d --net none container_id
+docker network ls                       #list the networks 
+                                        1.eth0 - bridge private 
+                                        2.lo   - loopback    
+docker network create --driver bridge network_name    #create new network 
+docker run --net network_name container_id
+docker network diconnect network_name container_id
+
+docker run --net host container_id
+
 ```
