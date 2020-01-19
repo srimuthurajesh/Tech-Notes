@@ -9,7 +9,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
-
+- **Layer**: a set of read-only files or commands that describe how to set up the underlying system
+- **Image**: an immutable layer that forms the base of the container.
+- **Container**: an instance of the image, muttable layer
+- **Registry:** a storage and content delivery system used for distributing Docker images.
+- **Repository:** a collection of related Docker images, often different versions of the same application.
 ```
 docker run containerName
 docker run -i -t -d containerName           #i=interactive, -t=pseudo-tty -d=detach run in background
