@@ -25,10 +25,12 @@ docker unpause container_id
 docker run -i -t -d container_id            #i=interactive, -t=pseudo-tty -d=detach run in background
 docker run containerName initial_command
 docker exec container_id command            #execute the given command
+```
+**Docker history**
+```
 docker ps --all                             #list all containers
 docker ps                                   #list current running containers
-docker run -rm container_id                 #remove container after executing, aka not shown in docker ps --all
+docker run -rm container_id                 #remove container after executing
 docker images                               #list images
 docker system prune                         #remove stopped containers
-
 ```
