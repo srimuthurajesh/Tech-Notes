@@ -4,11 +4,6 @@
 ```
 sudo apt install docker.io
 docker version
-
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0\
-/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
 ```
 - **Layer**: a set of read-only files or commands that describe how to set up the underlying system
 - **Image**: an immutable layer that forms the base of the container.
@@ -91,6 +86,11 @@ services:
 ```
 **Docker-compose**
 ```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0\
+/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
 docker-compose up
 docker-compose down
 
