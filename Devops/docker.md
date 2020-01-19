@@ -1,10 +1,14 @@
+**Docker** is an open-source platform for building distributed software using “containerization
 ```
 sudo apt install docker.io
+
 docker version
-docker run imageName
-docker run imageName ls
-docker run imageName overrideCommand
-docker ps                   #list onlyrunning containers
-docker ps --all             #list all containers
-docker system prune         #remove stopped containers
+docker run containerName
+docker run -i -t -d containerName           #i=interactive, -t=pseudo-tty -d=detach run in background
+docker run containerName firstCommand
+docker ps --all                         #list all containers
+docker ps                               #list current running containers
+docker images                           #list images
+docker system prune                     #remove stopped containers
+
 ```
