@@ -60,3 +60,8 @@ WORKDIR /src
 USER admin
 CMD["initial command"]
 ```
+Docker build
+```
+docker build -t image_name
+docker build -t image_name --no-cache=true
+```
