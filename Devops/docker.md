@@ -23,15 +23,40 @@ docker start container_id
 docker stop container_id
 docker pause container_id
 docker unpause container_id
+docker kill container_id
+docker rm container_id
 docker run -i -t -d container_id            #i=interactive, -t=pseudo-tty -d=detach run in background
 docker run containerName initial_command
 docker exec container_id command            #execute the given command
 ```
 **Docker history**
 ```
-docker ps --all                             #list all containers
 docker ps                                   #list current running containers
+docker ps --all                             #list all containers
 docker run -rm container_id                 #remove container after executing
 docker images                               #list images
 docker system prune                         #remove stopped containers
+docker inspect container_id                 #low level details like IP
+```
+
+**Docker hub:**
+```
+docker login --username=rajesh
+docker pull username/imageName
+docker push username/imageName
+docker tag user/image:tag user/image:newtag       #add new tag to image
+docker search searchterm
+```
+
+**Image creation**\
+Way 1: ```docker commit container_id imagename:tag```\
+Way 2: create Dockerfile
+```
+FROM debian:jessie
+RUN apt-get update
+COPY abc.txt /src/abc.txt
+ADD abc.txt /src/abc.txt
+WORKDIR /src
+USER admin
+CMD["initial command"]
 ```
