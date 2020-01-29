@@ -155,7 +155,8 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - call by reference supports only in object
  - serialization supports object
  - collection framework
- - java util package 
+ - java util package
+ - can use null value 
  \*Autoboxing:* int into integer
 ``` 
 int a=20;
