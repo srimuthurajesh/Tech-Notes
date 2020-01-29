@@ -1,7 +1,7 @@
 ## Java
-JDK - Compiler + libraries\
-JRE - Interpreter + JVM\
-JVM - execute byte code to machine code
+JDK - Compiler + libraries -For developer contains javac,debugging tools\
+JRE - Interpreter + JVM - For other users to run java program\
+JVM - execute byte code to machine code, contins JustInTime compiler
 ```
 import java.Io.*;	//this package used while code in notepad
 class Hello{
