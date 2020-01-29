@@ -61,7 +61,9 @@ how to import using fully qualified name without import keyword: package classna
 | boolean      | 0 1| depends on jvm |
 
 **Typecasting:**  Convert one datatype to another
-```int a = (int) 3.14;	//3``` \
+1. implicit casting
+2. explicit casting
+```int a = (int) 3.14;	//3``` 
 Byte -> short -> int -> long -> float -> double
 
 **Array:** Group of similar datatype variables to a variable name
