@@ -1,7 +1,9 @@
 ## Java
 JDK - Compiler + libraries -For developer contains javac,debugging tools\
 JRE - Interpreter + JVM - For other users to run java program\
-JVM - execute byte code to machine code, contins JustInTime compiler
+JVM - execute byte code to machine code, contins JustInTime compiler\
+
+Java is not fully oops language, due usage of primitive datatypes.
 ```
 import java.Io.*;	//this package used while code in notepad
 class Hello{
