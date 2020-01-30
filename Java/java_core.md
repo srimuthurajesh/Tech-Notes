@@ -253,6 +253,7 @@ if I call a constructor of child class, first parent class constructors will exe
 					a) Normal interface
 					b) Marker interface - empty body
 					c) Functional interface - have only one method declaration
+					d) defualt access modfier, method which has body	
 
 ---
 
