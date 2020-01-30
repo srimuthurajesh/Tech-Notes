@@ -249,7 +249,7 @@ if I call a constructor of child class, first parent class constructors will exe
 **Abstraction** : Hiding the implementation
 
 	1. Abstract(0 to 100% ) 
-	2. Interface (100%) 
+	2. Interface (100%) - properties are public static final by default
 					a) Normal interface
 					b) Marker interface - empty body
 					c) Functional interface - have only one method declaration
