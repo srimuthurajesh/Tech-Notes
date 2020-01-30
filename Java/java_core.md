@@ -184,7 +184,9 @@ j==i;//true   i.equal(j);//true
 	interface A {void show();}
 	A obj = new A()->{....}`
 	```
-**Constructor** : used to intinalize the object, has no return type, must have the class name.cannot inherited, cannot make constructor final 	
+**Constructor** : used to intinalize the object, has no return type, must have the class name.cannot inherited, cannot make constructor final. \
+super() must call first line of child class constructor\
+this() will call current class constructor
 
 **Object**:   instant of a class
 ``` 
