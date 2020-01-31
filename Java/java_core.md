@@ -160,16 +160,13 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - java util package
  - can use null value \ *Autoboxing:* primitive into wrapper- it uses cache value
 ``` 
-example:
-Integer i = new Integer(9);Integer j = new Integer(9);
-j==i;//false   i.equal(j);//true
-Integer i = 9;Integer j = 9;   //autoboxing happen inside
-j==i;//true   i.equal(j);//true
-
+int j=1;
+Integer i = Integer.valueof(j);  or Integer i =j;
 ```
  *Unboxing* : wrapper into primitive
  ```
- int j=6;
+ Integer i = new Integer(7);
+ int = i.intValue();  or  int j=i;
  ```
  
 ---
