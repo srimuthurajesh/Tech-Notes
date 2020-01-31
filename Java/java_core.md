@@ -82,7 +82,7 @@ rajesh=new int[3];
 - *String comparision*: 
 	1. ```s1.equals(s2);```  check for each char are same or not
 	2. ```s1==s2;```  check address is same or not
-	3. ```s1.compareTo(s2);``` compare string lexicographically.
+	3. ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0
 - *String tokenizer*: break a string into tokens
 ```
 StringTokenizer st = new StringTokenizer("my name is raj");
