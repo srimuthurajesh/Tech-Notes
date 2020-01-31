@@ -158,7 +158,7 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - serialization supports object
  - collection framework
  - java util package
- - can use null value \ *Autoboxing:* int into integer- it uses cache value
+ - can use null value \ *Autoboxing:* primitive into wrapper- it uses cache value
 ``` 
 example:
 Integer i = new Integer(9);Integer j = new Integer(9);
@@ -167,7 +167,7 @@ Integer i = 9;Integer j = 9;   //autoboxing happen inside
 j==i;//true   i.equal(j);//true
 
 ```
- *Unboxing* : integer into int
+ *Unboxing* : wrapper into primitive
  ```
  int j=6;
  ```
