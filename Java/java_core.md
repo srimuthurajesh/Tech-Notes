@@ -143,7 +143,7 @@ Level myVar = Level.MEDIUM;
 4. static object -      ``` import static java.lang.System.out;```
 5. static class - only nested class can be static
 6. static block - ```static {}``` //execute while class get loaded
--empty block { } inside class, runs after static block & before constructor
+7. Instance block { } inside class, runs after static block & before constructor
 -```class.forName(" ");``` executes static block & load class
 
 **Final** :  assigned only once, mostly in constructor directly
