@@ -201,7 +201,8 @@ new ClassName().variableName = value`
 	1. toString()  - String representation of an Object 
 	2. hasCode() - JVM generates a unique numbe
 	3. equals(Object obj) - Compares the given object to “this” object 
-	4. getClass() - Returns the class object of “this” object ``` Class c = 		obj.getClass(); c.getClassName();```
+	4. getClass() - Returns the class object of “this” object 
+		Class c = obj.getClass(); c.getClassName();
 	5. finalize() -  called just before an object is garbage collected
 	6. clone() - returns a new object
 	7. wait(), notify() notifyAll()  - related to Concurrency 
