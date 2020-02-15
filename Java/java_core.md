@@ -366,11 +366,11 @@ threadObj.wait()- notify and wake up thread
 
 **Annotations**:
 1. Built-In Java Annotations used in Java code
-	a. @Override
-	b. @SuppressWarnings
-	c. @Deprecated
+ - @Override
+ - @SuppressWarnings
+ - @Deprecated
 2. Built-In Java Annotations used in other annotations
-	a. @Target
-	b. @Retention
-	c. @Inherited
-	d. @Documented
+ - @Target
+ - @Retention
+ - @Inherited
+ - @Documented
