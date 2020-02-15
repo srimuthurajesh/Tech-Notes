@@ -291,12 +291,13 @@ finally{}// occur for sure even though exception handled or not.
 
 **Muti threading**: concurrent execution, subset process
 ```
-1. class MyClass implements Runnable{
-2 .class MyClass extend Thread{
-	public void run(){}
-}
-MyClass obj = new MyClass(); 
-obj.start(); //run func will execute
+1. class MyClass implements Runnable{ public void run(){}}
+	MyClass obj = new MyClass(); 
+	Thread t = new Thread(obj); or Thread t = new Thread(new MyClass); 
+	t.run();
+2 .class MyClass extend Thread{	public void run(){} }
+	MyClass obj = new MyClass(); 
+	obj.start(); //run func will execute
 ```
 *Difference states of Thread :*
 
@@ -313,7 +314,7 @@ threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
-*Synchronized method* - prevent multiple thread execute on it\
+*Synchronized method* - prevent multiple thread execute on same object\
 *Synchronized block* - synchronized(){ }\
 *Static synchronization* - synchronized static void func(){  }\
 *Join* : wait for particular thread to complete
@@ -325,6 +326,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ExecutorService execService = Executor.newCacheThreadPool();
 ExecutorService execService = Executor.newFixedThreadPool();
 ExecutorService execService = Executor.newSingleThreadPool();
+MyClass m = new MyClass(); execService.execute(m); execService.shutdown();
 ```
 Methods in multithreading:
 ```
@@ -344,7 +346,7 @@ threadObj.wait()- notify and wake up thread
 
 **Collections** : framework/container to access prepackaged data structure.
 1. *List*
-	- 	ArrayList	- dynamic array
+	- 	ArrayList	- dynamic array, default size-10, new size = current size*3/2+1, null allowed
 	- 	LinkedList - dynamic array with insertion efficient
 	- 	Vector - thread safe, same like arraylist
 2. *Queue* - FIFO
