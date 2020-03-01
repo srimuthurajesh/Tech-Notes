@@ -7,7 +7,7 @@
 3. Builder - 
 4. Object Pool - 
 5. Prototype - Just clone or provide copy of object
-6. Singleton - A class of which only a single instance can exist
+6. Singleton - Ensure the class has only one instance(using static variable,method,if decision)
 
 **Structural design patterns**
 1. Adapter - 
