@@ -1,6 +1,7 @@
-**Design patterns:** general repeatable solution to common occuring problem
+**Design patterns:** general repeatable solution to common occuring problems
 
-Creational design patterns- class-creation patterns and object-creational patterns
+
+**Creational design patterns**
 1. Factory Method - Provide object of another class
 2. Abstract Factory - Factory of factories
 3. Builder - 
@@ -8,7 +9,7 @@ Creational design patterns- class-creation patterns and object-creational patter
 5. Prototype - Just clone or provide copy of object
 6. Singleton - A class of which only a single instance can exist
 
-Structural design patterns- Class and Object composition
+**Structural design patterns**
 7. Adapter - Match interfaces of different classes
 8. Bridge - Separates an object’s interface from its implementation
 9. Composite - A tree structure of simple and composite objects
@@ -18,7 +19,7 @@ Structural design patterns- Class and Object composition
 13. Private Class Data - Restricts accessor/mutator access
 14. Proxy - An object representing another object
 
-Behavioral design patterns-  Class's objects communication
+**Behavioral design patterns**-  Class's objects communication
 15. Chain of responsibility -A way of passing a request between a chain of objects
 16. Command - Encapsulate a command request as an object
 17. Interpreter - A way to include language elements in a program
