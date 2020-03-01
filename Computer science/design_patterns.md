@@ -10,11 +10,11 @@
 6. Singleton - Ensure the class has only one instance(using static variable,method,if decision)
 
 **Structural design patterns**
-1. Adapter - 
+1. Adapter - converts one interface into another as client expects(just change functionnames).
 2. Bridge - Separates an object’s interface from its implementation
 3. Composite - A tree structure of simple and composite objects
 4. Decorator - Add responsibilities using inheritance(but inherit only data not behaviour)
-5. Facade - A single class that represents an entire subsystem
+5. Facade - Each class wires together, thus a facade class comes and provide interface to use complex interfaces in subsystem.
 6. Flyweight - A fine-grained instance used for efficient sharing
 7. Private Class Data - Restricts accessor/mutator access
 8. Proxy - An object representing another object
