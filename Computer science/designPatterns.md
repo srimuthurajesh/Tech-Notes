@@ -1,16 +1,16 @@
-Design patterns:general repeatable solution to common occuring problem
+**Design patterns:**general repeatable solution to common occuring problem
 
 Creational design patterns- class-creation patterns and object-creational patterns
-1. Abstract Factory - Creates an instance of several families of classes
-2. Builder - Separates object construction from its representation
-3. Factory Method - Creates an instance of several derived classes
-4. Object Pool - Avoid expensive acquisition and release of resources by recycling objects that are no longer in use
-5. Prototype - A fully initialized instance to be copied or cloned
+1. Factory Method - Provide object of another class
+2. Abstract Factory - Factory of factories
+3. Builder - 
+4. Object Pool - 
+5. Prototype - Just clone or provide copy of object
 6. Singleton - A class of which only a single instance can exist
 
 Structural design patterns- Class and Object composition
 7. Adapter - Match interfaces of different classes
-8. Bridge - Separates an object’s interface from its implementation
+8. Bridge - Separates an objectâ€™s interface from its implementation
 9. Composite - A tree structure of simple and composite objects
 10. Decorator - Add responsibilities to objects dynamically
 11. Facade - A single class that represents an entire subsystem
