@@ -1,4 +1,4 @@
-**Design patterns:**general repeatable solution to common occuring problem
+**Design patterns:** general repeatable solution to common occuring problem
 
 Creational design patterns- class-creation patterns and object-creational patterns
 1. Factory Method - Provide object of another class
