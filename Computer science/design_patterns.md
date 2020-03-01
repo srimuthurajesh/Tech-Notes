@@ -30,5 +30,5 @@
 8. Observer - One to many (list of objects in local variable, call update method in for loop list)
 9. State - Alter an object's behavior when its state changes
 10. Strategy - Switch algorithm (convert inheritance into interface)
-11. Template method - Defer the exact steps of an algorithm to a subclass
+11. Template method - Defines skeleton list of algorithm
 12. Visitor - Defines a new operation to a class without change
