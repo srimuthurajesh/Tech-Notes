@@ -21,7 +21,7 @@
 
 **Behavioral design patterns**-  Class's objects communication
 1. Chain of responsibility - A way of passing a request between a chain of objects
-2. Command - Encapsulate a command request as an object
+2. Command - Encapsulate the request(task or command) 
 3. Interpreter - A way to include language elements in a program
 4. Iterator - Sequentially access the elements of a collection
 5. Mediator - Defines simplified communication between classes
