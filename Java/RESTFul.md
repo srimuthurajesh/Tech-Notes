@@ -29,7 +29,8 @@ Code | Message
 
 **Annotations:**
 ```
-@RestController - extension of controller, handles Req Res
+@RestController - extension of controller, handles Req Res.
+                  it consists @Controller,@ResponseBody
 @Path("/sample")
 @QueryParam 
 @PathParam
