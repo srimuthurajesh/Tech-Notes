@@ -13,6 +13,7 @@
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.dispatcher-servlet.xml</servlet-class>
   </servlet>
+  
   <!-- servelet declaration, doing servlet mapping -->
   <servlet-mapping>
     <!-- servlet-name + (-sevlet.xml) will get search inside WEB-INF folder-->	
@@ -20,7 +21,10 @@
     <url-pattern>/</url-pattern>
     <!-- if >=0 it's create while deployed in server, if <0 then it'll created while someone try to access-->
     <load-on-startup>1</load-on-startup>
-    <param-value>WEB-INF/customised-frontcontroller-name.xml</param-value>
+    <init-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>WEB-INF/customised-frontcontroller-name.xml</param-value>
+    </init-param>	
   </servlet-mapping>
   
   <init-param>
