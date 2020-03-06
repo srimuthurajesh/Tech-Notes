@@ -17,6 +17,7 @@
     <!-- servlet-name + (-sevlet.xml) will get search inside WEB-INF folder-->	
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
+    <load-on-startup>1</load-on-startup>
   </servlet-mapping>
   <init-param>
     <param-value></param-value>
