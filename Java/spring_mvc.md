@@ -112,7 +112,8 @@ public ModelAndView display(){
 ```
 ---
 **Annotaions**:
-1. **@Controller** - indicates class as a web request handler.
+1. **@Controller** - 	indicates class as a web request handler.
+			it consists of @Component,@Target(value=TYPE),@Retention(value=RUNTIME),@Documented	
 2. **@RequestMapping** - handles http request and map to controler methods(or class) 
 ```
 @RequestMapping(value={"/display","/show"})   //handles multiple url
