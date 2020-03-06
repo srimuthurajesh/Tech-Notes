@@ -17,6 +17,7 @@
     <!-- servlet-name + (-sevlet.xml) will get search inside WEB-INF folder-->	
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
+    <!-- if >=0 it's create while deployed in server, if <0 then it'll created while someone try to access-->
     <load-on-startup>1</load-on-startup>
   </servlet-mapping>
   <init-param>
