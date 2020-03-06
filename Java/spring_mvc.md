@@ -14,7 +14,7 @@
   </servlet>
   <!-- servelet declaration, doing servlet mapping -->
   <servlet-mapping>
-    <!-- servlet-name + (-sevlet.xml) will get search -->	
+    <!-- servlet-name + (-sevlet.xml) will get search inside WEB-INF folder-->	
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
