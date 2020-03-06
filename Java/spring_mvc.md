@@ -7,10 +7,12 @@
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>	
+  <!-- servelet declaration -->
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.dispatcher-servlet.xml</servlet-class>
   </servlet>
+  <!-- servelet declaration, doing servlet mapping -->
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
