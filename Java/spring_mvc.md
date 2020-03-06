@@ -3,6 +3,10 @@
 **1. Configure web.xml**
 ```
 <web-app>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>	
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.dispatcher-servlet.xml</servlet-class>
