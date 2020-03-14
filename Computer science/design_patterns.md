@@ -30,5 +30,5 @@
 8. Observer - One to many (list of objects in local variable, call update method in for loop list)
 9. State - 
 10. Strategy - Switch algorithm (convert inheritance into interface)
-11. Template method - 
+11. Template method - it lets subclass to define the function, while parent class have only declaration. (abstract method)
 12. Visitor - 
