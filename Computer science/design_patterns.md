@@ -28,7 +28,7 @@
 6. Memento - 
 7. Null Object - 
 8. Observer - One to many (list of objects in local variable, call update method in for loop list)
-9. State - 
+9. State - decide which class object to create, using if statemet. 
 10. Strategy - Switch algorithm (convert inheritance into interface)
 11. Template method - it lets subclass to define the function, while parent class have only declaration. (abstract method)
 12. Visitor - 
