@@ -23,7 +23,7 @@
 1. Chain of responsibility - A way of passing a request between a chain of objects
 2. Command - Encapsulate the request(task or command) 
 3. Interpreter - 
-4. Iterator - 
+4. Iterator - encapsulating iteration, thats all (hasNext(),next())
 5. Mediator - 
 6. Memento - 
 7. Null Object - 
