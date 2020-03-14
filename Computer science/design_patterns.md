@@ -12,23 +12,23 @@
 **Structural design patterns**
 1. Adapter - converts one interface into another as client expects(just change functionnames).
 2. Bridge - Separates an object’s interface from its implementation
-3. Composite - A tree structure of simple and composite objects
+3. Composite - 
 4. Decorator - Add responsibilities using inheritance(but inherit only data not behaviour)
 5. Facade - Each class wires together, thus a facade class comes and provide interface to use complex interfaces in subsystem.
-6. Flyweight - A fine-grained instance used for efficient sharing
+6. Flyweight - 
 7. Private Class Data - Restricts accessor/mutator access
 8. Proxy - An object representing another object
 
 **Behavioral design patterns**-  Class's objects communication
 1. Chain of responsibility - A way of passing a request between a chain of objects
 2. Command - Encapsulate the request(task or command) 
-3. Interpreter - A way to include language elements in a program
-4. Iterator - Sequentially access the elements of a collection
-5. Mediator - Defines simplified communication between classes
-6. Memento - Capture and restore an object's internal state
-7. Null Object - Designed to act as a default value of an object
+3. Interpreter - 
+4. Iterator - 
+5. Mediator - 
+6. Memento - 
+7. Null Object - 
 8. Observer - One to many (list of objects in local variable, call update method in for loop list)
-9. State - Alter an object's behavior when its state changes
+9. State - 
 10. Strategy - Switch algorithm (convert inheritance into interface)
-11. Template method - Defines skeleton list of algorithm
-12. Visitor - Defines a new operation to a class without change
+11. Template method - 
+12. Visitor - 
