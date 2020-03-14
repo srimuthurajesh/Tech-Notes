@@ -14,7 +14,7 @@
 2. Bridge - Separates an object’s interface from its implementation
 3. Composite - 
 4. Decorator - Add responsibilities using inheritance(but inherit only data not behaviour)
-5. Facade - Each class wires together, thus a facade class comes and provide interface to use complex interfaces in subsystem.
+5. Facade - Each class wires together, thus a facade class comes and provide interface to use complex interfaces in subsystem.just common class or single entry point
 6. Flyweight - 
 7. Private Class Data - Restricts accessor/mutator access
 8. Proxy - An object representing another object
