@@ -15,6 +15,6 @@ AssertEqual functions:
 assertThrows(ArithmeticException.class, ()->className.functionName, "test message to display");
 
 ### Test Lifecycle:
-@Before  - executed before each test
-@BeforeClass - execute it only once before running all tests. should be static
-@BeforeEach and @BeforeAll are the JUnit 5 equivalents of @Before and @BeforeClass
+ @Before  - executed before each test
+ @BeforeClass - execute it only once before running all tests. should be static
+ @BeforeEach and @BeforeAll are the JUnit 5 equivalents of @Before and @BeforeClass
