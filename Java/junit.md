@@ -2,6 +2,7 @@
  - @DisplayName("we can change method name")
  - @Disabled     - obmit this method
  - @RepeatedTest(n) - test execute n times
+ - @Tag(tag1, tag2) - will use execute test functions based on tag exist
 
 AssertEqual functions:
 1. assertEquals(expected, actual);
