@@ -1,4 +1,5 @@
-@Test
+ - @Test
+ - @DisplayName("we can change method name")
 
 AssertEqual functions:
 1. assertEquals(expected, actual);
