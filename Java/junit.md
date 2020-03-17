@@ -25,3 +25,14 @@ assertThrows(ArithmeticException.class, ()->className.functionName, "test messag
 ### Test instance:
  - @TestInstance(TestInstance.Lifecycle.PER_CLASS)  - Object is same for whole class  
  - @TestInstance(TestInstance.Lifecycle.PER_METHOD) - each function each object will get created  
+
+### Conditional Execution:
+ - @EnabledOnOs({OS.LINUX, OS.WINDOWS})
+ - @DisabledOnOs(OS.WINDOWS)
+ - @EnabledOnJre(JRE.JAVA_9)
+ - @EnabledIfSystemProperty(named = "java.vm.name", matches = ".*OpenJDK.*")
+ - @EnabledIfEnvironmentVariable(named = "PROCESSOR_IDENTIFIER", matches = ".*Intel64 Family 6.*")
+
+### AssertAll:
+  assertAll( ()->assertEqual(expected,actual),()->assertEqual(expected,actual)); #testcase inside testcase
+  NOte: put @Nested before a nested class, to acheive nested testcase
