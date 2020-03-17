@@ -18,3 +18,8 @@ assertThrows(ArithmeticException.class, ()->className.functionName, "test messag
  - @Before  - executed before each test
  - @BeforeClass - execute it only once before running all tests. should be static
  - @BeforeEach and @BeforeAll are the JUnit 5 equivalents of @Before and @BeforeClass
+
+
+### Test instance:
+ - @TestInstance(TestInstance.Lifecycle.PER_CLASS)  - Object is same for whole class  
+ - @TestInstance(TestInstance.Lifecycle.PER_METHOD) - each function each object will get created  
