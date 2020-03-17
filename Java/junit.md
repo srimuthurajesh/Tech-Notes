@@ -1,6 +1,7 @@
  - @Test
  - @DisplayName("we can change method name")
  - @Disabled     - obmit this method
+ - @RepeatedTest(n) - test execute n times
 
 AssertEqual functions:
 1. assertEquals(expected, actual);
