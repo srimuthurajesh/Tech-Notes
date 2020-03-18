@@ -30,4 +30,4 @@ Tree- 	Hierarchical tree structure with set of linked nodes
 	2.B-tree
 	3.Multiway tree
 
-
+Graph : 
