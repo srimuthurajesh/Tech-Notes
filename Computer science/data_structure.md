@@ -1,16 +1,10 @@
-DATA STRUTURE:
-	1. Primitive datastructure
-		int
-		float
-		char
-		pointers
-		
-	2. Non-primitive datastructure
-		Array
-		List
-			Linear list - stack, queue
-			Non linear list - graph, tree
-		Files
+## DATA STRUTURE:
+1. Primitive datastructure - int,float,char,pointers
+2. Non-primitive datastructure - 
+		a. Array
+		b. List
+			- Linear list - stack, queue
+			- Non linear list - graph, tree
 
 
 Abstract data types:
