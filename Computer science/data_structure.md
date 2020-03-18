@@ -1,19 +1,18 @@
 ## DATA STRUTURE:
 1. Primitive datastructure - int,float,char,pointers
 2. Non-primitive datastructure - 
-		a. Array
-		b. List
-			- Linear list - stack, queue
-			- Non linear list - graph, tree
+	1. Array
+	2. List
+		1. Linear list - stack, queue
+		2. Non linear list - graph, tree
 
 
-Abstract data types:
-	it is a type or class for object, whose behaviour is defined bu implementations hide
-	1.List ADT - elements of same type arranged in sequence order 
+**Abstract data types:** it is a type or class for object, whose behaviour is defined by implementations hide
+1. List ADT - elements of same type arranged in sequence order 
 		get(), insert(), remove(), removeAt(), replace(),size(), isEmpty(), isFull()
-	2.Stack ADT - FILO all operation take place at single end ie.top of stack 
+2. Stack ADT - FILO all operation take place at single end ie.top of stack 
 		push(), pop(), peek(), size(), isEmpty(), isFull()
-	3.Queue ADT - FIFO operation takes place in both ends, insertion at one end and deletion at another end
+3. Queue ADT - FIFO operation takes place in both ends, insertion at one end and deletion at another end
 		enqueue(), dequeue(), peek(), size(), isEmpty(), isFull()
 		->inserting values in queue is call enqueue
 		->retrieving value is called dequeue
