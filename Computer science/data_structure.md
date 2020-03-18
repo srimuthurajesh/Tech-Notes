@@ -17,10 +17,10 @@ push(), pop(), peek(), size(), isEmpty(), isFull()
 ```
 enqueue(), dequeue(), peek(), size(), isEmpty(), isFull()
 ```
-		->inserting values in queue is call enqueue
-		->retrieving value is called dequeue
-		->deletion is done from first in element
-	
+->inserting values in queue is call enqueue
+->retrieving value is called dequeue
+->deletion is done from first in element
+
 Tree- 	Hierarchical tree structure with set of linked nodes
 	1.Binary tree - have only 2 nodes
 	2.B-tree
