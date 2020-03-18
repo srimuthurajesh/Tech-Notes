@@ -19,8 +19,9 @@
 
 ### Searching
 1. **Linear search** - sequential search O(n)
-2. **Jump search** -   
+2. **Jump search** - O(sqrt n)     
   -list should be sorted  
   -equal steps of jumping, then do linear search
-3. **Binary search**
+  -jump steps find by sqrt of listLenght
+3. **Binary search**- half intervel search O(log n)
 4. **Exponential search**
