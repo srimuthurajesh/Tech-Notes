@@ -23,10 +23,11 @@
    -equal steps of jumping, then do linear search
   -jump steps find by sqrt of listLenght
 3. **Binary search**- should be sorted list, half intervel search O(log n)
-4. **Exponential search** - should be sorted list O()  
+4. **Tenary search**- three time spliting instead of two
+5. **Exponential search** - should be sorted list O()  
   -same like jump search, but jump steps is in exponential(2,4,8,16,32)
   -then implement binary search
   -use for unbounded list
-5. **Interpolation search** - should sorted & uniformly distributed list O(1)   
+6. **Interpolation search** - should sorted & uniformly distributed list O(1)   
    - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
    
