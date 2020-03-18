@@ -8,4 +8,6 @@
 6. cubic = n^3   
 7. exponential = 2^n 
 
-**Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega
+**Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega  
+**Finding the complextity:**  
+
