@@ -10,9 +10,9 @@
 
 **Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega  
 **Finding the complextity:**  
-1.```for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)```these all O(n)  
-2.```for(..){for(..)}``` these is O(n^2)  
+1.``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)```these all O(n)  
+2.``` for(..){for(..)}``` these is O(n^2)  
 3.``` for(i=1;p<n;i++){p+=i;}//dynamic increment value``` O(sqrt(n))  
-4.```for(i=o;i<n;i=i/3)``` this is O(logn base 3) ie.base value change on divider  
-5.```for(i-0;i<n;i=i/2)``` this is O(logn base 2)  
-6.```for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
+4.``` for(i=o;i<n;i=i/3)``` this is O(logn base 3) ie.base value change on divider  
+5.``` for(i-0;i<n;i=i/2)``` this is O(logn base 2)  
+6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
