@@ -25,8 +25,8 @@ Tree- 	Hierarchical tree structure with set of linked nodes
 - collection of nodes(vertices) which connected between edges  
 **complete graph:** all nodes conneced together(formula = n(n-1)/2)  
 **Terminoloy**:
-1. length = no of edges
-2. cost =  sum of weight at each node
-3. cyclic = path start and ends in same node
-4. acyclic = contains no cycle
+	1. length = no of edges
+	2. cost =  sum of weight at each node
+	3. cyclic = path start and ends in same node
+	4. acyclic = contains no cycle
 
