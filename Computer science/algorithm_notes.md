@@ -18,7 +18,8 @@
 6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
 
 ### Searching
-1. Linear search
-2. Jump search
+1. **Linear search** - sequential search O(n)
+2. **Jump search** - 
+  - should be sorted
 3. Binary search
 4. Exponential search
