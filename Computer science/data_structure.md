@@ -8,11 +8,11 @@
 
 
 **Abstract data types:** it is a type or class for object, whose behaviour is defined by implementations hide
-1. List ADT -  get(), insert(), remove(), removeAt(), replace(),size(), isEmpty(), isFull()
+1. List ADT -  ``` get(), insert(), remove(), removeAt(), replace(),size(), isEmpty(), isFull() ```
 2. Stack ADT - FILO all operation take place at single end ie.top of stack 
-		push(), pop(), peek(), size(), isEmpty(), isFull()
+		```push(), pop(), peek(), size(), isEmpty(), isFull()```
 3. Queue ADT - FIFO operation takes place in both ends, insertion at one end and deletion at another end
-		enqueue(), dequeue(), peek(), size(), isEmpty(), isFull()
+		``` enqueue(), dequeue(), peek(), size(), isEmpty(), isFull()```
 		->inserting values in queue is call enqueue
 		->retrieving value is called dequeue
 		->deletion is done from first in element
