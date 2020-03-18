@@ -18,3 +18,7 @@
 6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
 
 ### Searching
+1. Linear search
+2. Jump search
+3. Binary search
+4. Exponential search
