@@ -21,8 +21,7 @@ Tree- 	Hierarchical tree structure with set of linked nodes
 	2.B-tree
 	3.Multiway tree
 
-## Graph: 
-- collection of nodes(vertices) which connected between edges
+**Graph:** - collection of nodes(vertices) which connected between edges
 **complete graph:** all nodes conneced together(formula = n(n-1)/2)
 **Terminoloy**:
 1. length = no of edges
