@@ -1,12 +1,9 @@
 **Algorithm**: step by step to solve problem
 
-
-| Notation        | name           |
-| ------------- |:-------------:|
-| 1      | constant |
-| log n      | logarithmic |
-| n      | linear |
-| n log n     | linear logarithmic |
-| n^2      | quadratic |
-| n^3      | cubic |
-| 2^n      | exponential |
+1 is constant   
+log n is logarithmic   
+n is linear   
+n log n is linearLogarithmic   
+n^2 is quadratic   
+n^3 is cubic   
+2^n is exponential 
