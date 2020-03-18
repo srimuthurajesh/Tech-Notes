@@ -24,4 +24,7 @@
   -equal steps of jumping, then do linear search
   -jump steps find by sqrt of listLenght
 3. **Binary search**- half intervel search O(log n)
-4. **Exponential search**
+4. **Exponential search** - O()  
+  -same like jump search, but jump steps is in exponential(2,4,8,16,32)
+  -then implement binary search
+  -use for unbounded list
