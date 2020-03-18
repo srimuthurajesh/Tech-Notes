@@ -27,3 +27,6 @@
   -same like jump search, but jump steps is in exponential(2,4,8,16,32)
   -then implement binary search
   -use for unbounded list
+5. **Interpolation search** - should sorted & uniformly distributed list O(1)   
+   - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+   
