@@ -20,7 +20,7 @@
 ### Searching
 1. **Linear search** - sequential search O(n)
 2. **Jump search** -   
-  -list should be sorted
+  -list should be sorted  
   -equal steps of jumping, then do linear search
 3. **Binary search**
 4. **Exponential search**
