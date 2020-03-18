@@ -19,12 +19,11 @@
 
 ### Searching
 1. **Linear search** - sequential search O(n)
-2. **Jump search** - O(sqrt n)     
-  -list should be sorted  
-  -equal steps of jumping, then do linear search
+2. **Jump search** - should be sorted list O(sqrt n)     
+   -equal steps of jumping, then do linear search
   -jump steps find by sqrt of listLenght
-3. **Binary search**- half intervel search O(log n)
-4. **Exponential search** - O()  
+3. **Binary search**- should be sorted list, half intervel search O(log n)
+4. **Exponential search** - should be sorted list O()  
   -same like jump search, but jump steps is in exponential(2,4,8,16,32)
   -then implement binary search
   -use for unbounded list
