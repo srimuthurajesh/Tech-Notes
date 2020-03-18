@@ -16,3 +16,5 @@
 4.``` for(i=o;i<n;i=i/3)``` this is O(logn base 3) ie.base value change on divider  
 5.``` for(i-0;i<n;i=i/2)``` this is O(logn base 2)  
 6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
+
+### Searching
