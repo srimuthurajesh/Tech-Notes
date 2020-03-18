@@ -30,4 +30,5 @@
   -use for unbounded list
 6. **Interpolation search** - should sorted & uniformly distributed list O(1)   
    - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+7. **Sublist/pattern search** -    
    
