@@ -40,5 +40,5 @@
 5. **Heap sort** - 
 6. **Quick sort** - divide & conquer O(nlogn)
 7. **Radix sort** - 
-8. **Bucket sort**
+8. **Bucket sort** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
 https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
