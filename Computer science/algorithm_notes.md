@@ -38,5 +38,7 @@
 3. **Insertion sort** - 
 4. **Merge sort** - divide and conquer, merging
 5. **Heap sort** - 
-5. **Quick sort** - divide & conquer O(nlogn)
-5. **Radix sort** - 
+6. **Quick sort** - divide & conquer O(nlogn)
+7. **Radix sort** - 
+8. **Bucket sort**
+https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
