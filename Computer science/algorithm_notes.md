@@ -32,3 +32,9 @@
    - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
 7. **Sublist/pattern search** -    
    
+### Sorting
+1. **Bubble sort** - go through list, adjacent compare & swap..repeat O(n^2)
+2. **Selection sort** -  find minimum and swap..repeat O(n^2)
+3. **Insertion sort** - 
+4. **Merge sort** - divide and conquer, merging
+5. **Heap sort** - 
