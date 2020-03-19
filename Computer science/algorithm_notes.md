@@ -20,8 +20,8 @@
 ### Searching
 1. **Linear search** - sequential search O(n)
 2. **Jump search** - should be sorted list O(sqrt n)     
-   -equal steps of jumping, then do linear search  
-  -jump steps find by sqrt of listLenght
+   - equal steps of jumping, then do linear search  
+   - jump steps find by sqrt of listLenght
 3. **Binary search**- should be sorted list, half intervel search O(log n)
 4. **Tenary search**- three time spliting instead of two
 5. **Exponential search** - should be sorted list O()  
