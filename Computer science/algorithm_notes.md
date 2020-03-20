@@ -39,6 +39,7 @@
 4. **Merge sort** - divide and conquer, merging
 5. **Heap sort** - 
 6. **Quick sort** - divide & conquer O(nlogn)
-7. **Radix sort** - 
-8. **Bucket sort** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
+7. **Radix sort** - non comparative sorting algo, bucket values according to radix 1s,10s,20s
+8. **Counting sort** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
+9. **Bucket sort** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
 https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
