@@ -40,7 +40,7 @@
 4. **Merge sort O(n log n)** - divide and conquer, merging. 
 5. **Heap sort O(n log n)** -  
 ---
-6. **Quick sort O(n log n)** - divide & conquer 
+6. **Quick sort O(n log n)** - divide & conquer. ie.Binary sort. selecting pivot is important p=n/2 
 ---
 7. **Radix sort O(n)** - non comparative sorting algo, bucket values according to radix 1s,10s,20s    
 8. **Counting sort O(n)** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
