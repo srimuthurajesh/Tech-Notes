@@ -33,13 +33,16 @@
 7. **Sublist/pattern search** -    
    
 ### Sorting
-1. **Bubble sort** - go through list, adjacent compare & swap..repeat O(n^2)
-2. **Selection sort** -  find minimum and swap..repeat O(n^2)
-3. **Insertion sort** - 
-4. **Merge sort** - divide and conquer, merging
-5. **Heap sort** - 
+1. **Bubble sort** - go through list, compare nearyby values & swap..repeat O(n^2)
+2. **Selection sort** -  find minimum & swap..repeat O(n^2)
+3. **Insertion sort** - compare with all values then insert O(n^2)
+
+4. **Merge sort** - divide and conquer, merging. O(n log(n))
+5. **Heap sort** -  O(n log(n))
+
 6. **Quick sort** - divide & conquer O(nlogn)
-7. **Radix sort** - non comparative sorting algo, bucket values according to radix 1s,10s,20s
+
+7. **Radix sort** - non comparative sorting algo, bucket values according to radix 1s,10s,20s  **O(n)**  
 8. **Counting sort** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
 9. **Bucket sort** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
 10. **Pigeonhole sort** -   
