@@ -42,4 +42,6 @@
 7. **Radix sort** - non comparative sorting algo, bucket values according to radix 1s,10s,20s
 8. **Counting sort** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
 9. **Bucket sort** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
+10. **Pigeonhole sort** -   
+11. **Cycle sort** -  
 https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
