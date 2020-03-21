@@ -19,7 +19,7 @@
 
 ### Searching
 1. **Linear search O(n)** - sequential search 
-2. **Jump search O(√n) ** - should be sorted list      
+2. **Jump search O(√n)** - should be sorted list      
    - equal steps of jumping, then do linear search  
    - jump steps find by sqrt of listLenght
 3. **Binary search O(log n)**- should be sorted list, half intervel search 
