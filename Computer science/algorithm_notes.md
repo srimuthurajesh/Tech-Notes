@@ -18,17 +18,17 @@
 6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
 
 ### Searching
-1. **Linear search** - sequential search O(n)
-2. **Jump search** - should be sorted list O(sqrt n)     
+1. **Linear search O(n)** - sequential search 
+2. **Jump search O(√n) ** - should be sorted list      
    - equal steps of jumping, then do linear search  
    - jump steps find by sqrt of listLenght
-3. **Binary search**- should be sorted list, half intervel search O(log n)
-4. **Tenary search**- three time spliting instead of two
-5. **Exponential search** - should be sorted list O()  
+3. **Binary search O(log n)**- should be sorted list, half intervel search 
+4. **Tenary search O(log n)**- three time spliting instead of two
+5. **Exponential search O(log n)** - should be sorted list O()  
    - same like jump search, but jump steps is in exponential(2,4,8,16,32)
    - then implement binary search
    - use for unbounded list
-6. **Interpolation search** - should sorted & uniformly distributed list O(1)   
+6. **Interpolation search O(1)** - should sorted & uniformly distributed list O(1)   
    - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
 7. **Sublist/pattern search** -    
    
