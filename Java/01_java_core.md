@@ -60,6 +60,8 @@ how to import using fully qualified name without import keyword: package classna
 | char      | A-Z a-z 0-9 0-127ASCII| 2 byte |
 | boolean      | 0 1| depends on jvm |
 
+Binary can be represent as adding "0b"   ex: int a = 0b011;  
+Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 **Typecasting:**  Convert one datatype to another
 1. implicit casting
 2. explicit casting
