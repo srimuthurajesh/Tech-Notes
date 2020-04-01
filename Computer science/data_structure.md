@@ -1,14 +1,9 @@
 ## DATA STRUTURE:
-1. Primitive datastructure - int,float,char,pointers
-2. Non-primitive datastructure - 
-	1. Array
-	2. List
-		1. Linear list - stack, queue
-		2. Non linear list - graph, tree
+1.Primitive datastructure - int,float,char,pointers  
+2.Non-primitive datastructure - Array, List, stack, queue, graph, tree
 
-
-1. List ADT -  
-2. Stack ADT - FILO, operations take place at single end ie.top of stack 
+## Array:
+## List:
 
 ## Queue:
 FIFO operation takes place in both ends, insertion at one end and deletion at another end
