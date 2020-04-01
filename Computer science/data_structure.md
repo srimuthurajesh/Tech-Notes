@@ -3,6 +3,7 @@
 2.Non-primitive datastructure - Array, List, stack, queue, graph, tree
 
 ## Array:
+Collection of similar items in continuos memory location
 ## List:
 
 ## Queue:
