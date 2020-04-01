@@ -7,10 +7,11 @@
 		2. Non linear list - graph, tree
 
 
-**Abstract data types:** it is a type or class for object, whose behaviour is defined by implementations hide
 1. List ADT -  
 2. Stack ADT - FILO, operations take place at single end ie.top of stack 
-3. Queue ADT - FIFO operation takes place in both ends, insertion at one end and deletion at another end
+
+## Queue:
+FIFO operation takes place in both ends, insertion at one end and deletion at another end
 	1. inserting values in queue is call enqueue
 	2. retrieving value is called dequeue
 	3. deletion is done from first in element
