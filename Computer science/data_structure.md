@@ -4,7 +4,9 @@
 
 ## Array:
 Collection of similar items in continuos memory location
-## List:
+## Linked list:
+1. single 2.Double 3.Circular
+## Stack:
 
 ## Queue:
 FIFO operation takes place in both ends, insertion at one end and deletion at another end
@@ -12,11 +14,13 @@ FIFO operation takes place in both ends, insertion at one end and deletion at an
 	2. retrieving value is called dequeue
 	3. deletion is done from first in element
 
-
-Tree- 	Hierarchical tree structure with set of linked nodes
+## Tree:
+ Hierarchical tree structure with set of linked nodes
 	1.Binary tree - have only 2 nodes
 	2.B-tree
 	3.Multiway tree
+## Heap:
+## Hash:
 
 ## Graph:
 collection of nodes(vertices) which connected between edges  
@@ -26,4 +30,10 @@ collection of nodes(vertices) which connected between edges
 2. cost =  sum of weight at each node
 3. cyclic = path start and ends in same node
 4. acyclic = contains no cycle
+
+
+## Advance Data structures:
+
+### XOR Linked list:
+### 
 
