@@ -31,7 +31,10 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
 
 Types of Travesals:  
 1.Inorder(L/Ro/R) 2.Preorder(Ro/L/R) 3.Postorder(L/R/Ro)
-	
+
+Types of deletion: 1.inorder predecessor(replace root with largest element in left side)  
+2.inorder successor(replace root with lowest element in right side)  
+		
 ## Heap:
 ## Hash:
 
