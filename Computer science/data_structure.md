@@ -15,8 +15,9 @@ FIFO operation takes place in both ends, insertion at one end and deletion at an
 	3. deletion is done from first in element
 
 ## Tree:
- Hierarchical tree structure with set of linked nodes
-	1.Binary tree - have only 2 nodes
+-non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
+
+### Binary tree - have maximum 2 nodes
 	2.B-tree
 	3.Multiway tree
 ## Heap:
