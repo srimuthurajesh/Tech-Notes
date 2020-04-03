@@ -17,7 +17,7 @@ FIFO operation takes place in both ends, insertion at one end and deletion at an
 ## Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
 
-### Binary tree - have maximum 2 nodes
+#### Binary tree - have maximum 2 nodes
 	2.B-tree
 	3.Multiway tree
 ## Heap:
