@@ -24,10 +24,12 @@ Types of Binary trees:
 3.Perfect Btree all the leaf at same level  
 4.Degenerate Btree - all nodes having only one child  
 
-Typres of Representation :   
+Types of Representation :   
 1.Sequential   2.Array    
 left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/1, max number of nodes in height = (2^h+1)-1
 
+Types of Travesals:  
+1.Inorder(L/Ro/R) 2.Preorder(Ro/L/R) 3.Postorder(L/R/Ro)
 	
 ## Heap:
 ## Hash:
