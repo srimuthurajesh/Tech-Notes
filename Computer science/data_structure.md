@@ -17,7 +17,20 @@ FIFO operation takes place in both ends, insertion at one end and deletion at an
 ## Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
 
-#### Binary tree - have maximum 2 nodes
+### Binary tree - have maximum 2 nodes  
+Types of Binary trees:
+1.Full/proper/strict Btree - should have two/zero children  
+2.Complete Btree - last level as left as possible  
+3.Perfect Btree all the leaf at same level  
+4.Degenerate Btree - all nodes having only one child  
+Typres of Representation : 
+1.Sequential   
+2.Array  
+left child position - 2i+1
+right child position - 2i+2
+parent position - (i-1)/1
+max number of nodes in height = (2^h+1)-1
+
 	2.B-tree
 	3.Multiway tree
 ## Heap:
