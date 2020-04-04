@@ -16,8 +16,8 @@ Operations: insert, getHighestPriority, deleteHighestPriority
 
 # Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
-**Binary search tree**  
--have maximum 2 nodes,left node should less, right node should high  
+**B tree** 
+**Binary search tree** : have maximum 2 nodes,left node should less, right node should high  
 Types of Binary trees:  
 1.Full/proper/strict Btree - should have two/zero children  
 2.Complete Btree - last level as left as possible  
