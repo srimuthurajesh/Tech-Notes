@@ -2,13 +2,13 @@
 1.Primitive datastructure - int,float,char,pointers  
 2.Non-primitive datastructure - Array, List, stack, queue, graph, tree
 
-## Array:
+# Array:
 Collection of similar items in continuos memory location
-## Linked list:
+# Linked list:
 1. single 2.Double 3.Circular
-## Stack:
+# Stack:
 
-## Queue:
+# Queue:
 FIFO operation takes place in both ends, insertion at one end and deletion at another end
 	1. inserting values in queue is call enqueue
 	2. retrieving value is called dequeue
@@ -17,7 +17,7 @@ FIFO operation takes place in both ends, insertion at one end and deletion at an
 # Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
 
-### Binary search tree  
+#### Binary search tree  
 -have maximum 2 nodes,left node should less, right node should high  
 Types of Binary trees:  
 1.Full/proper/strict Btree - should have two/zero children  
@@ -35,10 +35,12 @@ Types of Travesals:
 Types of deletion: 1.inorder predecessor(replace root with largest element in left side)  
 2.inorder successor(replace root with lowest element in right side)  
 		
-## Heap:
-## Hash:
+# Heap:
+specialized tree structure with heap property
+1.MinHeap 2.MaxHeap
+# Hash:
 
-## Graph:
+# Graph:
 collection of nodes(vertices) which connected between edges  
 **complete graph:** all nodes conneced together(formula = n(n-1)/2)  
 **Terminoloy**:
