@@ -1,24 +1,22 @@
-## DATA STRUTURE:
-1.Primitive datastructure - int,float,char,pointers  
-2.Non-primitive datastructure - Array, List, stack, queue, graph, tree
-
 # Array:
 Collection of similar items in continuos memory location
+
 # Linked list:
 1. single 2.Double 3.Circular
+
 # Stack:
 linear data structure which follows a particular order LIFO or FILO.  
 Operations: push, pop, peek, isempty
+
 # Queue:
-FIFO operation takes place in both ends, insertion at one end and deletion at another end
-	1. inserting values in queue is call enqueue
-	2. retrieving value is called dequeue
-	3. deletion is done from first in element
+linear data structure which follows a particular order LIFO or FILO. 
+Operations: enqueue, dequeue, front, rear
+priotity queue: uses max heap, comparator arguement
+Operations: insert, getHighestPriority, deleteHighestPriority
 
 # Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
-
-#### Binary search tree  
+**Binary search tree**  
 -have maximum 2 nodes,left node should less, right node should high  
 Types of Binary trees:  
 1.Full/proper/strict Btree - should have two/zero children  
