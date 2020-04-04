@@ -7,7 +7,8 @@ Collection of similar items in continuos memory location
 # Linked list:
 1. single 2.Double 3.Circular
 # Stack:
-
+linear data structure which follows a particular order LIFO or FILO.  
+Operations: push, pop, peek, isempty
 # Queue:
 FIFO operation takes place in both ends, insertion at one end and deletion at another end
 	1. inserting values in queue is call enqueue
