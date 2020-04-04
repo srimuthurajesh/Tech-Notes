@@ -34,13 +34,13 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
 3.Perfect Btree all the leaf at same level  
 4.Degenerate Btree - all nodes having only one child  
 
-**1. Binary tree**: Each node can have maximum two children.
+**1. Binary tree**: Each node can have maximum two children.  
 **2. Binary search tree** : Binary tree in which left node should less, right node should high  
-**3. AVL tree** : self balanced tree. maintain Balance factor = {-1,0,1}
-**4. Red Black tree** : 
-**5. Splay tree** :  self balanced tree with recently accessed elements are as root.
-**6. B tree**
-**7. B+ tree**
+**3. AVL tree** : self balanced tree. maintain Balance factor = {-1,0,1}  
+**4. Red Black tree** :  
+**5. Splay tree** :  self balanced tree with recently accessed elements are as root.  
+**6. B tree**  
+**7. B+ tree**  
 
 # Heap:
 specialized tree structure with heap property
