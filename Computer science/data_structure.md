@@ -16,7 +16,19 @@ Operations: insert, getHighestPriority, deleteHighestPriority
 
 # Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
-**B tree** 
+
+**Types of Representation :**   
+1.Sequential   2.Array    
+left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/1, max number of nodes in height = (2^h+1)-1
+
+**Types of Travesals:**  
+1.Inorder(L/Ro/R) 2.Preorder(Ro/L/R) 3.Postorder(L/R/Ro)
+
+**Types of deletion:** 
+1.inorder predecessor(replace root with largest element in left side)  
+2.inorder successor(replace root with lowest element in right side)  
+
+
 **Binary search tree** : have maximum 2 nodes,left node should less, right node should high  
 Types of Binary trees:  
 1.Full/proper/strict Btree - should have two/zero children  
@@ -24,16 +36,6 @@ Types of Binary trees:
 3.Perfect Btree all the leaf at same level  
 4.Degenerate Btree - all nodes having only one child  
 
-Types of Representation :   
-1.Sequential   2.Array    
-left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/1, max number of nodes in height = (2^h+1)-1
-
-Types of Travesals:  
-1.Inorder(L/Ro/R) 2.Preorder(Ro/L/R) 3.Postorder(L/R/Ro)
-
-Types of deletion: 1.inorder predecessor(replace root with largest element in left side)  
-2.inorder successor(replace root with lowest element in right side)  
-		
 # Heap:
 specialized tree structure with heap property
 1.MinHeap 2.MaxHeap
