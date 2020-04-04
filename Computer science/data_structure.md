@@ -37,11 +37,12 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
 **1. Binary tree**: Each node can have maximum two children.  
 **2. Binary search tree** : Binary tree in which left node should less, right node should high  
 **3. AVL tree** : self balanced tree. maintain Balance factor = {-1,0,1}  
-**4. Red Black tree** : not aggressive self balancing 
-  root should be black, no adjacent continuos red node, new node always red  
-  if we face adjacent red nodes then check parent sibling,  
-  a)if it is black, then realign, exchange color for resligned nodes
-  b)if it is red, then recolor parent&sibling to black, recheck againt it parent's parent, if it is (black && not a root) change to red. u will face adjacent red nodes means again continue adjacent conditions.
+**4. Red Black tree** : not aggressive self balancing   
+  root should be black, no adjacent continuos red node, new node always red    
+  if we face adjacent red nodes then check parent sibling,    
+  a)if it is black, then realign, exchange color for resligned nodes  
+  b)if it is red, then recolor parent&sibling to black, recheck againt it parent's parent, if it is (black && not a root) change to red.   
+  if u will face adjacent red nodes means again continue adjacent conditions.
        
 **5. Splay tree** :  self balanced tree with recently accessed elements are as root.  
 **6. B tree**  
