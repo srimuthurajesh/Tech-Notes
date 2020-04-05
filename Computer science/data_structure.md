@@ -6,7 +6,8 @@ Collection of similar items in continuos memory location
 
 # Stack:
 linear data structure which follows a particular order LIFO or FILO.  
-Operations: push, pop, peek, isempty
+Operations: push, pop, peek, isempty  
+we can implement using array and linkedlist
 
 # Queue:
 linear data structure which follows a particular order LIFO or FILO. 
@@ -45,8 +46,8 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
   if u will face adjacent red nodes means again continue adjacent conditions.
        
 **5. Splay tree** :  self balanced tree with recently accessed elements are as root.  
-**6. B tree**  
-**7. B+ tree**  
+**6. B tree** : this try to reduce the height of tree, thus multiple values in root node, called m value..  
+**7. B+ tree** :boring 
 
 # Heap:
 specialized tree structure with heap property
