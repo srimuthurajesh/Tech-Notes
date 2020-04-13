@@ -46,8 +46,9 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
   if u will face adjacent red nodes means again continue adjacent conditions.
        
 **5. Splay tree** :  self balanced tree with recently accessed elements are as root.  
-**6. B tree** : this try to reduce the height of tree, thus multiple values in root node, called m value..  
-**7. B+ tree** :boring 
+**6. B tree** : this try to reduce the height of tree, thus multiple key in root node, called m value.
+  a) must have m/2 children, b)minimum two parent key 3)all leaf at same level  
+**7. B+ tree** : each parent key has duplicate at leaf node 
 
 # Heap:
 specialized tree structure with heap property
