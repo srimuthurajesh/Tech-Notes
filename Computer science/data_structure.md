@@ -54,12 +54,14 @@ left child position - 2i+1,right child position - 2i+2, parent position - (i-1)/
 specialized tree structure with heap property
 1.MinHeap 2.MaxHeap
 # Hash:
--searching technique, key field value is converted to address location
+-searching technique, key field value is converted to address location  
 **Types of Hashing**  
 1. Open hashing (closed addressing)  
-  a) Chaning method
+  a) Chaning method - uses Linked list
 2. Closed hashing (opern addressing)  
-  a) Linear probing b) quadratic probing c) double hashing
+  a) Linear probing - insert next free location, save location as probe  
+  b) quadratic probing c) double hashing
+3. Division method(i % m)    
 # Graph:
 collection of nodes(vertices) which connected between edges  
 **complete graph:** all nodes conneced together(formula = n(n-1)/2)  
