@@ -59,9 +59,11 @@ specialized tree structure with heap property
 1. Open hashing (closed addressing)  
   a) Chaning method - uses Linked list
 2. Closed hashing (opern addressing)  
-  a) Linear probing - insert next free location, save location as probe  
-  b) quadratic probing c) double hashing
-3. Division method(i % m)    
+  a) Linear probing - insert next free location (u+i)%10), save formula count as probe  
+  b) quadratic probing - insert free location of (u+i^2)%10), save formula count as probe 
+  c) double hashing - do another hashing(v), then insert free location (u+v* i)%10), save formula count as probe
+3. Division method(i % m)   
+
 # Graph:
 collection of nodes(vertices) which connected between edges  
 **complete graph:** all nodes conneced together(formula = n(n-1)/2)  
