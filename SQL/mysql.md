@@ -1,9 +1,9 @@
-SQL- Structured query language
+## SQL- Structured query language
 
-Row is called as “record”
-Each block are called as “cells” or “fields”
-Unique value: can be more than one
-Primary value: only one 
+-row is called as “record”
+-each block are called as “cells” or “fields”
+-unique value: can be more than one
+-primary value: only one 
 
 DDL Data Definition Language: create, modify struture of database
 	Create 
