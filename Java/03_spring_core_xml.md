@@ -1,8 +1,8 @@
-### SPRING
-  - application dev framework for javaEE	
-  - 1998 -2002 by spring.org- Rod johnson
-  - interface 21 - old name
-  - called as framework of frameworks
+### SPRING  
+  -application dev framework for javaEE	 
+  -1998 -2002 by spring.org- Rod johnson  
+  -interface 21 - old name  
+  -called as framework of frameworks  
 
 Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
@@ -13,8 +13,7 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 4. AOP - security, logging, profiling
 5. Test	- junit, testNG
 
-
-
+-------------------------------------------------------------------------------------------------------------------------------
 **IOC** - is a container, at core of spring framework, create object, wire them, manage them, configure them
 1. Bean factory - lazy intialization, no annotated injection support
 2. Application context - aggresive intialization, supports annotated injection
