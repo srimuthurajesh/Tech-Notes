@@ -55,7 +55,10 @@ Object injection : <property name="color" ref="anotherBeanName"/>
 ```
 <bean id="" class="" scope="singleton">
 <bean id="" class="" scope="prototype">
-```
+```  
+@Scope("singleton")  
+@Scope("prototype")  
+
 **Bean Lifecycle**:  
 1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
 2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
@@ -66,3 +69,13 @@ Object injection : <property name="color" ref="anotherBeanName"/>
 **Enable Annotaion support**  
 1. Add this tag in XML - ```<context:annotation-config />```  
 2. Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
+
+**Annotations**:
+@Autowired  
+@Component  
+@Qualifier("beanName")  
+@Bean  
+@Configuration  
+@PostContruct  
+@PreDestroy  
+@ComponentScan("com.controller")  
