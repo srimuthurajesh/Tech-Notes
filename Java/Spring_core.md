@@ -8,11 +8,11 @@
 Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
 **MODULES IN SPRING**:  
-1.IOC - Spring core - basic, IOC & DI
-2.DAO - Data access/integration - Jdbc orm
-3.MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller 	 
-4.AOP - security, logging, profiling
-5.Test	- junit, testNG
+1.IOC - Spring core - basic, IOC & DI    
+2.DAO - Data access/integration - Jdbc orm  
+3.MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller  	 
+4.AOP - security, logging, profiling  
+5.Test	- junit, testNG  
 
 -------------------------------------------------------------------------------------------------------------------------------
 **IOC** - create,manage,wire,configure object  
@@ -28,15 +28,15 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 2.Application context - aggresive intialization, supports annotated injection, superset of BeanFactory  
 
 **Classes of ApplicationContext**:  
-1.FileSystemXmlApplicationContext
-2.ClassPathXmlApplicationContext - no need full path, but need to CLASSPATH properly\
-3.WebXmlApplicationContext - will load bean from within the web application
-4.AnnotationConfigApplicationContext - support annotation class  
+1.FileSystemXmlApplicationContext  
+2.ClassPathXmlApplicationContext - no need full path, but need to CLASSPATH properly  
+3.WebXmlApplicationContext - will load bean from within the web application  
+4.AnnotationConfigApplicationContext - support annotation class    
 
 **Steps to create spring bean**:  
-1.Configure spring bean xml  	*<bean id="beanId" class="com.ClassName"></bean>
-2.Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-3.Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");
+1.Configure spring bean xml  	*<bean id="beanId" class="com.ClassName"></bean>  
+2.Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
+3.Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");  
    
 **XML attributes**:   
 Setter injection : <property name="color" value="red"/>   
@@ -57,12 +57,12 @@ Object injection : <property name="color" ref="anotherBeanName"/>
 <bean id="" class="" scope="prototype">
 ```
 **Bean Lifecycle**:  
-1.XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```
+1.XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
 2.default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
 3.Annotation approach- ```@PostContruct  @PreDestroy```  
 4.Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
 -it will force to define afterPropertiesSet(), destroy() methods  
 
-**Enable Annotaion support**
+**Enable Annotaion support**  
 1.Add this tag in XML - ```<context:annotation-config />```  
 2.Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
