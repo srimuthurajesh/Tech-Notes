@@ -1,8 +1,8 @@
 ### SPRING  
-  -application dev framework for javaEE	 
-  -1998 -2002 by spring.org- Rod johnson  
-  -interface 21 - old name  
-  -called as framework of frameworks  
+-application dev framework for javaEE	 
+-1998 -2002 by spring.org- Rod johnson  
+-interface 21 - old name  
+-called as framework of frameworks  
 
 Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
@@ -14,11 +14,11 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 5. Test	- junit, testNG
 
 -------------------------------------------------------------------------------------------------------------------------------
-**IOC** - create,manage,wire,configure object
+**IOC** - create,manage,wire,configure object  
 -performs **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling     
--performs **Dependency Injection(DI)**: where object define their dependencies via 
+-performs **Dependency Injection(DI)**: where object define their dependencies via  
 
-**Way of Injections**: setter/contructor injection
+**Way of Injections**: setter/contructor injection    
 **Dependcies of Injection**: literal, object, collection  
 **Beans**: objects present in IOC container  
 
