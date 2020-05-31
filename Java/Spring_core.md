@@ -70,12 +70,14 @@ Object injection : <property name="color" ref="anotherBeanName"/>
 1. Add this tag in XML - ```<context:annotation-config />```  
 2. Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
 
-**Annotations**:
-@Autowired  
+**Annotations**:  
+@Autowired   
 @Component  
 @Qualifier("beanName")  
 @Bean  
 @Configuration  
 @PostContruct  
 @PreDestroy  
-@ComponentScan("com.controller")  
+@ComponentScan("com.controller")   
+@PropertySource("classpath:rasna-info.properties")
+
