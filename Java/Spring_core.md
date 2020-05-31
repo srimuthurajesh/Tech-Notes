@@ -1,8 +1,8 @@
 ### SPRING  
--application dev framework for javaEE	 
--1998 -2002 by spring.org- Rod johnson  
--interface 21 - old name  
--called as framework of frameworks  
+  -application dev framework for javaEE	 
+  -1998 -2002 by spring.org- Rod johnson  
+  -interface 21 - old name  
+  -called as framework of frameworks  
 
 Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
@@ -14,11 +14,11 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 5. Test	- junit, testNG
 
 -------------------------------------------------------------------------------------------------------------------------------
-**IOC** - create,manage,wire,configure object  
+**IOC** - create,manage,wire,configure object
 -performs **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling     
--performs **Dependency Injection(DI)**: where object define their dependencies via  
+-performs **Dependency Injection(DI)**: where object define their dependencies via 
 
-**Way of Injections**: setter/contructor injection    
+**Way of Injections**: setter/contructor injection
 **Dependcies of Injection**: literal, object, collection  
 **Beans**: objects present in IOC container  
 
@@ -37,7 +37,19 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 2. Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
 3. Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");
    
+**XML attributes**:  
+Setter injection : <property name="color" value="red"/>   
+Constructor injection: <constructor-arg name="soda" value="True"/>  
+Object injection : <property name="color" ref="anotherBeanName"/>  
 
+**Autowire attribute**: <bean id="rasna" class="Rasna" autowire="constructor">  
+-no need to write object injection <property name="color" ref="anotherBeanName"/>  
+-no need to use @Autowired  
+1. byType  
+2. byName 
+3. constructor
+4. default 
+ 
 **Bean scope**:
 ```
 <bean id="" class="" scope="singleton">
