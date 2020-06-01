@@ -41,7 +41,7 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
 **Steps to create spring bean(IOC via XML)**:  
 1. Configure spring bean.xml  	*<bean id="beanId" class="com.ClassName"></bean>  
-2. Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
+2. Create spring container 	*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
 3. Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");  
 
 
