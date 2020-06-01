@@ -56,7 +56,8 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 -no need to write object injection <property name="color" ref="anotherBeanName"/>, no @Autowired  
 1.byType, 2.byName, 3.constructor, 4.default 
  
- ##JAVA approach  
+ ---
+ ## JAVA approach  
  
 **Steps to create spring bean(IOC via JAVA)**:  
 1. Configure spring Config.java - that has @Configuration 
