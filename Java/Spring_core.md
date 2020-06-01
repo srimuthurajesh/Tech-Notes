@@ -36,7 +36,7 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 **Types of Spring configurations:**  
 1.XML, 2.Java, 3.Annotation  
 
-## XML
+## XML approach
 **Steps to create spring bean(IOC via XML)**:  
 1. Configure spring bean.xml  	```<bean id="beanId" class="com.ClassName"></bean>```  
 2. Create spring container 	```ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");```    
@@ -57,15 +57,37 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 1.byType, 2.byName, 3.constructor, 4.default 
  
  ---
- ## JAVA approach  
+ ## Java approach  
  
 **Steps to create spring bean(IOC via JAVA)**:  
 1. Configure spring Config.java - that has @Configuration 
 2. Create spring container 	```ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);```    
 3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```    
 
- 
+@Bean annotation will be use, beanName will be function name. refer  practise repo.    
+@PropertySource("classpath:rasna-info.properties")
+  
 --- 
+## Annotation approach
+-no need of bean defination in xml/java config file, we just mention folder to scan  
+
+1. Configre xml or java with folder scan  
+```@ComponentScan(basePackages="com.java.drinkMaker")```    
+```<context:component-scan base-package="com.luv2code.springdemo"/>```  
+2. Create spring container ```ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);```  
+3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```  
+
+**Annotation Enabling**  
+1. Add this tag in XML - ```<context:annotation-config />```  
+2. Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
+
+@Component - define class as bean    
+@Qualifier - give bean id, avoid ambiquity while using autowired  
+@Autowired - provides dependency  
+
+---
+
+
 **Bean scope**:  
 1. Singleton - Default scope, only one bean created and shared per IOC container.    
 2. Proprotype - each time new bean will created  
@@ -81,11 +103,7 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
 -it will force to define afterPropertiesSet(), destroy() methods  
 
-**Enable Annotaion support**  
-1. Add this tag in XML - ```<context:annotation-config />```  
-2. Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
-
-**Annotations**:  
+**Annotations to remember**:  
 @Autowired   
 @Component  
 @Qualifier("beanName")  
