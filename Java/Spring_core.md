@@ -50,8 +50,8 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 2. While Constructor injection: ```<constructor-arg name="soda" value="True"/>```  
 3. While Object injection via setter, constructor:    
 ```<property name="color" ref="anotherBeanName"/> <constructor-arg name="color" ref="anotherBeanName"/>```  
-4. Via property file:   `
-```<context:property-placeholder location="classpath:rasna-info.properties"/>```
+4. Via property file:
+```<context:property-placeholder location="classpath:rasna-info.properties"/>```  
 ```<property name="color" value="${foo.color}"/>```    
 	
 
