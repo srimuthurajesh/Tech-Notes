@@ -48,10 +48,11 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 **Dependency injection via XML**:   
 1. While Setter injection: ```<property name="color" value="red"/>```  
 2. While Constructor injection: ```<constructor-arg name="soda" value="True"/>```  
-3. While Object injection via setter, constructor:    
-```<property name="color" ref="anotherBeanName"/> <constructor-arg name="color" ref="anotherBeanName"/>```  
-4. Via property file:
-```<context:property-placeholder location="classpath:rasna-info.properties"/>```  
+3. While Object injection via setter, constructor:      
+```<property name="color" ref="anotherBeanName"/>```  
+```<constructor-arg name="color" ref="anotherBeanName"/>```  
+4. Via property file:  
+```<context:property-placeholder location="classpath:rasna-info.properties"/>```   
 ```<property name="color" value="${foo.color}"/>```    
 	
 
