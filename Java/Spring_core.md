@@ -84,7 +84,8 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 @Component - define class as bean    
 @Qualifier - give bean id, avoid ambiquity while using autowired  
 @Autowired - provides dependency  
-
+@Value() - field injection directly or via property file   
+	@PropertySource("classpath:rasna-info.properties")
 ---
 
 
@@ -113,4 +114,4 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 @PreDestroy  
 @ComponentScan("com.controller")   
 @PropertySource("classpath:rasna-info.properties")
-
+@Value()
