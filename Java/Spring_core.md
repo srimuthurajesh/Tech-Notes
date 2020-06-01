@@ -19,7 +19,7 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
 2. **Dependency Injection(DI)**: where object define their dependencies via 
 
-**Way of Injections**: setter/contructor injection
+**Way of Injections**: setter/contructor injection  
 **Dependcies of Injection**: literal, object, collection  
 **Beans**: objects present in IOC container  
 
@@ -50,10 +50,12 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 2. While Constructor injection: ```<constructor-arg name="soda" value="True"/>```  
 3. While Object injection via setter, constructor:    
 ```	<property name="color" ref="anotherBeanName"/>  
-	<constructor-arg name="color" ref="anotherBeanName"/> ```  
+	<constructor-arg name="color" ref="anotherBeanName"/> 
+```  
 4. Via property file:   `
 ```	<context:property-placeholder location="classpath:rasna-info.properties"/> 
-	<property name="color" value="${foo.color}"/> ```    
+	<property name="color" value="${foo.color}"/> 
+```    
 	
 
 **Autowire attribute**: <bean id="rasna" class="Rasna" autowire="constructor">  
