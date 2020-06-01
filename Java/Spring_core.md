@@ -36,14 +36,11 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 **Types of Spring configurations:**  
 1.XML, 2.Java, 3.Annotation  
 
-----
 ## XML
-
 **Steps to create spring bean(IOC via XML)**:  
-1. Configure spring bean.xml  	*<bean id="beanId" class="com.ClassName"></bean>  
-2. Create spring container 	*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
-3. Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");  
-
+1. Configure spring bean.xml  	```<bean id="beanId" class="com.ClassName"></bean>```  
+2. Create spring container 	```ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");```    
+3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```    
 
 **Dependency injection via XML**:   
 1. While Setter injection: ```<property name="color" value="red"/>```  
@@ -54,16 +51,20 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 4. Via property file:  
 ```<context:property-placeholder location="classpath:rasna-info.properties"/>```   
 ```<property name="color" value="${foo.color}"/>```    
-	
 
-**Autowire attribute**: <bean id="rasna" class="Rasna" autowire="constructor">  
--no need to write object injection <property name="color" ref="anotherBeanName"/>  
--no need to use @Autowired  
-1. byType  
-2. byName 
-3. constructor
-4. default 
+**Autowire attribute via XML**: <bean id="rasna" class="Rasna" autowire="constructor">  
+-no need to write object injection <property name="color" ref="anotherBeanName"/>, no @Autowired  
+1.byType, 2.byName, 3.constructor, 4.default 
  
+ ##JAVA approach  
+ 
+**Steps to create spring bean(IOC via JAVA)**:  
+1. Configure spring Config.java - that has @Configuration 
+2. Create spring container 	```ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);```    
+3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```    
+
+ 
+--- 
 **Bean scope**:  
 1. Singleton - Default scope, only one bean created and shared per IOC container.    
 2. Proprotype - each time new bean will created  
