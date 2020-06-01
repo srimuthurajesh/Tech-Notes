@@ -86,6 +86,7 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 @Autowired - provides dependency  
 @Value() - field injection directly or via property file   
 	@PropertySource("classpath:rasna-info.properties")
+	
 ---
 
 
