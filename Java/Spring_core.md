@@ -33,6 +33,9 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 3. WebXmlApplicationContext - will load bean from within the web application  
 4. AnnotationConfigApplicationContext - support annotation class    
 
+**Types of Spring configurations:**  
+1.XML, 2.Java, 3.Annotation  
+
 **Steps to create spring bean**:  
 1. Configure spring bean xml  	*<bean id="beanId" class="com.ClassName"></bean>  
 2. Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
