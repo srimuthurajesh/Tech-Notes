@@ -36,15 +36,26 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 **Types of Spring configurations:**  
 1.XML, 2.Java, 3.Annotation  
 
-**Steps to create spring bean**:  
-1. Configure spring bean xml  	*<bean id="beanId" class="com.ClassName"></bean>  
+----
+## XML
+
+**Steps to create spring bean(IOC via XML)**:  
+1. Configure spring bean.xml  	*<bean id="beanId" class="com.ClassName"></bean>  
 2. Create spring container 		*ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");  
 3. Retrieve bean from container *ClassName obj = (className)context.getBean("beanId");  
-   
-**XML attributes**:   
-Setter injection : <property name="color" value="red"/>   
-Constructor injection: <constructor-arg name="soda" value="True"/>  
-Object injection : <property name="color" ref="anotherBeanName"/>  
+
+
+**Dependency injection via XML**:   
+1. While Setter injection: ```<property name="color" value="red"/>```  
+2. While Constructor injection: ```<constructor-arg name="soda" value="True"/>```  
+3. While Object injection via setter, constructor:    
+```	<property name="color" ref="anotherBeanName"/>  
+	<constructor-arg name="color" ref="anotherBeanName"/>```  
+4. Via property file:   `
+```	<context:property-placeholder location="classpath:rasna-info.properties"/> 
+	<property name="color" value="${foo.color}"/>
+```  
+	
 
 **Autowire attribute**: <bean id="rasna" class="Rasna" autowire="constructor">  
 -no need to write object injection <property name="color" ref="anotherBeanName"/>  
