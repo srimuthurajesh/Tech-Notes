@@ -51,13 +51,13 @@ Object injection : <property name="color" ref="anotherBeanName"/>
 3. constructor
 4. default 
  
-**Bean scope**:
-```
-<bean id="" class="" scope="singleton">
-<bean id="" class="" scope="prototype">
-```  
-@Scope("singleton")  
-@Scope("prototype")  
+**Bean scope**:  
+1. Singleton - Default scope, only one bean created and shared per IOC container.    
+2. Proprotype - each time new bean will created  
+3. Request - each HTTP request will have its own instance of bean  
+4. Session - bean defined to Http session scope
+5. Global-session - bean defined to Http Global session scope   
+Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")   
 
 **Bean Lifecycle**:  
 1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
