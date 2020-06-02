@@ -11,10 +11,11 @@
     @Column - specify details of column. name,length,nullable,unique  
     @Id - to mention primary key for persistant class  
     @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
-    GenerationType.AUTO- appropreiate stategy for particular DB  
-    GenerationType.Identity- assign primarykey using db identity column    
-    GenerationType.SEQUENCE- assign primarykey using db sequence  
-    GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
+    	a) GenerationType.AUTO- appropreiate stategy for particular DB  
+    	b) GenerationType.Identity- assign primarykey using db identity column    
+    	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
+    	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
+    	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
 ```  
 @Entity  
 @Table(name="employee")  
