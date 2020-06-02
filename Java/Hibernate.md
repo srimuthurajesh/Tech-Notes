@@ -4,6 +4,25 @@
 - **dialect** : specify the type of database
 
 1. create persistant class
+    **Annotations:**  
+    @Entity - make class as entity bean  
+    @Table - specify details of table. name,catalogue,schema,unique constraints  
+    @Column - specify details of column. name,length,nullable,unique  
+    @Id - to mention primary key for persistant class  
+    @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+    GenerationType.AUTO- appropreiate stategy for particular DB  
+    GenerationType.Identity- assign primarykey using db identity column    
+    GenerationType.SEQUENCE- assign primarykey using db sequence  
+    GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
+```  
+@Entity  
+@Table(name="employee")  
+public class Employee {  
+	@Id  
+	@GeneratedValue(strategy=GenerationType.IDENTITY)  
+	@Column(name="empid")  
+	private int empid;  
+```  
 2. create hiberate.cfg.xml
 ```
 <hibernate-configuration>
@@ -31,13 +50,6 @@ session.beginTransaction();
 session.save(persistantObj);
 session.getTransaction().commit();
 ```
-**Annotations:**\
-@Entity - make class as entity bean\
-@Table - specify details of table. name,catalogue,schema,unique constraints\
-@Id - to mention primary key for persistant class\
-@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE\
-@Column - specify details of column. name,length,nullable,unique
-
 **Query interface**: 
 1. list 
 2. executeUpdate - use for delete & update
