@@ -3,7 +3,8 @@
 - **JPA tool** :  provides functionality and standard to ORM tools.
 - **dialect** : specify the type of database
 
-1. create persistant class
+**Steps for Hibernate**:  
+1. create persistant class    
     **Annotations:**  
     @Entity - make class as entity bean  
     @Table - specify details of table. name,catalogue,schema,unique constraints  
