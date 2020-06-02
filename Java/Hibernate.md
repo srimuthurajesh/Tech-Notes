@@ -30,13 +30,13 @@ public class Employee {
 ```
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/dbName</property>
-        <property name="connection.username">hbstudent</property>
-        <property name="connection.password">hbstudent</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>  
-		<property name="hbm2ddl.auto">create</property>  
-        <property name="show_sql">true</property>
+        <propertyerty name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <propertyerty name="connection.url">jdbc:mysql://localhost:3306/dbName</property>
+        <propertyerty name="connection.username">hbstudent</property>
+        <propertyerty name="connection.password">hbstudent</property>
+        <propertyerty name="dialect">org.hibernate.dialect.MySQLDialect</property>  
+		<propertyerty name="hbm2ddl.auto">create</property>  
+        <propertyerty name="show_sql">true</property>
     </session-factory>
 </hibernate-configuration>
 ```
@@ -154,3 +154,58 @@ private StudentDetail studentDetail;
                                inverseJoinColumns=@JoinColumn("student_details_id"))
 
 ```
+
+## Cache:
+ 
+First level cache: default, hold by session object  
+Secound level cache:  data stored in hashmap format where primarykey is key, result is value  
+EH(Easy Hibernate), Swarm, OS, JBoss Cache  
+	1.READ_ONLY: work for readonly operation  
+	2.NONSTRICT-READ-WRITE: work for readwrite but one at a time  
+	3.READ-WRITE: work for readwrite, can be used simultaneously  
+	4.TRANSACTIONAL: work for transaction  
+Steps to enable 2nd level cache:  
+1. in pom.xml add hibernate-ehcache  
+2. Add properties in xml   
+```
+<property name="hibernate.cache.use_second_level_cache">true</property>  
+<property name="hibernate.cache.use_query_cache">true</property>  
+<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> 
+<property name="net.sf.ehcache.configurationResourceName">/your-cache-config.xml</property>  
+```
+3. Add cache-config.xml
+```
+<?xml version="1.0" ?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             updateCheck="false"
+       xsi:noNamespaceSchemaLocation="ehcache.xsd" name="yourCacheManager">
+     <diskStore path="java.io.tmpdir"/>
+     <cache name="yourEntityCache"
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            overflowToDisk="false"
+            timeToLiveSeconds="86400" />
+     <cache name="org.hibernate.cache.internal.StandardQueryCache"
+            maxElementsInMemory="10000"
+            eternal="false
+            timeToLiveSeconds="86400"
+            overflowToDisk="false"
+            memoryStoreEvictionPolicy="LRU" />
+  <defaultCache
+          maxElementsInMemory="10000"
+          eternal="false"
+          timeToLiveSeconds="86400"
+          overflowToDisk="false"
+          memoryStoreEvictionPolicy="LRU" />
+</ehcache>
+```
+4. Add annotation in entity class  
+```
+@Cacheable  
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)  
+public class Employee {   } 
+```  
+
+**Query cache:** data stored as hashmap where query text param is key, result is value 
+1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
+2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
