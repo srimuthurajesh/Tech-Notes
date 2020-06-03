@@ -159,52 +159,26 @@ private StudentDetail studentDetail;
  
 **First level cache**: default, hold by session object  
 **Secound level cache:**  
--data stored in hashmap format where primarykey is key and result is value   
--works only for session object, not createQuery createSQLQuery 
-EH(Easy Hibernate), Swarm, OS, JBoss Cache  
-	1.READ_ONLY: work for readonly operation  
-	2.NONSTRICT-READ-WRITE: work for readwrite but one at a time  
-	3.READ-WRITE: work for readwrite, can be used simultaneously  
-	4.TRANSACTIONAL: work for transaction  
+-data stored in hashmap format eg.<22,{"raj","ECE"}> where primarykey is key and result is value   
+-works only for session object, not work for createQuery/createSQLQuery   
+-some cache providers are EH(Easy Hibernate), Swarm, OS, JBoss Cache  
+
 Steps to enable 2nd level cache:  
 1. in pom.xml add hibernate-ehcache  
 2. Add properties in xml   
 ```
-<property name="hibernate.cache.use_second_level_cache">true</property>  
-<property name="hibernate.cache.use_query_cache">true</property>  
-<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> 
-<property name="net.sf.ehcache.configurationResourceName">/your-cache-config.xml</property>  
+<property name="hibernate.cache.use_second_level_cache">true</property>
+<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 ```
-3. Add cache-config.xml
+3. Add annotation in entity class  
 ```
-<?xml version="1.0" ?>
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             updateCheck="false"
-       xsi:noNamespaceSchemaLocation="ehcache.xsd" name="yourCacheManager">
-     <diskStore path="java.io.tmpdir"/>
-     <cache name="yourEntityCache"
-            maxEntriesLocalHeap="10000"
-            eternal="false"
-            overflowToDisk="false"
-            timeToLiveSeconds="86400" />
-     <cache name="org.hibernate.cache.internal.StandardQueryCache"
-            maxElementsInMemory="10000"
-            eternal="false
-            timeToLiveSeconds="86400"
-            overflowToDisk="false"
-            memoryStoreEvictionPolicy="LRU" />
-  <defaultCache
-          maxElementsInMemory="10000"
-          eternal="false"
-          timeToLiveSeconds="86400"
-          overflowToDisk="false"
-          memoryStoreEvictionPolicy="LRU" />
-</ehcache>
-```
-4. Add annotation in entity class  
-```
-@Cacheable  
-@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)  
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
+/*	1.READ_ONLY: work for readonly operation  
+	2.NONSTRICT-READ-WRITE: work for readwrite but one at a time  
+	3.READ-WRITE: work for readwrite, can be used simultaneously  
+	4.TRANSACTIONAL: work for transaction  
+*?
 public class Employee {   } 
 ```  
 
