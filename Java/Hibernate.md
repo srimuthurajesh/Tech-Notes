@@ -78,8 +78,8 @@ session.getTransaction().commit();	//get transaction obj asso with session
 
 **RETRIVE**:  
 1. SESSION - session.get(Student.class, stdId); session.load(Student.class, stdId);  
-	get: return proxy obj, wont hit DB, throw exception if result not found  
-	load: hit DB each time, return null if result not found   	
+	load method: wont hit DB until result object been used,proxy obj, throw exception if result not found  
+	get method: surely hit DB eventhough result obj not used, return null if result not found   	
 2. HQL - 	
 		session.createQuery("from student").list();   
 		session.createQuery("from student s where s.name='raj'").list();  
