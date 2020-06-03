@@ -157,8 +157,10 @@ private StudentDetail studentDetail;
 
 ## Cache:
  
-First level cache: default, hold by session object  
-Secound level cache:  data stored in hashmap format where primarykey is key, result is value  
+**First level cache**: default, hold by session object  
+**Secound level cache:**  
+-data stored in hashmap format where primarykey is key and result is value   
+-works only for session object, not createQuery createSQLQuery 
 EH(Easy Hibernate), Swarm, OS, JBoss Cache  
 	1.READ_ONLY: work for readonly operation  
 	2.NONSTRICT-READ-WRITE: work for readwrite but one at a time  
