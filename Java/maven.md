@@ -95,4 +95,18 @@ Archiva - archive.apache.org
 Artifactory - www.jfrog.com  
 Nexus - www.sonatype.com  
 
-
+### Maven commands  
+Create Java project  
+```
+mvn archetype:generate 
+-DgroupId=org.yourcompany.project 
+-DartifactId=application
+```  
+Create web project  
+```
+mvn archetype:generate 
+-DgroupId=org.yourcompany.project 
+-DartifactId=application 
+-DarchetypeArtifactId=maven-archetype-webapp
+```  
+Create archetype from existing project ```mvn archetype:create-from-project```  
