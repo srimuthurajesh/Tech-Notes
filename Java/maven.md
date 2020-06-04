@@ -1,4 +1,8 @@
-Maven - build automation tool
+## Maven 
+
+-project dependency management tool  
+-build and run project  
+-IDE independent  
 
 POM - project object model
 ```
