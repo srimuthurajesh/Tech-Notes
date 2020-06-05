@@ -1,6 +1,6 @@
 - Follows MVC design pattern
-
-**1. Configure web.xml**
+**1. Configure pom.xml**: spring-webmvc, servlet-api(for abstractAnnotationConfigDispatcherServletInitializer)  
+**2. Configure web.xml**
 ```
 <web-app>
   <welcome-file-list>
@@ -33,7 +33,7 @@
   </init-param>
 </web-app>
 ```
-**1a.DispatcherServletInitializer.java**
+**2a.DispatcherServletInitializer.java**
 ```
 public class DispatcherServletInitializer{
 	@Override
@@ -50,7 +50,7 @@ public class DispatcherServletInitializer{
 	}
 }
 ```
-**2. Configure dispatcher-servlet.xml**
+**3. Configure dispatcher-servlet.xml**
 ```
 <beans>
   <context:component-scan base-package="com.controller">
@@ -61,7 +61,7 @@ public class DispatcherServletInitializer{
   </bean>
 </beans>
 ```
-**2a. DispatcherServlet.java**
+**3a. DispatcherServlet.java**
 ```
 @Configuration
 @EnableWebMvc //it is <mvc:annotaion-driven/>
@@ -76,7 +76,7 @@ public class DispatcherServlet(){
 	}
 }
 ```
-**3. Create controller class**
+**4. Create controller class**
 ```
 @Controller  
 public class HelloController {  
