@@ -1,4 +1,4 @@
-- Follows MVC design pattern
+- Follows MVC design pattern  
 **1. Configure pom.xml**: spring-webmvc, servlet-api(for abstractAnnotationConfigDispatcherServletInitializer)  
 **2. Configure web.xml**
 ```
