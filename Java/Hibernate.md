@@ -185,3 +185,12 @@ public class Employee {   }
 **Query cache:** data stored as hashmap where query text param is key, result is value 
 1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
 2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
+
+**Hibernate configurations**:
+1.DAO class  
+```
+ @Autowired  
+    SessionFactory sessionFactory;  
+    Session session = sessionFactory.openSession(); we can use session objects  
+```
+2a.hibernate.cfg.
