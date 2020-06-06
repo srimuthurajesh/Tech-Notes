@@ -116,4 +116,6 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 @ComponentScan("com.controller")   
 @PropertySource("classpath:rasna-info.properties")
 @Value()  
-@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet() 
+@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
+@Service -* same as component, jused for service layer  
+@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException
