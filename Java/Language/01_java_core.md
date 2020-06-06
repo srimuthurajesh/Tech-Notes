@@ -1,3 +1,9 @@
+Installation stuffs:  
+1.JAVA_HOME - path of JDK folder  
+2.MAVEN_HOME - path of maven folder  
+3.M2_HOME - path of maven folder  
+4.PATH - path of JDK,path of maven  
+
 ## Java
 JDK - Compiler + libraries -For developer contains javac,debugging tools\
 JRE - Interpreter + JVM - For other users to run java program\
