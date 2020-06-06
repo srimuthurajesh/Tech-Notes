@@ -115,4 +115,5 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 @PreDestroy  
 @ComponentScan("com.controller")   
 @PropertySource("classpath:rasna-info.properties")
-@Value()
+@Value()  
+@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet() 
