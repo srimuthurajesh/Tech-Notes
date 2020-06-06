@@ -9,9 +9,7 @@
 -REPRESENTATION-json xml to represent data object  
 -MESSAGE - use http method  
 -STATELESS -   
-
-**Http methods:**   
-
+  
 Http Method | usage
 --- | --- 
 POST|create,non-idempotent method
@@ -29,16 +27,44 @@ HTTP code|usage
 5xx|server error
 
 **Annotations:**
-```
-@RestController - extension of controller, handles Req Res.
-                  it consists @Controller,@ResponseBody
+@RestController -  consists @Controller,@ResponseBody, handles Req/Res  
+@RequestMapping("/getEmployees") -default GET method  
+@RequestMapping(value="/getEmployees", method=RequestMethod.GET)  -support GET,PUT,DELETE,POST  
+
+@GetMapping("/getEmployees")  - same as @RequestMapping  
+@PostMapping("/addEmployee")
+@RequestBody - arg ex:Employee addEmployee(@RequestBody Employee emp) 
+@PutMapping("/updateEmployee")  
+@DeleteMapping("/deleteEmployees/{empId}")
+@PathVariable - arg ex:Employee delEmployee(@PathVariable int empId)  
+
 @Path("/sample")
 @QueryParam 
 @PathParam
-@Produces - specify MIME media type  like text/xml,text/json
+
+@Produces - specify MIME media type  
+``@PostMapping(value="/rest/addEmployee",produces={"application/x-www-form-urlencoded","application/json"})``  
 @Consumes - array of string of MIME type
-@ExceptionHandler - a method to handle all exception with not found httml message
-```
+@ExceptionHandler - a method to handle all exception with not found html message
+
+**Two types of Response @RestController**:  
+1.Add Jackdon-bind pom.xml, just return object list  
+2.use ResponseEntity<> class - ex: return new ResponseEntity<>(ResBody,HttpCode);  
+
+**Exception handling**:  
+@ExceptionHandler a method to handle exception in controller  
+@ControllerAdvise - a class consists of @ExceptionHandler functions  
+ErrorResponse body consists of- 1.status,2.msg,3.timestamp   
+
+**Best practices in REST**  
+Http Method | endpoint | action  
+--- | --- | --- 
+POST| api/customers |create new customer
+GET| api/customers |retrieve all customer
+GET| api/customers/{cusId} |read single customer
+PUT| api/customers |update customer 
+DELETE| api/customers/{cusId} |delete customer    
+
 **File upload:**
 ```
 @POST
