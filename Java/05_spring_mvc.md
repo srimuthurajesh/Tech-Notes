@@ -1,5 +1,5 @@
 - Follows MVC design pattern  
-**1. Configure pom.xml**: spring-webmvc, servlet-api(for abstractAnnotationConfigDispatcherServletInitializer)  
+**1. Configure pom.xml**: add dependency spring-webmvc  
 **2. Configure web.xml**
 ```
 <web-app>
@@ -33,9 +33,9 @@
   </init-param>
 </web-app>
 ```
-**2a.DispatcherServletInitializer.java**
+**2a.DispatcherServletInitializer.java** add pom.xml dependency servlet-api
 ```
-public class DispatcherServletInitializer{
+public class DispatcherServletInitializer implments abstractAnnotationConfigDispatcherServletInitializer{
 	@Override
 	protected Class<?>[] getRootConfigClasses(){
 		return null;
