@@ -119,3 +119,5 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 @WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
 @Service -* same as component, jused for service layer  
 @Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException
+
+@Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
