@@ -170,7 +170,9 @@ Steps to enable 2nd level cache:
 ```
 <property name="hibernate.cache.use_second_level_cache">true</property>
 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
-<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+<property name="hibernate.cache.region.factory_class">
+org.hibernate.cache.ehcache.EhCacheRegionFactory
+</property>
 ```
 3. Add annotation in entity class  
 ```
