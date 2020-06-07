@@ -93,19 +93,19 @@ session.getTransaction().commit();	//get transaction obj asso with session
 3. SQL -  session.CreateSQLQuery("select name from students").executeUpdate(); 
 4. CreateCriteria - read only   
 ```
-	Criteria cr = session.createCriteria(Employee.class).list();
-	Criterion salary = cr.add(Restrictions.eq("salary", 2000)); 
-	//eq,lt,gt,like,ilike,between,isNull,isNotNull,isEmpty,isNotEmpty  
-	Criterion name = Restrictions.ilike("firstNname","zara%");  
-	LogicalExpression orExp = Restrictions.or(salary, name); //eq. or,and    
-	cr.add( orExp );
-	cr.setFirstResult(1);				// limit start  
-	cr.setMaxResults(10); 				// limit end  
-	cr.addOrder(Order.asc("salary")); //orderBy   
-	cr.setProjection(Projections.rowCount());  //count*  
-	cr.setProjection(Projections.countDistinct("firstName"));	//distinct count*  
-	cr.setProjection(Projections.sum("salary")); //aggregate functions  //min,max,avg   
-	List<Employee> results = cr.list();  
+Criteria cr = session.createCriteria(Employee.class).list();
+Criterion salary = cr.add(Restrictions.eq("salary", 2000)); 
+//eq,lt,gt,like,ilike,between,isNull,isNotNull,isEmpty,isNotEmpty  
+Criterion name = Restrictions.ilike("firstNname","zara%");  
+LogicalExpression orExp = Restrictions.or(salary, name); //eq. or,and    
+cr.add( orExp );
+cr.setFirstResult(1);				// limit start  
+cr.setMaxResults(10); 				// limit end  
+cr.addOrder(Order.asc("salary")); //orderBy   
+cr.setProjection(Projections.rowCount());  //count*  
+cr.setProjection(Projections.countDistinct("firstName"));	//distinct count*  
+cr.setProjection(Projections.sum("salary")); //aggregate functions  //min,max,avg   
+List<Employee> results = cr.list();  
 ```
 
 **UPDATE**  
@@ -192,9 +192,9 @@ public class Employee {   }
 **Hibernate configurations**:
 1.DAO class  
 ```
- @Autowired  
-    SessionFactory sessionFactory;  
-    Session session = sessionFactory.openSession(); we can use session objects  
+@Autowired  
+SessionFactory sessionFactory;  
+Session session = sessionFactory.openSession(); we can use session objects  
 ```
 2a.hibernate.AppplicationContextConfig.java  
 ```
