@@ -94,7 +94,8 @@ session.getTransaction().commit();	//get transaction obj asso with session
 4. CreateCriteria - read only   
 ```
 	Criteria cr = session.createCriteria(Employee.class).list();
-	Criterion salary = cr.add(Restrictions.eq("salary", 2000));  //eq,lt,gt,like,ilike,between,isNull,isNotNull,isEmpty,isNotEmpty  
+	Criterion salary = cr.add(Restrictions.eq("salary", 2000)); 
+	//eq,lt,gt,like,ilike,between,isNull,isNotNull,isEmpty,isNotEmpty  
 	Criterion name = Restrictions.ilike("firstNname","zara%");  
 	LogicalExpression orExp = Restrictions.or(salary, name); //eq. or,and    
 	cr.add( orExp );
