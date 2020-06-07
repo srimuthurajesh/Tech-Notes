@@ -98,15 +98,15 @@ c)create interface DAO and extends JpaRepository<Employee, Integer>
 @RespositoryRestResource(path="employees")   //usually plural lowercase of entity class  
 public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Integer> {
 ``` 
-thats all, REST application is ready. employees/{empId} etc we can access...  
-spring.data.rest.base-path=/magicapi  // configure basepath for endpoints *localhost/magicapi/employees*    
-spring.data.rest.default-page-size=10  // *localhost/magicapi/employees?page=3* // will give limit 21 to 30  
-spring.data.rest.max-page-size=4       //only four pages allowed menas 40 records allowed  
+thats all, REST application is ready. employees/{empId} etc we can access...   
+spring.data.rest.base-path=/magicapi  // configure basepath for endpoints *localhost/magicapi/employees*     
+spring.data.rest.default-page-size=10  // *localhost/magicapi/employees?page=3* // will give limit 21 to 30   
+spring.data.rest.max-page-size=4       //only four pages allowed menas 40 records allowed   
 
-*localhost/magicapi/employees?sort=lastName*  // sort ascending based on lastName  
-*localhost/magicapi/employees?sort=lastName,desc*  // sort descending based on lastName 
-*localhost/magicapi/employees?sort=firstName,lastName,desc*  // sort ascending firstname then lastname  
--will provide meta data with response like size,totalElements,totalPages,number  
--will provide Natheos details like, history links  
+*localhost/magicapi/employees?sort=lastName*  // sort ascending based on lastName   
+*localhost/magicapi/employees?sort=lastName,desc*  // sort descending based on lastName  
+*localhost/magicapi/employees?sort=firstName,lastName,desc*  // sort ascending firstname then lastname   
+-will provide meta data with response like size,totalElements,totalPages,number   
+-will provide Natheos details like, history links   
 
  
