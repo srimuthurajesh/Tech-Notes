@@ -1,8 +1,8 @@
 Installation stuffs:  
-1.JAVA_HOME - path of JDK folder  
-2.MAVEN_HOME - path of maven folder  
-3.M2_HOME - path of maven folder  
-4.PATH - path of JDK,path of maven  
+1.In User variable- M2_HOME - path of maven folder  
+1.In Sysem variable JAVA_HOME - path of JDK folder  
+2.In Sysem variable MAVEN_HOME - path of maven folder
+4.In Sysem variable PATH - path of JDK,path of maven  
 
 ## Java
 JDK - Compiler + libraries -For developer contains javac,debugging tools\
