@@ -7,12 +7,9 @@
 **Steps for Hibernate**:  
 1. create persistant class    
   ```  
-@Entity  
-@Table(name="employee")  
+@Entity  @Table(name="employee")  
 public class Employee {  
-	@Id  
-	@GeneratedValue(strategy=GenerationType.IDENTITY)  
-	@Column(name="empid")  
+	@Id  @GeneratedValue(strategy=GenerationType.IDENTITY)  @Column(name="empid")  
 	private int empid;  
 ```  
 2. create hiberate.cfg.xml
@@ -60,12 +57,12 @@ session.getTransaction().commit();	//get transaction obj asso with session
 4. Detached - closed from session(while clear(),close())  
 
 **Annotations:**  
-@Entity - make class as entity bean  
-@Table - specify details of table. name,catalogue,schema,unique constraints  
-@Column - specify details of column. name,length,nullable,unique  
-Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
-@Id - to mention primary key for persistant class  
-@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+1,@Entity - make class as entity bean  
+2.@Table - specify details of table. name,catalogue,schema,unique constraints  
+3.@Column - specify details of column. name,length,nullable,unique  
+	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
+4.@Id - to mention primary key for persistant class  
+5.@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
 	a) GenerationType.AUTO- appropreiate stategy for particular DB  
 	b) GenerationType.Identity- assign primarykey using db identity column    
 	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
