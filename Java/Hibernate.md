@@ -1,8 +1,8 @@
 ## Hibernate
-> framework for database interactions.
-- **ORM tool** : programming technique that maps the object to the data stored in the database.
-- **JPA tool** :  provides functionality and standard to ORM tools.
-- **dialect** : specify the type of database
+> framework for database interactions  
+- **ORM tool** : maps java object to Database table   
+- **JPA tool** :  standard for ORM tools.
+- **dialect** : specify type of database
 
 **Steps for Hibernate**:  
 1. create persistant class    
@@ -34,14 +34,16 @@ SessionFactory factory = new Configuration()
                 .buildSessionFactory();
 Session session = factory.getCurrentSession(); //session object 
 session.beginTransaction();	//begin and return transaction obj  
-/*CRUD Operations*/ session.save(persistantObj);
+session.save(persistantObj); /*CRUD Operations*/   
 session.getTransaction().commit();	//get transaction obj asso with session  
 ```
 
 ----
 
 **Hibernate Architecture**:  
-1. Configuration object- creates one time, specify connection properties by xml file & maps javaclasses and DBtables    
+1. Configuration object  
+- creates one time, 
+- specify connection properties by xml file & maps javaclasses and DBtables    
 2. SessionFactory object- creates one time, created by configuration, thread safe, heavyweight object  
 3. Session object- created eachtime interact DB, created by sessionfactory, not thread safe, so do close it
 					runtime interface between java and DB, 
