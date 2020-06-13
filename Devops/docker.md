@@ -10,31 +10,28 @@ Namespaceing isolates resource per process
 Controlgroups limits resources per process  
 Docker engine creates a linux virtual machine, uses this feature and perform containerization   
 
-**Image**: series of instructions(layers) executed from image's Dockerfile
-
-**Dockerfile**: text file contains command to assemble image. consists three parts syntax    
+**Image**: series of instructions(layers), executed from image's Dockerfile
+**Dockerfile**: text file of commands to assemble image. consists three parts syntax    
 1. Specify base image
 2. Commands to download,copy,install dependency
 3. Startup command  
 
-**Instructions inside Dockerfile**:  
-FROM	-set base image  ex: ```FROM alphine```   
-RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```  
-CMD 	-executed when run container. ex:```CMD echo 'hello world'```  
-ENTRYPOINT -same like CMD, but not ovverride by commandline command. ```ENTRYPOINT echo 'Hello' CMD echo 'world'```  
-```docker run cont_id echo 'earth'``` #o/p:Hello earth #cmd is overriden, but entrypoint not overriden  
-   
-
-ADD		-
-COPY	-copy files to container. COPY <from_path> <to_path> ex:```COPY composer.json /.```  
-ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```   
-EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
-LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
-STOPSIGNAL  
-USER	-set username/usergroup . USER <user>[:<group>]    
-VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
-WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
-ONBUILD  
+**Dockerfile Instructions**:  
+1. FROM	-set base image  ex: ```FROM alphine```   
+2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
+3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
+4. ENTRYPOINT -same like CMD, but not ovverride by commandline command. ```ENTRYPOINT echo 'Hello' CMD echo 'world'```    
+```docker run cont_id echo 'earth'``` #o/p:Hello earth #cmd is overriden, but entrypoint not overriden   
+5. ADD		-  
+6. COPY	-copy files to container. COPY <from_path> <to_path> ex:```COPY composer.json /.```   
+7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
+8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
+9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
+10. STOPSIGNAL  
+11. USER	-set username/usergroup . USER <user>[:<group>]    
+12. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
+13. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
+14. ONBUILD  
 
 
 ```
