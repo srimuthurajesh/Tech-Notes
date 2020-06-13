@@ -6,11 +6,9 @@ ie:VM uses Hypervisor(virualization), Docker uses dockerEngine(containerization)
 
 **Theory:**   
 In linux os, if we need to use two diff version of same software, it maintains namespace & controlgroups  
-Namespaceing isolates resource per process  
-Controlgroups limits resources per process  
 Docker engine creates a linux virtual machine, uses this feature and perform containerization   
 
-**Image**: series of instructions(layers), executed from image's Dockerfile
+**Image**: series of instructions(layers), executed from image's Dockerfile  
 **Dockerfile**: text file of commands to assemble image. consists three parts syntax    
 1. Specify base image
 2. Commands to download,copy,install dependency
@@ -23,12 +21,12 @@ Docker engine creates a linux virtual machine, uses this feature and perform con
 4. ENTRYPOINT -same like CMD, but not ovverride by commandline command. ```ENTRYPOINT echo 'Hello' CMD echo 'world'```    
 ```docker run cont_id echo 'earth'``` #o/p:Hello earth #cmd is overriden, but entrypoint not overriden   
 5. ADD		-  
-6. COPY	-copy files to container. COPY <from_path> <to_path> ex:```COPY composer.json /.```   
+6. COPY	-copy files to container. COPY _from_path_ _to_path_ ex:```COPY composer.json /.```   
 7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
 8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
 9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
 10. STOPSIGNAL  
-11. USER	-set username/usergroup . USER <user>[:<group>]    
+11. USER	-set username/usergroup . USER _user_[:_group_]    
 12. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
 13. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
 14. ONBUILD  
@@ -43,46 +41,42 @@ CMD ["npm start"]
 ```
 **Container**: an instance of image   
 
-
-- **Registry:** a storage and content delivery system used for distributing Docker images.
-- **Repository:** a collection of related Docker images, often different versions of the same application.
-
 ---
 ## COMMANDS 
 
-**Docker Running commands**:
+### Docker Running commands:
 docker version 			#show version  
 
-docker run <image-name> <command>  
+docker run _image-name_ _command_  
 ```docker run hello-world``` #get image from local or dockerhub     
 
-**Container life cycle commands**:  
+### Container life cycle commands:  
 docker run = docker create + docker start     
-docker create <image-name> 	#creates container layer over specified image, print container_id   
-docker start -a <container-id>    #start container, -a for print output  
+docker create _image-name_ 	#creates container layer over specified image, print container_id   
+docker start -a _container-id_    #start container, -a for print output  
 
-docker stop <container-id> #trigger SIGTERM, thus cleanups happen, proper shutdown    
-docker kill <container-id> #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
+docker stop _container-id_ #trigger SIGTERM, thus cleanups happen, proper shutdown    
+docker kill _container-id_ #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
 
-docker pause container_id
-docker unpause container_id
+docker pause _container-id_
+docker unpause _container-id_
 
-**Docker Listing commands**
+### Docker Listing commands
 docker imges	# show all image's repository,tags,size  
 docker ps  		# show running containers  
 
-**Docker command commands**  
-docker run <container_id> <command>	```docker run -it busybox sh``` #bustbox with shell terminal access  
-docker run -it <container_id> <command>   #-i=allowInput, -t=beautify   
-docker exec <container_id> <command>            #add command to already running container  
+### Docker command commands
+docker run _container_id_ _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
+docker run -it _container_id_ _command_   #-i=allowInput, -t=beautify   
+docker exec _container_id_ _command_            #add command to already running container  
 
 
-docker rm container_id
+docker rm _container-id_
 
-docker attach container_id                  #enter into shell
+docker attach _container-id_                 #enter into shell
 docker run host_port:container_port container_id
 
-**Docker history commands**  
+### Docker history commands   
 ```
 docker ps --all                             #list all previously runned containers
 docker run -rm container_id                 #remove container after executing
@@ -90,15 +84,15 @@ docker system prune                         #remove stopped containers
 docker inspect container_id                 #low level details like IP
 ```
 
-**Dockerfile commands**:  
-docker build <Dockerfile_path>		#pick Dockerfile from given dir and build it. generate image_id   
-docker build -t <docker_id>/<project_id>:<version> <Dockerfile_path>   #give customized name for builded image    
+### Dockerfile commands  
+docker build _Dockerfile_path_		#pick Dockerfile from given dir and build it. generate image_id   
+docker build -t _docker_id_/_project_id_:_version_ _Dockerfile_path_   #give customized name for builded image    
 ```docker build -t rajDock/redis:latest .```  
-docker run <customized_image_name>     #version not needed, default version is latest  
-docker commit -c 'CMD ["redid-server"]' <running_container_id>     #it will build new image from existing running container  
+docker run _customized_image_name_     #version not needed, default version is latest  
+docker commit -c 'CMD ["redid-server"]' _running_container_id_     #it will build new image from existing running container  
 
-**Docker network commands**:  
-docker run -p <local_port>:<container_port> <container_id> ```docker run -p 8080:8080 rajDock/redis``` 
+### Docker network commands  
+docker run -p _local_port_:_container_port_ _container_id_ ```docker run -p 8080:8080 rajDock/redis``` 
 
 
 
