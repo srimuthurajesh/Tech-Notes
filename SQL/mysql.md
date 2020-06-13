@@ -1,39 +1,19 @@
-## SQL- Structured query language
+## SQL- 
+>Structured query language
 
--row is called as “record”  
--each block are called as “cells” or “fields”  
--unique value: can be more than one  
--primary value: only one  
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 
  
-**DDL Data Definition Language**: create, modify struture of database  
-1. Create   
-2. Alter  
-3. Truncate   
-4. Drop   
-5. Rename  
+1. **DDL Data Definition Language**: create, modify struture of database  
+CREATE, ALTERr, TRUNCATE, DROP, RENAME  
 
-**DML Data Manipuulation Language**: CRUD  
-1. insert   
-2. select  
-3. update  
-4. delete   
+2. **DML Data Manipuulation Language**: CRUD  
+INSERT, SELECT, UPDATE, DELETE   
 	
-**DCL Data Control Language**: roles & permission  
-1. Grant  
-2. Revoke  
+3. **DCL Data Control Language**: roles & permission  
+GRANT,  REVOKE    
 
-**TCL Transactoin Control Language**: for transactions  
-1. Commit  
-2. Rollback  
-3. savepoint  
-4. set transaction
+4. **TCL Transactoin Control Language**: for transactions  
+COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION  
 
 **Mysql commandline:**
 ```	mysql –u root –p  
