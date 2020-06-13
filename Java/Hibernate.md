@@ -5,19 +5,7 @@
 
 **Steps for Hibernate**:  
 1. create persistant class    
-    **Annotations:**  
-    @Entity - make class as entity bean  
-    @Table - specify details of table. name,catalogue,schema,unique constraints  
-    @Column - specify details of column. name,length,nullable,unique  
-	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
-    @Id - to mention primary key for persistant class  
-    @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
-    	a) GenerationType.AUTO- appropreiate stategy for particular DB  
-    	b) GenerationType.Identity- assign primarykey using db identity column    
-    	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
-    	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
-    	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
-```  
+  ```  
 @Entity  
 @Table(name="employee")  
 public class Employee {  
@@ -52,6 +40,8 @@ session.beginTransaction();	//begin and return transaction obj
 session.getTransaction().commit();	//get transaction obj asso with session  
 ```
 
+----
+
 **Hibernate Architecture**:  
 1. Configuration object- creates one time, specify connection properties by xml file & maps javaclasses and DBtables    
 2. SessionFactory object- creates one time, created by configuration, thread safe, heavyweight object  
@@ -67,6 +57,20 @@ session.getTransaction().commit();	//get transaction obj asso with session
 2a. while get and load() it is in persistent stage    
 3. Removed - while remove(),delete()  
 4. Detached - closed from session(while clear(),close())  
+
+**Annotations:**  
+@Entity - make class as entity bean  
+@Table - specify details of table. name,catalogue,schema,unique constraints  
+@Column - specify details of column. name,length,nullable,unique  
+Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
+@Id - to mention primary key for persistant class  
+@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+	a) GenerationType.AUTO- appropreiate stategy for particular DB  
+	b) GenerationType.Identity- assign primarykey using db identity column    
+	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
+	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
+	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
+
 
 ## CRUD
 
