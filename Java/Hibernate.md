@@ -41,15 +41,25 @@ session.getTransaction().commit();	//get transaction obj asso with session
 ----
 
 **Hibernate Architecture**:  
-1. Configuration object  
-- creates one time, 
-- specify connection properties by xml file & maps javaclasses and DBtables    
-2. SessionFactory object- creates one time, created by configuration, thread safe, heavyweight object  
-3. Session object- created eachtime interact DB, created by sessionfactory, not thread safe, so do close it
-					runtime interface between java and DB, 
-4. Trasaction object- unit of work with DB, handled by underlying transaction manager and transaction (from JDBC or JTA).  
-5. Query object- use SQL,HQL string to retrieve data  
-6. Criteria Object-readonly used for retreive, has additional conditions criterias   
+1. **Configuration object**  
+-creates one time  
+-connection properties by xml file  
+-maps javaclasses and DBtables    
+2. **SessionFactory object**  
+-creates one time  
+-created by configuration  
+-thread safe  
+-heavyweight object  
+3. **Session object**  
+-created eachtime interact DB
+-created by sessionfactory  
+-not thread safe, so do close it  
+-runtime interface between java and DB, 
+4. **Trasaction object**  
+-unit of work with DB  
+-handled by underlying transaction manager and transaction (from JDBC or JTA).  
+5. **Query object**- use SQL,HQL string to retrieve data  
+6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
 **Hibernate Object lifecycle**:
 1. Transient - new instance of pojo  
@@ -59,12 +69,12 @@ session.getTransaction().commit();	//get transaction obj asso with session
 4. Detached - closed from session(while clear(),close())  
 
 **Annotations:**  
-1,@Entity - make class as entity bean  
-2.@Table - specify details of table. name,catalogue,schema,unique constraints  
-3.@Column - specify details of column. name,length,nullable,unique  
+1. @Entity - make class as entity bean  
+2. @Table - specify details of table. name,catalogue,schema,unique constraints  
+3. @Column - specify details of column. name,length,nullable,unique  
 	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
-4.@Id - to mention primary key for persistant class  
-5.@GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+4. @Id - to mention primary key for persistant class  
+5. @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
 	a) GenerationType.AUTO- appropreiate stategy for particular DB  
 	b) GenerationType.Identity- assign primarykey using db identity column    
 	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
