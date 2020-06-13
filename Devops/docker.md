@@ -5,7 +5,7 @@
 ie:VM uses Hypervisor(virualization), Docker uses dockerEngine(containerization)   
 
 **Theory:**   
-In linux os, if we need to use two diff version of same software, it maintains namespace & controlgroups 
+In linux os, if we need to use two diff version of same software, it maintains namespace & controlgroups  
 Namespaceing isolates resource per process  
 Controlgroups limits resources per process  
 Docker engine creates a linux virtual machine, uses this feature and perform containerization   
@@ -20,21 +20,21 @@ Docker engine creates a linux virtual machine, uses this feature and perform con
 **Instructions inside Dockerfile**:  
 FROM	-set base image  ex: ```FROM alphine```   
 RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```  
-CMD 	-executed when run container. ex:```CMD echo 'hello world'``` 
+CMD 	-executed when run container. ex:```CMD echo 'hello world'```  
 ENTRYPOINT -same like CMD, but not ovverride by commandline command. ```ENTRYPOINT echo 'Hello' CMD echo 'world'```  
 ```docker run cont_id echo 'earth'``` #o/p:Hello earth #cmd is overriden, but entrypoint not overriden  
    
 
 ADD		-
-COPY	-copy files to container. COPY <from_path> <to_path> ex:```COPY composer.json /.```
-ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```  
-EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```
-LABEL 	-add metadata to image ex:```LABEL description="this is cool"```
-STOPSIGNAL
-USER	-set username/usergroup . USER <user>[:<group>]  
-VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```
+COPY	-copy files to container. COPY <from_path> <to_path> ex:```COPY composer.json /.```  
+ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```   
+EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
+LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
+STOPSIGNAL  
+USER	-set username/usergroup . USER <user>[:<group>]    
+VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
 WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
-ONBUILD
+ONBUILD  
 
 
 ```
