@@ -25,11 +25,9 @@ src/test - unit testing
 target - compiled code by maven   
 
 **pom.xml** - project object model, it has  
-1.project meta data- projectName, version, filetype(JAR,WAR) etc
-2.dependencies- like spring, hibernate etc 
-3.plugins- custom task to run: junit test reports  
-
-POM - project object model
+1. project meta data- projectName, version, filetype(JAR,WAR) etc
+2. dependencies- like spring, hibernate etc 
+3. plugins- custom task to run: junit test reports  
 ```
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -70,9 +68,9 @@ POM - project object model
 Note: m2eclipse plugin should installed of maven support in eclipse 
 
 ### REPOSITORY:
-**Local repository** : c:\Users\<user-dir>\.m2\repository  
-**Central repository**: https://repo.maven.apache.org/maven2/
-**Additional repository**: there are other 250 repositories in mvnrepository.com  
+**1. Local repository** : c:\Users\<user-dir>\.m2\repository  
+**2. Central repository**: https://repo.maven.apache.org/maven2/
+**3. Additional repository**: there are other 250 repositories in mvnrepository.com  
 -if we need dependencies from other repositories except Central we need to add respository in pom.xml
 ```
 <repositories>
@@ -90,10 +88,12 @@ Note: m2eclipse plugin should installed of maven support in eclipse
   </dependency>
 </dependencies>
 ```
-**Private repository**: using  
+**4. Private repository**: using  
 Archiva - archive.apache.org  
 Artifactory - www.jfrog.com  
 Nexus - www.sonatype.com  
+
+---
 
 ### Maven commands  
 Create Java project  
@@ -110,3 +110,11 @@ mvn archetype:generate
 -DarchetypeArtifactId=maven-archetype-webapp
 ```  
 Create archetype from existing project ```mvn archetype:create-from-project```  
+**Other Commands:**  
+1. clean — delete target directory  
+2. validate — checks, if the project is correct  
+3. compile — compile source code, classes stored in target/classes  
+4. test — run testspackage —  take compiled code and package it in its distributable format, e.g. JAR, WAR  
+5. verify — run any checks to verify package is valid and meets quality criteria  
+6. install —  install package into local repository  
+7. deploy — copies final package to the remote repository
