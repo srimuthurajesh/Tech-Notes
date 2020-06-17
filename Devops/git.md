@@ -1,46 +1,46 @@
-GIT -
-1.version Control System (VCS), 
-2.Source control System(SCM), 
-3.Source code System
+## GIT  
+-version Control System (VCS)  
+-Source control System(SCM)  
+-Source code System  
 
-*Directory-> files irukum   
-*Respositary-> files, directory, history irukum.
 
-git –version	//to know git version
+git –version	 
 
 git config --global user.name "srimuthurajesh"
 git config --global user.email "srimuthurajesh@gmail.com"
 git config –list
 
-git init	//to make current folder git
-git init –base 	//important for remote respo
-
-git checkout <url> 		//use to return back when the changes are not */added
-git clone <url>
-
-git add .   			//save this point in time
-git add hello.html		//save the specific file
-git remote add origin /path or<url>
-git remote rm origin		//to remove current origin
-git push origin master
-git pull				//update
-
+git init < directory >	#to make given folder git
+git clone < url >       #get local copy from repo  
+git add < directory/fileName >   			//save this point in time
+git commit -m ""this is our first comment"
 git status     	//to know status
-git commit -m ""this is out first comment"
-git commit -am ""this is out first comment"		//moving directly to staging
-
-git rm –cached .		//remove entire folder from tracking
-git rm –cached index.html    // it wil not delete file, just it stop tracking the file
-
-git log			//this will show the previous commits
-git rm filename	//remove file from staging
-git reset –hard		//move to last commit given, 
-git reset HEAD	//reset to recent changes r
+git log			//commited history
 git diff			//looking for different between staging and working copy
 git diff --staged 	//difference between working and respository
 git diff branchname1 branchname2
 git diff commithash 1 commithash2
 
+
+
+
+git init –base 	//important for remote respo
+
+git checkout <url> 		//use to return back when the changes are not */added
+
+git remote add origin /path or<url>
+git remote rm origin		//to remove current origin
+git push origin master
+git pull				//update
+
+git commit -am ""this is out first comment"		//moving directly to staging
+
+git rm –cached .		//remove entire folder from tracking
+git rm –cached index.html    // it wil not delete file, just it stop tracking the file
+
+git rm filename	//remove file from staging
+git reset –hard		//move to last commit given, 
+git reset HEAD	//reset to recent changes r
 
 
 BRANCHING:
