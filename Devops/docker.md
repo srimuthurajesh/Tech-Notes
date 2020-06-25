@@ -27,10 +27,9 @@ CMD ["npm start"]
 1. FROM	-set base image  ex: ```FROM alphine```   
 2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
 3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
-4. ENTRYPOINT -same like CMD, but not ovverride by commandline command. ```ENTRYPOINT echo 'Hello' CMD echo 'world'```    
-```docker run cont_id echo 'earth'``` #o/p:Hello earth #cmd is overriden, but entrypoint not overriden   
+4. ENTRYPOINT -same like CMD, but not ovverride by commandline command.  
 5. ADD		-  
-6. COPY	-copy files to container. COPY _from_path_ _to_path_ ex:```COPY composer.json /.```   
+6. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
 7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
 8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
 9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
@@ -43,44 +42,44 @@ CMD ["npm start"]
 ---
 ## COMMANDS 
 ### Docker options command
-  1. ```--config string```      :Location of client config files (default "/root/.docker")  
-  2. ```-c, --context string```     :Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")  
-  3. ```-D, --debug``` :             Enable debug mode    
-  4. ```--help```     :          Print usage  
-  5. ```-H, --host value```    :     Daemon socket(s) to connect to (default [])  
-  6. ```-l, --log-level string```  : Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")  
-  7. ```--tls```   :             Use TLS; implied by --tlsverify  
-  8. ```--tlscacert string```  : Trust certs signed only by this CA (default "/root/.docker/ca.pem")  
-  9. ```--tlscert string```  :   Path to TLS certificate file (default "/root/.docker/cert.pem")  
-  10. ```--tlskey string```  :    Path to TLS key file (default "/root/.docker/key.pem")  
-  11. ```--tlsverify```   :       Use TLS and verify the remote  
-  12. ```-v, --version```  :          Print version information and quit
-
+  1. ```-v, --version```  :          Print version information and quit
+  2. ```-D, --debug``` :             Enable debug mode    
+  3. ```--help```     :          Print usage  
+  4. ```--config string```      :Location of client config files (default "/root/.docker")  
+  5. ```-c, --context string``` :Name of context use to connect daemon (overrides DOCKER_HOST ENVvar and default is "docker context use")  
+  6. ```-H, --host value```    :     Daemon socket(s) to connect to (default [])  
+  7. ```-l, --log-level string```  : Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")  
+  8. ```--tls```   :             Use TLS; implied by --tlsverify  
+  9. ```--tlscacert string```  : Trust certs signed only by this CA (default "/root/.docker/ca.pem")  
+  10. ```--tlscert string```  :   Path to TLS certificate file (default "/root/.docker/cert.pem")  
+  11. ```--tlskey string```  :    Path to TLS key file (default "/root/.docker/key.pem")  
+  12. ```--tlsverify```   :       Use TLS and verify the remote  
+  
 ### Container life cycle commands:  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
 Note:docker run = docker create + docker start     
 
 docker create [IMAGE] 	#creates container layer over specified image, print container_id   
 docker start -a [CONTAINER]    #start container, -a for print output  
-docker stop _container-id_ #trigger SIGTERM, thus cleanups happen, proper shutdown    
-docker kill _container-id_ #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
-docker pause _container-id_
-docker unpause _container-id_
+docker stop [CONTAINER] #trigger SIGTERM, thus cleanups happen, proper shutdown    
+docker kill [CONTAINER] #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
+docker pause [CONTAINER]
+docker unpause [CONTAINER]
 
 ### Docker Listing commands
 docker imges	# show all image's repository,tags,size  
 docker ps  		# show running containers  
 
 ### Docker command commands
-docker run _container_id_ _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
-docker run -it _container_id_ _command_   #-i=allowInput, -t=beautify   
-docker exec _container_id_ _command_            #add command to already running container  
+docker run [CONTAINER] _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
+docker run -it [CONTAINER] [COMMAND]   #-i=allowInput, -t=beautify   
+docker exec [CONTAINER] [COMMAND]            #add command to already running container  
 
 
-docker rm _container-id_
+docker rm [CONTAINER]
 
-docker attach _container-id_                 #enter into shell
-docker run host_port:container_port container_id
+docker attach [CONTAINER]                 #enter into shell
+docker run [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]
 
 ### Docker history commands   
 docker ps --all                             #list all previously runned containers  
@@ -89,14 +88,14 @@ docker system prune                         #remove stopped containers
 docker inspect container_id                 #low level details like IP  
 
 ### Dockerfile commands  
-docker build _Dockerfile_path_		#pick Dockerfile from given dir and build it. generate image_id   
+docker build [DOCKERFILE_PATH]		#pick Dockerfile from given dir and build it. generate image_id   
 docker build -t _docker_id_/_project_id_:_version_ _Dockerfile_path_   #give customized name for builded image    
 ```docker build -t rajDock/redis:latest .```  
 docker run _customized_image_name_     #version not needed, default version is latest  
 docker commit -c 'CMD ["redid-server"]' _running_container_id_     #it will build new image from existing running container  
 
 ### Docker network commands  
-docker run -p _local_port_:_container_port_ _container_id_ ```docker run -p 8080:8080 rajDock/redis``` 
+docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER] ```docker run -p 8080:8080 rajDock/redis``` 
 
 
 
