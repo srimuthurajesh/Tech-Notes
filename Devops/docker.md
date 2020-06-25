@@ -47,11 +47,12 @@ CMD ["npm start"]
 ### Docker Running commands:
 docker version 			#show version  
 
-docker run _image-name_ _command_  
+docker run [IMAGE] [COMMAND]  
 ```docker run hello-world``` #get image from local or dockerhub     
 
 ### Container life cycle commands:  
-docker run = docker create + docker start     
+Note:docker run = docker create + docker start     
+
 docker create _image-name_ 	#creates container layer over specified image, print container_id   
 docker start -a _container-id_    #start container, -a for print output  
 
