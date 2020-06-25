@@ -2,18 +2,27 @@
 - for building distributed software  
 - adopt Microservice architecture    
 - alternate for VMs  
-ie:VM uses Hypervisor(virualization), Docker uses dockerEngine(containerization)   
+ie:VM uses -> Hypervisor(virualization),  
+Docker uses -> dockerEngine(containerization)   
 
 **Theory:**   
-In linux os, if we need to use two diff version of same software, it maintains namespace & controlgroups  
-Docker engine creates a linux virtual machine, uses this feature and perform containerization   
+In linux os, two version of same software maintains by using namespace & controlgroups  
+likewise Docker engine these feature and perform containerization   
 
 **Image**: series of instructions(layers), executed from image's Dockerfile  
+**Container**: an instance of image   
 **Dockerfile**: text file of commands to assemble image. consists three parts syntax    
 1. Specify base image
 2. Commands to download,copy,install dependency
 3. Startup command  
-
+```
+#Dockerfile Example
+FROM node:alphine    #alphine is small size version of an image  
+COPY ./ ./  
+RUN apt-get update     
+RUN npm install  
+CMD ["npm start"]
+```
 **Dockerfile Instructions**:  
 1. FROM	-set base image  ex: ```FROM alphine```   
 2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
@@ -31,34 +40,30 @@ Docker engine creates a linux virtual machine, uses this feature and perform con
 13. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
 14. ONBUILD  
 
-
-```
-FROM node:alphine    #alphine is small size version of an image  
-COPY ./ ./  
-RUN apt-get update     
-RUN npm install  
-CMD ["npm start"]
-```
-**Container**: an instance of image   
-
 ---
 ## COMMANDS 
-
-### Docker Running commands:
-docker version 			#show version  
-
-docker run [IMAGE] [COMMAND]  
-```docker run hello-world``` #get image from local or dockerhub     
+### Docker options command
+  1. ```--config string```      :Location of client config files (default "/root/.docker")  
+  2. ```-c, --context string```     :Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")  
+  3. ```-D, --debug``` :             Enable debug mode    
+  4. ```--help```     :          Print usage  
+  5. ```-H, --host value```    :     Daemon socket(s) to connect to (default [])  
+  6. ```-l, --log-level string```  : Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")  
+  7. ```--tls```   :             Use TLS; implied by --tlsverify  
+  8. ```--tlscacert string```  : Trust certs signed only by this CA (default "/root/.docker/ca.pem")  
+  9. ```--tlscert string```  :   Path to TLS certificate file (default "/root/.docker/cert.pem")  
+  10. ```--tlskey string```  :    Path to TLS key file (default "/root/.docker/key.pem")  
+  11. ```--tlsverify```   :       Use TLS and verify the remote  
+  12. ```-v, --version```  :          Print version information and quit
 
 ### Container life cycle commands:  
+docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
 Note:docker run = docker create + docker start     
 
-docker create _image-name_ 	#creates container layer over specified image, print container_id   
-docker start -a _container-id_    #start container, -a for print output  
-
+docker create [IMAGE] 	#creates container layer over specified image, print container_id   
+docker start -a [CONTAINER]    #start container, -a for print output  
 docker stop _container-id_ #trigger SIGTERM, thus cleanups happen, proper shutdown    
 docker kill _container-id_ #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
-
 docker pause _container-id_
 docker unpause _container-id_
 
