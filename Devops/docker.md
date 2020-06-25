@@ -1,7 +1,7 @@
 ## Docker  
--for building distributed software  
--adopt Microservice architecture    
--alternate for VMs  
+- for building distributed software  
+- adopt Microservice architecture    
+- alternate for VMs  
 ie:VM uses Hypervisor(virualization), Docker uses dockerEngine(containerization)   
 
 **Theory:**   
@@ -77,12 +77,10 @@ docker attach _container-id_                 #enter into shell
 docker run host_port:container_port container_id
 
 ### Docker history commands   
-```
-docker ps --all                             #list all previously runned containers
-docker run -rm container_id                 #remove container after executing
-docker system prune                         #remove stopped containers
-docker inspect container_id                 #low level details like IP
-```
+docker ps --all                             #list all previously runned containers  
+docker run -rm container_id                 #remove container after executing  
+docker system prune                         #remove stopped containers  
+docker inspect container_id                 #low level details like IP  
 
 ### Dockerfile commands  
 docker build _Dockerfile_path_		#pick Dockerfile from given dir and build it. generate image_id   
