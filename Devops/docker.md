@@ -45,6 +45,7 @@ CMD ["npm start"]
   1. ```-v, --version```  :          Print version information and quit
   2. ```-D, --debug``` :             Enable debug mode    
   3. ```--help```     :          Print usage  
+  4. ```--name```: user defined name for container  Ex:docker run --name=rajCont redis:alpine  
   
 ### Container life cycle commands:  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
