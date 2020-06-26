@@ -83,15 +83,15 @@ docker run [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]
 
 ### Docker history commands   
 docker ps --all                             #list all previously runned containers  
-docker run -rm container_id                 #remove container after executing  
+docker run -rm [CONTAINER]                 #remove container after executing  
 docker system prune                         #remove stopped containers  
-docker inspect container_id                 #low level details like IP  
+docker inspect [CONTAINER]                 #low level details like IP  
 
 ### Dockerfile commands  
 docker build [DOCKERFILE_PATH]		#pick Dockerfile from given dir and build it. generate image_id   
-docker build -t _docker_id_/_project_id_:_version_ _Dockerfile_path_   #give customized name for builded image    
+docker build -t [DOCKER_ID]/[PROJECT_ID]:[VERSION] [DOCKERFILE_PATH]   #give customized name for builded image    
 ```docker build -t rajDock/redis:latest .```  
-docker run _customized_image_name_     #version not needed, default version is latest  
+docker run [IMAGE_NAME]     #version not needed, default version is latest  
 docker commit -c 'CMD ["redid-server"]' _running_container_id_     #it will build new image from existing running container  
 
 ### Docker network commands  
@@ -101,18 +101,17 @@ docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER] ```docker run -p 8080:808
 
 
 
-**Docker hub:**
-```
-docker login --username=rajesh
-docker pull username/imageName
-docker push username/imageName
-docker tag user/image:tag user/image:newtag       #add new tag to image
-docker search searchterm
-```
+**Docker hub:**  
+docker login --username=rajesh  
+docker pull username/imageName  
+docker push username/imageName  
+docker tag user/image:tag user/image:newtag         #add new tag to image  
+docker search searchterm    
 
-**Image creation**\
-Way 1: ```docker commit container_id imagename:tag```\
-Way 2: create Dockerfile
+
+**Image creation**  
+Way 1: ```docker commit container_id imagename:tag```  
+Way 2: create Dockerfile  
 ```
 FROM debian:jessie
 RUN apt-get update
@@ -150,25 +149,24 @@ services:
     image: a4bc65fd
 ```
 **Docker-compose**
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0\
-/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0\  
+/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \  
+sudo chmod +x /usr/local/bin/docker-compose  
+docker-compose --version  
 
-docker-compose up
-docker-compose down
+docker-compose up   
+docker-compose down  
 
-docker-compose start
-docker-compose stop
-docker-compose pause
-docker-compose unpause
-docker-compose build          #rebuild all image
+docker-compose start  
+docker-compose stop  
+docker-compose pause  
+docker-compose unpause  
+docker-compose build          #rebuild all image  
 
-#log
-docker-compose ps
-docker-compose log container_id
-```
+#log  
+docker-compose ps  
+docker-compose log container_id  
+
 
 **Docker network types**:
 1. closed/None/Null network - not allowed to connect outer http
@@ -176,17 +174,16 @@ docker-compose log container_id
 3. Host network - open & access to all host machine network connection
 4. Overlay network - running docker in swarm mode
 
-```
-docker run -d --net none container_id
-docker network ls                       #list the networks 
-                                        1.eth0 - bridge private 
-                                        2.lo   - loopback    
-docker network create --driver bridge network_name    #create new network 
-docker run --net network_name container_id
-docker network diconnect network_name container_id
 
-docker run --net host container_id
+docker run -d --net none [CONTAINER]  
+docker network ls                       #list the networks   
+                                        1.eth0 - bridge private   
+                                        2.lo   - loopback      
+docker network create --driver bridge network_name    #create new network   
+docker run --net network_name [CONTAINER]  
+docker network diconnect network_name [CONTAINER]  
 
-```
+docker run --net host [CONTAINER]  
+
 
 **Installation linux**: ```sudo apt install docker.io```
