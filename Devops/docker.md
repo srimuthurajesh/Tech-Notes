@@ -28,16 +28,16 @@ CMD ["npm start"]
 2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
 3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
 4. ENTRYPOINT -same like CMD, but not ovverride by commandline command.  
-5. ADD		-  
-6. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
+5. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
+5. ADD - same as COPY, additionaly has copy from URL, extract tarFile    
 7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
 8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
 9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
-10. STOPSIGNAL  
-11. USER	-set username/usergroup . USER _user_[:_group_]    
-12. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
-13. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
-14. ONBUILD  
+10. USER	-set username/usergroup . USER _user_[:_group_]    
+11. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
+12. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
+13. ONBUILD  
+14. STOPSIGNAL  
 
 ---
 ## COMMANDS 
@@ -45,15 +45,6 @@ CMD ["npm start"]
   1. ```-v, --version```  :          Print version information and quit
   2. ```-D, --debug``` :             Enable debug mode    
   3. ```--help```     :          Print usage  
-  4. ```--config string```      :Location of client config files (default "/root/.docker")  
-  5. ```-c, --context string``` :Name of context use to connect daemon (overrides DOCKER_HOST ENVvar and default is "docker context use")  
-  6. ```-H, --host value```    :     Daemon socket(s) to connect to (default [])  
-  7. ```-l, --log-level string```  : Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")  
-  8. ```--tls```   :             Use TLS; implied by --tlsverify  
-  9. ```--tlscacert string```  : Trust certs signed only by this CA (default "/root/.docker/ca.pem")  
-  10. ```--tlscert string```  :   Path to TLS certificate file (default "/root/.docker/cert.pem")  
-  11. ```--tlskey string```  :    Path to TLS key file (default "/root/.docker/key.pem")  
-  12. ```--tlsverify```   :       Use TLS and verify the remote  
   
 ### Container life cycle commands:  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
