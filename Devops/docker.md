@@ -119,26 +119,6 @@ docker build -t image_name --no-cache=true
 ```
 **Docker link**: ```docker run --link redis container_id```
 
-**yml file:**
-```
-# docker-compose.yml
-version: '2'
-
-services:
-  web:
-    build: .
-    # build from Dockerfile
-    context: ./Path
-    dockerfile: Dockerfile
-    ports:
-     - "5000:5000"
-    volumes:
-     - .:/code
-  redis:
-    image: redis
-    image: ubuntu
-    image: a4bc65fd
-```
 **Docker-compose**
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0\  
 /docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \  
@@ -156,7 +136,26 @@ docker-compose build          #rebuild all image
 
 #log  
 docker-compose ps  
-docker-compose log container_id  
+docker-compose log [CONTAINER]  
+**docker-compose.yml:**  
+```
+version: '2'
+
+services:
+  web:
+    build: .
+    # build from Dockerfile
+    context: ./Path
+    dockerfile: Dockerfile
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: redis
+    image: ubuntu
+    image: a4bc65fd
+```
 
 
 **Docker network types**:
