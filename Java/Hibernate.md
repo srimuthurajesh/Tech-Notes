@@ -1,6 +1,7 @@
-##Index:
+## Index:
 * [Introduction](#Hibernate)
-* [CRUD](#CRUD)
+* [CRUD operations](#CRUD)
+* [Hibernate Cache](#Cache)
 ## Hibernate
 > framework for database interactions  
 - **ORM tool** : maps java object to Database table   
