@@ -152,15 +152,17 @@ INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+
 ## Mappings
 
 ### OneToOne
-**OneToOne unidirectional**: between customer and customerCart table  
+#### OneToOne unidirectional: 
+between customer and customerCart table  
 ```
 class Customer{
 	@OneToOne
-	@JoinColumn(name="customerCartId")//foreign key column name
+	@JoinColumn(name="cart_id")//foreign key column name
 	private CustomerCart customerCart;
 }
-class CustomerCart{
-	private int customerCartId;
+class Cart{
+	@Column("cart_id")
+	private int cartId;
 }
 ```
 ```
