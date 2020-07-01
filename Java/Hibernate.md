@@ -138,7 +138,7 @@ List<Employee> results = cr.list();
 
 ---
 
-## HQL 
+### HQL 
 FROM clause: String hql = "FROM Employee"; (or) String hql = "FROM com.hibernatebook.criteria.Employee";  
 AS clause: String hql = "FROM Employee AS E"; (or) String hql = "FROM Employee E";  
 SELECT clause: String hql = "SELECT E.firstName FROM Employee E";  
@@ -149,16 +149,64 @@ UPDATE clause: String hql = "UPDATE Employee set salary = :salary WHERE id = :em
 DELETE clause: String hql = "DELETE FROM Employee WHERE id = :employee_id";  
 INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+"SELECT firstName, lastName, salary FROM old_employee";
 
-**Cascade**: apply same operation to related entities
+## Mappings
+
+### OneToOne
+**OneToOne unidirectional**: between customer and customerCart table  
 ```
-@OneToOne(cascade=CascadeType.ALL)  - DETACH,MERGE,PERSIST,REFRESH,REMOVE
+class Customer{
+	@OneToOne
+	@JoinColumn(name="customerCartId")//foreign key column name
+	private CustomerCart customerCart;
+}
+class CustomerCart{
+	private int customerCartId;
+}
 ```
-**Eager & lazy loading:** mention whether to retreive related entities or not
 ```
-@OneToMany(fetch=fetchType.LAZY);
-@OneToMany(fetch=fetchType.EAGER)
+CREATE TABLE `customer`(
+`customer_id` int NOT NULL AUTO_INCREMENT,
+`customer_name` varchar(22) DEFAULT NULL,
+`cart_id` int,
+PRIMARY KEY (`customer_id`),
+FOREIGN KEY (`cart_id`) REFERENCES cart(`cart_id`));
+
+CREATE TABLE `cart` (
+`cart_id` int NOT NULL AUTO_INCREMENT,
+`cart_name` varchar NULL,
+PRIMARY KEY(`cart_id`));  
 ```
-**Unidirection&Bidirectional**: 
+**OneToOne Bidirectional**: for hibernate purpose 
+```
+class Customer{
+	@OneToOne(cascade=CascadeType.ALL) 	
+	@JoinColumn(name="customerCartId")		//foreign key column name
+	private CustomerCart customerCart;
+}
+class CustomerCart{
+	private int customerCartId;
+	@OneToOne(mappedBy="customerCart", 
+			cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+						CascadeType.REFRESH})
+	
+	private Customer customer;
+}
+```
+
+### OneToMany
+**OneToMany Bidirectional**:  
+```
+class Cart{
+	@OneToMany(mappedBy="customerCart")
+	private List<Product> products;
+}
+class Products{
+	@OneToOne
+	@JoinColumn(name="cart_cartId")
+	private Customer customer;
+}
+```
+
 
 **OneToOne,ManyToOne,OneToMany**:
 ```
@@ -173,6 +221,20 @@ private StudentDetail studentDetail;
                                inverseJoinColumns=@JoinColumn("student_details_id"))
 
 ```
+
+**Eager & lazy loading:** mention whether to retreive related entities or not
+```
+@OneToMany(fetch=fetchType.LAZY);
+@OneToMany(fetch=fetchType.EAGER)
+```
+**Cascading**: apply same operation to related entities or joined tables. Defalt:No cascade      
+Ex: @OneToOne(cascade=CascadeType.PERSIST) -> if entity persist/saved, related entity also persist   
+@OneToOne(cascade=CascadeType.REMOVE) -> if entity is removed/deleted related entity also deleted     
+@OneToOne(cascade=CascadeType.REFRESH) -> if entity refreshed, releated entity wil also refreshed    
+@OneToOne(cascade=CascadeType.DETACH) ->  if entity is detached, related entity will also detached   
+@OneToOne(cascade=CascadeType.MERGE) ->  if entity is mereged, related entity also merged   
+@OneToOne(cascade=CascadeType.ALL) -> all above cascade tpes applied    
+
 
 ## Cache:
  
