@@ -4,13 +4,13 @@
 -develeped by Dough cutting father of Hadoop  
 
 **Primitive Types**:  
-1. null: no value  
-2. boolean: a binary value  
-3. int:32-bit signed integer  
-4. float:single precision(32bit)  
-5. double:double precision(64bit)  
-6. bytes:sequence of 8bit unsigned bytes  
-7. string:unicode chanracter sequence  
+1. **null**: no value  
+2. **boolean**: a binary value  
+3. **int**:32-bit signed integer  
+4. **float**:single precision(32bit)  
+5. **double**:double precision(64bit)  
+6. **bytes**:sequence of 8bit unsigned bytes  
+7. **string**:unicode chanracter sequence  
 
 
 **Common fields**:  
