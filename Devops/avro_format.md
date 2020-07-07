@@ -21,4 +21,21 @@
 - **Fields**: 
 	- Name: name of fields  
 	- Doc: documentation for field  
-	- Type: datatype for field  
+	- Type: datatype for field   
+	- Default: assign default value for field  
+	
+	
+Avro schame Example:  
+```
+{
+	"type":"record",
+	"namespace":"com.example",
+	"name":"Customer",
+	"doc":"AVRO schame for customer",
+	"fields":{
+		{"name":"first_name","type":"string","doc":"for first name"},
+		{"name":"age","type":"int","doc":"for customer age"},
+		{"name":"got_adhar","type":"boolean","default":true,"doc":"added default value as tru"}
+	}
+}
+```	
