@@ -9,6 +9,7 @@ git config --global user.name "srimuthurajesh"    #*gloabl keyword use while we 
 git config --global user.email "srimuthurajesh@gmail.com"  
 git config –list  
 
+**Git Basics**:  
 git init < directory >	#to make given folder git
 git clone < url >       #get local copy from repo  
 git add < directory/fileName >   			//move to staging
