@@ -5,14 +5,14 @@
 git –version	 
 
 **Git config:**  
-git config --global user.name "srimuthurajesh"    #*gloabl keyword use while we need to apply this username for all repo*  
-git config --global user.email "srimuthurajesh@gmail.com"  
+git config --global user.name ```"srimuthurajesh"```    #*global keyword to apply username/email for all repo*   
+git config --global user.email ```"srimuthurajesh@gmail.com"```  
 git config –list  
 
 **Git Basics**:  
 git init ```directory```	#to make given folder git
-git clone < url >       #get local copy from repo  
-git add < directory/fileName >   			//move to staging
+git clone ```url```       #get local repo copy from remote repo  
+git add ```directory```/```fileName```   			//move to staging
 git rm -cached < directory/fileName >  //remvoe from staging"
 
 git commit -m ""this is our first comment"
