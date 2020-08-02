@@ -1,14 +1,13 @@
 ## GIT  
 -version Control System (VCS)  
 -Source control System(SCM)  
--Source code System  
-
 
 git –version	 
 
-git config --global user.name "srimuthurajesh"
-git config --global user.email "srimuthurajesh@gmail.com"
-git config –list
+**Git config:**  
+git config --global user.name "srimuthurajesh"    #*gloabl keyword use while we need to apply this username for all repo*
+git config --global user.email "srimuthurajesh@gmail.com"  
+git config –list  
 
 git init < directory >	#to make given folder git
 git clone < url >       #get local copy from repo  
@@ -97,3 +96,9 @@ git remote add srimuthurajesh http://github.com/srimuthurajesh
 
 git remote
 git push -u nickname master    //push project to respository, it will ask for usename password
+
+**To make git terminal colorful**:  
+git config --global color.branch auto  
+git config --global color.diff auto  git config --global color.branch auto  
+git config --global color.branch auto  
+
