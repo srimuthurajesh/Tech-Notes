@@ -10,14 +10,15 @@ git config --global user.email ```"srimuthurajesh@gmail.com"```
 git config –list  
 
 **Git Basics**:  
-git init ```directory```	#to make given folder git
-git clone ```url```       #get local repo copy from remote repo  
-git add ```directory```/```fileName```   			//move to staging
-git rm -cached < directory/fileName >  //remvoe from staging"
+git init ```directory```					#to make given folder git
+git clone ```url```       					#get local repo copy from remote repo  
+git add ```directory/fileName```   			#move to staging
+git rm -cached ```directory/fileName```  	#remvoe from staging"
 
 git commit -m ""this is our first comment"
 git status     	//to know status
 git log			//commited history
+git log --oneline -10 	#show last 10 commit ids and messages  
 git diff			//looking for different between staging and working copy
 git diff --staged 	//difference between working and respository
 git diff branchname1 branchname2
