@@ -11,7 +11,9 @@ git config –list
 
 git init < directory >	#to make given folder git
 git clone < url >       #get local copy from repo  
-git add < directory/fileName >   			//save this point in time
+git add < directory/fileName >   			//move to staging
+git rm -cached < directory/fileName >  //remvoe from staging"
+
 git commit -m ""this is our first comment"
 git status     	//to know status
 git log			//commited history
@@ -97,8 +99,9 @@ git remote add srimuthurajesh http://github.com/srimuthurajesh
 git remote
 git push -u nickname master    //push project to respository, it will ask for usename password
 
-**To make git terminal colorful**:  
+**Git colourised output**:    
 git config --global color.branch auto  
-git config --global color.diff auto  git config --global color.branch auto  
-git config --global color.branch auto  
+git config --global color.diff auto  
+git config --global color.interactive auto  
+git config --global color.status auto  
 
