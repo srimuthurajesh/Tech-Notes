@@ -1,4 +1,6 @@
 -Document base data storage  
+-schemaless database (Flexible schema)
+-master slave replication  
 mongod	- to start the db service  
 mongo		- to get the db commandline  
 
