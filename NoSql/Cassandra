@@ -1,5 +1,6 @@
 Nosql stands for not only sql
 
+-Column based store database in Nosql
 -store data in form of key-value pairs  
 -masterless replication   
 -inspired from bigtable and dynamodb  
