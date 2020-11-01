@@ -6,5 +6,6 @@ Nosql stands for not only sql
 -inspired from bigtable and dynamodb  
 -writes are faster than other dbs. becz of clustering  
 -doesnt support relationship, but can use collection  
+-selective replication factor
 
 -keyspace is schema, inside that we have columnFamily(table)  
