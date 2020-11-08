@@ -93,10 +93,29 @@ DESCRIBE TYPES − Describes user-defined datatypes.
      - ALTER TABLE − Modifies the column properties of a table.  
      - DROP TABLE − Removes a table.  
      - TRUNCATE − Removes all the data from a table.  
-     - CREATE INDEX − Defines a new index on a single column of a table.  
-
-DROP INDEX − Deletes a named index.
+     - CREATE INDEX − Defines a new index on a single column of a table.   
+     - DROP INDEX − Deletes a named index.  
 2. Data Manipulation: inser, delete, update, select etc  
+     - INSERT − Adds columns for a row in a table.  
+     - UPDATE − Updates a column of a row.  
+     - DELETE − Deletes data from a table.  
+     - BATCH − Executes multiple DML statements at once.  
 3. Secoundary indexes: create, drop indexes  
+     - SELECT − This clause reads data from a table  
+     - WHERE − The where clause is used along with select to read a specific data.  
+     - ORDERBY − The orderby clause is used along with select to read a specific data in a specific order.  
 4. Materialized views: create, drop, alter materialized views etc  
 5. Database roles: create permission, granting permission, creating user etc  
+6. Documented Shell Commands
+     - Given below are the Cqlsh documented shell commands. These are the commands used to perform tasks such as displaying help topics, exit from cqlsh, describe,etc.
+     - HELP − Displays help topics for all cqlsh commands.  
+     - CAPTURE − Captures the output of a command and adds it to a file.  
+     - CONSISTENCY − Shows the current consistency level, or sets a new consistency level.  
+     - COPY − Copies data to and from Cassandra.  
+     - DESCRIBE − Describes the current cluster of Cassandra and its objects.  
+     - EXPAND − Expands the output of a query vertically.  
+     - EXIT − Using this command, you can terminate cqlsh.  
+     - PAGING − Enables or disables query paging.  
+     - SHOW − Displays the details of current cqlsh session such as Cassandra version, host, or data type assumptions.  
+     - SOURCE − Executes a file that contains CQL statements.  
+     - TRACING − Enables or disables request tracing.  
