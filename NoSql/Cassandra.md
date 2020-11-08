@@ -84,7 +84,18 @@ DESCRIBE TYPE − Describes a user-defined datatype.
 DESCRIBE TYPES − Describes user-defined datatypes.  
 
 #### Types of statements in cql:
-1. Data defination: create table, alter table, drop table, create keyspace etc  
+1. Data defination: create table, alter table, drop table, create keyspace etc   
+     - CREATE KEYSPACE − Creates a KeySpace in Cassandra.  
+     - USE − Connects to a created KeySpace.  
+     - ALTER KEYSPACE − Changes the properties of a KeySpace.  
+     - DROP KEYSPACE − Removes a KeySpace  
+     - CREATE TABLE − Creates a table in a KeySpace.  
+     - ALTER TABLE − Modifies the column properties of a table.  
+     - DROP TABLE − Removes a table.  
+     - TRUNCATE − Removes all the data from a table.  
+     - CREATE INDEX − Defines a new index on a single column of a table.  
+
+DROP INDEX − Deletes a named index.
 2. Data Manipulation: inser, delete, update, select etc  
 3. Secoundary indexes: create, drop indexes  
 4. Materialized views: create, drop, alter materialized views etc  
