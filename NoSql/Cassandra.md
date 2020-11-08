@@ -40,11 +40,10 @@ Nosql stands for not only sql
 **Keyspace**: schema or collection of tables. Basic attributes are   
 1. Replication factor − denotes number of machines in cluster that will receive copies of same data   
 2. Replica placement strategy − strategy to place replicas in the ring. such as  
- 1. simple strategy (rack-aware strategy),  
- 2. old network topology strategy (rack-aware strategy), and   
- 3. network topology strategy (datacenter-shared strategy).  
-
-Column families − Keyspace is a container for a list of one or more column families. A column family, in turn, is a container of a collection of rows. Each row contains ordered columns. Column families represent the structure of your data. Each keyspace has at least one and often many column families.
+ - simple strategy (rack-aware strategy),  
+ - old network topology strategy (rack-aware strategy), and   
+ - network topology strategy (datacenter-shared strategy)   
+3. Column families − represent structure of your data. Each keyspace has at least one and often many column families.  
 
 
 #### Data Type:  
