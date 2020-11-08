@@ -91,11 +91,19 @@ DESCRIBE TYPES − Describes user-defined datatypes.
 
 #### Types of statements in cql:
 1. Data defination: create table, alter table, drop table, create keyspace etc   
-     - CREATE KEYSPACE − Creates a KeySpace in Cassandra.  
+     - CREATE KEYSPACE <keyspaceName>− Creates a KeySpace in Cassandra.  
      - USE − Connects to a created KeySpace.  
-     - ALTER KEYSPACE − Changes the properties of a KeySpace.  
-     - DROP KEYSPACE − Removes a KeySpace  
-     - CREATE TABLE − Creates a table in a KeySpace.  
+     - ALTER KEYSPACE <keyspaceName>− Changes the properties of a KeySpace.  
+     - DROP KEYSPACE <keyspaceName>− Removes a KeySpace  
+     - CREATE TABLE − Creates a table in a KeySpace. 
+```
+CREATE TABLE tablename(
+   column1 name datatype PRIMARYKEY,
+   column2 name data type,
+   column3 name data type,
+   PRIMARY KEY (column1)
+   )
+``` 
      - ALTER TABLE − Modifies the column properties of a table.  
      - DROP TABLE − Removes a table.  
      - TRUNCATE − Removes all the data from a table.  
