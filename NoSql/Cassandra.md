@@ -37,7 +37,8 @@ Nosql stands for not only sql
 7. Bloom filter − These are nothing but quick, nondeterministic, algorithms for testing whether an element is a member of a set. It is a special kind of cache. Bloom filters are accessed after every query.  
 
 
-**Keyspace**: schema or collection of tables. Basic attributes are   
+### Keyspace  
+schema or collection of tables. Basic attributes are   
 1. Replication factor − denotes number of machines in cluster that will receive copies of same data   
 2. Replica placement strategy − strategy to place replicas in the ring. such as  
  - simple strategy (rack-aware strategy),  
