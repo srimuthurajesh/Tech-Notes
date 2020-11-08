@@ -28,16 +28,23 @@ Nosql stands for not only sql
   -Nodes communicate each other using Gossip protocol  
 
 ### Components in cassandra:  
-1. Node − place where data is stored  
+1. Node − place where data get stored  
 2. Data center − collection of related nodes   
 3. Cluster − component that contains one or more data centers.
-4. Commit log − crash-recovery mechanism, every write operation is written here    
-5. Mem-table − memory-resident data structure. After commit log,  data will be written to mem-table. Sometimes, for a single-column family, there will be multiple mem-tables.  
-6. SSTable − a disk file to which the data is flushed from the mem-table when its contents reach a threshold value  
+4. Commit log − Crash-Recovery Mechanism, every write operation is captured here    
+5. Mem-table − memory-resident data structure. data will be store in mem-table  
+6. SSTable − when mem-table is full data will written here    
 7. Bloom filter − These are nothing but quick, nondeterministic, algorithms for testing whether an element is a member of a set. It is a special kind of cache. Bloom filters are accessed after every query.  
 
 
-**Keyspace**: is schema or collection of tables, it will have columnFamily(tables)    
+**Keyspace**: schema or collection of tables. Basic attributes are   
+1. Replication factor − denotes number of machines in cluster that will receive copies of same data   
+2. Replica placement strategy − strategy to place replicas in the ring. such as  
+ 1. simple strategy (rack-aware strategy),  
+ 2. old network topology strategy (rack-aware strategy), and   
+ 3. network topology strategy (datacenter-shared strategy).  
+
+Column families − Keyspace is a container for a list of one or more column families. A column family, in turn, is a container of a collection of rows. Each row contains ordered columns. Column families represent the structure of your data. Each keyspace has at least one and often many column families.
 
 
 #### Data Type:  
