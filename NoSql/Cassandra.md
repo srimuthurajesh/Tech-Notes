@@ -124,10 +124,10 @@ DESCRIBE TYPES − Describes user-defined datatypes.
      - CONSISTENCY − Shows the current consistency level, or sets a new consistency level.  
      - COPY tableName TO filepath − Copies data from Cassandra to given file.  
      - DESCRIBE −  
-          - DESCRIBE keyspaceName  -  do list of tables  
-          - DESCRIBE tableName  - do description of table  
-          - DESCRIBE type tableName - list all column types  
-          - DESCRIBE TYPES  - list all user defined datatypes UDT   
+          - _DESCRIBE keyspaceName_  -  do list of tables  
+          - _DESCRIBE tableName_  - do description of table  
+          - _DESCRIBE type tableName_ - list all column types  
+          - _DESCRIBE TYPES_  - list all user defined datatypes UDT   
      - EXPAND on/off− Beautify the output vertically    
      - EXIT − Using this command, you can terminate cqlsh.  
      - PAGING − Enables or disables query paging.  
