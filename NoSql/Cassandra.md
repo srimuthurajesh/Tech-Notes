@@ -26,6 +26,17 @@ Nosql stands for not only sql
   -one or more nodes act as replication nodes. cassandra returns most recent updated value  
   -Cassandra performs a Read repair in background to update Replicas stale values  
   -Nodes communicate each other using Gossip protocol  
+
+### Components in cassandra:  
+1. Node − place where data is stored  
+2. Data center − collection of related nodes   
+3. Cluster − component that contains one or more data centers.
+4. Commit log − crash-recovery mechanism, every write operation is written here    
+5. Mem-table − memory-resident data structure. After commit log,  data will be written to mem-table. Sometimes, for a single-column family, there will be multiple mem-tables.  
+6. SSTable − a disk file to which the data is flushed from the mem-table when its contents reach a threshold value  
+7. Bloom filter − These are nothing but quick, nondeterministic, algorithms for testing whether an element is a member of a set. It is a special kind of cache. Bloom filters are accessed after every query.  
+
+
 **Keyspace**: is schema or collection of tables, it will have columnFamily(tables)    
 
 
