@@ -21,17 +21,20 @@ Types of Nosql databases:
 
 |  Data Type | Constants  |  Description |
 |---|---|---|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| ascii  | strings  | Represents ASCII character string  |
+| bigint  | bigint  | Represents 64-bit signed long  |
+| blob  | blobs  | Represents arbitrary bytes  |
+| Boolean  | booleans  | Represents true or false  |
+| counter  | integers  | Represents counter column  |
+| decimal  | integers, floats  | Represents variable-precision decimal  |
+| double  | integers  | Represents 64-bit IEEE-754 floating point  |
+| float  | integers, floats  | Represents 32-bit IEEE-754 floating point  |
+| inet  | strings  | Represents an IP address, IPv4 or IPv6  |
+| int  | integers  | Represents 32-bit signed int  |
+| text  | strings  | Represents UTF8 encoded string  |
+| timestamp  | integers, strings  | Represents a timestamp  |
+| timeuuid  | uuids  | Represents type 1 UUID  |
+| uuid  | uuids  | Represents type 1 or type 4  |
+| varchar  | strings  | Represents uTF8 encoded string  |
+| varint  | integers  | Represents arbitrary-precision integer  |
+
