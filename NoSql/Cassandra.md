@@ -1,28 +1,30 @@
-Nosql stands for not only sql
-
-Types of Nosql databases:  
+Nosql stands for not only sql  
+**Types of Nosql databases:**   
  1. Document based - json, xml, excel files. used in content management, real time analtics, product management  
  2. Graph based - used in ML, fraud detection
  3. Column based - has rows and columns. eg. casssadra,dynamodb
  4. Key value pair based
 
 **Charateristics of cassandra:**    
--highly scalable
+-highly scalable  
 -high performance distributed database  
 -designed to handle large amounts of data   
 -high availability with no single point of failure     
+-Column based storage database  
+-fast write speed, because of clustering
 
 
 -developed by facebook 2008  
--designed for unstructured or semi structured data  
--Column based store database in Nosql
--store data in form of key-value pairs  
--masterless replication   
 -inspired from bigtable and dynamodb  
--writes are faster than other dbs. becz of clustering  
+-designed for unstructured or semi structured data  
+-masterless replication   
 -doesnt support relationship, but can use collection  
 -selective replication factor
 
+**Data replication**:  
+  -one or more nodes act as replication nodes. cassandra returns most recent updated value  
+  -Cassandra performs a Read repair in background to update Replicas stale values  
+  -Nodes communicate each other using Gossip protocol  
 **Keyspace**: is schema or collection of tables, it will have columnFamily(tables)    
 
 
