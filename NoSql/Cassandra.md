@@ -38,7 +38,9 @@ Nosql stands for not only sql
 
 
 ### Keyspace  
-schema or collection of tables. Basic attributes are   
+schema or collection of tables. 
+it has two properties 1.replication,2.durable_write  
+Basic attributes are   
 1. Replication factor − denotes number of machines in cluster that will receive copies of same data   
 2. Replica placement strategy − strategy to place replicas in the ring. its attribtes are    
      - simple strategy (rack-aware strategy),  
@@ -48,7 +50,11 @@ schema or collection of tables. Basic attributes are
      - keys_cached − It represents the number of locations to keep cached per SSTable.
      - rows_cached − It represents the number of rows whose entire contents will be cached in memory.
      - preload_row_cache − It specifies whether you want to pre-populate the row cache.
-
+```
+CREATE KEYSPACE <keyspaceName>  
+WITH replication = {'class': ‘<strategyName>’, 'replication_factor' : ‘<NoOfReplicas>’}  
+AND durable_writes = ‘Boolean value’;   
+```
 
 #### Data Type:  
 text	- Represents UTF8 encoded string  
