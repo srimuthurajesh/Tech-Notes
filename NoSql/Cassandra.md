@@ -38,3 +38,17 @@ Types of Nosql databases:
 | varchar  | strings  | Represents uTF8 encoded string  |
 | varint  | integers  | Represents arbitrary-precision integer  |
 
+| Collection  | Description  |
+|---|---|
+| list  | A list is a collection of one or more ordered elements.  |
+| map  | A map is a collection of key-value pairs.  |
+| set  | A set is a collection of one or more elements.  |
+
+#### User-defined datatypes
+Cqlsh provides users a facility of creating their own data types. Given below are the commands used while dealing with user defined datatypes.
+
+CREATE TYPE − Creates a user-defined datatype.
+ALTER TYPE − Modifies a user-defined datatype.
+DROP TYPE − Drops a user-defined datatype.
+DESCRIBE TYPE − Describes a user-defined datatype.
+DESCRIBE TYPES − Describes user-defined datatypes.
