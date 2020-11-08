@@ -6,6 +6,13 @@ Types of Nosql databases:
  3. Column based - has rows and columns. eg. casssadra,dynamodb
  4. Key value pair based
 
+**Charateristics of cassandra:**    
+-highly scalable
+-high performance distributed database  
+-designed to handle large amounts of data   
+-high availability with no single point of failure     
+
+
 -developed by facebook 2008  
 -designed for unstructured or semi structured data  
 -Column based store database in Nosql
@@ -19,24 +26,23 @@ Types of Nosql databases:
 **Keyspace**: is schema or collection of tables, it will have columnFamily(tables)    
 
 
-|  Data Type | Constants  |  Description |
-|---|---|---|
-| ascii  | strings  | Represents ASCII character string  |
-| bigint  | bigint  | Represents 64-bit signed long  |
-| blob  | blobs  | Represents arbitrary bytes  |
-| Boolean  | booleans  | Represents true or false  |
-| counter  | integers  | Represents counter column  |
-| decimal  | integers, floats  | Represents variable-precision decimal  |
-| double  | integers  | Represents 64-bit IEEE-754 floating point  |
-| float  | integers, floats  | Represents 32-bit IEEE-754 floating point  |
-| inet  | strings  | Represents an IP address, IPv4 or IPv6  |
-| int  | integers  | Represents 32-bit signed int  |
-| text  | strings  | Represents UTF8 encoded string  |
-| timestamp  | integers, strings  | Represents a timestamp  |
-| timeuuid  | uuids  | Represents type 1 UUID  |
-| uuid  | uuids  | Represents type 1 or type 4  |
-| varchar  | strings  | Represents uTF8 encoded string  |
-| varint  | integers  | Represents arbitrary-precision integer  |
+#### Data Type:  
+text	- Represents UTF8 encoded string
+int	- Represents 32-bit signed int
+ascii	- Represents ASCII character string
+bigint -	Represents 64-bit signed long
+blob	-	Represents arbitrary bytes
+Boolean	-	Represents true or false
+counter - Represents counter column
+decimal	-	Represents variable-precision decimal
+double	- Represents 64-bit IEEE-754 floating point
+float	-	Represents 32-bit IEEE-754 floating point
+inet	- Represents an IP address, IPv4 or IPv6
+timestamp -	Represents a timestamp
+timeuuid - Represents type 1 UUID
+uuid - Represents type 1 or type 4
+varchar - Represents uTF8 encoded string
+varint - Represents arbitrary-precision integer
 
 | Collection  | Description  |
 |---|---|
