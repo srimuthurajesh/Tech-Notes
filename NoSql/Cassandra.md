@@ -47,8 +47,8 @@ Types of Nosql databases:
 #### User-defined datatypes
 Cqlsh provides users a facility of creating their own data types. Given below are the commands used while dealing with user defined datatypes.
 
-CREATE TYPE − Creates a user-defined datatype.
-ALTER TYPE − Modifies a user-defined datatype.
-DROP TYPE − Drops a user-defined datatype.
-DESCRIBE TYPE − Describes a user-defined datatype.
-DESCRIBE TYPES − Describes user-defined datatypes.
+CREATE TYPE − Creates a user-defined datatype.  
+ALTER TYPE − Modifies a user-defined datatype.  
+DROP TYPE − Drops a user-defined datatype.  
+DESCRIBE TYPE − Describes a user-defined datatype.  
+DESCRIBE TYPES − Describes user-defined datatypes.  
