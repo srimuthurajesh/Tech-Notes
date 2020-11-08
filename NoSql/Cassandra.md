@@ -51,8 +51,8 @@ Basic attributes are
      - rows_cached − It represents the number of rows whose entire contents will be cached in memory.
      - preload_row_cache − It specifies whether you want to pre-populate the row cache.
 ```
-CREATE KEYSPACE <keyspaceName>  
-WITH replication = {'class': ‘<strategyName>’, 'replication_factor' : ‘<NoOfReplicas>’}  
+CREATE KEYSPACE keyspaceName  
+WITH replication = {'class': ‘strategyName’, 'replication_factor' : ‘NoOfReplicas’}  
 AND durable_writes = ‘Boolean value’;   
 ```
 
@@ -91,23 +91,23 @@ DESCRIBE TYPES − Describes user-defined datatypes.
 
 #### Types of statements in cql:
 1. **Data defination**: create table, alter table, drop table, create keyspace etc   
-     - CREATE KEYSPACE <keyspaceName>− Creates a KeySpace in Cassandra.  
+     - CREATE KEYSPACE keyspaceName− Creates a KeySpace in Cassandra.  
      - USE − Connects to a created KeySpace.  
-     - ALTER KEYSPACE <keyspaceName>− Changes the properties of a KeySpace.  
-     - DROP KEYSPACE <keyspaceName>− Removes a KeySpace  
-     - CREATE TABLE <tableName> (column1 name datatype PRIMARYKEY, column2 name data type, PRIMARY KEY ((column1), column2)) 
-     - ALTER TABLE <tableName> ADD/DROP <columnName> <datatype>  
-     - DROP TABLE <tablename>    
-     - TRUNCATE − TRUNCATE <tablename>  
-     - CREATE INDEX <columnName> ON <tablename>(<tableName_columnName>)     
-     - Drop INDEX <columnName>  
+     - ALTER KEYSPACE keyspaceName− Changes the properties of a KeySpace.  
+     - DROP KEYSPACE keyspaceName− Removes a KeySpace  
+     - CREATE TABLE tableName (column1 name datatype PRIMARYKEY, column2 name data type, PRIMARY KEY ((column1), column2)) 
+     - ALTER TABLE tableName ADD/DROP columnName datatype  
+     - DROP TABLE tablename    
+     - TRUNCATE − TRUNCATE tablename  
+     - CREATE INDEX columnName ON tablename(tableName_columnName)     
+     - Drop INDEX columnName  
  
 2. **Data Manipulation**: inser, delete, update, select etc  
-     - INSERT INTO <tablename> (<column1 name>, <column2 name>....) VALUES (<value1>, <value2>....) USING <option>    
-     - UPDATE <tablename> SET <column name> = <new value>, <column name> = <value>.... WHERE <condition>  
-     - DELETE FROM <identifier> WHERE <condition>    
-     - SELECT FROM <table name> WHERE <condition>  
-     - BATCH − Executes multiple DML statements at once. ``` BEGIN BATCH <insert stmt>/ <delete stmt>/ <update stmt> APPLY BATCH ``` 
+     - INSERT INTO tablename (column1 name, column2 name....) VALUES (value1, value2....) USING option    
+     - UPDATE tablename SET column name = new value, column name = value.... WHERE condition  
+     - DELETE FROM identifier WHERE condition    
+     - SELECT FROM table name WHERE condition  
+     - BATCH − Executes multiple DML statements at once. ``` BEGIN BATCH insert stmt/ delete stmt/ update stmt APPLY BATCH ``` 
 
 3. **Secoundary indexes**: create, drop indexes  
      - SELECT − This clause reads data from a table  
@@ -120,17 +120,17 @@ DESCRIBE TYPES − Describes user-defined datatypes.
 
 6. **Documented Shell Commands**- cqlsh commands  
      - HELP − Displays help topics for all cqlsh commands.  
-     - CAPTURE <filepath> − Captures output of a command and adds it to a file.  
+     - CAPTURE filepath − Captures output of a command and adds it to a file.  
      - CONSISTENCY − Shows the current consistency level, or sets a new consistency level.  
-     - COPY <tableName> TO <filepath> − Copies data from Cassandra to given file.  
+     - COPY tableName TO filepath − Copies data from Cassandra to given file.  
      - DESCRIBE −  
-          - DESCRIBE <keyspaceName>  -  do list of tables  
-          - DESCRIBE <tableName>  - do description of table  
-          - DESCRIBE type <tableName> - list all column types  
+          - DESCRIBE keyspaceName  -  do list of tables  
+          - DESCRIBE tableName  - do description of table  
+          - DESCRIBE type tableName - list all column types  
           - DESCRIBE TYPES  - list all user defined datatypes UDT   
      - EXPAND on/off− Beautify the output vertically    
      - EXIT − Using this command, you can terminate cqlsh.  
      - PAGING − Enables or disables query paging.  
      - SHOW host/version     
-     - SOURCE <fileName> − can execute cql commands from mentioned filename    
+     - SOURCE fileName − can execute cql commands from mentioned filename    
      - TRACING − Enables or disables request tracing.  
