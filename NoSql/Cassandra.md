@@ -7,12 +7,12 @@ Nosql stands for not only sql
  4. Key value pair based
 
 ### Charateristics of cassandra:      
--highly scalable  
--high performance distributed database  
--designed to handle large amounts of data   
--high availability with no single point of failure     
--Column based storage database  
--fast write speed, because of clustering
+- highly scalable  
+- high performance distributed database  
+- designed to handle large amounts of data   
+- high availability with no single point of failure     
+- Column based storage database  
+- fast write speed, because of clustering
 
 
 -developed by facebook 2008  
