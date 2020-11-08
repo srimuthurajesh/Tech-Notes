@@ -1,3 +1,4 @@
+## Cassandra  
 Nosql stands for not only sql  
 **Types of Nosql databases:**   
  1. Document based - json, xml, excel files. used in content management, real time analtics, product management  
