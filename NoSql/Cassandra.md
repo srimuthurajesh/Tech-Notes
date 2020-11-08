@@ -39,7 +39,7 @@ Nosql stands for not only sql
 
 ### Keyspace  
 schema or collection of tables. 
-it has two properties 1.replication,2.durable_write  
+it has two properties 1.replication,2.durable_write(default value is true, not applicable for simple strategy, verify durable_write we can use ```SELECT * FROM system_schema.keyspaces;```)      
 Basic attributes are   
 1. Replication factor − denotes number of machines in cluster that will receive copies of same data   
 2. Replica placement strategy − strategy to place replicas in the ring. its attribtes are    
