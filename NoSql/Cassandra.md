@@ -104,6 +104,7 @@ CREATE TABLE tablename(
    PRIMARY KEY (column1)
    )
 ``` 
+
      - ALTER TABLE − Modifies the column properties of a table.  
      - DROP TABLE − Removes a table.  
      - TRUNCATE − Removes all the data from a table.  
