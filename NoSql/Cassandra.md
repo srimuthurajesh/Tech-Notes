@@ -14,7 +14,7 @@ Nosql stands for not only sql
 - Column based storage database  
 - fast write speed, because of clustering
 
-
+**About Cassandra**:
 -developed by facebook 2008  
 -inspired from bigtable and dynamodb  
 -designed for unstructured or semi structured data  
