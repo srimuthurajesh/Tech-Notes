@@ -106,16 +106,19 @@ DESCRIBE TYPES − Describes user-defined datatypes.
      - ORDERBY − The orderby clause is used along with select to read a specific data in a specific order.  
 4. Materialized views: create, drop, alter materialized views etc  
 5. Database roles: create permission, granting permission, creating user etc  
-6. Documented Shell Commands
-     - Given below are the Cqlsh documented shell commands. These are the commands used to perform tasks such as displaying help topics, exit from cqlsh, describe,etc.
+6. Documented Shell Commands- cqlsh commands  
      - HELP − Displays help topics for all cqlsh commands.  
-     - CAPTURE − Captures the output of a command and adds it to a file.  
+     - CAPTURE <filepath> − Captures output of a command and adds it to a file.  
      - CONSISTENCY − Shows the current consistency level, or sets a new consistency level.  
-     - COPY − Copies data to and from Cassandra.  
-     - DESCRIBE − Describes the current cluster of Cassandra and its objects.  
-     - EXPAND − Expands the output of a query vertically.  
+     - COPY <tableName> TO <filepath> − Copies data from Cassandra to given file.  
+     - DESCRIBE −  
+          - DESCRIBE <keyspaceName>  -  do list of tables  
+          - DESCRIBE <tableName>  - do description of table  
+          - DESCRIBE type <tableName> - list all column types  
+          - DESCRIBE TYPES  - list all user defined datatypes UDT   
+     - EXPAND on/off− Beautify the output vertically    
      - EXIT − Using this command, you can terminate cqlsh.  
      - PAGING − Enables or disables query paging.  
-     - SHOW − Displays the details of current cqlsh session such as Cassandra version, host, or data type assumptions.  
-     - SOURCE − Executes a file that contains CQL statements.  
+     - SHOW host/version     
+     - SOURCE <fileName> − can execute cql commands from mentioned filename    
      - TRACING − Enables or disables request tracing.  
