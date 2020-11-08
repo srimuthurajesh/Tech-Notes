@@ -30,22 +30,22 @@ Nosql stands for not only sql
 
 
 #### Data Type:  
-text	- Represents UTF8 encoded string
-int	- Represents 32-bit signed int
-ascii	- Represents ASCII character string
-bigint -	Represents 64-bit signed long
-blob	-	Represents arbitrary bytes
-Boolean	-	Represents true or false
-counter - Represents counter column
-decimal	-	Represents variable-precision decimal
-double	- Represents 64-bit IEEE-754 floating point
-float	-	Represents 32-bit IEEE-754 floating point
-inet	- Represents an IP address, IPv4 or IPv6
-timestamp -	Represents a timestamp
-timeuuid - Represents type 1 UUID
-uuid - Represents type 1 or type 4
-varchar - Represents uTF8 encoded string
-varint - Represents arbitrary-precision integer
+text	- Represents UTF8 encoded string  
+int	- Represents 32-bit signed int  
+ascii	- Represents ASCII character string  
+bigint -	Represents 64-bit signed long  
+blob	-	Represents arbitrary bytes  
+Boolean	-	Represents true or false  
+counter - Represents counter column  
+decimal	-	Represents variable-precision decimal  
+double	- Represents 64-bit IEEE-754 floating point  
+float	-	Represents 32-bit IEEE-754 floating point  
+inet	- Represents an IP address, IPv4 or IPv6  
+timestamp -	Represents a timestamp  
+timeuuid - Represents type 1 UUID  
+uuid - Represents type 1 or type 4  
+varchar - Represents uTF8 encoded string  
+varint - Represents arbitrary-precision integer  
 
 | Collection  | Description  |
 |---|---|
