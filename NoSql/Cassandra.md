@@ -1,12 +1,12 @@
 ## Cassandra  
 Nosql stands for not only sql  
-#### Types of Nosql databases:  
+### Types of Nosql databases:  
  1. Document based - json, xml, excel files. used in content management, real time analtics, product management  
  2. Graph based - used in ML, fraud detection
  3. Column based - has rows and columns. eg. casssadra,dynamodb
  4. Key value pair based
 
-#### Charateristics of cassandra:      
+### Charateristics of cassandra:      
 -highly scalable  
 -high performance distributed database  
 -designed to handle large amounts of data   
