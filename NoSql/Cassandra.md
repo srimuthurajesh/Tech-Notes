@@ -95,26 +95,17 @@ DESCRIBE TYPES − Describes user-defined datatypes.
      - USE − Connects to a created KeySpace.  
      - ALTER KEYSPACE <keyspaceName>− Changes the properties of a KeySpace.  
      - DROP KEYSPACE <keyspaceName>− Removes a KeySpace  
-     - CREATE TABLE − Creates a table in a KeySpace. 
-```
-CREATE TABLE tablename(
-   column1 name datatype PRIMARYKEY,
-   column2 name data type,
-   column3 name data type,
-   PRIMARY KEY (column1)
-   )
-``` 
-
-     - ALTER TABLE − Modifies the column properties of a table.  
-     - DROP TABLE − Removes a table.  
-     - TRUNCATE − Removes all the data from a table.  
-     - CREATE INDEX − Defines a new index on a single column of a table.   
-     - DROP INDEX − Deletes a named index.  
+     - CREATE TABLE tablename(column1 name datatype PRIMARYKEY, column2 name data type, PRIMARY KEY ((column1), column2)) 
+     - ALTER TABLE table name ADD/DROP column datatype  
+     - DROP TABLE <tablename>    
+     - TRUNCATE − TRUNCATE <tablename>  
+     - CREATE INDEX <columnName> ON <tablename>(<tableName_columnName>)     
+     - Drop INDEX <columnName>
 2. Data Manipulation: inser, delete, update, select etc  
      - INSERT − Adds columns for a row in a table.  
      - UPDATE − Updates a column of a row.  
      - DELETE − Deletes data from a table.  
-     - BATCH − Executes multiple DML statements at once.  
+     - BATCH − Executes multiple DML statements at once. ``` BEGIN BATCH <insert stmt>/ <delete stmt>/ <update stmt> APPLY BATCH ``` 
 3. Secoundary indexes: create, drop indexes  
      - SELECT − This clause reads data from a table  
      - WHERE − The where clause is used along with select to read a specific data.  
