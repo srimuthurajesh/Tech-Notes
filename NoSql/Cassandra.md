@@ -16,7 +16,7 @@ Types of Nosql databases:
 -doesnt support relationship, but can use collection  
 -selective replication factor
 
--keyspace is schema, inside that we have columnFamily(table)  
+**Keyspace**: is schema or collection of tables, it will have columnFamily(tables)    
 
 
 |  Data Type | Constants  |  Description |
@@ -52,3 +52,10 @@ ALTER TYPE − Modifies a user-defined datatype.
 DROP TYPE − Drops a user-defined datatype.  
 DESCRIBE TYPE − Describes a user-defined datatype.  
 DESCRIBE TYPES − Describes user-defined datatypes.  
+
+#### Types of statements in cql:
+1. Data defination: create table, alter table, drop table, create keyspace etc  
+2. Data Manipulation: inser, delete, update, select etc  
+3. Secoundary indexes: create, drop indexes  
+4. Materialized views: create, drop, alter materialized views etc  
+5. Database roles: create permission, granting permission, creating user etc  
