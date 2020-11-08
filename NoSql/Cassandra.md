@@ -134,3 +134,7 @@ DESCRIBE TYPES − Describes user-defined datatypes.
      - SHOW host/version     
      - SOURCE fileName − can execute cql commands from mentioned filename    
      - TRACING − Enables or disables request tracing.  
+
+### Rules in cassandra while select:
+1. we need to use all primary key in where condition  
+2. Use clusterin key in where condition, in same order given in describe table  
