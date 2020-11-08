@@ -91,22 +91,22 @@ DESCRIBE TYPES − Describes user-defined datatypes.
 
 #### Types of statements in cql:
 1. **Data defination**: create table, alter table, drop table, create keyspace etc   
-     - CREATE KEYSPACE keyspaceName− Creates a KeySpace in Cassandra.  
-     - USE − Connects to a created KeySpace.  
-     - ALTER KEYSPACE keyspaceName− Changes the properties of a KeySpace.  
-     - DROP KEYSPACE keyspaceName− Removes a KeySpace  
-     - CREATE TABLE tableName (column1 name datatype PRIMARYKEY, column2 name data type, PRIMARY KEY ((column1), column2)) 
-     - ALTER TABLE tableName ADD/DROP columnName datatype  
-     - DROP TABLE tablename    
-     - TRUNCATE − TRUNCATE tablename  
-     - CREATE INDEX columnName ON tablename(tableName_columnName)     
-     - Drop INDEX columnName  
+     - _CREATE KEYSPACE keyspaceName_− Creates a KeySpace in Cassandra.  
+     - USE keyspaceName_ − Connects to a created KeySpace.  
+     - _ALTER KEYSPACE keyspaceName_ − Changes the properties of a KeySpace.  
+     - _DROP KEYSPACE keyspaceName_ − Removes a KeySpace  
+     - _CREATE TABLE tableName (column1 name datatype PRIMARYKEY, column2 name data type, PRIMARY KEY ((column1), column2))_   
+     - _ALTER TABLE tableName ADD/DROP columnName datatype_    
+     - _DROP TABLE tableName_      
+     - _TRUNCATE tableName_    
+     - _CREATE INDEX columnName ON tablename(tableName_columnName)_       
+     - _Drop INDEX columnName_    
  
-2. **Data Manipulation**: inser, delete, update, select etc  
-     - INSERT INTO tablename (column1 name, column2 name....) VALUES (value1, value2....) USING option    
-     - UPDATE tablename SET column name = new value, column name = value.... WHERE condition  
-     - DELETE FROM identifier WHERE condition    
-     - SELECT FROM table name WHERE condition  
+2. **Data Manipulation**: insert, delete, update, select etc  
+     - _INSERT INTO tablename (column1 name, column2 name....) VALUES (value1, value2....) USING option_    
+     - _UPDATE tablename SET column name = new value, column name = value.... WHERE condition_  
+     - _DELETE FROM identifier WHERE condition_    
+     - _SELECT FROM table name WHERE condition_  
      - BATCH − Executes multiple DML statements at once. ``` BEGIN BATCH insert stmt/ delete stmt/ update stmt APPLY BATCH ``` 
 
 3. **Secoundary indexes**: create, drop indexes  
