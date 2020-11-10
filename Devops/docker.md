@@ -56,7 +56,7 @@ docker run [IMAGE]:[version] [COMMAND]  # pull particular version of docker imag
 Note:docker run = docker create + docker start     
 
 docker create [IMAGE] 	#creates container layer over specified image, print container_id   
-docker start -a [CONTAINER]    #start container, -a for print output  
+docker start -a [CONTAINER]    #start container, -a attached for printing output  
 docker stop [CONTAINER] #trigger SIGTERM, thus cleanups happen, proper shutdown    
 docker kill [CONTAINER] #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
 docker pause [CONTAINER]
