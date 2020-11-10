@@ -50,7 +50,8 @@ CMD ["npm start"]
 ### Container life cycle commands:  
 docker images                   # list all images present in our local machine  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
-docker run -d [IMAGE] [COMMAND]  # Detached mode, means dont stop image and tun it in background even after ctrl+c given  
+docker run -d [IMAGE]  # Detached mode, means dont stop image and tun it in background even after ctrl+c given  
+docker run -d [IMAGE] --name [userdefinedName]                  # we can provide name for container    
 docker run [IMAGE]:[version] [COMMAND]  # pull particular version of docker image    
 Note:docker run = docker create + docker start     
 
@@ -69,8 +70,9 @@ docker ps -a  # show history of running containers
 ### Docker command commands
 docker run [CONTAINER] _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
 docker run -it [CONTAINER] [COMMAND]   #-i=allowInput, -t=beautify   
-docker exec [CONTAINER] [COMMAND]            #add command to already running container  
-
+docker exec [CONTAINER] [COMMAND]            #add command to already running container
+docker exec -it [CONTAINER] /bin/bash            #add command to already running container  
+docker exec -it [CONTAINER] bash
 
 docker rm [CONTAINER]
 
