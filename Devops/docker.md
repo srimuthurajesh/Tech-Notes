@@ -1,45 +1,15 @@
 ## Docker  
-- for building distributed software  
-- adopt Microservice architecture    
 - alternate for VMs  
 ie:VM uses -> Hypervisor(virualization),  
 Docker uses -> dockerEngine(containerization)   
-
+- seperate your application from infrastructure  
 **Theory:**   
 In linux os, two version of same software maintains by using namespace & controlgroups  
 likewise Docker engine these feature and perform containerization   
 
 **Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub website are images  
-**Container**: an instance of image or Runtime environment for image     
-**Dockerfile**: text file of commands to assemble image. consists three parts syntax    
-1. Specify base image
-2. Commands to download,copy,install dependency
-3. Startup command  
-```
-#Dockerfile Example
-FROM node:alphine    #alphine is small size version of an image  
-COPY ./ ./  
-RUN apt-get update     
-RUN npm install  
-CMD ["npm start"]
-```
-**Dockerfile Instructions**:  
-1. FROM	-set base image  ex: ```FROM alphine```   
-2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
-3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
-4. ENTRYPOINT -same like CMD, but not ovverride by commandline command.  
-5. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
-5. ADD - same as COPY, additionaly has copy from URL, extract tarFile    
-7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
-8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
-9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
-10. USER	-set username/usergroup . USER _user_[:_group_]    
-11. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
-12. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
-13. ONBUILD  
-14. STOPSIGNAL  
+**Container**: an instance of image or Runtime environment for image  
 
----
 ## COMMANDS 
 ### Docker options command
   1. ```-v, --version```  :          Print version information and quit
@@ -96,7 +66,35 @@ docker commit -c 'CMD ["redid-server"]' _running_container_id_     #it will buil
 docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER] ```docker run -p 8080:8080 rajDock/redis``` 
 
 
-
+   
+### Dockerfile:   
+text file of commands to assemble image. consists three parts syntax    
+1. Specify base image
+2. Commands to download,copy,install dependency
+3. Startup command  
+```
+#Dockerfile Example
+FROM node:alphine    #alphine is small size version of an image  
+COPY ./ ./  
+RUN apt-get update     
+RUN npm install  
+CMD ["npm start"]
+```
+**Dockerfile Instructions**:  
+1. FROM	-set base image  ex: ```FROM alphine```   
+2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
+3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
+4. ENTRYPOINT -same like CMD, but not ovverride by commandline command.  
+5. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
+5. ADD - same as COPY, additionaly has copy from URL, extract tarFile    
+7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
+8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
+9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
+10. USER	-set username/usergroup . USER _user_[:_group_]    
+11. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
+12. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
+13. ONBUILD  
+14. STOPSIGNAL  
 
 
 **Docker hub:**  
