@@ -49,6 +49,7 @@ CMD ["npm start"]
   
 ### Container life cycle commands:  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
+docker run -d [IMAGE] [COMMAND] //means dont stop image and tun it in background even after ctrl+c given  
 Note:docker run = docker create + docker start     
 
 docker create [IMAGE] 	#creates container layer over specified image, print container_id   
