@@ -65,7 +65,7 @@ docker unpause [CONTAINER]
 ### Docker Listing commands
 docker imges	# show all image's repository,tags,size  
 docker ps  		# show running containers  
-docker ps -a  # show history of running containers  
+docker ps -a  || docker ps --all     # show history of running containers  
 
 ### Docker command commands
 docker run [CONTAINER] _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
