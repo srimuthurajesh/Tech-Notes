@@ -2,7 +2,8 @@
 - alternate for VMs  
 ie:VM uses -> Hypervisor(virualization),  
 Docker uses -> dockerEngine(containerization)   
-- seperate your application from infrastructure  
+- seperate your application from infrastructure 
+
 **Theory:**   
 In linux os, two version of same software maintains by using namespace & controlgroups  
 likewise Docker engine these feature and perform containerization   
