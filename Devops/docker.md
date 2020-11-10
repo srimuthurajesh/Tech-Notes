@@ -8,6 +8,11 @@ Docker uses -> dockerEngine(containerization)
 In linux os, two version of same software maintains by using namespace & controlgroups  
 likewise Docker engine these feature and perform containerization   
 
+**Docker Engine**: is a client-server application. 
+1. Server(daemon process)  
+2. REST(over UNIX sockets or a network interface.)  
+3. CLI   
+
 **Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub website are images  
 **Container**: an instance of image or Runtime environment for image  
 
