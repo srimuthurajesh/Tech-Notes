@@ -50,7 +50,7 @@ CMD ["npm start"]
 ### Container life cycle commands:  
 docker images                   # list all images present in our local machine  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
-docker run -d [IMAGE] [COMMAND]  # means dont stop image and tun it in background even after ctrl+c given  
+docker run -d [IMAGE] [COMMAND]  # Detached mode, means dont stop image and tun it in background even after ctrl+c given  
 docker run [IMAGE]:[version] [COMMAND]  # pull particular version of docker image    
 Note:docker run = docker create + docker start     
 
