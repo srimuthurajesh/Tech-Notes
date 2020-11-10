@@ -9,8 +9,8 @@ Docker uses -> dockerEngine(containerization)
 In linux os, two version of same software maintains by using namespace & controlgroups  
 likewise Docker engine these feature and perform containerization   
 
-**Image**: series of instructions(layers), executed from image's Dockerfile  
-**Container**: an instance of image   
+**Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub website are images  
+**Container**: an instance of image or Runtime environment for image     
 **Dockerfile**: text file of commands to assemble image. consists three parts syntax    
 1. Specify base image
 2. Commands to download,copy,install dependency
@@ -48,8 +48,10 @@ CMD ["npm start"]
   4. ```--name```: user defined name for container  Ex:docker run --name=rajCont redis:alpine  
   
 ### Container life cycle commands:  
+docker images                   # list all images present in our local machine  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
-docker run -d [IMAGE] [COMMAND] //means dont stop image and tun it in background even after ctrl+c given  
+docker run -d [IMAGE] [COMMAND]  # means dont stop image and tun it in background even after ctrl+c given  
+docker run [IMAGE]:[version] [COMMAND]  # pull particular version of docker image    
 Note:docker run = docker create + docker start     
 
 docker create [IMAGE] 	#creates container layer over specified image, print container_id   
@@ -62,6 +64,7 @@ docker unpause [CONTAINER]
 ### Docker Listing commands
 docker imges	# show all image's repository,tags,size  
 docker ps  		# show running containers  
+docker ps -a  # show history of running containers  
 
 ### Docker command commands
 docker run [CONTAINER] _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
@@ -132,8 +135,11 @@ docker-compose unpause
 docker-compose build          #rebuild all image  
 
 #log  
+docker logs -f [CONTAINERID]  
+docker logs -f [CONTAINERNAME]  
 docker-compose ps  
 docker-compose log [CONTAINER]  
+
 **docker-compose.yml:**  
 ```
 version: '2'
