@@ -8,4 +8,5 @@
 [Cassandra documentation](https://cassandra.apache.org)  
 
 ## MongoDB  
-- [Mongo pdf](https://github.com/karlseguin/the-little-mongodb-book/blob/master/en/mongodb.markdown)  
+- [Mongo pdf github](https://github.com/karlseguin/the-little-mongodb-book/blob/master/en/mongodb.markdown)   
+- [Mongo Docs manual](https://docs.mongodb.com/manual/)  
