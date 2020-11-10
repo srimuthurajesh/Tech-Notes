@@ -8,5 +8,10 @@
 [Cassandra documentation](https://cassandra.apache.org)  
 
 ## MongoDB  
+##### Docs  
 - [Mongo pdf github](https://github.com/karlseguin/the-little-mongodb-book/blob/master/en/mongodb.markdown)   
 - [Mongo Docs manual](https://docs.mongodb.com/manual/)  
+
+##### Videos  
+- [newboston mongodb](https://www.youtube.com/playlist?list=PL6gx4Cwl9DGDQ5DrbIl20Zu9hx1IjeVhO)  
+- [Netninja mongodb](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jpvoYriLI0bY8DOgWZfi6u)
