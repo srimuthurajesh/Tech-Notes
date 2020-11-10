@@ -5,33 +5,36 @@ Docker uses -> dockerEngine(containerization)
 - seperate your application from infrastructure 
 
 **Theory:**   
-In linux os, two version of same software maintains by using namespace & controlgroups  
+In linux os, two version of same software maintains by using Namespace & ControlGroups  
 likewise Docker engine these feature and perform containerization   
 
 **Docker Engine**: is a client-server application. 
-1. Server(daemon process)  
-2. REST(over UNIX sockets or a network interface.)  
-3. CLI   
+1. Server (Docker Daemons or dockerd, listens for Docker API requests and manages Docker objects )  
+2. REST API(over UNIX sockets or a network interface.)  
+3. CLI (docker commands uses docker API)  
 
-**Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub website are images  
+**Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub    
 **Container**: an instance of image or Runtime environment for image  
 
 ## COMMANDS 
 ### Docker options command
-  1. ```-v, --version```  :          Print version information and quit
-  2. ```-D, --debug``` :             Enable debug mode    
-  3. ```--help```     :          Print usage  
-  4. ```--name```: user defined name for container  Ex:docker run --name=rajCont redis:alpine  
-  
+  1. ```-v, --version```  : Print version information and quit
+  2. ```-D, --debug```    : Enable debug mode    
+  3. ```--help```         : Print usage  
+  4. ```--name```         : user defined name for container  Ex:docker run --name=rajCont redis:alpine  
+  5. ```-d```             : detached, means dont stop image and run it in background even after ctrl+c given  
+  6. ```-a```             : attached, for printing output  
+  7. ```-it```            : interactive terminal  
+    
 ### Container life cycle commands:  
 docker images                   # list all images present in our local machine  
 docker run [IMAGE] [COMMAND]   ```Ex: docker run hello-world``` #get image from local or from dockerhub     
-docker run -d [IMAGE]  # Detached mode, means dont stop image and tun it in background even after ctrl+c given  
+docker run -d [IMAGE]  # Detached mode, means dont stop image and run it in background even after ctrl+c given  
 docker run -d [IMAGE] --name [userdefinedName]                  # we can provide name for container    
 docker run [IMAGE]:[version] [COMMAND]  # pull particular version of docker image    
 Note:docker run = docker create + docker start     
 
-docker create [IMAGE] 	#creates container layer over specified image, print container_id   
+docker create [IMAGE] 	#creates container layer over specified image, prints container_id   
 docker start -a [CONTAINER]    #start container, -a attached for printing output  
 docker stop [CONTAINER] #trigger SIGTERM, thus cleanups happen, proper shutdown    
 docker kill [CONTAINER] #trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
