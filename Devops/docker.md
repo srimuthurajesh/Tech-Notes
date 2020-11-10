@@ -69,7 +69,7 @@ docker ps -a  # show history of running containers
 
 ### Docker command commands
 docker run [CONTAINER] _command_	```docker run -it busybox sh``` #bustbox with shell terminal access  
-docker run -it [CONTAINER] [COMMAND]   #-i=allowInput, -t=beautify   
+docker run -it [CONTAINER] [COMMAND]   #-i=allowInput, -t=beautify   or it= interactive terminal
 docker exec [CONTAINER] [COMMAND]            #add command to already running container
 docker exec -it [CONTAINER] /bin/bash            #add command to already running container  
 docker exec -it [CONTAINER] bash
