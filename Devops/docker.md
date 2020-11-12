@@ -166,8 +166,8 @@ docker build -t image_name --no-cache=true
 **Docker link**: ```docker run --link redis container_id```
 
 ## Docker-compose
-docker-compose up   
-docker-compose down  
+docker-compose -f [YMLFILENAME] up   
+docker-compose -f [YMLFILENAME] down  
 
 docker-compose start  
 docker-compose stop  
@@ -183,16 +183,21 @@ docker-compose log [CONTAINER]
 
 **docker-compose.yml:**  
 ```
-version: '2'
+version: '3'
 
 services:
-  web:
+  mongodb:
+    image: mongo
+    ports:
+     - "27017:27017"
+    environment:  
+     - MONGO_INITDB_ROOT_USERNAME=admin  
+     - MONGO_INITDB_ROOT_PASSWORD=password  
     build: .
     # build from Dockerfile
     context: ./Path
     dockerfile: Dockerfile
-    ports:
-     - "5000:5000"
+    
     volumes:
      - .:/code
   redis:
