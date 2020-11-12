@@ -1,7 +1,7 @@
 ## Docker  
 Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called container  
 
-3 layers in OS: 1.Hardware, 2.kernel 3.Application  
+Three layers in OS: 1.Hardware, 2.kernel 3.Application  
 ie:VM uses -> Hypervisor(virualization) which virualize kernel layer,   
 Docker uses -> dockerEngine(containerization) which virtualize OS Application layer     
 
