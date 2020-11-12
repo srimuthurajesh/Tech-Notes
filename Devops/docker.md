@@ -41,15 +41,15 @@ docker start [CONTAINER]                                        # start containe
 docker run [IMAGE]   ```Ex: docker run busybox```               # get image from local or from dockerhub     
 docker run [IMAGE]:[VERSION]                                    # pull particular version of docker image    
 docker run [IMAGE] --name [userdefinedContainerName]            # we can provide name for container    
-docker run [IMAGE] [COMMAND]                                     ```Ex: docker run busybox /bin/sh``` 
-docker run -it [CONTAINER] [COMMAND]                            # -i=allowInput, -t=beautify   or it= interactive terminal
-docker run -a [CONTAINER] [COMMAND]                             # -a attached/foreground mode, Print output of the command
-docker run -d [IMAGE]                                           # -d detached/background mode, means dont stop image and run container in background even after ctrl+c given  
-docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]          ```docker run -p 8080:8080 rajDock/redis``` 
+docker run [IMAGE] [COMMAND]                                     ```Ex: docker run busybox /bin/sh```  
+docker run -it [CONTAINER] [COMMAND]                            # -i=allowInput, -t=beautify   or it= interactive terminal  
+docker run -a [CONTAINER] [COMMAND]                             # -a attached/foreground mode, Print output of the command  
+docker run -d [IMAGE]                                           # -d detached/background mode, means dont stop image and run container in background even after ctrl+c given   
+docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]          ```docker run -p 8080:8080 rajDock/redis```  
 
-docker exec [CONTAINER] [COMMAND]                               # add command to already running container
-docker exec -it [CONTAINER] /bin/bash                           # add command to already running container  
-docker exec -it [CONTAINER] bash
+docker exec [CONTAINER] [COMMAND]                               # add command to already running container  
+docker exec -it [CONTAINER] /bin/bash                           # add command to already running container     
+docker exec -it [CONTAINER] bash  
 
 
 #### Container Commands:  
