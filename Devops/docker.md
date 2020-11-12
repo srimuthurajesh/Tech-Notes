@@ -193,18 +193,19 @@ services:
      - "27017:27017"
     environment:  
      - MONGO_INITDB_ROOT_USERNAME=admin  
-     - MONGO_INITDB_ROOT_PASSWORD=password  
+     - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+     - db-data:var/lib/mongo/data  
     build: .
     # build from Dockerfile
     context: ./Path
     dockerfile: Dockerfile
     
     volumes:
-     - .:/code
-  redis:
-    image: redis
-    image: ubuntu
-    image: a4bc65fd
-```
+     - .db-data
+ ```
 
-**Installation linux**: ```sudo apt install docker.io```
+## Docker Volume  
+1. Host Volume: docker run -v [HOST_DIR]:[CONTAINER_DIR] [CONTAINER]  
+2. Anonymous Volume: docker run -v [CONTAINER_DIR] [CONTAINER]  
+3. Named Volumne: docker run -v [ANYNAME]:/[CONTINER_DIR]   
