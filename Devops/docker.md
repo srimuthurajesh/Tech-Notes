@@ -1,8 +1,9 @@
 ## Docker  
-- alternate for VMs  
-ie:VM uses -> Hypervisor(virualization),  
-Docker uses -> dockerEngine(containerization)   
-- seperate your application from infrastructure 
+Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called container  
+
+Three layers in OS: 1.Hardware, 2.kernel 3.Application  
+ie:VM uses -> Hypervisor(virualization) which virualize kernel layer,   
+Docker uses -> dockerEngine(containerization) which virtualize OS Application layer     
 
 **Theory:**   
 In linux os, two version of same software maintains by using Namespace & ControlGroups(cgroups)  
