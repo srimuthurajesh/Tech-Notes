@@ -35,6 +35,7 @@ likewise Docker engine these feature and perform containerization
 #### Image Commands:  
 docker images                                                   # list all images present in our local machine  
 docker create [IMAGE] 	                                        # creates container layer over specified image, prints container_id   
+docker rmi [IMAGE]                                              # remove docker image  
 docker start [CONTAINER]                                        # start container  
 **Note:docker run = docker create + docker start**     
 docker run [IMAGE]   ```Ex: docker run busybox```               # get image from local or from dockerhub     
