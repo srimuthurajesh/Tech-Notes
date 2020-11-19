@@ -15,11 +15,14 @@ OSI Layers: Open systems Interconnect Model
 |                 | presentation layer | ascii SSL,TLS                                 |   "       	| 
 |                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |     
 
-##### PORTS:  
-1 to 65,535  
-0 to 1023 standard and predefined  
-1024 to 49151 registered and paid  
-49151 to 65,535 private port numbers      
+##### PORTS:  0 - 65,535
+
+| Port from  | Port To  | Usage                     |  
+|------------|----------|---------------------------|  
+| 0          | 1023     |  standard and predefined  |  
+| 1024       | 49151    |  registered and paid      |  
+| 49151      | 65,535   |  private port numbers     |  
+
 
 | Protocol   | Port number | TCP or UDP | Info |
 |------------|-------------|------------|-------|
