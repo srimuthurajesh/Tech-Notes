@@ -1,5 +1,70 @@
 ### Networking – connecting devices
 
+
+OSI Layers: Open systems Interconnect Model
+    defined by ISO internation organisation  for standard 
+    basic standard for all network devices
+
+|                 | Layer              | Description                                   | Data units |    
+|-----------------|--------------------|-----------------------------------------------|------------|
+| Lower layer     | Physical layer     | hardware                                      | Bits       |
+|                 | Data link layer    | control physical layer, mac addressing(48bit) | Frames     |
+|                 | Network layer      | ipv4,ipv6                                     | Packets    |
+|                 | Transport layer    | tcp,udp                                       | Segments   |
+|-----------------|--------------------|------------------------------------------------------------|
+| Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       |    
+|                 | presentation layer | ascii SSL,TLS                                 |   "       	|
+|                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |    
+
+1. Lower layer:  
+    1. physical layer(hardware)  
+    2. data link layer(control physical layer, mac addressing)  
+    3. network layer(ipv4,ipv6,routers)  
+    4. transport layer(tcp,udp)  
+2. Upper layer  
+    1. sessions layer(session storage)  
+    2. presentation layer(ascii)  
+    3. application layer  (http,smtp,ftp)  
+
+##### PORTS:  
+1 to 65,535  
+0 to 1023 standard and predefined  
+1024 to 49151 registered and paid  
+49151 to 65,535 private port numbers  
+
+HTTP TCP port 80  
+SMTP TCP port 25 & POP TCP port 110  
+    
+
+| Protocol   | Port number | TCP or UDP | Info |
+|------------|-------------|------------|-------|
+| HTTP       | 80          | TCP        | send data in plain text|
+| HTTPS      | 443         | TCP        | send data as encrypted |
+| DNS        | 53          | UDP        |  |
+| RDP        | 3389        |            | remote service |
+| SSH        | 22          | TCP        | remote service encrypted |
+| FTP        | 20,21       | TCP        | transfer files,20 for transfering data, 21 is for flow control |    
+| TELNET     | 23          |            | virtual terminal, data trasnfer in plain text |
+| SMTP       | 25          | TCP        | transmit email, cannot download email |
+| IMAP4      | 143         | TCP        | can download email |
+| POP3       | 110         | TCP        | an download email from email server |
+| DHCP       | 67,68       |            | |
+| TFTP       | 53          | UDP        | |
+
+LDAP - PORT 389	- Lightweight directory access protocol  
+NFS  - PORT 2049 - Network file system  
+MAC ADDRESS:  
+    - Media Access Control- physical address identifies hardware interface  
+    - 48 bit Hexadecimal  
+    - MM:MM:MM:SS:SS:SS    M-manufacturer id, series number of NIC(network interface card)  
+
+
+Some Abbrevations:  
+ADDRESS RESOLUTION PROTOCOL(ARP) - finding physical(mac) address using ip address  
+DYNAMIC HOST CONFIGURATION PROTOCOL(DHCP) -PORT 67(Server),68(Client) -  if a new device introduced in network, the server itself assign Network configurations like ip address,subnetmask,DNS IP, gatewaay informations. It uses DORA process.  
+DORA - Discover,Offer,Request,Acknowledgement  
+
+
 #### TYPE OF NETWORKS:
 1. Local Arear Network (LAN) – connect short distances   
 2. Wide Area Network(WAN) – connect large geographical area  
@@ -84,71 +149,6 @@ How to find network id – 85.255.255.255
     | 3.Star Topology | has a central hub                                        |
     | 4.Tree Topology | combination of bus and star topology                     |
     | 5.Mesh Topology | interconnected to all other devices(like star symbol)    |   
-
-OSI Layers: Open systems Interconnect Model
-    defined by ISO internation organisation  for standard 
-    basic standard for all network devices
-
-|                 | Layer              | Description                                   | Data units |    
-|-----------------|--------------------|-----------------------------------------------|------------|
-| Lower layer     | Physical layer     | hardware                                      | Bits       |
-|                 | Data link layer    | control physical layer, mac addressing(48bit) | Frames     |
-|                 | Network layer      | ipv4,ipv6                                     | Packets    |
-|                 | Transport layer    | tcp,udp                                       | Segments   |
-|-----------------|--------------------|------------------------------------------------------------|
-| Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       |    
-|                 | presentation layer | ascii SSL,TLS                                 |   "       	|
-|                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |    
-
-1. Lower layer:  
-    1. physical layer(hardware)  
-    2. data link layer(control physical layer, mac addressing)  
-    3. network layer(ipv4,ipv6,routers)  
-    4. transport layer(tcp,udp)  
-2. Upper layer  
-    1. sessions layer(session storage)  
-    2. presentation layer(ascii)  
-    3. application layer  (http,smtp,ftp)  
-
-##### PORTS:  
-1 to 65,535  
-0 to 1023 standard and predefined  
-1024 to 49151 registered and paid  
-49151 to 65,535 private port numbers  
-
-HTTP TCP port 80  
-SMTP TCP port 25 & POP TCP port 110  
-    
-
-| Protocol   | Port number | TCP or UDP | Info |
-|------------|-------------|------------|-------|
-| HTTP       | 80          | TCP        | send data in plain text|
-| HTTPS      | 443         | TCP        | send data as encrypted |
-| DNS        | 53          | UDP        |  |
-| RDP        | 3389        |            | remote service |
-| SSH        | 22          | TCP        | remote service encrypted |
-| FTP        | 20,21       | TCP        | transfer files,20 for transfering data, 21 is for flow control |    
-| TELNET     | 23          |            | virtual terminal, data trasnfer in plain text |
-| SMTP       | 25          | TCP        | transmit email, cannot download email |
-| IMAP4      | 143         | TCP        | can download email |
-| POP3       | 110         | TCP        | an download email from email server |
-| DHCP       | 67,68       |            | |
-| TFTP       | 53          | UDP        | |
-
-LDAP - PORT 389	- Lightweight directory access protocol  
-NFS  - PORT 2049 - Network file system  
-MAC ADDRESS:  
-    - Media Access Control- physical address identifies hardware interface  
-    - 48 bit Hexadecimal  
-    - MM:MM:MM:SS:SS:SS    M-manufacturer id, series number of NIC(network interface card)  
-
-
-ADDRESS RESOLUTION PROTOCOL(ARP) - finding physical(mac) address using ip address  
-DYNAMIC HOST CONFIGURATION PROTOCOL(DHCP) -PORT 67(Server),68(Client) -  if a new device introduced in network, the server itself assign Network configurations like ip address,subnetmask,DNS IP, gatewaay informations. It uses DORA process.  
-DORA - Discover,Offer,Request,Acknowledgement  
-
-
-
  
 
 
