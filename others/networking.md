@@ -7,16 +7,16 @@
 4. Storage Area Network (SAN) – share storage area to multiple devices  
 
 #### Networking Devices terminologies:
-1. Hub – connect computers as single lan network, 4,8,12,24,48 ports are availble
-    1a. Passive hub: Forward signal to all ports except incoming port
-    1b. Active hub: same like passive, improve quality by amplifying it (repeater)
-2. Bridge – seperating LAN to small segments 
-3. Modem – Analog to Digital and Digital to analog
-4. Switch – Not broadcast to all ports, it control of broadcasting
-    5. Router – Layer 3 device. Based on routing table signals sents to devices
+1. Hub – connect computers as single lan network, 4,8,12,24,48 ports are availble  
+    a. Passive hub: Forward signal to all ports except incoming port  
+    b. Active hub: same like passive, improve quality by amplifying it (repeater)  
+2. Bridge – seperating LAN to small segments   
+3. Modem – Analog to Digital and Digital to analog  
+4. Switch – Not broadcast to all ports, it control of broadcasting  
+5. Router – Layer 3 device. Based on routing table signals sents to devices  
 
-#### IP ADDRESS: -   
-- Internet protocol. To identify a device or server  
+#### IP ADDRESS:     
+Internet protocol. To identify a device or server  
 1. Two types of IP:  
     a. Public IP 
     b. Private IP  
