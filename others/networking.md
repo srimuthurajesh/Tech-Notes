@@ -5,35 +5,21 @@ OSI Layers: Open systems Interconnect Model
     defined by ISO internation organisation  for standard 
     basic standard for all network devices
 
-|                 | Layer              | Description                                   | Data units |    
-|-----------------|--------------------|-----------------------------------------------|------------|
-| Lower layer     | Physical layer     | hardware                                      | Bits       |
-|                 | Data link layer    | control physical layer, mac addressing(48bit) | Frames     |
-|                 | Network layer      | ipv4,ipv6                                     | Packets    |
-|                 | Transport layer    | tcp,udp                                       | Segments   |
-| Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       |    
-|                 | presentation layer | ascii SSL,TLS                                 |   "       	|
-|                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |    
-
-1. Lower layer:  
-    1. physical layer(hardware)  
-    2. data link layer(control physical layer, mac addressing)  
-    3. network layer(ipv4,ipv6,routers)  
-    4. transport layer(tcp,udp)  
-2. Upper layer  
-    1. sessions layer(session storage)  
-    2. presentation layer(ascii)  
-    3. application layer  (http,smtp,ftp)  
+|                 | Layer              | Description                                   | Data units | Details |   
+|-----------------|--------------------|-----------------------------------------------|------------|---------|
+| Lower layer     | Physical layer     | hardware                                      | Bits       | hardware |
+|                 | Data link layer    | control physical layer, mac addressing(48bit) | Frames     | control physical layer, mac addressing |
+|                 | Network layer      | ipv4,ipv6                                     | Packets    | ipv4,ipv6,routers |
+|                 | Transport layer    | tcp,udp                                       | Segments   | tcp,udp |
+| Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       | session storage |   
+|                 | presentation layer | ascii SSL,TLS                                 |   "       	| ascii |
+|                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        | http,smtp,ftp |    
 
 ##### PORTS:  
 1 to 65,535  
 0 to 1023 standard and predefined  
 1024 to 49151 registered and paid  
-49151 to 65,535 private port numbers  
-
-HTTP TCP port 80  
-SMTP TCP port 25 & POP TCP port 110  
-    
+49151 to 65,535 private port numbers      
 
 | Protocol   | Port number | TCP or UDP | Info |
 |------------|-------------|------------|-------|
