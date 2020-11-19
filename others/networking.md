@@ -1,10 +1,10 @@
-Networking – connecting devices
+### Networking – connecting devices
 
-TYPE OF NETWORKS:
-    Local Arear Network (LAN) – connect short distances 
-    Wide Area Network(WAN) – connect large geographical area
-    Metropolitan Area Network(MAN) – connect for town or city
-    Storage Area Network (SAN) – share storage area to multiple devices
+#### TYPE OF NETWORKS:
+1. Local Arear Network (LAN) – connect short distances   
+2. Wide Area Network(WAN) – connect large geographical area  
+3. Metropolitan Area Network(MAN) – connect for town or city   
+4. Storage Area Network (SAN) – share storage area to multiple devices  
 
 NETWORKING DEVICES:
     1. Hub – connect computers as single lan network, 4,8,12,24,48 ports are availble
@@ -127,18 +127,21 @@ SMTP TCP port 25 & POP TCP port 110
     
 
 -----------------------------------------
-| Protocol   | Port number | TCP or UDP |
-|------------|-------------|------------|
-| FTP        | 20,21       | TCP        |    
-| SSH        | 22          | TCP        |
-| SMTP       | 23          | TCP        |
-| DNS        | 25          | UDP        |
-| TFTP       | 53          | UDP        |
-| HTTP       | 69          | TCP        |
-| POP3       | 80          | TCP        |
-| IMAP4      | 143         | TCP        |
-| HTTPS      | 443         | TCP        |
------------------------------------------
+| Protocol   | Port number | TCP or UDP | Info |
+|------------|-------------|------------|-------|
+| HTTP       | 80          | TCP        | send data in plain text|
+| HTTPS      | 443         | TCP        | send data as encrypted |
+| DNS        | 53          | UDP        |  |
+| RDP        | 3389        |            | remote service |
+| SSH        | 22          | TCP        | remote service encrypted |
+| FTP        | 20,21       | TCP        | transfer files,20 for transfering data, 21 is for flow control |    
+| TELNET     | 23          |            | virtual terminal, data trasnfer in plain text |
+| SMTP       | 25          | TCP        | transmit email, cannot download email |
+| IMAP4      | 143         | TCP        | can download email |
+| POP3       | 110         | TCP        | an download email from email server |
+| DHCP       | 67,68       |            | |
+| TFTP       | 53          | UDP        | |
+-------------------------------------------
 
 LDAP - PORT 389	- Lightweight directory access protocol
 NFS  - PORT 2049 - Network file system
