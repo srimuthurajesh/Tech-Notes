@@ -26,6 +26,8 @@ OSI Layers: Open systems Interconnect Model
 | 49151      | 65,535   |  private port numbers     |  
 
 ---
+TCP: Gurantee the delivery of data  
+UDP: Doesnt guarantee data delivery, id Connection-less  
 
 | Protocol   | Port number | TCP or UDP | Info |
 |------------|-------------|------------|-------|
