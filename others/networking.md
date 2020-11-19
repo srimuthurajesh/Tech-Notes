@@ -24,16 +24,16 @@ Internet protocol. To identify a device or server
     a. Network Portion  
         b. Host Portion  
 
-**Two version of IP:**  
-a. IPV4  
-    -made up of 32 bits  
-    -Broken into 4 octets  (1octet=8bit)  
-    -each octets ranges 0 to 255 in decimel or 00000000 to 11111111 in binary  
-    -eg.194.68.10.11  
-    -subnet is an logical subdivision of an IP network.   
-    -subnet mask:     32bit number to identify network & host portion in IP  
-        it is made of putting network bit as 1 and host bit as 0     
-        11111111.00000000.00000000.00000000 ==== 255.0.0.0  
+Two version of IP:  IPV4 & IPV6  
+##### IPV4  
+-made up of 32 bits   
+-Broken into 4 octets  (1octet=8bit)  
+-each octets ranges 0 to 255 in decimel or 00000000 to 11111111 in binary  
+-eg.194.68.10.11  
+-subnet is an logical subdivision of an IP network.   
+-subnet mask:     32bit number to identify network & host portion in IP  
+    it is made of putting network bit as 1 and host bit as 0     
+    11111111.00000000.00000000.00000000 ==== 255.0.0.0  
 Five classes in IPV4:  
 --------------------------------------------------------------------------------------
 | Class | Public Network-Range        | Supports                    | subnet mask    |
