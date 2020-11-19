@@ -11,7 +11,6 @@ OSI Layers: Open systems Interconnect Model
 |                 | Data link layer    | control physical layer, mac addressing(48bit) | Frames     |
 |                 | Network layer      | ipv4,ipv6                                     | Packets    |
 |                 | Transport layer    | tcp,udp                                       | Segments   |
-|-----------------|--------------------|------------------------------------------------------------|
 | Upper layer     | session layer      | session storage like PPTP,SIP,SAP,NetBIOS     | Data       |    
 |                 | presentation layer | ascii SSL,TLS                                 |   "       	|
 |                 | application layer  | http,smtp,ftp,DNS,TELNET,DNCP,SNMP            |   "        |    
