@@ -54,7 +54,31 @@ MAC ADDRESS:
     - MM:MM:MM:SS:SS:SS    M-manufacturer id, series number of NIC(network interface card)  
 
 
-Some Abbrevations:  
+##### HTTP  
+1. Http 0.9 (1991)  
+    - Only have GET method   
+    - eg: GET/mypage.html  
+2. Http 1.0 (1996)   
+    - headers and status code introduced  
+    - ability to send non html docs  
+    - need to mention http version.   
+    - eg: GET/mypage.html HTTP/1.0   
+3. Http 1.1 (1997)  
+    - reuse connection  
+    - piplining of requests  
+    - host header  
+    - content negotiation(encoding, languages etc)  
+    - cache control in header field    
+4. Http 2.0 (2015)  
+    - Google's experiment SPDY protocol  
+    - Improved performance  
+5. Http 3.0 (2018) 
+    - Google's QUIP transport layer  
+    - uses UDP over TCP  
+
+
+
+**Some Abbrevations:**   
 ADDRESS RESOLUTION PROTOCOL(ARP) - finding physical(mac) address using ip address  
 DYNAMIC HOST CONFIGURATION PROTOCOL(DHCP) -PORT 67(Server),68(Client) -  if a new device introduced in network, the server itself assign Network configurations like ip address,subnetmask,DNS IP, gatewaay informations. It uses DORA process.  
 DORA - Discover,Offer,Request,Acknowledgement  
