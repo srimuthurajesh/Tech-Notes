@@ -6,64 +6,66 @@
 3. Metropolitan Area Network(MAN) – connect for town or city   
 4. Storage Area Network (SAN) – share storage area to multiple devices  
 
-NETWORKING DEVICES:
-    1. Hub – connect computers as single lan network, 4,8,12,24,48 ports are availble
-        1a. Passive hub: Forward signal to all ports except incoming port
-        1b. Active hub: same like passive, improve quality by amplifying it (repeater)
-    2. Bridge – seperating LAN to small segments 
-    3. Modem – Analog to Digital and Digital to analog
-    4. Switch – Not broadcast to all ports, it control of broadcasting
+#### Networking Devices terminologies:
+1. Hub – connect computers as single lan network, 4,8,12,24,48 ports are availble
+    1a. Passive hub: Forward signal to all ports except incoming port
+    1b. Active hub: same like passive, improve quality by amplifying it (repeater)
+2. Bridge – seperating LAN to small segments 
+3. Modem – Analog to Digital and Digital to analog
+4. Switch – Not broadcast to all ports, it control of broadcasting
     5. Router – Layer 3 device. Based on routing table signals sents to devices
 
-IP ADDRESS: - Internet protocol. To identify a device or server
-    Two types of IP:
-        a. Public IP
-        b. Private IP
-    Two portions:
-        a. Network Portion
-            b. Host Portion
-Two version of IP:
-    a. IPV4
-        -made up of 32 bits
-        -Broken into 4 octets  (1octet=8bit)
-        -each octets ranges 0 to 255 in decimel or 00000000 to 11111111 in binary
-        -eg.194.68.10.11
-        -subnet is an logical subdivision of an IP network. 
-        -subnet mask:     32bit number to identify network & host portion in IP
-            it is made of putting network bit as 1 and host bit as 0    
-            11111111.00000000.00000000.00000000 ==== 255.0.0.0
-    Five classes in IPV4:
-    --------------------------------------------------------------------------------------
-    | Class | Public Network-Range        | Supports                    | subnet mask    |
-    |-------|-----------------------------|-----------------------------|----------------|
-    | A     | 1.0.0.1 - 126.255.255.255   | 16,777,214 host  126 n/w    | 255.0.0.0      | 
-    | B     | 128.0.0.1 - 191.255.255.255 | 65,534 host  16,382 n/w     | 255.255.0.0    |
-    | C     | 192.0.0.1 - 223.255.255.255 | 254 host  20,97,150 n/w     | 255.255.255.0  |
-    | D     | 224.0.0.1 - 239.255.255.255 | Reserved for Multicasting                    |
-    | E     | 240.0.0.1 - 254.255.255.254 | Reserved for Reasearch & Development         |
-    --------------------------------------------------------------------------------------
+#### IP ADDRESS: -   
+- Internet protocol. To identify a device or server  
+1. Two types of IP:  
+    a. Public IP 
+    b. Private IP  
+2. Two portions:  
+    a. Network Portion  
+        b. Host Portion  
 
-    Private Ip Addressing(can use in local office)
-    ---------------------------------------------------------------------------------------------------------
-    | Class   | Private Network                   | Subnet mask         | Address range                     |
-    |---------|-----------------------------------|---------------------|-----------------------------------|    
-    | A       | 10.0.0.0 to 10.255.255.255        | 255.0.0.0           | 10.0.0.0 – 10.255.255.255         |
-    | B       | 172.16.0.0 to 172.31.255.255      | 255.240.0.0         | 172.16.0.0 – 172.31.255.255       |
-    | C       | 192.168.0.0 to 192.168.255.255    | 255.255.0.0         | 192.168.0.0 – 192.168.255.255     |
-    ---------------------------------------------------------------------------------------------------------
-    
-    Reserved address:
-    -----------------------------------------------------------------
-    | 0.0.0.0             | Default route                           |
-    | 127.0.0.0           | loopback address(testing)               |
-    | 169.254.0.0         | apipa(automatic private ip address      |
-    | 255.255.255.255     | broadcast address                       |
-    -----------------------------------------------------------------
-    Question: 85.100.200.178.  this type a because 85 is A
-    How to find network id-  85.0.0.0
-    How to find first host- 85.0.0.1
-    How to find last host – 85.255.255.254
-    How to find network id – 85.255.255.255
+**Two version of IP:**  
+a. IPV4  
+    -made up of 32 bits  
+    -Broken into 4 octets  (1octet=8bit)  
+    -each octets ranges 0 to 255 in decimel or 00000000 to 11111111 in binary  
+    -eg.194.68.10.11  
+    -subnet is an logical subdivision of an IP network.   
+    -subnet mask:     32bit number to identify network & host portion in IP  
+        it is made of putting network bit as 1 and host bit as 0     
+        11111111.00000000.00000000.00000000 ==== 255.0.0.0  
+Five classes in IPV4:  
+--------------------------------------------------------------------------------------
+| Class | Public Network-Range        | Supports                    | subnet mask    |
+|-------|-----------------------------|-----------------------------|----------------|
+| A     | 1.0.0.1 - 126.255.255.255   | 16,777,214 host  126 n/w    | 255.0.0.0      | 
+| B     | 128.0.0.1 - 191.255.255.255 | 65,534 host  16,382 n/w     | 255.255.0.0    |
+| C     | 192.0.0.1 - 223.255.255.255 | 254 host  20,97,150 n/w     | 255.255.255.0  |
+| D     | 224.0.0.1 - 239.255.255.255 | Reserved for Multicasting                    |
+| E     | 240.0.0.1 - 254.255.255.254 | Reserved for Reasearch & Development         |
+--------------------------------------------------------------------------------------
+
+Private Ip Addressing(can use in local office)
+---------------------------------------------------------------------------------------------------------
+| Class   | Private Network                   | Subnet mask         | Address range                     |
+|---------|-----------------------------------|---------------------|-----------------------------------|    
+| A       | 10.0.0.0 to 10.255.255.255        | 255.0.0.0           | 10.0.0.0 – 10.255.255.255         |
+| B       | 172.16.0.0 to 172.31.255.255      | 255.240.0.0         | 172.16.0.0 – 172.31.255.255       |
+| C       | 192.168.0.0 to 192.168.255.255    | 255.255.0.0         | 192.168.0.0 – 192.168.255.255     |
+---------------------------------------------------------------------------------------------------------
+
+Reserved address:
+-----------------------------------------------------------------
+| 0.0.0.0             | Default route                           |
+| 127.0.0.0           | loopback address(testing)               |
+| 169.254.0.0         | apipa(automatic private ip address      |
+| 255.255.255.255     | broadcast address                       |
+-----------------------------------------------------------------
+Question: 85.100.200.178.  this type a because 85 is A
+How to find network id-  85.0.0.0
+How to find first host- 85.0.0.1
+How to find last host – 85.255.255.254
+How to find network id – 85.255.255.255
 
 
     IPV6    
