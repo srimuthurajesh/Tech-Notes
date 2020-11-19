@@ -125,6 +125,7 @@ PORTS:
 HTTP TCP port 80
 SMTP TCP port 25 & POP TCP port 110
     
+
 -----------------------------------------
 | Protocol   | Port number | TCP or UDP |
 |------------|-------------|------------|
