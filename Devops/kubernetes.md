@@ -48,7 +48,7 @@ kubectl delete -f [yaml fileName]
 
 
 Yaml Configuration file:  
-***
+```
 apiVersion : apps/v1
 kind: Deployment  
 metadata:
@@ -58,4 +58,4 @@ spec:
   replicas: 2
   selector: ~
   template: ~  
-***  
+```  
