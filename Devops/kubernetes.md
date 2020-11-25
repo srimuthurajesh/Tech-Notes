@@ -34,8 +34,8 @@ Kubectl: cli to interact with minikube cluster
 
 #### Kubectl commands:  
 kubectl get pod  
-kubectl get nodes
-kubectl get deployment  
+kubectl get nodes  
+kubectl get deployment   
 kubectl create deployment nginx-depl --image=ngnix  
 kubectl get replicaset  
 kubectl edit deploymenet [deploymentName]     # will get aurogenerated config file for the deployment  
