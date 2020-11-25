@@ -11,7 +11,7 @@ public class StreamHandler implements RequestStreamHandler{
     }
 }
 ```
-
+---
 **ApiGatewayProxy.java**  
 ```
 public class ApiGatewayProxy implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
@@ -40,7 +40,7 @@ public class ApiGatewayProxy implements RequestHandler<APIGatewayProxyRequestEve
 	}
 }
 ```
-
+---
 **pom.xml**  
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0"
