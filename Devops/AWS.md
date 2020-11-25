@@ -11,7 +11,7 @@ public class StreamHandler implements RequestStreamHandler{
     }
 }
 ```
----
+----
 **ApiGatewayProxy.java**  
 ```
 public class ApiGatewayProxy implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
