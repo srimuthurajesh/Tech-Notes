@@ -32,7 +32,7 @@ Four processes in Master node
 Minikube:1 node k8s cluster for local dev testing    
 Kubectl: cli to interact with minikube cluster  
 
-Kubectl commands:  
+#### Kubectl commands:  
 kubectl get pod  
 kubectl get nodes
 kubectl get deployment  
@@ -47,7 +47,7 @@ kubectl apply -f [yaml fileName]
 kubectl delete -f [yaml fileName]  
 
 
-Yaml Configuration file:  
+#### Yaml Configuration file:  
 ```
 apiVersion : apps/v1
 kind: Deployment  
