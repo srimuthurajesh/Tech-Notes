@@ -106,3 +106,8 @@ public class ApiGatewayProxy implements RequestHandler<APIGatewayProxyRequestEve
 	</build>
 </project>
 ```
+
+
+###API GATEWAY configuration  
+create api, point the lamda-> Deploy api->  
+Usage plans need to give api key  
