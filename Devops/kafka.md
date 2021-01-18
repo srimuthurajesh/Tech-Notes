@@ -5,7 +5,7 @@
 **Topic**: category/name for records published, similar to DB tablr    
 **Partition**: topic splits into several parts, ordered, immutable  
 **Offset**: unique id for each record in partition  
-**Brokers**: container that holds several topics, kafka cluster composed of brokers(servers)      
+**Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
 **replication factor**: number of copies of data over multiple brokers  
 
 
