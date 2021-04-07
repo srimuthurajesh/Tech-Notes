@@ -29,7 +29,7 @@ how to import using fully qualified name without import keyword: package classna
 
 **Keywords:** Predefined meaning (53) words.\
 **Constant:** Immutable. Declare as final static.\
-**Variable:**  Basic unit of storage  1.**Local variable**:Declared inside method 2.**Instant variable**: Declared inside clas 3.**Static variable**: Declared as static  
+**Variable:**  Basic unit of storage  1.**Local variable**:inside method 2.**Instant variable**:inside clas 3.**Static variable**:Declared as static  
 
 **Datatype:** Predefined memory storage
 
