@@ -1,34 +1,22 @@
-Installation stuffs:  
-1.In User variable- M2_HOME - path of maven folder  
-1.In Sysem variable JAVA_HOME - path of JDK folder  
-2.In Sysem variable MAVEN_HOME - path of maven folder  
-3.In Sysem variable PATH - path of JDK,path of maven  
-
 ## Java
-JDK - Compiler + libraries -For developer contains javac,debugging tools\
-JRE - Interpreter + JVM - For other users to run java program\
-JVM - execute byte code to machine code, contins JustInTime compiler\
+JDK - Compiler + libraries -For developer contains javac,debugging tools,archieve tool(jar), javadoc
+JRE - Interpreter + JVM - For layman users to run java program  
+JVM - execute byte code to machine code, contins JustInTime compiler  
 
 Java is not fully oops language, due usage of primitive datatypes.
 ```
 import java.Io.*;	//this package used while code in notepad
+import java.util.Scanner ;
 class Hello{
 	public static void main(String[]args){
-		System.out.println(“hii rajesh kanna”); 
+		Scanner input = new Scanner(Sytem.in);
+		a=input.nextInt();
+		System.out.println(); //print only one line and move to next line
+		System.out.print(); //print line and remain in same line we have to give \n
+		System.out.printf(“%d”,$i); //print string stream
 	} 
 }
 ```
-Input & Output
-```
-import java.util.Scanner ;
-Scanner input = new Scanner(Sytem.in);
-a=input.nextInt();
-
-System.out.println(); //print only one line and move to next line
-System.out.print(); //print line and remain in same line we have to give \n
-System.out.printf(“%d”,$i); //print string stream
-```
-
 **Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	 
 
 **Comments:** 
