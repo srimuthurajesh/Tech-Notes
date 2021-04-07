@@ -8,13 +8,13 @@ Java is not fully oops language, due usage of primitive datatypes.
 import java.Io.*;	//this package used while code in notepad
 import java.util.Scanner ;
 class Hello{
-	public static void main(String[]args){
-		Scanner input = new Scanner(Sytem.in);
-		a=input.nextInt();
-		System.out.println(); //print only one line and move to next line
-		System.out.print(); //print line and remain in same line we have to give \n
-		System.out.printf(“%d”,$i); //print string stream
-	} 
+    public static void main(String[]args){
+	Scanner input = new Scanner(Sytem.in);
+	a=input.nextInt();
+	System.out.println(); //print only one line and move to next line
+	System.out.print(); //print line and remain in same line we have to give \n
+	System.out.printf(“%d”,$i); //print string stream
+    } 
 }
 ```
 **Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	 
