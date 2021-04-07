@@ -28,11 +28,8 @@ how to import package: import packagename.*;\
 how to import using fully qualified name without import keyword: package classname;
 
 **Keywords:** Predefined meaning (53) words.\
-**Constant:** Non changeable, immutable. Declare as final static.\
-**Variable:**  Basic unit of storage 
-1. Local variable : Declare inside a method
-2. Instant variable: Declare inside class
-3. Static variable: Declare as static have only one copy
+**Constant:** Immutable. Declare as final static.\
+**Variable:**  Basic unit of storage  1.Local variable : Declare inside a method 2.Instant variable: Declare inside clas 3.Static variable: Declare as static
 
 **Datatype:** Predefined memory storage
 
