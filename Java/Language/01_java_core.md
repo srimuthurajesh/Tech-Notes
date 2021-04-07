@@ -92,8 +92,8 @@ System.out.println(~b);//9 (positive of total minus, positive starts from 0)
 ```  
 Arithmetic operator order: System.out.println(10*10/5+3-1*4/2);  is 21  
 Left shift operator: 10<<2 is 10\*2^2= 40   
-Right shift operator: 10>>2 is 10/2^2= 2    
-
+Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
+Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 **Enum** :  group of constant( final,static)
 ```
 enum Level {
