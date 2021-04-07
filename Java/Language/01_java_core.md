@@ -82,15 +82,18 @@ while(st.hasMoreTokens()){
 |Assignment Operator  |**a += 4**  |
 |Inc and Dec Operator  |**a++,a--,++a,--a**  |
 |Conditional Operator  |**exp1? exp2: exp3;**  |
-|Bitwise Operator  |** &, !, ~, <<, >>, >>>**  |
+|Bitwise Operator  |** &, <<, >>, >>>**  |
 |Special Operator  |**instanceof, (.)**  |
 |Unary Operator  |**~, !**  |  
 ```
 int a=10; int b=-9;  
 System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
 System.out.println(~b);//9 (positive of total minus, positive starts from 0)   
-```
+```  
 Arithmetic operator order: System.out.println(10*10/5+3-1*4/2);  is 21  
+Left shift operator: 10<<2 is 10\*2^2= 40   
+Right shift operator: 10>>2 is 10/2^2= 2    
+
 **Enum** :  group of constant( final,static)
 ```
 enum Level {
