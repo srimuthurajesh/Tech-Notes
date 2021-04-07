@@ -20,10 +20,7 @@ class Hello{
 **Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	   
 **Comments:**  1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
 
-**Packages:**  Collection of similar classes, interfaces and sub packages.
-1. built-in packages 	
-2. userdefined  ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```
-
+**Packages:**  Collection of similar classes, interfaces and sub packages. ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```
 how to compile: javac -d directory javafilename.java\ 	
 how to run: java myppack.javafilename\
 how to define a package in that program: package packagename;\
