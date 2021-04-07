@@ -31,7 +31,7 @@ how to import using fully qualified name without import keyword: package classna
 if it is declared as private inside a class, it can be redeclare in another class  
 
 **Variable:**  Basic unit of storage  1.**Local variable**:inside method 2.**Instant variable**:inside clas 3.**Static variable**:Declared as static  
-**Datatype:** Predefined memory storage
+**Datatype:** Predefined memory storage  
 byte = -+128| 1 byte   
 short = -+32,768 | 2 byte   
 int = -+2,14,74,83,648 | 4 byte   
