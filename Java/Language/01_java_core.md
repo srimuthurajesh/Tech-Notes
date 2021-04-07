@@ -46,7 +46,7 @@ Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;
 **Typecasting:**  Convert one datatype to another
 1.implicit casting    2.explicit casting
 ```int a = (int) 3.14;	//3``` \
-Byte -> short -> int -> long -> float -> double
+Byte -> short -> int -> long -> float -> double  
 **Array:** Group of similar datatype variables to a variable name
 ```
 int rajesh[]; 
