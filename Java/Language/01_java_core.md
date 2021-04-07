@@ -27,7 +27,7 @@ how to define a package in that program: package packagename;
 how to import package: import packagename.\*;  
 how to import using fully qualified name without import keyword: package classname;  
 **Keywords:** Predefined meaning (53) words.  
-**Constant:** Immutable. Declare as final static.  eg:static final double PI=3.14
+**Constant:** Immutable. Declare as final static.  eg:static final double PI=3.14  
 **Variable:**  Basic unit of storage  1.**Local variable**:inside method 2.**Instant variable**:inside clas 3.**Static variable**:Declared as static  
 **Datatype:** Predefined memory storage
 byte = -+128| 1 byte   
