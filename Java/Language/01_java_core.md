@@ -1,5 +1,5 @@
 ## Java
-JDK - Compiler + libraries -For developer contains javac,debugging tools,archieve tool(jar), javadoc
+JDK - Compiler + libraries -For developer contains javac,debugging tools,archieve tool(jar), javadoc  
 JRE - Interpreter + JVM - For layman users to run java program  
 JVM - execute byte code to machine code, contins JustInTime compiler  
 
