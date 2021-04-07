@@ -24,15 +24,12 @@ class Hello{
 how to compile: javac -d directory javafilename.java\ 	
 how to run: java myppack.javafilename\
 how to define a package in that program: package packagename;\
-how to import package: import packagename.*;\
+how to import package: import packagename.\*;\
 how to import using fully qualified name without import keyword: package classname;
-
 **Keywords:** Predefined meaning (53) words.\
 **Constant:** Immutable. Declare as final static.\
 **Variable:**  Basic unit of storage  1.**Local variable**:inside method 2.**Instant variable**:inside clas 3.**Static variable**:Declared as static  
-
 **Datatype:** Predefined memory storage
-
 | Name        | Length           | Size  |
 | ------------- |:-------------:| -----:|
 | byte      | -128 to 127| 1 byte |
@@ -43,12 +40,10 @@ how to import using fully qualified name without import keyword: package classna
 | double      | . after 15 digit| 8 byte |
 | char      | A-Z a-z 0-9 0-127ASCII| 2 byte |
 | boolean      | 0 1| depends on jvm |
-
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 **Typecasting:**  Convert one datatype to another
-1. implicit casting
-2. explicit casting
+1. implicit casting    2. explicit casting
 ```int a = (int) 3.14;	//3``` \
 Byte -> short -> int -> long -> float -> double
 
