@@ -1,7 +1,7 @@
 ## Java
-JDK - Compiler + libraries -For developer contains javac,debugging tools,archieve tool(jar), javadoc  
-JRE - Interpreter + JVM - For layman users to run java program  
-JVM - execute byte code to machine code, contins JustInTime compiler  
+JDK - JRE + devTools -For developer contains javac,debugging tools,archieve tool(jar), javadoc  
+JRE - JVM + library classes- For layman users to run java program  
+JVM - Interpreter execute byte code to machine code, contins JustInTime compiler  
 
 Java is not fully oops language, due usage of primitive datatypes.
 ```
