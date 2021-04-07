@@ -44,7 +44,7 @@ how to import using fully qualified name without import keyword: package classna
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 **Typecasting:**  Convert one datatype to another
-1. implicit casting    2. explicit casting
+1.implicit casting    2.explicit casting
 ```int a = (int) 3.14;	//3``` \
 Byte -> short -> int -> long -> float -> double
 **Array:** Group of similar datatype variables to a variable name
