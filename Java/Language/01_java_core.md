@@ -84,7 +84,13 @@ while(st.hasMoreTokens()){
 |Conditional Operator  |**exp1? exp2: exp3;**  |
 |Bitwise Operator  |** &, !, ~, <<, >>, >>>**  |
 |Special Operator  |**instanceof, (.)**  |
-
+|Unary Operator  |**~, !**  |  
+```
+int a=10; int b=-9;  
+System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
+System.out.println(~b);//9 (positive of total minus, positive starts from 0)   
+```
+Arithmetic operator order: System.out.println(10*10/5+3-1*4/2);  is 21  
 **Enum** :  group of constant( final,static)
 ```
 enum Level {
