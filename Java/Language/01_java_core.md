@@ -47,14 +47,12 @@ Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;
 1. implicit casting    2. explicit casting
 ```int a = (int) 3.14;	//3``` \
 Byte -> short -> int -> long -> float -> double
-
 **Array:** Group of similar datatype variables to a variable name
 ```
 int rajesh[]; 
 rajesh=new int[3]; 
 (or) int rajesh[]=new int[3];
 ```
-
 **String:**  class represents sequence of char
 - implements Serializable, Comparable and CharSequence interfaces
 - *String creation*: 
