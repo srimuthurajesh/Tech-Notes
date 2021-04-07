@@ -4,8 +4,8 @@ JRE - JVM + library classes- For layman users to run java program
 JVM - Interpreter execute byte code to machine code, contins JustInTime compiler  
 
 Java is not fully oops language, due usage of primitive datatypes.
-```
-import java.Io.*;	//this package used while code in notepad
+``` 
+import java.Io.*;	//this package used while code in notepad  
 import java.util.Scanner ;
 class Hello{
     public static void main(String[]args){
@@ -20,7 +20,7 @@ class Hello{
 **Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	   
 **Comments:**  1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
 
-**Packages:**  Collection of similar classes, interfaces and sub packages. ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```
+**Packages:**  Collection of similar classes, interfaces and sub packages. ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 how to compile: javac -d directory javafilename.java   	
 how to run: java myppack.javafilename  
 how to define a package in that program: package packagename;  
@@ -30,16 +30,14 @@ how to import using fully qualified name without import keyword: package classna
 **Constant:** Immutable. Declare as final static.  
 **Variable:**  Basic unit of storage  1.**Local variable**:inside method 2.**Instant variable**:inside clas 3.**Static variable**:Declared as static  
 **Datatype:** Predefined memory storage
-| Name        | Length           | Size  |
-| ------------- |:-------------:| -----:|
-| byte      | -128 to 127| 1 byte |
-| short      | -32,768 to 32,768 | 2 byte |
-| int      | -+2,14,74,83,648 | 4 byte |
-| long      | -+9,22,33,72,03,68,54,775 | 8 byte |
-| float      | . after 6 digit| 4 byte |
-| double      | . after 15 digit| 8 byte |
-| char      | A-Z a-z 0-9 0-127ASCII| 2 byte |
-| boolean      | 0 1| depends on jvm |
+byte = -128 to 127| 1 byte   
+short = -32,768 to 32,768 | 2 byte   
+int = -+2,14,74,83,648 | 4 byte   
+long = -+9,22,33,72,03,68,54,775 | 8 byte  
+float = . after 6 digit| 4 byte   
+double = . after 15 digit| 8 byte   
+char = A-Z a-z 0-9 0-127ASCII| 2 byte   
+boolean = 0 1| depends on jvm   
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
