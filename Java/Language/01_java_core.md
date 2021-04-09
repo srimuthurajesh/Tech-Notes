@@ -363,3 +363,11 @@ threadObj.wait()- notify and wake up thread
  - @Retention
  - @Inherited
  - @Documented
+
+**Regex**:  
+**^[a-zA-Z][a-zA-Z0-9]{8,19}**  
+Where  
+^ represents the start of the regex   
+[a-zA-Z] represents that the first character must be an alphabet  
+[a-zA-Z0-9] represents the alphanumeric character  
+{8,19} represents that the length of the password must be in between 8 and 20.
