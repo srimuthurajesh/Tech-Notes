@@ -371,3 +371,7 @@ Where
 [a-zA-Z] represents that the first character must be an alphabet  
 [a-zA-Z0-9] represents the alphanumeric character  
 {8,19} represents that the length of the password must be in between 8 and 20.
+```
+import java.util.regex.*;  
+System.out.println(Pattern.matches(".s", "as")); //line 4  
+```
