@@ -170,5 +170,17 @@ How to find network id – 85.255.255.255
     | 5.Mesh Topology | interconnected to all other devices(like star symbol)    |   
  
 
+HTTP codes:. 
+400: header or request body size is more than maximum. 
+401: username password wrong. 
+403: restricted http method or url. 
+404: page not found or url wrong. 
+405: http method is wrong. 
 
+500: internal server error. 
+501: method is not exist. 
+502: error from median server like firewall or cdn. 
+503: maintenance mode. 
+503: timeout. 
+504: protocol not supported. 
 
