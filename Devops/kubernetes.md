@@ -84,9 +84,20 @@ metadata:
   name: nginx-deployment  
   labels:~
 spec:
+  selector:
+      matchLabels:
+          run: my-nginx
   replicas: 2
-  selector: ~
-  template: ~  
+  template:
+      metadata:
+          labels:
+              run: my-ngnix
+      spec:
+          containers:
+          - name: my-ngnix
+            image: nginx
+            ports:
+            - containerPort: 80
 ---
 
 ```  
