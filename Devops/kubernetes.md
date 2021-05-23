@@ -17,10 +17,7 @@ Master :
 **Kubectl**: cli to interact with minikube cluster  
 
 #### Pod:  
-- smallest unit in K8s  
-- Abstraction over container (agnostic for docker or other containers)  
-- usually 1 application in a pod is preferable  
-- each pod has its own ip address, it will change for each instance  
+- smallest unit in K8s & **abstract** one or more containers and **encapsulate** container, storage resources, neworkId, other configs  
 
 #### Service:  
 - permanent ip address for each pod  
