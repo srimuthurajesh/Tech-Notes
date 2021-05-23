@@ -16,14 +16,18 @@ Master :
 **Minikube**:1 node k8s cluster for local dev testing    
 **Kubectl**: cli to interact with minikube cluster  
 
-#### Pod:  
-- smallest unit in K8s & **abstract** one or more containers and **encapsulate** container, storage resources, neworkId, other configs  
+#### 1. Pod:  
+**abstract** one or more containers  
+**encapsulate** container, storage resources, neworkId, other configs  
 
-#### Service:  
-- permanent ip address for each pod  
-- also a load balancer  
+#### 2. Service:  
+- provides external ip address for each pod and also a load balancer  
 ConfigMap : file which have config values for each pod  
 Secret: same like configMap but base64 encrypted  
+
+#### 3. Deployment:
+- describe state of pod or replica set in yaml file  
+
 
 3 things must be installed
 1. Container runtime(like Docker)  
@@ -48,6 +52,19 @@ kubectl delete -f [yaml fileName]
 
 #### Yaml Configuration file:  
 ```
+apiVersion : v1
+kind: pod  
+metadata:
+  name: nginx  
+  labels:
+     name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: ngnix  
+    ports:
+    - containerPort: 80
+---
 apiVersion : apps/v1
 kind: Deployment  
 metadata:
@@ -57,4 +74,6 @@ spec:
   replicas: 2
   selector: ~
   template: ~  
+---
+
 ```  
