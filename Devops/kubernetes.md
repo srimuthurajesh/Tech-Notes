@@ -1,12 +1,22 @@
 ## Kubernetes
-
-- open source container orchestration tool, in different deployment environments   
+- open source container orchestration tool for manageing microservices or contanierized application     
 - developed by Google    
-- High availability & Scalabilty and disaster recovery  
+- provides resiliant infrastrcuture, zero downtime deployment, automatic rollback, scalling  
+- provides self healing which consists of auto-placement, auto-restart, auto replication and scaling of container based on metrics       
 
+## Components of k8s:
+Master :  
+          1. kube-apiserver(gateway, authentication)  
+          2. etcd storage(key value store, cluster state info which used by master processes)
+          3. kube-controller-manager(detects cluster state changes, maintain no downtime)
+          4. cloud-controller-manager
+          5. kube scheduler(which node new pod should schedule)
+**Node** : kubelet, kube proxy
+
+**Minikube**:1 node k8s cluster for local dev testing    
+**Kubectl**: cli to interact with minikube cluster  
 
 #### Pod:  
-
 - smallest unit in K8s  
 - Abstraction over container (agnostic for docker or other containers)  
 - usually 1 application in a pod is preferable  
@@ -23,14 +33,6 @@ Secret: same like configMap but base64 encrypted
 2. Kubelet (interacts container and node, assign resources for nodes)    
 3. kube proxy (forward the request) 
 
-Four processes in Master node  
-1. Api server (gateway, authentication)  
-2. Scheduler (which node new pod should schedule
-3. Controller manager (detects cluster state changes, maintain no downtime)  
-4. etcd (key value store, cluster state info which used by master processes)  
-
-Minikube:1 node k8s cluster for local dev testing    
-Kubectl: cli to interact with minikube cluster  
 
 #### Kubectl commands:  
 kubectl get pod  
