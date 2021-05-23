@@ -65,6 +65,19 @@ spec:
     ports:
     - containerPort: 80
 ---
+apiVersion : v1
+kind: service  
+metadata:
+  name: my-nginx  
+  labels:
+     run: my-nginx
+spec:
+  port:
+  - port: 80
+    protocol: TCP  
+  selector:
+    run: my-nginx
+---
 apiVersion : apps/v1
 kind: Deployment  
 metadata:
