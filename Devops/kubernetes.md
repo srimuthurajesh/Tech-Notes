@@ -6,12 +6,12 @@
 
 ## Components of k8s:
 Master :  
-          1. kube-apiserver(gateway, authentication)  
-          2. etcd storage(key value store, cluster state info which used by master processes)
-          3. kube-controller-manager(detects cluster state changes, maintain no downtime)
-          4. cloud-controller-manager
-          5. kube scheduler(which node new pod should schedule)
-**Node** : kubelet, kube proxy
+          1. kube-apiserver(gateway, authentication)   
+          2. etcd storage(key value store, cluster state info which used by master processes)   
+          3. kube-controller-manager(detects cluster state changes, maintain no downtime)  
+          4. cloud-controller-manager  
+          5. kube scheduler(which node new pod should schedule)  
+**Node** : kubelet, kube proxy  
 
 **Minikube**:1 node k8s cluster for local dev testing    
 **Kubectl**: cli to interact with minikube cluster  
