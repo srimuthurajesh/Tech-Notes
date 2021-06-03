@@ -1,7 +1,4 @@
-## SQL- 
->Structured query language
-
-
+## MYSQL- 
  
 1. **DDL Data Definition Language**: create, modify struture of database  
 CREATE, ALTERr, TRUNCATE, DROP, RENAME  
@@ -24,7 +21,32 @@ COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
 | INT      | 4 | -+2147483648 | 0 to +4294967295 |
 | BIGINT      | 8 | -+9223372036854775808 | 0 to +18446744073709551615 |
 
+#### Variable  
+1.User defined variable: SET @var_name = value;  SELECT @var_name  
+2.Local variable: DECLARE a INT DEFAULT 0;   
+3.System variables: predefined variables
+```
+DELIMITER //  
+Create Procedure Test()  
+    BEGIN  
+        DECLARE A INT DEFAULT 100;  
+        DECLARE B INT;  
+        DECLARE C INT;  
+        DECLARE D INT;  
+        SET B = 90;  
+        SET C = 45;  
+        SET D = A + B - C;  
+        SELECT A, B, C, D;  
+    END //  
+DELIMITER ;  
+```
 
+#### User Management  
+List all users: select user from mysql.user;   
+Create New user: create user IF NOT EXISTS rajesh@localhost identified by 'rajesh12345';  
+Give All previleges: GRANT ALL PRIVILEGES ON * . * TO peter@localhost;, GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; 
+Remove all privileges: FLUSH PRIVILEGES;  
+Show privileges:  SHOW GRANTS for rajesh;
 
 **Mysql commandline:**
 ```	mysql –u root –p  
@@ -32,6 +54,7 @@ COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
 	use databasename;  
 	show tables;
 ```
+
 
 **Mysql Engines:**  
 1. InnoDB - current default engine, for concurrecy, transactions, row level locking  
