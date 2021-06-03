@@ -42,11 +42,11 @@ DELIMITER ;
 ```
 
 #### User Management  
-List all users: select user from mysql.user;   
-Create New user: create user IF NOT EXISTS rajesh@localhost identified by 'rajesh12345';  
-Give All previleges: GRANT ALL PRIVILEGES ON * . * TO peter@localhost;, GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost; 
-Remove all privileges: FLUSH PRIVILEGES;  
-Show privileges:  SHOW GRANTS for rajesh;
+List all users: ```select user from mysql.user;```   
+Create New user: ```create user IF NOT EXISTS rajesh@localhost identified by 'rajesh12345';```  
+Give All previleges: ````GRANT ALL PRIVILEGES ON * . * TO peter@localhost;``` ```GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost;```` 
+Remove all privileges: ```FLUSH PRIVILEGES;```  
+Show privileges:  ```SHOW GRANTS for rajesh;```
 
 **Mysql commandline:**
 ```	mysql –u root –p  
