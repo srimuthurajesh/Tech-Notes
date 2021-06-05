@@ -58,13 +58,32 @@ DROP [IF EXIST] DATABASE database_name
 MYSQLDUMP -Uroot -Proot database_name > dump.sql  //export   
 MYSQLDUMP -Uroot -Proot database_name < dumpsql   //import  
 
-**Mysql commandline:**
-```	mysql –u root –p  
-	show databases;  
-	use databasename;  
-	show tables;
-```
+#### Table Management:
+SHOW TABLES
+{DESCRIBE | DESC} table_name
+CREATE [TEMPORARY ] TABLE [IF NOT EXIST] table_name ( column_name1 data_type(size) [NULL | NOT NULL], ..., PRIMARY KEY, UNIQUE KEY, FOREIGN KEY, CHECK, etc);   
+``` CREATE TABLE employee_table( id int NOT NULL AUTO_INCREMENT, name varchar(45) NOT NULL, occupation varchar(35) NOT NULL, age int NOT NULL, PRIMARY KEY (id));  ```  
+**Temporary table**: temporary data, visible & accessible for current session  
+ALTER TABLE table_name ADD new_column_name column_definition [ FIRST | AFTER column_name ], ...      
+ALTER TABLE table_name MODIFY column_name column_definition [ FIRST | AFTER column_name ], ...  
+ALTER TABLE table_name DROP COLUMN column_name    
+ALTER TABLE table_name CHANGE COLUMN old_name new_name column_definition [ FIRST | AFTER column_name ]    
+ALTER TABLE table_name RENAME TO new_table_name  
+RENAME old_table TO new_table, old_table2 TO new_table2;  //privilege changes manually, can do for multiple tables, support temporary/view table  
+SHOW FULL TABLES //show table_type(base_table,view)  
+SHOW TABLES FROM/IN database_name;
+TRUNCATE TABLE table_name; SET FOREIGN_KEY_CHECKS=0;  
+DROP [ TEMPORARY ] TABLE table_name  
+CREATE TABLE SELECT * FROM existing_table_name;  
+CREATE TABLE duplicate_table LIKE original_table;  
+INSERT new_table_name SELECT * FROM existing_table_name;  
+CREATE [OR REPLACE] VIEW view_name AS SELECT columns FROM tables [WHERE conditions];    
+ALTER VIEW view_name AS SELECT columns FROM table WHERE conditions;    
+DROP VIEW [IF EXISTS] view_name;  
 
+**Type of Lock:** 1.ReadLock(allows user only read) 2.WriteLock(allows user only write)  
+LOCK TABLES table_name [READ | WRITE];   
+UNLOCK TABLES;  
 
 **Mysql Engines:**  
 1. InnoDB - current default engine, for concurrecy, transactions, row level locking  
