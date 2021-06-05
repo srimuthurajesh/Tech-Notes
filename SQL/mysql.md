@@ -42,11 +42,21 @@ DELIMITER ;
 ```
 
 #### User Management  
-List all users: ```select user from mysql.user;```   
-Create New user: ```create user IF NOT EXISTS rajesh@localhost identified by 'rajesh12345';```  
-Give All previleges: ````GRANT ALL PRIVILEGES ON * . * TO peter@localhost; GRANT CREATE, SELECT, INSERT ON * . * TO peter@localhost;```` 
-Remove all privileges: ```FLUSH PRIVILEGES;```  
-Show privileges:  ```SHOW GRANTS for rajesh;```
+CREATE USER IF NOT EXISTS rajesh@localhost identified by 'rajesh12345'  
+SELECT USER FROM mysql.user  
+DROP USER rajesh@localhost, arun@localhost  
+UPDATE user SET password = PASSWORD('rajesh12345') WHERE user = 'user_name' AND host = 'host_name'  
+GRANT ALL PRIVILEGES ON * . * TO peter@localhost  
+GRANT CREATE, SELECT, INSERT ON * . * TO user_name@host_name  
+FLUSH PRIVILEGES  
+SHOW GRANTS for user_name  
+   
+#### Database Management:  
+CREATE [IF NOT EXIST] DATABASE database_name  
+SHOW DATABASES  
+DROP [IF EXIST] DATABASE database_name  
+MYSQLDUMP -Uroot -Proot database_name > dump.sql  //export   
+MYSQLDUMP -Uroot -Proot database_name < dumpsql   //import  
 
 **Mysql commandline:**
 ```	mysql –u root –p  
