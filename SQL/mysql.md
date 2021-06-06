@@ -85,6 +85,47 @@ DROP VIEW [IF EXISTS] view_name;
 LOCK TABLES table_name [READ | WRITE];   
 UNLOCK TABLES;  
 
+#### CRUD:  
+SELECT * FROM table_name [WHERE Clause] [GROUP BY Clause] [HAVING Clause] [ORDER BY Clause];    
+**Operators**: SELECT * FROM table_name WHERE column_name {=,>,<,>=,<=,<>,!=,LIKE} column_value;  
+**Logical operators**: SELECT * FROM table_name WHERE colname=colvalue {AND, OR, NOT} colname=colvalu;  
+**IN** : SELECT column_name FROM table_name WHERE column_name IN ( Amit , Raghav, Rajeev);  
+**BETWEEN**: SELECT column_name FROM table_name WHERE column_name BETWEEN 1,10;
+**Distinct**: SELECT DISTINCT column_name FROM table_name [GROUP BY column_name];  
+**Top**: SELECT TOP 2 coloumn_name FROM table_name;   //retrive like (0,2)    
+**Alias**: SELECT column_name AS user_defined_name FROM table_name;  
+**Aggregate Functions**: SELECT {COUNT|AVG|SUM|MIN|MAX}([DISTINCT] column_name) FROM table_name;  
+**OrderBy**: SELECT column FROM table ORDER BY {ASC|DECS|RAND()};  
+**Limit**: SELECT column FROM table LIMIT 0,1;  
+**Null**: SELECT column_name FROM table_name WHERE column_name {IS NULL | IS NOT NULL};  
+
+INSERT INTO table_name (col_name) VALUES ('col_value');  
+UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  
+DELETE FROM table_name WHERE condition;  
+
+
+
+
+
+**Date Functions**:  
+datediff()  
+
+#### SQL keys:  
+**Primary key**: unique, cannot NULL, only one PK allowed, PK length cannot exceed 900bytes   
+CREATE TABLE table_name (column_name, DATA_TYPE.. PRIMARY KEY (COLUMN1));  
+CREATE TABLE table_name (column_name, DATA_TYPE.. PRIMARY KEY (COLUMN_1, COLUMN_2, ...));  
+**Foreign key**:  
+CREATE TABLE table_name (column_name, FOREIGN KEY (column_name) REFERENCES Persons (column_name));  
+ALTER TABLE table_name ADD CONSTRAINT column_name FOREIGN KEY(column_name) REFERENCES Students (column_name);    
+ALTER TABLE table_name {ROP,DROP} FOREIGN KEY column_name     
+**Unique key**:  
+CREATE TABLE table_name (column_name int NOT NULL,... UNIQUE (column_name));   
+ALTER TABLE table_name ADD UNIQUE (column_name);  
+ALTER TABLE table_name DROP INDEX column_name;   
+
+
+
+
 **Mysql Engines:**  
 1. InnoDB - current default engine, for concurrecy, transactions, row level locking  
 2. mysam  - default engine before mysql 5.5, for speed  
