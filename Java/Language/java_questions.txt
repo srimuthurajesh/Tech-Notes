@@ -119,5 +119,7 @@ Design patterns:
 1. What is factory and abstract factory method?  
 
 IO
-Serialization
+Serialization questions:  
+1. What is Transient?
+
 Concurrency
