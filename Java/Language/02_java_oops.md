@@ -40,6 +40,7 @@ new ClassName().variableName = value
 	
 ### Garbage collection  
 automatic destruction, if no references to an object exist  
+uses Mark and Sweep algorithm    
 System.gc(); invoke garbage collection.  
 it is caused by three ways:    
 	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;  
@@ -67,22 +68,25 @@ pass by reference: done by passing object
 	vi) volatile - value not cached for thread level rather in Main memory level   
 Note: we cannot use private, protected in class, but we can use in innerclass 
 
-**Inheritances IS-A**: one class acquires the properties of another class. 
+## Inheritances  
+one class acquires the properties of another class.  
 if I call a constructor of child class, first parent class constructors will execute than only base class constructor
 1. Single inheritance
 2. Multilevel inheritance
 3. Hierarchical inheritance
 *Super keyword* :  ```super.variablename; super.methodname(); super();```
 
-**Polymorphism**: ability to define a method(constructor) in many forms    
+## Polymorphism  
+-ability to define a method(constructor) in many forms     
 *Method overriding* : same method name, same no. of arguements, also known as static/compiletime  
 *Method overloading* : same method name, diff no. of arguements, also known as dynamic/runtime  
 
-**Abstraction** : Hiding the implementation
+## Abstraction  
+-Hiding the implementation  
 1. Abstract(0 to 100% ) 
 2. Interface (100%) - variables are public static final by default, methods are public abstract
 	a) Normal interface
-	b) Marker interface - empty body
+	b) Marker interface - empty body eg:cloneable, serializable
 	c) Functional interface - have only one method declaration
 	d) defualt access modfier, method which has body	
 
