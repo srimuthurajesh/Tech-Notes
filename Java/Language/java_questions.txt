@@ -39,6 +39,7 @@ OOPS:
 10. What is shallow and deep copy?   
 11. What are the access modifiers?
 12. What are the Non access modifiers?
+13. How to create an immutable class?
 
 
 MultiThreading:
@@ -71,6 +72,7 @@ Miscellenous questions:
 1. Why we overrider hashcode and equals?
 2. Why we implements cloneable?  
 3. What is static and dynamic classLoading? class.forName(String class_name)  
+4. Can you have virtual functions in Java? Y, all non static functions
 
 
 Tricky Questions:
@@ -109,6 +111,7 @@ Tricky Questions:
 33. Does each thread have its stack in multithreaded programming?Y
 34. In which way of object creation constructor not called? clone
 35.  Can we import same package/class two times? Y
+36. Can there be an abstract method without an abstract class? Y interface
 Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
 2.  System.out.println("Javatpoint" + 10 + 20);   //Javatpoint1020
@@ -125,5 +128,8 @@ Design patterns:
 IO
 Serialization questions:  
 1. What is Transient?
+2. What is bufferInputStream and bufferOutputStream?  
+3. What is FileInputStream and FileOutputStream?  
+4. What is Serializable and Externalizable interface?  
 
 Concurrency
