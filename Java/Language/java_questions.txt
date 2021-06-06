@@ -29,7 +29,7 @@ OOPS:
 2. What is interface? and its types.
 3. What is marker interface and example.
 3. What are the types of access specifier?
-4. What are the methods of Object class?
+4. What are the seven methods of Object class?
 5. What are the four ways to create object?
 6. When garbage collection get triggers?
 7. What are the types of encapsulation?
@@ -62,6 +62,12 @@ ExceptionHandling:
 Collection:
 1. How to calculate new arrayList size?
 2. How to convert a collection to iterator?
+
+Miscellenous questions:
+1. Why we overrider hashcode and equals?
+2. Why we implements cloneable?  
+3. What is static and dynamic classLoading? class.forName(String class_name)  
+
 
 Tricky Questions:
 1. Is Empty .java file name a valid source file name?
@@ -98,7 +104,7 @@ Tricky Questions:
 32. Can we call the run() method instead of start()? Y but N
 33. Does each thread have its stack in multithreaded programming?Y
 34. In which way of object creation constructor not called? clone
-
+35.  Can we import same package/class two times? Y
 Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
 2.  System.out.println("Javatpoint" + 10 + 20);   //Javatpoint1020
@@ -107,6 +113,11 @@ Output questions:
 5. for(int i=0; 0; i++)   //compile time error
 6. Will it work, throw 90;catch(int e)? N, it is not throwable
 7. Write doubly linked list in java.
+
+
+Design patterns:
+1. What is factory and abstract factory method?  
+
 IO
 Serialization
 Concurrency
