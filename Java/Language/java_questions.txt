@@ -21,6 +21,7 @@ Core Java:
 17. What is final variable, final method, final class?
 18. What is finalize?
 19. What is wrapper class and autobox&unboxing?
+
 OOPS:
 1. What is constuctor and its types?
 1. What is lamda expression?
