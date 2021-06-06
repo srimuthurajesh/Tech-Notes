@@ -14,7 +14,7 @@ COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
 
 
 | Datatype        | size(Bytes)           | Signed  | Unsigned  |
-| ------------- |:-------------:| -----:|-----:|
+|:------------- |:-------------|:-----|:-----|
 | TINYINT      | 1 | -128 to +128 |0 to 255 |
 | SMALLINT      | 2      | -+32768 | 0 to 65535 |
 | MEDIUMINT | 3      | -+8388608 | 0 to +16777215 |
@@ -25,31 +25,20 @@ COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
 1.User defined variable: SET @var_name = value;  SELECT @var_name  
 2.Local variable: DECLARE a INT DEFAULT 0;   
 3.System variables: predefined variables
-```
-DELIMITER //  
-Create Procedure Test()  
-    BEGIN  
-        DECLARE A INT DEFAULT 100;  
-        DECLARE B INT;  
-        DECLARE C INT;  
-        DECLARE D INT;  
-        SET B = 90;  
-        SET C = 45;  
-        SET D = A + B - C;  
-        SELECT A, B, C, D;  
-    END //  
-DELIMITER ;  
-```
 
-#### User Management  
-CREATE USER IF NOT EXISTS rajesh@localhost identified by 'rajesh12345'  
-SELECT USER FROM mysql.user  
-DROP USER rajesh@localhost, arun@localhost  
-UPDATE user SET password = PASSWORD('rajesh12345') WHERE user = 'user_name' AND host = 'host_name'  
-GRANT ALL PRIVILEGES ON * . * TO peter@localhost  
-GRANT CREATE, SELECT, INSERT ON * . * TO user_name@host_name  
-FLUSH PRIVILEGES  
-SHOW GRANTS for user_name  
+#### User Management 
+
+
+| Operation | Query |
+|:------------- |:-------------|
+|Create user:| CREATE USER IF NOT EXISTS rajesh@localhost identified by 'rajesh12345'  |
+|Select user:|  SELECT USER FROM mysql.user | 
+|Delete user:| DROP USER rajesh@localhost, arun@localhost | 
+|Update user:| UPDATE user SET password = PASSWORD('rajesh12345') WHERE user = 'user_name' AND host = 'host_name' | 
+|Set all privileges:| GRANT ALL PRIVILEGES ON * . * TO peter@localhost | 
+|Set privileges:| GRANT CREATE, SELECT, INSERT ON * . * TO user_name@host_name | 
+|Remove all privileges:| FLUSH PRIVILEGES | 
+|Show privileges:| SHOW GRANTS for user_name |  
    
 #### Database Management:  
 CREATE [IF NOT EXIST] DATABASE database_name  
@@ -90,7 +79,7 @@ SELECT * FROM table_name [WHERE Clause] [GROUP BY Clause] [HAVING Clause] [ORDER
 **Operators**: SELECT * FROM table_name WHERE column_name {=,>,<,>=,<=,<>,!=,LIKE} column_value;  
 **Logical operators**: SELECT * FROM table_name WHERE colname=colvalue {AND, OR, NOT} colname=colvalu;  
 **IN** : SELECT column_name FROM table_name WHERE column_name IN ( Amit , Raghav, Rajeev);  
-**BETWEEN**: SELECT column_name FROM table_name WHERE column_name BETWEEN 1,10;
+**BETWEEN**: SELECT column_name FROM table_name WHERE column_name BETWEEN 1,10;  
 **Distinct**: SELECT DISTINCT column_name FROM table_name [GROUP BY column_name];  
 **Top**: SELECT TOP 2 coloumn_name FROM table_name;   //retrive like (0,2)    
 **Alias**: SELECT column_name AS user_defined_name FROM table_name;  
