@@ -31,6 +31,7 @@ OOPS:
 3. What are the types of access specifier?
 4. What are the seven methods of Object class?
 5. What are the four ways to create object?
+5. What is object cloning?  
 6. When garbage collection get triggers?
 7. What are the types of encapsulation?
 8. What are teh types of inheriance?
@@ -38,6 +39,8 @@ OOPS:
 10. What is shallow and deep copy?   
 11. What are the access modifiers?
 12. What are the Non access modifiers?
+
+
 MultiThreading:
 1. What is multithreading?
 2. What are the 5 different states of lifecycle in Thread
