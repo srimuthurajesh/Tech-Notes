@@ -36,7 +36,8 @@ OOPS:
 8. What are teh types of inheriance?
 9. What is serialization? and syntax
 10. What is shallow and deep copy?   
-
+11. What are the access modifiers?
+12. What are the Non access modifiers?
 MultiThreading:
 1. What is multithreading?
 2. What are the 5 different states of lifecycle in Thread
