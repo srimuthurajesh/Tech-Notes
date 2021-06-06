@@ -218,11 +218,18 @@ pass by reference: done by passing object
 var-arg :  void methodname(int...a){//use as a[];}
 
 **Encapsulation**: 
-
-	1. Public- Any class any package
-	2. private - Specified Class
-	3. protected –subsiding class(inheritance)
-	4. Default- Specific package - default if no specifier mentioned
+1. Access Modifiers:  
+	i) Public- Any class any package  
+	ii) Default- Specific package - default if no specifier mentioned  
+	iii) private - Specified Class  
+	iv) protected –subsiding class(inheritance)  
+2. Non Access Modifiers:  
+	i) final - cannot be overrided/modified/extended  
+	ii) abstract - does not have method body, cannot create object directly    
+	iii) static - belong to class rather object   
+	iv) transient - attribute&methods skipped while serialization  
+	v) synchronized - can access by oone thread at a time  
+	vi) volatile - value not cached for thread level rather in Main memory level   
 Note: we cannot use private, protected in class, but we can use in innerclass 
 
 **Inheritances IS-A**: one class acquires the properties of another class. 
