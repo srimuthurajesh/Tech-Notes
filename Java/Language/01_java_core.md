@@ -2,6 +2,7 @@
 JDK - JRE + devTools -For developer contains javac,debugging tools,archieve tool(jar), javadoc  
 JRE - JVM + library classes- For layman users to run java program  
 JVM - Interpreter execute byte code to machine code, contins JustInTime compiler  
+ClassLoader: part of JRE, loads class file to JVM. i)Bootstrap ii)Extension iii)System  
 
 Java is not fully oops language, due usage of primitive datatypes.
 ``` 
