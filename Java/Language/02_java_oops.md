@@ -4,6 +4,7 @@
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
 3. Anonymous : A obj = new A(){.........}  
+**Steps to create immutable class**: class and variables are final, parameterized constructor, only getters no setters  
 
 ## Constructor  
 -intialize object, no return type, cannot make constructor final.  
