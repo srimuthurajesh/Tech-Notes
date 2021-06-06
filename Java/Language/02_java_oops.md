@@ -40,13 +40,13 @@ new ClassName().variableName = value
 	
 ### Garbage collection  
 automatic destruction, if no references to an object exist  
-System.gc(); invoke farbage collection.  
-it is caused by three ways:  
-	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;
-	2. while assigning reference to other         obj1=obj2
-	3. while using anonymous object
-**Finalize()** : Called before GC
-
+System.gc(); invoke garbage collection.  
+it is caused by three ways:    
+	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;  
+	2. while assigning reference to other         obj1=obj2  
+	3. while using anonymous object  
+**Finalize() Method** : Called before GC  
+**Memory leak**:  objects no longer used, unable removed by garbage collector. cause OutOfMemoryError. Solution: Memory management tools   
 ## Methods  
 lines of instruction inside a block with a name and arguement  
 pass by reference: done by passing object  
