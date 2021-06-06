@@ -247,26 +247,6 @@ threadObj.wait()- notify and wake up thread
 
 ---
 
-**Collections** : framework/container to access prepackaged data structure.
-1. *List*
-	- 	ArrayList	- dynamic array, default size-10, new size = current size*3/2+1, null allowed
-	- 	LinkedList - dynamic array with insertion efficient
-	- 	Vector - thread safe, same like arraylist
-2. *Queue* - FIFO
-	- 	Priority queue 
-	- 	ArrayDeque 
-	- 	ArrayBlocking queue
-3. *Set* - does not allow duplicate
-	- 	Hashset 
-	- 	LinkedHasedSet
-	- 	treeSet	
-4. *Map* - has string as key
-	-	HashMap - No null allowed
-	-	HashTable - Null allowed, slow, thread safe
-	-	TreeMap
-	-	NavigableMap
-
-
 **Annotations**:
 1. Built-In Java Annotations used in Java code
  - @Override
