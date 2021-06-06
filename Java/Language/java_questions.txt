@@ -33,6 +33,7 @@ OOPS:
 5. What are the four ways to create object?
 5. What is object cloning?  
 6. When garbage collection get triggers?
+7. What is memory leak?  
 7. What are the types of encapsulation?
 8. What are teh types of inheriance?
 9. What is serialization? and syntax
@@ -62,11 +63,14 @@ ExceptionHandling:
 1. What is checked and unchecked exception?
 2. What is exception handling?
 3. What is baseclass for Error and Exception?
-4. Define throw and throws.
+4. What is throw and throws?  
+5. When ClassNotFoundException and NoClassDefFoundError occurs?  runtime/compiletime  
+
 
 Collection:
 1. How to calculate new arrayList size?
 2. How to convert a collection to iterator?
+3. Why String is popular HashMap key in Java?  
 
 Miscellenous questions:
 1. Why we overrider hashcode and equals?
