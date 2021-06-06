@@ -158,7 +158,7 @@ Integer i = Integer.valueof(j);  or Integer i =j;
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
- 
+ **Generics**: 
 
 **Input/Ouput**
 **Serialization** : mechanism of writing obj into byte stream, implement serializable marker interface
@@ -176,9 +176,9 @@ in.readObject();  //new object create
 ---
 
 **Exception handling**:  Unexpected event that terminate program
-1. checked expception - ioexception, sqlexception
-2. unchecked exception - nullpointerexception
-3. error - virtual machine error
+1. checked expception - ioexception, sqlexception  
+2. unchecked exception - nullpointerexception  
+3. error - OutOfMemory, StackOverFlow.  
 ```
 try{
 	throw new exception_name(“”);        
@@ -187,7 +187,7 @@ catch(exception e){ }
 catch(arithmeticException|Exception e){} //this is multicatch
 finally{}// occur for sure even though exception handled or not.
 ```
-*Throws* :  void methodName throws Exeception{ }
+**Throws** :  void methodName throws Exception{ }
 
 
 ---
