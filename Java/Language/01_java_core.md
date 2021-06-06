@@ -189,7 +189,7 @@ new ClassName().variableName = value`
 *Functions of object class:*
 
 	1. toString()  - String representation of an Object 
-	2. hasCode() - JVM generates a unique numbe
+	2. hashCode() - JVM generates a unique number
 	3. equals(Object obj) - Compares the given object to “this” object 
 	4. getClass() - Returns the class object of “this” object 
 		Class c = obj.getClass(); c.getClassName();
