@@ -71,6 +71,14 @@ Collection:
 1. How to calculate new arrayList size?
 2. How to convert a collection to iterator?
 3. Why String is popular HashMap key in Java?  
+4. What is difference between ArrayList & LinkedList? 
+5. What is comparable & comparator interface?  
+6. How to remove duplicates from ArrayList
+7. What is difference between hashmap and hashtable  
+8. What is iterator and list_iterator
+9. What is difference between collection and collections  
+10. What is CopyOnWriteArrayList 
+11. How HashMap handles collision  
 
 Miscellenous questions:
 1. Why we overrider hashcode and equals?
