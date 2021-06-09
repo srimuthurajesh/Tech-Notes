@@ -58,6 +58,9 @@ MultiThreading:
 10. What are teh methods available in Thread Object?
 11. What is daemon thread?
 12. What is volatile keyword?
+13. How do you stop the thread in java?  
+
+
 
 ExceptionHandling:
 1. What is checked and unchecked exception?
