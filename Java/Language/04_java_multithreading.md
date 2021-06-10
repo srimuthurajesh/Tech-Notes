@@ -1,14 +1,33 @@
----
+# Muti threading
+-concurrent execution, subset process  
 
-**Muti threading**: concurrent execution, subset process
+## Different ways to Implement Thread
+1. Extends Thread class  
 ```
-1. class MyClass implements Runnable{ public void run(){}}
-	MyClass obj = new MyClass(); 
-	Thread t = new Thread(obj); or Thread t = new Thread(new MyClass); 
-	t.run();
-2 .class MyClass extend Thread{	public void run(){} }
-	MyClass obj = new MyClass(); 
-	obj.start(); //run func will execute
+public class MyThread extends Thread {
+     
+    public void run() {
+      System.out.println("Thread started running..");
+    }
+    public static void main( String args[] ) {
+       MyThread mt = new  MyThread();
+       mt.start();
+    }
+}
+```
+2. Implementing the Runnable Interface
+```
+class MyThread implements Runnable {
+
+    public void run() {
+        System.out.println("Thread started running..");
+    }
+    public static void main(String args[]) {
+        MyThread mt = new MyThread();
+        Thread t = new Thread(mt);
+        t.start();
+    }
+}
 ```
 *Difference states of Thread :*
 
