@@ -6,7 +6,8 @@
 > framework for database interactions  
 - **ORM tool** : maps java object to Database table   
 - **JPA tool** :  standard for ORM tools.
-- **dialect** : specify type of database
+- **dialect** : specify type of database  
+- **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
 
 **Steps for Hibernate**:  
 1. create persistant class    
@@ -50,7 +51,7 @@ session.getTransaction().commit();	//get transaction obj asso with session
 -connection properties by xml file  
 -maps javaclasses and DBtables    
 2. **SessionFactory object**  
--creates one time  
+-creates one time, there will be one sessionFactory for on DB    
 -created by configuration  
 -thread safe  
 -heavyweight object  
@@ -58,14 +59,14 @@ session.getTransaction().commit();	//get transaction obj asso with session
 -created eachtime interact DB
 -created by sessionfactory  
 -not thread safe, so do close it  
--runtime interface between java and DB, 
+-runtime interface(physical connection) between java and DB, 
 4. **Trasaction object**  
 -unit of work with DB  
 -handled by underlying transaction manager and transaction (from JDBC or JTA).  
 5. **Query object**- use SQL,HQL string to retrieve data  
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
-**Hibernate Object lifecycle**:
+**Hibernate Session Object lifecycle**:
 1. Transient - new instance of pojo  
 2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
 2a. while get and load() it is in persistent stage    
@@ -224,7 +225,7 @@ private StudentDetail studentDetail;
 
 ```
 
-**Eager & lazy loading:** mention whether to retreive related entities or not
+**Eager & lazy loading:** mention whether to retreive related entities or not, load chile entity based on Demand  
 ```
 @OneToMany(fetch=fetchType.LAZY);
 @OneToMany(fetch=fetchType.EAGER)
@@ -242,6 +243,7 @@ Ex: @OneToOne(cascade=CascadeType.PERSIST) -> if entity persist/saved, related e
  
 **First level cache**: default, hold by session object  
 **Secound level cache:**  
+-hold by session factory  
 -data stored in hashmap format eg.<22,{"raj","ECE"}> where primarykey is key and result is value   
 -works only for session object, not work for createQuery/createSQLQuery   
 -some cache providers are EH(Easy Hibernate), Swarm, OS, JBoss Cache  
