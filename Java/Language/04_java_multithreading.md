@@ -48,10 +48,20 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 **Synchronized method** - prevent multiple thread execute on same object  
 **Synchronized block** - synchronized(){ }  
 **Static synchronization** - synchronized static void func(){  }  
-**Join** : wait for particular thread to complete  
-```thread3.join(); thread4.join(200); //wait for 200ms```  
-**Yield** : change thread Running to Runnable, give chance to other wait thread  
-**Sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
+
+## Thread class Methods:
+1. **wait()**- causes current thread to wait until notify(), notifyall()  
+2. **notify()**-wakes up a single thread that waiting for object monter    
+3. **notifyAll()**- wakes up all threads that waiting for object monter  
+4. **join()**-wait for thread to terminate  ```thread3.join(); thread4.join(200); //wait for 200ms```       
+5. **Yield** : change thread Running to Runnable, give chance to other wait thread 
+6. **Sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
+7. start()- start thread by calling run method  
+8. getName()- Get thread’s name  
+9. getPriority()-Get thread priority  
+10. isAlive()- check if thread is running  
+
+Thread Pool:  
 **Executer service* : provide thread pool  
 ```
 ExecutorService execService = Executor.newCacheThreadPool();
@@ -60,16 +70,3 @@ ExecutorService execService = Executor.newSingleThreadPool();
 MyClass m = new MyClass(); execService.execute(m); execService.shutdown();
 ```
 
-## Thread class Methods:
-1. Thread.start()- start thread by calling run method  
-2. Thread.getName()- Get thread’s name
-threadObj.getPriority()-Get thread priority
-threadObj.isAlive()- check if thread is running
-threadObj.join()-wait for thread to terminate
-threadObj.wait()- notify and wake up thread
-
-## Inter thread co operation*:    
-sync threads communicate with each other by:  
-1. wait-causes current thread to release lock wait until  notify(), notifyall()  
-2. notify()-wakes up a single thread that waiting for object monter   
-3. notifyAll()- wakes up all threads that waiting for object monter  
