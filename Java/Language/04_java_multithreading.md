@@ -47,7 +47,9 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 
 **Synchronized method** - prevent multiple thread execute on same object  
 **Synchronized block** - synchronized(){ }  
-**Static synchronization** - synchronized static void func(){  }  
+**Static synchronization** - synchronized static void func(){  }   
+**Daemon threads** - low priority threads which always run in background. Ex:GC     
+t1.setDaemon(true);t1.isDaemon(true);   
 
 ## Thread class Methods:
 1. **wait()**- causes current thread to wait until notify(), notifyall()  
@@ -61,7 +63,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 9. getPriority()-Get thread priority  
 10. isAlive()- check if thread is running  
 
-Thread Pool:  
+Thread Pool: group of worker threads that are waiting for the job and reuse many times.    
 **Executer service* : provide thread pool  
 ```
 ExecutorService execService = Executor.newCacheThreadPool();
