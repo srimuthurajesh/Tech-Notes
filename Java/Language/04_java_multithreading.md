@@ -37,7 +37,7 @@ class MyThread implements Runnable {
 5. Terminated/Dead - completed  
 	
 ### Priority of a Thread  
-(Range 1-10) (default-5)
+Thread scheduler prioritize based on (Range 1-10) (default-5)
 ```
 threadObj.setPriority(8);
 threadObj.setPriority(Thread.MIN_PRIORITY) //1
@@ -46,23 +46,34 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
 
 **Synchronized method** - prevent multiple thread execute on same object  
-**Synchronized block** - synchronized(){ }  
-**Static synchronization** - synchronized static void func(){  }   
+**Synchronized block** - lock on current object, synchronized(){ }  
+**Static synchronization** - lock on class, synchronized static void func(){  }   
 **Daemon threads** - low priority threads which always run in background. Ex:GC     
 t1.setDaemon(true);t1.isDaemon(true);   
 
 ## Thread class Methods:
+1. **join()**: wait for another thread to comlete execution  ```thread3.join(); thread4.join(200); //wait for 200ms```       
+2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
+3. **sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
+4. start()- start thread by calling run method  
+5. getName()- Get thread’s name  
+6. getPriority()-Get thread priority  
+7. isAlive()- check if thread is running  
+
+**Inter-thread communication**: object method  
 1. **wait()**- causes current thread to wait until notify(), notifyall()  
 2. **notify()**-wakes up a single thread that waiting for object monter    
 3. **notifyAll()**- wakes up all threads that waiting for object monter  
-4. **join()**-wait for thread to terminate  ```thread3.join(); thread4.join(200); //wait for 200ms```       
-5. **Yield** : change thread Running to Runnable, give chance to other wait thread 
-6. **Sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
-7. start()- start thread by calling run method  
-8. getName()- Get thread’s name  
-9. getPriority()-Get thread priority  
-10. isAlive()- check if thread is running  
 
+**Interrupting Thread**:  
+1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
+2. Thread.interrupted() - return true/false   
+
+### DeadLock  
+-situation where two or more threads are blocked forever  
+i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
+
+**Race condition**: When multiple threads try to access same resources  
 Thread Pool: group of worker threads that are waiting for the job and reuse many times.    
 **Executer service* : provide thread pool  
 ```
@@ -71,4 +82,8 @@ ExecutorService execService = Executor.newFixedThreadPool();
 ExecutorService execService = Executor.newSingleThreadPool();
 MyClass m = new MyClass(); execService.execute(m); execService.shutdown();
 ```
-
+**Java thread dump**: list every thread in the JVM is doing at a particular point in time.   
+## Java Concurreny api  
+**ReentrantLock**: same as Synchronized, but more flexible  
+**Callable interface**: same as Runnable, but more improved version, from java1.5  
+**Volatile**: variable that shared across all objects  
