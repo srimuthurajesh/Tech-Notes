@@ -223,7 +223,7 @@ System.out.println(Pattern.matches(".s", "as")); //line 4
 1. Lamdbda Expression  (arg)->{body}
 2. Method reference  
 3. Optional  
-4. Functional interface  - have only on abstract method inside interface. Eg:Runnable  
+4. Functional interface  - have only on abstract method inside interface. Eg:Runnable  @FunctionInterface  
 5. Default Method  
 6. Stream API
 7. Date time API  
