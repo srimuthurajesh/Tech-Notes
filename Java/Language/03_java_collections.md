@@ -3,7 +3,7 @@
 framework/container to access prepackaged data structure.
 
 ## List
-1. **ArrayList**: dynamic array, default size-10, new size = (current_size x 3/2+1), null allowed  
+1. **ArrayList**: dynamic array, default size-10, new size = (current_size x 3/2)+1, null allowed  
 2. **LinkedList**: dynamic array with insertion efficient  
 3. **Vector**: thread safe, same like arraylist  
 
