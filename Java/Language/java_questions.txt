@@ -98,7 +98,7 @@ Tricky Questions:
 5. Can you make a constructor final/static? no final
 5. Can you make a abstract method static? not allowed
 6. Default constutor wont work if i give any one constructor explictly? Y
-7.  Can we override the static methods?N
+7.  Can we override the private and static methods?N
 8. Arrange the order of execution blocks. static,instance,constructor,main
 9.  Can we execute a program without main() method?N
 10. What if static modifier is removed from main method? NoSuchMethodError
