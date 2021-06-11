@@ -220,7 +220,7 @@ import java.util.regex.*;
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
 **Features of Java 8**:  
-1. Lamdbda Expression  
+1. Lamdbda Expression  (arg)->{body}
 2. Method reference  
 3. Optional  
 4. Functional interface  
