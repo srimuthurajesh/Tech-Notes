@@ -162,7 +162,7 @@ Integer i = Integer.valueof(j);  or Integer i =j;
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
- **Generics**: 
+ **Generics**: parameterized types
 
 **Input/Ouput**
 **Serialization** : mechanism of writing obj into byte stream, implement serializable marker interface
