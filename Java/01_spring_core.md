@@ -91,8 +91,8 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 
 
 **Bean scope**:  
-1. Singleton - Default scope, only one bean created and shared per IOC container.    
-2. Proprotype - each time new bean will created  
+1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
+2. Proprotype - new instance will create Each time, the bean requested    
 3. Request - each HTTP request will have its own instance of bean  
 4. Session - bean defined to Http session scope
 5. Global-session - bean defined to Http Global session scope   
@@ -106,18 +106,23 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 -it will force to define afterPropertiesSet(), destroy() methods  
 
 **Annotations to remember**:  
-@Autowired   
-@Component  
-@Qualifier("beanName")  
+@Controller  - for controller classes  
+@RequestMapping  - URI mapping for controller classes  
+@ResponseBody - sending object as Response  
+@pathVariable - for mapping dynamic value from URI to handler method arg   
+@Autowired    
+@Component   
+@Qualifier("beanName")  - to avoid ambiguos with same class name   
 @Bean  
-@Configuration  
-@PostContruct  
-@PreDestroy  
-@ComponentScan("com.controller")   
-@PropertySource("classpath:rasna-info.properties")
+@Configuration   
+@ComponentScan("com.controller")    
+@PropertySource("classpath:rasna-info.properties")   
 @Value()  
 @WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
 @Service -* same as component, jused for service layer  
-@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException
-
+@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException  
+@PostContruct   
+@PreDestroy   
 @Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
+@Aspect @Before @After @Pointcut   
+@EnableWeSecurity  
