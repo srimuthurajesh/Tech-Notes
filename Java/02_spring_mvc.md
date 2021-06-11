@@ -55,7 +55,7 @@ public class DispatcherServletInitializer implments abstractAnnotationConfigDisp
 <beans>
   <context:component-scan base-package="com.controller">
   <mvc:annotation-driven>
-  <bean class="org.springframework.web.servlet.view.InternalResolveViewResolver">
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/">
     <property name="suffix" value=".jsp">
   </bean>
