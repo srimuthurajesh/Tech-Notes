@@ -80,5 +80,10 @@ Collections are utility class in java.util package. It consists of only static m
 **CopyOnWriteArrayList**: Modifications implemented in fresh copy  
 **HashMap handles collision**: it uses balanced tree instead of List  
 
-**Comparable**
-**Comparator*
+|Comparable                  | Comparator  |
+|:-------------------------------------|:-------------------------------------------------------------|
+|Single property sorting	                  |can write multiple property sorting|
+|Need to modify class	                  |does not need to modify class|
+|provides compareTo() method to sort elements	                  |provides compare() method to sort elements.|
+|Collections.sort(List) 	                  |Collections.sort(List,comparator) |
+
