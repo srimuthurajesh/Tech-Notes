@@ -219,3 +219,11 @@ Where
 import java.util.regex.*;  
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
+**Features of Java 8**:  
+1. Lamdbda Expression  
+2. Method reference  
+3. Optional  
+4. Functional interface  
+5. Default Method  
+6. Stream API
+7. Date time API  
