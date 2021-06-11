@@ -87,3 +87,31 @@ Collections are utility class in java.util package. It consists of only static m
 |provides compareTo() method to sort elements	                  |provides compare() method to sort elements.|
 |Collections.sort(List) 	                  |Collections.sort(List,comparator) |
 
+### Comparable
+```
+class Student implements Comparable{
+  String name; int age;
+  @override
+  public int compareTo(Student st){
+      if(age==st.age)  return 0;  
+      else if(age>st.age)  return 1;  
+      else  return -1;  
+  }
+}
+List<Student> stList = new ArrayList<Student>();//...fil the list
+Collection.sort(stList);
+```
+
+### Comparator  
+```
+Class Student{ String name; int age;}
+List<Student> stList = new ArrayList<Student>();//...fil the list
+Comparator<Student> comp = new Comparator<Student>(){
+  public int compare(Student s1, Student s2){
+      if(st1.age==st2.age)  return 0;  
+      else if(st1.age>st2.age)  return 1;  
+      else  return -1;  
+  }
+}
+Collection.sort(stList, comp);
+```
