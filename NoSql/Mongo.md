@@ -56,3 +56,6 @@ Object
 Null  
 Symbol  
 Date  
+
+### Replication Architecture in Mongodb  
+Primary node, secoundary node - copies of DB  
