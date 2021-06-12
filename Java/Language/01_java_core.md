@@ -168,16 +168,19 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - collection framework
  - java util package
  - can use null value  
+
 **Autoboxing:** primitive into wrapper- it uses cache value
 ``` 
 int j=1;
 Integer i = Integer.valueof(j);  or Integer i =j;
 ```
+
 **Unboxing** : wrapper into primitive
  ```
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
+
 ## Generics:   
 parameterized types
 
