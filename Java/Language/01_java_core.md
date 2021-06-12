@@ -1,7 +1,7 @@
 ## Java
-JDK = JRE + devTools - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
-JRE = JVM + library classes - For layman users to run java program  
-JVM : Interpreter execute byte code to machine code, contins JustInTime compiler  
+JDK is JRE + devTools - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
+JRE is JVM + lib classes - For layman users to run java program  
+JVM is Interpreter execute byte code to machine code, contins JustInTime compiler  
 
 ClassLoader: part of JRE, loads class file to JVM.  
 1. Bootstrap Classloader: Loads core java API file rt.jar from folder.   
