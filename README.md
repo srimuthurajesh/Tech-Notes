@@ -1,10 +1,10 @@
 ## Contents
-1. Languages  
-  i) Java  
-  ii) Javascript  
-  iii) Python  
-  iv) PHP  
-2. Databases  
-  i) Mysql  
-  ii) MongoDB  
-  iii) Postgresql    
+- Languages  
+  - Java  
+  - Javascript  
+  - Python  
+ - PHP  
+- Databases  
+  - Mysql  
+  - MongoDB  
+  - Postgresql    
