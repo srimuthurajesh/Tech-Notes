@@ -20,7 +20,10 @@ class Hello{
   } 
 }
 ```
-**Comments:**  1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
+**Comments:**  
+1. Singleline: (//) 
+2. Multiline: (/*.. */) 
+3. Documentation: (/**…\*/)  
 
 **Packages:**  Collection of similar classes, interfaces and sub packages. ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 how to compile: javac -d directory javafilename.java   	
