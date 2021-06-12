@@ -5,7 +5,8 @@
 - **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 - **ClassLoader**: part of JRE, loads class file to JVM  
 
-:memo: Java is not fully oops language, due usage of primitive datatypes.
+*Note*: Java is not fully oops language, due usage of primitive datatypes.
+
 ``` 
 import java.Io.*;	//this package used while code in notepad  
 import java.util.Scanner ;
