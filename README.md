@@ -7,9 +7,9 @@
    4. [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)  
 
 ## Database
-   - ### SQL  
-      - #### [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
-   - ### NoSQL  
+   1. SQL  
+      i) [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
+   2. NoSQL  
       - #### [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
       - #### [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
       - #### [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
