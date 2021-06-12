@@ -1,6 +1,6 @@
 ## Contents
 - **Languages**    
-  - Java  
+  - [Java](https://github.com/srimuthurajesh/Tech-Notes/tree/master/Java)    
   - Javascript  
   - Python  
   - PHP  
