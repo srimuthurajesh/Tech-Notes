@@ -121,7 +121,8 @@ enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
 ```
 
-**Null** : case sensitive, not falls under any type, null==null is true
+## Null :   
+case sensitive, not falls under any type, null==null is true
 
 ## Decisions making:
 1. if(con){ exp1; }
@@ -141,7 +142,8 @@ Level myVar = Level.MEDIUM;
 9. break label_name;		label_name:{exp}
 10. For each loop(Datatype var: iterable)
 
-**Static** : create only one time, called without reference
+## Static :  
+create only one time, called without reference
 1. static variable -     ```className.variableName;```
 2. static method -    ```className.functionName();``` 
 3. static import-       
@@ -158,7 +160,7 @@ assigned only once, mostly in constructor directly
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
 
- ## Wrapper class:  
+## Wrapper class:  
  wrap around primitive datatype & give object appearence  
  **Advantages:**   
  - call by reference supports only in object
