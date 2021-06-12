@@ -14,5 +14,10 @@
       *ii*) [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
       *iii*) [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
 
+## Devops    
+   1. [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
+   2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/Devops/docker.html)
+   3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/Devops/kubernetes.html)
+
 
 ----
