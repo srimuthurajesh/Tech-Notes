@@ -1,11 +1,11 @@
 ## Java
 
-- JDK is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
-- JRE is (JVM+lib) - For layman users to run java program  
-- JVM is Interpreter execute byte code to machine code, contins JustInTime compiler  
+- **JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
+- **JRE** is (JVM+lib) - For layman users to run java program  
+- **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 - **ClassLoader**: part of JRE, loads class file to JVM  
 
-Java is not fully oops language, due usage of primitive datatypes.
+:memo: Java is not fully oops language, due usage of primitive datatypes.
 ``` 
 import java.Io.*;	//this package used while code in notepad  
 import java.util.Scanner ;
