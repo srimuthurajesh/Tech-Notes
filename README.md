@@ -6,7 +6,7 @@
   * [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)
   * [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)
 
-**Database**
+### Database
   * SQL
       * [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)
   * NoSQL
