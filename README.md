@@ -1,10 +1,10 @@
 ## Contents
-- Languages  
+- **Languages**    
   - Java  
   - Javascript  
   - Python  
   - PHP  
-- Databases  
+- **Databases**    
   - Mysql  
   - MongoDB  
   - Postgresql    
