@@ -3,7 +3,7 @@
   - Java  
   - Javascript  
   - Python  
- - PHP  
+  - PHP  
 - Databases  
   - Mysql  
   - MongoDB  
