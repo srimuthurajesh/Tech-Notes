@@ -1,6 +1,6 @@
 ## Java
-JDK is JRE + devTools - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
-JRE is JVM + lib classes - For layman users to run java program  
+JDK is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc  
+JRE is (JVM+lib) classes - For layman users to run java program  
 JVM is Interpreter execute byte code to machine code, contins JustInTime compiler  
 
 ClassLoader: part of JRE, loads class file to JVM.  
