@@ -72,14 +72,17 @@ Group of similar datatype ```int rajesh[]=new int[3];```
 ## String:  
 - class represents sequence of char  
 - implements Serializable, Comparable and CharSequence interfaces  
-**String creation**:  
+
+### String creation:  
 - String - by string literal or new keyword   
 - StringBuffer - mutable, thread safe  
 - StringBuilder - mutable, no thread safe, efficient  
-**String comparision**:  
+
+### String comparision:  
 - ```s1.equals(s2);```  check for each char are same or not   
 - ```s1==s2;```  check address is same or not  
 - ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
+
 **String tokenizer**: break a string into tokens    
 ```
 StringTokenizer st = new StringTokenizer("my name is raj");
