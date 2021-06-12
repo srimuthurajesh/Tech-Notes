@@ -5,22 +5,21 @@
 - **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 - **ClassLoader**: part of JRE, loads class file to JVM  
 
-*Note*: Java is not fully oops language, due usage of primitive datatypes.
+Java is not fully oops language, due usage of primitive datatypes.
 
 ``` 
 import java.Io.*;	//this package used while code in notepad  
 import java.util.Scanner ;
 class Hello{
-    public static void main(String[]args){
-	Scanner input = new Scanner(Sytem.in);
-	a=input.nextInt();
-	System.out.println(); //print only one line and move to next line
-	System.out.print(); //print line and remain in same line we have to give \n
-	System.out.printf(“%d”,$i); //print string stream
-    } 
+  public static void main(String[]args){
+    Scanner input = new Scanner(Sytem.in);
+    a=input.nextInt();
+    System.out.println(); //print only one line and move to next line
+    System.out.print(); //print line and remain in same line we have to give \n
+    System.out.printf(“%d”,$i); //print string stream
+  } 
 }
 ```
-**Escape sequences:**  \n 	\t	 \’	 \”	 \\ 	\b	 \f	   
 **Comments:**  1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
 
 **Packages:**  Collection of similar classes, interfaces and sub packages. ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
