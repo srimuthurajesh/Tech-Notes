@@ -1,3 +1,10 @@
-# Technology Notes
-
-## Languages  
+## Contents
+1. Languages
+  i) Java
+  ii) Javascript
+  iii) Python
+  iv) PHP
+2. Databases
+  i) Mysql
+  ii) MongoDB
+  iii) Postgresql  
