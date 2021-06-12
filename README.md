@@ -18,6 +18,8 @@
    1. [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
    2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/Devops/docker.html)
    3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/Devops/kubernetes.html)
+   4. [kafka](https://srimuthurajesh.github.io/Tech-Notes/Devops/kafka.html)
+   5. [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
 
 ----
