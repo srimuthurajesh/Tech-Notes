@@ -1,6 +1,6 @@
 ## Contents
 - **Languages**    
-  - [Java](https://github.com/srimuthurajesh/Tech-Notes/blob/master/Java/01_spring_core.md)    
+  - [Java](https://github.com/srimuthurajesh/Tech-Notes/blob/master/Java/README.md)    
   - Javascript  
   - Python  
   - PHP  
