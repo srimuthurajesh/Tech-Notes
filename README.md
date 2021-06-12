@@ -1,4 +1,5 @@
-## Contents
+
+## Table Of Contents
 - **Languages**    
   - [Java](https://srimuthurajesh.github.io/Tech-Notes/Java/)    
   - [Javascript](https://srimuthurajesh.github.io/Tech-Notes/Java%20script/)  
@@ -8,3 +9,4 @@
   - Mysql  
   - MongoDB  
   - Postgresql    
+- **Other Techs**
