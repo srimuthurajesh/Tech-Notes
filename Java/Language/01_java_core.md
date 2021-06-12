@@ -86,14 +86,10 @@ Group of similar datatype ```int rajesh[]=new int[3];```
 **String tokenizer**: break a string into tokens    
 ```
 StringTokenizer st = new StringTokenizer("my name is raj");
-while(st.hasMoreTokens()){
-	st.nextToken(); //prints //my //name //is //raj
-}
-
+while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
 
 ## Operators:  
-
 |  Operators| Symbols  |
 |--|--|
 |Arithmetic Operator  |**+ - * / %**  |
@@ -114,34 +110,33 @@ Arithmetic operator order: System.out.println(10*10/5+3-1*4/2);  is 21
 Left shift operator: 10<<2 is 10\*2^2= 40   
 Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
-**Enum** :  group of constant( final,static)
+
+## Enum :  
+group of constant( final,static)
 ```
-enum Level {
-  LOW,
-  MEDIUM,
-  HIGH
-}
+enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
 ```
+
 **Null** : case sensitive, not falls under any type, null==null is true
 
 ## Decisions making:
-   1. if(con){ exp1; }
-   2. if(con){ exp1; } else{ exp2; }
-   3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
-   4. Tenary operator-condition ? expersion 1: expersion 2;
+1. if(con){ exp1; }
+2. if(con){ exp1; } else{ exp2; }
+3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
+4. Tenary operator-condition ? expersion 1: expersion 2;
 
 ## Looping:
-   1. while(con){ body; }
-   2. do{ body }while(condition);
-   3. for(intialize counter;test condition;inc or dec counter){ body; }
-   4. switch(varible){case constant: operation; break;default: operation;break;}
-   5. break; 	//get out of loop
-   6. continue;	//back to continue next loop
-   7. continue loop_label;		loop_label;{exp}
-   8. goto label_name; 		label_name:{exp}
-   9. break label_name;		label_name:{exp}
-   10. For each loop(Datatype var: iterable)
+1. while(con){ body; }
+2. do{ body }while(condition);
+3. for(intialize counter;test condition;inc or dec counter){ body; }
+4. switch(varible){case constant: operation; break;default: operation;break;}
+5. break; 	//get out of loop
+6. continue;	//back to continue next loop
+7. continue loop_label;		loop_label;{exp}
+8. goto label_name; 		label_name:{exp}
+9. break label_name;		label_name:{exp}
+10. For each loop(Datatype var: iterable)
 
 **Static** : create only one time, called without reference
 1. static variable -     ```className.variableName;```
@@ -167,19 +162,20 @@ Note: finalize() - called just before an object is garbage collected. overrides 
  - serialization supports object
  - collection framework
  - java util package
- - can use null value \ *Autoboxing:* primitive into wrapper- it uses cache value
+ - can use null value  
+**Autoboxing:** primitive into wrapper- it uses cache value
 ``` 
 int j=1;
 Integer i = Integer.valueof(j);  or Integer i =j;
 ```
- **Unboxing** : wrapper into primitive
+**Unboxing** : wrapper into primitive
  ```
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
- **Generics**: parameterized types
+## Generics:   
+parameterized types
 
-**Input/Ouput**
 ## Serialization : 
 mechanism of writing obj into byte stream, implement serializable marker interface
 ```
@@ -225,7 +221,7 @@ finally{}// occur for sure even though exception handled or not.
  - @Inherited
  - @Documented
 
-**Regex**:  
+## Regex:    
 **^[a-zA-Z][a-zA-Z0-9]{8,19}**  
 Where  
 ^ represents the start of the regex   
