@@ -8,11 +8,11 @@
 
 ## Database
    - **SQL**  
-      *i*) [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
+      - [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
    - **NoSQL**  
-      *i*) [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      *ii*) [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      *iii*) [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
+      - [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
+      - [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
+      - [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
 
 ## Devops    
    - [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
