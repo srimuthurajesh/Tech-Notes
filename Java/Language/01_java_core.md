@@ -90,17 +90,17 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 ```
 
 ## Operators:  
-|  Operators| Symbols  |
-|--|--|
-|Arithmetic Operator  |**+ - * / %**  |
-|Relational Operator  |**<, <=, >, >=, ==, !=**  |
-|Logical Operator  |**&&(AND), \|\| (OR), !(NOT)**  |
-|Assignment Operator  |**a += 4**  |
-|Inc and Dec Operator  |**a++,a--,++a,--a**  |
-|Conditional Operator  |**exp1? exp2: exp3;**  |
-|Bitwise Operator  |** &, <<, >>, >>>**  |
-|Special Operator  |**instanceof, (.)**  |
-|Unary Operator  |**~, !**  |  
+|  Operators| Symbols  |  
+|--|--|  
+|Arithmetic Operator  |**+ - * / %**  |  
+|Relational Operator  |**<, <=, >, >=, ==, !=**  |  
+|Logical Operator  |**&&(AND), \|\| (OR), !(NOT)**  |  
+|Assignment Operator  |**a += 4**  |  
+|Inc and Dec Operator  |**a++,a--,++a,--a**  |  
+|Conditional Operator  |**exp1? exp2: exp3;**  |  
+|Bitwise Operator  |** &, <<, >>, >>>**  |  
+|Special Operator  |**instanceof, (.)**  |  
+|Unary Operator  |**~, !**  |    
 ```
 int a=10; int b=-9;  
 System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
