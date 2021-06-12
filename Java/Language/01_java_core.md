@@ -89,13 +89,6 @@ StringTokenizer st = new StringTokenizer("my name is raj");
 while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-
-
 ## Operators:  
 
 |  Operators| Symbols  |  
@@ -109,6 +102,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 |Bitwise Operator  |** &, <<, >>, >>>**  |  
 |Special Operator  |**instanceof, (.)**  |  
 |Unary Operator  |**~, !**  |    
+
 
 ```
 int a=10; int b=-9;  
