@@ -88,6 +88,7 @@ Group of similar datatype ```int rajesh[]=new int[3];```
 StringTokenizer st = new StringTokenizer("my name is raj");
 while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
+
 | First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
@@ -96,6 +97,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 
 
 ## Operators:  
+
 |  Operators| Symbols  |  
 |--|--|  
 |Arithmetic Operator  |**+ - * / %**  |  
@@ -107,6 +109,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 |Bitwise Operator  |** &, <<, >>, >>>**  |  
 |Special Operator  |**instanceof, (.)**  |  
 |Unary Operator  |**~, !**  |    
+
 ```
 int a=10; int b=-9;  
 System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
