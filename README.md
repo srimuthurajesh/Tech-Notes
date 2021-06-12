@@ -1,7 +1,7 @@
 
 ## Table Of Contents
-- **Languages**    
-  - [Java](https://srimuthurajesh.github.io/Tech-Notes/Java/)    
+- ### Languages    
+  - ## [Java](https://srimuthurajesh.github.io/Tech-Notes/Java/)    
   - [Javascript](https://srimuthurajesh.github.io/Tech-Notes/Java%20script/)  
   - [Python](https://srimuthurajesh.github.io/Tech-Notes/Python/)  
   - [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP/)  
