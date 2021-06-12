@@ -1,12 +1,12 @@
 # Table Of Contents  
 
-## 1. Programming Languages
+## Programming Languages
    * [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)
    * [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/Java%20script)
    * [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)
    * [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)
 
-## 2. Database
+## Database
    * SQL
        * [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)
    * NoSQL
