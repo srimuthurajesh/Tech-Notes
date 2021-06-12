@@ -1,4 +1,4 @@
-Table Of Contents  
+# Table Of Contents  
 
 ### Programming Languages
   * [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)
