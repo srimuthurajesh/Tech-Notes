@@ -27,10 +27,10 @@ class Hello{
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 
 **Commands**  
-how to compile: ```javac -d directory javafilename.java```     	
-how to run: ```java myppack.javafilename```   
-how to define a package in that program: ```package packagename;```  
-how to import package: ```import packagename.\*;```   
+how to compile: ```javac -d directory javafilename.java```       	
+how to run: ```java myppack.javafilename```     
+how to define a package in that program: ```package packagename;```    
+how to import package: ```import packagename.\*;```     
 how to import using fully qualified name without import keyword: ```package classname```;   
 
 - **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
