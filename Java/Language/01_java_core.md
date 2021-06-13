@@ -21,24 +21,18 @@ class Hello{
 }
 ```
 ---
-### Comments:    
-1. Singleline: (//) 
-2. Multiline: (/*.. */) 
-3. Documentation: (/**…\*/)  
-
-### Packages:    
-Collection of similar classes, interfaces and sub packages.  
+- **Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
+- **Keywords**: Predefined meaning (53) words.  
+- **Packages**: Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 
-### Commands
+**Commands**  
 - how to compile: ```javac -d directory javafilename.java```   	
 - how to run: ```java myppack.javafilename```  
 - how to define a package in that program: ```package packagename;```  
 - how to import package: ```import packagename.\*;```  
 - how to import using fully qualified name without import keyword: ```package classname```;  
 
-### Keywords:  
-Predefined meaning (53) words.  
 ### Constant:  
 Immutable. Declare as final static.  eg: static final double PI=3.14   
 Note: if it is declared as private inside a class, it can be redeclare in another class  
@@ -76,7 +70,6 @@ Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;
 |Bitwise Operator  |** &, <<, >>, >>>**  |  
 |Special Operator  |**instanceof, (.)**  |  
 |Unary Operator  |**~, !**  |    
-
 
 ```
 int a=10; int b=-9;  
