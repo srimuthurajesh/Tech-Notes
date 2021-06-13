@@ -78,13 +78,27 @@ i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely
 
 ## Thread Pool:   
 group of worker threads that are waiting for the job and reuse many times.    
+
 **Executer service* : provide thread pool  
 ```
 ExecutorService execService = Executor.newCacheThreadPool();
-ExecutorService execService = Executor.newFixedThreadPool();
-ExecutorService execService = Executor.newSingleThreadPool();
-MyClass m = new MyClass(); execService.execute(m); execService.shutdown();
+ExecutorService executorService1 = Executors.newSingleThreadExecutor();
+ExecutorService executorService2 = Executors.newFixedThreadPool(10);
+ExecutorService executorService3 = Executors.newScheduledThreadPool(10);
+MyClass m = new MyClass(); execService.execute(m); 
+execService.shutdown();
 ```
+
+**Methods of ExecuterService:**
+execute(Runnable)  
+submit(Runnable)  - return result as Future object  
+submit(Callable)  
+invokeAny(...)  - try invoke collection of callable, executes anyone of callable other dies.
+invokeAll(...)  - invoke all the callable
+shutdown() - no longer accept new tasks   
+shutdownNow() - stops all executing task immediately  
+awaitTermination() - block thread until either ExecutorService has shutdown or timeout   
+
 **Java thread dump**: list every thread in the JVM is doing at a particular point in time.   
 ## Java Concurreny api  
 **ReentrantLock**: same as Synchronized, but more flexible  
