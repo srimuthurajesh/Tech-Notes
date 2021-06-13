@@ -88,18 +88,18 @@ Left shift operator: 10<<2 is 10\*2^2= 40
 Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 
-## Enum :  
+### Enum :  
 group of constant( final,static)
 ```
 enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
 ```
 
-## Null :   
+### Null :   
 case sensitive, not falls under any type, null==null is true
 
 
-## Static :  
+### Static :  
 create only one time, called without reference
 1. static variable -     ```className.variableName;```
 2. static method -    ```className.functionName();``` 
@@ -110,23 +110,23 @@ create only one time, called without reference
 7. Instance block { } inside class, runs after static block & before constructor
 -```class.forName(" ");``` executes static block & load class
 
-## Final :  
+### Final :  
 assigned only once, mostly in constructor directly
 1. final variable - cannot changed  ```final int maxSpeed =100;```
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
 
-## Typecasting:  
+### Typecasting:  
 Convert one datatype to another
 1. Implicit casting    
 2. Explicit casting ```int a = (int) 3.14;	//3```   
 Byte -> short -> int -> long -> float -> double  
 
-## Array:    
+### Array:    
 Group of similar datatype ```int rajesh[]=new int[3];```  
 
-## String:  
+### String:  
 - class represents sequence of char  
 - implements Serializable, Comparable and CharSequence interfaces  
 
