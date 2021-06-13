@@ -52,7 +52,8 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 t1.setDaemon(true);t1.isDaemon(true);   
 
 ## Thread class Methods:
-1. **join()**: wait for another thread to comlete execution  ```thread3.join(); thread4.join(200); //wait for 200ms```       
+1. **join()**: wait for another thread to comlete execution  
+   ```thread3.join(); thread4.join(200); //wait for 200ms```       
 2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
 3. **sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
 4. start()- start thread by calling run method  
@@ -68,13 +69,15 @@ t1.setDaemon(true);t1.isDaemon(true);
 **Interrupting Thread**:  
 1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
 2. Thread.interrupted() - return true/false   
-
+---
 ## DeadLock  
 -situation where two or more threads are blocked forever  
 i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
 
-**Race condition**: When multiple threads try to access same resources  
-Thread Pool: group of worker threads that are waiting for the job and reuse many times.    
+**Race condition**: When multiple threads try to access same resources 
+
+## Thread Pool:   
+group of worker threads that are waiting for the job and reuse many times.    
 **Executer service* : provide thread pool  
 ```
 ExecutorService execService = Executor.newCacheThreadPool();
