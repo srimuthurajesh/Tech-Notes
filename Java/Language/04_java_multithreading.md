@@ -1,7 +1,7 @@
 # Muti threading
 -concurrent execution, subset process  
 
-## Different ways to Implement Thread
+## Ways to Implement Thread
 1. Extends Thread class  
 ```
 public class MyThread extends Thread {
@@ -29,14 +29,14 @@ class MyThread implements Runnable {
     }
 }
 ```
-### Difference states of Thread:
+## Difference states of Thread:
 1. New - obj of thread created but start not yet called  
 2. Runnable - start called but no cpu available, so not running  
 3. Running - start called running  
 4. Waiting/Blocked - wait for i/o or another thread  
 5. Terminated/Dead - completed  
 	
-### Priority of a Thread  
+## Priority of a Thread  
 Thread scheduler prioritize based on (Range 1-10) (default-5)
 ```
 threadObj.setPriority(8);
@@ -69,7 +69,7 @@ t1.setDaemon(true);t1.isDaemon(true);
 1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
 2. Thread.interrupted() - return true/false   
 
-### DeadLock  
+## DeadLock  
 -situation where two or more threads are blocked forever  
 i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
 
