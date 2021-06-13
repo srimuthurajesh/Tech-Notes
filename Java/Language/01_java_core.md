@@ -21,25 +21,27 @@ class Hello{
 }
 ```
 ---
-## Comments:    
+### Comments:    
 1. Singleline: (//) 
 2. Multiline: (/*.. */) 
 3. Documentation: (/**…\*/)  
 
-## Packages:    
+### Packages:    
 Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 
-## Commands
+### Commands
 - how to compile: ```javac -d directory javafilename.java```   	
 - how to run: ```java myppack.javafilename```  
 - how to define a package in that program: ```package packagename;```  
 - how to import package: ```import packagename.\*;```  
 - how to import using fully qualified name without import keyword: ```package classname```;  
 
-**Keywords:** Predefined meaning (53) words.  
-**Constant:** Immutable. Declare as final static.  eg: static final double PI=3.14   
-if it is declared as private inside a class, it can be redeclare in another class  
+### Keywords:  
+Predefined meaning (53) words.  
+### Constant:  
+Immutable. Declare as final static.  eg: static final double PI=3.14   
+Note: if it is declared as private inside a class, it can be redeclare in another class  
 
 ## Variable:  
 Basic unit of storage   
@@ -60,35 +62,6 @@ Predefined memory storage
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
-
-## Typecasting:  
-Convert one datatype to another
-1. Implicit casting    
-2. Explicit casting ```int a = (int) 3.14;	//3```   
-Byte -> short -> int -> long -> float -> double  
-
-## Array:    
-Group of similar datatype ```int rajesh[]=new int[3];```  
-
-## String:  
-- class represents sequence of char  
-- implements Serializable, Comparable and CharSequence interfaces  
-
-**String creation**:  
-- String - by string literal or new keyword   
-- StringBuffer - mutable, thread safe  
-- StringBuilder - mutable, no thread safe, efficient  
-
-**String comparision**:  
-- ```s1.equals(s2);```  check for each char are same or not   
-- ```s1==s2;```  check address is same or not  
-- ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
-
-**String tokenizer**: break a string into tokens    
-```
-StringTokenizer st = new StringTokenizer("my name is raj");
-while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
-```
 
 ## Operators:  
 
@@ -125,23 +98,6 @@ Level myVar = Level.MEDIUM;
 ## Null :   
 case sensitive, not falls under any type, null==null is true
 
-## Decisions making:
-1. if(con){ exp1; }
-2. if(con){ exp1; } else{ exp2; }
-3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
-4. Tenary operator-condition ? expersion 1: expersion 2;
-
-## Looping:
-1. while(con){ body; }
-2. do{ body }while(condition);
-3. for(intialize counter;test condition;inc or dec counter){ body; }
-4. switch(varible){case constant: operation; break;default: operation;break;}
-5. break; 	//get out of loop
-6. continue;	//back to continue next loop
-7. continue loop_label;		loop_label;{exp}
-8. goto label_name; 		label_name:{exp}
-9. break label_name;		label_name:{exp}
-10. For each loop(Datatype var: iterable)
 
 ## Static :  
 create only one time, called without reference
@@ -160,6 +116,53 @@ assigned only once, mostly in constructor directly
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
+
+## Typecasting:  
+Convert one datatype to another
+1. Implicit casting    
+2. Explicit casting ```int a = (int) 3.14;	//3```   
+Byte -> short -> int -> long -> float -> double  
+
+## Array:    
+Group of similar datatype ```int rajesh[]=new int[3];```  
+
+## String:  
+- class represents sequence of char  
+- implements Serializable, Comparable and CharSequence interfaces  
+
+**String creation**:  
+- String - by string literal or new keyword   
+- StringBuffer - mutable, thread safe  
+- StringBuilder - mutable, no thread safe, efficient  
+
+**String comparision**:  
+- ```s1.equals(s2);```  check for each char are same or not   
+- ```s1==s2;```  check address is same or not  
+- ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
+
+**String tokenizer**: break a string into tokens    
+```
+StringTokenizer st = new StringTokenizer("my name is raj");
+while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
+```
+
+## Decisions making:
+1. if(con){ exp1; }
+2. if(con){ exp1; } else{ exp2; }
+3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
+4. Tenary operator-condition ? expersion 1: expersion 2;
+
+## Looping:
+1. while(con){ body; }
+2. do{ body }while(condition);
+3. for(intialize counter;test condition;inc or dec counter){ body; }
+4. switch(varible){case constant: operation; break;default: operation;break;}
+5. break; 	//get out of loop
+6. continue;	//back to continue next loop
+7. continue loop_label;		loop_label;{exp}
+8. goto label_name; 		label_name:{exp}
+9. break label_name;		label_name:{exp}
+10. For each loop(Datatype var: iterable)
 
 ## Wrapper class:  
  wrap around primitive datatype & give object appearence  
