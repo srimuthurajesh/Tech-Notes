@@ -15,3 +15,5 @@
 - [Hibernate](https://srimuthurajesh.github.io/Tech-Notes/Java/04_Hibernate.html) 
 - [Spring Boot](https://srimuthurajesh.github.io/Tech-Notes/Java/spring_boot.html) 
 
+#### Interviwe Questions
+- [Java QA](https://srimuthurajesh.github.io/Tech-Notes/Java/Language/java_questions.html)
