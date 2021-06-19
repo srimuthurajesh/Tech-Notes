@@ -114,6 +114,10 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 
  
 ### Spring security  
+Browser -> **Security interceptor**(Default login page) -> spring controller
+
+spring.security.user.name=root  
+spring.security.user.password=root  
 ```	
 @Configuration
 @EnableWebSecurity
