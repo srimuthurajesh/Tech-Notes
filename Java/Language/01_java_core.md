@@ -233,14 +233,3 @@ Where
 import java.util.regex.*;  
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
-## Features of Java 8:  
-1. Lamdbda Expression  (arg)->{body}
-2. Method reference : shortcut to lambda expression    
-	i) staticMethod reference - className::Method  
-	ii) InstanceMethod reference - objectName::Method   
-	iii) constructor reference - className:: new   
-4. Optional  - avoi NullpointerException smartly  
-5. Functional interface  - have only on abstract method inside interface. Eg:Runnable  @FunctionInterface . can have default and static method with body
-6. Default Method - default has method body and also static method allowed inside interface  
-7. Stream API
-8. Date time API  
