@@ -1,37 +1,30 @@
 ## SPRING BOOT  
 
+### Features:
+**Auto Configuration** - It as lot of default configurations.  
+**Starter dependencies** -  
+1. spring-boot-starter-web : it consists of tomcat,validation,jackson-databind,spring-webmvc   
+2. spring-boot-devtools : fast restarts, LiveReload  
+3. spring-boot-starter-data-jpa : JPA API using Spring DataRepository and Hibernate  
+4. database driver - h2,mysql etc  
+
+**Actuator** - 
+1) List beans configures in runtime   
+2) can view auto configuration decisions  
+3) View Env variable, commandline args, application properties  
+
 **Commands:**  
 mvn spring-boot:run    // only if maven locally installed  
 mvnw spring-boot:run // if maven not installed   
 mvn package // to make jar file in taget folder  
 java -jar app.jar  // to run jar file  
 
-**Standard springboot folder structure**:  
-```
->mvnw - perform mvnw spring-boot:run    
->mvnw.cmd - perform clean compile test  
->pom.xml 
->src
-	>main
-		>java  - java files  
-		>resources  
-			>static - has html css js img. dont use webapp folder  
-			>templates - for Themeleaf, FreeMaker, Mustache  
-			application.properties
-	>test  
-		>java - test files   
-```		
-
-**List of Dependices available:**
-spring-boot-starter-web : it consists of tomcat,validation,jackson-databind,spring-webmvc   
-spring-boot-devtools : fast restarts, LiveReload  
-spring-boot-starter-data-jpa : JPA API using Spring DataRepository and Hibernate  
-database driver - h2,mysql etc  
-
-**@SpringBootApplication**  
+### Annotations:
+1. **@SpringBootApplication**  
 -combines of @Configuration,@EnableAutoConfiguraion,@ComponentScan    
 -scan its current package/subpackage for componentscan controllers   
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
+2. 
 
 **Application.properties** : src/resources/  
 -https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html   
@@ -111,8 +104,8 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 
  
 
-	
-	@Configuration
+```	
+@Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
@@ -143,3 +136,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new InMemoryUserDetailsManager(user);
 	}
 }
+```
+
+**Standard springboot folder structure**:  
+```
+>mvnw - perform mvnw spring-boot:run    
+>mvnw.cmd - perform clean compile test  
+>pom.xml 
+>src
+	>main
+		>java  - java files  
+		>resources  
+			>static - has html css js img. dont use webapp folder  
+			>templates - for Themeleaf, FreeMaker, Mustache  
+			application.properties
+	>test  
+		>java - test files   
+```		
