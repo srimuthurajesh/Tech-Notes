@@ -18,6 +18,7 @@ public class Employee {
 	private int empid;  
 ```  
 2. create hiberate.cfg.xml
+
 ```
 <hibernate-configuration>
     <session-factory>
@@ -31,7 +32,9 @@ public class Employee {
     </session-factory>
 </hibernate-configuration>
 ```
+
 3.create main class
+
 ```
 SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
