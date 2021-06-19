@@ -26,8 +26,10 @@ java -jar app.jar  // to run jar file
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
 2. 
 
-**Application.properties** : src/resources/  
+### Application.properties   
+-File path: src/resources/  
 -https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html   
+
 foo.name=rajesh  // can use @Value("${foo.name}")   
 server.port=8080  
 spring.dataSource.url=jdbc:mysql://localhost:3306/test  
@@ -37,14 +39,17 @@ spring.jpa.show-sql=true
 spring.jpa.generate-ddl=update  
 server.servlet.context-path=/myapp   // http://localhost:8080/myapp/  
 server.servlet.session.timout=15m  
-// actuator  
+//**Actuator**   
 management.endpoints.web.exposure.include=*  
 management.endpoints.web.exposure.exclude=beans,mapping  // endpoints to exclude  
 management.endpoints.web.base-path=/actuatorSample // http://localhost:8080/actuatorSample/health   
-connection.pool.initialPoolSize=5
-connection.pool.minPoolSize=5
-connection.pool.maxPoolSize=20
-connection.pool.maxIdleTime=3000
+connection.pool.initialPoolSize=5  
+connection.pool.minPoolSize=5  
+connection.pool.maxPoolSize=20  
+connection.pool.maxIdleTime=3000  
+//**Spring profiles**    
+spring.profiles.active=qa    //then spring will consider application-qa.properties file
+//also give it via -D in commandline
 
 ---
 
