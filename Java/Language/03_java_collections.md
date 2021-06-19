@@ -53,6 +53,7 @@ framework/container to access prepackaged data structure.
   6. Collections.synchronizedSortedSet(SortedSet s)
 
 **Default size**:  
+
 |Collections | Capacity |
 |:------------|:----------|
 |ArrayList   | 10       |
@@ -64,6 +65,7 @@ framework/container to access prepackaged data structure.
 
 **Collections vs Collection** 
 Collections are utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection.  
+
 |Collections Methods                  | Description  |
 |:-------------------------------------|:-------------------------------------------------------------|
 |Collections.max()	                  |This method returns maximum element in the specified collection.|
