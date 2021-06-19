@@ -67,4 +67,6 @@ Reducing for loop code using **IntStream**  ```int sumValue = IntStream.rangeClo
 Remove duplicates using stream ```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```  
 
 ### 7. Date time API  
+-thread-safe: removed setters of Date api  
+-new operations - added new methods for Date api  
 
