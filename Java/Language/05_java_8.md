@@ -36,16 +36,32 @@ should have only one abstract method. Eg:Runnable @Comparator .
 
 ### 5. Default Method -   
 default has method body and also static method allowed inside interface  
+
 ### 6. Stream API
-1. Reducing for loop code using **IntStream**  
- ```
-int sumValue = IntStream.rangeClosed(0,4).sum();
- ```
-2. Remove duplicates using stream  
-```
-List<String> names = Array.asList("raj","sam","raj");
-List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());
-```
+-process collections  
+#### Source operations:
+1. Stream<Int> intStream = listInt.stream();  
+
+#### Intermediate Operations:
+1. map: returns a stream consists results of applying the given function    
+ ```List square = listNumber.stream().map(x->x*x).collect(Collectors.toList());```  
+2. filter: select elements as per the Predicate passed as argument.    
+```List result = listNames.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());```    
+3. sorted: The sorted method is used to sort the stream.  
+```List result = listNames.stream().sorted().collect(Collectors.toList());```    
+
+#### Terminal Operations:  
+1. collect: return the result      
+```Set square = number.stream().map(x->x*x).collect(Collectors.toSet());```       
+2. forEach: iterate through every element of the stream.  
+```number.stream().map(x->x*x).forEach(y->System.out.println(y));```        
+3. reduce: reduce elements stream to a single value. it takes a BinaryOperator as a parameter.     
+```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
+
+
+
+Reducing for loop code using **IntStream**  ```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
+Remove duplicates using stream ```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```  
 
 ### 7. Date time API  
 
