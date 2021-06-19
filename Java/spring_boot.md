@@ -12,6 +12,11 @@
 1) List beans configures in runtime   
 2) can view auto configuration decisions  
 3) View Env variable, commandline args, application properties  
+	a) http://localhost:8080/actuator/health =>UP or DOWN    
+	b) http://localhost:8080/actuator/env => port, active profile  
+	c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
+	d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
+	e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
 
 **Commands:**  
 mvn spring-boot:run    // only if maven locally installed  
@@ -40,9 +45,9 @@ spring.jpa.generate-ddl=update
 server.servlet.context-path=/myapp   // http://localhost:8080/myapp/  
 server.servlet.session.timout=15m  
 //**Actuator**   
-management.endpoints.web.exposure.include=*  
-management.endpoints.web.exposure.exclude=beans,mapping  // endpoints to exclude  
-management.endpoints.web.base-path=/actuatorSample // http://localhost:8080/actuatorSample/health   
+management.endpoints.web.exposure.include=*  			// Enable all actuator endpoints  
+management.endpoints.web.exposure.exclude=beans,mapping  	// endpoints to exclude  
+management.endpoints.web.base-path=/actuatorSample 		// http://localhost:8080/actuatorSample/health   
 connection.pool.initialPoolSize=5  
 connection.pool.minPoolSize=5  
 connection.pool.maxPoolSize=20  
@@ -108,7 +113,7 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 -will provide Natheos details like, history links   
 
  
-
+### Spring security  
 ```	
 @Configuration
 @EnableWebSecurity
@@ -158,3 +163,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	>test  
 		>java - test files   
 ```		
+
+### Spring Logging:
+SpringConreoller -> slf4j -> logback  
+```
+Logger log = LoggerFactory.getLogger(HelloController.class);  
+logger.info("it is log info");  
+
+logging.level.root=DEBUG
+logging.level.com.rajesh=DEBUG
+```
+
+Seperate logging configuration xml file: logback-spring.xml or logback.xml
