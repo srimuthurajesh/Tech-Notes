@@ -28,7 +28,10 @@ class Hello{
 
 ### 3. Optional  -   
 avoid NullpointerException smartly  
-
+```
+Optional<String> checkNull =  Optional.ofNullable(str);  
+if (checkNull.isPresent()) { sysout(str)} 
+```
 ### 4. Functional interface  -   
 should have only one abstract method. Eg:Runnable @Comparator .   
 -can have default and static method with body  
