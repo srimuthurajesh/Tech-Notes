@@ -3,8 +3,9 @@
 ### 1. Lamdbda Expression   
 (arg)->{body}    
 Anonymous method to implement functional interface  
-	a) foreach: list.foreach(x){sysout(x)};
-	b) Predicate<?>  test()
+	a) foreach: list.foreach(x){sysout(x)};  
+	b) Predicate<?>  test()  
+	c) IntFunction(int value)
  
 ### 2. Method reference :   
 short versions of lambda expression   
