@@ -207,7 +207,14 @@ finally{}// occur for sure even though exception handled or not.
 ```
 **Throws** :  void methodName throws Exception{ }
 
-
+**Custom Exception class**
+```
+class InvalidAgeException extends Exception{  
+ InvalidAgeException(String s){  
+  super(s);  
+ }  
+}  
+```
 
 ---
 
