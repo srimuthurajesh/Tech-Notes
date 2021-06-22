@@ -112,6 +112,9 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 -will provide meta data with response like size,totalElements,totalPages,number   
 -will provide Natheos details like, history links   
 
+### Exception Handling  
+@ControllerAdvice : exception class annotation   
+@ExceptionHandler(value = ProductNotfoundException.class) : method annotation   
  
 ### Spring security  
 Browser -> **Security interceptor**(Default login page) -> spring controller
