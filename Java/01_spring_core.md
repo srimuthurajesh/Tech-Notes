@@ -63,17 +63,20 @@ Annotation|Level|Usage
 --- |---| ---
 @Controller | Class | capable of handling multiple request mappings.  
 @RestController | Class | consists @Controller,@ResponseBody, handles Req/Res  
-@RequestMapping | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
+@RequestMapping | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```  
 @RequestBody | Arg | ```public void addMember(@RequestBody Member member) { }```
-@RequestHeader | Arg | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
-@ResponseBody | Method | ```@ResponseBody public Member getMember() { }```  
-@ResponseStatus | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
+@RequestHeader | Arg | ```get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
 @RequestParam | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
 @PathParam | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
 @PathVariable | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
 @CookieValue | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@RequestPath | Arg | same as @RequestParam, but used while having multipart file<br/>```public getItem(@RequestPath("username") String username, @RequestPath MultipartFile  file){ }```
+@ResponseBody | Method | ```@ResponseBody public Member getMember() { }```  
+@ResponseStatus | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
 @CrossOrigin | Method | ```@CrossOrigin(origins = "http://example.com")```  
-@ExceptionHandler | Method | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
+@ExceptionHandler | Method | Handles exception and return values. comes under@ControllerAdvice or @Controller class <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
+@ControllerAdvice | Class | Must declared class if it has methods of @ExceptionHandler, @InitBinder, or @ModelAttribute
+@RestControllerAdvice | Class | combines @ControllerAdvice and @ResponseBody  
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
@@ -90,13 +93,6 @@ Annotation|Level|Usage
 @EnableWeSecurity  
 @ConfigurationProperties
 
-
-**Annotations:**
-
-@Produces - specify MIME media type  
-``@PostMapping(value="/rest/addEmployee",produces={"application/x-www-form-urlencoded","application/json"})``  
-@Consumes - array of string of MIME type
-@ExceptionHandler - a method to handle all exception with not found html message
 
 **Two types of Response @RestController**:  
 1.Add Jackdon-bind pom.xml, just return object list  
