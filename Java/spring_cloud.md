@@ -71,3 +71,7 @@ public RestTemplate restTemplate(){
   return new RestTemplate();
 }
 ```
+
+### BulkHead - handling maximum concurrent calls  
+### Rate limiter - amount request handling
+### Retry - number of times retry  
