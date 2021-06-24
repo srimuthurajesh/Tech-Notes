@@ -49,7 +49,7 @@ Annotation|usage
 @ComponentScan("com.controller")| Used with @Configuration and use to know packages of annotated classes
 @Component | Spring auto detect our custom beans 
 @Service | same like @Component, serve as service  
-@Repository | same like @Component, advisable as DAO classes  
+@Repository | same like @Component, advisable as persistance classes, throws Spring’s DataAccessException    
 @PropertySource | class level, along with @Configuration, Adding property file for spring env, <br/>also @PropertySources for multi files  <br/> ```@PropertySource(classpath:rasna-info.properties)```
 @Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
 @Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
@@ -59,19 +59,21 @@ Annotation|usage
 
 ### Spring Rest Annotations:  
 
-Annotation|usage
---- | --- 
-@Controller | capable of handling multiple request mappings.  
-@RequestMapping | method level mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
-@RequestBody | ```public void addMember(@RequestBody Member member) { }```
-@ResponseBody | ```@ResponseBody public Member getMember() { }```  
-@ResponseStatus | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
-@RequestParam | ``` public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam | ``` @GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
-@PathVariable | ``` @GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
-@CookieValue | ``` public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
-@CrossOrigin | method level ```@CrossOrigin(origins = "http://example.com")```  
-
+Annotation|Level|Usage
+--- | --- | ---
+@Controller | class level | capable of handling multiple request mappings.  
+@RestController | class level | consists @Controller,@ResponseBody, handles Req/Res  
+@RequestMapping | method level | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
+@RequestBody | arg level | ```public void addMember(@RequestBody Member member) { }```
+@RequestHeader | arg level | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
+@ResponseBody | method level | ```@ResponseBody public Member getMember() { }```  
+@ResponseStatus | method level | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
+@RequestParam | arg level | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
+@PathParam | arg level | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
+@PathVariable | arg level | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
+@CookieValue | arg level |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@CrossOrigin | method level | ```@CrossOrigin(origins = "http://example.com")```  
+@ExceptionHandler | method level | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
@@ -80,15 +82,9 @@ Annotation|usage
 @PatchMapping :  shortcut for @RequestMapping(method = RequestMethod.PATCH)
 
 
-@RestController -  consists @Controller,@ResponseBody, handles Req/Res  
 
 
-@ResponseBody - sending object as Response  
 @WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
-@Service -* same as component, jused for service layer  
-@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException  
-@PostContruct   
-@PreDestroy   
 @Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
 @Aspect @Before @After @Pointcut   
 @EnableWeSecurity  
