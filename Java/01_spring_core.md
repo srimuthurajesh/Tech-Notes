@@ -64,6 +64,8 @@ Annotation|usage
 @Controller | capable of handling multiple request mappings.  
 @RequestMapping | method level mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
 @RequestBody | ```public void addMember(@RequestBody Member member) { }```
+@ResponseBody | ```@ResponseBody public Member getMember() { }```  
+@ResponseStatus | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
 @RequestParam | ``` public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
 @PathParam | ``` @GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
 @PathVariable | ``` @GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
@@ -82,14 +84,6 @@ Annotation|usage
 
 
 @ResponseBody - sending object as Response  
-@Autowired    
-@Component   
-@Qualifier("beanName")  - to avoid ambiguos with same class name   
-@Bean  
-@Configuration   
-@ComponentScan("com.controller")    
-@PropertySource("classpath:rasna-info.properties")   
-@Value()  
 @WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
 @Service -* same as component, jused for service layer  
 @Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException  
@@ -98,6 +92,7 @@ Annotation|usage
 @Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
 @Aspect @Before @After @Pointcut   
 @EnableWeSecurity  
+@ConfigurationProperties
 
 
 **Annotations:**
