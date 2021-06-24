@@ -182,3 +182,21 @@ logging.level.com.rajesh=DEBUG
 ```
 
 Seperate logging configuration xml file: logback-spring.xml or logback.xml
+
+### Spring cloud annoatations
+1. @EnableConfigServer
+2. @EnableEurekaServer  
+3. @EnableDiscoveryClient  
+4. @EnableCircuitBreaker  
+5. @HystrixCommand
+
+Cache annotation  
+1. @Cacheable
+2. @CachePut
+3. @CacheEvict
+4. @CacheConfig
+
+Scheduler annotation   
+1. @Scheduled(fixedDelay=5000)  - end of last execution and the start of next execution is fixed  
+2. @Scheduled(fixedRate=5000)  -  beginning of the task execution does not wait for the completion of the previous execution.  
+3. @Scheduled(initialDelay=1000,fixedRate=5000)  - executed initially with a delay and then continues with the specified fixed rate.  
