@@ -60,20 +60,20 @@ Annotation|usage
 ### Spring Rest Annotations:  
 
 Annotation|Level|Usage
---- | --- | ---
-@Controller | Class level | capable of handling multiple request mappings.  
-@RestController | Class level | consists @Controller,@ResponseBody, handles Req/Res  
-@RequestMapping | Method level | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
-@RequestBody | Arg level | ```public void addMember(@RequestBody Member member) { }```
-@RequestHeader | Arg level | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
-@ResponseBody | Method level | ```@ResponseBody public Member getMember() { }```  
-@ResponseStatus | Method level | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
-@RequestParam | Arg level | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam | Arg level | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
-@PathVariable | Arg level | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
-@CookieValue | Arg level |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
-@CrossOrigin | Method level | ```@CrossOrigin(origins = "http://example.com")```  
-@ExceptionHandler | Method level | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
+--- |---| ---
+@Controller | Class | capable of handling multiple request mappings.  
+@RestController | Class | consists @Controller,@ResponseBody, handles Req/Res  
+@RequestMapping | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
+@RequestBody | Arg | ```public void addMember(@RequestBody Member member) { }```
+@RequestHeader | Arg | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
+@ResponseBody | Method | ```@ResponseBody public Member getMember() { }```  
+@ResponseStatus | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
+@RequestParam | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
+@PathParam | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
+@PathVariable | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
+@CookieValue | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@CrossOrigin | Method | ```@CrossOrigin(origins = "http://example.com")```  
+@ExceptionHandler | Method | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
