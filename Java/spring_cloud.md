@@ -24,15 +24,13 @@
    b) spring.cloud.config.uri = http://localhost:8888  
 Note: we can refresh the cache using actuator  
 
-## API Gateway  
-
 ## Service Discovery  
 1. starter pack = Eureka server starter  
 2. Add **@EnableEurekaServer** along with @SpringBootApplication  
 3. Add Application.properties    
   a) server.port=8761  
   b) eureka.client.register-with-eureka=false  
-  c) eureka.client.fetch-registry=false  
+  c) eureka.client.fetch-registry=false  f  
 
 **How to use it**    
 1. Add dependency spring-cloud-netflix-eureka-client in pom.xml  
@@ -41,3 +39,35 @@ Note: we can refresh the cache using actuator
 -Loadbalance happen at client side  
 3. use restTemplate.getForObject("http://<spring.application.name>", String.class);  
 -no need to hardcode url, instead use app name  
+
+
+## API Gateway  - Routing  
+1. Starter pack - spring-cloud-zuul, spring-discovery-client, spring-web, actuator  
+2. Add Application.properties  
+```
+eureka.instance.preferIpAddress=true
+eureka.client.registerWithEureka=true
+eureka.client.fetchRegistry=true
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka  
+managment.endpoints.web.exposure.include= info,health,routes  
+spring.application.name=zuul-gateway  
+```
+3. Add **@EnableZuulProxy**, **@EnableDiscoveryClient** alons with @SpringBootApplication  
+
+## Circuite Breaker  
+call RestTemplate via circuit breaker  
+```
+@Autowired
+private RestTemplate restTemplate;
+@Autowired
+private CircuitBreakerFactory circuiteBreakerFactory;
+
+public String getService(){
+  CircuitBreaker cb = circuiteBreakerFactory.create("nameserivcebreaker");
+  return cb.run(() -> restTemplate.getForObject("http://localhost:8082", String.class), throwable -> return "fallback");
+}
+@Bean  
+public RestTemplate restTemplate(){
+  return new RestTemplate();
+}
+```
