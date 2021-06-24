@@ -1,4 +1,6 @@
+## Configuring spring MVC  
 - Follows MVC design pattern  
+
 **1. Configure pom.xml**: add dependency spring-webmvc  
 
 **2. Configure web.xml**
@@ -136,7 +138,7 @@ public ModelAndView display(){
 
 ---
 
-**Annotaions**:
+### Annotaions:  
 1. **@Controller** - 	indicates class as a web request handler.
 			it consists of @Component,@Target(value=TYPE),@Retention(value=RUNTIME),@Documented	
 2. **@RequestMapping** - handles http request and map to controler methods(or class) 
