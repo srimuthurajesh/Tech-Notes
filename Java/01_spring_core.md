@@ -56,6 +56,7 @@ Annotation|usage
 @Qualifier | when there is two implementation for the interface <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
 @Lazy | Used along with @Component, bean will be created and initialized only when it is first requested.   
 @Value | Indicates default value from property file or hardcode <br/> ```@Value("rajesh") @Value("${value.from.file}") String name;```  
+@ConfigurationProperties | behave as @Value, but apply for entire pojo class ```@ConfigurationProperties(prefix="api")``` 
 
 ### Spring Rest Annotations:  
 
@@ -85,12 +86,6 @@ Annotation|Level|Usage
 @PatchMapping :  shortcut for @RequestMapping(method = RequestMethod.PATCH)
 
 
-
-
-@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
-@Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
-@Aspect @Before @After @Pointcut   
-@EnableWeSecurity  
 @ConfigurationProperties
 
 
