@@ -23,3 +23,17 @@
    a) spring.application.name = config-client  
    b) spring.cloud.config.uri = http://localhost:8888  
 Note: we can refresh the cache using actuator  
+
+## API Gateway  
+
+## Service Discovery  
+1. starter pack = Eureka server starter  
+2. Add **@EnableEurekaServer** along with @SpringBootApplication  
+3. Add Application.properties    
+  a) server.port=8761  
+  b) eureka.client.register-with-eureka=false  
+  c) eureka.client.fetch-registry=false  
+
+**How to use it**    
+1. Add dependency spring-cloud-netflix-eureka-client in pom.xml  
+-then it automatically register with service registry 8761  
