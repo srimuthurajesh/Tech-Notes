@@ -40,6 +40,7 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 
 ### Annotations to remember:  
 #### Spring core Annotations
+
 Annotation|usage
 --- | --- 
 @Configuration | Indicate that a class declares one or more @Bean methods
@@ -52,7 +53,7 @@ Annotation|usage
 @Repository | same like @Component, advisable as DAO classes  
 @Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
 @Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
-
+@Qualifier | when there is two implementation <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
 
 
 @Controller  - for controller classes  
