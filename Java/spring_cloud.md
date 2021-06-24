@@ -36,4 +36,8 @@ Note: we can refresh the cache using actuator
 
 **How to use it**    
 1. Add dependency spring-cloud-netflix-eureka-client in pom.xml  
--then it automatically register with service registry 8761  
+-then it automatically register with service registry 8761   
+2. Add **@LoadBalanced** along with ```@Autowired RestTemplate restTemplate;```
+-Loadbalance happen at client side  
+3. use restTemplate.getForObject("http://<spring.application.name>", String.class);  
+-no need to hardcode url, instead use app name  
