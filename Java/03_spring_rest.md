@@ -57,6 +57,7 @@ HTTP code|usage
 ErrorResponse body consists of- 1.status,2.msg,3.timestamp   
 
 **Best practices in REST**  
+
 Http Method | endpoint | action  
 --- | --- | --- 
 POST| api/customers |create new customer
@@ -66,11 +67,13 @@ PUT| api/customers |update customer
 DELETE| api/customers/{cusId} |delete customer    
 
 **File upload:**
+
 ```
 @POST
 @Consumes(MediaType.MULTIPART_FORM_DATA)
 public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
 ```
-**REST VS SOAP**\
+
+**REST VS SOAP**  
 Rest - architectural style, Representation state transfer, No WSDL file\
 Soap - protocol, simple object access protocol
