@@ -1,11 +1,11 @@
-### SPRING  
+## SPRING Framework    
 -application dev framework for javaEE	 
 -1998 -2002 by spring.org- Rod johnson  
 -interface21 is old name  
 -EJB seems like winter, thus spring name came    
 -called as framework of frameworks  
 
-Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
+**Advantages**: loosely coupling, lightweight, easy to test, flexible(configurable)
 
 **MODULES IN SPRING**:  
 1. IOC - Spring core - basic, IOC & DI    
@@ -14,14 +14,91 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 4. AOP - security, logging, profiling  
 5. Test	- junit, testNG  
 
--------------------------------------------------------------------------------------------------------------------------------
-**IOC container** - create,manage,wire,configure object. It performs:    
+### IOC container  
+- create,manage,wire,configure object. It performs:    
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
 2. **Dependency Injection(DI)**: where object define their dependencies via 
 
 **Way of Injections**: setter/contructor injection  
-**Dependcies of Injection**: literal, object, collection  
 **Beans**: objects present in IOC container  
+
+**Bean scope**:  
+1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
+2. Proprotype - new instance will create Each time, the bean requested    
+3. Request - each HTTP request will have its own instance of bean  
+4. Session - bean defined to Http session scope
+5. Global-session - bean defined to Http Global session scope   
+Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")   
+
+**Bean Lifecycle**:  
+1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
+2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
+3. Annotation approach- ```@PostContruct  @PreDestroy```  
+4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
+-it will force to define afterPropertiesSet(), destroy() methods  
+
+**Annotations to remember**:  
+@Controller  - for controller classes  
+@RequestMapping  - URI mapping for controller classes  
+@RestController -  consists @Controller,@ResponseBody, handles Req/Res  
+@RequestMapping("/getEmployees") -default GET method  
+@RequestMapping(value="/getEmployees", method=RequestMethod.GET)  -support GET,PUT,DELETE,POST  
+
+@GetMapping("/getEmployees")  - same as @RequestMapping  
+@PostMapping("/addEmployee")
+@RequestBody - arg ex:Employee addEmployee(@RequestBody Employee emp) 
+@PutMapping("/updateEmployee")  
+@DeleteMapping("/deleteEmployees/{empId}")
+@PathVariable - arg ex:Employee delEmployee(@PathVariable int empId)  
+
+@Path("/sample")
+@QueryParam 
+@PathParam
+
+@ResponseBody - sending object as Response  
+@pathVariable - for mapping dynamic value from URI to handler method arg   
+@Autowired    
+@Component   
+@Qualifier("beanName")  - to avoid ambiguos with same class name   
+@Bean  
+@Configuration   
+@ComponentScan("com.controller")    
+@PropertySource("classpath:rasna-info.properties")   
+@Value()  
+@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
+@Service -* same as component, jused for service layer  
+@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException  
+@PostContruct   
+@PreDestroy   
+@Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
+@Aspect @Before @After @Pointcut   
+@EnableWeSecurity  
+
+
+**Annotations:**
+
+@Produces - specify MIME media type  
+``@PostMapping(value="/rest/addEmployee",produces={"application/x-www-form-urlencoded","application/json"})``  
+@Consumes - array of string of MIME type
+@ExceptionHandler - a method to handle all exception with not found html message
+
+**Two types of Response @RestController**:  
+1.Add Jackdon-bind pom.xml, just return object list  
+2.use ResponseEntity<> class - ex: return new ResponseEntity<>(ResBody,HttpCode);  
+
+**Exception handling**:  
+@ExceptionHandler a method to handle exception in controller  
+@ControllerAdvise - a class consists of @ExceptionHandler functions  
+ErrorResponse body consists of- 1.status,2.msg,3.timestamp   
+
+
+**File upload:**
+
+```
+@POST
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
+```
 
 **Two types of IOC container**:     
 1. Bean factory - lazy intialization, no annotated injection support    
@@ -88,41 +165,3 @@ Advantages: loosely coupling, lightweight, easy to test, flexible(configurable)
 	@PropertySource("classpath:rasna-info.properties")
 	
 ---
-
-
-**Bean scope**:  
-1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
-2. Proprotype - new instance will create Each time, the bean requested    
-3. Request - each HTTP request will have its own instance of bean  
-4. Session - bean defined to Http session scope
-5. Global-session - bean defined to Http Global session scope   
-Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")   
-
-**Bean Lifecycle**:  
-1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
-2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
-3. Annotation approach- ```@PostContruct  @PreDestroy```  
-4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
--it will force to define afterPropertiesSet(), destroy() methods  
-
-**Annotations to remember**:  
-@Controller  - for controller classes  
-@RequestMapping  - URI mapping for controller classes  
-@ResponseBody - sending object as Response  
-@pathVariable - for mapping dynamic value from URI to handler method arg   
-@Autowired    
-@Component   
-@Qualifier("beanName")  - to avoid ambiguos with same class name   
-@Bean  
-@Configuration   
-@ComponentScan("com.controller")    
-@PropertySource("classpath:rasna-info.properties")   
-@Value()  
-@WebServlet("/getapi")  - add servlet-api in pom.xml -> create servlet-> putur code in doGet()  
-@Service -* same as component, jused for service layer  
-@Repository- *same as component, used for persistance layer, translates any persistence related exceptions into a Spring’s DataAccessException  
-@PostContruct   
-@PreDestroy   
-@Transactional : beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	
-@Aspect @Before @After @Pointcut   
-@EnableWeSecurity  
