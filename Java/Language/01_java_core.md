@@ -227,7 +227,7 @@ class InvalidAgeException extends Exception{
  - @Target
  - @Retention
  - @Inherited
- - @Documented
+ - @Documented - ensure class is available in javadoc
 
 ## Regex:    
 **^[a-zA-Z][a-zA-Z0-9]{8,19}**  
