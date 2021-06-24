@@ -61,19 +61,19 @@ Annotation|usage
 
 Annotation|Level|Usage
 --- | --- | ---
-@Controller | class level | capable of handling multiple request mappings.  
-@RestController | class level | consists @Controller,@ResponseBody, handles Req/Res  
-@RequestMapping | method level | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
-@RequestBody | arg level | ```public void addMember(@RequestBody Member member) { }```
-@RequestHeader | arg level | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
-@ResponseBody | method level | ```@ResponseBody public Member getMember() { }```  
-@ResponseStatus | method level | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
-@RequestParam | arg level | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam | arg level | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
-@PathVariable | arg level | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
-@CookieValue | arg level |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
-@CrossOrigin | method level | ```@CrossOrigin(origins = "http://example.com")```  
-@ExceptionHandler | method level | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
+@Controller | Class level | capable of handling multiple request mappings.  
+@RestController | Class level | consists @Controller,@ResponseBody, handles Req/Res  
+@RequestMapping | Method level | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
+@RequestBody | Arg level | ```public void addMember(@RequestBody Member member) { }```
+@RequestHeader | Arg level | ```void get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
+@ResponseBody | Method level | ```@ResponseBody public Member getMember() { }```  
+@ResponseStatus | Method level | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
+@RequestParam | Arg level | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
+@PathParam | Arg level | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
+@PathVariable | Arg level | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
+@CookieValue | Arg level |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@CrossOrigin | Method level | ```@CrossOrigin(origins = "http://example.com")```  
+@ExceptionHandler | Method level | handles exception and return values <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
