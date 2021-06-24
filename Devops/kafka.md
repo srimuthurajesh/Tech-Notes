@@ -64,7 +64,7 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --group mygroup --reset-
 ## Spring Boot Kafka Consumer  
 starter project - spring-web, spring-kafka  
 
-1. **KafkaConsumerConfig.class**
+1. **KafkaConsumerConfig.class**  (@EnableKakfa)
 ```
 @Configuration
 @EnableKafka
@@ -72,7 +72,7 @@ public class KafkaConsumerConfig{
   @Bean
   public ConsumerFactory<String, String> consumerFactory(){
     Map<String, Object> configMap = new HashMap<>();
-    configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:8092");
+    configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
     configMap.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group");
     configMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
     configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
@@ -80,13 +80,48 @@ public class KafkaConsumerConfig{
   }
 }
 ```
-2. **KafkaConsumer.java**  
+2. **KafkaConsumer.java**  (@KafkaListener)
 ```
 @Component
 public class KafkaConsumer{
   @KafkaListener(topic="helloTopic", groupId="consumer-group")
   public void consumer(String message){
     System.out.println(message);
+  }
+}
+```
+## Spring Boot Kafka Producer  
+
+1. HomeController.java
+```
+@RestController
+@RequestMapping("/produce/{message}")
+public class HomeController{
+  @Autowired
+  private KafkaTemplate<String, String> kafkaTemplate;	
+    @GetMapping
+    public String publish(@PathVariable("message") String message){
+      KafkaTemplate.send("helloTopic", message)
+      return "Message published: "+ message;
+    }
+  }
+```
+2. KafkaConfig.java
+```
+public class kafkaConfig{
+  @Bean
+  public kafkaTemplate<String, String> kafkaTemplate(){
+    	
+    return new KafkaTemplate<>(producerFactory())	
+  }
+  @Bean
+  public ProducerFactory<String, String> producerFactory(){
+    Map<String, Object> configMap = new HashMap<>();
+    configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+    configMap.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group");
+    configMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    return new DefaultKafkaProducerFactory(configMap);
   }
 }
 ```
