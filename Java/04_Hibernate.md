@@ -51,7 +51,9 @@
 
 ### Persistance class Annotation 
 1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
-2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```  
+2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```    
+so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
+or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	  
 
 **Steps for Hibernate**:  
 1. create persistant class    
