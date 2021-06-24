@@ -7,6 +7,7 @@
 **Partition**: topic splits into several parts, ordered, immutable  
 **Offset**: unique id for each record in partition  
 **replication factor**: number of copies of data over multiple brokers  
+**GroupId**: if groupId same for multiple consumers, then kafka consider it deliver for first one  
 
 
 
