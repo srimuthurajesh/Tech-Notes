@@ -59,3 +59,25 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --list
 #describe lag, current offset, log end offset etc   
 kafka-consumer-groups --bootstrap-server localhost:9092 --group my_first_app --describe
 kafka-consumer-groups --bootstrap-server localhost:9092 --group mygroup --reset-offsets --topic first_topic  --to-earliest --execute 
+
+	
+## Spring Boot Kafka Consumer  
+starter project - spring-web, spring-kafka  
+
+**KafkaConsumerConfig.class**
+```
+@Configuration
+@EnableKafka
+class KafkaConsumerConfig{
+  @Bean
+  public ConsumerFactory<String, String> consumerFactory(){
+    Map<String, Object> configMap = new HashMap<>();
+    configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:8092");
+    configMap.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group");
+    configMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    return new DefaultKafkaConsumerFactory<>(configMap);	
+  }
+
+}
+```
