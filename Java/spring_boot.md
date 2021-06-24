@@ -84,10 +84,10 @@ spring.devtools.restart.exclude=static/**,public/**	//You can also configure fol
 -create beans for DataSource,EntityManager  
 -get session object from entityManager: ```Session session = entityManager.unwrap(Session.class);```  
 
-we can use EntityManager:
-1. via hibernate api methods - support HQL, save(),get()/load(),createQuery(),saveOrUpdate(),delete()     
-2. via JPA api methods: support JPQL, persist(),find(),createQuery(),merge(),remove()   
-3. via spring data JPA : create interface DAO and extends JpaRepository<Employee, Integer>     
+We can use EntityManager:
+#### 1. via hibernate api methods - support HQL, save(),get()/load(),createQuery(),saveOrUpdate(),delete()     
+#### 2. via JPA api methods: support JPQL, persist(),find(),createQuery(),merge(),remove()   
+#### 3. via spring data JPA : create interface DAO and extends JpaRepository<Employee, Integer>     
 automatic implementation of deleteById(int empId), findAll(), save(Employee emp), findById();  
 ```
 public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Integer> {
@@ -101,7 +101,7 @@ public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Intege
      */
 }
 ```
-**3a. Spring data rest**: no need of controllers  
+#### 4. Spring data rest: no need of controllers  
 a)add pom.xml spring-boot-starter-data-rest  
 b)create entity class Employee  
 c)create interface DAO and extends JpaRepository<Employee, Integer>     
@@ -120,46 +120,6 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 -will provide meta data with response like size,totalElements,totalPages,number   
 -will provide Natheos details like, history links   
 
-### Spring security  
-Browser -> **Security interceptor**(Default login page) -> spring controller
-
-spring.security.user.name=root  
-spring.security.user.password=root 
-
-```	
-@Configuration
-@EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/", "/home").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
-				.loginPage("/login")
-				.permitAll()
-				.and()
-			.logout()
-				.permitAll();
-	}
-
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user =
-			 User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
-				.roles("USER")
-				.build();
-
-		return new InMemoryUserDetailsManager(user);
-	}
-}
-```
-
 ### Spring Logging:
 SpringConreoller -> slf4j -> logback  
 
@@ -170,15 +130,8 @@ logger.info("it is log info");
 logging.level.root=DEBUG
 logging.level.com.rajesh=DEBUG
 ```
-
 Seperate logging configuration xml file: logback-spring.xml or logback.xml
 
-### Spring cloud annoatations
-1. @EnableConfigServer
-2. @EnableEurekaServer  
-3. @EnableDiscoveryClient  
-4. @EnableCircuitBreaker  
-5. @HystrixCommand
 
 Cache annotation  
 1. @Cacheable
