@@ -1,13 +1,57 @@
-## Index:
-* [Introduction](#Hibernate)
-* [CRUD operations](#CRUD)
-* [Hibernate Cache](#Cache)
-## Hibernate
+# Hibernate 
+
 > framework for database interactions  
 - **ORM tool** : maps java object to Database table   
 - **JPA tool** :  standard for ORM tools.
 - **dialect** : specify type of database  
 - **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
+
+
+## Hibernate Architecture:  
+1. **Configuration object**  
+-creates one time  
+-connection properties by xml file  
+-maps javaclasses and DBtables    
+2. **SessionFactory object**  
+-creates one time, there will be one sessionFactory for on DB    
+-created by configuration  
+-thread safe  
+-heavyweight object  
+3. **Session object**  
+-created eachtime interact DB
+-created by sessionfactory  
+-not thread safe, so do close it  
+-runtime interface(physical connection) between java and DB, 
+4. **Trasaction object**  
+-unit of work with DB  
+-handled by underlying transaction manager and transaction (from JDBC or JTA).  
+5. **Query object**- use SQL,HQL string to retrieve data  
+6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
+  
+### Hibernate Session Object lifecycle:
+1. Transient - new instance of pojo  
+2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
+2a. while get and load() it is in persistent stage    
+3. Removed - while remove(),delete()  
+4. Detached - closed from session(while clear(),close())  
+
+## Annotations:  
+### Entity class Annotation  
+1. @Entity - make class as entity bean  
+2. @Table - specify details of table. name,catalogue,schema,unique constraints  
+3. @Column - specify details of column. name,length,nullable,unique  
+	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
+4. @Id - to mention primary key for persistant class  
+5. @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+	a) GenerationType.AUTO- appropreiate stategy for particular DB  
+	b) GenerationType.Identity- assign primarykey using db identity column    
+	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
+	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
+	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
+
+### Persistance class Annotation 
+1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
+2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```  
 
 **Steps for Hibernate**:  
 1. create persistant class    
@@ -47,48 +91,6 @@ session.getTransaction().commit();	//get transaction obj asso with session
 ```
 
 ----
-
-**Hibernate Architecture**:  
-1. **Configuration object**  
--creates one time  
--connection properties by xml file  
--maps javaclasses and DBtables    
-2. **SessionFactory object**  
--creates one time, there will be one sessionFactory for on DB    
--created by configuration  
--thread safe  
--heavyweight object  
-3. **Session object**  
--created eachtime interact DB
--created by sessionfactory  
--not thread safe, so do close it  
--runtime interface(physical connection) between java and DB, 
-4. **Trasaction object**  
--unit of work with DB  
--handled by underlying transaction manager and transaction (from JDBC or JTA).  
-5. **Query object**- use SQL,HQL string to retrieve data  
-6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
-  
-**Hibernate Session Object lifecycle**:
-1. Transient - new instance of pojo  
-2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
-2a. while get and load() it is in persistent stage    
-3. Removed - while remove(),delete()  
-4. Detached - closed from session(while clear(),close())  
-
-**Annotations:**  
-1. @Entity - make class as entity bean  
-2. @Table - specify details of table. name,catalogue,schema,unique constraints  
-3. @Column - specify details of column. name,length,nullable,unique  
-	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
-4. @Id - to mention primary key for persistant class  
-5. @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
-	a) GenerationType.AUTO- appropreiate stategy for particular DB  
-	b) GenerationType.Identity- assign primarykey using db identity column    
-	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
-	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
-	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
-
 
 ## CRUD
 
