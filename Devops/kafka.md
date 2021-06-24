@@ -111,7 +111,6 @@ public class HomeController{
 public class kafkaConfig{
   @Bean
   public kafkaTemplate<String, String> kafkaTemplate(){
-    	
     return new KafkaTemplate<>(producerFactory())	
   }
   @Bean
