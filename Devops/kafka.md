@@ -64,11 +64,11 @@ kafka-consumer-groups --bootstrap-server localhost:9092 --group mygroup --reset-
 ## Spring Boot Kafka Consumer  
 starter project - spring-web, spring-kafka  
 
-**KafkaConsumerConfig.class**
+1. **KafkaConsumerConfig.class**
 ```
 @Configuration
 @EnableKafka
-class KafkaConsumerConfig{
+public class KafkaConsumerConfig{
   @Bean
   public ConsumerFactory<String, String> consumerFactory(){
     Map<String, Object> configMap = new HashMap<>();
@@ -78,6 +78,15 @@ class KafkaConsumerConfig{
     configMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
     return new DefaultKafkaConsumerFactory<>(configMap);	
   }
-
+}
+```
+2. **KafkaConsumer.java**  
+```
+@Component
+public class KafkaConsumer{
+  @KafkaListener(topic="helloTopic", groupId="consumer-group")
+  public void consumer(String message){
+    System.out.println(message);
+  }
 }
 ```
