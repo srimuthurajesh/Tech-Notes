@@ -1,4 +1,5 @@
 ## SPRING Framework    
+
 -application dev framework for javaEE	 
 -1998 -2002 by spring.org- Rod johnson  
 -interface21 is old name  
@@ -37,15 +38,23 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
 -it will force to define afterPropertiesSet(), destroy() methods  
 
-**Annotations to remember**:  
-
+### Annotations to remember:  
+#### Spring core Annotations
 Annotation|usage
 --- | --- 
-@Configuration|indicate that a class declares one or more @Bean methods
-@Bean|Indicates that a method produces a bean ```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff") Computer computer(){return new Computer();}```
+@Configuration | Indicate that a class declares one or more @Bean methods
+@Bean | Indicates that a method produces a bean <br/>```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff") Computer computer(){return new Computer();}```
+@PreDestroy, @PostConstruct | Alternative way for bean initMethod and destroyMethod.
+@ComponentScan("com.controller")| For scanning @Configuration and @Controller classes
+@Component | Spring auto detect our custom beans 
+@Service | same like @Component, serve as service  
+@PropertySource | Adding property file for spring env, also @PropertySources for multi files  
+@Repository | same like @Component, advisable as DAO classes  
+@Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
+@Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
 
 
- 
+
 @Controller  - for controller classes  
 @RequestMapping  - URI mapping for controller classes  
 @RestController -  consists @Controller,@ResponseBody, handles Req/Res  
