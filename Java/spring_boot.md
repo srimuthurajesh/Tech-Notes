@@ -1,14 +1,23 @@
-## SPRING BOOT  
+# Spring Boot  
 
-### Features:
+## Advantages of spring boot:
+1. Starter dependencies
+2. Actuator
+3. Embedded server
+4. Cli tool
+5. Auto configuration
+6. Spring dev tools
+
+
+## Features:
 **Auto Configuration** - It as lot of default configurations.  
-**Starter dependencies** -  
+### Starter dependencies    
 1. spring-boot-starter-web : it consists of tomcat,validation,jackson-databind,spring-webmvc   
 2. spring-boot-devtools : fast restarts, LiveReload  
 3. spring-boot-starter-data-jpa : JPA API using Spring DataRepository and Hibernate  
 4. database driver - h2,mysql etc  
 
-**Actuator** - 
+### Actuator: 
 1) List beans configures in runtime   
 2) can view auto configuration decisions  
 3) View Env variable, commandline args, application properties  
@@ -17,21 +26,25 @@
 	c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
 	d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
 	e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
+4) We can configure in Application.properties  
+management.endpoints.web.exposure.include=*  			// Enable all actuator endpoints  
+management.endpoints.web.exposure.exclude=beans,mapping  	// endpoints to exclude  
+management.endpoints.web.base-path=/actuatorSample 		// http://localhost:8080/actuatorSample/health  
 
-**Commands:**  
-mvn spring-boot:run    // only if maven locally installed  
-mvnw spring-boot:run // if maven not installed   
-mvn package // to make jar file in taget folder  
-java -jar app.jar  // to run jar file  
+### CLI Commands:    
+```mvn spring-boot:run```    // only if maven locally installed  
+```mvnw spring-boot:run``` // if maven not installed   
+```mvn package``` 	// to make jar file in taget folder  
+```java -jar app.jar```  // to run jar file  
 
 ### Annotations:
 1. **@SpringBootApplication**  
 -combines of @Configuration,@EnableAutoConfiguraion,@ComponentScan    
 -scan its current package/subpackage for componentscan controllers   
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
-2. 
+2. @EnableAutoConfiguration: 
 
-### Application.properties   
+### Application.properties File 
 -File path: src/resources/  
 -https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html   
 
@@ -44,10 +57,7 @@ spring.jpa.show-sql=true
 spring.jpa.generate-ddl=update  
 server.servlet.context-path=/myapp   // http://localhost:8080/myapp/  
 server.servlet.session.timout=15m  
-//**Actuator**   
-management.endpoints.web.exposure.include=*  			// Enable all actuator endpoints  
-management.endpoints.web.exposure.exclude=beans,mapping  	// endpoints to exclude  
-management.endpoints.web.base-path=/actuatorSample 		// http://localhost:8080/actuatorSample/health   
+ 
 connection.pool.initialPoolSize=5  
 connection.pool.minPoolSize=5  
 connection.pool.maxPoolSize=20  
@@ -58,16 +68,14 @@ spring.profiles.active=qa    //then spring will consider application-qa.properti
 
 ---
 
-**Spring boot dev tools**: Autoreload  
+### Spring boot dev tools: 
+-Autoreload  
 -Add dependency spring-boot-devtools in pom.xml  
 -these folder will not autoreload: /META-INF,/resources,/static,/public,/templates  
 spring.devtools.restart.additional-paths = /path-to-folder  
 spring.devtools.restart.exclude=static/**,public/**	//You can also configure folders to exclude    
 
-**Spring boot Actuator**: monitor,manage spring application, provides endpoints like \/actuator/health.   
-add dependency spring-boot-starter-actuator in pom.xml  
-
-**Database operation**  
+## Database operation  
 -automatic configure dataSource based on:  
 1.Jdbc db driver:mysql-connecter-java  
 2.Spring ORM: spring-boot-started-data-jpa  
@@ -112,15 +120,12 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 -will provide meta data with response like size,totalElements,totalPages,number   
 -will provide Natheos details like, history links   
 
-### Exception Handling  
-@ControllerAdvice : exception class annotation   
-@ExceptionHandler(value = ProductNotfoundException.class) : method annotation   
- 
 ### Spring security  
 Browser -> **Security interceptor**(Default login page) -> spring controller
 
 spring.security.user.name=root  
-spring.security.user.password=root  
+spring.security.user.password=root 
+
 ```	
 @Configuration
 @EnableWebSecurity
@@ -155,24 +160,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-**Standard springboot folder structure**:  
-```
->mvnw - perform mvnw spring-boot:run    
->mvnw.cmd - perform clean compile test  
->pom.xml 
->src
-	>main
-		>java  - java files  
-		>resources  
-			>static - has html css js img. dont use webapp folder  
-			>templates - for Themeleaf, FreeMaker, Mustache  
-			application.properties
-	>test  
-		>java - test files   
-```		
-
 ### Spring Logging:
 SpringConreoller -> slf4j -> logback  
+
 ```
 Logger log = LoggerFactory.getLogger(HelloController.class);  
 logger.info("it is log info");  
@@ -200,3 +190,21 @@ Scheduler annotation
 1. @Scheduled(fixedDelay=5000)  - end of last execution and the start of next execution is fixed  
 2. @Scheduled(fixedRate=5000)  -  beginning of the task execution does not wait for the completion of the previous execution.  
 3. @Scheduled(initialDelay=1000,fixedRate=5000)  - executed initially with a delay and then continues with the specified fixed rate.  
+
+## Standard springboot folder structure
+  
+```
+>mvnw - perform mvnw spring-boot:run    
+>mvnw.cmd - perform clean compile test  
+>pom.xml 
+>src
+	>main
+		>java  - java files  
+		>resources  
+			>static - has html css js img. dont use webapp folder  
+			>templates - for Themeleaf, FreeMaker, Mustache  
+			application.properties
+	>test  
+		>java - test files   
+```		
+
