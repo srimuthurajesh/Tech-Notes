@@ -38,6 +38,14 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 -it will force to define afterPropertiesSet(), destroy() methods  
 
 **Annotations to remember**:  
+
+Annotation|usage
+--- | --- 
+@Configuration|indicate that a class declares one or more @Bean methods
+@Bean|Indicates that a method produces a bean ```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff") Computer computer(){return new Computer();}```
+
+
+ 
 @Controller  - for controller classes  
 @RequestMapping  - URI mapping for controller classes  
 @RestController -  consists @Controller,@ResponseBody, handles Req/Res  
