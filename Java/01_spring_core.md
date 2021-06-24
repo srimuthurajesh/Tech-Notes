@@ -1,10 +1,8 @@
 # Spring Framework    
 
--application dev framework for javaEE	 
--1998 -2002 by spring.org- Rod johnson  
--interface21 is old name  
--EJB seems like winter, thus spring name came    
--called as framework of frameworks  
+-When: 1998 -2002 by spring.org- Rod johnson  
+-Name reason: interface21 is old name  -EJB framework seems like winter, thus spring name came    
+-called as Framework of Frameworks  
 
 **Advantages**: loosely coupling, lightweight, easy to test, flexible(configurable)
 
@@ -16,11 +14,11 @@
 5. Test	- junit, testNG  
 
 ### IOC container  
-- create,manage,wire,configure object. It performs:    
+-create,manage,wire,configure object. It performs:    
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
 2. **Dependency Injection(DI)**: where object define their dependencies via 
 
-**Way of Injections**: setter/contructor injection  
+**Two Ways of Injections**: setter/contructor injection  
 **Beans**: objects present in IOC container  
 
 **Bean scope**:  
@@ -86,17 +84,9 @@ Annotation|Level|Usage
 @PatchMapping :  shortcut for @RequestMapping(method = RequestMethod.PATCH)
 
 
-@ConfigurationProperties
-
-
 **Two types of Response @RestController**:  
 1.Add Jackdon-bind pom.xml, just return object list  
 2.use ResponseEntity<> class - ex: return new ResponseEntity<>(ResBody,HttpCode);  
-
-**Exception handling**:  
-@ExceptionHandler a method to handle exception in controller  
-@ControllerAdvise - a class consists of @ExceptionHandler functions  
-ErrorResponse body consists of- 1.status,2.msg,3.timestamp   
 
 
 **File upload:**
