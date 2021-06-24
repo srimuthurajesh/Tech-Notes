@@ -1,6 +1,8 @@
 - Follows MVC design pattern  
 **1. Configure pom.xml**: add dependency spring-webmvc  
+
 **2. Configure web.xml**
+
 ```
 <web-app>
   <welcome-file-list>
@@ -33,7 +35,9 @@
   </init-param>
 </web-app>
 ```
+
 **2a.DispatcherServletInitializer.java** add pom.xml dependency servlet-api
+
 ```
 public class DispatcherServletInitializer implments abstractAnnotationConfigDispatcherServletInitializer{
 	@Override
@@ -50,7 +54,9 @@ public class DispatcherServletInitializer implments abstractAnnotationConfigDisp
 	}
 }
 ```
+
 **3. Configure dispatcher-servlet.xml**
+
 ```
 <beans>
   <context:component-scan base-package="com.controller">
@@ -61,7 +67,9 @@ public class DispatcherServletInitializer implments abstractAnnotationConfigDisp
   </bean>
 </beans>
 ```
+
 **3a. DispatcherServlet.java**
+
 ```
 @Configuration
 @EnableWebMvc //it is <mvc:annotaion-driven/>
@@ -76,7 +84,9 @@ public class DispatcherServlet(){
 	}
 }
 ```
+
 **4. Create controller class**
+
 ```
 @Controller  
 public class HelloController {  
@@ -87,7 +97,9 @@ public class HelloController {
     }     
 }  
 ```
+
 ---
+
 **HANDLER MAPPING**:- Helps to choose controller
 1. BeanNameUrlHandlerMapping
 2. SimpleUrlHandlerMapping
@@ -102,14 +114,18 @@ public class HelloController {
 5. VelocityViewResolver
       
 **Model interface:**
+
 ```
 public String display(Model m){
   m.addAllAttributes(Collection<?> arg);
   m.addAttribute("attributeName",attributeValue);
   return "pageName";
 }
+
 ```
+
 **ModelAndView class:**
+
 ```
 public ModelAndView display(){
   ModelAndView m = new ModelAndView("pageName");
@@ -117,27 +133,36 @@ public ModelAndView display(){
   return m;
 }
 ```
+
 ---
+
 **Annotaions**:
 1. **@Controller** - 	indicates class as a web request handler.
 			it consists of @Component,@Target(value=TYPE),@Retention(value=RUNTIME),@Documented	
 2. **@RequestMapping** - handles http request and map to controler methods(or class) 
+
 ```
 @RequestMapping(value={"/display","/show"})   //handles multiple url
 @RequestMapping(method = RequestMethod.GET)   //handles based on http get,post,delete,put,patch
 @RequestMapping()                             //handles default url
 @GetMapping(value=".display")                 //shortcuts. also use PostMapping,PutMapping,DeleteMapping,PatchMapping
 ```
+
 3. **@RequestParam** - get request parameters
+
 ```
 @RequestMapping(value = "user") 
 String display(@RequestParam("id") String personId)       //id will come in post parameters
 String display(@RequestParam(value="id",required = false, defaultValue = "John") String personId)
 ```
+
 4. **@PathVariable** - extracts value from url
+
 ```
 @RequestMapping(value = "user/{id}") 
 String display(@PathVariable("id") String personId)      
 ```
+
 5. **@SessionAttribute**:
+
 6. **@Qualifier("beanName")**: avoid ambiguity
