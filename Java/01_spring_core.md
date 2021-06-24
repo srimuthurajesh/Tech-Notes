@@ -1,4 +1,4 @@
-## SPRING Framework    
+# Spring Framework    
 
 -application dev framework for javaEE	 
 -1998 -2002 by spring.org- Rod johnson  
@@ -38,43 +38,50 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
 -it will force to define afterPropertiesSet(), destroy() methods  
 
-### Annotations to remember:  
-#### Spring core Annotations
+## Annotations to remember:  
+### Spring core Annotations
 
 Annotation|usage
 --- | --- 
 @Configuration | Indicate that a class declares one or more @Bean methods
-@Bean | Indicates that a method produces a bean <br/>```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff") Computer computer(){return new Computer();}```
+@Bean | Used inside @Configuration class and indicates that a method produces a bean <br/>```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff")``` <br/>```Computer computer(){ return new Computer();  }```
 @PreDestroy, @PostConstruct | Alternative way for bean initMethod and destroyMethod.
-@ComponentScan("com.controller")| For scanning @Configuration and @Controller classes
+@ComponentScan("com.controller")| Used with @Configuration and use to know packages of annotated classes
 @Component | Spring auto detect our custom beans 
 @Service | same like @Component, serve as service  
-@PropertySource | Adding property file for spring env, also @PropertySources for multi files  
 @Repository | same like @Component, advisable as DAO classes  
+@PropertySource | class level, along with @Configuration, Adding property file for spring env, <br/>also @PropertySources for multi files  <br/> ```@PropertySource(classpath:rasna-info.properties)```
 @Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
 @Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
-@Qualifier | when there is two implementation <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
+@Qualifier | when there is two implementation for the interface <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
+@Lazy | Used along with @Component, bean will be created and initialized only when it is first requested.   
+@Value | Indicates default value from property file or hardcode <br/> ```@Value("rajesh") @Value("${value.from.file}") String name;```  
+
+### Spring Rest Annotations:  
+
+Annotation|usage
+--- | --- 
+@Controller | capable of handling multiple request mappings.  
+@RequestMapping | method level mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```
+@RequestBody | ```public void addMember(@RequestBody Member member) { }```
+@RequestParam | ``` public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
+@PathParam | ``` @GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
+@PathVariable | ``` @GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
+@CookieValue | ``` public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@CrossOrigin | method level ```@CrossOrigin(origins = "http://example.com")```  
 
 
-@Controller  - for controller classes  
-@RequestMapping  - URI mapping for controller classes  
+@GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
+@PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
+@PutMapping :  shortcut for @RequestMapping(method = RequestMethod.PUT)  
+@DeleteMapping :  shortcut for @RequestMapping(method = RequestMethod.DELETE)
+@PatchMapping :  shortcut for @RequestMapping(method = RequestMethod.PATCH)
+
+
 @RestController -  consists @Controller,@ResponseBody, handles Req/Res  
-@RequestMapping("/getEmployees") -default GET method  
-@RequestMapping(value="/getEmployees", method=RequestMethod.GET)  -support GET,PUT,DELETE,POST  
 
-@GetMapping("/getEmployees")  - same as @RequestMapping  
-@PostMapping("/addEmployee")
-@RequestBody - arg ex:Employee addEmployee(@RequestBody Employee emp) 
-@PutMapping("/updateEmployee")  
-@DeleteMapping("/deleteEmployees/{empId}")
-@PathVariable - arg ex:Employee delEmployee(@PathVariable int empId)  
-
-@Path("/sample")
-@QueryParam 
-@PathParam
 
 @ResponseBody - sending object as Response  
-@pathVariable - for mapping dynamic value from URI to handler method arg   
 @Autowired    
 @Component   
 @Qualifier("beanName")  - to avoid ambiguos with same class name   
