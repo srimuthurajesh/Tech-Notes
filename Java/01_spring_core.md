@@ -23,7 +23,7 @@
 
 **Bean scope**:  
 1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
-2. Proprotype - new instance will create Each time, the bean requested    
+2. Prototype - new instance will create Each time, the bean requested    
 3. Request - each HTTP request will have its own instance of bean  
 4. Session - bean defined to Http session scope
 5. Global-session - bean defined to Http Global session scope   
