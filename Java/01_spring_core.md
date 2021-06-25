@@ -76,6 +76,8 @@ Annotation|Level|Usage
 @ExceptionHandler | Method | Handles exception and return values. comes under@ControllerAdvice or @Controller class <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
 @ControllerAdvice | Class | Must declared class if it has methods of @ExceptionHandler, @InitBinder, or @ModelAttribute
 @RestControllerAdvice | Class | combines @ControllerAdvice and @ResponseBody  
+@Valid | Arg | addUser(@Valid @RequestBody User user), where support annotations are <br/> @NotBlank,   
+
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
@@ -159,6 +161,6 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 @Qualifier - give bean id, avoid ambiquity while using autowired  
 @Autowired - provides dependency  
 @Value() - field injection directly or via property file   
-	@PropertySource("classpath:rasna-info.properties")
+@PropertySource("classpath:rasna-info.properties")
 	
 ---
