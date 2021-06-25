@@ -62,6 +62,10 @@ connection.pool.initialPoolSize=5
 connection.pool.minPoolSize=5  
 connection.pool.maxPoolSize=20  
 connection.pool.maxIdleTime=3000  
+
+//Url path 
+server.servlet.context-path=/ClientApp
+
 //**Spring profiles**    
 spring.profiles.active=qa    //then spring will consider application-qa.properties file
 //also give it via -D in commandline
