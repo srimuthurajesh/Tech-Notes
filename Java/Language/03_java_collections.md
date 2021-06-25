@@ -19,7 +19,8 @@ framework/container to access prepackaged data structure.
 4. **EnumSet**: set implementation which contain only enum values,     	
 
 ## Map: has string as key  
-1. **HashMap**: Null key allowed, implements hashtable underlying, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);      
+1. **HashMap**: Null key allowed, implements hashtable underlying, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
+    to avoid collision, we need to override hashCode() method, good practise        
 2. **HashTable**: Null key/value not allowed, slow, thread safe  
 3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
 4. **NavigableMap**:  
