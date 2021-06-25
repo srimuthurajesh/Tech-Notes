@@ -84,10 +84,10 @@ if I call a constructor of child class, first parent class constructors will exe
 ## Abstraction  
 -Hiding the implementation  
 1. Abstract(0 to 100% ) 
-2. Interface (100%) - variables are public static final by default, methods are public abstract
-	a) Normal interface
-	b) Marker interface - empty body eg:cloneable, serializable
-	c) Functional interface - have only one method declaration
-	d) defualt access modfier, method which has body	
+2. Interface (100%) - variables are public static final by default, methods are public abstract  
+	a) Normal interface  
+	b) Marker interface - empty body eg:cloneable, serializable  
+	c) Functional interface - have only one method declaration  
+	d) defualt access modfier, method which has body	  
 
 
