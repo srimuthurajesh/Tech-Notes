@@ -50,6 +50,7 @@ Annotation|usage
 @Repository | same like @Component, advisable as persistance classes, throws Spring’s DataAccessException    
 @PropertySource | class level, along with @Configuration, Adding property file for spring env, <br/>also @PropertySources for multi files  <br/> ```@PropertySource(classpath:rasna-info.properties)```
 @Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
+@Autowired(requeried=false)| for optional bean loading   
 @Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
 @Qualifier | when there is two implementation for the interface <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
 @Lazy | Used along with @Component, bean will be created and initialized only when it is first requested.   
