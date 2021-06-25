@@ -1,5 +1,5 @@
 <details>
-<summary>1. Find secound, thrid larges number from array</summary>
+<summary>1. Find secound, third larges number from array</summary>
 <p>
   
 ```
@@ -20,6 +20,7 @@ public static void main(String args[]){
 ```
 </p>
 </details>  
+
 <details>
 <summary>2. Reverse sentence words </summary>
 <p>
