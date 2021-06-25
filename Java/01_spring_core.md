@@ -66,7 +66,7 @@ Annotation|Level|Usage
 @RequestBody | Arg | ```public void addMember(@RequestBody Member member) { }```
 @RequestHeader | Arg | ```get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
 @RequestParam | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }```
+@PathParam | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }``` where @Path("/{id}") used
 @PathVariable | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
 @CookieValue | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
 @RequestPath | Arg | same as @RequestParam, but used while having multipart file<br/>```public getItem(@RequestPath("username") String username, @RequestPath MultipartFile  file){ }```
