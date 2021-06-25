@@ -53,7 +53,23 @@ default has method body and also static method allowed inside interface
 2. filter: select elements as per the Predicate passed as argument.    
 ```List result = listNames.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());```    
 3. sorted: The sorted method is used to sort the stream.  
-```List result = listNames.stream().sorted().collect(Collectors.toList());```    
+```List result = listNames.stream().sorted().collect(Collectors.toList());```
+sorted()  
+sorted(Collections.reverseOrder())  
+sorted(Comparator.comparingInt(User::getAge))    
+```
+.sorted(new Comparator<User>() {
+            @Override
+            public int compare(User o1, User o2) {
+                if(o1.getAge() == o2.getAge())
+                    return o1.getName().compareTo(o2.getName());
+                else if(o1.getAge() > o2.getAge())
+                    return 1;
+                else return -1;
+            }
+        })   
+```
+
 4. distinct: works for predefined datatype  
 ```List result = age.stream().distinct().collect(Collectors.toList());```    
 
