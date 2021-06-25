@@ -28,6 +28,7 @@ class Hello{
 ```
 
 ### 3. Optional  -   
+-wrapping around the object  
 avoid NullpointerException smartly  
 ```
 Optional<String> checkNull =  Optional.ofNullable(str);  
@@ -53,12 +54,20 @@ default has method body and also static method allowed inside interface
 ```List result = listNames.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());```    
 3. sorted: The sorted method is used to sort the stream.  
 ```List result = listNames.stream().sorted().collect(Collectors.toList());```    
+4. distinct: works for predefined datatype  
+```List result = age.stream().distinct().collect(Collectors.toList());```    
 
 #### Terminal Operations:  
-1. collect: return the result      
+1. collect: return the result       
+   	a) Collecters.toList    
+	b) Collecters.joining("deLimiter")    
+	c) Collectors.groupBy(obj::getYear)   //wil return map<int, obj>    
+	d) Collectors.averagingInt(obj::getYear)  //will return double  
+	e) Collectors.partitioningBy(m-> m.getRating() > 3)   //will return map<boolean, obj>  
 ```Set square = number.stream().map(x->x*x).collect(Collectors.toSet());```       
 2. forEach: iterate through every element of the stream.  
-```number.stream().map(x->x*x).forEach(y->System.out.println(y));```        
+```number.stream().map(x->x*x).forEach(y->System.out.println(y));```   
+normal print usage ```list.forEach((k,v)->sysout(k))```       
 3. reduce: reduce elements stream to a single value. it takes a BinaryOperator as a parameter.     
 ```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
 
