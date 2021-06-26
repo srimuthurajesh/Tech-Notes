@@ -113,7 +113,12 @@ Convert one datatype to another
 Byte -> short -> int -> long -> float -> double  
 
 ### Array:    
-Group of similar datatype ```int rajesh[]=new int[3];```  
+Group of similar datatype ```int rajesh[]=new int[3];```   
+int a[];  
+int[] a;    
+int[] a = new int[4];    
+int[] a = new int[]{1,2,3,4};    
+
 
 ### String:  
 - class represents sequence of char  
