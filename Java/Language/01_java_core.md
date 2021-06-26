@@ -118,6 +118,9 @@ int a[];
 int[] a;    
 int[] a = new int[4];    
 int[] a = new int[]{1,2,3,4};    
+**Important methods**:   
+List<?> a = Arrays.asList(a);    
+List<?> a = Lists.newArrayList(a);  
 
 
 ### String:  
