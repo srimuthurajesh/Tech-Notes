@@ -90,14 +90,16 @@ execService.shutdown();
 ```
 
 **Methods of ExecuterService:**
-execute(Runnable)  
+execute(Runnable)  - is voide
 submit(Runnable)  - return result as Future object  
-submit(Callable)  
+submit(Callable)  - return Object  
 invokeAny(...)  - try invoke collection of callable, executes anyone of callable other dies.
 invokeAll(...)  - invoke all the callable
 shutdown() - no longer accept new tasks   
 shutdownNow() - stops all executing task immediately  
-awaitTermination() - block thread until either ExecutorService has shutdown or timeout   
+awaitTermination() - block thread until either ExecutorService has shutdown or timeout    
+schedule(callableTask, 1, TimeUnit.SECONDS) - task execute after a time delay  
+scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task schedules at fixed rate  
 
 **Java thread dump**: list every thread in the JVM is doing at a particular point in time.   
 ## Java Concurreny api  
