@@ -20,7 +20,7 @@ framework/container to access prepackaged data structure.
 
 ## Map: has string as key  
 1. **HashMap**: Null key allowed, implements hashtable underlying, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
-    to avoid collision, we need to override hashCode() method, good practise  
+    to avoid collision, we need to override hashCode() method, good practise. Default size is 16node    
     Note: In java 8, Hashmap use balanced tree instead of linkedList          
 2. **HashTable**: Null key/value not allowed, slow, thread safe  
 3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
