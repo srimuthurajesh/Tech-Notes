@@ -106,3 +106,22 @@ scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task sched
 **ReentrantLock**: same as Synchronized, but more flexible  
 **Callable interface**: same as Runnable, but more improved version, from java1.5  
 **Volatile**: variable that shared across all objects  
+
+## Atomic variables
+-synchronized works in variable level, and it has some methods   
+AtomicBoolean  
+AtomicInteger, AtomicIntegerArray, AtomicIntegerFieldUpdater  
+AtomicLong, AtomicLongArray, AtomicLongFieldUpdater  
+AtomicMarkableReference  
+AtomicReference, AtomicReferenceArray, AtomicReferenceFieldUpdater  
+AtomicStampedReference	  
+DoubleAccumulator  
+DoubleAdder  
+LongAccumulator	  
+LongAdder  
+
+**Atomic methods**  
+incrementAndGet()    
+decrementAndGet()  
+addAndGet()  
+compareAndSet()  
