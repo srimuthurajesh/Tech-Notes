@@ -5,6 +5,8 @@
 2. Nested static: A.B Bobj = new A.B();  
 3. Anonymous : A obj = new A(){.........}  
 **Steps to create immutable class**: class and variables are final, parameterized constructor, only getters no setters  
+Note: ClassNotFoundException=  while Class.forName() or loadClass()   
+NoClassDefFoundError=class present in compiletime, but not in runtime    
 
 ## Constructor  
 -intialize object, no return type, cannot make constructor final.  
