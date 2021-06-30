@@ -26,7 +26,8 @@ framework/container to access prepackaged data structure.
 3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
 4. **NavigableMap**:  
 5. **LinkedHashMap**: ordered HashMap  
-6. **ConcurrentHashMap**: same like hashtable, but not have locks like hashtable  
+6. **ConcurrentHashMap**: same like hashtable, but not have locks like hashtable.   
+ConcurrentHashMap doesnt throw ConcurrentModifiedException when multiple threads runs on it. where hashmap throws.  
 
 1.Object put(Object key, Object value)  
 2.void putAll(Map map)  
@@ -43,7 +44,8 @@ framework/container to access prepackaged data structure.
 3. remove(): same as poll(), but throw NoSuchElementException if queue empty  
 
 
-**Concurrent collection classes**:  alternative to java collections classes with providing concurrency  
+**Concurrent collection classes**:  alternative to java collections classes with providing concurrency    
+
 **Iterator**  Iterator itr = list.iterator(); while (itr.hasNext()) {System.out.print(itr.next() + " "); }   
 **List Iterator**: traverse front and back,  ListIterator i = list.listIterator();while (i.hasPrevious()) {System.out.print(i.previous() + " "); }
 **Synchronized Collection**: 
