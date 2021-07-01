@@ -128,4 +128,5 @@ Collection.sort(stList, comp);
 
 **FailFast** : CopyOnWriteArrayList, ConcurrentHashMap    
 it works by checking internal flag called modCount, updated each time a collection is modified    
+it will throw ConcurrentModificationException if modcount changes  
 **FailSafe Iterator** : ArrayList, HashMap  
