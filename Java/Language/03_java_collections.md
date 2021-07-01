@@ -125,3 +125,6 @@ Comparator<Student> comp = new Comparator<Student>(){
 }
 Collection.sort(stList, comp);
 ```
+
+**FailFast** : CopyOnWriteArrayList, ConcurrentHashMap  
+**FailSafe Iterator** : ArrayList, HashMap  
