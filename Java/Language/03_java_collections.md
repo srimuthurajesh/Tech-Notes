@@ -126,5 +126,6 @@ Comparator<Student> comp = new Comparator<Student>(){
 Collection.sort(stList, comp);
 ```
 
-**FailFast** : CopyOnWriteArrayList, ConcurrentHashMap  
+**FailFast** : CopyOnWriteArrayList, ConcurrentHashMap    
+it works by checking internal flag called modCount, updated each time a collection is modified    
 **FailSafe Iterator** : ArrayList, HashMap  
