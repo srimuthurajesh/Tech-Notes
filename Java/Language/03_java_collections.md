@@ -25,7 +25,7 @@ framework/container to access prepackaged data structure.
     - to avoid collision, hashmap do 1,Seperate chaning. 
     - Default size is 16 node     
     - load factor 0.75f  
-    Note: In java 8, Hashmap use balanced tree instead of linkedList          
+    Note: In java 8, Hashmap use balanced tree instead of linkedList after threshold_value=8.           
 2. **HashTable**: Null key/value not allowed, slow, thread safe  
 3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
 4. **NavigableMap**:  
