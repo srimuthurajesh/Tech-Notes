@@ -19,8 +19,12 @@ framework/container to access prepackaged data structure.
 4. **EnumSet**: set implementation which contain only enum values,     	
 
 ## Map: has string as key  
-1. **HashMap**: Null key allowed, implements hashtable underlying, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
-    to avoid collision, we need to override hashCode() method, good practise. Default size is 16node    
+1. **HashMap**: Null key allowed, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
+    - hashcode of null always zero 0
+    - Need to override hashcode and equals method  
+    - to avoid collision, hashmap do 1,Seperate chaning. 
+    - Default size is 16 node     
+    - load factor 0.75f  
     Note: In java 8, Hashmap use balanced tree instead of linkedList          
 2. **HashTable**: Null key/value not allowed, slow, thread safe  
 3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
