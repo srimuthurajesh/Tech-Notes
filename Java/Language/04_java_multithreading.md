@@ -90,9 +90,9 @@ execService.shutdown();
 ```
 
 **Methods of ExecuterService:**
-execute(Runnable)  - is voide
-submit(Runnable)  - return result as Future object  
-submit(Callable)  - return Object  
+execute(Runnable)  - is void
+submit(Runnable)  - accept both runnable, callable. return result as Future object(which implements get() method)  
+ 
 invokeAny(...)  - try invoke collection of callable, executes anyone of callable other dies.
 invokeAll(...)  - invoke all the callable
 shutdown() - no longer accept new tasks   
