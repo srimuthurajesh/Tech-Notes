@@ -88,9 +88,18 @@ normal print usage ```list.forEach((k,v)->sysout(k))```
 ```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
 
 
-
-Reducing for loop code using **IntStream**  ```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
-Remove duplicates using stream ```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```  
+#### Stream problems examples  
+1. Reducing for loop code using **IntStream**    
+```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
+2. Remove duplicates using stream   
+```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```    
+3. Get age greater than 10:   
+```list.stream().filter(x->x.getAge()>10).foreach(x->System.out.println(x.getName()))```  
+4. Get maximum age :   
+```
+int maxAge = list.stream().map(x=>x.getAge).max(Integer::compare).get();
+list.stream().filter(x->x.getAge==maxAge).foreach(x->System.out.println(x.getName()));
+```  
 
 ### 7. Date time API  
 -thread-safe: removed setters of Date api  
