@@ -99,9 +99,29 @@ normal print usage ```list.forEach((k,v)->sysout(k))```
 ```
 int maxAge = list.stream().map(x=>x.getAge).max(Integer::compare).get();
 list.stream().filter(x->x.getAge==maxAge).foreach(x->System.out.println(x.getName()));
-```  
+```    
+5. Get Average of Array
+```
+OperationalDouble avg = Arrays.stream(arr).average();
+avg.getAsDouble();  
+```
+6. Join two array using Stream  
+```
+String[] str = {"a","b"}; String[] str1 = {"c","d"};
+Stream.concat(Arrays.stream(str),Arrays.stream(str1)).toArray(size->new String[size]);
+```
+7. Count the particular chars from string  
+```
+String name= "rajesh";
+name.stream().chars().filter(x->x=='a').count();
+```
 
 ### 7. Date time API  
 -thread-safe: removed setters of Date api  
 -new operations - added new methods for Date api  
 
+### 8. StringJoiner class
+```
+StringJoiner str = new StringJoiner(",","[","]"); 	//delimiter, prefix, suffix
+str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
+```
