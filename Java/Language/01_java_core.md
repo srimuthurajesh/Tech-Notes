@@ -138,7 +138,9 @@ List<?> a = Lists.newArrayList(a);
 - implements Serializable, Comparable and CharSequence interfaces  
 
 **String creation**:  
-- String - by string literal or new keyword   
+- String - by string literal 
+- new String() - create new space from string pool  
+- new String().intern() - used to return value from string pool     
 - StringBuffer - mutable, thread safe  
 - StringBuilder - mutable, no thread safe, efficient  
 
