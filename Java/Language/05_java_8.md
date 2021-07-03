@@ -113,7 +113,7 @@ Stream.concat(Arrays.stream(str),Arrays.stream(str1)).toArray(size->new String[s
 7. Count the particular chars from string  
 ```
 String name= "rajesh";
-name.stream().chars().filter(x->x=='a').count();
+name.chars().filter(x->x=='a').count();
 ```
 
 ### 7. Date time API  
