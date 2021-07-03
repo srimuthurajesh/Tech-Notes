@@ -185,7 +185,13 @@ Integer i = Integer.valueof(j);  or Integer i =j;
 ## Generics:   
 parameterized types  
 Adv: 1.Type safety, 2.Typecast not needed, 3.Compilertime checking  
-
+```
+class MyGen<T>{  
+	T obj;  
+	void add(T obj){this.obj=obj;}  
+	T get(){return obj;}  
+}  
+```
 
 ## Serialization : 
 mechanism of writing obj into byte stream, implement serializable marker interface
