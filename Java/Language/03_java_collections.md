@@ -78,14 +78,14 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 
 **Default size**:  
 
-|Collections | Capacity |
-|:------------|:----------|
-|ArrayList   | 10       |
-|Vector      | 10       |
-|HashSet     | 16       |
-|HashMap     | 16       |
-|HashTable   | 11       |
-|HashSet     | 16, LoadFactor:0.75       |
+|Collections | Initial Capacity | Load factor |
+|:------------|:----------|:----------|
+|ArrayList   | 10       |0.75|
+|Vector      | 10       ||
+|HashSet     | 16       ||
+|HashMap     | 16       ||
+|HashTable   | 11       ||
+|HashSet     | 16       | 0.75       |
 
 **Collections vs Collection** 
 Collections are utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection.  
