@@ -118,9 +118,19 @@ int a[];
 int[] a;    
 int[] a = new int[4];    
 int[] a = new int[]{1,2,3,4};    
-**Important methods**:   
-List<?> a = Arrays.asList(a);    
-List<?> a = Lists.newArrayList(a);  
+**Arrays Important methods**:   
+Arrays.asList(arr);      
+Arrays.sort(arr);   //use mergeosrt for object, and quick sort fro primitive datatype   
+Arrays.sort(arr, new Comparator());    
+Arrays.binarySearch(arr, searchValue);    
+Arrays.binarySearch(arr, fromIndex, toIndex, searchValue);  
+Arrays.compare(intArr, intArr1);    
+Arrays.copyOf(arr, 10); //create new clone array, also with initial size   
+Arrays.copyOfRange(intArr, 1, 3);   
+Arrays.hashCode(arr);  //return hashcode  
+Arrays.equals(arr1, arr2);    
+Arrays.toString(arr);  //print array   
+List<?> a = Lists.newArrayList(a);   
 
 
 ### String:  
