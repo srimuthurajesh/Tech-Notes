@@ -100,7 +100,7 @@ create only one time, called without reference
 -```class.forName(" ");``` executes static block & load class
 
 ### Final :  
-assigned only once, mostly in constructor directly
+assigned only once, mostly in constructor directly. cannot modify once it assigned  
 1. final variable - cannot changed  ```final int maxSpeed =100;```
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
