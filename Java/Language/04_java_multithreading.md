@@ -105,7 +105,7 @@ scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task sched
 **Java thread dump**: list every thread in the JVM is doing at a particular point in time.   
 ## Java Concurreny api  
 **ReentrantLock**: same as Synchronized, but more flexible  
-**Callable interface**: same as Runnable, but more improved version, from java1.5  
+**Callable interface**: implemnets call method, return Future object, used in Executerservice    
 **Volatile**: variable that shared across all objects  
 
 ## Atomic variables
