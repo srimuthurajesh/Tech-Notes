@@ -245,7 +245,9 @@ try(FileOutputStream fileOutputStream=new FileOutputStream("/home/irfan/scala-wo
 finally{  
        System.out.println("Finally executes after closing of declared resources.");  
 }  
-```
+```  
+NoClassDefFoundError: runtime, classfile missing at run time. 
+ClassNotFoundException: runtime, try to load the class while Class.forName() or loadClass()     
 
 ---
 
