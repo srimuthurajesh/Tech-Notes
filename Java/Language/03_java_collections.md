@@ -19,19 +19,33 @@ framework/container to access prepackaged data structure.
 4. **EnumSet**: set implementation which contain only enum values,     	
 
 ## Map: has string as key  
-1. **HashMap**: Null key allowed, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
+1. **HashTable**: Null key/value not allowed(cannot run hashcode for null), slow, thread safe  
+2. **HashMap**: Null key allowed, unordered, not thread safe, can make synchronized Collections.synchronizedMap(hashMap);
     - hashcode of null always zero 0
     - Need to override hashcode and equals method  
-    - to avoid collision, hashmap do 1,Seperate chaning. 
+    - to avoid collision, hashmap do 1.Seperate chaning, 2.linear probing   
     - Default size is 16 node     
     - load factor 0.75f  
-    Note: In java 8, Hashmap use balanced tree instead of linkedList after threshold_value=8.           
-2. **HashTable**: Null key/value not allowed, slow, thread safe  
-3. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
-4. **NavigableMap**:  
-5. **LinkedHashMap**: ordered HashMap  
-6. **ConcurrentHashMap**: same like hashtable, but not have locks like hashtable.   
-ConcurrentHashMap doesnt throw ConcurrentModifiedException when multiple threads runs on it. where hashmap throws.  
+    Note: In java 8, Hashmap use balanced tree instead of linkedList after threshold_value=8.      
+3. **SynchronizedMap**: thread safe, but null key allowed. has Failfast iterator  
+4. **ConcurrentHashMap**: lock each record segment level, has FailSafe Iterator. Fast, preferred     
+5. **TreeMap**: implements red black tree, wherein all elements ordered as per compareTo() method    
+6. **NavigableMap**:  
+7. **LinkedHashMap**: ordered HashMap  
+
+**Looping through Map**  
+1. Using Iterator  
+```
+Iterator itr = map.keyset().iterator();
+while(itr.hasNext()){ map.get(it.next());}
+```
+2. Using keyset() and value(): for (String State : map.keySet()) (or) for (String State : map.value())   
+3. Using Map.entry<K,V>method  
+```
+for (Map.Entry<String,Float> entry : map.entrySet()) 
+{  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); }    
+```
+
 
 1.Object put(Object key, Object value)  
 2.void putAll(Map map)  
@@ -59,6 +73,7 @@ ConcurrentHashMap doesnt throw ConcurrentModifiedException when multiple threads
   4. Collections.synchronizedSet(Set s)
   5. Collections.synchronizedSortedMap(SortedMap<K,V> m)
   6. Collections.synchronizedSortedSet(SortedSet s)
+  7. Collections.singletonMap("name","rajesh"); //cannot change it  
 
 **Default size**:  
 
