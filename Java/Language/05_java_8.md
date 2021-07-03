@@ -118,7 +118,14 @@ Stream.concat(Arrays.stream(str),Arrays.stream(str1)).toArray(size->new String[s
 String name= "rajesh";
 name.chars().filter(x->x=='a').count();
 ```
+8. Print object greater than some attreibute  
+```
+list.stream().filter(i->i<40).collect(Collectors.toList());
+```
+9. List by frequency
+```
 
+```
 ### 7. Date time API  
 -thread-safe: removed setters of Date api  
 -new operations - added new methods for Date api  
