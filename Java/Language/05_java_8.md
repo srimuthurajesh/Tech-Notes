@@ -45,7 +45,9 @@ default has method body and also static method allowed inside interface
 ### 6. Stream API
 -process collections  
 #### Source operations:
-1. Stream<Int> intStream = listInt.stream();  
+1. Stream<Int> intStream = listInt.stream();   
+2. Arrays.stream(arr) or Stream.of(arr);   
+3. str.chars()   //return IntStream, contains integer code point values of the characters in the string object
 
 #### Intermediate Operations:
 1. map: returns a stream consists results of applying the given function    
@@ -86,7 +88,8 @@ sorted(Comparator.comparingInt(User::getAge))
 normal print usage ```list.forEach((k,v)->sysout(k))```       
 3. reduce: reduce elements stream to a single value. it takes a BinaryOperator as a parameter.     
 ```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
-
+4. toArray:  
+``` empList.stream().toArray(Employee[]::new); ```  
 
 #### Stream problems examples  
 1. Reducing for loop code using **IntStream**    
