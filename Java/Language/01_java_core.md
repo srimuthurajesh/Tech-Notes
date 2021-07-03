@@ -52,14 +52,14 @@ Basic unit of storage
 
 ## Datatype:  
 Predefined memory storage  
-1. **b**yte = -+128| 1 byte   
-2. **s**hort = -+32,768 | 2 byte   
-3. **i**nt = -+2,14,74,83,648 | 4 byte   
-4. **l**ong = -+9,22,33,72,03,68,54,775 | 8 byte  
-5. **f**loat = . after 6 digit| 4 byte   
-6. **d**ouble = . after 15 digit| 8 byte   
-7. **c**har = A-Z a-z 0-9 0-127ASCII| 2 byte   
-8. **b**oolean = 0 1| depends on jvm   
+1. **b**yte = -+128 size of 1 byte   
+2. **s**hort = -+32,768 size of 2 byte   
+3. **i**nt = -+2,14,74,83,648 size of 4 byte   
+4. **l**ong = -+9,22,33,72,03,68,54,775 size of 8 byte  
+5. **f**loat = . after 6 digit, size of 4 byte   
+6. **d**ouble = . after 15 digit, size of 8 byte   
+7. **c**har = A-Z a-z 0-9 0-127ASCII, size of 2 byte   
+8. **b**oolean = 0 1, size of depends on jvm   
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
