@@ -74,6 +74,8 @@ sorted(Comparator.comparingInt(User::getAge))
 
 4. distinct: works for predefined datatype  
 ```List result = age.stream().distinct().collect(Collectors.toList());```    
+5. limit()  
+6. skip() - skip upto given index   
 
 #### Terminal Operations:  
 1. collect: return the result       
@@ -88,9 +90,20 @@ sorted(Comparator.comparingInt(User::getAge))
 normal print usage ```list.forEach((k,v)->sysout(k))```       
 3. reduce: reduce elements stream to a single value. it takes a BinaryOperator as a parameter.     
 ```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
-4. toArray:  
-``` empList.stream().toArray(Employee[]::new); ```  
+4. toArray: return array of streams  
+5. min(), max(), count()  
+6. findFirst()       
 
+
+### 7. Date time API  
+-thread-safe: removed setters of Date api  
+-new operations - added new methods for Date api  
+
+### 8. StringJoiner class
+```
+StringJoiner str = new StringJoiner(",","[","]"); 	//delimiter, prefix, suffix
+str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
+```
 #### Stream problems examples  
 1. Reducing for loop code using **IntStream**    
 ```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
@@ -125,13 +138,4 @@ list.stream().filter(i->i<40).collect(Collectors.toList());
 9. List by frequency
 ```
 
-```
-### 7. Date time API  
--thread-safe: removed setters of Date api  
--new operations - added new methods for Date api  
-
-### 8. StringJoiner class
-```
-StringJoiner str = new StringJoiner(",","[","]"); 	//delimiter, prefix, suffix
-str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 ```
