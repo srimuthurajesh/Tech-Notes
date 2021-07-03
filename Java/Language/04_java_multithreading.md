@@ -71,7 +71,8 @@ t1.setDaemon(true);t1.isDaemon(true);
 2. Thread.interrupted() - return true/false   
 ---
 ## DeadLock  
--situation where two or more threads are blocked forever  
+-situation where a set of processes are blocked   
+because each process is holding a resource and waiting for another resource acquired by some other process.   
 i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
 
 **Race condition**: When multiple threads try to access same resources 
