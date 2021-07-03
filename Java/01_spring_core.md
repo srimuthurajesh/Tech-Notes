@@ -165,3 +165,31 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 @PropertySource("classpath:rasna-info.properties")
 	
 ---
+	
+## Http Call  
+
+1. **RestTemplate**  
+
+```
+RestTemplate restTemplate = new RestTemplate();
+Foo foo = restTemplate.getForObject(fooResourceUrl, Foo.class);
+Foo foo = restTemplate.postForObject(fooResourceUrl, new HttpEntity<>(new Foo("bar")), Foo.class);  
+restTemplate.delete(entityUrl);
+ResponseEntity<Foo> response = restTemplate.exchange(fooResourceUrl, HttpMethod.POST, new HttpEntity<>(new Foo("bar")), Foo.class); 
+response.getBody();
+
+```
+2. **WebClient** : non-blocking client and it belongs to the spring-webflux library. uses spring web reactive   
+```
+Flux<Foo> fooFlux = WebClient.create().get().uri(fooResourceUrl).retrieve().bodyToFlux(Foo.class);
+fooFlux.subscribe(x->sysout(x));
+	
+(or)
+
+WebClient client = WebClient.builder()
+  .baseUrl("http://localhost:8080")
+  .defaultCookie("cookieKey", "cookieValue")
+  .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE) 
+  .defaultUriVariables(Collections.singletonMap("url", "http://localhost:8080"))
+  .build();
+```
