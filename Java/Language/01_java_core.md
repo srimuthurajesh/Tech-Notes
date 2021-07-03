@@ -183,7 +183,9 @@ Integer i = Integer.valueof(j);  or Integer i =j;
  ```
 
 ## Generics:   
-parameterized types
+parameterized types  
+Adv: 1.Type safety, 2.Typecast not needed, 3.Compilertime checking  
+
 
 ## Serialization : 
 mechanism of writing obj into byte stream, implement serializable marker interface
