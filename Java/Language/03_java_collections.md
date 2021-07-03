@@ -142,6 +142,6 @@ Collection.sort(stList, comp);
 ```
 
 **FailFast Iterator** : ArrayList, HashMap    
-**FailSafe** : CopyOnWriteArrayList, ConcurrentHashMap    
 it works by checking internal flag called modCount, updated each time a collection is modified    
 it will throw ConcurrentModificationException if modcount changes  
+**FailSafe** : CopyOnWriteArrayList, ConcurrentHashMap    
