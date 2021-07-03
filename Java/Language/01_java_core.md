@@ -221,7 +221,7 @@ catch(exception e){ }
 catch(arithmeticException|Exception e){} //this is multicatch
 finally{}// occur for sure even though exception handled or not.
 ```
-**Throws** :  void methodName throws Exception{ }
+**Throws** :  indicates caller functions of that method  to handling that exception.  void methodName throws Exception{ }
 
 **Custom Exception class**
 ```
