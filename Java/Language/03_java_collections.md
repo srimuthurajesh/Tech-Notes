@@ -6,6 +6,7 @@ framework/container to access prepackaged data structure.
 1. **ArrayList**: dynamic array, default size-10, new size = (current_size x 0.5)+1, null allowed  
 2. **LinkedList**: dynamic array with insertion efficient  
 3. **Vector**: thread safe, same like arraylist  
+4. **CopyOnWriteArrayList**: Modifications implemented in fresh copy  
 
 ## Queue FIFO
 1. **Priority queue**: special type of queue wherein all elements ordered as per comparator, not thread safe   
@@ -103,8 +104,6 @@ Collections are utility class in java.util package. It consists of only static m
 |Collections.reverse()	              |This method reverses the order of elements in the specified collection.|
 |Collections.unmodifiableList()	              |This method make List as Final|
 
-**CopyOnWriteArrayList**: Modifications implemented in fresh copy  
-**HashMap handles collision**: it uses balanced tree instead of List  
 
 |Comparable                  | Comparator  |
 |:-------------------------------------|:-------------------------------------------------------------|
