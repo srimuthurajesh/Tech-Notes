@@ -172,10 +172,10 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 
 ```
 RestTemplate restTemplate = new RestTemplate();
-Foo foo = restTemplate.getForObject(fooResourceUrl, Foo.class);
-Foo foo = restTemplate.postForObject(fooResourceUrl, new HttpEntity<>(new Foo("bar")), Foo.class);  
-restTemplate.delete(entityUrl);
-ResponseEntity<Foo> response = restTemplate.exchange(fooResourceUrl, HttpMethod.POST, new HttpEntity<>(new Foo("bar")), Foo.class); 
+1. Foo foo = restTemplate.getForObject(fooResourceUrl, Foo.class);
+2. Foo foo = restTemplate.postForObject(fooResourceUrl, new HttpEntity<>(new Foo("bar")), Foo.class);  
+3. restTemplate.delete(entityUrl);
+4. ResponseEntity<Foo> response = restTemplate.exchange(fooResourceUrl, HttpMethod.POST, new HttpEntity<>(new Foo("bar")), Foo.class); 
 response.getBody();
 
 ```
