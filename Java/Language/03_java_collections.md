@@ -45,6 +45,7 @@ while(itr.hasNext()){ map.get(it.next());}
 for (Map.Entry<String,Float> entry : map.entrySet()) 
 {  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); }    
 ```
+4. Using map foreach  ``` map.forEach((k,v)->{ sysout(k+v)})```   
 
 
 1.Object put(Object key, Object value)  
