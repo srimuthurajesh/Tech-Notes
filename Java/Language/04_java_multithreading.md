@@ -86,7 +86,12 @@ ExecutorService execService = Executor.newCacheThreadPool();
 ExecutorService executorService1 = Executors.newSingleThreadExecutor();
 ExecutorService executorService2 = Executors.newFixedThreadPool(10);
 ExecutorService executorService3 = Executors.newScheduledThreadPool(10);
-MyClass m = new MyClass(); execService.execute(m); 
+MyClass m = new MyClass(); execService.execute(m);   
+
+ThreadPoolExecutor mypool = (ThreadPoolExecutor) excr;  
+System.out.println("size of mypool: " + mypool.getPoolSize());     //size of pool
+System.out.println("Total number threads scheduled): "+ mypool.getTaskCount());    //number of thread schduled  
+ 
 execService.shutdown();
 ```
 
