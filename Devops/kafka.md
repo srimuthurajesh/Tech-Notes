@@ -2,6 +2,9 @@
 -open-source stream-processing software platform  
 -handles real-time data storage   
 
+**Advantage of kafka**:  
+
+
 **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
 **Topic**: category/name for records published, similar to DB tablr    
 **Partition**: topic splits into several parts, ordered, immutable  
