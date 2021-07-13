@@ -33,6 +33,8 @@ avoid NullpointerException smartly
 ```
 Optional<String> checkNull =  Optional.ofNullable(str);  
 if (checkNull.isPresent()) { sysout(str)} 
+checkNull.orElse("hii");
+checkNull.orElseGet(() -> getRandomName());
 ```
 ### 4. Functional interface  -   
 should have only one abstract method. Eg:Runnable @Comparator .   
