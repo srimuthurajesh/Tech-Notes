@@ -1,25 +1,31 @@
 # Table Of Contents  
 
 ## Programming Languages
-   - [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
-   - [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/Java%20script)  
-   - [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)  
-   - [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)  
+   1. [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
+   2. [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/Java%20script)  
+   3. [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)  
+   4. [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)  
 
-## Database
-   - **SQL**  
-      - [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
-   - **NoSQL**  
-      - [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      - [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      - [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
+## Databases
+   1. **SQL**  
+      1. [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
+   2. **NoSQL**  
+      1. [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
+      2. [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
+      3. [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
 
-## Devops    
-   - [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
-   - [Docker](https://srimuthurajesh.github.io/Tech-Notes/Devops/docker.html)
-   - [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/Devops/kubernetes.html)
-   - [kafka](https://srimuthurajesh.github.io/Tech-Notes/Devops/kafka.html)
+## Devops Tools    
+   1. [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
+   2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/Devops/docker.html)
+   3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/Devops/kubernetes.html)
+   4. [kafka](https://srimuthurajesh.github.io/Tech-Notes/Devops/kafka.html)
+
+## Cloud 
    - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
+## Computer science
+
+## Others
+   - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
 ----
