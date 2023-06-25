@@ -285,3 +285,6 @@ Where
 import java.util.regex.*;  
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNjQzMTU5OTEwXX0=
+-->
