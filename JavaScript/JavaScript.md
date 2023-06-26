@@ -2,8 +2,8 @@ Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascri
 - Why name as script – it execute as the page loads
 - ```<script type="text/javascript">``` type="text/javascript" is not needed
 - External js files can be stored as cache in browsers
--’use strict’; to use only latest functionality of javascript versions
--whitespace, case-sensitive
+- ```’use strict’;``` to use only latest functionality of javascript versions
+- whitespace, case-sensitive
 
 
 
