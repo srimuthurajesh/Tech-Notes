@@ -103,14 +103,11 @@ functionName();    //function calling
 
 #### Spread Operator(rest parameters)
 
-|---------------------------------------------------------------|-----------------------------------------------|
-| Es5                                                           |Es6                                            |
-|  function bigNum(){                                           | function bigNum(a,b, ...argArray){            |
-|    var args=Array.prototype.slice.call(arguements,0);         |    //a=1,b=2,arrgArray is an array[3,4,5]     |    
-|    var args=[].slice.call(arguements,0);                      | }                                             |
-|     //for converting arguements to array                      | bigNum(1,2,3,4,5);                            |    
-|  }bigNum();                                                   |                                               |
-|---------------------------------------------------------------|-----------------------------------------------|    
+```
+function bigNum(a,b, ...argArray){
+    //a=1,b=2,arrgArray is an array[3,4,5]
+}
+```
 
     We can combine two arrays. a=[1,2,3];  b=[4,5];     c= [...a,...b];        //c is [1,2,3,4,5]
 console.log(...a);    //1 2 3
