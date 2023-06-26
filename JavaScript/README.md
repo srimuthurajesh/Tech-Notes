@@ -1,6 +1,6 @@
 ## JAVASCRIPT
 
-- [VannilaES6 Javascript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/JavaScript.html)
+- [Javascript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/JavaScript.html)
 - [Angular](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/angular.md)
 - [Nodejs](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/nodeJs.txt)
 <!--stackedit_data:
