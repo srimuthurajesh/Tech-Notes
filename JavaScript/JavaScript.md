@@ -1,6 +1,6 @@
 Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
 - Why name as script – it execute as the page loads
-- <script type="text/javascript"> type="text/javascript" is not needed
+- ```<script type="text/javascript">``` type="text/javascript" is not needed
 - External js files can be stored as cache in browsers
 -’use strict’; to use only latest functionality of javascript versions
 -whitespace, case-sensitive
@@ -292,5 +292,5 @@ EVENT BUBBLING:event listeners fires not only on single element, but also fires 
 EVENT DELEGATION: event listeners fires not only on single element, but also fires from all its Dom decendents
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODY3NTQ1OV19
+eyJoaXN0b3J5IjpbNjUzODg3NTMxLC0xMTg2NzU0NTldfQ==
 -->
