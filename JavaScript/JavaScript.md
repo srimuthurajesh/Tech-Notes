@@ -31,56 +31,57 @@ break,as,any,switch,case,if,throw,else,var,number,string,get,module,type,instanc
     
 
 
-ARRAY: special kind of object
-    let arr = new Array();
-    let arr = [];var arr["name",’age’,’job’]=["rajesh","12",’vetti’];          console.log(arr["name"]); //rajesh
-    [1,2,3].includes(2);                //return true false
-    [1,2,3].findIndex (2);                //return true false
-    arr.pop();                    //remove last element
-    arr.shift();                    //remove element at begining
-    arr.push(4);                    //insert element at end ,arr is now [1,2,3,4]
-    arr.unshift(0);                    //insert element at beginning ,arr is now [0,1,2,3,4]
-    arr.length;
+### Array: 
+let arr = new Array();  
+let arr = [];var arr["name",’age’,’job’]=["rajesh","12",’vetti’];          console.log(arr["name"]); //rajesh  
+[1,2,3].includes(2);                //return true false  
+[1,2,3].findIndex (2);                //return true false  
+#### Array functions:
+1. arr.pop();                    //remove last element
+2. arr.shift();                   //remove element at begining
+3. arr.push(4);                    //insert element at end ,arr is now [1,2,3,4]
+4. arr.unshift(0);                    //insert element at beginning ,arr is now [0,1,2,3,4]
+5. arr.length;
     
-STRING:
-    "Hello world".include("world");        //return true false
-    "Hello world".startswith("H", index);        //return true false
-    "Hello world".endswith("d", index);        //return true false
-    "sorry ".repeat(100);            //print sorry 100 times
-    String.raw"it is not new line /n"        //print as it is - it is not new line /n
+### String:  
+"Hello world".include("world");        //return true false  
+"Hello world".startswith("H", index);        //return true false    
+"Hello world".endswith("d", index);        //return true false  
+"sorry ".repeat(100);            //print sorry 100 times  
+String.raw"it is not new line /n"        //print as it is - it is not new line /n  
 
-NUMBER:
-    let billion = 2000;      //can written as       let billion = 2e3;
-    let millisec = 0.002;    //can written as        let millisec = 2e-3    
-    Hexad:    alert( 0xff ); // 255    alert( 0xFF ); // 255 (the same, case doesn't matter)
-    num.toString(base);     eg.a=3; a.toString(2);    //0011      default base is 10
-    Two dots:   directly called from number.      3.toString(2);    //0011
-    Infinity (and -infinty) represents great (or less) than anything.      isFinite(number);    //checks whether its not infinity
-    NaN represents a non number type                isNan(number);     //checks whether is not number
+### Number:  
+let billion = 2000;      //can written as       let billion = 2e3;  
+let millisec = 0.002;    //can written as        let millisec = 2e-3     
+Hexad:    alert( 0xff ); // 255    alert( 0xFF ); // 255 (the same, case doesn't matter)  
+num.toString(base);     eg.a=3; a.toString(2);    //0011      default base is 10  
+Two dots:   directly called from number.      3.toString(2);    //0011  
+Infinity (and -infinty) represents great (or less) than anything.      isFinite(number);    //checks whether its not infinity  
+NaN represents a non number type                isNan(number);     //checks whether is not number  
 
-OPEARATOR:
-Destructing assignmet: var [a,b]=[1,2]; 
-                       var sample=[a,b]; sample=[1,2];      a=1,b=2    
+### Operator:  
+Destructing assignmet: var [a,b]=[1,2];   
+                       var sample=[a,b]; sample=[1,2];      a=1,b=2      
     
-CONDITIONS:
-    if
-    if..else
-    nested if else if
-    switch case
+### Conditions:
+if  
+if..else  
+nested if else if  
+switch case  
 
-LOOPS:
-    for
-    while
-    do...while
-    Loop control:
-    break:
-    continue:
-    for...in        for(key in obj){ console.log(obj[key]);}
-    for...of        for(arrKey of arr){ console.log(arrVal);}
+### Loops:
+for  
+while  
+do...while  
+Loop control:   
+break:  
+continue:  
+for...in        for(key in obj){ console.log(obj[key]);}  
+for...of        for(arrKey of arr){ console.log(arrVal);}  
 
-FUNCTION:
-    function functionName(){...body....}
-    functionName();    //function calling
+### Function:
+function functionName(){...body....}  
+functionName();    //function calling  
 - function cannot be access outside scope
     if(true){function add(){…}} add();//cannot be called, undefined
 
