@@ -86,7 +86,7 @@ functionName();    //function calling
     if(true){function add(){…}} add();//cannot be called, undefined
 
 
-ARROW FUNCTION:
+#### Arrow Function:
     let functionName = (parameter)=>{...function body..…};
     it does not have its own this object. 
     eg:     var obj = {name:"rajesh",
@@ -96,12 +96,13 @@ ARROW FUNCTION:
             obj.getNameArrow();        //print rajesh
             obj.getName();            //undefined
     
-DEFAULT PARAMETER:
+#### Default parameter:
     -Primitive    function get(i=1){ return i;}    get(undefined);
     -Array        function get(a=[]){return ...a;}    get([5]);    
     -Object        function get({a=5}={}){return }     x={a:5}; get();    
 
-SPREAD OPERATOR(rest parameters)
+#### Spread Operator(rest parameters)
+
 |---------------------------------------------------------------|-----------------------------------------------|
 | Es5                                                           |Es6                                            |
 |  function bigNum(){                                           | function bigNum(a,b, ...argArray){            |
