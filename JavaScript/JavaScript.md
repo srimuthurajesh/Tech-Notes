@@ -87,19 +87,22 @@ functionName();    //function calling
 
 
 #### Arrow Function:
-    let functionName = (parameter)=>{...function body..…};
-    it does not have its own this object. 
-    eg:     var obj = {name:"rajesh",
-                  getName: function(){ (function(){console.log(this.name)})();  },
-                  getNameArrow: function(){ (()=>{console.log(this.name)})(); }
-            }
-            obj.getNameArrow();        //print rajesh
-            obj.getName();            //undefined
+let functionName = (parameter)=>{...function body..…};
+it does not have its own this object. 
+eg:     
+```
+var obj = {name:"rajesh",
+    getName: function(){ (function(){console.log(this.name)})();  },
+    getNameArrow: function(){ (()=>{console.log(this.name)})(); }
+}
+obj.getNameArrow();        //print rajesh
+obj.getName();            //undefined
+```
     
 #### Default parameter:
-    -Primitive    function get(i=1){ return i;}    get(undefined);
-    -Array        function get(a=[]){return ...a;}    get([5]);    
-    -Object        function get({a=5}={}){return }     x={a:5}; get();    
+1. Primitive    function get(i=1){ return i;}    get(undefined);
+2. Array        function get(a=[]){return ...a;}    get([5]);    
+3. Object        function get({a=5}={}){return }     x={a:5}; get();    
 
 #### Spread Operator(rest parameters)
 
@@ -109,18 +112,18 @@ function bigNum(a,b, ...argArray){
 }
 ```
 
-    We can combine two arrays. a=[1,2,3];  b=[4,5];     c= [...a,...b];        //c is [1,2,3,4,5]
-console.log(...a);    //1 2 3
-We can combine two arrays. A=[3,4,5];b=[1,2]; a.push(...b); instead of // Array.prototype.push.apply(a,b);
+We can combine two arrays. a=[1,2,3];  b=[4,5];     c= [...a,...b];        //c is [1,2,3,4,5]  
+console.log(...a);    //1 2 3  
+We can combine two arrays. A=[3,4,5];b=[1,2]; a.push(...b); instead of // Array.prototype.push.apply(a,b);  
 
-OBJECT:
-let user = new Object(); // "object constructor" syntax
-let user = {};  // "object literal" syntax
-delect user ;    //to delete the objec
-{} means each time new reference allocated
+### Object:  
+1. via constructor ```let user = new Object();```  
+2. via literal ```let user = {};```    
+delect user ;    //to delete the object    
+Note: {} means each time new reference allocated
 
 var obj = {name : "raj",
-        "nick name": "rajeshu",        //multiword key allowed
+        "nick name": "rajeshu",        //multiword key allowed, if we use quotes
           func(){…..}}
 obj[‘nick name’];                //multiword key can accessed by square brackets
 -Square brackets are much more powerful than the dot notation
@@ -130,17 +133,18 @@ obj[‘nick name’];                //multiword key can accessed by square brac
     b={}; console.log(a);    //a is {a:2}            //while {} b points to new location reference
 
 
-Comparing object :     obj1={};    obj2={};          obj1==obj2; //false      obj1===obj2; //false
-            obj1={age:22};    obj2=obj1;        obj1==obj2;//true    obj1===obj2;//true
-Const object:     it is changeable, but cannot be reassign
-Clone object:    newObj = Object.assign({},oldObj);
-Garbage collections: The variable and objects which cannot be reached, get destroyed
-Object wrapper: 
-    Primitive datatypes is no an object, but a object wrapper is temporarily created while using it functions eg.str.split() . But for null,undefined there is no functions and no object wrapper created.
-eg. str = new String("rajeh"); str.test=5; console.log(str.test);//undefined
+**Comparing object** :   
+obj1={};    obj2={};          obj1==obj2; //false      obj1===obj2; //false  
+obj1={age:22};    obj2=obj1;        obj1==obj2;//true    obj1===obj2;//true  
+**Const object**:     it is changeable, but cannot be reassign  
+**Clone object**:    newObj = Object.assign({},oldObj);  
+**Garbage collections**: The variable and objects which cannot be reached, get destroyed  
+#### Object wrapper:   
+    Primitive datatypes is no an object, but a object wrapper is temporarily created while using it functions eg.str.split() . But for null,undefined there is no functions and no object wrapper created.  
+eg. str = new String("rajeh"); str.test=5; console.log(str.test);//undefined  
 
 
-Class in javascript
+### Class
 Es6
  function Cricketer(name,age,position){
       this.name=name; this.age=age; this.position=position;
