@@ -7,25 +7,27 @@ Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascri
 
 
 
-Javascript reserved keywords- total 48
+#### Identifiers- total 48
+```
 break,as,any,switch,case,if,throw,else,var,number,string,get,module,type,instanceof,typeof,finally,for,enum,export,while,void,this,new,null,super,catch,let,static,return,true,false
+```
 
-VARIABLE: represents name for a memory block
-    var name="rajesh";     //scope dependent for a function or window object
-    let name="rajesh"    //used as block scope, cannot be re-declared 
-    const NAME="rajesh"    //cannot be reassigned, redeclared, requires declaration, immutable
-    Template literal: can use ${name} inside string.   var name = ‘rajesh’;  console.log("my name is ${name}");
+#### VARIABLE:
+1. **var** name="rajesh";     //scope dependent for a function or window object  
+2. **let** name="rajesh"    //used as block scope, cannot be re-declared  
+3. **const** NAME="rajesh"    //cannot be reassigned, redeclared, requires declaration, immutable  
+4. **Template literal**: can use ${name} inside string.   var name = ‘rajesh’;  console.log("my name is ${name}");  
     -  var {name,age,job}={name:"rajesh",age:"22",job:"it"};            console.log(name);    //rajesh
 
 
-DATATYPE:
-    1. Number - integer & floating point
-    2. String -  one or more characters
-    3. Boolean - true/false
-    4. Null - Unknown but (null==undefined) is true , (null==0) is false
-    5. Undefined – Known by non - defined
-    6. Object - collections of variables and properties
-    7. Symbol – unique identifiers
+#### DATATYPE:
+1. **Number** - integer & floating point
+2. **String** -  one or more characters
+3. **Boolean** - true/false
+4. **Null** - Unknown but (null==undefined) is true , (null==0) is false
+5. **Undefined** – Known by non - defined
+6. **Object** - collections of variables and properties
+7. **Symbol** – unique identifiers
     
 
 
