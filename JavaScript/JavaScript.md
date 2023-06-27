@@ -120,25 +120,16 @@ We can combine two arrays. A=[3,4,5];b=[1,2]; a.push(...b); instead of // Array.
 1. via constructor ```let user = new Object();```  
 2. via literal ```let user = {};```    
 delect user ;    //to delete the object    
-Note: {} means each time new reference allocated
+- {} means each time new reference allocated  
+- can use object key with text, but need to use quotes  
+- Objects are muttable
 
-var obj = {name : "raj",
-        "nick name": "rajeshu",        //multiword key allowed, if we use quotes
-          func(){…..}}
-obj[‘nick name’];                //multiword key can accessed by square brackets
--Square brackets are much more powerful than the dot notation
--Shorthand syntax       name="raj"; var user = {name,age:23};    //user is {name:name,age:22};
--Objects are muttable    
-    a={name:1}; b=a; b.a=2;  console.log(a);        //gives {a:2}  both uses same reference
-    b={}; console.log(a);    //a is {a:2}            //while {} b points to new location reference
-
-
-**Comparing object** :   
-obj1={};    obj2={};          obj1==obj2; //false      obj1===obj2; //false  
-obj1={age:22};    obj2=obj1;        obj1==obj2;//true    obj1===obj2;//true  
+  
+**Comparing object** : 1. individual values, 2. json stringify    
 **Const object**:     it is changeable, but cannot be reassign  
 **Clone object**:    newObj = Object.assign({},oldObj);  
 **Garbage collections**: The variable and objects which cannot be reached, get destroyed  
+
 #### Object wrapper:   
     Primitive datatypes is no an object, but a object wrapper is temporarily created while using it functions eg.str.split() . But for null,undefined there is no functions and no object wrapper created.  
 eg. str = new String("rajeh"); str.test=5; console.log(str.test);//undefined  
