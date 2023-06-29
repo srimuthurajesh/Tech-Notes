@@ -1,4 +1,0 @@
-IONIC:
-	npm install -g ionic cordova
-	ionic start projectName templateName
- 	ionic serve
