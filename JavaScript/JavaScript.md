@@ -137,7 +137,8 @@ eg. str = new String("rajeh"); str.test=5; console.log(str.test);//undefined
 
 ### Class
 Es6
- function Cricketer(name,age,position){
+```
+function Cricketer(name,age,position){
       this.name=name; this.age=age; this.position=position;
  }
  Cricketer.prototype.changePosition=function(position){
@@ -147,6 +148,8 @@ var cricketer = new Cricketer("rajesh","22","batting");
 console.log(cricketer);
 crickter.changePosition("bowler");
 console.log(crickter);
+```
+```
 class Cricketer {
     constructor(name,age,position){
         this.name=name;this.age=age;this.postion=position;
@@ -159,17 +162,21 @@ let crickter = new Crickter("rajesh","2","batting");
 console.log(crickter);
 crickter.changePosition("bowler");
 console.log(cricketer);
+```
 
+#### Call Apply Bind:   
+These methods are useful for controlling the value of this within a function  
+var obj = {num:2};    
+var func=function(a,b){ console.log(this.num+a+b);}  
+```func.call(obj,1,2);```  //**call** allows you to explicitly set the context (the value of this)   
+```func.apply(obj,[1,2]);```  //**apply** same like call but get arguments as array  
+```var bound = func.bind(obj);```     bound(1,2);   //**bind** unlike call,apply it won't immediately invoke, instead return a function  
 
-Call Apply Bind: 
-var obj = {num:2};
-var func=function(a,b){ console.log(this.num+a+b);}
-func.call(obj,1,2);
-func.apply(obj,[1,2]);
-var bound = func.bind(obj);     bound(1,2);
+Note: Arrow functions (=>) in JavaScript do not have their own this binding and do not have call, apply, or bind methods.
 
-Object.    create: create an empty object.  Make the given arg object as prototype of the created empty object
-    oldObj = {this.name:"rajesh"}
+### Object.     
+create: create an empty object.  Make the given arg object as prototype of the created empty object  
+    oldObj = {this.name:"rajesh"}  
     Object.create(oldObj);    //create obj {_proto_:this.name:rajesh………}
 eg:
 var Car = function(){ this.color='red'; }
@@ -200,34 +207,47 @@ Object .assign: copy and append object to existing(given) object
     
 
 
-Sets: collection of unique values
+#### Sets: 
+collection of unique values   
+```
     var mySet = new Set();
     mySet.add(1).add(2).delete(1).clear();;
     var mySet = new Set([1,2,3,5,4,4,4,4,4]);    //mySet is 1,2,3,4
     console.log(mySet.size);
     for(val of mySet) { console.log(val);}        //can be iterable
-    can convert Sets to array:     console.log([..new Set([1,2,2,3])]);  
-                    Array.from(new Set([12,2,3]));    
+```
+can convert Sets to array:     console.log([..new Set([1,2,2,3])]);    
+                    Array.from(new Set([12,2,3]));      
 
-WeakSets:  can have only as objects
-    var myWeakSet = new WeakSet([{a:1},{b:2}]);
-    myWeakSet.add(1);    //throw error
-    myWeakSet.add({a:1});
-Maps: can have more than one object key
-    var myMap = new Map();
-    myMap.set(a,’a’).set(b:’b’).set(a:’c’).delete(b);
-    for(let [key,value] of myMap.entries()){
-        console.log(key,value);
-    }
-methods:     new Map();
-        map.set(key,value)
-        map.get(key)
-        map.has(key)
-        map.delete(key)
-        map.clear()
-        map.size
-
-Class constructor:
+#### WeakSets:  
+can have only as objects   
+```
+var myWeakSet = new WeakSet([{a:1},{b:2}]);
+myWeakSet.add(1);    //throw error
+myWeakSet.add({a:1});
+```
+#### Maps: 
+can have more than one object key
+```
+var myMap = new Map();
+myMap.set(a,’a’).set(b:’b’).set(a:’c’).delete(b);
+for(let [key,value] of myMap.entries()){
+   console.log(key,value);
+}
+```
+#### Methods:     
+```
+    new Map();
+    map.set(key,value)
+    map.get(key)
+    map.has(key)
+    map.delete(key)
+    map.clear()
+    map.size
+```
+### Class constructor:
+Super constructor  
+```
 class Car{
    construct(arg){}
    func1(){}
@@ -236,8 +256,10 @@ class Honda extends Car{
     constructor(arg){ super(arg);….}        //must call super constructer, otherwise error will occur
     func1();    }
 var obj = new Car(arg);
+```
 
-Promise – resolve,reject:
+### Promise – resolve,reject:
+```
 var promise = new Promise(function(resolve,reject){
     setTimeout(function(){ 
     success=true;
@@ -248,45 +270,47 @@ promise.then( function(resolveResult){ ….handle resolveResult…}).catch(funct
 promise.then( function(resolveResult){ ….handle resolveResult…},function(rejectResult){….handle reject…});
 promise.then( null,function(rejectResult){….handle reject…});    //to handle only error
 promise.all([promise1, promise2….promisen]);  
+```
 
-Async Await::
+### Async Await::
+```
+var promise1 = new Promise((resolve,reject)=>{setTimeout(resolve("rajesh"),3000);});  
+var promise2 = new Promise((resolve,reject)=>{setTimeout(resolve("23"),3000);});  
+var promise3 = new Promise((resolve,reject)=>{setTimeout(resolve("not a bad guy"),3000);});  
 
-var promise1 = new Promise((resolve,reject)=>{setTimeout(resolve("rajesh"),3000);});
-var promise2 = new Promise((resolve,reject)=>{setTimeout(resolve("23"),3000);});
-var promise3 = new Promise((resolve,reject)=>{setTimeout(resolve("not a bad guy"),3000);});
-
-var callSync=async ()=>{
-    var promresult1 = await promise1;  console.log("his name is :"+promresult1);        //his name is rajesh
-    var promresult2 = await promise2;  console.log("his is :"+promresult2);            //his is 23
-    var promresult3 = await promise3;  console.log("sometimes he is  :"+promresult3);    //his not a bad guy
-return 'success';
-}
-callSync().then((resultText)=>console.log('result is '+resultText));
-
+var callSync=async ()=>{  
+    var promresult1 = await promise1;  console.log("his name is :"+promresult1);        //his name is rajesh  
+    var promresult2 = await promise2;  console.log("his is :"+promresult2);            //his is 23  
+    var promresult3 = await promise3;  console.log("sometimes he is  :"+promresult3);    //his not a bad guy  
+return 'success';  
+}  
+callSync().then((resultText)=>console.log('result is '+resultText));  
+```
 Await should use only inside async:    syntax: await promiseName; //the js will pause until result come from promise
 
-ITERATOR:    var arr=[1,2];  
-            var iterator=arr[Symbol.iterator]();
-            console.log(iterator.next());        //{value:1,done:false}
-            console.log(iterator.next());        //{value:2,done:false}
-            console.log(iterator.next());        //{value:undefined,done:true}
-GENERATOR:    
-        function *generatorFunc(){ yield 1; yield 2; yield* anotherGenerator(); yield 5;}
-        function* anotherGenerator(){yield 3; yield 4;}                                        //each yield is not created until it gets called by next()
-        var generator = generatorFunc();        
-        console.log(generator.next());            //{value:1,done:false}
-        console.log(generator.next());            //{value:2,done:false}
-        console.log(generator.next());            //{value:3,done:false}    
-        console.log(generator.next());            //{value:undefined,done:true}
+### Iterator:    
+var arr=[1,2];    
+var iterator=arr[Symbol.iterator]();  
+console.log(iterator.next());        //{value:1,done:false}  
+console.log(iterator.next());        //{value:2,done:false}  
+console.log(iterator.next());        //{value:undefined,done:true}  
 
-ERRORS:
-    1.Syntax error-   eg. Unexpected token 
-    2.Reference error eg. a is not defined
-    3.Type error      eg. a is not a function
+### Generator:    
+function *generatorFunc(){ yield 1; yield 2; yield* anotherGenerator(); yield 5;}  
+function* anotherGenerator(){yield 3; yield 4;}                                        //each yield is not created until it gets called by next()  
+var generator = generatorFunc();        
+console.log(generator.next());            //{value:1,done:false}  
+console.log(generator.next());            //{value:2,done:false}  
+console.log(generator.next());            //{value:3,done:false}      
+console.log(generator.next());            //{value:undefined,done:true}  
+
+### Errors:
+1. Syntax error-   eg. ```Unexpected token```
+2. Reference error eg. ```a is not defined```
+3. Type error      eg. ```a is not a function```
                     
-EVENT BUBBLING:event listeners fires not only on single element, but also fires from all its Dom parents
-EVENT DELEGATION: event listeners fires not only on single element, but also fires from all its Dom decendents
+### Event Bubbling:  
+event listeners fires not only on single element, but also fires from all its Dom parents  
+### Event Delegation:   
+event listeners fires not only on single element, but also fires from all its Dom decendents   
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjUzODg3NTMxXX0=
--->
