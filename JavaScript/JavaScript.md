@@ -174,11 +174,13 @@ var func=function(a,b){ console.log(this.num+a+b);}
 
 Note: Arrow functions (=>) in JavaScript do not have their own this binding and do not have call, apply, or bind methods.
 
-### Object.     
-create: create an empty object.  Make the given arg object as prototype of the created empty object  
+### Object     
+#### create: 
+- create an empty object.  Make the given arg object as prototype of the created empty object  
     oldObj = {this.name:"rajesh"}  
     Object.create(oldObj);    //create obj {_proto_:this.name:rajesh………}
 eg:
+```
 var Car = function(){ this.color='red'; }
 Car.prototype.getColor=function(){ return this.color; }
 var ToyCar = function(){ };
@@ -186,23 +188,28 @@ ToyCar.prototype=Object.create(Car.prototype);
 ToyCar.prototype.color='orange';
 var obj = new ToyCar();
 console.log(obj.getColor());
-
-It is real alternative for
+```
+It is real alternative for  
 let sayHiMixin = { __proto__: anotherObject}  //but we should nor use __proto__ so we using Object.create
 
-Object.setPrototypeOf: same like object create but it works for simple{} object literal not function constructor
+#### Object.setPrototypeOf: 
+- same like object create but it works for simple{} object literal not function constructor
+```
     var obj1 = {drive:function(){return ‘i can drive’;},    walk:function(){return ‘i can walk’;}};
     var obj2 = { drive(){return super.drive();}}
     Object.setPrototypeOf(obj2.obj1);    //obj1 will get obj1 as a prototype 
     obj2.walk();        //call walk function in obj1 
     obj1.drive();        //call drive function in obj, because of super object.
-     
+```     
 
-Object .assign: copy and append object to existing(given) object
+#### Object .assign: 
+- copy and append object to existing(given) object
+```
     var obj1 = {color:’red’};
     var obj2={}; Object.assign(obj2,obj1);     //1st way to assign
     var obj3 = Object.assign({}.obj1);    //another way to assign
     var obj4 = function(){a,b}{ Object.assign(this,{a,b});}        //also used in constructor
+```
 - you can merge more than one object eg: Object.assign(obj2, obj1.1,obj1.2)
     
 
