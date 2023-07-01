@@ -1,4 +1,11 @@
 # Object oriented programming  
+- it is a programming paradigm like procedural programming paradigm.
+
+## For ex: 
+to understand class object. take car as class and tata is brand model    
+**attributes** are characteristics of car. eg: start, stop, speedup  
+**methods** are abilities functionalities of car. eg: color, seat count  
+
 ## Class  
 -template or blueprint for object (contains states & behaviour)  
 1. Nested class : A.B bObj = Aobj.new B();  
