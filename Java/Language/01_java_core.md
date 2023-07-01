@@ -2,12 +2,12 @@
 
 - Created at Sun Microsystems, by James gosling, in 1991. renames from Oak to java 1995.
 #### How Java Achieves platform Intependence  
-Code -> Compiler -> Interpreter(JIT) -> Machine code  
+Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
 **Java Compiler**: converts source code into bytecode  
 **Byte code**: low level representation of source code
 
-**JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc 
+**JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc   
 **JRE** is (JVM+lib) - For layman users to run java program  
 **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 **JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
