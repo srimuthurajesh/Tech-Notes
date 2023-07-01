@@ -1,9 +1,17 @@
 # Java
 
-- **JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc 
-- **JRE** is (JVM+lib) - For layman users to run java program  
-- **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
-- **ClassLoader**: part of JRE, loads class file to JVM  
+- Created at Sun Microsystems, by James gosling, in 1991. renames from Oak to java 1995.
+#### How Java Achieves platform Intependence  
+Code -> Compiler -> Interpreter(JIT) -> Machine code  
+
+**Java Compiler**: converts source code into bytecode  
+**Byte code**: low level representation of source code
+
+**JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc 
+**JRE** is (JVM+lib) - For layman users to run java program  
+**JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
+**JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
+**ClassLoader**: part of JRE, loads class file to JVM  
 
 Java is not fully oops language, due usage of primitive datatypes.
 
