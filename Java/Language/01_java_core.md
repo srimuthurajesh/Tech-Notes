@@ -46,23 +46,12 @@ transient  try       void       volatile   while
 - **Packages**: Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 
-**Commands**  
+**Java Commands**  
 how to compile: ```javac -d directory javafilename.java```       	
 how to run: ```java myppack.javafilename```     
 how to define a package in that program: ```package packagename;```    
 how to import package: ```import packagename.\*;```     
 how to import using fully qualified name without import keyword: ```package classname```;   
-
-- **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
-Note: if it is declared as private inside a class, it can be redeclare in another class  
-
-- **Enum**:  group of constant( final,static)
-```
-enum Level { LOW, MEDIUM, HIGH }
-Level myVar = Level.MEDIUM;
-```
-- **Null**: case sensitive, not falls under any type, null==null is true
-
 
 ## Variable:  
 Basic unit of storage   
@@ -85,6 +74,16 @@ Predefined memory storage
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
+
+- **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
+Note: if it is declared as private inside a class, it can be redeclare in another class  
+
+- **Enum**:  group of constant( final,static)
+```
+enum Level { LOW, MEDIUM, HIGH }
+Level myVar = Level.MEDIUM;
+```
+- **Null**: case sensitive, not falls under any type, null==null is true
 
 ## Operators:  
 
