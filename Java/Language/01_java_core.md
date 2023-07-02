@@ -61,6 +61,7 @@ Basic unit of storage
 
 ## Datatype:  
 Predefined memory storage  
+
 |  Name| Size  | Range  |  
 |--|--|--|  
 |**byte** | 1byte | -+128 |  
