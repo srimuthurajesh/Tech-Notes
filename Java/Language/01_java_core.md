@@ -16,7 +16,6 @@ Code -> Compiler -> Interpreter(JVM) -> Machine code
 Java is not fully oops language, due usage of primitive datatypes.
 
 ``` 
-import java.Io.*;	//this package used while code in notepad  
 import java.util.Scanner ;
 class Hello{
   public static void main(String[]args){
@@ -31,6 +30,19 @@ class Hello{
 ---
 - **Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
 - **Keywords**: Predefined meaning (53) words.  
+```
+abstract   assert    boolean    break      byte
+case       catch     char       class      const
+continue   default   do         double     else
+enum       extends   final      finally    float
+for        goto      if         implements import
+instanceof int       interface  long       native
+new        package   private    protected  public
+return     short     static     strictfp   super
+switch     synchronized this       throw      throws
+transient  try       void       volatile   while
+```
+
 - **Packages**: Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 
@@ -60,14 +72,16 @@ Basic unit of storage
 
 ## Datatype:  
 Predefined memory storage  
-1. **b**yte = -+128 size of 1 byte   
-2. **s**hort = -+32,768 size of 2 byte   
-3. **i**nt = -+2,14,74,83,648 size of 4 byte   
-4. **l**ong = -+9,22,33,72,03,68,54,775 size of 8 byte  
-5. **f**loat = . after 6 digit, size of 4 byte   
-6. **d**ouble = . after 15 digit, size of 8 byte   
-7. **c**har = A-Z a-z 0-9 0-127ASCII, size of 2 byte   
-8. **b**oolean = 0 1, size of depends on jvm   
+|  Name| Size  | Range  |  
+|--|--|--|  
+|**byte** | 1byte | -+128 |  
+|**short** | 2byte | -+32,768|   
+|**int** | 4byte | -+2,14,74,83,648|   
+|**long** | 8byte | -+9,22,33,72,03,68,54,775 |
+|**float** | 4byte | . after 6 digit   |
+|**double** | 8byte| . after 15 digit | 
+|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 
+|**boolean** | depends on jvm |0 1,   |
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
