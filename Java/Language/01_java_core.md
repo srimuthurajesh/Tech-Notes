@@ -62,21 +62,21 @@ Basic unit of storage
 ## Datatype:  
 Predefined memory storage  
 
-|  Name| Size  | Range  |  
-|--|--|--|  
-|**byte** | 1byte | -+128 |  
-|**short** | 2byte | -+32,768|   
-|**int** | 4byte | -+2,14,74,83,648|   
-|**long** | 8byte | -+9,22,33,72,03,68,54,775 |
-|**float** | 4byte | . after 6 digit   |
-|**double** | 8byte| . after 15 digit | 
-|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 
-|**boolean** | depends on jvm |0 1,   |
+|  Name| Size  | Range  |  2^n|
+|--|--|--| -- |  
+|**byte** | 1byte | -+128 | 2^8 |
+|**short** | 2byte | -+32,768| 2^16 |   
+|**int** | 4byte | -+2,14,74,83,648| 2^36|   
+|**long** | 8byte | -+9,22,33,72,03,68,54,775 | 2^64 |
+|**float** | 4byte | . after 6 digit   | 2^36 |
+|**double** | 8byte| . after 15 digit | 2^64 |
+|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 2^16| 
+|**boolean** | depends on jvm, 1bit |0 1,   | 2 |
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 Power can be represent by _e_ ex: float a = 35e3f;  
-At the end of float number _f_ is necessary otherwise when we use dot(.) it default consider as double   
+At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
 
 - **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
 Note: if it is declared as private inside a class, it can be redeclare in another class  
