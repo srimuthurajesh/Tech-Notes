@@ -54,7 +54,7 @@ how to import package: ```import packagename.\*;```
 how to import using fully qualified name without import keyword: ```package classname```;   
 
 ## Variable:  
-Basic unit of storage   
+Named storage location.     
 1. **Local variable**: inside method 
 2. **Instant variable**: inside clas 
 3. **Static variable**: Declared as static  
