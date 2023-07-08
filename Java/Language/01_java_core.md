@@ -142,8 +142,9 @@ int a[];
 int[] a;    
 int[] a = new int[4];    
 int[] a = new int[]{1,2,3,4};    
+int[] a = {1,2,3,4};
 **Arrays Important methods**:   
-Arrays.asList(arr);      
+Arrays.asList(arr);      //conver array into List (collection framework)  
 Arrays.sort(arr);   //use mergeosrt for object, and quick sort fro primitive datatype   
 Arrays.sort(arr, new Comparator());    
 Arrays.binarySearch(arr, searchValue);    
