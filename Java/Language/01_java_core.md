@@ -75,7 +75,8 @@ Predefined memory storage
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
-Power can be represent by __e__ ex: float a = 35e3f;  
+Power can be represent by _e_ ex: float a = 35e3f;  
+At the end of float number _f_ is necessary otherwise when we use dot(.) it default consider as double   
 
 - **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
 Note: if it is declared as private inside a class, it can be redeclare in another class  
