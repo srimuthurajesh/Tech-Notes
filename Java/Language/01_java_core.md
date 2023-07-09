@@ -100,7 +100,7 @@ Level myVar = Level.MEDIUM;
 |Conditional Operator  |**exp1? exp2: exp3;**  |  
 |Bitwise Operator  |** &, <<, >>, >>>**  |  
 |Special Operator  |**instanceof, (.)**  |  
-|Unary Operator  |**~, !**  |    
+|Unary Operator  | +, - , ~, !  |    
 
 ```
 int a=10; int b=-9;  
