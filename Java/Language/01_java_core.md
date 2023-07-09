@@ -20,7 +20,7 @@ import java.util.Scanner ;
 class Hello{
   public static void main(String[]args){
     Scanner input = new Scanner(Sytem.in);
-    a=input.nextInt();
+    a=input.nextInt(); b=input.nextLine();
     System.out.println(); //print only one line and move to next line
     System.out.print(); //print line and remain in same line we have to give \n
     System.out.printf(“%d”,$i); //print string stream
@@ -185,12 +185,13 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 2. if(con){ exp1; } else{ exp2; }
 3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
 4. Tenary operator-condition ? expersion 1: expersion 2;
+4. switch(varible){case constant: operation; break;default: operation;break;}  
+Note: long float double and customer classes cannot be use in switch   
 
 ## Looping:
 1. while(con){ body; }
 2. do{ body }while(condition);
 3. for(intialize counter;test condition;inc or dec counter){ body; }
-4. switch(varible){case constant: operation; break;default: operation;break;}
 5. break; 	//get out of loop
 6. continue;	//back to continue next loop
 7. continue loop_label;		loop_label;{exp}
