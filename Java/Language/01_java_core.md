@@ -1,19 +1,18 @@
 # Java
 
-- Created at Sun Microsystems, by James gosling, in 1991. renames from Oak to java 1995.
-#### How Java Achieves platform Intependence  
+> High level, widely used, general purpose programming language.
+
+- In 1991, Created at Sun Microsystems, by James gosling. renames from Oak to java 1995.
+> Write Once, Run Anywhere  
 Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
 **Java Compiler**: converts source code into bytecode  
 **Byte code**: low level representation of source code
-
 **JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc   
 **JRE** is (JVM+lib) - For layman users to run java program  
 **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 **JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
 **ClassLoader**: part of JRE, loads class file to JVM  
-
-Java is not fully oops language, due usage of primitive datatypes.
 
 ``` 
 import java.util.Scanner ;
@@ -77,6 +76,7 @@ Binary can be represent as adding "0b"   ex: int a = 0b011;
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 Power can be represent by _e_ ex: float a = 35e3f;  
 At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
+Java is not fully oops language, due usage of primitive datatypes.  
 
 - **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
 Note: if it is declared as private inside a class, it can be redeclare in another class  
