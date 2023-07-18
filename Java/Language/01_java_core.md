@@ -26,7 +26,7 @@ class Hello{
   } 
 }
 ```
----
+
 - **Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
 - **Keywords**: Predefined meaning (53) words.  
 ```
