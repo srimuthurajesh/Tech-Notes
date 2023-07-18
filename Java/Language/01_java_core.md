@@ -7,7 +7,7 @@
 Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
 **Java Compiler**: converts source code into bytecode  
-**Byte code**: low level representation of source code
+**Byte code**: low level representation of source code  
 **JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc   
 **JRE** is (JVM+lib) - For layman users to run java program  
 **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
