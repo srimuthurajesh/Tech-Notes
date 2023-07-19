@@ -4,6 +4,7 @@
 
 - In 1991, Created at Sun Microsystems, by James gosling. renames from Oak to java 1995.
 > Write Once, Run Anywhere  
+
 Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
 **Java Compiler**: converts source code into bytecode  
