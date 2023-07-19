@@ -14,22 +14,24 @@ Code -> Compiler -> Interpreter(JVM) -> Machine code
 **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 **JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
 **ClassLoader**: part of JRE, loads class file to JVM  
-
+  
 ``` 
 import java.util.Scanner ;
 class Hello{
   public static void main(String[]args){
+    System.out.println("Hello World!");
+    //Java IO
     Scanner input = new Scanner(Sytem.in);
     a=input.nextInt(); b=input.nextLine();
-    System.out.println(); //print only one line and move to next line
+    System.out.println("Hello World!"); //print only one line and move to next line
     System.out.print(); //print line and remain in same line we have to give \n
     System.out.printf(“%d”,$i); //print string stream
   } 
 }
 ```
 
-- **Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)  
-- **Keywords**: Predefined meaning (53) words.  
+**Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)    
+**Keywords**: Predefined meaning (53) words.  
 ```
 abstract   assert    boolean    break      byte
 case       catch     char       class      const
@@ -48,7 +50,7 @@ transient  try       void       volatile   while
 
 **Java Commands**  
 how to compile: ```javac -d directory javafilename.java```       	
-how to run: ```java myppack.javafilename```     
+how to run: ```java myppack.javafilename```       
 how to define a package in that program: ```package packagename;```    
 how to import package: ```import packagename.\*;```     
 how to import using fully qualified name without import keyword: ```package classname```;   
