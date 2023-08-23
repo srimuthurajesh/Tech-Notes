@@ -15,11 +15,15 @@
 </html>
 ```
 
-**```<!DOCTYPE html>```** - Indicates the HTML version as 5. 
-**Heading**: (<h1>, <h2>, <h3>, <h4>, <h5>, and <h6>)    
-**Paragraph**: <p title=”idu title”> this is paragraph</p>
-Linkings: ```<a href=”fb.com”>click facebook</a>```
-Images: 	```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```
+**```<!DOCTYPE html>```** - Indicates the HTML version as 5.  
+**Heading**: defines heading and subheading      
+1. Main Heading - `<h1>`  
+2. Sub Heading - `<h2>`    
+3. Subsequent Heading -  `<h3>`, `<h4>`, `<h5>`, and `<h6>`
+    
+**Paragraph**: define a paragraph of text. ```<p> this is paragraph</p>```  
+**Links**: hyperlinks used to connect different web pages ```<a href=”fb.com”>click facebook</a>```  
+**Images**: embed images in to the web page ```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```  
  
 Horizontal line: <hr>
 Line break (a enter to next line) :</br>
