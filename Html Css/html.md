@@ -15,7 +15,7 @@
 </html>
 ```
 
-**<!DOCTYPE html>**- Indicates the HTML version as 5
+**```<!DOCTYPE html>```**- Indicates the HTML version as 5
 Linkings: ```<a href=”fb.com”>click facebook</a>```
 Images: 	```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```
 
