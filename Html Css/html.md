@@ -1,15 +1,21 @@
-### Hypertext markup language (set of markup tags)
+### Hypertext markup language 
+- standard markup language for creating web page in browsers
+- Latest version is HTML 5.2
 
 ```
-<doctype! html>
+<!DOCTYPE html>  
 <html>
    <head>
-   <title>
+      <title>Page Title</title>
+   </head>
    <body>
-      <h></h><p></p>
-      <br/>
-   </body>
+   <h1>This is a Heading</h1>
+   <p>This is a paragraph.</p>
+</body>
+</html>
 ```
+
+**<!DOCTYPE html>**- Indicates the HTML version as 5
 Linkings: ```<a href=”fb.com”>click facebook</a>```
 Images: 	```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```
 
