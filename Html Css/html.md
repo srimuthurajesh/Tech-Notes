@@ -1,19 +1,17 @@
-						HTML
-Hypertext markup language (set of markup tags)
+### Hypertext markup language (set of markup tags)
 
+```
 <doctype! html>
 <html>
-<head>
-<title>
-<body>
-<h></h><p></p>
-<br/>
-
-Linkings: <a href=”fb.com”>click facebook</a>
-Images: 	<img src=”Rajesh.jpg”
-alt=”Rajesh2.jpg”
-width=”104”
-height=”120”>
+   <head>
+   <title>
+   <body>
+      <h></h><p></p>
+      <br/>
+   </body>
+```
+Linkings: ```<a href=”fb.com”>click facebook</a>```
+Images: 	```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```
 
 Heading size: <h6>idu dan heading size 6 </h6> h1 h2 h3 h4 h5 h6 available
 Paragraph: <p title=”idu title”> this is paragraph</p>
