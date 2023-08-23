@@ -15,12 +15,12 @@
 </html>
 ```
 
-**```<!DOCTYPE html>```**- Indicates the HTML version as 5
+**```<!DOCTYPE html>```** - Indicates the HTML version as 5. 
+**Heading**: (<h1>, <h2>, <h3>, <h4>, <h5>, and <h6>)    
+**Paragraph**: <p title=”idu title”> this is paragraph</p>
 Linkings: ```<a href=”fb.com”>click facebook</a>```
 Images: 	```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```
-
-Heading size: <h6>idu dan heading size 6 </h6> h1 h2 h3 h4 h5 h6 available
-Paragraph: <p title=”idu title”> this is paragraph</p>
+ 
 Horizontal line: <hr>
 Line break (a enter to next line) :</br>
 Comments: <!--this is comment-->
