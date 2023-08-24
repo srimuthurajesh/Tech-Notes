@@ -1,7 +1,7 @@
 ### Hypertext markup language 
 - standard markup language for creating web page in browsers
 - Latest version is HTML 5.2
-
+- is not case sensitive  
 ```
 <!DOCTYPE html>  
 <html>
@@ -15,33 +15,41 @@
 </html>
 ```
 
-**```<!DOCTYPE html>```** - Indicates the HTML version as 5.  
-**Heading**: defines heading and subheading      
-1. Main Heading - `<h1>`  
-2. Sub Heading - `<h2>`    
-3. Subsequent Heading -  `<h3>`, `<h4>`, `<h5>`, and `<h6>`
-    
-**Paragraph**: define a paragraph of text. ```<p> this is paragraph</p>```  
-**Links**: hyperlinks used to connect different web pages ```<a href=”fb.com”>click facebook</a>```  
-**Images**: embed images in to the web page ```<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>```  
- 
-Horizontal line: <hr>
-Line break (a enter to next line) :</br>
-Comments: <!--this is comment-->
+**`<!DOCTYPE html>`** - Indicates the HTML version as 5.   
+**`<html>`**: defines root of an HTML document  
+**`<body>`**: defines document's body  
 
-<b>bold la varum</b>		<strong>iduvum bold dan</strong>
-<i>italic</i>			<cite> italic</cite>
-<u>underline</u>
-<strike>strike</strike>		<del> strike the word</del>
+**Heading**: defines heading and subheading `<h1>`,`<h2>`,`<h3>`, `<h4>`, `<h5>`, and `<h6>`      
+**Paragraph**: define a paragraph. `<p> this is paragraph, doesnt follow line breaks</p>`
+**Pre**: define preformated text `<pre> this follows exact line breaks </pre>`
+**Links**: hyperlinks to connect different pages `<a href=”fb.com”>click facebook</a>`  
+**Images**: embed images to web page `<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>`  
+ 
+**Horizontal line**: `<hr>`  
+**Line break** new line `</br>`  
+**Comments**: `<!--this is comment-->`  
+|  Formated Elements | Details  | Semantic Alternative | Details  |
+|---|---|---|---|
+| `<b>` | make text appear thicker | `<strong>` | define text with strong importance. | 
+| `<i>` | Italic text | `<em>` | semantically emphasizing content |  
+| `<mark>` | Highlight text in yellow | ||
+| `<small>` | reduction in font size |  ||
+| `<del>` | indicates text has been deleted | 
+| `<ins>` | indicates text has been inserted | 
+| `<sub>` | Subscript text | 
+| `<sup>` | Superscript text |    
+
+|  Additional Elements | Details  |
+|---|---|
+| `<cite>` | defines title of a book inside `<p>`(same as italic)  |  
+| `<u>` | underline the text |     
+| `<strike>`strike</strike> |		
 <tt> small la teriyum </tt>		<small> small la teriyum </small>
-<sub> subscript</sub>
-<sup>superscript</sup>
 <q>”quotaion”</q>
 <address> google.com </address>
 <p align=”center”></p>
 <hr width=”50px”/>
 <hr width=”50%”/>
-<img src=”image.jpg” width=”150px” height=”150%” border=”1px” alt= ”  google.in”/>
 <font color=”red”>this is red</font>
 <a href=” jkjh.com ” target=”_blank”open in new window></a>
 
