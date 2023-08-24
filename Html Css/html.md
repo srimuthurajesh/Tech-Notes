@@ -48,7 +48,7 @@
 | `<abbr>` | defines abbrevation (same as italic)  |  ||
 | `<dfn>` | defines title of a content in same line (same as italic)  |  ||
 | `<q>` | insert quotaion|||"quote"|
-| `<code>` | define computer code|`<kbd>`| define keyboard shortcut |`code`|
+| `<code>` | define computer code|`<kbd>`,`<pre>`,`<samp>`,`<var>`| define keyboard shortcut |`code`|
 |`<article>`|specify a content (same like p tag)||||
 |`<blockquote>`|specifies text is quoted from another site.(same like p tag)|
 |`<aside>`|defines some content aside from the content it is placed in.mostly used in sidebar (same like p tag)|
@@ -68,14 +68,20 @@
 |`<legend>`| define caption for fieldset|
 |`<main>`| specifies main content|  
 |`<label>`| wrap around any content and has for attribute that id|  
-|`<meter>`| creates a progress bar `<meter id="disk_c" value="2" min="0" max="10"></meter>`|
+|`<meter>`| creates a progress bar `<meter id="disk_c" value="2" min="0" max="10"></meter>`|`<progress>`|
 |`<nav>`| wrap around navigation links|  
 |`<noscript>`| display text if script disabled in browser|  
 |`<output>`| used by javascript|
+|`<picture>`| responsive images|
+|`<section>`| defines section of webpage|
+|`<time>`| display time |
+|`<wbr>`| wont break the word if browser shrinks|
 
 **Form**: 
 `<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
 
+**Input**:
+`<textarea rows="4" cols="50"></textarea>`
 **Select autocomplete**:  
 ```
 <input list="browsers" name="browser" id="browser">
@@ -118,7 +124,7 @@
 </details>
 ```
 **Depreciated tags**:
-embed, frame, font, frameset, noframes, object
+embed, frame, font, frameset, noframes, object, tt
 
 **Map & area**: we can write hrefs inside an image based co ordinatinates    
 ```
@@ -134,6 +140,15 @@ embed, frame, font, frameset, noframes, object
   <source src="horse.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+```
+**Video**: 
+```
+<video width="320" height="240" controls>
+  <source src="forrest_gump.mp4" type="video/mp4">
+  <source src="forrest_gump.ogg" type="video/ogg">
+  <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+  <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+</video>
 ```
 **base**
 
@@ -156,16 +171,14 @@ embed, frame, font, frameset, noframes, object
     <col span="2" style="background-color:red">
     <col style="background-color:yellow">
   </colgroup>
-  <tr>
-    <th>ISBN</th>
+  <tbody><tr>
     <th>Title</th>
     <th>Price</th>
-  </tr>
-  <tr>
-    <td>3476896</td>
+  </tr></tbody>
+  <tfoot><tr>
     <td>My first HTML</td>
     <td>$53</td>
-  </tr>
+  </tr></tfoot>
 </table>
 
 
