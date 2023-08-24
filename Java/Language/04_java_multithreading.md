@@ -1,5 +1,7 @@
 # Muti threading
 -concurrent execution, subset process  
+**Thread**: unit of execution within the process  
+
 
 ## Ways to Implement Thread
 1. Extends Thread class  
