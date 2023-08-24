@@ -6,7 +6,11 @@
 <!DOCTYPE html>  
 <html>
    <head>
-      <title>Page Title</title>
+		<title>Page Title</title>
+    	<link rel="stylesheet" href="styles.css">
+		<meta charset="UTF-8">
+  		<meta name="description" content="Free Web tutorials">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
    <h1>This is a Heading</h1>
@@ -18,50 +22,153 @@
 **`<!DOCTYPE html>`** - Indicates the HTML version as 5.   
 **`<html>`**: defines root of an HTML document  
 **`<body>`**: defines document's body  
+**`<head>`**: contains metadata like title,link,meta   
 
 **Heading**: defines heading and subheading `<h1>`,`<h2>`,`<h3>`, `<h4>`, `<h5>`, and `<h6>`      
-**Paragraph**: define a paragraph. `<p> this is paragraph, doesnt follow line breaks</p>`
-**Pre**: define preformated text `<pre> this follows exact line breaks </pre>`
-**Links**: hyperlinks to connect different pages `<a href=”fb.com”>click facebook</a>`  
+**Paragraph**: define a paragraph. `<p> this is paragraph, doesnt follow line breaks</p>`  
+**Pre**: define preformated text `<pre> this follows exact line breaks </pre>`  
+**Links**: hyperlinks to connect different pages `<a href=”fb.com” target="_blank">click facebook</a>`  
 **Images**: embed images to web page `<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>`  
  
-**Horizontal line**: `<hr>`  
 **Line break** new line `</br>`  
 **Comments**: `<!--this is comment-->`  
-|  Formated Elements | Details  | Semantic Alternative | Details  |
-|---|---|---|---|
-| `<b>` | make text appear thicker | `<strong>` | define text with strong importance. | 
-| `<i>` | Italic text | `<em>` | semantically emphasizing content |  
-| `<mark>` | Highlight text in yellow | ||
-| `<small>` | reduction in font size |  ||
-| `<del>` | indicates text has been deleted | 
-| `<ins>` | indicates text has been inserted | 
-| `<sub>` | Subscript text | 
-| `<sup>` | Superscript text |    
 
-|  Additional Elements | Details  |
-|---|---|
-| `<cite>` | defines title of a book inside `<p>`(same as italic)  |  
-| `<u>` | underline the text |     
-| `<strike>`strike</strike> |		
-<tt> small la teriyum </tt>		<small> small la teriyum </small>
-<q>”quotaion”</q>
-<address> google.com </address>
-<p align=”center”></p>
-<hr width=”50px”/>
-<hr width=”50%”/>
-<font color=”red”>this is red</font>
-<a href=” jkjh.com ” target=”_blank”open in new window></a>
+|  Formated Elements | Details  | Semantic Alternative | Details  | Output|
+|---|---|---|---|--|
+| `<b>` | make text appear thicker | `<strong>` | define text with strong importance. | <b>bold</b>|
+| `<i>` | Italic text | `<em>` | semantically emphasizing content | <i>italic</i> | 
+| `<mark>` | Highlight text in yellow | |||
+| `<small>` | reduction in font size |  ||<sub><sup>small</sup></sub>|
+| `<del>` | indicates text deleted | `<s>` | text not accurate/relevant| <s>strike</s>|
+| `<ins>` | indicates text inserted | `<u>` |misspelled text| <ins>underlline</ins> |
+| `<sup>` | Superscript text |  ||sup<sup>script</sup>|  
+| `<sub>` | Subscript text | ||sub<sub>script</sub>|
+| `<cite>` | defines title of book inside `<p>`(same as italic)  |  ||
+| `<address>` | defines contact information (same as italic)  |  ||
+| `<abbr>` | defines abbrevation (same as italic)  |  ||
+| `<dfn>` | defines title of a content in same line (same as italic)  |  ||
+| `<q>` | insert quotaion|||"quote"|
+| `<code>` | define computer code|`<kbd>`| define keyboard shortcut |`code`|
+|`<article>`|specify a content (same like p tag)||||
+|`<blockquote>`|specifies text is quoted from another site.(same like p tag)|
+|`<aside>`|defines some content aside from the content it is placed in.mostly used in sidebar (same like p tag)|
+|`<base>`|specifies the base URL and/or target for all relative URLs|
+| `<bdi>` | bi directional isolation(used for arabic language in reverse)|
+|`<bdo>`| reverse the text(`<bdo dir="rtl">This</bdo>`)|
+|`<canvas>`| used to draw graphics by javascript|
+|`<data>`| machine readable value(`<data value="21053">Cherry Tomato</data`)|
+|`<dialog>`| show text in dialog box`<dialog open>text</dialog>`|  
+|`<div>`| defines division of web page|
+|`<fieldset>`| group related elements like form label & input|
+|`<figure>`| group `<img>` and `<figcaption>`(which provides caption for img)|  
+|`<footer>`| footer section |
+|`<header>`| contains h tags and p |
+|`<hr>`| thematic break|
+|`iframe`| embed another website|
+|`<legend>`| define caption for fieldset|
+|`<main>`| specifies main content|  
+|`<label>`| wrap around any content and has for attribute that id|  
+|`<meter>`| creates a progress bar `<meter id="disk_c" value="2" min="0" max="10"></meter>`|
+|`<nav>`| wrap around navigation links|  
+|`<noscript>`| display text if script disabled in browser|  
+|`<output>`| used by javascript|
 
+**Form**: 
+`<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
+
+**Select autocomplete**:  
+```
+<input list="browsers" name="browser" id="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Chrome">
+  </datalist>
+```
+```
+<select name="cars" id="cars">
+    <optgroup label="Swedish Cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+    </optgroup>
+    <optgroup label="German Cars">
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </optgroup>
+  </select>
+```
+
+**Button**: creates a button element  
+`<button type="button/submit/reset" disabled="false" formaction="URL" formmethod="post">Click Me!</button>`    
+
+**Description**: creates a decription list  
+```
+<dl>
+  <dt>Coffee</dt>
+  <dd>Black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>White cold drink</dd>
+</dl>
+```
+
+**Detail Element**: minimize maximize content
+```
+<details>
+  <summary>Epcot Center</summary>
+  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+```
+**Depreciated tags**:
+embed, frame, font, frameset, noframes, object
+
+**Map & area**: we can write hrefs inside an image based co ordinatinates    
+```
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+</map>
+```
+**Audio**: embed sound content   
+```
+<audio controls>
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+```
+**base**
+
+**List**:  
+```
 <ol>
-<li>hiii</li>	//will give with number in front 
-<li>hello</li>
+   <li>hiii</li>	//will give with number in front 
+    <li>hello</li>
 </ol>
+```
 
 <ul>
 <li>hiii</li>	//will give with dot in front of list 
 <li>hello</li>
 </ul>
+
+<table>
+	<caption>This is table caption</caption>
+  <colgroup>
+    <col span="2" style="background-color:red">
+    <col style="background-color:yellow">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+</table>
+
+
 <table border=”2”>
    <tr align=”center”>
       <td colspan=”2”></td>
