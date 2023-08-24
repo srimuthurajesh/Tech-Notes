@@ -6,11 +6,11 @@
 <!DOCTYPE html>  
 <html>
    <head>
-		<title>Page Title</title>
-    	<link rel="stylesheet" href="styles.css">
-		<meta charset="UTF-8">
-  		<meta name="description" content="Free Web tutorials">
-  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Page Title</title>
+       <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+  	<meta name="description" content="Free Web tutorials">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
    <h1>This is a Heading</h1>
@@ -124,7 +124,9 @@
 </details>
 ```
 **Depreciated tags**:
-embed, frame, font, frameset, noframes, object, tt
+embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, big, center, dir
+
+
 
 **Map & area**: we can write hrefs inside an image based co ordinatinates    
 ```
