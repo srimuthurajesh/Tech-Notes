@@ -35,11 +35,11 @@
 
 |  Formated Elements | Details  | Semantic Alternative | Details  | Output|
 |---|---|---|---|--|
-| `<b>` | make text appear thicker | `<strong>` | define text with strong importance. | <b>bold</b>|
-| `<i>` | Italic text | `<em>` | semantically emphasizing content | <i>italic</i> | 
-| `<mark>` | Highlight text in yellow | |||
+| `<b>` | make text appear thicker | `<strong>` | important text. | <b>bold</b>|
+| `<i>` | Italic text | `<em>` | emphasizing text | <i>italic</i> | 
+| `<mark>` | Highlight text in yellow |
 | `<small>` | reduction in font size |  ||<sub><sup>small</sup></sub>|
-| `<del>` | indicates text deleted | `<s>` | text not accurate/relevant| <s>strike</s>|
+| `<del>` | indicates text deleted | `<s>` | not relevant| <s>strike</s>|
 | `<ins>` | indicates text inserted | `<u>` |misspelled text| <ins>underlline</ins> |
 | `<sup>` | Superscript text |  ||sup<sup>script</sup>|  
 | `<sub>` | Subscript text | ||sub<sub>script</sub>|
@@ -48,7 +48,7 @@
 | `<abbr>` | defines abbrevation (same as italic)  |  ||
 | `<dfn>` | defines title of a content in same line (same as italic)  |  ||
 | `<q>` | insert quotaion|||"quote"|
-| `<code>` | define computer code|`<kbd>`,`<pre>`,`<samp>`,`<var>`| define keyboard shortcut |`code`|
+| `<code>` | define computer code|`<kbd>`,`<pre>`,`<samp>`,`<var>`| keyboard shortcut |`code`|
 |`<article>`|specify a content (same like p tag)||||
 |`<blockquote>`|specifies text is quoted from another site.(same like p tag)|
 |`<aside>`|defines some content aside from the content it is placed in.mostly used in sidebar (same like p tag)|
