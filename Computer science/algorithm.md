@@ -1,13 +1,14 @@
 ## Algorithm: 
 - step by step to solve problem
 
+#### Time Complexity  
 1. constant = 1   
 2. logarithmic = log n   
 3. linear = n   
 4. linearLogarithmic = nlog n   
-5. quadratic = n^2   
-6. cubic = n^3   
-7. exponential = 2^n 
+5. quadratic = n<sup>2</sup>   
+6. cubic = n<sup>3</sup>     
+7. exponential = 2<sup>n</sup>   
 
 **Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega  
 **Finding the complextity:**  
