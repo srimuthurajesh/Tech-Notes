@@ -1,4 +1,5 @@
-**Algorithm**: step by step to solve problem
+## Algorithm**: 
+- step by step to solve problem
 
 1. constant = 1   
 2. logarithmic = log n   
