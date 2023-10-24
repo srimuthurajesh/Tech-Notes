@@ -11,6 +11,7 @@
 7. exponential = 2<sup>n</sup>   
 
 **Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega  
+
 **Finding the complextity:**  
 1.``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)```these all O(n)  
 2.``` for(..){for(..)}``` these is O(n^2)  
