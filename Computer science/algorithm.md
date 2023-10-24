@@ -1,4 +1,4 @@
-## Algorithm**: 
+## Algorithm: 
 - step by step to solve problem
 
 1. constant = 1   
