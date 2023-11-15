@@ -1,21 +1,23 @@
-# Array:
+## Data Strutures
+different ways of storing data  
+## Array:
 Collection of similar items in continuos memory location
 
-# Linked list:
+## Linked list:
 1. single 2.Double 3.Circular
 
-# Stack:
+## Stack:
 linear data structure which follows a particular order LIFO or FILO.  
 Operations: push, pop, peek, isempty  
 we can implement using array and linkedlist
 
-# Queue:
+## Queue:
 linear data structure which follows a particular order LIFO or FILO. 
 Operations: enqueue, dequeue, front, rear
 priotity queue: uses max heap, comparator arguement
 Operations: insert, getHighestPriority, deleteHighestPriority
 
-# Tree:
+## Tree:
 -non linear datastruture, undirected graph. Teminologies: root, node, leaf, level, width, depth, height, degree  
 
 **Types of Representation :**   
