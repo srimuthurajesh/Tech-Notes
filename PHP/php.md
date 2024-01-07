@@ -1,22 +1,27 @@
-PHP - Hypertext-pre-processor
-	- created by Rasmus Lerdorf in 1995
-	- originally stood for Personal Home Page.
-	- Interpreted language (no need to compile)
-	- we need 3 things to run php 1) php parser(cgi or server module) 2)webserver 3)browser
+## PHP - Hypertext-pre-processor
+- created by Rasmus Lerdorf in 1995
+- originally stood for Personal Home Page.
+- Interpreted language (no need to compile)
+- we need 3 things to run php 1) php parser(cgi or server module) 2)webserver 3)browser
 
 
-<?php     ?> tell php parser to start and stop
-<% %>, <script language=php > are deployed in previous versions
-<? ?> it is not preferable, need to change short_open_tag in php.ini
--If a file is pure php code it is preferable to omit php closing tag at end of file
-<?php echo "welcome to php"; ?>
-<?php  ‘welcome to php’ ?>
+```<?php     ?>``` tell php parser to start and stop  
+```<% %>```, ```<script language=php >``` are deployed in previous versions  
+```<? ?>``` it is not preferable, need to change short_open_tag in php.ini  
+- If a file is pure php code it is preferable to omit php closing tag at end of file
+  
+```<?php echo "welcome to php"; ?>```
+```<?php  ‘welcome to php’ ?>```
 
-//comments
-/* block comments*/
-#shell comments
+### Comments
+1. Single line: ```//comments```  
+2. Multiline: ```/* block comments*/```
+3. Single line: ```#shell comments```
 
-IDENTIFIERS - Anything that has a value is called Identifier- total 77 - __halt_compiler(),abstract,and,array,as,break,callable,case,catch,class,clone,const,continue,declare,default,die(),dom,echo,else,elseif,empty(),enddeclare,endfor,endforeach,endif,endswitch,endwhile,eval(),exit(),extends,final,finally,,for,foreach,function,global,goto,include_once,instanceof,insteadof,interface,isset,list,namespace,new,or,print,private,protected,public,require,require_once,return 	static,switch,throw,trait,try,unset,use,var,while,xor,yield 	
+### IDENTIFIERS 
+- Anything that has a value is called Identifier- total 77
+
+```__halt_compiler(), abstract, and, array, as, break, callable, case, catch, class, clone, const, continue, declare, default, die(), dom, echo, else, elseif, empty(), enddeclare, endfor, endforeach, endif, endswitch, endwhile, eval(), exit(), extends, final, finally, for, foreach, function, global, goto, include_once, instanceof, insteadof, interface, isset, list, namespace, new, or, print, private, protected, public, require, require_once, return, static, switch, throw, trait, try, unset, use, var, while, xor, yield``` 	
 DATAYPE : 	Loosely typed language, no datatypes syntax
 			1.Scalar -
 				a)int - whole number, equivalent C lang ‘long’ . 32Bit. –2,147,483,648 to +2,147,483,647. 
