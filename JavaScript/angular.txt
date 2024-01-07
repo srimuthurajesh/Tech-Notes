@@ -26,6 +26,7 @@ used to manipulate the structure of the DOM. need to use * before this.
 2. ngFor
 3. ngSwitch, ngSwitchCase, ngSwitchDefault
 
+allow multiple properties, so we need to prefer this than [style], [class]
 4. ngStyle
 5. ngClass
 6. ngTemplateOutlet
