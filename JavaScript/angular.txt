@@ -20,6 +20,16 @@ angular-cli.json, add "styles": [ "../node_modules/bootstrap/dist/css/bootstrap.
 <input type="text" [(ngModel)]="comments">
 import { FormsModule } from '@angular/forms';	//in module.ts
 
+## Angular structural directive
+used to manipulate the structure of the DOM 
+1. ngIf
+2. ngFor
+3. ngSwitch, ngSwitchCase, ngSwitchDefault
+4. ngStyle
+5. ngClass
+6. ngTemplateOutlet
+
+
 #DATA BINDING
 	String/function interpolation:  {{comments}},{{functionName()}}
 	Property binding: [property]="data"
