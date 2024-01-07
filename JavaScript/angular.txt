@@ -21,20 +21,22 @@ angular-cli.json, add "styles": [ "../node_modules/bootstrap/dist/css/bootstrap.
 import { FormsModule } from '@angular/forms';	//in module.ts
 
 ## Angular structural directive
-used to manipulate the structure of the DOM 
+used to manipulate the structure of the DOM. need to use * before this. 
 1. ngIf
 2. ngFor
 3. ngSwitch, ngSwitchCase, ngSwitchDefault
+
 4. ngStyle
 5. ngClass
 6. ngTemplateOutlet
 
 
 #DATA BINDING
+1. One way binding	
 	String/function interpolation:  {{comments}},{{functionName()}}
-	Property binding: [property]="data"
+	Property binding: [property]="data"   just use box bracket before html attributes  
 	Event binding: (event)="expression"
-	Two way binding: [(ngModel)]="data"
+2. Two way binding: [(ngModel)]="data"
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
 
 #COMPONENT CREATION
