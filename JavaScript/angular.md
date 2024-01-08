@@ -3,6 +3,7 @@
 #### Angular CLI commands
 | Command | Description |
 | ----------- | ----------- |
+| Install Nodejs and npm | [Nodejs](https://nodejs.org/) |
 | ```npm install –g @angular/cli``` | install Angular cli  |
 | ```ng –version``` | check version |
 | ```ng new projectname``` | create new angular project |
@@ -19,11 +20,11 @@
 #### Angular Components
 
 
-## Angular structural directive
+## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
-1. ngIf
-2. ngFor
-3. ngSwitch, ngSwitchCase, ngSwitchDefault
+1. *ngIf
+2. *ngFor
+3. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
 
 allow multiple properties, so we need to prefer this than [style], [class]
 4. ngStyle
@@ -31,11 +32,11 @@ allow multiple properties, so we need to prefer this than [style], [class]
 6. ngTemplateOutlet
 
 
-#DATA BINDING
+# Angular Data Binding
 1. One way binding	
-	String/function interpolation:  {{comments}},{{functionName()}}
-	Property binding: [property]="data"   just use box bracket before html attributes  
-	Event binding: (event)="expression"
+	1. Interpolation:  ```{{componentVariable}}```,```{{functionName()}}```
+	2. Property binding: ```[HTMLattribute]="componentVariable"```   Note: just use box bracket before html attributes  
+	3. Event binding: (event)="expression"
 2. Two way binding: [(ngModel)]="data"
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
 
