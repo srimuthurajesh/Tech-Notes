@@ -24,7 +24,33 @@ building blocks for Angular. It consists of
 3. selector: defines how component is used in a template
 4. CSS: (Optionally) styles applied to the template
 
-
+```
+// app.component.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'My Angular App';
+}
+```
+#### Angular Modules
+group of components, directives, pipes, services
+```
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+@NgModule({
+  declarations: [    AppComponent   ],
+  imports: [  BrowserModule  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
 1. *ngIf
