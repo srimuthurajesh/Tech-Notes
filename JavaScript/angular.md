@@ -1,24 +1,23 @@
- ANGULAR
+ # ANGULAR
 
-npm install –g @angular/cli		#to install angular cli
-ng –version						#to check angular cli version
+#### Angular CLI commands
+| Command | Description |
+| ----------- | ----------- |
+| ```npm install –g @angular/cli``` | install Angular cli  |
+| ```ng –version``` | check version |
+| ```ng new projectname``` | create new angular project |
+| ```ng serve``` | run project |
+| ```ng g c componentname``` | generate new component |
+| ```ng g m modulename``` | generate new module |
+| ```ng g p pipename``` | generate new pipe |
+| ```ng g s servicename``` | generate new service |
 
-ng new projectname				#to create new angular project
-ng serve						#to run the project
+#### Adding boostrap to the project 
+1. Install bootstrap ```npm install --save bootstrap```
+2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
 
-ng generate module modulename			
-ng generate component componentname	
-ng generate pipe pipename
-ng generate service servicename
+#### Angular Components
 
-
-/** adding boostrap to the project **/
-npm install --save bootstrap
-angular-cli.json, add "styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]
-
-
-<input type="text" [(ngModel)]="comments">
-import { FormsModule } from '@angular/forms';	//in module.ts
 
 ## Angular structural directive
 used to manipulate the structure of the DOM. need to use * before this. 
