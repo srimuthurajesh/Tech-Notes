@@ -18,6 +18,11 @@
 2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
 
 #### Angular Components
+building blocks for Angular. It consists of
+1. HTML template: that declares what renders on the page
+2. TypeScript class: defines behavior
+3. selector: defines how component is used in a template
+4. CSS: (Optionally) styles applied to the template
 
 
 ## Angular directives
