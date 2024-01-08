@@ -50,16 +50,16 @@
 			empty() -  determine whether a variable is empty
 			is_null() -  finds whether a variable is NULL
 
-SCOPES:
-	1.Global scope -> need global keyword
-	2.local scope
-	3.super global scope
-	4.static
-	$GLOBALS[] 	$name="rajesh";
+### SCOPES:
+1. Global scope -> need global keyword
+2. local scope
+3. super global scope
+4. static
+	```$GLOBALS[] 	$name="rajesh";
 				function getname(){
 					echo $GLOBALS['name'];		//access outer variable inside function
 				}getname();
-
+```
 
 TYPE JUGGLING:
 	<?php
