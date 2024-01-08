@@ -4,7 +4,7 @@
    1. [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
    2. [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript)  
    3. [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)  
-   4. [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP)  
+   4. [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP/php.html)  
 
 ## Databases
    1. **SQL**  
