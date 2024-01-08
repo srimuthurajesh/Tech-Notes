@@ -18,28 +18,30 @@
 2. Multiline: ```/* block comments*/```
 3. Single line: ```#shell comments```
 
-### IDENTIFIERS 
+### Identifiers 
 - Anything that has a value is called Identifier- total 77
 
 ```__halt_compiler(), abstract, and, array, as, break, callable, case, catch, class, clone, const, continue, declare, default, die(), dom, echo, else, elseif, empty(), enddeclare, endfor, endforeach, endif, endswitch, endwhile, eval(), exit(), extends, final, finally, for, foreach, function, global, goto, include_once, instanceof, insteadof, interface, isset, list, namespace, new, or, print, private, protected, public, require, require_once, return, static, switch, throw, trait, try, unset, use, var, while, xor, yield``` 	
-DATAYPE : 	Loosely typed language, no datatypes syntax
-			1.Scalar -
-				a)int - whole number, equivalent C lang ‘long’ . 32Bit. –2,147,483,648 to +2,147,483,647. 
-					can be written in decimal, hexadecimal (prefixed with 0x), and
-					octal notation (prefixed with 0), and can include + / - signs
-				b)float  - real number, eqv to C lang ‘double’. 2.2E–308 to 1.8E+308
-				c)string, - series of char. $str="rajesh"; $str[1];  $str{1};	//a
-					heredoc- $string = <<<EOK rajesh EOK;
-				d)boolean -true or false, case sensitive, ((bool) other datatype) type-casting
-			2.Compound – object,	
-					b)array - collection of key/value pair
-						   array use hash tables, which complexity is 0(1).
-							
-			3.special - a) null - variable with no value.
-			 	   	it has been assigned the constant NULL.
-						it has not been set to any value yet.
-						it has been unset().	
-				b) resource - 	special data type, represent a PHP extension resource such as a database query, an open file, a database connection, and lots of other external types. You will never directly use this type, but will pass to the relevant functions
+
+### Datatype : 	
+- Loosely typed language, no datatypes syntax
+1. Scalar   
+	a) int - whole number, equivalent C lang ‘long’ . 32Bit. –2,147,483,648 to +2,147,483,647. 
+		can be written in decimal, hexadecimal (prefixed with 0x), and
+		octal notation (prefixed with 0), and can include + / - signs
+	b) float  - real number, eqv to C lang ‘double’. 2.2E–308 to 1.8E+308
+	c) string, - series of char. $str="rajesh"; $str[1];  $str{1};	//a
+		heredoc- $string = <<<EOK rajesh EOK;
+	d)boolean -true or false, case sensitive, ((bool) other datatype) type-casting
+3. Compound – object,	
+		b)array - collection of key/value pair
+			   array use hash tables, which complexity is 0(1).
+				
+4. special - a) null - variable with no value.
+		it has been assigned the constant NULL.
+			it has not been set to any value yet.
+			it has been unset().	
+	b) resource - 	special data type, represent a PHP extension resource such as a database query, an open file, a database connection, and lots of other external types. You will never directly use this type, but will pass to the relevant functions
 
 			Indirect reference variable: $name="rajesh";    $$name="good boy";      echo $rajesh;
 			we can declare variable without variable name.	//$var;
