@@ -17,7 +17,13 @@
 1. Install bootstrap ```npm install --save bootstrap```
 2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
 
-#### Angular Components
+
+#### How Angular start working:
+- in main.ts we mentioned (AppModule) app.module.ts should load first
+- then -> in that bootstrap array we mention the component to load first
+
+ 
+## Angular Components
 building blocks for Angular. It consists of
 1. HTML template: that declares what renders on the page
 2. TypeScript class: defines behavior
@@ -30,26 +36,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<div>{{ content }}</div>',
+  styleUrls: ['./app.component.css'],
+  styles: ['h1 { color: blue; }']
 })
 export class AppComponent {
   title = 'My Angular App';
 }
-```
-#### Angular Modules
-group of components, directives, pipes, services
-```
-// app.module.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-@NgModule({
-  declarations: [    AppComponent   ],
-  imports: [  BrowserModule  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
 ```
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
@@ -63,7 +56,7 @@ allow multiple properties, so we need to prefer this than [style], [class]
 6. ngTemplateOutlet
 
 
-# Angular Data Binding
+## Angular Data Binding
 1. One way binding	
 	1. Interpolation:  ```{{componentVariable}}```,```{{functionName()}}```
 	2. Property binding: ```[HTMLattribute]="componentVariable"```   Note: just use box bracket before html attributes  
@@ -87,17 +80,23 @@ allow multiple properties, so we need to prefer this than [style], [class]
 ->selector can be put inside [app-root], so that we should use <div app-root></div>
 ->selector can be select by class '.app-root', so that we should use <div class="div-root"></div>
 
-HOW ANGULAR START WORKING:
-	-> in main.ts we mentioned (AppModule) app.module.ts should load first
-	then -> in that bootstrap array we mention the component to load first
 
-#MODULE
-	Group the components, directives, pipes, and services
-	it has 4 properties: 
-		1.declarations-array of components created
-		2.imports-array of modules
-		3.providers-array of services, 
-		4.bootstrap-main app component for starting the execution
+## Angular Modules
+group of components, directives, pipes, services
+```
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+@NgModule({
+  declarations: [AppComponent], /* array of components created */
+  imports: [BrowserModule],     /* array of modules */
+  providers: [],                /* array of services */
+  bootstrap: [AppComponent]     /* main app component for starting the execution */
+})
+export class AppModule { }
+```
+
 
 #DIRECTIVES:
 	Three types of Directives- Component,Structural,Attribute
