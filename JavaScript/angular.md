@@ -63,9 +63,9 @@ allow multiple properties, so we need to prefer this than [style], [class]
 	1. **Interpolation** :  insert expression result into template ```{{expression}}```
 	2. **Property binding** : ```[property]="expression"```standard HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
-  	4. **Class bindings** : ```[class.className]="expression"```
-    	5. **Style bindings** :	```[style.styleProperty]="expression"```
-	6. **Event bindings** : ```(event)="function()"``` events are click, input, keyup, mouseover, mouseout, change, focus, blur, 
+	4. **Class bindings** : ```[class.className]="expression"```
+ 	5. **Style bindings** :	```[style.styleProperty]="expression"```
+	6. **Event bindings** : ```(event)="function()"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
 2. Two way binding: [(ngModel)]="data"
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
 
