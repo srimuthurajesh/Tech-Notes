@@ -61,7 +61,7 @@ allow multiple properties, so we need to prefer this than [style], [class]
 - binding data into html template
 1. One way binding	
 	1. **Interpolation** :  insert expression result into template ```{{expression}}```
-	2. **Property binding** : ```[property]="expression"```standard HTML element properties such as ```src, disabled, value, innerHtml, title```
+	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
  	5. **Style bindings** :	```[style.styleProperty]="expression"```
