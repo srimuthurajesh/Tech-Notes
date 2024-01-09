@@ -29,11 +29,17 @@
 // app.component.ts
 import { Component } from '@angular/core';
 @Component({
-  selector: 'app-root',   		/*  defines how the component is identified and utilized in html templates */
-  template: '<div>{{ content }}</div>',  /* nline HTML template for the component */
-  templateUrl: './app.component.html',   /* Path to an external HTML template file */ 
-  styleUrls: ['./app.component.css'],    /* Array of paths to external CSS files */ 
-  styles: ['h1 { color: blue; }']        /* Inline styles */
+  selector: 'app-root',   		             /*  defines how the component is identified and utilized in html templates */
+  template: '<div>{{ content }}</div>',              /* nline HTML template for the component */
+  templateUrl: './app.component.html',               /* Path to an external HTML template file */ 
+  styleUrls: ['./app.component.css'],                /* Array of paths to external CSS files */ 
+  styles: ['h1 { color: blue; }'],                   /* Inline styles */
+  providers: [ExampleService],		             /* Array of service providers for dependency injection. */
+  viewProviders: [ExampleViewService],	             /* Array of view service providers*/
+  changeDetection: ChangeDetectionStrategy.OnPush,   /* Specifies change detection strategy for component. */
+  encapsulation: ViewEncapsulation.Emulated,	     /*  Defines encapsulation strategy for component's styles. */
+  moduleId: module.id			             /* A string representing the moduleId to use for template and style files. */	
+  animations: [trigger('myAnimation', [/* animation metadata */])]
 })
 export class AppComponent {
   title = 'My Angular App';
@@ -54,9 +60,10 @@ allow multiple properties, so we need to prefer this than [style], [class]
 ## Angular Data Binding
 - binding data into html template
 1. One way binding	
-	1. Interpolation:  ```{{componentVariable}}```,```{{functionName()}}```
-	2. Property binding: ```[HTMLattribute]="componentVariable"```   Note: just use box bracket before html attributes  
-	3. Event binding: (event)="expression"
+	1. **Interpolation**:  insert expression result into template ```{{expression}}```
+	2. **Property binding**: ```[property]="expression"```standard HTML element properties such as ```src, disabled, value, innerHtml, title```
+ 	3. **Attribute bindings**: ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label 	
+	4. **Event binding**: (event)="expression"
 2. Two way binding: [(ngModel)]="data"
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
 
