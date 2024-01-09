@@ -24,21 +24,16 @@
 
  
 ## Angular Components
-building blocks for Angular. It consists of
-1. HTML template: that declares what renders on the page
-2. TypeScript class: defines behavior
-3. selector: defines how component is used in a template
-4. CSS: (Optionally) styles applied to the template
-
+- building blocks for Angular. It consists of
 ```
 // app.component.ts
 import { Component } from '@angular/core';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  template: '<div>{{ content }}</div>',
-  styleUrls: ['./app.component.css'],
-  styles: ['h1 { color: blue; }']
+  selector: 'app-root',   		/*  defines how the component is identified and utilized in html templates */
+  template: '<div>{{ content }}</div>',  /* nline HTML template for the component */
+  templateUrl: './app.component.html',   /* Path to an external HTML template file */ 
+  styleUrls: ['./app.component.css'],    /* Array of paths to external CSS files */ 
+  styles: ['h1 { color: blue; }']        /* Inline styles */
 })
 export class AppComponent {
   title = 'My Angular App';
@@ -57,28 +52,13 @@ allow multiple properties, so we need to prefer this than [style], [class]
 
 
 ## Angular Data Binding
+- binding data into html template
 1. One way binding	
 	1. Interpolation:  ```{{componentVariable}}```,```{{functionName()}}```
 	2. Property binding: ```[HTMLattribute]="componentVariable"```   Note: just use box bracket before html attributes  
 	3. Event binding: (event)="expression"
 2. Two way binding: [(ngModel)]="data"
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
-
-#COMPONENT CREATION
-	create component name as server.component.ts
-		import { component } from '@angular/core';
-		@Component({
-			selector : 'app-server',
-			templateUrl : './server.component.html' 
-		});
-		export class ServerComponent{
-		}
-	add componentname in module-declartions array
-
-->we can give directly html code in templateUrl
-->we can give css code directly under styles instead of stryelUrls
-->selector can be put inside [app-root], so that we should use <div app-root></div>
-->selector can be select by class '.app-root', so that we should use <div class="div-root"></div>
 
 
 ## Angular Modules
