@@ -35,6 +35,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],                /* Array of paths to external CSS files */ 
   styles: ['h1 { color: blue; }'],                   /* Inline styles */
   providers: [ExampleService],		             /* Array of service providers for dependency injection. */
+  
   viewProviders: [ExampleViewService],	             /* Array of view service providers*/
   changeDetection: ChangeDetectionStrategy.OnPush,   /* Specifies change detection strategy for component. */
   encapsulation: ViewEncapsulation.Emulated,	     /*  Defines encapsulation strategy for component's styles. */
@@ -47,14 +48,18 @@ export class AppComponent {
 ```
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
-1. *ngIf
-2. *ngFor
-3. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+1. *ngIf:  
+   ```
+	<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
+	<ng-template #anotherTag> <span>else case</span><ng-template>
+   ```
+3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
+4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
 
 allow multiple properties, so we need to prefer this than [style], [class]
-4. ngStyle
-5. ngClass
-6. ngTemplateOutlet
+4. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```
+5. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```
+6. [ngTemplateOutlet]
 
 
 ## Angular Data Binding
