@@ -91,19 +91,6 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 ```
 
-
-#DIRECTIVES:
-	Three types of Directives- Component,Structural,Attribute
-	IF ELSE CASE:
-		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
-		<ng-template #anotherTag> <span>else case</span><ng-template>
-	NG-STYLE:
-		<span [ngStyle]="{backgrounColor: getColor()}">RAJESH</span>
-	NG-CLASS:
-		<span [ngClass]	="{className: status=='1'}">RAJESH</span>
-	NG-FOR:
-		<span *ngFor="let i of names; let n =index"></span>	
-
 #PIPES  i.e filters
 	{{comments|uppercase}}
 	{{comments|lowercase}}
