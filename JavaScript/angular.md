@@ -102,7 +102,19 @@ i.e filters
 | jsonval   |  ```{{ jsonval \| json }}```|
 | percent   |  ```{{00.54565 \| percent}}```|
 | slice     |  ```{{string \| slice:2:6}}```|		
-	
+
+#### Custom pipe
+```
+import {Pipe, PipeTransform} from '@angular/core';  
+@Pipe ({  
+  name : 'sqrt'  
+})  
+export class SqrtPipe implements PipeTransform {  
+  transform(val : number) : number {  
+    return Math.sqrt(val);  
+  }  
+}  
+```
 
 #ROUTING:	
 	
