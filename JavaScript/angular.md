@@ -91,15 +91,15 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 ```
 
-#PIPES  i.e filters
-	{{comments|uppercase}}
-	{{comments|lowercase}}
-	{{6589.23 | currency:"USD"}}
-	{{todaydate | date:'d/M/y'}}
-	{{todaydate | date:'shortTime'}}	
-	{{ jsonval | json }}
-	{{00.54565 | percent}}
-	{{string | slice:2:6}}		
+## PIPES  
+i.e filters
+1. uppercase -  {{comments|uppercase}}
+2. lowercase -	{{comments|lowercase}}
+3. currency  -	{{6589.23 | currency:"USD"}}
+4. todaydate -	{{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}	
+5. jsonval   -	{{ jsonval | json }}
+6. percent   -	{{00.54565 | percent}}
+7. slice     -	{{string | slice:2:6}}		
 	
 
 #ROUTING:	
