@@ -120,7 +120,31 @@ handle users input as a form
 
 1. Template Driven form
 2. Reactive form
-
+#### Building blocks of Angular forms
+1. **formControl** - represents a single input field
+```
+let firstname= new FormControl(); //Creating a FormControl in a Reactive forms
+firstname.value   //Returns the value of the first name field
+firstname.errors      // returns the list of errors
+firstname.dirty       // true if the value has changed (dirty)
+firstname.touched     // true if input field is touched
+firstname.valid       // true if the input value has passed all the validation
+```
+2. **formGroup** - is a collection of FormControls
+```
+let address= new FormGroup({
+    street : new FormControl(""),
+    city : new FormControl(""),
+    pinCode : new FormControl("")
+})
+address.value;       	// return json object
+address.get("street")   // get formcontrol by name, inside formgroup
+address.errors     	// returns the list of errors
+address.dirty      	// true if the value of one of the child control has changed (dirty)
+address.touched    	// true if one of the child control is touched
+address.valid      	// true if all the child controls passed the validation
+```
+3. **formArray**
 
 
 #ROUTING:	
