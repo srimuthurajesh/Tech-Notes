@@ -144,7 +144,7 @@ address.dirty      	// true if the value of one of the child control has changed
 address.touched    	// true if one of the child control is touched
 address.valid      	// true if all the child controls passed the validation
 ```
-3. **formArray**
+3. **formArray** : array of formControls
 
 
 #ROUTING:	
