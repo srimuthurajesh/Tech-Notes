@@ -115,6 +115,13 @@ export class SqrtPipe implements PipeTransform {
   }  
 }  
 ```
+## Angular Forms
+handle users input as a form
+
+1. Template Driven form
+2. Reactive form
+
+
 
 #ROUTING:	
 	
