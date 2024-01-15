@@ -56,10 +56,10 @@ used to manipulate the structure of the DOM. need to use * before this.
 3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
 4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
 
-allow multiple properties, so we need to prefer this than [style], [class]
-4. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```
-5. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```
-6. [ngTemplateOutlet]
+5. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```  
+6. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
+Note: allow multiple properties, so we need to prefer this than [style], [class]  
+7. [ngTemplateOutlet]  
 
 #### Angular custom Directive
 ```
@@ -191,14 +191,14 @@ this.contactForm = this.formBuilder.group({
 });
 ```
 
-#### Angular Services
+## Angular Services
 - Providing a Service to a Component
 ```
 export class SampleService{
     public  getSomething() { return "Hello world"; }
 }
 ```
-Invoke a service:
+**How to Invoke a service without dependency injection**:
 ```
 @Component({ selector: 'app-root', templateUrl: './app.component.html', })
 export class AppComponent
@@ -209,18 +209,6 @@ export class AppComponent
    }
 }
 ```
-#### Angular Model
-```
-export class Product { 
-    constructor(productID:number, name:string) {
-        this.productID=productID;
-        this.name=name;
-    }
-    productID:number ;
-    name: string ;
-}
-```
-
 ## Angular Dependency Injection
 -  way of providing dependencies to classes that need them, without creating them internally.
 
@@ -241,6 +229,19 @@ providers: [ { provide: APIURL, useValue: 'http://SomeEndPoint.com/api' , provid
 constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
 ```
 **Injector:** Injector holds the Providers and is responsible for resolving the dependencies and injecting the instance of the Dependency to the Consumer
-  
+
+  #### Angular Model
+```
+export class Product { 
+    constructor(productID:number, name:string) {
+        this.productID=productID;
+        this.name=name;
+    }
+    productID:number ;
+    name: string ;
+}
+```
+
+
 #ROUTING:	
 	
