@@ -233,20 +233,6 @@ constructor(@Inject('PRODUCT_SERVICE') private productService: ProductService) {
 providers: [ { provide: APIURL, useValue: 'http://SomeEndPoint.com/api' , provide: 'USE_FAKE', useValue: true},
 constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
 ```
-**Injector:** Injector holds the Providers and is responsible for resolving the dependencies and injecting the instance of the Dependency to the Consumer
-
-  #### Angular Model
-```
-export class Product { 
-    constructor(productID:number, name:string) {
-        this.productID=productID;
-        this.name=name;
-    }
-    productID:number ;
-    name: string ;
-}
-```
-
 
 #ROUTING:	
 	
