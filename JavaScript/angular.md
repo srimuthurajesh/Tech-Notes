@@ -239,7 +239,19 @@ export class Product {
 **Consumer:** it is Component/Directive/Service that needs the Dependency.
 **Dependency:** Service class that we want to in our consumer
 **Injection Token (DI Token):** The Injection Token (DI Token) uniquely identifies a Dependency. We use DI Token when we register dependency
-**Provider:** maintains the list of Dependencies along with their Injection Token.
+**Provider:** maintains the list of Dependencies in the module.
+```
+providers: [{ provide: SampleService, useClass: SampleService }]
+constructor(private productService : ProductService ) {}
+```
+```
+providers: [{ provide: 'PRODUCT_SERVICE', useClass: ProductService }]
+constructor(@Inject('PRODUCT_SERVICE') private productService: ProductService) {}
+```
+```
+providers: [ { provide: APIURL, useValue: 'http://SomeEndPoint.com/api' , provide: 'USE_FAKE', useValue: true},
+constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
+```
 **Injector:** Injector holds the Providers and is responsible for resolving the dependencies and injecting the instance of the Dependency to the Consumer
   
 #ROUTING:	
