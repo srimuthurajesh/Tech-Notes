@@ -201,21 +201,24 @@ this.contactForm = this.formBuilder.group({
 ```
 
 ## Angular Services
-- Providing a Service to a Component
+- Providing a Service to a Component, for reuse data and common functionality  
 ```
+//sample.service.ts
+@injectable
 export class SampleService{
     public  getSomething() { return "Hello world"; }
 }
 ```
 **How to Invoke a service without dependency injection**:
 ```
-@Component({ selector: 'app-root', templateUrl: './app.component.html', })
+@Component({ selector: 'app-root', templateUrl: './app.component.html'})
 export class AppComponent
 { 
    sampleService;
    constructor(){
      this.sampleService=new SampleService();
    }
+
 }
 ```
 ## Angular Dependency Injection
