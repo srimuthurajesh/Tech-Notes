@@ -11,6 +11,7 @@
 | ```ng g c componentname``` | generate new component |
 | ```ng g m modulename``` | generate new module |
 | ```ng g p pipename``` | generate new pipe |
+| ```ng g directive directivename``` | generate new directive |
 | ```ng g s servicename``` | generate new service |
 
 #### Adding boostrap to the project 
@@ -91,7 +92,7 @@ import { AppComponent } from './app.component';
 export class AppModule { }
 ```
 
-## PIPES  
+## Angular Pipes  
 i.e filters
 | Filters | Code |
 | ----------- | ----------- |
@@ -102,6 +103,20 @@ i.e filters
 | jsonval   |  ```{{ jsonval \| json }}```|
 | percent   |  ```{{00.54565 \| percent}}```|
 | slice     |  ```{{string \| slice:2:6}}```|		
+
+## Angular custom Directive
+```
+import { Directive, ElementRef } from '@angular/core';
+@Directive({
+    selector: '[appHighlight]'
+})
+export class HighlightDirective {
+    constructor(private eleRef: ElementRef) {
+        eleRef.nativeElement.style.background = 'red';
+    }
+}
+```
+
 
 #### Custom pipe
 ```
@@ -120,6 +135,8 @@ handle users input as a form
 
 1. Template Driven form
 2. Reactive form
+
+- need to import FormsModule or ReactiveFormsModule
 #### Building blocks of Angular forms
 1. **formControl** - represents a single input field
 ```
@@ -133,10 +150,13 @@ firstname.valid       // true if the input value has passed all the validation
 2. **formGroup** - is a collection of FormControls
 ```
 let address= new FormGroup({
-    street : new FormControl(""),
+    name : new FormControl({value: ‘Rahul’, disabled: true}),
     city : new FormControl(""),
-    pinCode : new FormControl("")
+    pinCode : new FormControl('', [Validators.required, Validators.minLength(6)], Validators.email])
 })
+reactiveForm.getValue('city');   //return formControl
+reactiveForm.setValue({all inputs});
+reactiveForm.patchValue({partial inputs});
 address.value;       	// return json object
 address.get("street")   // get formcontrol by name, inside formgroup
 address.errors     	// returns the list of errors
@@ -147,5 +167,33 @@ address.valid      	// true if all the child controls passed the validation
 3. **formArray** : array of formControls
 
 
+##### Template Driven form
+```
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+ 	<input type="text" name="firstname" ngModel #fname="ngModel">
+    	<button type="submit">Submit</button>
+</form>
+<!-- contactForm is formGroup, have methods like value, valid, touched,submitted -->
+<!-- fname is formControl, have methods like value, valid, invalid,touched -->
+```
+
+##### Reactive Driven form
+```
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+	<input type="text" id="firstname" name="firstname" formControlName="firstname">
+	<input type="text" id="lastname" name="lastname" [formControl]="lastname">
+	<button type="submit">Submit</button>
+</form>
+```
+##### FormBuilder
+```
+import { FormBuilder } from '@angular/forms'
+constructor(private formBuilder: FormBuilder) { }
+this.contactForm = this.formBuilder.group({
+  firstname: [''],
+  lastname: [''],
+  email: ['']
+});
+```
 #ROUTING:	
 	
