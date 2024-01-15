@@ -1,6 +1,6 @@
  # ANGULAR
 
-[Components](https://website-name.com 'Link title')
+[Components](#angular-components)
 
 #### Angular CLI commands
 | Command | Description |
