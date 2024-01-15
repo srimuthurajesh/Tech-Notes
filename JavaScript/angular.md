@@ -137,7 +137,7 @@ handle users input as a form
 2. Reactive form
 
 - need to import FormsModule or ReactiveFormsModule
-#### Building blocks of Angular forms
+### Building blocks of Angular forms
 1. **formControl** - represents a single input field
 ```
 let firstname= new FormControl(); //Creating a FormControl in a Reactive forms
@@ -220,11 +220,6 @@ export class AppComponent
 ```
 ## Angular Dependency Injection
 -  way of providing dependencies to classes that need them, without creating them internally.
-
-**Consumer:** it is Component/Directive/Service that needs the Dependency.  
-**Dependency:** Service class that we want to in our consumer  
-**Injection Token (DI Token):** The Injection Token (DI Token) uniquely identifies a Dependency. We use DI Token when we register dependency  
-**Provider:** maintains the list of Dependencies in the module.  
 ```
 providers: [{ provide: SampleService, useClass: SampleService }]
 constructor(private productService : ProductService ) {}
