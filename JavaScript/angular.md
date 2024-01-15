@@ -230,7 +230,7 @@ providers: [{ provide: 'PRODUCT_SERVICE', useClass: ProductService }]
 constructor(@Inject('PRODUCT_SERVICE') private productService: ProductService) {}
 ```
 ```
-providers: [ { provide: APIURL, useValue: 'http://SomeEndPoint.com/api' , provide: 'USE_FAKE', useValue: true},
+providers: [ { provide: 'APIURL', useValue: 'http://SomeEndPoint.com/api' , provide: 'USE_FAKE', useValue: true},
 constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
 ```
 
