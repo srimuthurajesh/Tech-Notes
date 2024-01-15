@@ -236,10 +236,10 @@ export class Product {
 ## Angular Dependency Injection
 -  way of providing dependencies to classes that need them, without creating them internally.
 
-**Consumer:** it is Component/Directive/Service that needs the Dependency.
-**Dependency:** Service class that we want to in our consumer
-**Injection Token (DI Token):** The Injection Token (DI Token) uniquely identifies a Dependency. We use DI Token when we register dependency
-**Provider:** maintains the list of Dependencies in the module.
+**Consumer:** it is Component/Directive/Service that needs the Dependency.  
+**Dependency:** Service class that we want to in our consumer  
+**Injection Token (DI Token):** The Injection Token (DI Token) uniquely identifies a Dependency. We use DI Token when we register dependency  
+**Provider:** maintains the list of Dependencies in the module.  
 ```
 providers: [{ provide: SampleService, useClass: SampleService }]
 constructor(private productService : ProductService ) {}
