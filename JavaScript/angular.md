@@ -28,7 +28,6 @@
 - building blocks for Angular. It consists of
 ```
 // app.component.ts
-import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',   		             /*  defines how the component is identified and utilized in html templates */
   template: '<div>{{ content }}</div>',              /* nline HTML template for the component */
@@ -62,6 +61,14 @@ allow multiple properties, so we need to prefer this than [style], [class]
 5. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```
 6. [ngTemplateOutlet]
 
+#### Angular custom Directive
+```
+@Directive({ selector: '[appHighlight]'})
+export class HighlightDirective {
+    constructor(private eleRef: ElementRef) { eleRef.nativeElement.style.background = 'red'; }
+}
+```
+
 
 ## Angular Data Binding
 - binding data into html template
@@ -80,9 +87,6 @@ allow multiple properties, so we need to prefer this than [style], [class]
 group of components, directives, pipes, services
 ```
 // app.module.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
 @NgModule({
   declarations: [AppComponent], /* array of components created */
   imports: [BrowserModule],     /* array of modules */
@@ -104,23 +108,10 @@ i.e filters
 | percent   |  ```{{00.54565 \| percent}}```|
 | slice     |  ```{{string \| slice:2:6}}```|		
 
-## Angular custom Directive
-```
-import { Directive, ElementRef } from '@angular/core';
-@Directive({
-    selector: '[appHighlight]'
-})
-export class HighlightDirective {
-    constructor(private eleRef: ElementRef) {
-        eleRef.nativeElement.style.background = 'red';
-    }
-}
-```
 
 
 #### Custom pipe
 ```
-import {Pipe, PipeTransform} from '@angular/core';  
 @Pipe ({  
   name : 'sqrt'  
 })  
@@ -192,7 +183,6 @@ address.valid      	// true if all the child controls passed the validation
 ```
 ##### FormBuilder
 ```
-import { FormBuilder } from '@angular/forms'
 constructor(private formBuilder: FormBuilder) { }
 this.contactForm = this.formBuilder.group({
   firstname: [''],
@@ -210,8 +200,6 @@ export class SampleService{
 ```
 Invoke a service:
 ```
-import { Component } from '@angular/core';
-import { SampleService } from './sample.service';
 @Component({ selector: 'app-root', templateUrl: './app.component.html', })
 export class AppComponent
 { 
