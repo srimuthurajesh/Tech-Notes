@@ -1,13 +1,13 @@
  # ANGULAR
 
 - [Components](#angular-components)
-- [Directives](#angular-components)
-- [Data Binding](#angular-components)
-- [Modules](#angular-components)
-- [Pipes](#angular-components)
-- [Forms](#angular-components)
-- [Services](#angular-components)
-- [Dependency Injection](#angular-components)
+- [Directives](#angular-directives)
+- [Data Binding](#angular-data-binding)
+- [Modules](#angular-modules)
+- [Pipes](#angular-pipes)
+- [Forms](#angular-forms)
+- [Services](#angular-services)
+- [Dependency Injection](#angular-dependency-injection)
 
 #### Angular CLI commands
 | Command | Description |
