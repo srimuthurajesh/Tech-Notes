@@ -220,6 +220,7 @@ export class AppComponent
 ```
 ## Angular Dependency Injection
 -  way of providing dependencies to classes that need them, without creating them internally.
+-  follows singleton pattern and receives same instance of a service.
 ```
 providers: [{ provide: SampleService, useClass: SampleService }]
 constructor(private productService : ProductService ) {}
