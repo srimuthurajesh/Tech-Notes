@@ -146,6 +146,8 @@ firstname.errors      // returns the list of errors
 firstname.dirty       // true if the value has changed (dirty)
 firstname.touched     // true if input field is touched
 firstname.valid       // true if the input value has passed all the validation
+firstname.statusChanges.subscribe(x => {console.log('firstname status changes')});
+firstname.valueChanges.subscribe(x => {console.log('firstname status changes')});
 ```
 2. **formGroup** - is a collection of FormControls
 ```
@@ -157,6 +159,9 @@ let address= new FormGroup({
 reactiveForm.getValue('city');   //return formControl
 reactiveForm.setValue({all inputs});
 reactiveForm.patchValue({partial inputs});
+reactiveForm.statusChanges.subscribe(x => {console.log('reactiveForm status changes')});
+reactiveForm.valueChanges.subscribe(x => {console.log('reactiveForm status changes')});
+
 address.value;       	// return json object
 address.get("street")   // get formcontrol by name, inside formgroup
 address.errors     	// returns the list of errors
@@ -195,5 +200,47 @@ this.contactForm = this.formBuilder.group({
   email: ['']
 });
 ```
+
+#### Angular Services
+- Providing a Service to a Component
+```
+export class SampleService{
+    public  getSomething() { return "Hello world"; }
+}
+```
+Invoke a service:
+```
+import { Component } from '@angular/core';
+import { SampleService } from './sample.service';
+@Component({ selector: 'app-root', templateUrl: './app.component.html', })
+export class AppComponent
+{ 
+   sampleService;
+   constructor(){
+     this.sampleService=new SampleService();
+   }
+}
+```
+#### Angular Model
+```
+export class Product { 
+    constructor(productID:number, name:string) {
+        this.productID=productID;
+        this.name=name;
+    }
+    productID:number ;
+    name: string ;
+}
+```
+
+## Angular Dependency Injection
+-  way of providing dependencies to classes that need them, without creating them internally.
+
+**Consumer:** it is Component/Directive/Service that needs the Dependency.
+**Dependency:** Service class that we want to in our consumer
+**Injection Token (DI Token):** The Injection Token (DI Token) uniquely identifies a Dependency. We use DI Token when we register dependency
+**Provider:** maintains the list of Dependencies along with their Injection Token.
+**Injector:** Injector holds the Providers and is responsible for resolving the dependencies and injecting the instance of the Dependency to the Consumer
+  
 #ROUTING:	
 	
