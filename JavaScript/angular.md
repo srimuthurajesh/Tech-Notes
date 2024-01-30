@@ -107,13 +107,13 @@ export class AppModule { }
 
 ## Angular Pipes    
 i.e filters  
-1. ```{{comments | uppercase}}```   
-2. ```{{comments | lowercase}}```   
-3. ```{{6589.23 | currency:"USD"}}```   
-4. ```{{todaydate | date:'d/M/y'}}, {{todaydate \| date:'shortTime'}}```  
-5. ```{{ jsonval | json }}```  
-6. ```{{00.54565 | percent}}```  
-7. ```{{string | slice:2:6}}```  		
+1. {{comments | uppercase}}   
+2. {{comments | lowercase}}   
+3. {{6589.23 | currency:"USD"}}   
+4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
+5. {{ jsonval | json }}  
+6. {{00.54565 | percent}}  
+7. {{string | slice:2:6}}  		
 
 
 
