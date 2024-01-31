@@ -1,4 +1,5 @@
  # ANGULAR
+component-based framework 
 
 - [Components](#angular-components)
 - [Directives](#angular-directives)
