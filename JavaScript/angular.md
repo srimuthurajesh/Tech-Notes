@@ -58,13 +58,13 @@ export class AppComponent {
 ```
 #### Component Lifecycle hooks:
 1. OnChange()  - triggers while any data change happens
-2. OnInint() - 
+2. OnInint() - while initialize the component
 3. Docheck()
 4. AfterContentInit()
 5. AferContentChecked() - Angular detects the data that is rendered into the directives or component
-6. AfterViewInit()
-7. AfterViewChecked()
-8. OnDestroy()
+6. AfterViewInit() - used once Angular initializes the component’s views and child views, or the view that contains the directive
+7. AfterViewChecked() - once Angular checks the component’s views and child views
+8. OnDestroy() - just before Angular destroys the directive or component
 
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
