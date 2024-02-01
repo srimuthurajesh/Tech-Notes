@@ -56,6 +56,16 @@ export class AppComponent {
   title = 'My Angular App';
 }
 ```
+#### Component Lifecycle hooks:
+1. OnChange()  - triggers while any data change happens
+2. OnInint() - 
+3. Docheck()
+4. AfterContentInit()
+5. AferContentChecked() - Angular detects the data that is rendered into the directives or component
+6. AfterViewInit()
+7. AfterViewChecked()
+8. OnDestroy()
+
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
 1. *ngIf:  
