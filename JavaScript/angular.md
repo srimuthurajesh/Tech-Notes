@@ -44,10 +44,14 @@ component-based framework
 ```
 e2e  			-> has test files
 node_modules  		-> has all libraries code mentioned in package json
-src 
+src
+   app
+   assets
 angular.json   		-> has assets, root, script, env details  
 package.json   		-> has dependencies, dev dependencies, scrip command details  
-package.lock.json   	-> has dependencies needed for dependencies mentioned in package json   
+package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
+tsconfig.json		->
+tslint.json		-> rules for ts  
 ```
     
 ## Angular Components
