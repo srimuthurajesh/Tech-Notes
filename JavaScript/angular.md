@@ -33,9 +33,24 @@ component-based framework
 - in main.ts we mentioned (AppModule) app.module.ts should load first
 - then -> in that bootstrap array we mention the component to load first
 
- **package.json**: has dependencies, dev dependencies, scrip command details  
- **angular.json**: has assets, root, script details
- 
+#### ng build output files
+ 1. main.ts.map
+ 2. polyfills.js.map
+ 3. runtime.js.map
+ 4. style.js.map
+ 5. vendor.js.map - has frameworks
+
+### Angular folder structure
+```
+e2e  -> has test files
+node_modules  -> has all libraries code mentioned in package json
+src ->
+angular.json   ->has assets, root, script, env details  
+package.json   ->has dependencies, dev dependencies, scrip command details  
+package.lock.json   ->has dependencies needed for dependencies mentioned in package json   
+
+```
+    
 ## Angular Components
 - building blocks for Angular. It consists of
 ```
