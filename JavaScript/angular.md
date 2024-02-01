@@ -68,7 +68,7 @@ export class AppComponent {
 
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
-1. Structural Directive
+1. **Structural Directive**
 	1. *ngIf:  
 	   ```
 		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
@@ -76,9 +76,9 @@ used to manipulate the structure of the DOM. need to use * before this.
 	   ```
 	3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
 	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
-2. Attribute Directive
-	1. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```  
-	2. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
+2. **Attribute Directive**
+	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```  
+	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
 	3. [ngTemplateOutlet]  
 
@@ -104,7 +104,8 @@ export class HighlightDirective {
 		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
 
 
-## Angular Modules
+## Angular Modules  
+
 group of components, directives, pipes, services
 ```
 // app.module.ts
@@ -125,8 +126,6 @@ i.e filters
 4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
 5. {{ jsonval | json }}  
 6. {{00.54565 | percent}}  		
-
-
 
 #### Custom pipe
 ```
