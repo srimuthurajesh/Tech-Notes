@@ -42,13 +42,12 @@ component-based framework
 
 ### Angular folder structure
 ```
-e2e  -> has test files
-node_modules  -> has all libraries code mentioned in package json
-src ->
-angular.json   ->has assets, root, script, env details  
-package.json   ->has dependencies, dev dependencies, scrip command details  
-package.lock.json   ->has dependencies needed for dependencies mentioned in package json   
-
+e2e  			-> has test files
+node_modules  		-> has all libraries code mentioned in package json
+src 
+angular.json   		-> has assets, root, script, env details  
+package.json   		-> has dependencies, dev dependencies, scrip command details  
+package.lock.json   	-> has dependencies needed for dependencies mentioned in package json   
 ```
     
 ## Angular Components
