@@ -45,8 +45,18 @@ component-based framework
 e2e  			-> has test files
 node_modules  		-> has all libraries code mentioned in package json
 src
-   app
-   assets
+    app
+    assets
+    environments
+    favicon.ico
+    index.html
+    main.ts
+    style.css
+    tslint.json         -> extension of root folder file
+    tsconfig.app.json   -> extension of root folder file
+    test.ts             -> will have all test cases register here
+    polyfills.ts
+    style.css
 angular.json   		-> has assets, root, script, env details  
 package.json   		-> has dependencies, dev dependencies, scrip command details  
 package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
