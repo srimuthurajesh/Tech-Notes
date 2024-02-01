@@ -33,6 +33,8 @@ component-based framework
 - in main.ts we mentioned (AppModule) app.module.ts should load first
 - then -> in that bootstrap array we mention the component to load first
 
+ **package.json**: has dependencies, dev dependencies, scrip command details  
+ **angular.json**: has assets, root, script details
  
 ## Angular Components
 - building blocks for Angular. It consists of
