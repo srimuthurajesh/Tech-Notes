@@ -68,18 +68,19 @@ export class AppComponent {
 
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
-1. *ngIf:  
-   ```
-	<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
-	<ng-template #anotherTag> <span>else case</span><ng-template>
-   ```
-3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
-4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
-
-5. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```  
-6. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
-Note: allow multiple properties, so we need to prefer this than [style], [class]  
-7. [ngTemplateOutlet]  
+1. Structural Directive
+	1. *ngIf:  
+	   ```
+		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
+		<ng-template #anotherTag> <span>else case</span><ng-template>
+	   ```
+	3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
+	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+2. Attribute Directive
+	1. **[ngStyle]**    - ```[ngStyle]="{backgrounColor: getColor()}```  
+	2. **[ngClass]**    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
+	Note: allow multiple properties, so we need to prefer this than [style], [class]  
+	3. [ngTemplateOutlet]  
 
 #### Angular custom Directive
 ```
