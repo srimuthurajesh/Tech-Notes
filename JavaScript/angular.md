@@ -24,44 +24,31 @@ component-based framework
 | ```ng g directive directivename``` | generate new directive |
 | ```ng g s servicename``` | generate new service |
 
-#### Adding boostrap to the project 
-1. Install bootstrap ```npm install --save bootstrap```
-2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
-
-
 #### How Angular start working:
 - in main.ts we mentioned (AppModule) app.module.ts should load first
 - then -> in that bootstrap array we mention the component to load first
 
-#### ng build output files
- 1. main.ts.map
- 2. polyfills.js.map
- 3. runtime.js.map
- 4. style.js.map
- 5. vendor.js.map - has frameworks
-
 ### Angular folder structure
 ```
-e2e  			-> has test files
-node_modules  		-> has all libraries code mentioned in package json
+e2e  			-> has e2e test files
+node_modules  		-> contains all the libraries and dependencies mentioned in the package.json file.
 src
-    app
-    assets
-    environments
-    favicon.ico
-    index.html
-    main.ts
-    style.css
-    tslint.json         -> extension of root folder file
-    tsconfig.app.json   -> extension of root folder file
+    app			-> contains the components, modules, services, etc.,
+    assets		-> contains static assets like images, fonts, etc.
+    environments	-> contains environment-specific configuration files
+    favicon.ico		-> icon file that appears in the browser tab.
+    index.html		-> main HTML file that serves as the entry point 
+    main.ts		-> main ts file that bootstraps Angular app.
+    style.css		-> Global style sheet apply entire app
+    tslint.json         -> extension of root folder file(tslint.json)
+    tsconfig.app.json   -> extension of root folder file(tsconfig.json)
     test.ts             -> will have all test cases register here
-    polyfills.ts
-    style.css
+    polyfills.ts	-> it required to support various browsers
 angular.json   		-> has assets, root, script, env details  
 package.json   		-> has dependencies, dev dependencies, scrip command details  
 package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
-tsconfig.json		->
-tslint.json		-> rules for ts  
+tsconfig.json		-> specifies compiler options and file inclusion/exclusion rules.
+tslint.json		-> config file for linting ts. used to enforce coding standards and catch errors. 
 ```
     
 ## Angular Components
@@ -277,3 +264,16 @@ constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public user
 
 #ROUTING:	
 	
+# More Informations
+
+#### Adding boostrap to the project 
+1. Install bootstrap ```npm install --save bootstrap```
+2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
+
+
+#### ng build output files
+ 1. main.ts.map
+ 2. polyfills.js.map
+ 3. runtime.js.map
+ 4. style.js.map
+ 5. vendor.js.map - has frameworks
