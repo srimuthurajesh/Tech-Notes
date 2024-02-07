@@ -251,9 +251,20 @@ providers: [ { provide: 'APIURL', useValue: 'http://SomeEndPoint.com/api' , prov
 constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
 ```
 
-# ROUTING:	
+## ROUTING:	
 
- 
+## Input Output decorators
+```
+//parent.component.html
+<app-child customname='rajesh' ></app-child>
+//child.component.ts
+@Input('customname') name:string
+@Output sendData:EventEmitter<any> = new EventEmitter<any>();
+onSubmit(){ this.sendData.emit("from child to parent");}
+```
+#### @Output
+
+
 ## Angular Pipes    
 i.e filters  
 1. {{comments | uppercase}}   
