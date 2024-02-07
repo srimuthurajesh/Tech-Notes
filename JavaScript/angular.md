@@ -275,7 +275,13 @@ export class SqrtPipe implements PipeTransform {
 }  
 ```
 # More Informations
-
+#### Template Reference variable
+```
+<!--one way binding-->
+<input type="text" #inputTemplate /> <button (click)="submitted(inputTemplate.value)">submit</button> 
+<!--two way binding-->
+<input type="text" #inputTemplate ngModel /> <button (click)="submitted(inputTemplate.value)">submit</button> 
+```
 #### Adding boostrap to the project 
 1. Install bootstrap ```npm install --save bootstrap```
 2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
