@@ -5,11 +5,11 @@ component-based framework
 - [Directives](#angular-directives)
 - [Data Binding](#angular-data-binding)
 - [Modules](#angular-modules)
-- [Pipes](#angular-pipes)
 - [Forms](#angular-forms)
 - [Services](#angular-services)
 - [Dependency Injection](#angular-dependency-injection)
-
+- [Pipes](#angular-pipes)
+  
 #### Angular CLI commands
 | Command | Description |
 | ----------- | ----------- |
@@ -136,26 +136,6 @@ group of components, directives, pipes, services
 export class AppModule { }
 ```
 
-## Angular Pipes    
-i.e filters  
-1. {{comments | uppercase}}   
-2. {{comments | lowercase}}   
-3. {{6589.23 | currency:"USD"}}   
-4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
-5. {{ jsonval | json }}  
-6. {{00.54565 | percent}}  		
-
-#### Custom pipe
-```
-@Pipe ({  
-  name : 'sqrt'  
-})  
-export class SqrtPipe implements PipeTransform {  
-  transform(val : number) : number {  
-    return Math.sqrt(val);  
-  }  
-}  
-```
 ## Angular Forms
 handle users input as a form
 
@@ -228,15 +208,14 @@ this.contactForm = this.formBuilder.group({
 
 ## Angular Services
 - Providing a Service to a Component, for reuse data and common functionality  
+**How to Invoke a service without dependency injection**:
 ```
 //sample.service.ts
 @injectable
 export class SampleService{
     public  getSomething() { return "Hello world"; }
 }
-```
-**How to Invoke a service without dependency injection**:
-```
+//app.component.ts
 @Component({ selector: 'app-root', templateUrl: './app.component.html'})
 export class AppComponent
 { 
@@ -263,8 +242,29 @@ providers: [ { provide: 'APIURL', useValue: 'http://SomeEndPoint.com/api' , prov
 constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
 ```
 
-#ROUTING:	
-	
+# ROUTING:	
+
+ 
+## Angular Pipes    
+i.e filters  
+1. {{comments | uppercase}}   
+2. {{comments | lowercase}}   
+3. {{6589.23 | currency:"USD"}}   
+4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
+5. {{ jsonval | json }}  
+6. {{00.54565 | percent}}  		
+
+#### Custom pipe
+```
+@Pipe ({  
+  name : 'sqrt'  
+})  
+export class SqrtPipe implements PipeTransform {  
+  transform(val : number) : number {  
+    return Math.sqrt(val);  
+  }  
+}  
+```
 # More Informations
 
 #### Adding boostrap to the project 
