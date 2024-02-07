@@ -130,7 +130,8 @@ group of components, directives, pipes, services
   declarations: [AppComponent], /* array of components created */
   imports: [BrowserModule],     /* array of modules */
   providers: [],                /* array of services */
-  bootstrap: [AppComponent]     /* main app component for starting the execution */
+  bootstrap: [AppComponent],     /* only given for root component */
+  entryComponent: []		/* will put dynamic components */	
 })
 export class AppModule { }
 ```
