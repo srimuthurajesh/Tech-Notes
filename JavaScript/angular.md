@@ -111,7 +111,7 @@ export class HighlightDirective {
 ## Angular Data Binding
 - binding data into html template
 1. One way binding	
-	1. **Interpolation** :  insert expression result into template ```{{expression}}```
+	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{getAge()}},{{'22'}}```
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
@@ -208,22 +208,31 @@ this.contactForm = this.formBuilder.group({
 
 ## Angular Services
 - Providing a Service to a Component, for reuse data and common functionality  
-**How to Invoke a service without dependency injection**:
 ```
 //sample.service.ts
 @injectable
 export class SampleService{
     public  getSomething() { return "Hello world"; }
 }
+```
+**How to Invoke a service without dependency injection**:
+```
 //app.component.ts
 @Component({ selector: 'app-root', templateUrl: './app.component.html'})
 export class AppComponent
 { 
-   sampleService;
+   sampleService:SampleService;
    constructor(){
-     this.sampleService=new SampleService();
-   }
-
+     this.sampleService=new SampleService();}
+}
+```
+**How to Invoke a service with dependency injection**:
+```
+//app.component.ts
+@Component({ selector: 'app-root', templateUrl: './app.component.html'})
+export class AppComponent
+{ 
+   constructor(public sampleService:SampleService){ }
 }
 ```
 ## Angular Dependency Injection
