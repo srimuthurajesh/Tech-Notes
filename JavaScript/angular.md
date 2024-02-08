@@ -255,12 +255,16 @@ constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public user
 
 ## Input Output decorators
 ```
-//parent.component.html
-<app-child customname='rajesh' ></app-child>
 //child.component.ts
 @Input('customname') name:string
 @Output sendData:EventEmitter<any> = new EventEmitter<any>();
 onSubmit(){ this.sendData.emit("from child to parent");}
+
+//parent.component.html
+<app-child customname='rajesh' (sendData)="someFunctionInParent($event)" ></app-child>
+
+//parent.component.ts
+export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
 #### @Output
 
