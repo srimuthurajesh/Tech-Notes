@@ -74,14 +74,14 @@ export class AppComponent {
 }
 ```
 #### Component Lifecycle hooks:
-1. OnChange()  - triggers while any data change happens
-2. OnInit() - while initialize the component
-3. Docheck()
-4. AfterContentInit()
-5. AferContentChecked() - Angular detects the data that is rendered into the directives or component
-6. AfterViewInit() - used once Angular initializes the component’s views and child views, or the view that contains the directive
-7. AfterViewChecked() - once Angular checks the component’s views and child views
-8. OnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
+1. ngOnChange()  - triggers while any data change happens
+2. ngOnInit() - while initialize the component
+3. ngDocheck() - check while @input changes, attribute changes
+4. ngAfterContentInit()
+5. ngAferContentChecked() - Angular detects the data that is rendered into the directives or component
+6. ngAfterViewInit() - while Angular initializes the component’s views and child views, or the view that contains the directive
+7. ngAfterViewChecked() - once Angular checks the component’s views and child views
+8. ngOnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
 
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
