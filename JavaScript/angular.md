@@ -75,13 +75,13 @@ export class AppComponent {
 ```
 #### Component Lifecycle hooks:
 1. OnChange()  - triggers while any data change happens
-2. OnInint() - while initialize the component
+2. OnInit() - while initialize the component
 3. Docheck()
 4. AfterContentInit()
 5. AferContentChecked() - Angular detects the data that is rendered into the directives or component
 6. AfterViewInit() - used once Angular initializes the component’s views and child views, or the view that contains the directive
 7. AfterViewChecked() - once Angular checks the component’s views and child views
-8. OnDestroy() - just before Angular destroys the directive or component
+8. OnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
 
 ## Angular directives
 used to manipulate the structure of the DOM. need to use * before this. 
@@ -261,8 +261,7 @@ constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public user
 onSubmit(){ this.sendData.emit("from child to parent");}
 
 //parent.component.html
-<app-child customname='rajesh' (sendData)="someFunctionInParent($event)" ></app-child>
-
+<app-child customname='rajesh' (sendData)="someFunctionInParent($event)"></app-child>
 //parent.component.ts
 export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
