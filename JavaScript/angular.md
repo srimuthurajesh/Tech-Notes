@@ -98,7 +98,7 @@ used to manipulate the structure of the DOM. need to use * before this.
 	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
 	3. [ngTemplateOutlet]  
-
+3. **Structural Directive**:
 #### Angular custom Directive
 ```
 @Directive({ selector: '[appHighlight]'})
@@ -265,7 +265,32 @@ onSubmit(){ this.sendData.emit("from child to parent");}
 //parent.component.ts
 export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
-#### @Output
+## @HostBinding and @HostListener in Angular
+**Host**: element is the element on which we attach our directive or component
+**HostBinding**:binds element property to host 
+```
+@Directive({selector: '[appHighLight]',})
+export class HighLightDirective implements OnInit {
+   @HostBinding('attr.title') title = 'This is a custom directive';
+   @HostBinding('id') id = 'customDirectiveId';   //HTML attributes such as title, id, class, style	
+   @HostBinding('style.border') border: string="5px solid blue"; 
+   @HostBinding('disabled') disabled = true;   //Element Properties: such as disabled, hidden, readonly, etc.
+   @HostBinding('class.active') isActive = true;  //control classes of the host elemen
+}
+```
+**HostListener**: listens to the DOM event of host.
+```
+@HostListener('click', ['$event'])
+onClick(event: MouseEvent) { console.log('Element clicked', event);}
+@HostListener('mouseenter') 
+onMouseEnter() { console.log('Mouse entered'); }
+@HostListener('keydown', ['$event'])
+onKeyDown(event: KeyboardEvent) { console.log('Key pressed', event.key); }
+@HostListener('window:resize', ['$event'])
+onResize(event: Event) { console.log('Window resized', event); }
+@HostListener('customEvent', ['$event'])
+onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', event.detail); }
+```
 
 
 ## Angular Pipes    
@@ -289,7 +314,7 @@ export class SqrtPipe implements PipeTransform {
 }  
 ```
 # More Informations
-#### Template Reference variable
+## Template Reference variable
 ```
 <!--one way binding-->
 <input type="text" #inputTemplate /> <button (click)="submitted(inputTemplate.value)">submit</button> 
