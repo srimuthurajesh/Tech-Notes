@@ -52,7 +52,7 @@ tsconfig.json		-> specifies compiler options and file inclusion/exclusion rules.
 tslint.json		-> config file for linting ts. used to enforce coding standards and catch errors. 
 ```
     
-## Angular Components
+## Components
 - building blocks for Angular. It consists of  
 ```
 // app.component.ts
@@ -313,8 +313,9 @@ export class SqrtPipe implements PipeTransform {
     return Math.sqrt(val);  
   }  
 }
+```
 ## NgTemplate
-- it contains html template
+- it contains html template. reuse by ngTemplateOutlet and template reference variable
 ```
 <ng-template #sampleTemplate>From inside template will print, wherever #sampletemplate called</ng-template>
 //using below ng-container we can reuse ng-template html
@@ -322,9 +323,6 @@ export class SqrtPipe implements PipeTransform {
   This text is not displayed
 </ng-container> 
 ```
-
-```
-# More Informations
 ## Template Reference variable
 ```
 <!--one way binding-->
@@ -332,6 +330,9 @@ export class SqrtPipe implements PipeTransform {
 <!--two way binding-->
 <input type="text" #inputTemplate ngModel /> <button (click)="submitted(inputTemplate.value)">submit</button> 
 ```
+
+```
+# More Informations
 #### Adding boostrap to the project 
 1. Install bootstrap ```npm install --save bootstrap```
 2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
