@@ -1,4 +1,4 @@
- # ANGULAR
+# ANGULAR
 component-based framework 
 
 - [Components](#angular-components)
