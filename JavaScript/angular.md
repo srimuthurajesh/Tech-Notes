@@ -312,7 +312,17 @@ export class SqrtPipe implements PipeTransform {
   transform(val : number) : number {  
     return Math.sqrt(val);  
   }  
-}  
+}
+## NgTemplate
+- it contains html template
+```
+<ng-template #sampleTemplate>From inside template will print, wherever #sampletemplate called</ng-template>
+//using below ng-container we can reuse ng-template html
+<ng-container *ngTemplateOutlet="sampleTemplate">
+  This text is not displayed
+</ng-container> 
+```
+
 ```
 # More Informations
 ## Template Reference variable
