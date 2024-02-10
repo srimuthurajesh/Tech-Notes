@@ -1,5 +1,5 @@
 # ANGULAR
-component-based framework 
+component-based SPA framework 
 
 - [Components](#angular-components)
 - [Directives](#angular-directives)
@@ -93,13 +93,15 @@ used to manipulate the structure of the DOM. need to use * before this.
 		<ng-template #anotherTag> <span>else case</span><ng-template>
 	   ```
 	3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
-	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault  
+Note: ngIf & ngFor on same div, will result in an an Template parse errors  
 2. **Attribute Directive**
 	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```  
 	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
-	3. [ngTemplateOutlet]  
-3. **Structural Directive**:
+	3. [ngTemplateOutlet]
+
+    
 #### Angular custom Directive
 ```
 @Directive({ selector: '[appHighlight]'})
@@ -124,12 +126,14 @@ export class HighlightDirective {
 
 ## Angular Modules  
 
-group of components, directives, pipes, services
+- group of components, directives, pipes, services based on functionality
+- Angular itself built on the concept of modules. The Features like Forms, HTTP, Routing are implemented as modules
 ```
 // app.module.ts
 @NgModule({
-  declarations: [AppComponent], /* array of components created */
+  declarations: [AppComponent], /* array of components,directives,pipes created */
   imports: [BrowserModule],     /* array of modules */
+  exports: [BrowserModule],     /* array of modules to export */
   providers: [],                /* array of services */
   bootstrap: [AppComponent],     /* only given for root component */
   entryComponent: []		/* will put dynamic components */	
@@ -329,6 +333,12 @@ export class SqrtPipe implements PipeTransform {
 <input type="text" #inputTemplate /> <button (click)="submitted(inputTemplate.value)">submit</button> 
 <!--two way binding-->
 <input type="text" #inputTemplate ngModel /> <button (click)="submitted(inputTemplate.value)">submit</button> 
+```
+## IF THEN ELSE useing ngTemplate
+```
+<div *ngIf="selected; then thenBlock1 else elseBlock1"><p>This content is not shown</p></div>
+<ng-template #thenBlock1> <p>content to render when the selected is true.</p> </ng-template>
+<ng-template #elseBlock1> <p>content to render when selected is false.</p></ng-template>
 ```
 
 ```
