@@ -12,7 +12,7 @@ component-based framework
   
 #### Angular CLI commands
 | Command | Description |
-| ----------- | ----------- |
+| -- | -- |
 | Install Nodejs and npm | [Nodejs](https://nodejs.org/) |
 | ```npm install –g @angular/cli``` | install Angular cli  |
 | ```ng –version``` | check version |
