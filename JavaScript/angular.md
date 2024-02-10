@@ -11,17 +11,6 @@ component-based framework
 - [Pipes](#angular-pipes)
   
 #### Angular CLI commands
-|  Name| Size  | Range  |  2^n|
-|--|--|--| -- |  
-|**byte** | 1byte | -+128 | 2^8 |
-|**short** | 2byte | -+32,768| 2^16 |   
-|**int** | 4byte | -+2,14,74,83,648| 2^36|   
-|**long** | 8byte | -+9,22,33,72,03,68,54,775 | 2^64 |
-|**float** | 4byte | . after 6 digit   | 2^36 |
-|**double** | 8byte| . after 15 digit | 2^64 |
-|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 2^16| 
-|**boolean** | depends on jvm, 1bit |0 1,   | 2 |
-
 
 | Command | Description |
 | -- | -- |
