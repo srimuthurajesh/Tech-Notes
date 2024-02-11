@@ -48,7 +48,7 @@ src
     tsconfig.app.json   -> extension of root folder file(tsconfig.json)
     test.ts             -> will have all test cases register here
     polyfills.ts	-> it required to support various browsers
-angular.json   		-> has assets, root, script, env details  
+angular.json   		-> has assets, root, script, env details , main.ts path 
 package.json   		-> has dependencies, dev dependencies, scrip command details  
 package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
 tsconfig.json		-> specifies compiler options and file inclusion/exclusion rules.
@@ -122,10 +122,8 @@ export class HighlightDirective {
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
  	5. **Style bindings** :	```[style.styleProperty]="expression"```
-	6. **Event bindings** : ```(event)="function()"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
-2. Two way binding: [(ngModel)]="data"
-		eg: both are same: <input type="text" [value]="val"> <input type="text" [(ngModel)]="val">
-
+	6. **Event bindings** : ```(event)="function($event)"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
+2. Two way binding: [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
 
 ## Angular Modules  
 
