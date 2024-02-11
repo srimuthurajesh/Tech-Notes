@@ -1,5 +1,5 @@
 # ANGULAR
-component-based SPA framework 
+- javascript component based framework, for building SPA 
 
 - [Components](#angular-components)
 - [Directives](#angular-directives)
@@ -25,9 +25,12 @@ component-based SPA framework
 | ```ng g directive directivename``` | generate new directive |
 | ```ng g s servicename``` | generate new service |
 
-#### How Angular start working:
-- in main.ts we mentioned (AppModule) app.module.ts should load first
-- then -> in that bootstrap array we mention the component to load first
+#### Bootstrapping in angular:
+1. Loads index.html, which contains ```<app-root></app-root>```
+2. Loads Angular & Third-party libraries & Application
+3. Executes application entry point (main.ts)
+4. Load & execute Root Module (app.module.ts) and Root Component (app.component.ts)
+5. Displayes the template (app.component.html)
 
 ### Angular folder structure
 ```
@@ -348,9 +351,13 @@ export class SqrtPipe implements PipeTransform {
 2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
 
 
-#### ng build output files
- 1. main.ts.map
- 2. polyfills.js.map
- 3. runtime.js.map
- 4. style.js.map
- 5. vendor.js.map - has frameworks
+## Ng Build  
+Commamd: ```ng build```
+  
+#### ng build output files in dist folder  
+ 1. main.ts.map  	- code of our application
+ 2. polyfills.js.map  	- scripts for supporting variety of modern browsers
+ 3. runtime.js.map  	- Webpack runtime file
+ 4. style.js.map    	- contains global style rules bundled as a js file
+ 5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
+
