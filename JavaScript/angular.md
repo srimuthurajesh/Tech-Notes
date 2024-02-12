@@ -96,16 +96,22 @@ used to manipulate the structure of the DOM. need to use * before this.
 		<ng-template #anotherTag> <span>else case</span><ng-template>
 	   ```
 	3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
-	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault  
+	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+	    ```
+	    <div [ngSwitch]="Switch_Expression"> 
+		    <div *ngSwitchCase="MatchExpression1”> First Template</div>
+		    <div *ngSwitchCase="MatchExpression2">Second template</div>
+		    <div *ngSwitchDefault?>Default Template</div>
+	    </div>
+	    ```
 Note: ngIf & ngFor on same div, will result in an an Template parse errors  
 2. **Attribute Directive**
 	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```  
 	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
 	3. [ngTemplateOutlet]
-
-    
-#### Angular custom Directive
+3. **Component Directive**: selector in component
+4. **Angular custom Directive**
 ```
 @Directive({ selector: '[appHighlight]'})
 export class HighlightDirective {
@@ -300,13 +306,14 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 
 
 ## Angular Pipes    
-i.e filters  
+- used to Transform the Data.  
 1. {{comments | uppercase}}   
 2. {{comments | lowercase}}   
 3. {{6589.23 | currency:"USD"}}   
 4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
 5. {{ jsonval | json }}  
-6. {{00.54565 | percent}}  		
+6. {{00.54565 | percent}}
+7. {{msg | slice:11:20}}		
 
 #### Custom pipe
 ```
