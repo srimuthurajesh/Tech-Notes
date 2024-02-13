@@ -87,7 +87,7 @@ export class AppComponent {
 7. ngAfterViewChecked() - once Angular checks the component’s views and child views
 8. ngOnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
 
-## Angular directives
+## Directives
 used to manipulate the structure of the DOM. need to use * before this. 
 1. **Structural Directive**
 	1. *ngIf:  
@@ -104,14 +104,14 @@ used to manipulate the structure of the DOM. need to use * before this.
 		    <div *ngSwitchDefault?>Default Template</div>
 	    </div>
 	    ```
-Note: ngIf & ngFor on same div, will result in an an Template parse errors  
-2. **Attribute Directive**
-	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```  
+	Note: ngIf & ngFor on same div, will result in an an Template parse errors  
+2. **Attribute Directive**  
+	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```    
 	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
-	3. [ngTemplateOutlet]
-3. **Component Directive**: selector in component
-4. **Angular custom Directive**
+	3. [ngTemplateOutlet]  
+3. **Component Directive**: selector in component  
+4. **Angular custom Directive**  
 ```
 @Directive({ selector: '[appHighlight]'})
 export class HighlightDirective {
@@ -219,7 +219,7 @@ this.contactForm = this.formBuilder.group({
 ```
 
 ## Angular Services
-- Providing a Service to a Component, for reuse data and common functionality  
+- reusable common functionality/data in many components  
 ```
 //sample.service.ts
 @injectable
@@ -315,6 +315,8 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 6. {{00.54565 | percent}}
 7. {{msg | slice:11:20}}		
 
+**1. Pure Pipes**: Execute change in value.  
+**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
 #### Custom pipe
 ```
 @Pipe ({  
