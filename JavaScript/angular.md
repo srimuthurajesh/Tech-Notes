@@ -78,6 +78,7 @@ export class AppComponent {
   title = 'My Angular App';
 }
 ```
+
 #### Component Lifecycle hooks:
 1. ngOnChange()  - triggers while any data change happens
 2. ngOnInit() - while initialize the component
