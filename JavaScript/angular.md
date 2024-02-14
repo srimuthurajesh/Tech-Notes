@@ -58,7 +58,7 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 ## Components
 - building blocks for Angular. It consists of
   
-```
+
 // app.component.ts
 @Component({
   selector: 'app-root',   		             /* defines how the component is identified and utilized in html templates */
@@ -77,7 +77,6 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 export class AppComponent {
   title = 'My Angular App';
 }
-```
 
 #### Component Lifecycle hooks:
 1. ngOnChange()  - triggers while any data change happens
