@@ -124,7 +124,7 @@ export class HighlightDirective {
 ## Angular Data Binding
 - binding data into html template
 1. One way binding	
-	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{getAge()}},{{'22'}}```
+	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{methodWithbracket}},{{'22'}}```
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
@@ -314,7 +314,7 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
 5. {{ jsonval | json }}  
 6. {{00.54565 | percent}}
-7. ```{{msg | slice:11:20}}```		
+7. {{msg | slice:11:20}}		
 
 **1. Pure Pipes**: Execute change in value.  
 **2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
