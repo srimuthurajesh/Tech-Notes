@@ -4,23 +4,24 @@
 
 - [History](#history)
 - [Basic Java program](#basic-java-program)
-- [Comments](#comments)
-- [Identifiers](#identifiers)
-- [Literals](#literals)
-- [Expression](#expression)
-- [Keywords](#keywords)
+	- [Comments](#comments)
+	- [Identifiers](#identifiers)
+	- [Literals](#literals)
+	- [Expression](#expression)
+	- [Keywords](#keywords)  
 - [Variable](#Variable)
-- [Constant](#Constant)
-- [Enum](#Enum)
-- [Null](#Null)
+- [Datatype](#Datatype)
+	- [Constant](#Constant)
+	- [Enum](#Enum)
+	- [Null](#Null)
 - [Operators](#Operators)
+- [Control statements](#Control+statements)
+- [Looping statements](#Looping+statements)
 - [Static](#Static)
 - [Final](#Final)
 - [Typecasting](#Typecasting)
 - [Array](#Array)
 - [String](#String)
-- [Control statements](#Control+statements)
-- [Looping statements](#Looping+statements)
 - [Packages & Imports](#Packages+&+imports)
 - [Wrapper class](#Wrapper+class)
 - [Serialization](#Serialization)
@@ -64,12 +65,12 @@ class Hello{
 }
 ```
 
-## Comments: 
+### Comments: 
 1. Singleline: (//)
 2. Multiline: (/*.. */)
 3. Documentation: (/**…\*/)   
 
-## Identifiers: 
+### Identifiers: 
 > used to name things/identify elements  
 1. name must be unique
 2. should not be in char
@@ -78,14 +79,14 @@ class Hello{
 5. use proper whitespace between keywords and identifiers
 6. should be meaningful and prefer camelcase
 
-## Literals: 
+### Literals: 
 > value used in the code
-## Expression: 
+### Expression: 
 > combination of variables, identifiers, literals  
 
-## Keywords: 
+### Keywords: 
 > Predefined meaning (68) words.  
-##### Strictly Reserved Keywords (51):
+#### Strictly Reserved Keywords (51):
 1. Access Modifiers: private, public, protected
 2. Data Types: boolean, byte, short, int, long, float, double, char
 3. Control Flow: if, else, switch, for, while, do, break, continue, return
@@ -96,7 +97,7 @@ class Hello{
 8. Record System: record
 9. Underscore (introduced in Java 9): _
 
-##### Contextually Reserved Keywords (17):
+#### Contextually Reserved Keywords (17):
 1. const (reserved within enum declarations)
 2. goto (not currently used, but reserved for future use)
 3. strictfp (reserved for future use)
@@ -118,13 +119,11 @@ class Hello{
 
 ## Variable:  
 > Named storage location.     
-1. **Local variable**: inside method 
-2. **Instant variable**: inside clas 
-3. **Static variable**: Declared as static  
 
 ## Datatype:  
 > Predefined memory storage  
-
+- Java is not fully oops language, due usage of primitive datatypes.  
+1. Premitive datatype
 |  Name| Size  | Range  |  2<sup>n</sup>|
 |--|--|--| -- |  
 |**byte** | 1byte | -+128 | 2<sup>8</sup> |
@@ -140,7 +139,8 @@ Binary can be represent as adding "0b"   ex: int a = 0b011;
 Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;  
 Power can be represent by _e_ ex: float a = 35e3f;  
 At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
-Java is not fully oops language, due usage of primitive datatypes.  
+
+2. Non Premitive datatype
 
 ## Constant: 
 > Immutable. Declare as final static.  eg: static final double PI=3.14   
