@@ -338,7 +338,6 @@ export class SqrtPipe implements PipeTransform {
 <ng-template #elseBlock1> <p>content to render when selected is false.</p></ng-template>
 ```
 
-```
 # More Informations
 #### Adding boostrap to the project 
 1. Install bootstrap ```npm install --save bootstrap```
