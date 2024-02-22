@@ -29,6 +29,7 @@
 - [Exception handling](#Exception+handling)
 - [Annotations](#Annotations)
 - [Regex](#Regex)
+- [Keywords List](#keywords+list)
 
 
 
@@ -92,35 +93,6 @@ class Hello{
    
 ### Keywords: 
 > Predefined meaning (68) words.  
-#### Strictly Reserved Keywords (51):
-1. Access Modifiers: private, public, protected
-2. Data Types: boolean, byte, short, int, long, float, double, char
-3. Control Flow: if, else, switch, for, while, do, break, continue, return
-4. Object-Oriented Programming: abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
-5. Exception Handling: try, catch, finally, throw, throws
-6. Generics: extends, super
-7. Module System: exports, module, opens, provides, requires, to, uses
-8. Record System: record
-9. Underscore (introduced in Java 9): _
-
-#### Contextually Reserved Keywords (17):
-1. const (reserved within enum declarations)
-2. goto (not currently used, but reserved for future use)
-3. strictfp (reserved for future use)
-4. volatile (can be used as a variable modifier)
-5. transient (can be used as a variable modifier)
-6. native (can be used as a method modifier)
-7. synchronized (can be used as a method modifier)
-8. assert (can be used in conjunction with the -enableassertions flag)
-9. enum (can be used to declare enum types)
-10. goto (reserved for future use)
-11. interface (can be used to declare interfaces)
-12. package (can be used to declare packages)
-13. protected (can be used as an access modifier)
-14. public (can be used as an access modifier)
-15. static (can be used as a variable or method modifier)
-16. strictfp (reserved for future use)
-17. volatile (can be used as a variable modifier)
 
 ## Java I/O
 1. Output  
@@ -135,7 +107,8 @@ class Hello{
 	    	int age = scanner.nextInt();
 	     	char ch = scanner.next.charAt(0);
 	  }
-  ```  
+  	```
+
 ## Variable:  
 > Named storage location.     
 
@@ -409,3 +382,33 @@ ClassNotFoundException: runtime, try to load the class while Class.forName() or 
 import java.util.regex.*;  
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
+## Keywords List
+#### Strictly Reserved Keywords (51):
+1. Access Modifiers: private, public, protected
+2. Data Types: boolean, byte, short, int, long, float, double, char
+3. Control Flow: if, else, switch, for, while, do, break, continue, return
+4. Object-Oriented Programming: abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
+5. Exception Handling: try, catch, finally, throw, throws
+6. Generics: extends, super
+7. Module System: exports, module, opens, provides, requires, to, uses
+8. Record System: record
+9. Underscore (introduced in Java 9): _
+
+#### Contextually Reserved Keywords (17):
+1. const (reserved within enum declarations)
+2. goto (not currently used, but reserved for future use)
+3. strictfp (reserved for future use)
+4. volatile (can be used as a variable modifier)
+5. transient (can be used as a variable modifier)
+6. native (can be used as a method modifier)
+7. synchronized (can be used as a method modifier)
+8. assert (can be used in conjunction with the -enableassertions flag)
+9. enum (can be used to declare enum types)
+10. goto (reserved for future use)
+11. interface (can be used to declare interfaces)
+12. package (can be used to declare packages)
+13. protected (can be used as an access modifier)
+14. public (can be used as an access modifier)
+15. static (can be used as a variable or method modifier)
+16. strictfp (reserved for future use)
+17. volatile (can be used as a variable modifier)
