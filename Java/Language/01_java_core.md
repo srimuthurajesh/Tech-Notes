@@ -17,7 +17,7 @@
 - [Looping statements](#looping-statements)
 - [Array](#Array)
 - [String](#String)
-- [Static](#Static)
+- [Static](#Static-)
 - [Final](#Final-)
 - [Constant](#Constant)
 - [Enum](#Enum)
