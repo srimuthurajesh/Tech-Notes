@@ -109,11 +109,9 @@ class Hello{
 	  }
   	```
 
-## Variable:  
-> Named storage location.     
 
 ## Datatype:  
-> Predefined memory storage  
+> defined type of data, ie.Predefined memory storage  
 - Java is not fully oops language, due usage of primitive datatypes.  
 ### 1. Premitive datatype
 
@@ -137,6 +135,12 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 1. [String](#string)
 2. [Array](#Array)
 3. Class
+
+
+## Variable:  
+> Named storage location. ie name for the datatype.
+1. Declaration: int age;
+2. Defination: age = 28;
 
 ## Operators:  
 
@@ -164,16 +168,18 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 
 
 ## Control statements:
-1. if(con){ exp1; }
-2. if(con){ exp1; } else{ exp2; }
-3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
-4. Tenary operator-condition ? expersion 1: expersion 2;
+> control flow of program
+1. if(con){ exp1; }	
+2. if(con){ exp1; } else{ exp2; }	//alternative for using two ifs
+3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } //for more than one else  
+4. Tenary operator-condition ? expersion 1: expersion 2; //short form of ifelse
 4. switch(varible){case constant: operation; break;default: operation;break;}  
 Note: long float double and customer classes cannot be use in switch   
 
 ## Looping statements:
-1. while(con){ body; }
-2. do{ body }while(condition);
+> repeat the execution  
+1. while(con){ body; }	//iterates as long as condition true  
+2. do{ body }while(condition);	//executes atleast once  
 3. for(intialize counter;test condition;inc or dec counter){ body; }
 5. break; 	//get out of loop
 6. continue;	//back to continue next loop
@@ -184,8 +190,9 @@ Note: long float double and customer classes cannot be use in switch
 
 
 ## Array:    
-> Group of similar datatype 
+> Group of similar datatype refered by single variable name
 
+**Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 ### Declarations
 int a[];  
 int[] a;    
@@ -209,7 +216,7 @@ List<?> a = Lists.newArrayList(a);
 
 
 ## String:  
-> class represents sequence of char  
+> class represents sequence of char, immutable, uses double quotes
 - implements Serializable, Comparable and CharSequence interfaces  
 
 **String creation**:  
