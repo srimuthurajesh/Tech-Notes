@@ -9,6 +9,7 @@
 - [Literals](#literals)
 - [Expression](#expression)
 - [Keywords](#keywords)
+- [Variable](#Variable)
 
 
 ## History
@@ -96,13 +97,6 @@ class Hello{
 16. strictfp (reserved for future use)
 17. volatile (can be used as a variable modifier)
 
-
-## Packages & import: 
-> Collection of similar classes, interfaces and sub packages.  
-```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
-how to define a package in that program: ```package packagename;```    
-how to import package: ```import packagename.\*;```     
-how to import using fully qualified name without import keyword: ```package classname```;   
 
 ## Variable:  
 > Named storage location.     
@@ -253,6 +247,13 @@ Note: long float double and customer classes cannot be use in switch
 8. goto label_name; 		label_name:{exp}
 9. break label_name;		label_name:{exp}
 10. For each loop(Datatype var: iterable)
+
+## Packages & import: 
+> Collection of similar classes, interfaces and sub packages.  
+```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
+how to define a package in that program: ```package packagename;```    
+how to import package: ```import packagename.\*;```     
+how to import using fully qualified name without import keyword: ```package classname```;   
 
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence  
