@@ -25,7 +25,7 @@
 - [Typecasting](#Typecasting)
 - [Packages & Imports](#packages--imports)
 - [Wrapper class](#wrapper-class)
-- [Serialization](#Serialization)
+- [Serialization](#serialization-)
 - [Exception handling](#exception-handling)
 - [Annotations](#Annotations)
 - [Regex](#Regex)
