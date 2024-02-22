@@ -227,7 +227,7 @@ export class AppComponent
 **How to Invoke a service with dependency injection**:
 ```
 //app.component.ts
-@Component({ selector: 'app-root', templateUrl: './app.component.html'})
+@Component({ selector: 'app-root', templateUrl: './app.component.html', providers: [SampleService]})
 export class AppComponent
 { 
    constructor(public sampleService:SampleService){ }
