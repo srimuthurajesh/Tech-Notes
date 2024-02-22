@@ -36,18 +36,22 @@
 7. **Sublist/pattern search** -    
    
 ### Sorting
-1. **Bubble sort O(n^2)** - go through list, compare nearyby values & swap..repeat 
-2. **Selection sort O(n^2)** -  find minimum & swap..repeat 
-3. **Insertion sort O(n^2)** - compare with all values then insert O(n^2)
+1. **Bubble sort O(n<sup>2</sup>)** - go through list, compare nearyby values & swap..repeat 
+2. **Selection sort O(n<sup>2</sup>)** -  find minimum & swap..repeat 
+3. **Insertion sort O(n<sup>2</sup>)** - compare with all values then insert O(n<sup>2</sup>)
+
 ---
+
 4. **Merge sort O(n log n)** - divide and conquer, merging. 
 5. **Heap sort O(n log n)** -  
+
 ---
+
 6. **Quick sort O(n log n)** - divide & conquer. ie.Binary sort. selecting pivot is important p=n/2 
 ---
 7. **Radix sort O(n)** - non comparative sorting algo, bucket values according to radix 1s,10s,20s    
 8. **Counting sort O(n)** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
-9. **Bucket sort O(n^2)** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
-10. **Pigeonhole sort O(n+2^k)** -   
-11. **Cycle sort O(n^2)** -  
+9. **Bucket sort O(n<sup>2</sup>)** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
+10. **Pigeonhole sort O(n+2<sup>k</sup>)** -   
+11. **Cycle sort O(n<sup>2</sup>)** -  
 https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
