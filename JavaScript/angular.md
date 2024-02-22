@@ -1,8 +1,8 @@
 # ANGULAR
 > javascript component based framework, for building SPA 
 
-- [Components](#angular-components)
-- [Directives](#angular-directives)
+- [Components](#components)
+- [Directives](#directives)
 - [Data Binding](#angular-data-binding)
 - [Modules](#angular-modules)
 - [Forms](#angular-forms)
