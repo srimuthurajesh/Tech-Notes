@@ -103,7 +103,7 @@ how to import using fully qualified name without import keyword: ```package clas
 
 |  Name| Size  | Range  |  2^n|
 |--|--|--| -- |  
-|**byte** | 1byte | -+128 | 2^8 |
+|**byte** | 1byte | -+128 | 2<sup>8</sup> |
 |**short** | 2byte | -+32,768| 2^16 |   
 |**int** | 4byte | -+2,14,74,83,648| 2^36|   
 |**long** | 8byte | -+9,22,33,72,03,68,54,775 | 2^64 |
