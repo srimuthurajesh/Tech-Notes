@@ -42,9 +42,8 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 ```
     
 ## Components
-- building blocks for Angular. It consists of
-  
-
+> building blocks for Angular. It consists of
+```
 // app.component.ts
 @Component({
   selector: 'app-root',   		             /* defines how the component is identified and utilized in html templates */
@@ -63,6 +62,7 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 export class AppComponent {
   title = 'My Angular App';
 }
+```
 
 #### Component Lifecycle hooks:
 1. ngOnChange()  - triggers while any data change happens
@@ -75,7 +75,7 @@ export class AppComponent {
 8. ngOnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
 
 ## Directives
-used to manipulate the structure of the DOM. need to use * before this. 
+> used to manipulate the structure of the DOM. need to use * before this. 
 1. **Structural Directive**
 	1. *ngIf:  
 	   ```
@@ -108,7 +108,7 @@ export class HighlightDirective {
 
 
 ## Angular Data Binding
-- binding data into html template
+> binding data into html template
 1. One way binding	
 	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{methodWithbracket}},{{'22'}}```
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
@@ -119,8 +119,7 @@ export class HighlightDirective {
 2. Two way binding: [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
 
 ## Angular Modules  
-
-- group of components, directives, pipes, services based on functionality
+> group of components, directives, pipes, services based on functionality
 - Angular itself built on the concept of modules. The Features like Forms, HTTP, Routing are implemented as modules
 ```
 // app.module.ts
@@ -136,7 +135,7 @@ export class AppModule { }
 ```
 
 ## Angular Forms
-handle users input as a form
+> handle users input as a form
 
 1. Template Driven form
 2. Reactive form
@@ -206,7 +205,7 @@ this.contactForm = this.formBuilder.group({
 ```
 
 ## Angular Services
-- reusable common functionality/data in many components  
+> reusable common functionality/data in many components  
 ```
 //sample.service.ts
 @injectable
@@ -235,7 +234,7 @@ export class AppComponent
 }
 ```
 ## Angular Dependency Injection
--  way of providing dependencies to classes that need them, without creating them internally.
+>  way of providing dependencies to classes that need them, without creating them internally.
 -  follows singleton pattern and receives same instance of a service.
 ```
 providers: [{ provide: SampleService, useClass: SampleService }]
