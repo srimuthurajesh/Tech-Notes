@@ -8,6 +8,7 @@
 	- [Identifiers](#identifiers)
 	- [Literals](#literals)
 	- [Expression](#expression)
+   	- [Seperators](#seperators)
 	- [Keywords](#keywords)  
 - [Variable](#Variable)
 - [Datatype](#Datatype)
@@ -83,7 +84,12 @@ class Hello{
 > value used in the code
 ### Expression: 
 > combination of variables, identifiers, literals  
-
+### Seperators
+1. Parenthesis or Bracket : () -> method, control statement, casting
+2. Braces  or Curly bracket: {} -> bodies of class,method,control 
+3. Square bracket: [] -> array
+4. Colon(:), Semicolon(;), Comma(,), dot(.)
+   
 ### Keywords: 
 > Predefined meaning (68) words.  
 #### Strictly Reserved Keywords (51):
@@ -116,7 +122,20 @@ class Hello{
 16. strictfp (reserved for future use)
 17. volatile (can be used as a variable modifier)
 
-
+## Java I/O
+1. Output  
+ 	print with new line: ```System.out.println("Hellow world");```  
+	print without new line````System.out.print("Hellow world");```  
+2. Input
+ 	```
+  	import java.util.Scanner;
+  	PSVM{
+	  	Scanner scanner = new Scanner(System.in);
+	   	String name = scanner.nextLine();
+	    	int age = scanner.nextInt();
+	     	char ch = scanner.next.charAt(0);
+	  }
+  ```  
 ## Variable:  
 > Named storage location.     
 
@@ -141,10 +160,10 @@ Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;
 Power can be represent by _e_ ex: float a = 35e3f;  
 At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
 
-### 2. Non Premitive datatype
-	1. [String](#string)
- 	2. Array
- 	3. Class
+### 2. Non Premitive datatype  
+1. [String](#string)
+2. [Array](#Array)
+3. Class
 
 ## Operators:  
 
