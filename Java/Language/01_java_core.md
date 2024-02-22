@@ -169,6 +169,13 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 
 ## Control statements:
 > control flow of program
+
+|  Name| defination  | syntax|  
+|--|--|--|  
+| If |  | if(con){ exp1; } |
+| If-else |  | if(con){ exp1; } else{ exp2; } |
+| If-elseif |  | if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } |
+
 1. if(con){ exp1; }	
 2. if(con){ exp1; } else{ exp2; }	//alternative for using two ifs
 3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } //for more than one else  
