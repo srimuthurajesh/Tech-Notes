@@ -101,15 +101,15 @@ how to import using fully qualified name without import keyword: ```package clas
 ## Datatype:  
 > Predefined memory storage  
 
-|  Name| Size  | Range  |  2^n|
+|  Name| Size  | Range  |  2<sup>n</sup>|
 |--|--|--| -- |  
 |**byte** | 1byte | -+128 | 2<sup>8</sup> |
-|**short** | 2byte | -+32,768| 2^16 |   
-|**int** | 4byte | -+2,14,74,83,648| 2^36|   
-|**long** | 8byte | -+9,22,33,72,03,68,54,775 | 2^64 |
-|**float** | 4byte | . after 6 digit   | 2^36 |
-|**double** | 8byte| . after 15 digit | 2^64 |
-|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 2^16| 
+|**short** | 2byte | -+32,768| 2<sup>16</sup> |   
+|**int** | 4byte | -+2,14,74,83,648| 2<sup>36</sup>|   
+|**long** | 8byte | -+9,22,33,72,03,68,54,775 | 2<sup>64</sup> |
+|**float** | 4byte | . after 6 digit   | 2<sup>36</sup> |
+|**double** | 8byte| . after 15 digit | 2<sup>64</sup> |
+|**char** | 2byte|A-Z a-z 0-9 0-127ASCII| 2<sup>16</sup>| 
 |**boolean** | depends on jvm, 1bit |0 1,   | 2 |
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
