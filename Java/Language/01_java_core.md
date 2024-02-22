@@ -11,17 +11,17 @@
 	- [Keywords](#keywords)  
 - [Variable](#Variable)
 - [Datatype](#Datatype)
-	- [Constant](#Constant)
-	- [Enum](#Enum)
-	- [Null](#Null)
 - [Operators](#Operators)
 - [Control statements](#Control+statements)
 - [Looping statements](#Looping+statements)
-- [Static](#Static)
-- [Final](#Final)
-- [Typecasting](#Typecasting)
 - [Array](#Array)
 - [String](#String)
+- [Static](#Static)
+- [Final](#Final)
+- [Constant](#Constant)
+- [Enum](#Enum)
+- [Null](#Null)
+- [Typecasting](#Typecasting)
 - [Packages & Imports](#Packages+&+imports)
 - [Wrapper class](#Wrapper+class)
 - [Serialization](#Serialization)
@@ -123,7 +123,8 @@ class Hello{
 ## Datatype:  
 > Predefined memory storage  
 - Java is not fully oops language, due usage of primitive datatypes.  
-1. Premitive datatype
+### 1. Premitive datatype
+
 |  Name| Size  | Range  |  2<sup>n</sup>|
 |--|--|--| -- |  
 |**byte** | 1byte | -+128 | 2<sup>8</sup> |
@@ -140,20 +141,10 @@ Hexadecimel can be represnt as adding "0x" ex: int a = 0x2A;
 Power can be represent by _e_ ex: float a = 35e3f;  
 At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
 
-2. Non Premitive datatype
-
-## Constant: 
-> Immutable. Declare as final static.  eg: static final double PI=3.14   
-Note: if it is declared as private inside a class, it can be redeclare in another class  
-
-## Enum:  
-> group of constant( final,static)
-```
-enum Level { LOW, MEDIUM, HIGH }
-Level myVar = Level.MEDIUM;
-```
-## Null: 
-> case sensitive, not falls under any type, null==null is true
+### 2. Non Premitive datatype
+	1. [String](#string)
+ 	2. Array
+ 	3. Class
 
 ## Operators:  
 
@@ -179,29 +170,26 @@ Left shift operator: 10<<2 is 10\*2^2= 40
 Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 
-## Static :  
-> create only one time, called without reference
-1. static variable -     ```className.variableName;```
-2. static method -    ```className.functionName();``` 
-3. static import-       
-4. static object -      ``` import static java.lang.System.out;```
-5. static class - only nested class can be static
-6. static block - ```static {}``` //execute while class get loaded
-7. Instance block { } inside class, runs after static block & before constructor
--```class.forName(" ");``` executes static block & load class
 
-## Final :  
-> assigned only once, cannot modify once it assigned  
-1. final variable - cannot changed  ```final int maxSpeed =100;```
-2. final method - cannot overriden 
-3. final class - cannot extend, immutable   
-Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
+## Control statements:
+1. if(con){ exp1; }
+2. if(con){ exp1; } else{ exp2; }
+3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
+4. Tenary operator-condition ? expersion 1: expersion 2;
+4. switch(varible){case constant: operation; break;default: operation;break;}  
+Note: long float double and customer classes cannot be use in switch   
 
-## Typecasting:  
-> Convert one datatype to another
-1. Implicit casting    
-2. Explicit casting ```int a = (int) 3.14;	//3```   
-Byte -> short -> int -> long -> float -> double  
+## Looping statements:
+1. while(con){ body; }
+2. do{ body }while(condition);
+3. for(intialize counter;test condition;inc or dec counter){ body; }
+5. break; 	//get out of loop
+6. continue;	//back to continue next loop
+7. continue loop_label;		loop_label;{exp}
+8. goto label_name; 		label_name:{exp}
+9. break label_name;		label_name:{exp}
+10. For each loop(Datatype var: iterable)
+
 
 ## Array:    
 > Group of similar datatype ```int rajesh[]=new int[3];```   
@@ -247,25 +235,43 @@ StringTokenizer st = new StringTokenizer("my name is raj");
 while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
 
-## Control statements:
-1. if(con){ exp1; }
-2. if(con){ exp1; } else{ exp2; }
-3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
-4. Tenary operator-condition ? expersion 1: expersion 2;
-4. switch(varible){case constant: operation; break;default: operation;break;}  
-Note: long float double and customer classes cannot be use in switch   
 
-## Looping statements:
-1. while(con){ body; }
-2. do{ body }while(condition);
-3. for(intialize counter;test condition;inc or dec counter){ body; }
-5. break; 	//get out of loop
-6. continue;	//back to continue next loop
-7. continue loop_label;		loop_label;{exp}
-8. goto label_name; 		label_name:{exp}
-9. break label_name;		label_name:{exp}
-10. For each loop(Datatype var: iterable)
+## Static :  
+> create only one time, called without reference
+1. static variable -     ```className.variableName;```
+2. static method -    ```className.functionName();``` 
+3. static import-       
+4. static object -      ``` import static java.lang.System.out;```
+5. static class - only nested class can be static
+6. static block - ```static {}``` //execute while class get loaded
+7. Instance block { } inside class, runs after static block & before constructor
+-```class.forName(" ");``` executes static block & load class
 
+## Final :  
+> assigned only once, cannot modify once it assigned  
+1. final variable - cannot changed  ```final int maxSpeed =100;```
+2. final method - cannot overriden 
+3. final class - cannot extend, immutable   
+Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
+
+## Constant: 
+> Immutable. Declare as final static.  eg: static final double PI=3.14   
+Note: if it is declared as private inside a class, it can be redeclare in another class  
+
+## Enum:  
+> group of constant( final,static)
+```
+enum Level { LOW, MEDIUM, HIGH }
+Level myVar = Level.MEDIUM;
+```
+## Null: 
+> case sensitive, not falls under any type, null==null is true
+
+## Typecasting:  
+> Convert one datatype to another
+1. Implicit casting    
+2. Explicit casting ```int a = (int) 3.14;	//3```   
+Byte -> short -> int -> long -> float -> double  
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
