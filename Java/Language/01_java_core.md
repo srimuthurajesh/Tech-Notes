@@ -184,24 +184,27 @@ Note: long float double and customer classes cannot be use in switch
 
 
 ## Array:    
-> Group of similar datatype ```int rajesh[]=new int[3];```   
+> Group of similar datatype 
+
+### Declarations
 int a[];  
 int[] a;    
 int[] a = new int[4];    
 int[] a = new int[]{1,2,3,4};    
 int[] a = {1,2,3,4};
-**Arrays Important methods**:   
-Arrays.asList(arr);      //conver array into List (collection framework)  
-Arrays.sort(arr);   //use mergeosrt for object, and quick sort fro primitive datatype   
+
+### Arrays Important methods:   
+Arrays.asList(arr);      	//conver array into List (collection framework)  
+Arrays.sort(arr);   		//use mergeosrt for object, and quick sort fro primitive datatype   
 Arrays.sort(arr, new Comparator());    
 Arrays.binarySearch(arr, searchValue);    
 Arrays.binarySearch(arr, fromIndex, toIndex, searchValue);  
 Arrays.compare(intArr, intArr1);    
-Arrays.copyOf(arr, 10); //create new clone array, also with initial size   
+Arrays.copyOf(arr, 10); 	//create new clone array, also with initial size   
 Arrays.copyOfRange(intArr, 1, 3);   
-Arrays.hashCode(arr);  //return hashcode  
+Arrays.hashCode(arr);  		//return hashcode  
 Arrays.equals(arr1, arr2);    
-Arrays.toString(arr);  //print array   
+Arrays.toString(arr);  		//print array   
 List<?> a = Lists.newArrayList(a);   
 
 
@@ -247,7 +250,8 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
 
 ## Constant: 
-> Immutable. Declare as final static.  eg: static final double PI=3.14   
+> Immutable. Declare as final static.  eg: static final double PI=3.14
+
 Note: if it is declared as private inside a class, it can be redeclare in another class  
 
 ## Enum:  
@@ -265,7 +269,8 @@ Level myVar = Level.MEDIUM;
 2. Explicit casting ```int a = (int) 3.14;	//3```   
 Byte -> short -> int -> long -> float -> double  
 ## Packages & import: 
-> Collection of similar classes, interfaces and sub packages.  
+> Collection of similar classes, interfaces and sub packages.
+
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
 how to define a package in that program: ```package packagename;```    
 how to import package: ```import packagename.\*;```     
