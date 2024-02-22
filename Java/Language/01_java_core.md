@@ -13,8 +13,8 @@
 - [Variable](#Variable)
 - [Datatype](#Datatype)
 - [Operators](#Operators)
-- [Control statements](#Control+statements)
-- [Looping statements](#Looping+statements)
+- [Control statements](#Control-statements)
+- [Looping statements](#Looping-statements)
 - [Array](#Array)
 - [String](#String)
 - [Static](#Static)
@@ -23,13 +23,13 @@
 - [Enum](#Enum)
 - [Null](#Null)
 - [Typecasting](#Typecasting)
-- [Packages & Imports](#Packages+&+imports)
-- [Wrapper class](#Wrapper+class)
+- [Packages & Imports](#Packages--imports)
+- [Wrapper class](#Wrapper-class)
 - [Serialization](#Serialization)
-- [Exception handling](#Exception+handling)
+- [Exception handling](#Exception-handling)
 - [Annotations](#Annotations)
 - [Regex](#Regex)
-- [Keywords List](#keywords+list)
+- [Keywords List](#keywords-list)
 
 
 
