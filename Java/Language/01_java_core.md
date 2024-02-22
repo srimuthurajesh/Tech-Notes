@@ -10,6 +10,24 @@
 - [Expression](#expression)
 - [Keywords](#keywords)
 - [Variable](#Variable)
+- [Constant](#Constant)
+- [Enum](#Enum)
+- [Null](#Null)
+- [Operators](#Operators)
+- [Static](#Static)
+- [Final](#Final)
+- [Typecasting](#Typecasting)
+- [Array](#Array)
+- [String](#String)
+- [Control statements](#Control+statements)
+- [Looping statements](#Looping+statements)
+- [Packages & Imports](#Packages+&+imports)
+- [Wrapper class](#Wrapper+class)
+- [Serialization](#Serialization)
+- [Exception handling](#Exception+handling)
+- [Annotations](#Annotations)
+- [Regex](#Regex)
+
 
 
 ## History
@@ -229,7 +247,7 @@ StringTokenizer st = new StringTokenizer("my name is raj");
 while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
 
-## Decisions making:
+## Control statements:
 1. if(con){ exp1; }
 2. if(con){ exp1; } else{ exp2; }
 3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }
@@ -237,7 +255,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 4. switch(varible){case constant: operation; break;default: operation;break;}  
 Note: long float double and customer classes cannot be use in switch   
 
-## Looping:
+## Looping statements:
 1. while(con){ body; }
 2. do{ body }while(condition);
 3. for(intialize counter;test condition;inc or dec counter){ body; }
