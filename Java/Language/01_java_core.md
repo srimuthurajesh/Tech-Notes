@@ -14,8 +14,10 @@ Code -> Compiler -> Interpreter(JVM) -> Machine code
 **JRE** is (JVM+lib) - For layman users to run java program  
 **JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
 **JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
-**ClassLoader**: part of JRE, loads class file to JVM  
-  
+**ClassLoader**: part of JRE, loads class file to JVM    
+how to compile: ```javac -d directory javafilename.java```         	
+how to run: ```java myppack.javafilename```         
+
 ``` 
 import java.util.Scanner ;
 class Hello{
@@ -31,8 +33,12 @@ class Hello{
 }
 ```
 
-**Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)   
-**Identifiers**: 
+## Comments: 
+1. Singleline: (//)
+2. Multiline: (/*.. */)
+3. Documentation: (/**…\*/)   
+
+## Identifiers: 
 > used to name things/identify elements  
 1. name must be unique
 2. should not be in char
@@ -41,7 +47,8 @@ class Hello{
 5. use proper whitespace between keywords and identifiers
 6. should be meaningful and prefer camelcase
 
-**Literals**: value used in the code
+## Literals: 
+> value used in the code
 ## Expression: 
 > combination of variables, identifiers, literals  
 
@@ -78,24 +85,21 @@ class Hello{
 17. volatile (can be used as a variable modifier)
 
 
-- **Packages**: Collection of similar classes, interfaces and sub packages.  
+## Packages & import: 
+> Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
-
-**Java Commands**  
-how to compile: ```javac -d directory javafilename.java```       	
-how to run: ```java myppack.javafilename```       
 how to define a package in that program: ```package packagename;```    
 how to import package: ```import packagename.\*;```     
 how to import using fully qualified name without import keyword: ```package classname```;   
 
 ## Variable:  
-Named storage location.     
+> Named storage location.     
 1. **Local variable**: inside method 
 2. **Instant variable**: inside clas 
 3. **Static variable**: Declared as static  
 
 ## Datatype:  
-Predefined memory storage  
+> Predefined memory storage  
 
 |  Name| Size  | Range  |  2^n|
 |--|--|--| -- |  
@@ -114,15 +118,18 @@ Power can be represent by _e_ ex: float a = 35e3f;
 At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) it default consider as double   
 Java is not fully oops language, due usage of primitive datatypes.  
 
-- **Constant**: Immutable. Declare as final static.  eg: static final double PI=3.14   
+## Constant: 
+> Immutable. Declare as final static.  eg: static final double PI=3.14   
 Note: if it is declared as private inside a class, it can be redeclare in another class  
 
-- **Enum**:  group of constant( final,static)
+## Enum:  
+> group of constant( final,static)
 ```
 enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
 ```
-- **Null**: case sensitive, not falls under any type, null==null is true
+## Null: 
+> case sensitive, not falls under any type, null==null is true
 
 ## Operators:  
 
@@ -148,8 +155,8 @@ Left shift operator: 10<<2 is 10\*2^2= 40
 Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 
-### Static :  
-create only one time, called without reference
+## Static :  
+> create only one time, called without reference
 1. static variable -     ```className.variableName;```
 2. static method -    ```className.functionName();``` 
 3. static import-       
@@ -159,21 +166,21 @@ create only one time, called without reference
 7. Instance block { } inside class, runs after static block & before constructor
 -```class.forName(" ");``` executes static block & load class
 
-### Final :  
-assigned only once, mostly in constructor directly. cannot modify once it assigned  
+## Final :  
+> assigned only once, cannot modify once it assigned  
 1. final variable - cannot changed  ```final int maxSpeed =100;```
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
 
-### Typecasting:  
-Convert one datatype to another
+## Typecasting:  
+> Convert one datatype to another
 1. Implicit casting    
 2. Explicit casting ```int a = (int) 3.14;	//3```   
 Byte -> short -> int -> long -> float -> double  
 
-### Array:    
-Group of similar datatype ```int rajesh[]=new int[3];```   
+## Array:    
+> Group of similar datatype ```int rajesh[]=new int[3];```   
 int a[];  
 int[] a;    
 int[] a = new int[4];    
@@ -194,8 +201,8 @@ Arrays.toString(arr);  //print array
 List<?> a = Lists.newArrayList(a);   
 
 
-### String:  
-- class represents sequence of char  
+## String:  
+> class represents sequence of char  
 - implements Serializable, Comparable and CharSequence interfaces  
 
 **String creation**:  
@@ -236,7 +243,7 @@ Note: long float double and customer classes cannot be use in switch
 10. For each loop(Datatype var: iterable)
 
 ## Wrapper class:  
- wrap around primitive datatype & give object appearence  
+ > wrap around primitive datatype & give object appearence  
  **Advantages:**   
  - call by reference supports only in object
  - serialization supports object
@@ -257,7 +264,7 @@ Integer i = Integer.valueof(j);  or Integer i =j;
  ```
 
 ## Generics:   
-parameterized types  
+> parameterized types  
 Adv: 1.Type safety, 2.Typecast not needed, 3.Compilertime checking  
 ```
 class MyGen<T>{  
@@ -268,7 +275,7 @@ class MyGen<T>{
 ```
 
 ## Serialization : 
-mechanism of writing obj into byte stream, implement serializable marker interface
+> mechanism of writing obj into byte stream, implement serializable marker interface
 ```
 FileOuputStream file = new FileOutputStream(filename);
 ObjectOuputStream out = new ObjectOuputStream(file);
@@ -283,7 +290,7 @@ in.readObject();  //new object create
 ---
 
 ## Exception handling:  
-Unexpected event that terminate program
+> Unexpected event that terminate program
 1. checked expception - ioexception, sqlexception  
 2. unchecked exception - nullpointerexception  
 3. error - OutOfMemory, StackOverFlow.  
@@ -338,15 +345,11 @@ ClassNotFoundException: runtime, try to load the class while Class.forName() or 
 
 ## Regex:    
 **^[a-zA-Z][a-zA-Z0-9]{8,19}**  
-Where  
-^ represents the start of the regex   
-[a-zA-Z] represents that the first character must be an alphabet  
-[a-zA-Z0-9] represents the alphanumeric character  
-{8,19} represents that the length of the password must be in between 8 and 20.
+- Where  ^ represents the start of the regex   
+- [a-zA-Z] represents that the first character must be an alphabet  
+- [a-zA-Z0-9] represents the alphanumeric character  
+- {8,19} represents that the length of the password must be in between 8 and 20.
 ```
 import java.util.regex.*;  
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4OTE1NjMwNiw2NDMxNTk5MTBdfQ==
--->
