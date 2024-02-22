@@ -3,7 +3,8 @@
 > High level, widely used, general purpose programming language.
 
 - In 1991, Created at Sun Microsystems, by James gosling. renames from Oak to java 1995.
-> Write Once, Run Anywhere  
+- Write Once, Run Anywhere
+- lot of oppurtunities, already lot of projects using java  
 
 Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
@@ -30,20 +31,52 @@ class Hello{
 }
 ```
 
-**Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)    
-**Keywords**: Predefined meaning (53) words.  
-```
-abstract   assert    boolean    break      byte
-case       catch     char       class      const
-continue   default   do         double     else
-enum       extends   final      finally    float
-for        goto      if         implements import
-instanceof int       interface  long       native
-new        package   private    protected  public
-return     short     static     strictfp   super
-switch     synchronized this       throw      throws
-transient  try       void       volatile   while
-```
+**Comments**: 1. Singleline: (//) 2. Multiline: (/*.. */) 3. Documentation: (/**…\*/)   
+**Identifiers**: 
+> used to name things/identify elements  
+1. name must be unique
+2. should not be in char
+3. can start with ($,_,a-z,a-z), but not with 0-9
+4. case sensitive, java keywords cannot be used
+5. use proper whitespace between keywords and identifiers
+6. should be meaningful and prefer camelcase
+
+**Literals**: value used in the code
+## Expression: 
+> combination of variables, identifiers, literals  
+
+## Keywords: 
+> Predefined meaning (68) words.  
+##### Strictly Reserved Keywords (51):
+1. Access Modifiers: private, public, protected
+2. Data Types: boolean, byte, short, int, long, float, double, char
+3. Control Flow: if, else, switch, for, while, do, break, continue, return
+4. Object-Oriented Programming: abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
+5. Exception Handling: try, catch, finally, throw, throws
+6. Generics: extends, super
+7. Module System: exports, module, opens, provides, requires, to, uses
+8. Record System: record
+9. Underscore (introduced in Java 9): _
+
+##### Contextually Reserved Keywords (17):
+1. const (reserved within enum declarations)
+2. goto (not currently used, but reserved for future use)
+3. strictfp (reserved for future use)
+4. volatile (can be used as a variable modifier)
+5. transient (can be used as a variable modifier)
+6. native (can be used as a method modifier)
+7. synchronized (can be used as a method modifier)
+8. assert (can be used in conjunction with the -enableassertions flag)
+9. enum (can be used to declare enum types)
+10. goto (reserved for future use)
+11. interface (can be used to declare interfaces)
+12. package (can be used to declare packages)
+13. protected (can be used as an access modifier)
+14. public (can be used as an access modifier)
+15. static (can be used as a variable or method modifier)
+16. strictfp (reserved for future use)
+17. volatile (can be used as a variable modifier)
+
 
 - **Packages**: Collection of similar classes, interfaces and sub packages.  
 ```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
