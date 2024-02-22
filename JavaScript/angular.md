@@ -224,7 +224,12 @@ export class AppComponent
      this.sampleService=new SampleService();}
 }
 ```
-**How to Invoke a service with dependency injection**:
+## Angular Dependency Injection
+>  way of providing dependencies to classes that need them, without creating them internally.
+-  follows singleton pattern and receives same instance of a service.
+  
+### 3 ways of Dependency injection
+1. Need to use give providers in @Component
 ```
 //app.component.ts
 @Component({ selector: 'app-root', templateUrl: './app.component.html', providers: [SampleService]})
@@ -233,22 +238,14 @@ export class AppComponent
    constructor(public sampleService:SampleService){ }
 }
 ```
-## Angular Dependency Injection
->  way of providing dependencies to classes that need them, without creating them internally.
--  follows singleton pattern and receives same instance of a service.
+2. Need to give providers in module
+3. Need to mention injectable in service class
 ```
-providers: [{ provide: SampleService, useClass: SampleService }]
-constructor(private productService : ProductService ) {}
+@Injectable({
+  providedIn: 'root',
+})export class SampleService{}
 ```
-```
-providers: [{ provide: 'PRODUCT_SERVICE', useClass: ProductService }]
-constructor(@Inject('PRODUCT_SERVICE') private productService: ProductService) {}
-```
-```
-providers: [ { provide: 'APIURL', useValue: 'http://SomeEndPoint.com/api' , provide: 'USE_FAKE', useValue: true},
-constructor(@Inject(APIURL) public ApiUrl: string, @Inject(USE_FAKE) public userFake: boolean) { }
-```
-
+  
 ## ROUTING:	
 
 ## Input Output decorators
