@@ -43,6 +43,7 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
     
 ## Components
 > building blocks for Angular. It consists of
+
 ```
 // app.component.ts
 @Component({
