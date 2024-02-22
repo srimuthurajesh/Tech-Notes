@@ -24,6 +24,10 @@
    - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
 ## Computer science
+   - [Algorithm](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/algorithm.html)
+   - [Data Struture](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/data_structure.html)
+   - [Design Patterns](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/design_patterns.html)
+   - [SOLID Principles](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/solid_principles.html) 
 
 ## Others
    - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
