@@ -9,22 +9,8 @@
 - [Services](#angular-services)
 - [Dependency Injection](#angular-dependency-injection)
 - [Pipes](#angular-pipes)
+- [Angular CLI command](#angular-cli-commands)
   
-#### Angular CLI commands
-
-| Command | Description |
-| -- | -- |
-| Install Nodejs and npm | [Nodejs](https://nodejs.org/) |
-| ```npm install –g @angular/cli``` | install Angular cli  |
-| ```ng –version``` | check version |
-| ```ng new projectname``` | create new angular project |
-| ```ng serve``` | run project |
-| ```ng g c componentname``` | generate new component |
-| ```ng g m modulename``` | generate new module |
-| ```ng g p pipename``` | generate new pipe |
-| ```ng g directive directivename``` | generate new directive |
-| ```ng g s servicename``` | generate new service |
-
 #### Bootstrapping in angular:
 1. Loads index.html, which contains ```<app-root></app-root>```
 2. Loads Angular & Third-party libraries & Application
@@ -369,4 +355,19 @@ Commamd: ```ng build```
  4. style.js.map    	- contains global style rules bundled as a js file
  5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
 
+
+#### Angular CLI commands
+
+| Command | Description |
+| -- | -- |
+| Install Nodejs and npm | [Nodejs](https://nodejs.org/) |
+| ```npm install –g @angular/cli``` | install Angular cli  |
+| ```ng –version``` | check version |
+| ```ng new projectname``` | create new angular project |
+| ```ng serve``` | run project |
+| ```ng g c componentname``` | generate new component |
+| ```ng g m modulename``` | generate new module |
+| ```ng g p pipename``` | generate new pipe |
+| ```ng g directive directivename``` | generate new directive |
+| ```ng g s servicename``` | generate new service |
 
