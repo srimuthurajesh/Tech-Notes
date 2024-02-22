@@ -1,5 +1,5 @@
 # ANGULAR
-- javascript component based framework, for building SPA 
+> javascript component based framework, for building SPA 
 
 - [Components](#angular-components)
 - [Directives](#angular-directives)
