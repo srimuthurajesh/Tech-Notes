@@ -30,6 +30,5 @@
    - [SOLID Principles](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/solid_principles.html) 
 
 ## Others
-   - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
 ----
