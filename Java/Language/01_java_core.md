@@ -178,31 +178,30 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 ## Control statements:
 > control flow of program
 
-|  Name| defination  | syntax|  
+| Name| defination  | syntax|  
 |--|--|--|  
-| If |  | if(con){ exp1; } |
-| If-else |  | if(con){ exp1; } else{ exp2; } |
-| If-elseif |  | if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } |
+| If 			| control code 			| if(con){ exp1; } |
+| If-else 		| alternative for using two ifs | if(con){ exp1; } else{ exp2; } |
+| If-elseif 		| for more than one else  	| if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } |
+| Tenary operator 	| short form of ifelse 		| condition ? expersion 1: expersion 2; |
+| Switch case 		| use lookup table 		| switch(varible){case constant: operation; break;default: operation;break;}  |
 
-1. if(con){ exp1; }	
-2. if(con){ exp1; } else{ exp2; }	//alternative for using two ifs
-3. if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } //for more than one else  
-4. Tenary operator-condition ? expersion 1: expersion 2; //short form of ifelse
-4. switch(varible){case constant: operation; break;default: operation;break;}  
 Note: long float double and customer classes cannot be use in switch   
 
 ## Looping statements:
 > repeat the execution
 
-1. while(con){ body; }	//iterates as long as condition true  
-2. do{ body }while(condition);	//executes atleast once  
-3. for(intialize counter;test condition;inc or dec counter){ body; }
-5. break; 	//get out of loop
-6. continue;	//back to continue next loop
-7. continue loop_label;		loop_label;{exp}
-8. goto label_name; 		label_name:{exp}
-9. break label_name;		label_name:{exp}
-10. For each loop(Datatype var: iterable)
+| Name| defination  | syntax|  
+|--|--|--|  
+| while 	| iterates as long as condition true  | while(con){ body; } |	 
+| do-while 	| executes atleast once  |do{ body }while(condition);|	 
+| for-loop 	| |for(intialize counter;test condition;inc or dec counter){ body; }|
+| break 	| get out of loop | break; |
+| continue 	| back to continue next loop | continue; |
+| continue with label	|Skips to the next iteration of a labeled loop | continue loop_label; | 
+| goto  		| Jumps to a labeled statement | goto label_name;| 
+| labelled break	| Exits a labeled loop | break label_name;| 
+| For-each 		| Iterates over elements of a collection | for (DataType var : iterable) { body; }| 
 
 
 ## Array:    
