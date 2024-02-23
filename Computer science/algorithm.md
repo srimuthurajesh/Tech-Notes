@@ -24,6 +24,7 @@
 3. **Best Case** (Big Omega): Represents the minimum time taken for any input size.
 
 ## Searching
+
 | Algorithm            | Complexity  | Description |
 |----------------------|-------------|-------------|
 | Linear search        | O(n)        | Sequential search |
@@ -36,6 +37,7 @@
 
    
 ## Sorting
+
 | Algorithm        | Complexity  | Description |
 |------------------|-------------|-------------|
 | Bubble sort      | O(n^2)      | go through list, compare nearyby values & swap..repeat  |
