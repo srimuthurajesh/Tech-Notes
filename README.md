@@ -23,6 +23,12 @@
 ## Cloud 
    - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
 
+## OS & Editors 
+   - [Linux Commands](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/LinuxCommands.html)
+   - [Batch Scripting](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/bash_scripting.html)
+   - [Vim](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/vim.html)
+   - [Linux Commands](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/LinuxCommands.html)
+
 ## Computer science
    - [Algorithm](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/algorithm.html)
    - [Data Struture](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/data_structure.html)
