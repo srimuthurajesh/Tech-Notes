@@ -75,7 +75,8 @@ class Hello{
 3. Documentation: (/**…\*/)   
 
 ### Identifiers: 
-> used to name things/identify elements  
+> used to name things/identify elements
+
 1. name must be unique
 2. should not be in char
 3. can start with ($,_,a-z,a-z), but not with 0-9
@@ -85,8 +86,10 @@ class Hello{
 
 ### Literals: 
 > value used in the code
+
 ### Expression: 
 > combination of variables, identifiers, literals  
+
 ### Seperators
 1. Parenthesis or Bracket : () -> method, control statement, casting
 2. Braces  or Curly bracket: {} -> bodies of class,method,control 
@@ -113,8 +116,10 @@ class Hello{
 
 
 ## Datatype:  
-> defined type of data, ie.Predefined memory storage  
+> defined type of data, ie.Predefined memory storage
+
 - Java is not fully oops language, due usage of primitive datatypes.  
+
 ### 1. Premitive datatype
 
 |  Name| Size  | Range  |  2<sup>n</sup>|
@@ -141,6 +146,7 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 
 ## Variable:  
 > Named storage location. ie name for the datatype.
+
 1. Declaration: int age;
 2. Defination: age = 28;
 
@@ -186,7 +192,8 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 Note: long float double and customer classes cannot be use in switch   
 
 ## Looping statements:
-> repeat the execution  
+> repeat the execution
+
 1. while(con){ body; }	//iterates as long as condition true  
 2. do{ body }while(condition);	//executes atleast once  
 3. for(intialize counter;test condition;inc or dec counter){ body; }
@@ -226,6 +233,7 @@ List<?> a = Lists.newArrayList(a);
 
 ## String:  
 > class represents sequence of char, immutable, uses double quotes
+
 - implements Serializable, Comparable and CharSequence interfaces  
 
 **String creation**:  
@@ -249,6 +257,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 
 ## Static :  
 > create only one time, called without reference
+
 1. static variable -     ```className.variableName;```
 2. static method -    ```className.functionName();``` 
 3. static import-       
@@ -259,7 +268,8 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 -```class.forName(" ");``` executes static block & load class
 
 ## Final :  
-> assigned only once, cannot modify once it assigned  
+> assigned only once, cannot modify once it assigned
+
 1. final variable - cannot changed  ```final int maxSpeed =100;```
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
@@ -272,6 +282,7 @@ Note: if it is declared as private inside a class, it can be redeclare in anothe
 
 ## Enum:  
 > group of constant( final,static)
+
 ```
 enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
@@ -281,9 +292,11 @@ Level myVar = Level.MEDIUM;
 
 ## Typecasting:  
 > Convert one datatype to another
+
 1. Implicit casting    
 2. Explicit casting ```int a = (int) 3.14;	//3```   
-Byte -> short -> int -> long -> float -> double  
+Byte -> short -> int -> long -> float -> double
+
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.
 
@@ -293,7 +306,8 @@ how to import package: ```import packagename.\*;```
 how to import using fully qualified name without import keyword: ```package classname```;   
 
 ## Wrapper class:  
- > wrap around primitive datatype & give object appearence  
+ > wrap around primitive datatype & give object appearence
+
  **Advantages:**   
  - call by reference supports only in object
  - serialization supports object
@@ -314,7 +328,8 @@ Integer i = Integer.valueof(j);  or Integer i =j;
  ```
 
 ## Generics:   
-> parameterized types  
+> parameterized types
+
 Adv: 1.Type safety, 2.Typecast not needed, 3.Compilertime checking  
 ```
 class MyGen<T>{  
@@ -326,6 +341,7 @@ class MyGen<T>{
 
 ## Serialization : 
 > mechanism of writing obj into byte stream, implement serializable marker interface
+
 ```
 FileOuputStream file = new FileOutputStream(filename);
 ObjectOuputStream out = new ObjectOuputStream(file);
@@ -341,6 +357,7 @@ in.readObject();  //new object create
 
 ## Exception handling:  
 > Unexpected event that terminate program
+
 1. checked expception - ioexception, sqlexception  
 2. unchecked exception - nullpointerexception  
 3. error - OutOfMemory, StackOverFlow.  
