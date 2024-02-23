@@ -6,6 +6,7 @@
 git –version
 
 ### Git Configuration
+
 | Description | Command |
 | ----------- | ----------- |
 | Set global username |  ```git config --global user.name "srimuthurajesh"```| 
@@ -13,6 +14,7 @@ git –version
 | View configuration |  ```git config --list```| 
 
 ### Git Initialization
+
 | Description | Command |
 | ----------- | ----------- |
 | Initialize a directory for Git |  ```git init directory``` | 
@@ -20,6 +22,7 @@ git –version
 
 
 ### Basic Operations:
+
 | Description | Command |
 | ----------- | ----------- |
 | Add file(s) to staging |  ```git add directory/fileName ```| 
@@ -30,6 +33,7 @@ git –version
 | View last 10 commits | ```git log --oneline -10``` | 
 
 ### Difference Viewing:
+
 | Description | Command |
 | ----------- | ----------- |
 | between staging and working copy | ```git diff```|
@@ -38,6 +42,7 @@ git –version
 | between commits |  ```git diff commit_hashcode1 commit_hashcode2```|
 
 ### Branching:
+
 | Description | Command |
 | ----------- | ----------- |
 | Create a branch |  ```git branch branch_name``` | 
@@ -50,6 +55,7 @@ git –version
 
 
 ### Stashing:
+
 | Description | Command |
 | ----------- | ----------- |
 | Temporarily stash changes   |  ```git stash commit stash_name```|
@@ -60,6 +66,7 @@ git –version
 | Remove a specific stash |  ```git stash drop stash_codeid```|
 
 ### Tags:
+
 | Description | Command |
 | ----------- | ----------- |
 | Create a tag |  ```git tag -a tagname -m "message"``` | 
@@ -68,6 +75,7 @@ git –version
 | Delete a tag |  ```git tag -d tagname``` | 
 
 ### Remote Operations:
+
 | Description | Command |
 | ----------- | ----------- |
 | Add a remote repository| ``` git remote add nickname http://github.com/username```| 
