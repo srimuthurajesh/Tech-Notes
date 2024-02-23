@@ -1,57 +1,60 @@
-## Algorithm: 
-- step by step to solve problem
+# Algorithm: 
+> step by step to solve problem
 
-#### Time Complexity  
-1. constant = 1   
-2. logarithmic = log n   
-3. linear = n   
-4. linearLogarithmic = nlog n   
-5. quadratic = n<sup>2</sup>   
-6. cubic = n<sup>3</sup>     
-7. exponential = 2<sup>n</sup>   
 
-**Worst case**-Big Oh, **Average case**-Big theta, **Best case**-Big omega  
+### Time Complexity  
+> A measure of how the execution time of an algorithm grows with the size of the input data
 
-**Finding the complextity:**  
-1.``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)```these all O(n)  
-2.``` for(..){for(..)}``` these is O(n^2)  
-3.``` for(i=1;p<n;i++){p+=i;}//dynamic increment value``` O(sqrt(n))  
-4.``` for(i=o;i<n;i=i/3)``` this is O(logn base 3) ie.base value change on divider  
-5.``` for(i-0;i<n;i=i/2)``` this is O(logn base 2)  
-6.``` for(i=0;i*i<n;i++)``` this is O(sqrt(n)))
+| Name | Symbol | code |
+| ----------- | ----------- |----------- |
+| constant | O(1) | ```arr[1];```|
+| logarithmic | O(log n) | binary search|
+| Logarithmic Base 2 | O(logn base 2) | ``` for(i=o;i<n;i=i/3)``` |
+| Logarithmic Base 3 | O(logn base 3) | ``` for(i-0;i<n;i=i/2)``` |
+| Square Root | O(sqrt(n))  | ``` for(i=0;i*i<n;i++)```  |
+| linear | O(n) | ``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)``` |
+| linearLogarithmic | O(nlog n) ||
+| quadratic | O(n<sup>2</sup>)  | 2 nested for loop |
+| cubic | O(n<sup>3</sup>)  | 3 nested forloop|
+| exponential | O(2<sup>n</sup>)  | |
 
-### Searching
-1. **Linear search O(n)** - sequential search 
-2. **Jump search O(√n)** - should be sorted list      
-   - equal steps of jumping, then do linear search  
-   - jump steps find by sqrt of listLenght
-3. **Binary search O(log n)**- should be sorted list, half intervel search 
-4. **Tenary search O(log n)**- three time spliting instead of two
-5. **Exponential search O(log n)** - should be sorted list O()  
-   - same like jump search, but jump steps is in exponential(2,4,8,16,32)
-   - then implement binary search
-   - use for unbounded list
-6. **Interpolation search O(1)** - should sorted & uniformly distributed list O(1)   
-   - pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
-7. **Sublist/pattern search** -    
+### Type of Cases
+1. **Worst Case** (Big Oh): Represents the maximum time taken for any input size.
+2. **Average Case** (Big Theta): Represents the average time taken for all possible inputs.
+3. **Best Case** (Big Omega): Represents the minimum time taken for any input size.
+
+## Searching
+| Algorithm            | Complexity  | Description |
+|----------------------|-------------|-------------|
+| Linear search        | O(n)        | Sequential search |
+| Jump search          | O(√n)       | Jump steps found by square root of list length |
+| Binary search        | O(log n)    | should be sorted, Half interval search on sorted list |
+| Ternary search       | O(log n)    | Three-way splitting instead of two |
+| Exponential search   | O(log n)    | should be sorted, Exponential steps followed by binary search |
+| Interpolation search | O(1)        | should be sorted, Uniformly distributed sorted list |
+| Sublist/pattern search | -         |  |
+
    
-### Sorting
-1. **Bubble sort O(n<sup>2</sup>)** - go through list, compare nearyby values & swap..repeat 
-2. **Selection sort O(n<sup>2</sup>)** -  find minimum & swap..repeat 
-3. **Insertion sort O(n<sup>2</sup>)** - compare with all values then insert O(n<sup>2</sup>)
+## Sorting
+| Algorithm        | Complexity  | Description |
+|------------------|-------------|-------------|
+| Bubble sort      | O(n^2)      | go through list, compare nearyby values & swap..repeat  |
+| Selection sort   | O(n^2)      | find minimum & swap..repeat |
+| Insertion sort   | O(n^2)      | compare with all values then insert O(n<sup>2</sup>)|
 
----
+| Algorithm        | Complexity  | Description |
+|------------------|-------------|-------------|
+| Merge sort       | O(n log n)  | divide and conquer, merging |
+| Heap sort        | O(n log n)  | Using heap data structure |
 
-4. **Merge sort O(n log n)** - divide and conquer, merging. 
-5. **Heap sort O(n log n)** -  
+| Algorithm        | Complexity  | Description |
+|------------------|-------------|-------------|
+| Quick sort       | O(n log n)  | divide & conquer. ie.Binary sort. selecting pivot is important p=n/2  |
 
----
-
-6. **Quick sort O(n log n)** - divide & conquer. ie.Binary sort. selecting pivot is important p=n/2 
----
-7. **Radix sort O(n)** - non comparative sorting algo, bucket values according to radix 1s,10s,20s    
-8. **Counting sort O(n)** - same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s
-9. **Bucket sort O(n<sup>2</sup>)** - for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  
-10. **Pigeonhole sort O(n+2<sup>k</sup>)** -   
-11. **Cycle sort O(n<sup>2</sup>)** -  
-https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
+| Algorithm        | Complexity  | Description |
+|------------------|-------------|-------------|
+| Radix sort       | O(n)        | non comparative sorting algo, bucket values according to radix 1s,10s,20s    |
+| Counting sort    | O(n)        | same like radi sort but for only have to single range like 0 to 100. not like 1s,10s,100s |
+| Bucket sort      | O(n^2)      | for uniformly distributed list. Create buckets, categorize values, sort it, concat buckets  |
+| Pigeonhole sort  | O(n+2k)     | Distribution sort |
+| Cycle sort       | O(n^2)      | Sorts in place |
