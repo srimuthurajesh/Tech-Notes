@@ -1,109 +1,87 @@
-## GIT  
--version Control System (VCS)  
--Source control System(SCM)  
+# Git  
 
-git –version	 
+> Git is a Version Control System (VCS) and Source Control System (SCM).
 
-**Git config:**  
-git config --global user.name ```"srimuthurajesh"```    #*global keyword to apply username/email for all repo*   
-git config --global user.email ```"srimuthurajesh@gmail.com"```  
-git config –list  
+#### Checking Git Version:
+git –version
 
-**Git Basics**:  
-git init ```directory```					  #to make given folder git
-git clone ```url```       					#get local repo copy from remote repo  
-git add ```directory/fileName```   			  #move to staging
-git rm -cached ```directory/fileName```  	#remvoe from staging"
+### Git Configuration
+| Description | Command |
+| ----------- | ----------- |
+| Set global username |  git config --global user.name "srimuthurajesh"| 
+| Set global email |  git config --global user.email "srimuthurajesh@gmail.com"| 
+| View configuration |  git config --list| 
 
-git commit -m ""this is our first comment"
-git status     	#to know status  
-git log			    #commited history
-git log --oneline -10 	#show last 10 commit ids and messages  
-git diff			          #looking for different between staging and working copy
-git diff --staged 	    #difference between working and respository
-git diff branchname1 branchname2
-git diff commithash 1 commithash2
+### Git Initialization
+| Description | Command |
+| ----------- | ----------- |
+| Initialize a directory for Git |  git init directory | 
+| Clone a repository |  git clone url | 
 
 
+### Basic Operations:
+| Description | Command |
+| ----------- | ----------- |
+| Add file(s) to staging |  git add directory/fileName | 
+| Remove file from staging |  git rm --cached directory/fileName | 
+| Commit changes |  git commit -m "This is our first comment" | 
+| Check repository status |  git status | 
+| View commit history |  git log | 
+| View last 10 commits |  git log --oneline -10 | 
+
+### Difference Viewing:
+| Description | Command |
+| ----------- | ----------- |
+| between staging and working copy |  git diff
+| between working copy and repository |  git diff --staged
+| between branches |  git diff branchname1 branchname2
+| between commits |  git diff commit_hashcode1 commit_hashcode2
+
+### Branching:
+| Description | Command |
+| ----------- | ----------- |
+| Create a branch |  git branch branch_name | 
+| Switch to a branch |  git checkout -b branch_name | 
+| Merge a branch | git merge branch_name | 
+| Delete a branch |  git branch -d branch_name | 
+| Force delete a branch |  git branch -D branch_name | 
+| Compare branches |  git diff branch_name | 
+| Compare commits |  git diff commit_hashcode1 commit_hashcode2 | 
 
 
-git init –base 	#important for remote respo
+### Stashing:
+| Description | Command |
+| ----------- | ----------- |
+| Temporarily stash changes |  git stash commit stash_name
+| List stashes |  git stash list
+| Apply a stash |  git stash apply stash_code
+| Apply the most recent stash |  git stash pop
+| Clear all stashes |  git stash clear
+| Remove a specific stash |  git stash drop stash_codeid
 
-git checkout <url> 		#use to return back when the changes are not */added
+### Tags:
+| Description | Command |
+| ----------- | ----------- |
+| Create a tag |  git tag -a tagname -m "message" | 
+| List tags |  git tag -l | 
+| Show a tag |  git show tagname | 
+| Delete a tag |  git tag -d tagname | 
 
-git remote add origin /path or<url>
-git remote rm origin		#to remove current origin
-git push origin master
-git pull				#update
+### Miscellaneous:
+| Description | Command |
+| ----------- | ----------- |
+| Display help|  git help| 
+| Display help for a specific topic|  git help topic_name| 
+| Show current directory|  pwd| 
 
-git commit -am ""this is out first comment"		#moving directly to staging
+### Remote Operations:
+| Description | Command |
+| ----------- | ----------- |
+| Add a remote repository|  git remote add nickname http://github.com/username| 
+| Push to a repository|  git push -u nickname master| 
 
-git rm –cached .		#remove entire folder from tracking
-git rm –cached index.html    # it wil not delete file, just it stop tracking the file
-
-git rm filename	#remove file from staging
-git reset –hard		#move to last commit given, 
-git reset HEAD	#reset to recent changes r
-
-
-BRANCHING:
-git branch   			                #to know the current branch  
-git branch branch_name	          # create a branch  
-git checkout -b branch_name	      #shifts to branch to branch  
-git checkout --force branch_name 	#shifts when code are not yet commited  
-git merge branch_name	            #merge to current branch  
-git branch –d branch_name	        #delete branch  
-git branch –D branch_name	        #force delete branch while it not merged yet  
-git diff branch_name		          #comparing branches  
-git diff commit_hashcode1 comit_hashcode2	#compare two commits  
-
-GIT STASH:
-git stash commit stash_name		#temporary commit, but it is not actual commit  
-git stash list			          #list the  stashes in branch   
-git stash apply stash_code	  #now the stash will apply or used  
-git stash pop			            #recent stash will apply or used  
-git stash clear			          #remove all stash  
-git stash drop stash_codeid	  #remove specified stash  
+### Git Workflow and Staging Process
+> Working copy -> staging area -> repository
 
 
-GIT TAGS:
-git tag –a tagname –m “message”
-git tag –l		#list tags
-git show tagname	#to show current tag
-git tag –d tagname	#delete tag
-
-GIT PATCH: a text file, git diff along with code
-git format-patch –stdout master>branch
-git am patchfilename.patch 	#apply patch
-git am –signoff patchfilenam.patch	# add username
-
-
-git help	#list
-git help topic_name
-
-pwd 	# git folder
-
-git log --author="srimu"     #list only srimuthurajesh's comments
-
-working copy > staging area > respositary
-
-
-RENAMING FILE is nothing but remove old file and adding new file name
-git mv filename.txt filename2.txt                #move 
-git mv filename.txt foldername/filename2.txt #move to new folder
-
-git checkout -- filename.html    #undo changes old version back from respositary
-git reset HEAD filename.html    #undo file back to unstage from working area
-
-git checkout commitcode -- filename	# move to previous versions based on code
-git remote add srimuthurajesh http:#github.com/srimuthurajesh
-
-git remote
-git push -u nickname master    #push project to respository, it will ask for usename password
-
-**Git colourised output**:    
-git config --global color.branch auto  
-git config --global color.diff auto  
-git config --global color.interactive auto  
-git config --global color.status auto  
 
