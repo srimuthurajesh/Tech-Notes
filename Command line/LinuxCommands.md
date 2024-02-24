@@ -64,8 +64,8 @@ for ex// 754, in this order u,g,o               //chmod 754 filename//syntax
 
 | File Command | Description |
 | ----------- | ----------- |
-shalsum filename   		-to verify internet file using checksum
-filename | grep verifynumber 
+| shalsum filename   	| 	-to verify internet file using checksum| 
+| filename | grep verifynumber | 
 
 | Zip Command | Description |
 | ----------- | ----------- |
