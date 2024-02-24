@@ -59,13 +59,7 @@ import java.util.Scanner ;
 class Hello{
   public static void main(String[]args){
     System.out.println("Hello World!");
-    //Java IO
-    Scanner input = new Scanner(Sytem.in);
-    a=input.nextInt(); b=input.nextLine();
-    System.out.println("Hello World!"); //print only one line and move to next line
-    System.out.print(); //print line and remain in same line we have to give \n
-    System.out.printf(“%d”,$i); //print string stream
-  } 
+ } 
 }
 ```
 
