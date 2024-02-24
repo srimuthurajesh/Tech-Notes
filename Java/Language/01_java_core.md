@@ -209,9 +209,11 @@ Note: long float double and customer classes cannot be use in switch
 
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 ### Declarations
+//declaration  
 int a[];  
 int[] a;    
 int[] a = new int[4];    
+//defination  
 int[] a = new int[]{1,2,3,4};    
 int[] a = {1,2,3,4};
 
