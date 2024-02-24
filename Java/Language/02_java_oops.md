@@ -1,33 +1,41 @@
 # Object oriented programming  
-- it is a programming paradigm like procedural programming paradigm.
+> it is a programming paradigm like procedural programming paradigm.
 
-## For ex: 
+### For ex: 
 to understand class object. take car as class and tata is brand model    
 **attributes** are characteristics of car. eg: start, stop, speedup  
 **methods** are abilities functionalities of car. eg: color, seat count  
 
 ## Class  
--template or blueprint for object (contains states & behaviour)  
+> template or blueprint for object (contains states & behaviour)  
+
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
 3. Anonymous : A obj = new A(){.........}  
-**Steps to create immutable class**: class and variables are final, parameterized constructor, only getters no setters  
+
+### Steps to create immutable class: 
+> class and variables are final, parameterized constructor, only getters no setters  
+
 Note: ClassNotFoundException=  while Class.forName() or loadClass()   
 NoClassDefFoundError=class present in compiletime, but not in runtime    
 
 ## Constructor  
--intialize object, no return type, cannot make constructor final.  
+> intialize object, no return type, cannot make constructor final.  
+
 **super()** must call first line of child class constructor  
 **this()** will call current class constructor  
 
 ## Object  
-instant of a class
+> instant of a class
+
 ``` 
 ClassName obj = new ClassName(); //
 LHS (heap) reference = RHS (stack) instance
 
 ```
-**Anonymous object** : for one time use.
+### Anonymous object 
+> for one time use.
+
 new ClassName().functionName();  
 new ClassName().variableName = value  
 
@@ -57,12 +65,16 @@ it is caused by three ways:
 	3. while using anonymous object  
 **Finalize() Method** : Called before GC  
 **Memory leak**:  objects no longer used, unable removed by garbage collector. cause OutOfMemoryError. Solution: Memory management tools   
+
 ## Methods  
-lines of instruction inside a block with a name and arguement  
+> lines of instruction inside a block with a name and arguement  
+
 pass by reference: done by passing object  
 **var-arg** :  void methodname(int...a){//use as a[];}  
 
 ## Encapsulation:   
+> hiding data
+
 1. Access Modifiers:  
 	i) Public- Any class any package  
 	ii) Default- Specific package - default if no specifier mentioned  
@@ -78,7 +90,8 @@ pass by reference: done by passing object
 Note: we cannot use private, protected in class, but we can use in innerclass 
 
 ## Inheritances  
-one class acquires the properties of another class.  
+> one class acquires the properties of another class.  
+
 if I call a constructor of child class, first parent class constructors will execute than only base class constructor
 1. Single inheritance
 2. Multilevel inheritance
@@ -86,12 +99,14 @@ if I call a constructor of child class, first parent class constructors will exe
 *Super keyword* :  ```super.variablename; super.methodname(); super();```
 
 ## Polymorphism  
--ability to define a method(constructor) in many forms     
-*Method overriding* : same method name, same no. of arguements, also known as static/compiletime  
-*Method overloading* : same method name, diff no. of arguements, also known as dynamic/runtime  
+> ability to define a method(constructor) in many forms     
+
+1. Method overriding : same method name, same no. of arguements, also known as static/compiletime  
+2. Method overloading : same method name, diff no. of arguements, also known as dynamic/runtime  
 
 ## Abstraction  
--Hiding the implementation  
+> Hiding the implementation  
+
 1. Abstract(0 to 100% ) 
 2. Interface (100%) - variables are public static final by default, methods are public abstract  
 	a) Normal interface  
