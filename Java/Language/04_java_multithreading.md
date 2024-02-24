@@ -1,5 +1,6 @@
 # Muti threading
--concurrent execution, subset process  
+> concurrent execution, subset process  
+
 **Thread**: unit of execution within the process  
 
 
@@ -39,7 +40,8 @@ class MyThread implements Runnable {
 5. Terminated/Dead - completed  
 	
 ## Priority of a Thread  
-Thread scheduler prioritize based on (Range 1-10) (default-5)
+> Thread scheduler prioritize based on (Range 1-10) (default-5)
+
 ```
 threadObj.setPriority(8);
 threadObj.setPriority(Thread.MIN_PRIORITY) //1
@@ -72,15 +74,17 @@ t1.setDaemon(true);t1.isDaemon(true);
 1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
 2. Thread.interrupted() - return true/false   
 ---
+
 ## DeadLock  
--situation where a set of processes are blocked   
+> situation where a set of processes are blocked   
+
 because each process is holding a resource and waiting for another resource acquired by some other process.   
 i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
 
 **Race condition**: When multiple threads try to access same resources 
 
 ## Thread Pool:   
-group of worker threads that are waiting for the job and reuse many times.    
+> group of worker threads that are waiting for the job and reuse many times.    
 
 **Executer service* : provide thread pool  
 ```
@@ -116,7 +120,8 @@ scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task sched
 **Volatile**: variable that shared across all objects  
 
 ## Atomic variables
--synchronized works in variable level, and it has some methods   
+> synchronized works in variable level, and it has some methods   
+
 AtomicBoolean  
 AtomicInteger, AtomicIntegerArray, AtomicIntegerFieldUpdater  
 AtomicLong, AtomicLongArray, AtomicLongFieldUpdater  
