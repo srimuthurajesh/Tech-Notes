@@ -8,11 +8,34 @@
 
 ## Get
 ```
- this.HttpClient.get<any[]>('https://dummyjson.com/products/1')
-           .subscribe(data => {
+ this.HttpClient.get<any[]>('https://dummyjson.com/products/1',
+          options: {
+                   headers?: HttpHeaders | { [header: string]: string | string[]; };
+                   params?: HttpParams | { [param: string]: string | string[]; };
+                   observe?: "body|events|response|";
+                   responseType: "arraybuffer|json|blob|text";
+                   reportProgress?: boolean; 
+                   withCredentials?: boolean;})
+           .subscribe(
+           data => {                                 //Next callback
                console.log(data);
            },
-           error => {
-           }
+           error => {                                //Error callback
+                console.error('Request failed with error')    
+           },
+           () => {                                   //Complete callback
+               console.log('Request completed')
+           })
   );
 ```
+
+## Http Params
+https://dummyjson.com/products?limit=10  
+```
+const params = new HttpParams()
+    .set('limit', 10);
+this.httpClient.get<repos[]>('https://dummyjson.com/products',{params})
+```
+or directly edit the url string  
+```this.httpClient.get<repos[]>('https://dummyjson.com/products?limit='+10)```  
+
