@@ -33,7 +33,7 @@ Note: it follows singleton pattern
 3. **Injector**: Angular's dependency injection container for managing service instances.
   
   
-#### 3 ways of Dependency injection
+### 3 ways of Dependency injection
 1. By giving providers in @Component
 ```
 //app.component.ts
@@ -50,7 +50,7 @@ export class AppComponent
   providedIn: 'root',
 })export class SampleService{}
 ```
-#### Types of Provider  
+### Types of Provider  
 1. **Class Provider**  
 ```
 providers :[{ provide: ProductService, useClass: fakeProductService }]
