@@ -74,7 +74,8 @@ export class AppComponent {
 8. ngOnDestroy() - just before Angular destroys the directive or component. used to clear setinterval, clear observable object
 
 ## Directives
-> used to manipulate the structure of the DOM. need to use * before this. 
+> used to manipulate the structure of the DOM. need to use * before this.
+
 1. **Structural Directive**
 	1. *ngIf:  
 	   ```
@@ -108,6 +109,7 @@ export class HighlightDirective {
 
 ## Angular Data Binding
 > binding data into html template
+
 1. One way binding	
 	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{methodWithbracket}},{{'22'}}```
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
@@ -119,6 +121,7 @@ export class HighlightDirective {
 
 ## Angular Modules  
 > group of components, directives, pipes, services based on functionality
+
 - Angular itself built on the concept of modules. The Features like Forms, HTTP, Routing are implemented as modules
 ```
 // app.module.ts
@@ -177,7 +180,8 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 
 
 ## Angular Pipes    
-- used to Transform the Data.  
+> used to Transform the Data.  
+
 1. {{comments | uppercase}}   
 2. {{comments | lowercase}}   
 3. {{6589.23 | currency:"USD"}}   
@@ -188,6 +192,7 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 
 **1. Pure Pipes**: Execute change in value.  
 **2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
+
 #### Custom pipe
 ```
 @Pipe ({  
@@ -200,7 +205,8 @@ export class SqrtPipe implements PipeTransform {
 }
 ```
 ## NgTemplate
-- it contains html template. reuse by ngTemplateOutlet and template reference variable
+> it contains html template. reuse by ngTemplateOutlet and template reference variable
+
 ```
 <ng-template #sampleTemplate>From inside template will print, wherever #sampletemplate called</ng-template>
 //using below ng-container we can reuse ng-template html
