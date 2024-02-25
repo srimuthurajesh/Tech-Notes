@@ -29,13 +29,17 @@
   );
 ```
 
-## Http Params
-https://dummyjson.com/products?limit=10  
+## Http Params & Headers
+queryparam Url: https://dummyjson.com/products?limit=10  
 ```
-const params = new HttpParams()
-    .set('limit', 10);
-this.httpClient.get<repos[]>('https://dummyjson.com/products',{params})
+const params = new HttpParams().set('limit', 10);
+let headers = new HttpHeaders();
+headers .set('content-type', 'application/json')
+headers .set('Access-Control-Allow-Origin', '*')
+
+this.httpClient.get<repos[]>('https://dummyjson.com/products',{headers, params})
 ```
-or directly edit the url string  
+or directly edit the url string for param 
 ```this.httpClient.get<repos[]>('https://dummyjson.com/products?limit='+10)```  
 
+## Http Interceptor
