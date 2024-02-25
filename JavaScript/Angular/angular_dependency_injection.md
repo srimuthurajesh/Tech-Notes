@@ -1,6 +1,6 @@
 
 ## Angular Services
-> reusable common functionality/data in many components  
+> reusable common functionality/data across multiple components  
 ```
 //sample.service.ts
 @injectable
@@ -16,24 +16,21 @@ export class AppComponent
 { 
    sampleService:SampleService;
    constructor(){
-     this.sampleService=new SampleService();}
+     this.sampleService = new SampleService();}
 }
 ```
 ## Angular Dependency Injection
->  way of providing dependencies to classes that need them, without creating them internally.
+>  way of providing dependencies to classes , without creating them internally.
 
--  follows singleton pattern and receives same instance of a service.    
+Note: it follows singleton pattern
+
 1. **@Injectable**: Marks a class as eligible for Angular dependency injection.
-2. **@Inject**: Decorator used to specify dependencies in a class constructor.
+2. **@Inject**: Decorator used to specify dependencies in a class constructor(no need to use it, angular default).
 3. **Injector**: Angular's dependency injection container for managing service instances.
-   
-```
-constructor(@Inject(SomeService) private someService: SomeService)
-constructor(private someService: SomeService)
-```
+  
   
 #### 3 ways of Dependency injection
-1. Need to use give providers in @Component
+1. By giving providers in @Component
 ```
 //app.component.ts
 @Component({ selector: 'app-root', templateUrl: './app.component.html', providers: [SampleService]})
@@ -42,8 +39,8 @@ export class AppComponent
    constructor(public sampleService:SampleService){ }
 }
 ```
-2. Need to give providers in module
-3. Need to mention injectable in service class
+2. By giving providers in module
+3. By mentioning providedIn at @injectable in service class
 ```
 @Injectable({
   providedIn: 'root',
