@@ -28,6 +28,11 @@
            })
   );
 ```
+## Post
+```
+    const body=JSON.stringify(person);
+    return this.http.post(this.baseURL + 'people', body,{headers})
+```
 
 ## Http Params & Headers
 queryparam Url: https://dummyjson.com/products?limit=10  
