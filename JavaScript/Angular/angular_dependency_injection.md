@@ -22,8 +22,15 @@ export class AppComponent
 ## Angular Dependency Injection
 >  way of providing dependencies to classes that need them, without creating them internally.
 
--  follows singleton pattern and receives same instance of a service.  
+-  follows singleton pattern and receives same instance of a service.    
 **Injector**: responsible for creation of object and inject into constructor  
+**@Injectable**:  decorate/mark a class as eligible for Angular dependency injection  
+**Inject**: used in 
+```
+constructor(@Inject(SomeService) private someService: SomeService)
+constructor(private someService: SomeService)
+```
+  
 #### 3 ways of Dependency injection
 1. Need to use give providers in @Component
 ```
@@ -43,10 +50,16 @@ export class AppComponent
 ```
 #### Types of Provider  
 1. **Class Provider**  
- keyword: useClass ex:```providers :[{ provide: ProductService, useClass: fakeProductService }]```     
-2. **Value Provider**   
- keyword: useValue ex:```providers :[{ provide: 'API_URL', useValue: 'https://example.com/api' }]```  
-3. **Factory Provider**  
+```
+providers :[{ provide: ProductService, useClass: fakeProductService }]
+constructor(private productService: ProductService) { }
+```     
+3. **Value Provider**   
+```
+providers :[{ provide: 'API_URL', useValue: 'https://example.com/api' }]
+constructor(@Inject('API_URL') private apiUrl: string) { }
+```  
+4. **Factory Provider**  
  keyword: useFactory 
 ex:  
 ```
