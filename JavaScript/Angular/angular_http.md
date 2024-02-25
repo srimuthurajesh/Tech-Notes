@@ -47,4 +47,34 @@ this.httpClient.get<repos[]>('https://dummyjson.com/products',{headers, params})
 or directly edit the url string for param 
 ```this.httpClient.get<repos[]>('https://dummyjson.com/products?limit='+10)```  
 
-## Http Interceptor
+## Http Interceptor  
+> can modify request and response data  
+
+```
+@Injectable()
+export class AppHttpInterceptor implements HttpInterceptor {
+    constructor() {}
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        req = req.clone({ headers: req.headers.set('Content-Type', 'application/json') });
+        req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + token) });
+        console.log(req);
+        return next.handle(req)
+             .map(resp => {
+                // on Response
+                if (resp instanceof HttpResponse) {
+                    // Do whatever you want with the response.
+                    return resp;
+                }
+            }).catch(err => {
+                // onError
+                console.log(err);
+                if (err instanceof HttpErrorResponse) {
+                    if (err.status === 401) {
+                        // redirect the user to login page
+                    }
+                }
+                return Observable.of(err);
+            });
+    }
+}
+```
