@@ -1,7 +1,7 @@
 - [Angular Services](#angular-services)
 - [Angular Dependency Injection](#angular-dependency-injection)
 - [Types of Providers](#3-ways-of-dependency-injection)
-- [Injector Tree]()
+- [Injector Tree](#injector-tree)
 
 ## Angular Services
 > reusable common functionality/data across multiple components  
