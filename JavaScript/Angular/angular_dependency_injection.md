@@ -79,4 +79,13 @@ ex:
 ```  
 
 ## Injector Tree
-1. 
+1. Module Injector tree
+2. Element Injector 
+
+## ProvidedIn
+1. providedIn: 'root': available throughout the entire application.
+2. providedIn: SomeModule: available within the specified module and its children.
+3. providedIn: 'platform': available across multiple Angular applications running on the same platform.
+4. providedIn: 'any' : no dependency injection, we need to use new keyword inside component.  
+
+## @Self, @SkipSelf & @Optional
