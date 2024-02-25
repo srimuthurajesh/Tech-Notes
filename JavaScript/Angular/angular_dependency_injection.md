@@ -23,9 +23,10 @@ export class AppComponent
 >  way of providing dependencies to classes that need them, without creating them internally.
 
 -  follows singleton pattern and receives same instance of a service.    
-**Injector**: responsible for creation of object and inject into constructor  
-**@Injectable**:  decorate/mark a class as eligible for Angular dependency injection  
-**Inject**: used in 
+1. **@Injectable**: Marks a class as eligible for Angular dependency injection.
+2. **@Inject**: Decorator used to specify dependencies in a class constructor.
+3. **Injector**: Angular's dependency injection container for managing service instances.
+   
 ```
 constructor(@Inject(SomeService) private someService: SomeService)
 constructor(private someService: SomeService)
