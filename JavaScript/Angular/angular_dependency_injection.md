@@ -22,7 +22,7 @@ export class AppComponent
 ## Angular Dependency Injection
 >  way of providing dependencies to classes that need them, without creating them internally.
 
--  follows singleton pattern and receives same instance of a service.
+-  follows singleton pattern and receives same instance of a service.  
 **Injector**: responsible for creation of object and inject into constructor  
 #### 3 ways of Dependency injection
 1. Need to use give providers in @Component
