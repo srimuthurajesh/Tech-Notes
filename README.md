@@ -1,4 +1,3 @@
-# Table Of Contents  
 
 ## Programming Languages
    1. [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
