@@ -34,5 +34,5 @@
    - [SOLID Principles](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/solid_principles.html) 
 
 ## Others
-
+   - [YouTube](https://srimuthurajesh.github.io/Tech-Notes/youtube)
 ----
