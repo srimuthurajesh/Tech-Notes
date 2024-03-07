@@ -7,7 +7,8 @@
 
 ### DSA study
 1. [Abdul Bari](https://www.youtube.com/@abdul_bari/videos) - DSA topics in board, indian
-2. [Back To Back SWE](https://www.youtube.com/@BackToBackSWE/videos) - Board, lot of topics  
+2. [Back To Back SWE](https://www.youtube.com/@BackToBackSWE/videos) - Board, lot of topics
+3. [CSDojo](https://www.youtube.com/@CSDojo/videos) - basic topics simplified
 
 ### DSA problem solving
 1. [Algo Tamizha](https://www.youtube.com/@AlgoTamizha/videos) - good channel, problem solving simple- must checkout
@@ -30,6 +31,7 @@
 4. [Breakdown](https://www.youtube.com/@breakdownbyaeos/videos) - business study, less videos
 5. [Business Casual](https://www.youtube.com/@BusinessCasual/videos)- business and history, good content
 6. [CaspianReport](https://www.youtube.com/@CaspianReport/videos)- world history
+7. [Coldfusion](https://www.youtube.com/coldfusion/videos) - latest happening high quality
 
 ### Indian stock market
 1. [Akshat Shrivastava](https://www.youtube.com/@AkshatZayn/videos) - talk about stocks and market happenings
@@ -39,7 +41,8 @@
 
 ### Java
 1. [Amigoscode](https://www.youtube.com/@amigoscode/videos)  - springboot, microservices
-2. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot  
+2. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot
+3. [Dan Vega](https://www.youtube.com/@DanVega/videos) - java fundamental, good content
 
 
 ### System Design
@@ -48,9 +51,12 @@
 3. [codeKarle](https://www.youtube.com/@codeKarle) - problem cases, he is good
 4. [codespace](https://www.youtube.com/@codespace) - both problem case and topics, good
 
+### Coding Time pass
+1. [CodingWithLewis](https://www.youtube.com/@CodingWithLewis) - less videos but good content system design too   
 
 ### Cybersecurity
 1. [Arun Kumar R](https://www.youtube.com/@ArunKumar_R/videos) - pentesting videos tamil
+2. [Cyber Voyage](https://www.youtube.com/@cyber_voyage/videos) - long tamil expert interviews
 
 ### AWS
 1. [Be A Better Dev](https://www.youtube.com/@BeABetterDev/videos)
