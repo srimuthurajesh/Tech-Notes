@@ -14,14 +14,24 @@
 3. [CSDojo](https://www.youtube.com/@CSDojo/videos) - basic topics simplified
 4. [Irfan Baqui](https://www.youtube.com/@IrfanBaqui/videos)- less videos
 5. [Jennys lectures CS/IT](https://www.youtube.com/@JennyslecturesCSIT)
+6. [Teachers of Back Benchers](https://www.youtube.com/@TeachersofBackBenchers/videos) - tamilDS theory
 
 ### DSA problem solving
-1. [Algo Tamizha](https://www.youtube.com/@AlgoTamizha/videos) - good channel, problem solving simple- must checkout
-2. [Algorithm Unlock](https://www.youtube.com/@algorithmunlock9946/videos) - Leetcode problem solving advanced
-3. [ByteByByte](https://www.youtube.com/@ByteByByte/videos) - it havings some advises videos too, content good
-4. [codeio](https://www.youtube.com/@codeio/videos) - tamil problem solving is good
+1. [Take U forward](https://www.youtube.com/@takeUforward) - master of dsa problems
+2. [Algo Tamizha](https://www.youtube.com/@AlgoTamizha/videos) - good channel, problem solving simple- must checkout
+3. [Algorithm Unlock](https://www.youtube.com/@algorithmunlock9946/videos) - Leetcode problem solving advanced
+4. [ByteByByte](https://www.youtube.com/@ByteByByte/videos) - it havings some advises videos too, content good
+5. [codeio](https://www.youtube.com/@codeio/videos) - tamil problem solving is good
    i) [Leetcode problems](https://www.youtube.com/watch?v=smwRXvWkbWI&list=PLhP5RsB7fhE0aDkWwgraJGX4pON1_UE3G&pp=iAQB)
-5. [IDeserve](https://www.youtube.com/@IDeserve/videos) - english problems solving, not leetcode , general
+6. [IDeserve](https://www.youtube.com/@IDeserve/videos) - english problems solving, not leetcode , general
+7. [Mycodeschool](https://www.youtube.com/@mycodeschool/videos) . basic, little content
+8. [NeetCode IO](https://www.youtube.com/@NeetCodeIO/videos) - good general topics must see, problems
+9. [NeetCode](https://www.youtube.com/@NeetCode/videos) - good general topics must see
+10. [Programming Line](https://www.youtube.com/@ProgrammingLine/videos) - simple guy
+11. [Rachit Jain](https://www.youtube.com/@RachitJain/videos) -  some theory DSA problems
+12. [Rachit Jain](https://www.youtube.com/@RachitJain/videos) - good content and topics
+13. [Tech dose](https://www.youtube.com/@techdose4u/videos) - DSA problems
+
 
 ### Angular
 1. [Decoded Frontend](https://www.youtube.com/@DecodedFrontend) - master in Angular
@@ -33,7 +43,9 @@
 7. [@Joshua Morony](https://www.youtube.com/@JoshuaMorony/videos) - good content, 
 
 ### Javascript
-1. [Funfunfunction](https://www.youtube.com/@funfunfunction/videos) - js basic understandings good
+1. [Tech sith tube](https://www.youtube.com/@Techsithtube) -  he is pakka js fellow
+2. [Funfunfunction](https://www.youtube.com/@funfunfunction/videos) - js basic understandings good
+3. [Rethinking UI](https://www.youtube.com/@RethinkingUI/videos) - good js videos
 
 ### Happenings
 1. [Fireship](https://www.youtube.com/@Fireship) - Best tech happening channel
@@ -47,20 +59,33 @@
 8. [Coldfusion](https://www.youtube.com/coldfusion/videos) - latest happening high quality
 9. [Logically Answered](https://www.youtube.com/@LogicallyAnswered) - world heppanings
 10. [Monster lessons Academy](https://www.youtube.com/@MonsterlessonsAcademy) - signal
+11. [htMusingsbyAmit](https://www.youtube.com/@MusingsbyAmit/videos) less videos
+12. [Nas Daily](https://www.youtube.com/@NasDaily/videos) - topic Debungs
+13. [Poly Matter](https://www.youtube.com/@PolyMatter) - world news good content
+14. [Tech Altar](https://www.youtube.com/@TechAltar/videos)- tech news
+15. [The Hated One](https://www.youtube.com/@TheHatedOne/videos) - good documentries debunk
+16. [Think School](https://www.youtube.com/@ThinkSchool) - finance happenings india
 
 ### Indian stock market
 1. [Akshat Shrivastava](https://www.youtube.com/@AkshatZayn/videos) - talk about stocks and market happenings
+2. [prakala wealth](https://www.youtube.com/@prakalawealth/videos) - long tamil interviews finance
+3. [pravin deepak](https://www.youtube.com/@pravindeepak6867/videos) - tamil finance topics
+4. [SHARRAB](https://www.youtube.com/@SHARRAB) - daily updates good
+5. [Tamil Share](https://www.youtube.com/@TamilShare) - decent channel
 
 ### Book summaries
 1. [almosteverything](https://www.youtube.com/@almosteverything/videos) - book summaries in tamil, good content
 
 ### Java
-1. [Amigoscode](https://www.youtube.com/@amigoscode/videos)  - springboot, microservices
-2. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot
-3. [Dan Vega](https://www.youtube.com/@DanVega/videos) - java fundamental, good content
-4. [Defog Tech](https://www.youtube.com/@DefogTech/videos) - java multithreading executer service
-5. [Gontuseries](https://www.youtube.com/@gontuseries/videos) - spring mvc
-6. [Java9s](https://www.youtube.com/@java9s/videos)- good fellow, decent quality
+1. [Selenium Express](https://www.youtube.com/@SeleniumExpress) - best for spring
+2. [Amigoscode](https://www.youtube.com/@amigoscode/videos)  - springboot, microservices
+3. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot
+4. [Dan Vega](https://www.youtube.com/@DanVega/videos) - java fundamental, good content
+5. [Defog Tech](https://www.youtube.com/@DefogTech/videos) - java multithreading executer service
+6. [Gontuseries](https://www.youtube.com/@gontuseries/videos) - spring mvc
+7. [Java9s](https://www.youtube.com/@java9s/videos)- good fellow, decent quality
+8. [Sudo code](https://www.youtube.com/@sudocode/videos) - microservices in detail
+9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
 
 
 ### System Design
@@ -70,6 +95,11 @@
 4. [codespace](https://www.youtube.com/@codespace) - both problem case and topics, good
 5. [Gaurav sen](https://www.youtube.com/@gkcs) - theory, problems
 6. [Hussein Nasser](https://www.youtube.com/@hnasr/videos) - genius in system design
+7. [Reach Goals](https://www.youtube.com/@ReachGoals/videos) - simple explanation, indian
+8. [Success in Tech](https://www.youtube.com/@SuccessinTech) - system design problems
+9. [Tech Dummies NarendraL](https://www.youtube.com/@TechDummiesNarendraL) - for system design
+10. [Tech Primers](https://www.youtube.com/@TechPrimers/videos) - components needed for system design
+11. [Think Software](https://www.youtube.com/@ThinkSoftware/videos) - system design components and problem
 
 ### Coding Time pass
 1. [CodingWithLewis](https://www.youtube.com/@CodingWithLewis) - less videos but good content system design too
@@ -81,7 +111,11 @@
 7. [Jelvix](https://www.youtube.com/@Jelvix/videos) - talk tech happenings
 8. [Joma Tech ](https://www.youtube.com/@jomakaze/videos)- he just only speaks
 9. [JS conf](https://www.youtube.com/@jsconf_)- thy just speaks
-10. [@Kevin Naughton Jr](https://www.youtube.com/@KevinNaughtonJr/videos) - some random tech talks
+10. [Kevin Naughton Jr](https://www.youtube.com/@KevinNaughtonJr/videos) - some random tech talks
+11. [Nick White](https://www.youtube.com/@NickWhite/videos) - good general tech topics
+12. [Riddhi Dutta](https://www.youtube.com/@rite2riddhi/videos) - seems like system design, but stil time pass
+13. [Sahil and sarra](https://www.youtube.com/@sahilandsarra) - seems like timepass but worth content
+14. [Tamil boomi](https://www.youtube.com/@Tamilboomi) - tamil interviews, podcast wil be useful
 
 ### Cybersecurity
 1. [Arun Kumar R](https://www.youtube.com/@ArunKumar_R/videos) - pentesting videos tamil
@@ -90,12 +124,15 @@
 
 ### AWS
 1. [Be A Better Dev](https://www.youtube.com/@BeABetterDev/videos)
+2. [Sumathis infotech](https://www.youtube.com/@sumathisinfotech/videos) - aws exam in tamil
+3. [Tamil cloudzone](https://www.youtube.com/@tamilcloudzone/videos) - devops in tamil
 
 ### React
 1. [code tamizha code](https://www.youtube.com/@codetamizhacode/videos) - less content
 
 ### Science
 1. [Domain of science](https://www.youtube.com/@domainofscience/videos) - physics, content is good
+2. [https://www.youtube.com/@Science With Sam](https://www.youtube.com/@ScienceWithSam) - good tamil content
 
 ### Computer science theory
 1. [ElangovanG](https://www.youtube.com/@ElangovanG/videos) - subject classes
@@ -104,3 +141,6 @@
 1. [Backpacker Kumar](https://www.youtube.com/@BackpackerKumar/videos) - tamil, world countries travel
 2. [Heaven Explorer](https://www.youtube.com/@HeavenExplorer/videos) - tamil
 3. [Ilakiyaoli](https://www.youtube.com/@ilakiyaoli-7364/videos)- best tamil audio books
+4. [Naveen Kumar Vlogs](https://www.youtube.com/@NaveenKumarVlogs/videos)- tamil train
+5. [Parthi Bike Rider](https://www.youtube.com/@ParthiBikeRider)- bike tamil, no videos now
+6. [Tamil Pesi](https://www.youtube.com/@TamilPesi)- LTTE history
