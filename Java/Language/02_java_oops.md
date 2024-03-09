@@ -1,6 +1,7 @@
 # Object oriented programming  
 > it is a programming paradigm like procedural programming paradigm.
 
+**Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
 ### For ex: 
 to understand class object. take car as class and tata is brand model    
 **attributes** are characteristics of car. eg: start, stop, speedup  
