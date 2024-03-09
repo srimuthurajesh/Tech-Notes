@@ -68,10 +68,12 @@
 
 ### Indian stock market
 1. [Akshat Shrivastava](https://www.youtube.com/@AkshatZayn/videos) - talk about stocks and market happenings
-2. [prakala wealth](https://www.youtube.com/@prakalawealth/videos) - long tamil interviews finance
-3. [pravin deepak](https://www.youtube.com/@pravindeepak6867/videos) - tamil finance topics
-4. [SHARRAB](https://www.youtube.com/@SHARRAB) - daily updates good
-5. [Tamil Share](https://www.youtube.com/@TamilShare) - decent channel
+2. [Tiruppur bulls](https://www.youtube.com/@tiruppurbulls) - thalaivan daily videos
+3. [prakala wealth](https://www.youtube.com/@prakalawealth/videos) - long tamil interviews finance
+4. [pravin deepak](https://www.youtube.com/@pravindeepak6867/videos) - tamil finance topics
+5. [SHARRAB](https://www.youtube.com/@SHARRAB) - daily updates good
+6. [Tamil Share](https://www.youtube.com/@TamilShare) - decent channel
+7. [Thinking tamizha](https://www.youtube.com/@thinkingtamizha007/videos) - tax details tamil
 
 ### Book summaries
 1. [almosteverything](https://www.youtube.com/@almosteverything/videos) - book summaries in tamil, good content
@@ -86,6 +88,7 @@
 7. [Java9s](https://www.youtube.com/@java9s/videos)- good fellow, decent quality
 8. [Sudo code](https://www.youtube.com/@sudocode/videos) - microservices in detail
 9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
+10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
 
 
 ### System Design
@@ -100,6 +103,7 @@
 9. [Tech Dummies NarendraL](https://www.youtube.com/@TechDummiesNarendraL) - for system design
 10. [Tech Primers](https://www.youtube.com/@TechPrimers/videos) - components needed for system design
 11. [Think Software](https://www.youtube.com/@ThinkSoftware/videos) - system design components and problem
+12. [Tushar roy](https://www.youtube.com/@tusharroy2525/videos) - system problems
 
 ### Coding Time pass
 1. [CodingWithLewis](https://www.youtube.com/@CodingWithLewis) - less videos but good content system design too
@@ -116,6 +120,7 @@
 12. [Riddhi Dutta](https://www.youtube.com/@rite2riddhi/videos) - seems like system design, but stil time pass
 13. [Sahil and sarra](https://www.youtube.com/@sahilandsarra) - seems like timepass but worth content
 14. [Tamil boomi](https://www.youtube.com/@Tamilboomi) - tamil interviews, podcast wil be useful
+15. [Uncommon Geeks](https://www.youtube.com/@careerwithvasanth/videos) - product vs service absed
 
 ### Cybersecurity
 1. [Arun Kumar R](https://www.youtube.com/@ArunKumar_R/videos) - pentesting videos tamil
@@ -144,3 +149,5 @@
 4. [Naveen Kumar Vlogs](https://www.youtube.com/@NaveenKumarVlogs/videos)- tamil train
 5. [Parthi Bike Rider](https://www.youtube.com/@ParthiBikeRider)- bike tamil, no videos now
 6. [Tamil Pesi](https://www.youtube.com/@TamilPesi)- LTTE history
+7. [Transit bites](https://www.youtube.com/@Transitbites) - Travel tamil
+8. [Travel advisor](https://www.youtube.com/@traveladvisor.) - TN bus travel 
