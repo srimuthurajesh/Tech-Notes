@@ -3,12 +3,12 @@
 
 **Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
 ### For ex: 
-to understand class object. take car as class and tata is brand model    
-**attributes** are characteristics of car. eg: start, stop, speedup  
-**methods** are abilities functionalities of car. eg: color, seat count  
+to understand class object. take shapes as class and box is shape model    
+**attributes** are characteristics of Box is length, breadth, heigth  
+**methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}  
 
 ## Class  
-> template or blueprint for object (contains states & behaviour)  
+> template or blueprint for object (defines variable and methods) noun & verbs    
 
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
