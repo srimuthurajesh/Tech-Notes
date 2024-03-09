@@ -31,6 +31,7 @@
 11. [Rachit Jain](https://www.youtube.com/@RachitJain/videos) -  some theory DSA problems
 12. [Rachit Jain](https://www.youtube.com/@RachitJain/videos) - good content and topics
 13. [Tech dose](https://www.youtube.com/@techdose4u/videos) - DSA problems
+14. [Vivekanand khyade](https://www.youtube.com/@vivekanandkhyade/videos) - just another channel
 
 
 ### Angular
