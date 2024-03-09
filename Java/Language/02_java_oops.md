@@ -67,7 +67,8 @@ it is caused by three ways:
 **Memory leak**:  objects no longer used, unable removed by garbage collector. cause OutOfMemoryError. Solution: Memory management tools   
 
 ## Methods  
-> lines of instruction inside a block with a name and arguement  
+> block of code that perform specific task.
+> it has name,argument and return type
 
 pass by reference: done by passing object  
 **var-arg** :  void methodname(int...a){//use as a[];}  
