@@ -122,6 +122,7 @@
 13. [Sahil and sarra](https://www.youtube.com/@sahilandsarra) - seems like timepass but worth content
 14. [Tamil boomi](https://www.youtube.com/@Tamilboomi) - tamil interviews, podcast wil be useful
 15. [Uncommon Geeks](https://www.youtube.com/@careerwithvasanth/videos) - product vs service absed
+16. [Web Dev Simplified](https://www.youtube.com/@WebDevSimplified) - frontend
 
 ### Cybersecurity
 1. [Arun Kumar R](https://www.youtube.com/@ArunKumar_R/videos) - pentesting videos tamil
