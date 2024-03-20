@@ -28,6 +28,7 @@
    - [Vim](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/vim.html)
 
 ## Computer science
+   - [Interview dsa handy notes](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/interview-dsa-handy-notes.html)
    - [Algorithm](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/algorithm.html)
    - [Data Struture](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/data_structure.html)
    - [Design Patterns](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/design_patterns.html)
