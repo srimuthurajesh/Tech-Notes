@@ -1,4 +1,4 @@
-- [DSA study](l#dsa-study)
+- [DSA study](#dsa-study)
 
 ### DSA study
 1. [Abdul Bari](https://www.youtube.com/@abdul_bari/videos) - DSA topics in board, indian
