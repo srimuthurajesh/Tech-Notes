@@ -1,4 +1,23 @@
 - [DSA study](#dsa-study)
+- [DSA problem solving](#dsa-problem-solving)
+- [DSA study](#dsa-study)
+- [System Design](#system-design)
+- [Java](#java)
+- [Angular](#angular)
+- [Javascript](#javascript)
+- [AI happenings](#ai-happenings)
+- [Happenings](#happenings)
+- [Javascript](#javascript)
+- [Indian stock market](#indian-stock-market)
+- [Book summaries](#book-summaries)
+- [Coding Time pass](#coding-time-pass)
+- [Cybersecurity](#cybersecurity)
+- [AWS](#aws)
+- [React](#react)
+- [Science](#science)
+- [Computer science theory](#computer-science-theory)
+- [Travel & books](#travel-&-books)  
+- [Machine Learning](#machine-learning)
 
 ### DSA study
 1. [Abdul Bari](https://www.youtube.com/@abdul_bari/videos) - DSA topics in board, indian
@@ -53,11 +72,6 @@
 9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
 10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
 
-### AI happenings
-1. [AI Explained](https://www.youtube.com/@aiexplained-official/videos) - talk about latest trends  
-
-
-
 ### Angular
 1. [Decoded Frontend](https://www.youtube.com/@DecodedFrontend) - master in Angular
 2. [Academind](https://www.youtube.com/@academind/videos) - Udemy guy, for angular/react feature update videos
@@ -71,6 +85,10 @@
 1. [Tech sith tube](https://www.youtube.com/@Techsithtube) -  he is pakka js fellow
 2. [Funfunfunction](https://www.youtube.com/@funfunfunction/videos) - js basic understandings good
 3. [Rethinking UI](https://www.youtube.com/@RethinkingUI/videos) - good js videos
+
+### AI happenings
+1. [AI Explained](https://www.youtube.com/@aiexplained-official/videos) - talk about latest trends  
+
 
 ### Happenings
 1. [Fireship](https://www.youtube.com/@Fireship) - Best tech happening channel
