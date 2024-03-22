@@ -16,7 +16,7 @@
 - [React](#react)
 - [Science](#science)
 - [Computer science theory](#computer-science-theory)
-- [Travel & books](#travel-&-books)  
+- [Travel & books](##travel--books)  
 - [Machine Learning](#machine-learning)
 
 ### DSA study
