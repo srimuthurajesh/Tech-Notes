@@ -1,12 +1,4 @@
-### Machine Learning
-1. [3blue1brown](https://www.youtube.com/3blue1brown/videos) - calculus, formulas math
-2. [codebasics](https://www.youtube.com/@codebasics/videos) - Data analys
-3. [Data Engineering Videos Tamil](https://www.youtube.com/@dataengineeringvideos/videos) - tamil content, less but various topics
-4. [Data School](https://www.youtube.com/@dataschool) - my guru in ML
-5. [Logic First Tamil](https://www.youtube.com/@LogicFirstTamil)- good explain in tamil
-   
-### AI happenings
-1. [AI Explained](https://www.youtube.com/@aiexplained-official/videos) - talk about latest trends  
+- [DSA study](l#dsa-study)
 
 ### DSA study
 1. [Abdul Bari](https://www.youtube.com/@abdul_bari/videos) - DSA topics in board, indian
@@ -32,6 +24,38 @@
 12. [Rachit Jain](https://www.youtube.com/@RachitJain/videos) - good content and topics
 13. [Tech dose](https://www.youtube.com/@techdose4u/videos) - DSA problems
 14. [Vivekanand khyade](https://www.youtube.com/@vivekanandkhyade/videos) - just another channel
+
+
+### System Design
+1. [Asli Engineering](https://www.youtube.com/@AsliEngineering/videos) - Interesting topics in system designs
+2. [ByteMonk](https://www.youtube.com/@ByteMonk/videos)- interesting topics good content
+3. [codeKarle](https://www.youtube.com/@codeKarle) - problem cases, he is good
+4. [codespace](https://www.youtube.com/@codespace) - both problem case and topics, good
+5. [Gaurav sen](https://www.youtube.com/@gkcs) - theory, problems
+6. [Hussein Nasser](https://www.youtube.com/@hnasr/videos) - genius in system design
+7. [Reach Goals](https://www.youtube.com/@ReachGoals/videos) - simple explanation, indian
+8. [Success in Tech](https://www.youtube.com/@SuccessinTech) - system design problems
+9. [Tech Dummies NarendraL](https://www.youtube.com/@TechDummiesNarendraL) - for system design
+10. [Tech Primers](https://www.youtube.com/@TechPrimers/videos) - components needed for system design
+11. [Think Software](https://www.youtube.com/@ThinkSoftware/videos) - system design components and problem
+12. [Tushar roy](https://www.youtube.com/@tusharroy2525/videos) - system problems
+
+
+### Java
+1. [Selenium Express](https://www.youtube.com/@SeleniumExpress) - best for spring
+2. [Amigoscode](https://www.youtube.com/@amigoscode/videos)  - springboot, microservices
+3. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot
+4. [Dan Vega](https://www.youtube.com/@DanVega/videos) - java fundamental, good content
+5. [Defog Tech](https://www.youtube.com/@DefogTech/videos) - java multithreading executer service
+6. [Gontuseries](https://www.youtube.com/@gontuseries/videos) - spring mvc
+7. [Java9s](https://www.youtube.com/@java9s/videos)- good fellow, decent quality
+8. [Sudo code](https://www.youtube.com/@sudocode/videos) - microservices in detail
+9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
+10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
+
+### AI happenings
+1. [AI Explained](https://www.youtube.com/@aiexplained-official/videos) - talk about latest trends  
+
 
 
 ### Angular
@@ -79,32 +103,6 @@
 ### Book summaries
 1. [almosteverything](https://www.youtube.com/@almosteverything/videos) - book summaries in tamil, good content
 
-### Java
-1. [Selenium Express](https://www.youtube.com/@SeleniumExpress) - best for spring
-2. [Amigoscode](https://www.youtube.com/@amigoscode/videos)  - springboot, microservices
-3. [coder ulagam](https://www.youtube.com/@coderulagam2098/videos) - good tamil springbboot
-4. [Dan Vega](https://www.youtube.com/@DanVega/videos) - java fundamental, good content
-5. [Defog Tech](https://www.youtube.com/@DefogTech/videos) - java multithreading executer service
-6. [Gontuseries](https://www.youtube.com/@gontuseries/videos) - spring mvc
-7. [Java9s](https://www.youtube.com/@java9s/videos)- good fellow, decent quality
-8. [Sudo code](https://www.youtube.com/@sudocode/videos) - microservices in detail
-9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
-10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
-
-
-### System Design
-1. [Asli Engineering](https://www.youtube.com/@AsliEngineering/videos) - Interesting topics in system designs
-2. [ByteMonk](https://www.youtube.com/@ByteMonk/videos)- interesting topics good content
-3. [codeKarle](https://www.youtube.com/@codeKarle) - problem cases, he is good
-4. [codespace](https://www.youtube.com/@codespace) - both problem case and topics, good
-5. [Gaurav sen](https://www.youtube.com/@gkcs) - theory, problems
-6. [Hussein Nasser](https://www.youtube.com/@hnasr/videos) - genius in system design
-7. [Reach Goals](https://www.youtube.com/@ReachGoals/videos) - simple explanation, indian
-8. [Success in Tech](https://www.youtube.com/@SuccessinTech) - system design problems
-9. [Tech Dummies NarendraL](https://www.youtube.com/@TechDummiesNarendraL) - for system design
-10. [Tech Primers](https://www.youtube.com/@TechPrimers/videos) - components needed for system design
-11. [Think Software](https://www.youtube.com/@ThinkSoftware/videos) - system design components and problem
-12. [Tushar roy](https://www.youtube.com/@tusharroy2525/videos) - system problems
 
 ### Coding Time pass
 1. [CodingWithLewis](https://www.youtube.com/@CodingWithLewis) - less videos but good content system design too
@@ -153,3 +151,10 @@
 6. [Tamil Pesi](https://www.youtube.com/@TamilPesi)- LTTE history
 7. [Transit bites](https://www.youtube.com/@Transitbites) - Travel tamil
 8. [Travel advisor](https://www.youtube.com/@traveladvisor.) - TN bus travel 
+
+### Machine Learning
+1. [3blue1brown](https://www.youtube.com/3blue1brown/videos) - calculus, formulas math
+2. [codebasics](https://www.youtube.com/@codebasics/videos) - Data analys
+3. [Data Engineering Videos Tamil](https://www.youtube.com/@dataengineeringvideos/videos) - tamil content, less but various topics
+4. [Data School](https://www.youtube.com/@dataschool) - my guru in ML
+5. [Logic First Tamil](https://www.youtube.com/@LogicFirstTamil)- good explain in tamil
