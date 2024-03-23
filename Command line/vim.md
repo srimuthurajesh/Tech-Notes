@@ -19,6 +19,20 @@
 | j | down| 
 | h | left| 
 
+
+## Search 
+> /searchtext - then type request word, press enter
+/\csearchtext - case insensitive
+
+| Command | Description |
+| ----------- | ----------- |
+| n |  go to next word| 
+| N |  go to previous word| 
+| \ |  escape character while search text entering| 
+| * |  go to next next occurance of current word| 
+| # |  go to previous occurance of current word| 
+
+
 ## Advanced Navigation:
 | Command | Description |
 | ----------- | ----------- |
@@ -69,18 +83,6 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 | p |  paste|  
 | yy |  copy current line| 
 | dd |  cut current line| 
-
-## Search 
-> /searchtext - then type request word, press enter
-/\csearchtext - case insensitive
-
-| Command | Description |
-| ----------- | ----------- |
-| n |  go to next word| 
-| N |  go to previous word| 
-| \ |  escape character while search text entering| 
-| * |  go to next next occurance of current word| 
-| # |  go to previous occurance of current word| 
 
 ## Replace
 | Command | Description |
