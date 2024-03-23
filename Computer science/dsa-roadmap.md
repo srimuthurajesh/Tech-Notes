@@ -1,3 +1,11 @@
+1. Array & Hasing
+2. Two pointer & stack
+3. Binary search & sliding window & Linked List
+4. Tree
+5. Tries & Heap prioity queue & Backtracking
+6. Graph
+7. Dynamic programming
+
 ## Array & Strings
 1. Is Unique: Implement an algorithm to determine if a string has all unique characters?
 2. Check Permutation: Given two strings,write a method to decide if one is a permutation of the other.
