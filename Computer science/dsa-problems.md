@@ -5,8 +5,17 @@
 4. Find palindrom or not
 5. Find Armstrong
 6. Print star patterns
+7. Reverse a number
+8. Find GCD LCM
 
 ## Array & String
+1. Reverse a string
+2. Check vowel present in the string
+3. Remove duplicates in array
+4. Check string has all unique characters
+5. Find if one string is a permutation of the other.
+6. replace all spaces in a string with '%20'. 
+
 1. kadane algorithm
 2. dutch national flag algo
 3. sliding window
