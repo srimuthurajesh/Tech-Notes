@@ -8,8 +8,8 @@
 7. Reverse a number
 8. Find GCD LCM
 
-## Array & String
-1. Reverse a string
+### Array & String
+1. Reverse a string - LC344
 2. Check vowel present in the string
 3. Remove duplicates in array
 4. Check string has all unique characters
