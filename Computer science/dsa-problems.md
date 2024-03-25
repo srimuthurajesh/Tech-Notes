@@ -2,7 +2,7 @@
 1. Swap two number without temp
 2. Find prime number or not
 3. Find factorial
-4. Find palindrom or not
+4. Find palindrom - LH125
 5. Find Armstrong
 6. Print star patterns
 7. Reverse a number
