@@ -6,3 +6,7 @@
 3. Extended ASCII codes (128-255)
 > Converting char to ASCII - ```int ascii = (int)str.charAt(i);```
 
+### Finding length
+str.length();
+arr.length;
+list.size;
