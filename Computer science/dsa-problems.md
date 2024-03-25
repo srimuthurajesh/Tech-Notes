@@ -1,15 +1,15 @@
 ### IF & For
 1. Swap two number without temp
-2. Find prime number or not
+2. Find prime number or not - LC#204
 3. Find factorial
-4. Find palindrom - LH125
+4. Find palindrom - LC#125
 5. Find Armstrong
 6. Print star patterns
 7. Reverse a number
 8. Find GCD LCM
 
 ### Array & String
-1. Reverse a string - LC344
+1. Reverse a string - LC#344
 2. Check vowel present in the string
 3. Remove duplicates in array
 4. Check string has all unique characters
