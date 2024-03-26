@@ -1,10 +1,10 @@
 ### Scaling:
 
-_____________________________________________________________
-| Horizontal scaling 		    |	Vertical scaling              |
-|---------------------------|-------------------------------|
-| More number of servers	  |	Bigger server							    |
-| LoadBalancing required	  |	N/a							              |
+-----------------------------------------------------------------
+| Horizontal scaling 		    |	Vertical scaling            |
+|---------------------------|-----------------------------------|
+| More number of servers	  |	Bigger server				    |
+| LoadBalancing required	  |	N/a							    |
 | Resilient					        | Single point of failure		    |
 | Network calls(Rpc)		    |	Inter process communication	  |
 | Data inconsistence		    |	Consistence					          |
