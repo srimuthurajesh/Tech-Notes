@@ -1,12 +1,12 @@
 ### IF & For
 1. Swap two number without temp
-2. Find prime number or not - LC#204
-3. Find factorial
-4. Find palindrom - LC125
-5. Find Armstrong -LC1134
-6. Print star patterns
-7. Reverse a number - LC7
-8. Find GCD LCM
+2. Find factorial
+3. Print star patterns
+8. Reverse a number - LC7
+3. Find prime number or not - LC#204
+5. Find palindrome - LC125
+6. Find Armstrong -LC1134
+9. Find GCD LCM
 
 ### Array & String
 1. Reverse a string - LC#344
