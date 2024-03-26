@@ -1,7 +1,7 @@
 ### IF & For
 1. Swap two number without temp
 2. Find factorial
-3. Print star patterns
+3. Print triangle patterns
 8. Reverse a number - LC7
 3. Find prime number or not - LC#204
 5. Find palindrome - LC125
