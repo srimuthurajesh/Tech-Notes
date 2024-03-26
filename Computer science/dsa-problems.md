@@ -2,10 +2,10 @@
 1. Swap two number without temp
 2. Find prime number or not - LC#204
 3. Find factorial
-4. Find palindrom - LC#125
-5. Find Armstrong
+4. Find palindrom - LC125
+5. Find Armstrong -LC1134
 6. Print star patterns
-7. Reverse a number
+7. Reverse a number - LC7
 8. Find GCD LCM
 
 ### Array & String
