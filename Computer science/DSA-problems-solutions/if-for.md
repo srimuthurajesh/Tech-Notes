@@ -1,4 +1,4 @@
-#### Swap without temp
+### Swap without temp
 ```
 public class SwapWithoutTemp {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class SwapWithoutTemp {
     }
 }
 ```
-#### Count Digits
+### Count Digits
 ```
 public class CountDigits {
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class CountDigits {
     }
 }
 ```
-#### Factorial
+### Factorial
 ```
 public class Main {
     public static void main(String[] args) {
@@ -48,7 +48,7 @@ public class Main {
     }
 }
 ```
-#### Print astreik pattern
+### Print astreik pattern
 ```
 public class Triangle {
     public static void main(String[] args) {
@@ -69,7 +69,7 @@ public class Triangle {
 }
 
 ```
-#### Reverse a Number
+### Reverse a Number
 ```
 class Reverse {
     public int reverse(int x) {
@@ -93,7 +93,7 @@ class Reverse {
     }
 }
 ```
-#### Prime
+### Prime
 ```
 class Solution {
     public int countPrimes() {
@@ -115,7 +115,7 @@ class Solution {
     }
 }
 ```
-#### Palindrome
+### Palindrome
 ```
 public class Palindrome {
     public static void main(String[] args) {
@@ -131,7 +131,7 @@ public class Palindrome {
     }
 }
 ```
-#### Armsstrong
+### Armsstrong
 ```
 public class Armstrong {
     public static void main(String[] args) {
@@ -160,7 +160,7 @@ public class Armstrong {
     }
 }
 ```
-#### LCM
+### LCM
 ```
 public class LCM {
     public static void main(String[] args) {
@@ -180,7 +180,7 @@ public class LCM {
     }
 }
 ```
-#### GCD/HCF 
+### GCD/HCF 
 ```
 public class GCD {
     public static void main(String[] args) {
