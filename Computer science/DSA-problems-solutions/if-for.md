@@ -11,6 +11,23 @@ public class SwapWithoutTemp {
     }
 }
 ```
+#### Count Digits
+```
+public class CountDigits {
+    public static void main(String[] args) {
+        System.out.println(countDigits(123456));
+    }
+
+    private static int countDigits(int i) {
+        int count = 0;
+        while (i != 0) {
+            i = i / 10;
+            count++;
+        }
+        return count;
+    }
+}
+```
 #### Factorial
 ```
 public class Main {
@@ -163,7 +180,7 @@ public class LCM {
     }
 }
 ```
-#### GCD 
+#### GCD/HCF 
 ```
 public class GCD {
     public static void main(String[] args) {

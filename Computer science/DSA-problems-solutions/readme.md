@@ -1,5 +1,6 @@
 ### IF & For
 1. Swap two number without temp
+2. Coun digits
 2. Factorial
 3. Print triangle patterns
 8. Reverse a number - LC7
@@ -8,9 +9,13 @@
 6. Armstrong -LC1134
 9. Find GCD LCM HCF
 
-### Array & String
+### Sorting
+1. Bubble sort
+
+
+### Array
 1. Reverse a string - LC#344
-2. Check vowel present in the string
+2. Check vowel present in the string 
 3. Remove duplicates in array
 4. Check string has all unique characters
 5. Find if one string is a permutation of the other.
