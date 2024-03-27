@@ -10,3 +10,10 @@
 str.length();
 arr.length;
 list.size;
+
+### Prime series
+- starts from 2
+2, 3, 5, 7, 11
+
+#### Convert number into string
+> String.valueOf(input);
