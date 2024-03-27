@@ -1,13 +1,14 @@
 ### IF & For
-1. Swap two number without temp
-2. Coun digits
-2. Factorial
-3. Print triangle patterns
-8. Reverse a number - LC7
-3. Prime - LC#204
-5. Palindrome - LC125
-6. Armstrong -LC1134
-9. Find GCD LCM HCF
+1. [Swap two number without temp](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#swap-without-temp)
+2. [Coun digits](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#count-digits)
+3. [Factorial](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#factorial)
+4. [Print pattern](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#print-astreik-pattern)
+5. [Reverse a number](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#reverse-a-number) - LC7
+6. [Prime](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#prime) - LC#204
+7. [Palindrome](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#palindrome) - LC125
+8. [Armstrong](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#armsstrong) -LC1134
+9. [LCM](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#lcm)
+10. [GCD/HCF](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#gcdhcf)
 
 ### Sorting
 1. Bubble sort
