@@ -4,15 +4,15 @@
 3. [Factorial](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#factorial)
 4. [Print pattern](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#print-astreik-pattern)
 5. [Reverse a number](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#reverse-a-number) - LC7
-6. [Prime](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#prime) - LC#204
+6. [Prime](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#prime) - LC204
 7. [Palindrome](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#palindrome) - LC125
 8. [Armstrong](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#armsstrong) -LC1134
 9. [LCM](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#lcm)
 10. [GCD/HCF](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#gcdhcf)
 
 ### Sorting
-1. Bubble sort
-
+1. [Bubble sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#bubble-sort)
+2. 
 
 ### Array
 1. Reverse a string - LC#344
