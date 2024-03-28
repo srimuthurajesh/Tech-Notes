@@ -12,7 +12,10 @@
 
 ### Sorting
 1. [Bubble sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#bubble-sort)
-2. 
+2. [Selection sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#selection-sort)
+3. [Insertion sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#insertion-sort)
+4. [Merge sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#merge-sort)
+5. [Quick sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#quick-sort)
 
 ### Array
 1. Reverse a string - LC#344
