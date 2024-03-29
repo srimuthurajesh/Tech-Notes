@@ -18,6 +18,10 @@
 5. [Quick sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#quick-sort)
 
 ### Array
+1. Find Second Largest Element 
+2. 
+
+### String
 1. Reverse a string - LC#344
 2. Check vowel present in the string 
 3. Remove duplicates in array
