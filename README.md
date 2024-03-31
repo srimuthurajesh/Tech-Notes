@@ -1,20 +1,20 @@
 
 ## Programming Languages
-   1. [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
-   2. [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript)  
-   3. [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)  
+   1. [Java](Java)  
+   2. [JavaScript](JavaScript)  
+   3. [Python](Python)  
 
 ## Databases
    1. **SQL**  
-      1. [Mysql](https://srimuthurajesh.github.io/Tech-Notes/SQL/mysql.html)  
+      1. [Mysql](SQL/mysql.html)  
    2. **NoSQL**  
-      1. [Mongo](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      2. [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
-      3. [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
+      1. [Mongo](NoSql/Mongo.html)  
+      2. [Postgresql](NoSql/Mongo.html)  
+      3. [Cassandra](NoSql/Cassandra.html)  
 
 ## Frameworks
-   1. [Spring](https://srimuthurajesh.github.io/Tech-Notes/Java/Spring)
-   2. [Angular](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular)
+   1. [Spring](Java/Spring)
+   2. [Angular](JavaScript/Angular)
 
 ## Datastructure & Algorithm
    1. [DSA Concepts](datastructure-algorithm) 
@@ -22,27 +22,27 @@
     
 
 ## Devops    
-   1. [Git](https://srimuthurajesh.github.io/Tech-Notes/devops/git.html)
-   2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/devops/docker.html)
-   3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/devops/kubernetes.html)
-   4. [kafka](https://srimuthurajesh.github.io/Tech-Notes/devops/kafka.html)
-   5. [Linux Commands](https://srimuthurajesh.github.io/Tech-Notes/devops/LinuxCommands.html)
-   6. [Batch Scripting](https://srimuthurajesh.github.io/Tech-Notes/devops/bash_scripting.html)
-   7. [Vim](https://srimuthurajesh.github.io/Tech-Notes/devops/vim.html)
+   1. [Git](devops/git.html)
+   2. [Docker](devops/docker.html)
+   3. [Kubernetes](devops/kubernetes.html)
+   4. [kafka](devops/kafka.html)
+   5. [Linux Commands](devops/LinuxCommands.html)
+   6. [Batch Scripting](devops/bash_scripting.html)
+   7. [Vim](devops/vim.html)
 
 ## Cloud 
-   - [Aws](https://srimuthurajesh.github.io/Tech-Notes/devops/AWS.html)
+   - [Aws](devops/AWS.html)
 
 ## Web Design 
    
 ## Computer science
-   - [DSA-problems-solutions](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions)
-   - [Interview dsa handy notes](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/interview-dsa-handy-notes.html)
-   - [Algorithm](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/algorithm.html)
-   - [Data Struture](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/data_structure.html)
-   - [Design Patterns](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/design_patterns.html)
-   - [SOLID Principles](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/solid_principles.html) 
+   - [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
+   - [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
+   - [Algorithm](Computer%20science/algorithm.html)
+   - [Data Struture](Computer%20science/data_structure.html)
+   - [Design Patterns](Computer%20science/design_patterns.html)
+   - [SOLID Principles](Computer%20science/solid_principles.html) 
 
 ## Others
-   - [YouTube](https://srimuthurajesh.github.io/Tech-Notes/YouTube/YouTube-channels.html)
+   - [YouTube](YouTube/YouTube-channels.html)
 ----
