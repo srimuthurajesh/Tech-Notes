@@ -10,7 +10,7 @@
 9. [LCM](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#lcm)
 10. [GCD/HCF](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#gcdhcf)
 
-### Sorting
+### Searching
 1. [Binary Search](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/search#binary-search) - LC704
 
 ### Sorting
