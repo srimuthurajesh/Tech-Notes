@@ -11,11 +11,14 @@
 10. [GCD/HCF](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#gcdhcf)
 
 ### Sorting
-1. [Bubble sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#bubble-sort)
-2. [Selection sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#selection-sort)
-3. [Insertion sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#insertion-sort)
-4. [Merge sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#merge-sort)
-5. [Quick sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sortings#quick-sort)
+1. [Binary Search](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/search#binary-search) - LC704
+
+### Sorting
+1. [Bubble sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#bubble-sort)
+2. [Selection sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#selection-sort)
+3. [Insertion sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#insertion-sort)
+4. [Merge sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#merge-sort)
+5. [Quick sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#quick-sort)
 
 ### Array
 1. Find Second Largest Element 

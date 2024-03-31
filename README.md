@@ -3,7 +3,6 @@
    1. [Java](https://srimuthurajesh.github.io/Tech-Notes/Java)  
    2. [JavaScript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript)  
    3. [Python](https://srimuthurajesh.github.io/Tech-Notes/Python)  
-   4. [PHP](https://srimuthurajesh.github.io/Tech-Notes/PHP/php.html)  
 
 ## Databases
    1. **SQL**  
@@ -13,20 +12,29 @@
       2. [Postgresql](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Mongo.html)  
       3. [Cassandra](https://srimuthurajesh.github.io/Tech-Notes/NoSql/Cassandra.html)  
 
-## Devops Tools    
-   1. [Git](https://srimuthurajesh.github.io/Tech-Notes/Devops/git.html)
-   2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/Devops/docker.html)
-   3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/Devops/kubernetes.html)
-   4. [kafka](https://srimuthurajesh.github.io/Tech-Notes/Devops/kafka.html)
+## Frameworks
+   1. [Spring](https://srimuthurajesh.github.io/Tech-Notes/Java/Spring)
+   2. [Angular](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular)
+
+## Datastructure & Algorithm
+   1. [DSA Concepts]() 
+   2. [My Striver's List]()
+    
+
+## Devops    
+   1. [Git](https://srimuthurajesh.github.io/Tech-Notes/devops/git.html)
+   2. [Docker](https://srimuthurajesh.github.io/Tech-Notes/devops/docker.html)
+   3. [Kubernetes](https://srimuthurajesh.github.io/Tech-Notes/devops/kubernetes.html)
+   4. [kafka](https://srimuthurajesh.github.io/Tech-Notes/devops/kafka.html)
+   5. [Linux Commands](https://srimuthurajesh.github.io/Tech-Notes/devops/LinuxCommands.html)
+   6. [Batch Scripting](https://srimuthurajesh.github.io/Tech-Notes/devops/bash_scripting.html)
+   7. [Vim](https://srimuthurajesh.github.io/Tech-Notes/devops/vim.html)
 
 ## Cloud 
-   - [Aws](https://srimuthurajesh.github.io/Tech-Notes/Devops/AWS.html)
+   - [Aws](https://srimuthurajesh.github.io/Tech-Notes/devops/AWS.html)
 
-## OS & Editors 
-   - [Linux Commands](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/LinuxCommands.html)
-   - [Batch Scripting](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/bash_scripting.html)
-   - [Vim](https://srimuthurajesh.github.io/Tech-Notes/Command%20line/vim.html)
-
+## Web Design 
+   
 ## Computer science
    - [DSA-problems-solutions](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions)
    - [Interview dsa handy notes](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/interview-dsa-handy-notes.html)

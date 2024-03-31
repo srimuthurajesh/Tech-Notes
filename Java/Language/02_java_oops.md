@@ -101,10 +101,10 @@ if I call a constructor of child class, first parent class constructors will exe
 *Super keyword* :  ```super.variablename; super.methodname(); super();```
 
 ## Polymorphism  
-> ability to define a method(constructor) in many forms     
+> ability to define a method(&constructor) in many forms     
 
-1. Method overriding : same method name, same no. of arguements, also known as static/compiletime  
-2. Method overloading : same method name, diff no. of arguements, also known as dynamic/runtime  
+1. Method overriding : same method name, same no. of arguements, same type ie.static/compiletime  
+2. Method overloading : same method name, diff no. of arguements, diff type ie.dynamic/runtime  
 
 ## Abstraction  
 > Hiding the implementation  

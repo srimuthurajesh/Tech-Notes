@@ -29,6 +29,8 @@
 
 ### DSA problem solving
 1. [Take U forward](https://www.youtube.com/@takeUforward) - master of dsa problems
+2. [Harshan](https://www.youtube.com/@outsploiter) - good tamil
+3. [KunalKushwaha](https://www.youtube.com/@KunalKushwaha/videos) - roadmap DSA good
 2. [Algo Tamizha](https://www.youtube.com/@AlgoTamizha/videos) - good channel, problem solving simple- must checkout
 3. [Algorithm Unlock](https://www.youtube.com/@algorithmunlock9946/videos) - Leetcode problem solving advanced
 4. [ByteByByte](https://www.youtube.com/@ByteByByte/videos) - it havings some advises videos too, content good
