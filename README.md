@@ -17,8 +17,8 @@
    2. [Angular](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular)
 
 ## Datastructure & Algorithm
-   1. [DSA Concepts]() 
-   2. [My Striver's List]()
+   1. [DSA Concepts](datastructure-algorithm) 
+   2. [My Striver's List](my-strivers-list)
     
 
 ## Devops    
