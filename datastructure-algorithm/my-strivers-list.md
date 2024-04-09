@@ -12,6 +12,7 @@
 
 ### Searching
 1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704
+    i) [Search insert position](DSA-problems-solutions/search#search-insert-position) - LC35. 
 
 ### Sorting
 1. [Bubble sort](DSA-problems-solutions/sort#bubble-sort)

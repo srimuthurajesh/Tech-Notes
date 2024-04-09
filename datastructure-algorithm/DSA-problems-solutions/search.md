@@ -44,3 +44,27 @@ public class BinarySearch {
 }
 
 ```
+### Search Insert Position.
+```
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int middle = left + ((right - left) / 2);;
+        while (left < right) {
+            if (nums[middle] == target)
+                return middle;
+            if(left==right-1) {
+                middle = nums[left]<target?right:left;
+                break;
+            }
+            if (nums[middle] < target)
+                left = middle + 1;
+            if (nums[middle] > target)
+                right = middle - 1;
+            middle = left + ((right - left) / 2);
+        }
+        return nums[middle] < target ? middle + 1 : middle ;
+    }
+}
+``` 
