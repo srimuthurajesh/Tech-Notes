@@ -18,7 +18,7 @@
 
 ## Datastructure & Algorithm
    1. [DSA Concepts](datastructure-algorithm) 
-   2. [My Striver's List](my-strivers-list)
+   2. [My Striver's List](datastructure-algorithm/my-strivers-list)
     
 
 ## Devops    

@@ -1,24 +1,24 @@
 ### IF & For
-1. [Swap two number without temp](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#swap-without-temp)
-2. [Coun digits](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#count-digits)
-3. [Factorial](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#factorial)
-4. [Print pattern](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#print-astreik-pattern)
-5. [Reverse a number](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#reverse-a-number) - LC7
-6. [Prime](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#prime) - LC204
-7. [Palindrome](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#palindrome) - LC125
-8. [Armstrong](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#armsstrong) -LC1134
-9. [LCM](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#lcm)
-10. [GCD/HCF](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/if-for#gcdhcf)
+1. [Swap two number without temp](DSA-problems-solutions/if-for#swap-without-temp)
+2. [Coun digits](DSA-problems-solutions/if-for#count-digits)
+3. [Factorial](DSA-problems-solutions/if-for#factorial)
+4. [Print pattern](DSA-problems-solutions/if-for#print-astreik-pattern)
+5. [Reverse a number](DSA-problems-solutions/if-for#reverse-a-number) - LC7
+6. [Prime](DSA-problems-solutions/if-for#prime) - LC204
+7. [Palindrome](DSA-problems-solutions/if-for#palindrome) - LC125
+8. [Armstrong](DSA-problems-solutions/if-for#armsstrong) -LC1134
+9. [LCM](DSA-problems-solutions/if-for#lcm)
+10. [GCD/HCF](DSA-problems-solutions/if-for#gcdhcf)
 
 ### Searching
-1. [Binary Search](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/search#binary-search) - LC704
+1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704
 
 ### Sorting
-1. [Bubble sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#bubble-sort)
-2. [Selection sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#selection-sort)
-3. [Insertion sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#insertion-sort)
-4. [Merge sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#merge-sort)
-5. [Quick sort](https://srimuthurajesh.github.io/Tech-Notes/Computer%20science/DSA-problems-solutions/sort#quick-sort)
+1. [Bubble sort](DSA-problems-solutions/sort#bubble-sort)
+2. [Selection sort](DSA-problems-solutions/sort#selection-sort)
+3. [Insertion sort](DSA-problems-solutions/sort#insertion-sort)
+4. [Merge sort](DSA-problems-solutions/sort#merge-sort)
+5. [Quick sort](DSA-problems-solutions/sort#quick-sort)
 
 ### Array
 1. Find Second Largest Element 
