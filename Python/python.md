@@ -1,20 +1,28 @@
-print("Hello, World!")
 
--Indentation mandatory 
-COMMENTS:	#shell comment
-			"""......."""		#multiline docstring
+```print("Hello, World!")```
 
-ESCAPE SPECIAL CHAR: \' \" \t \n \\			
-VARIABLES:
-	a=7
-	print(a)
+Note: Indentation mandatory.  
+### Comments:	
+1. Shell comment: #shell comment
+2. Multiline docstring: """.......""" or '''.......'''
+
+### Escape Characters. 
+> Use backslashes (\): \' \" \t \n \\			
+
+### Variables:
+```
+a=7
+print(a)
+```
+
+### Data Types:  
+#### 1. Number:	  
+a)int- is a whole number, positive,negative,no decimel, no length limit.
+b)float - positive,negative, have decimals
+c)complex	
 	
-DATATYPES:
-	Number:	a)int- is a whole number, positive,negative,no decimel, no length limit.
-			b)float - positive,negative, have decimals
-			c)complex	
-	
-	String : 	array of bytes representing uncode, so we can access string by [3] and [2:3]
+#### 2. String : 	
+array of bytes representing uncode, so we can access string by [3] and [2:3]
 				works both double & single quotes & ('''....''' and """"...."""") for multiline string
 				concat(+), len(string), string.upper(),string.lower(), 
 				a list() of characters(behave as list), but string are immutable	
