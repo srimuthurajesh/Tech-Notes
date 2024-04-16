@@ -1,15 +1,21 @@
+## Python
+> widely-used, interpreted, object-oriented, and high-level programming language with dynamic typed
+- created by Guido van Rossum on 1991.  
+- python means large snake, comes from BBC tv comedy sketch series called Monty Python’s Flying Circus.   
 
-```print("Hello, World!")```
+Output: ```print("Hello, World!")```  
+Input: ```x=input();```  	
 
 Note: Indentation mandatory.  
 ### Comments:	
-1. Shell comment: #shell comment
-2. Multiline docstring: """.......""" or '''.......'''
+1. Single line comment: #shell comment
+2. Multi line/docstring: """.......""" or '''.......'''
 
 ### Escape Characters. 
 > Use backslashes (\): \' \" \t \n \\			
 
 ### Variables:
+> name for the memory location  
 ```
 a=7
 print(a)
@@ -17,31 +23,46 @@ print(a)
 
 ### Data Types:  
 #### 1. Number:	  
-a)int- is a whole number, positive,negative,no decimel, no length limit.
-b)float - positive,negative, have decimals
-c)complex	
+a) Integer- is a whole number, positive,negative,no decimel, no length limit.  
+b) Float - positive,negative, have decimals  
+c) Strings	  
 	
 #### 2. String : 	
-array of bytes representing uncode, so we can access string by [3] and [2:3]
-				works both double & single quotes & ('''....''' and """"...."""") for multiline string
-				concat(+), len(string), string.upper(),string.lower(), 
-				a list() of characters(behave as list), but string are immutable	
-				'Hello %s'%('rajesh')				
-	Boolean :	True,False  #5 is 5 return True, 5 is not "5" return True
-TYPECASTING:
-	int(),float(),str()
+> array of bytes representing unicode, immutable  
 
-INPUT:
-	x=input();
+access string by [3] and [2:3]  
+works both double & single quotes & ('''....''' and """"...."""") for multiline string  
+string functions: concat(+), len(string), string.upper(),string.lower(),   
+'Hello %s'%('rajesh')
 
-OPERATORS:	
-    Arithmetic operators -> 	+ - * / % ** //
-    Assignment operators -> 	= += -= *= /= %= //= **= &= |= ^= >>= <<=
-    Comparison operators ->		== != > < >= <=
-    Logical operators	 ->		and or not
-    Identity operators 	 ->		is  is not
-    Membership operators ->		in	not in
-    Bitwise operators	 ->		& | ^ ~ << >>
+#### Boolean :	
+True,False  
+
+### Typecasting:  
+int(),float(),str()  
+
+## Operators:  
+| Arithmetic Operators  | Example	|  
+|-----------------------|---------------|
+| Exponent		| 2 ** 3 = 8	|
+| Modulus/Remainder	| 22 % 8 = 6	|
+| Integer division	| 22 // 8 = 2	|
+| Division		| 22 / 8 = 2.75	|
+| Multiplication	| 3 * 3 = 9	|
+| Subtraction		| 5 - 2 = 3	|
+| Addition		| 2 + 2 = 4	|
+
+|  Operators		| Symbols  			|  
+|-----------------------|-------------------------------|  
+| Arithmetic Operator  	| ** + - * / % ** // **  	|  
+| Relational Operator  	| ** <, <=, >, >=, ==, != **  	|  
+| Logical Operator  	| ** and, or, not **  		|  
+| Assignment Operator  	| ** a += 4 **  		|  
+| Inc and Dec Operator  | ** a++,a--,++a,--a **  	|  
+| Identity Operator  	| ** is, is not **  		|  
+| Bitwise Operator 	| ** &, <<, >>, >>> **  	|  
+| Membership operators  | ** in, not in **  		|
+| Walrus Operator	| print(my_var:="Hello")	|
 
 COLLECTIONS:
 	List 		-	ordered, changeable, dublicate allowed
