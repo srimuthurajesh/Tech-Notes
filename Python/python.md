@@ -30,7 +30,8 @@ print(a)
 2. Dictionary : key value pair ```d = {1:'Jimmy', 2:'Alex', 3:'john', 4:'mike'}```
 3. Boolean : true/false
 4. Set: unique values ```set1 = {'James', 2, 3,'Python'} ```
-5. Sequence type: string, list, tuple(```tup=("hi", "Python", 2)```)
+5. string: works with single/double quote  
+6. list, tuples: (```tup=["hi", "Python", 2]```#index works)
 	
 ### Typecasting:  
 int('22') #conv string to int   
@@ -38,6 +39,7 @@ float(2)  #conv int to float
 str(3.1)  #conv float to string   
 
 ### Operators:  
+
 | Arithmetic Operators  | Example	|  
 |-----------------------|---------------|
 | Exponent		| 2 ** 3 = 8	|
@@ -54,7 +56,7 @@ str(3.1)  #conv float to string
 | Relational Operator  	| ** <, <=, >, >=, ==, != **  	|  
 | Logical Operator  	| ** and, or, not **  		|  
 | Assignment Operator  	| ** a += 4 **  		|  
-| Inc and Dec Operator  | ** a++,a--,++a,--a **  	|
+| Inc and Dec Operator  | Not supported		  	|
 | Tenary Operator	| 'kid' if age < 18 else 'adult'|
 | Identity Operator  	| ** is, is not **  		|  
 | Bitwise Operator 	| ** &, <<, >>, >>> **  	|  
@@ -83,41 +85,33 @@ match response_code:
 for n in lists:
 	print(n)	
 ```
-2. While
+2. For else: else block execute when break used inside for  
+3. While
 ```
 while counter < 10:  
 	counter = counter + 3  
 ```
 3. Loop control statement: break, continue, pass
-     
-	while n>6:
-		print('yes')
-		n++;		
-	break
-	continue
-	
-FUNCTIONS:
-	def functionName(arg1,arg2=defaultVal):
-		...function body...	
-		return someting
-	
-	#function calling
-	functionName(arg2='val1',arg1='val2')		#function can be called with different arg order, but to mention argname		
-	
-	#variable lenght arguement(*)
-	def add(*num)	#this function can be called add(1),add(1,2), add(1,2,3)
-	
-	#variable lenght arguement while function calling
-	def add(num1,num2,num3)			#function can be called num=[2,4,6] add(*num)	
-	
-	#Anonymous(lamda) function
-	func = lamda arg1: ...fun body...
-
-	Note: function should be defined before calling it
-
-GLOBAL & LOCAL
-	we can use outer function variables, but its overrided value will not reflect after outside,
-	global variableName    #to make changes reflects in outer of the function	
+4. Range: starts from 0, increments by 1
+```
+for i in range(5):
+	print('printed {i}')
+```
+5. sys.exit(): exit from script
+   
+### Functions:
+**Syntax**:  
+```
+def functionName(arg1,arg2=defaultVal):
+	...function body...	
+	return something
+```	
+**function calling**:   
+1. without arg key word: ```functionName('val1','val2')```     
+2. with arg key word: ```functionName(arg2='val1',arg1='val2')```	#code readability, no need arg order  
+3. variable lenght arguement(*): ```def add(*num)	#can be called add(1),add(1,2), add(1,2,3)```
+4. Anonymous(lamda) function: ```func = lamda arg1: ...fun body...```
+5. Global statement: ```global variableName=5```    #to make changes in global variable inside function  	
 			
 CLASSES & OBJECTS:
 	class ClassName:
