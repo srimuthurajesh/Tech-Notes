@@ -1,5 +1,7 @@
 ### Scaling:
 
+(https://www.youtube.com/watch?v=Nx4bvwU0DqE)[https://www.youtube.com/watch?v=Nx4bvwU0DqE]
+
 -----------------------------------------------------------------
 | Horizontal scaling 		    |	Vertical scaling            |
 |---------------------------|-----------------------------------|
