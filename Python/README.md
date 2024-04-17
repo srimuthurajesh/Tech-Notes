@@ -1,6 +1,6 @@
 ## Python
 
-- [Core python](python.html)
+- [Core python](python.md)
 - string function
 - list function
 - builtin function
