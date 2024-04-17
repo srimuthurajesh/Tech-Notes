@@ -14,6 +14,10 @@ Note: Indentation mandatory.
 ### Escape Characters. 
 > Use backslashes (\): \' \" \t \n \\			
 
+### Keywords  
+35 keywords in python  
+```['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']```
+
 ### Variables:
 > name for the memory location  
 ```
@@ -22,26 +26,18 @@ print(a)
 ```
 
 ### Data Types:  
-#### 1. Number:	  
-a) Integer- is a whole number, positive,negative,no decimel, no length limit.  
-b) Float - positive,negative, have decimals  
-c) Strings	  
+1. Number: integer(```a=10```), float(```a=10.0```), complex(```a=10+1j```)	  
+2. Dictionary : key value pair ```d = {1:'Jimmy', 2:'Alex', 3:'john', 4:'mike'}```
+3. Boolean : true/false
+4. Set: unique values ```set1 = {'James', 2, 3,'Python'} ```
+5. Sequence type: string, list, tuple(```tup=("hi", "Python", 2)```)
 	
-#### 2. String : 	
-> array of bytes representing unicode, immutable  
-
-access string by [3] and [2:3]  
-works both double & single quotes & ('''....''' and """"...."""") for multiline string  
-string functions: concat(+), len(string), string.upper(),string.lower(),   
-'Hello %s'%('rajesh')
-
-#### Boolean :	
-True,False  
-
 ### Typecasting:  
-int(),float(),str()  
+int('22') #conv string to int   
+float(2)  #conv int to float  
+str(3.1)  #conv float to string   
 
-## Operators:  
+### Operators:  
 | Arithmetic Operators  | Example	|  
 |-----------------------|---------------|
 | Exponent		| 2 ** 3 = 8	|
@@ -58,50 +54,42 @@ int(),float(),str()
 | Relational Operator  	| ** <, <=, >, >=, ==, != **  	|  
 | Logical Operator  	| ** and, or, not **  		|  
 | Assignment Operator  	| ** a += 4 **  		|  
-| Inc and Dec Operator  | ** a++,a--,++a,--a **  	|  
+| Inc and Dec Operator  | ** a++,a--,++a,--a **  	|
+| Tenary Operator	| 'kid' if age < 18 else 'adult'|
 | Identity Operator  	| ** is, is not **  		|  
 | Bitwise Operator 	| ** &, <<, >>, >>> **  	|  
 | Membership operators  | ** in, not in **  		|
 | Walrus Operator	| print(my_var:="Hello")	|
 
-COLLECTIONS:
-	List 		-	ordered, changeable, dublicate allowed
-					['raj','arun']	#square bracket and an access by variable[index]
-					thislist = list(("apple", "banana", "cherry")) or thislist = ["apple","banana","cherry"]
-					unpacking list->  name,age = ['rajesh',24]  #can access it by calling name and age
-					len(variable),variable.append(values),variable.insert(key,value),variable.remove(value), del variable[index],variable.clear(),	
-					zip:  name=['rajesh','arun']  age=[24,21,'gun']		zip(name,age,'gun')	#will give list of tuples [('rajesh','24'),('arun','21'),('gun','gun')]				
-					copy: import copy  list2 = copy.deepcopy(list1)	
-						
-	Tupple 		- 	same like list, but dublicate not allowed
-					('raj','arun')	#bracket and can access by variable[index]
-					thistuple = tuple(("apple", "banana", "cherry")) or thislist = ("apple", "banana", "cherry")	
-					len(variable), variable.count(value), variable.index(value)
-				
-	Set			-	unordered,	
-					{'raj','arun'}	#curly bracket and an access by variable[index]
-					we can perfom } |,&,-,+,< between two sets
-			
-	Dictionary	- 	same like set, but has key-value pair  car = {'wheel':1,'window':2}		#key can be any dataType
-					car.keys()			#will give list of key 		['wheel','window']	
-					car.items()			#will give list of value 	[1,2]	
-					car.items()		    """will give list of tuples 	[('wheel', 1), ('window', 2)] and we can use it in for loop"""  for key,val in car.items():
-	 				car.get('wheel',0)	#return wheel value if it not exist, return default value 0 as we given	
-					car.setdefault('engine','good')		#set new value, if that key not exist, otherwise it does nothing
-					  
-
-			
-CONDITION STATEMENTS:
-	if 5 > 2:
-	  	print("Five is greater than two!")
-	elif 5 < 2: 
-		print("Five is smaller than two!")
-	else
-		print('Ada pongayaa')	
-
-LOOP STATEMENTS:
-	for n in lists:
-		print(n)	
+	
+### Condition Statements:  
+1. If: ```if 5>2: ``` 
+2. If else: ```if 5>2: else:```  
+2. If elif: ```if 5>2: elif 5<2: ```  
+3. Switch:  
+```
+match response_code:
+	case 200:
+		print("OK")
+	case 201:
+		print("Created")
+	case _:
+		print("invalid")
+```
+   
+### Loop Statements:
+1. For    
+```
+for n in lists:
+	print(n)	
+```
+2. While
+```
+while counter < 10:  
+	counter = counter + 3  
+```
+3. Loop control statement: break, continue, pass
+     
 	while n>6:
 		print('yes')
 		n++;		
