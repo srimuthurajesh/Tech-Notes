@@ -32,7 +32,11 @@ print(a)
 4. Set: unique values ```set1 = {'James', 2, 3,'Python'} ```
 5. string: works with single/double quote  
 6. list, tuples: (```tup=["hi", "Python", 2]```#index works)
-	
+**Important functions in tuple**:
+len(tuple)  
+
+
+
 ### Typecasting:  
 int('22') #conv string to int   
 float(2)  #conv int to float  
