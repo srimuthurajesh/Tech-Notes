@@ -27,6 +27,7 @@
 4. [Irfan Baqui](https://www.youtube.com/@IrfanBaqui/videos)- less videos
 5. [Jennys lectures CS/IT](https://www.youtube.com/@JennyslecturesCSIT)
 6. [Teachers of Back Benchers](https://www.youtube.com/@TeachersofBackBenchers/videos) - tamilDS theory
+7. [Prateesh tet tamil](https://youtube.com/playlist?list=PLOSmsAuTXMaD9x2bqdxlZjmNH91CsLRmp&si=c-TLaCTio1mPv-L_) - good tamil animation 
 
 ### DSA problem solving
 1. [Take U forward](https://www.youtube.com/@takeUforward) - master of dsa problems
