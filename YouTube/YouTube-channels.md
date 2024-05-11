@@ -23,9 +23,7 @@
 1. [William Fiset](https://www.youtube.com/@WilliamFiset-videos) - best animation for dsa
 2. [Abdul Bari](https://www.youtube.com/@abdul_bari/videos) - DSA topics in board, indian
 2. [Back To Back SWE](https://www.youtube.com/@BackToBackSWE/videos) - Board, lot of topics
-3. [CSDojo](https://www.youtube.com/@CSDojo/videos) - basic topics simplified
 4. [Irfan Baqui](https://www.youtube.com/@IrfanBaqui/videos)- less videos
-5. [Jennys lectures CS/IT](https://www.youtube.com/@JennyslecturesCSIT)
 6. [Teachers of Back Benchers](https://www.youtube.com/@TeachersofBackBenchers/videos) - tamilDS theory
 7. [Prateesh tet tamil](https://youtube.com/playlist?list=PLOSmsAuTXMaD9x2bqdxlZjmNH91CsLRmp&si=c-TLaCTio1mPv-L_) - good tamil animation 
 
