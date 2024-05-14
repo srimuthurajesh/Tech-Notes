@@ -81,7 +81,8 @@ Collection:
 8. What is iterator and list_iterator
 9. What is difference between collection and collections  
 10. What is CopyOnWriteArrayList 
-11. How HashMap handles collision  
+11. How HashMap handles collision
+12. What is the difference between poll() and remove() in queue?  
 
 Miscellenous questions:
 1. Why we overrider hashcode and equals?
