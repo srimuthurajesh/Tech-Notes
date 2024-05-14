@@ -5,36 +5,56 @@
 2. [Method reference](#2-method-reference)
 3. [Optional](#3-optional)
 4. [Functional interface](#4-functional-interface)
-5. [Default Method]()
-6. [Stream API]()
-7. [Date time API]()
-8. [StringJoiner class]()
+5. [Default Method](#5-default-method)
+6. [Stream API](#6-stream-api)
+7. [Date time API](#7-date-time-api)
+8. [StringJoiner class](#8-stringjoiner-class)
 
 ### 1. Lambda Expression   
-(arg)->{body}    
-Anonymous method to implement functional interface  
-	a) foreach: list.foreach(x){sysout(x)};  
-	b) Predicate<?>  test()  
-	c) IntFunction(int value)
- 
+- implementation of functional interface or to use less code    
+**Syntax**: ```(argument-list) -> {body}```
+Some lambda expression:    
+a) foreach: list.foreach(x){sysout(x)};  
+b) Predicate<?>  test()  
+c) IntFunction(int value)
+
+
 ### 2. Method reference   
-short versions of lambda expression   
-assigning a method to functional interface   
-	i) staticMethod reference - className::Method  
-	ii) InstanceMethod reference - objectName::Method   
-	iii) constructor reference - className:: new   
+- able to assign a method/constructorq to functional interface   
+i) staticMethod reference - className::Method  
+ii) InstanceMethod reference - objectName::Method   
+iii) constructor reference - className:: new   
 ```
 class Hello{
   public static void main(String[] args){
-    //Normal lamdpa expression  	
+    // Normal lampda expression  	
     BiFunction<Integer, Interger, Double> biFunction = (x1, x2) -> (x1 + x2).doubleValue();
-    // Using method reference  
+    
+    // Using Static Method reference  
     BiFunction<Integer, Interger, Double> biFunction = Hello::addNumbers;
     biFunction.apply(3,4);
+    
+    // Using Constructor reference
+    PersonFactory personFactory = Person::new;
+    Person personObj = personFactory.create("John", 30);
+
+    // Using Instance method reference
+    BiFunction<Integer, Interger, Double> biFunction = personObj::addNumbers;
+    biFunction.apply(3,4);
+
   }
   private static Double addNumbers(Interger a, Interger b){
     return a+b.doubleValue();	
   }
+  Hello(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+@FunctionalInterface
+interface PersonFactory {
+    Person create(String name, int age);
+}
 ```
 
 ### 3. Optional   
@@ -48,6 +68,7 @@ checkNull.orElseGet(() -> getRandomName());
 checkNull.ifPresent((x)->{  });
 checkNull.ifPresentOrElse((x)->{  }, ()->{ });
 ```
+
 ### 4. Functional interface   
 should have only one abstract method. Eg:Runnable @Comparator .   
 -can have default and static method with body  
