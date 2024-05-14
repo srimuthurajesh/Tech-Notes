@@ -1,18 +1,18 @@
-### IF & For
-1. [Swap two number without temp](DSA-problems-solutions/if-for#swap-without-temp)
-2. [Coun digits](DSA-problems-solutions/if-for#count-digits)
-3. [Factorial](DSA-problems-solutions/if-for#factorial)
-4. [Print pattern](DSA-problems-solutions/if-for#print-astreik-pattern)
-5. [Reverse a number](DSA-problems-solutions/if-for#reverse-a-number) - LC7
-6. [Prime](DSA-problems-solutions/if-for#prime) - LC204
-7. [Palindrome](DSA-problems-solutions/if-for#palindrome) - LC125
-8. [Armstrong](DSA-problems-solutions/if-for#armsstrong) -LC1134
-9. [LCM](DSA-problems-solutions/if-for#lcm)
-10. [GCD/HCF](DSA-problems-solutions/if-for#gcdhcf)
+### Math logic
+1. [Swap two number without temp](DSA-problems-solutions/math-logic#swap-without-temp)
+2. [Coun digits](DSA-problems-solutions/math-logic#count-digits)
+3. [Factorial](DSA-problems-solutions/math-logic#factorial)
+4. [Print pattern](DSA-problems-solutions/math-logic#print-astreik-pattern)
+5. [Reverse a number](DSA-problems-solutions/math-logic#reverse-a-number) - LC7
+6. [Prime](DSA-problems-solutions/math-logic#prime) - LC204
+7. [Palindrome](DSA-problems-solutions/math-logic#palindrome) - LC125
+8. [Armstrong](DSA-problems-solutions/math-logic#armsstrong) -LC1134
+9. [LCM](DSA-problems-solutions/math-logic#lcm)
+10. [GCD/HCF](DSA-problems-solutions/math-logic#gcdhcf)
 
 ### Searching
-1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704
-    i) [Search insert position](DSA-problems-solutions/search#search-insert-position) - LC35. 
+1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704. 
+    i) [Search insert position](DSA-problems-solutions/search#search-insert-position) - LC35.   
 
 ### Sorting
 1. [Bubble sort](DSA-problems-solutions/sort#bubble-sort)

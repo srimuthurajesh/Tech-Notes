@@ -178,3 +178,4 @@
 3. [Data Engineering Videos Tamil](https://www.youtube.com/@dataengineeringvideos/videos) - tamil content, less but various topics
 4. [Data School](https://www.youtube.com/@dataschool) - my guru in ML
 5. [Logic First Tamil](https://www.youtube.com/@LogicFirstTamil)- good explain in tamil
+6. [Chill and Grow](https://www.youtube.com/@chillandgrow/videos) - good tamil ML content
