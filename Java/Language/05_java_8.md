@@ -241,10 +241,11 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
 }
-.markdown-body table tr {
+.markdown-body table tr, .markdown-body table tr:nth-child(2n) {
     background-color: #333;
 }
-.highlight {
+
+.highlight .highlight {
     background-color: #333;
 }
 
