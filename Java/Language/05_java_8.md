@@ -1,13 +1,23 @@
 
 # Features of Java 8:  
-### 1. Lamdbda Expression   
+
+1. [Lambda Expression](#1-Lambda-expression)
+2. [Method reference](#2-method-reference)
+3. [Optional](#3-optional)
+4. [Functional interface](#4-functional-interface)
+5. [Default Method]()
+6. [Stream API]()
+7. [Date time API]()
+8. [StringJoiner class]()
+
+### 1. Lambda Expression   
 (arg)->{body}    
 Anonymous method to implement functional interface  
 	a) foreach: list.foreach(x){sysout(x)};  
 	b) Predicate<?>  test()  
 	c) IntFunction(int value)
  
-### 2. Method reference :   
+### 2. Method reference   
 short versions of lambda expression   
 assigning a method to functional interface   
 	i) staticMethod reference - className::Method  
@@ -27,8 +37,8 @@ class Hello{
   }
 ```
 
-### 3. Optional  -   
--wrapping around the object  
+### 3. Optional   
+- wrapping around the object  
 avoid NullpointerException smartly  
 ```
 Optional<String> checkNull =  Optional.ofNullable(str);  
@@ -38,12 +48,12 @@ checkNull.orElseGet(() -> getRandomName());
 checkNull.ifPresent((x)->{  });
 checkNull.ifPresentOrElse((x)->{  }, ()->{ });
 ```
-### 4. Functional interface  -   
+### 4. Functional interface   
 should have only one abstract method. Eg:Runnable @Comparator .   
 -can have default and static method with body  
 -use @FunctionalInterface and make any interface as Functional interface  
 
-### 5. Default Method -   
+### 5. Default Method   
 default has method body and also static method allowed inside interface  
 
 ### 6. Stream API

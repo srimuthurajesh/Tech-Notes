@@ -1,6 +1,5 @@
 Core Java:
-1. What is JDK, JRE, JRM
-2. What is ClassLoader and its type?
+1. What is JDK, JRE, JVM
 2. Write java input/output syntax.
 3. What is package and its advantage?
 4. How many keywords in java?

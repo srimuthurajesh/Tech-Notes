@@ -141,6 +141,7 @@
 14. [Tamil boomi](https://www.youtube.com/@Tamilboomi) - tamil interviews, podcast wil be useful
 15. [Uncommon Geeks](https://www.youtube.com/@careerwithvasanth/videos) - product vs service absed
 16. [Web Dev Simplified](https://www.youtube.com/@WebDevSimplified) - frontend
+17. [BigboxSWE](https://www.youtube.com/@bigboxSWE)- common cs videos
 
 ### Cybersecurity
 1. [Arun Kumar R](https://www.youtube.com/@ArunKumar_R/videos) - pentesting videos tamil
