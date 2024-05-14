@@ -241,6 +241,12 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
 }
+.markdown-body table tr {
+    background-color: #333;
+}
+.highlight {
+    background-color: #333;
+}
 
 /* Lists */
 ul, ol {
