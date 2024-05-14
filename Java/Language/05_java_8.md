@@ -201,3 +201,84 @@ list.stream().filter(i->i<40).collect(Collectors.toList());
 ```
 
 ```
+<style>
+  /* Dark Theme for Markdown */
+
+/* Body */
+body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #e6e6e6;
+}
+
+/* Paragraphs */
+p {
+    color: #d4d4d4;
+}
+
+/* Links */
+a {
+    color: #4ec4e4;
+}
+
+/* Code blocks */
+pre {
+    background-color: #2b2b2b;
+    color: #d4d4d4;
+    border: 1px solid #3a3a3a;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* Inline code */
+code {
+    background-color: #2b2b2b;
+    color: #d4d4d4;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Lists */
+ul, ol {
+    color: #d4d4d4;
+}
+
+/* Blockquotes */
+blockquote {
+    background-color: #333;
+    color: #d4d4d4;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Horizontal Rules */
+hr {
+    border-color: #444;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 8px;
+}
+
+th {
+    background-color: #2b2b2b;
+    color: #d4d4d4;
+}
+
+/* Image */
+img {
+    filter: invert(1);
+}
+
+  </style>
