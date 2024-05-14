@@ -20,7 +20,7 @@ c) IntFunction(int value)
 
 
 ### 2. Method reference   
-- able to assign a method/constructorq to functional interface   
+- able to assign a method/constructor to functional interface   
 i) staticMethod reference - className::Method  
 ii) InstanceMethod reference - objectName::Method   
 iii) constructor reference - className:: new   
@@ -58,13 +58,16 @@ interface PersonFactory {
 ```
 
 ### 3. Optional   
-- wrapping around the object  
-avoid NullpointerException smartly  
+- forcing the caller to handle the null check, this is achieved by wrapping the value with Optional  
+uses to avoid NullpointerException smartly   
 ```
-Optional<String> checkNull =  Optional.ofNullable(str);  
+Optional<String> getName(){
+  return Optional.ofNullable(this.name);
+}
+Optional<String> checkNull = getName();  
 if (checkNull.isPresent()) { sysout(str)} 
-checkNull.orElse("hii");
-checkNull.orElseGet(() -> getRandomName());
+String name = checkNull.orElse("hii");
+String name = checkNull.orElseGet(() -> getRandomName());
 checkNull.ifPresent((x)->{  });
 checkNull.ifPresentOrElse((x)->{  }, ()->{ });
 ```
@@ -80,9 +83,18 @@ default has method body and also static method allowed inside interface
 ### 6. Stream API
 -process collections  
 #### Source operations:
-1. Stream<Int> intStream = listInt.stream();   
-2. Arrays.stream(arr) or Stream.of(arr);   
+1. Collection.stream(): create a sequential or parallel stream from a collection.  
+```Stream<Int> intStream = listInt.stream();```   
+```Stream<Int> intStream = listInt.stream();```   
+2. Arrays.stream(): create a stream from an array  
+```Stream<Int> intStream = Arrays.stream(arr);```   
+```Stream<Int> intStream = Stream.of(arr);```    
 3. str.chars()   //return IntStream, contains integer code point values of the characters in the string object
+4. Stream.empty(): create an empty stream.  
+```Stream<Object> emptyStream = Stream.empty();```  
+5. Stream.generate(): generate an infinite stream by repeatedly invoking a supplier function.
+```Stream<String> generatedStream = Stream.generate(() -> "Hello");```
+
 
 #### Intermediate Operations:
 1. map: returns a stream consists results of applying the given function    
