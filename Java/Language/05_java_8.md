@@ -83,17 +83,31 @@ default has method body and also static method allowed inside interface
 ### 6. Stream API
 -process collections  
 #### Source operations:
-1. Collection.stream(): create a sequential or parallel stream from a collection.  
+| Source Operation    | Defination              | Code            |
+|---------------------|-------------------------|-----------------|
+| Collection.stream() | stream from collection  |listInt.stream(), listInt.parallelStream() |
+| Arrays.stream()     | stream from array       |Arrays.stream(arr), Stream.of(arr) |
+| str.chars()         | stream from collection  |listInt.stream() |
+| Stream.empty()      | stream from collection  |listInt.stream() |
+| Stream.generate()   | stream from collection  |listInt.stream() |
+| Stream.iterate()    | stream from collection  |listInt.stream() |
+| Files.lines()       | stream from collection  |listInt.stream() |
+
+1. **Collection.stream()**: create a sequential or parallel stream from a collection.  
 ```Stream<Int> intStream = listInt.stream();```   
 ```Stream<Int> intStream = listInt.stream();```   
-2. Arrays.stream(): create a stream from an array  
+2. **Arrays.stream()**: create a stream from an array  
 ```Stream<Int> intStream = Arrays.stream(arr);```   
 ```Stream<Int> intStream = Stream.of(arr);```    
-3. str.chars()   //return IntStream, contains integer code point values of the characters in the string object
-4. Stream.empty(): create an empty stream.  
+3. **str.chars()**   //return IntStream, contains integer code point values of the characters in the string object
+4. **Stream.empty()**: create an empty stream.  
 ```Stream<Object> emptyStream = Stream.empty();```  
-5. Stream.generate(): generate an infinite stream by repeatedly invoking a supplier function.
+5. **Stream.generate()**: generate an infinite stream by repeatedly invoking a supplier function.
 ```Stream<String> generatedStream = Stream.generate(() -> "Hello");```
+6. **Stream.iterate()**: This method is used to generate a stream by applying a unary operator to an initial seed value.  
+```Stream<Integer> iteratedStream = Stream.iterate(1, n -> n + 1);```. 
+7. **Files.lines()**: This method is used to create a stream of lines from a file.  
+```Stream<String> lines = Files.lines(Paths.get("file.txt"));``
 
 
 #### Intermediate Operations:
