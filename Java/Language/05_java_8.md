@@ -84,14 +84,14 @@ default has method body and also static method allowed inside interface
 -process collections  
 #### Source operations:
 
-| Source Operation      | Defination              |
-|-----------------------|-------------------------|
-| list.stream()         | stream from collection  |
-| list.parallelStream() | stream from collection  |
-| Arrays.stream()       | stream from array       |
-| Stream.of(arr)        | stream from array       |  
-| str.chars()           | return IntStream i.e integer code of chars |
-| Stream.empty()        | create an empty stream  |
+| Source Operation                | Defination              |
+|---------------------------------|-------------------------|
+| list.stream()                   | stream from collection  |
+| list.parallelStream()           | stream from collection  |
+| Arrays.stream()                 | stream from array       |
+| Stream.of(arr)                  | stream from array       |  
+| str.chars()                     | return IntStream i.e integer code of chars |
+| Stream.empty()                  | create an empty stream  |
 | Stream.generate(() -> {})       | infinite stream by repeatedly invoking function. |
 | Stream.iterate(1, n -> n + 1);  | stream by applying a unary operator |
 | Files.lines(Paths.get("path")); | stream of lines from a file |
