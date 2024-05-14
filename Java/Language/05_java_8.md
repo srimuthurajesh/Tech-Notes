@@ -83,6 +83,7 @@ default has method body and also static method allowed inside interface
 ### 6. Stream API
 -process collections  
 #### Source operations:
+
 | Source Operation    | Defination              | Code            |
 |---------------------|-------------------------|-----------------|
 | Collection.stream() | stream from collection  |listInt.stream(), listInt.parallelStream() |
