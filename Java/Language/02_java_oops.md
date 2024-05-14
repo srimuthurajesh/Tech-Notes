@@ -117,3 +117,16 @@ if I call a constructor of child class, first parent class constructors will exe
 	d) defualt access modfier, method which has body	  
 
 
+## Relationship
+1. IS-A relationship. also called as inheritance    
+eg: Circle(child class) IS A Shape(parent class)    
+2. HAS-A reltionship. also called as association.    
+eg  Circle(class) HAS A radius(attribute)  
+eg: Circle(class) HAS A CalculationUtil(class)  
+
+**Forms of Association**:  
+1. Aggregation  - week bond  
+eg: Car HAS A MusicPlayer  
+2. Composition  - strong bond  
+eg: Car HAS A Engine  
+
