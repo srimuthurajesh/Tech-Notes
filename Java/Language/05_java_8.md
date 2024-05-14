@@ -244,9 +244,13 @@ code {
 .markdown-body table tr, .markdown-body table tr:nth-child(2n) {
     background-color: #333;
 }
-
-.highlight .highlight {
+.highlight {
     background-color: #333;
+}
+
+/* Highlight class within another highlight class */
+.highlight .highlight {
+    background-color: #555; /* Adjust the color as needed */
 }
 
 /* Lists */
