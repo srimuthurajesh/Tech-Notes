@@ -124,7 +124,7 @@ class Hello{
 | **long**		| 8byte | -+9,22,33,72,03,68,54,775 | 2<sup>64</sup> |
 | **float**		| 4byte | . after 6 digit   		| 2<sup>36</sup> |
 | **double**	| 8byte | . after 15 digit  		| 2<sup>64</sup> |
-| **char**		| 2byte|A-Z a-z 0-9 0-127ASCII		| 2<sup>16</sup> | 
+| **char**		| 2byte | A-Z a-z 0-9 0-127ASCII	| 2<sup>16</sup> | 
 | **boolean**	| depends on jvm, 1bit 	| 0 1 		| 2 			 |
 
 Binary can be represent as adding "0b"   ex: int a = 0b011;  
@@ -146,17 +146,19 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 
 ## Operators:  
 
-|  Operators| Symbols  |  
-|--|--|  
-|Arithmetic Operator  |**+ - * / %**  |  
-|Relational Operator  |**<, <=, >, >=, ==, !=**  |  
-|Logical Operator  |**&&(AND), \|\| (OR), !(NOT)**  |  
-|Assignment Operator  |**a += 4**  |  
-|Inc and Dec Operator  |**a++,a--,++a,--a**  |  
-|Conditional Operator  |**exp1? exp2: exp3;**  |  
-|Bitwise Operator  |** &, <<, >>, >>>**  |  
-|Special Operator  |**instanceof, (.)**  |  
-|Unary Operator  | ~, !  |    
+> performs mathemetical operations on operands. 
+
+|  Operators 		   	| Symbols 							|  
+|-----------------------|-----------------------------------|  
+| Arithmetic Operator  	| **+ - * / %**  					|  
+| Relational Operator  	| **<, <=, >, >=, ==, !=**  		|  
+| Logical Operator  	| **&&(AND), \|\| (OR), !(NOT)**  	|  
+| Assignment Operator  	| **a += 4**  						|  
+| Inc and Dec Operator  | **a++,a--,++a,--a**  				|  
+| Conditional Operator  | **exp1? exp2: exp3;**  			|  
+| Bitwise Operator  	| **&, <<, >>, >>>**  				|  
+| Special Operator  	| **instanceof, (.)**  				|  
+| Unary Operator  		| ~, !  							|    
 
 ```
 int a=10; int b=-9;  
@@ -172,30 +174,30 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 ## Control statements:
 > control flow of program
 
-| Name| defination  | syntax|  
-|--|--|--|  
-| If 			| control code 			| if(con){ exp1; } |
-| If-else 		| alternative for using two ifs | if(con){ exp1; } else{ exp2; } |
+| Name				| defination  				| syntax		|  
+|-------------------|---------------------------|----------------|  
+| If 				| control code 				| if(con){ exp1; } |
+| If-else 			| alternative for two ifs 	| if(con){ exp1; } else{ exp2; } |
 | If-elseif 		| for more than one else  	| if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } |
 | Tenary operator 	| short form of ifelse 		| condition ? expersion 1: expersion 2; |
-| Switch case 		| use lookup table 		| switch(varible){case constant: operation; break;default: operation;break;}  |
+| Switch case 		| use lookup table 			| switch(varible){case constant: operation; break;default: operation;break;}  |
 
-Note: long float double and customer classes cannot be use in switch   
+Note: long float double and custom classes cannot be use in switch   
 
 ## Looping statements:
 > repeat the execution
 
-| Name| defination  | syntax|  
-|--|--|--|  
-| while 	| iterates as long as condition true  | while(con){ body; } |	 
-| do-while 	| executes atleast once  |do{ body }while(condition);|	 
-| for-loop 	| |for(intialize counter;test condition;inc or dec counter){ body; }|
-| break 	| get out of loop | break; |
-| continue 	| back to continue next loop | continue; |
-| continue with label	|Skips to the next iteration of a labeled loop | continue loop_label; | 
-| goto  		| Jumps to a labeled statement | goto label_name;| 
-| labelled break	| Exits a labeled loop | break label_name;| 
-| For-each 		| Iterates over elements of a collection | for (DataType var : iterable) { body; }| 
+| Name					| defination  							| syntax								|  
+|-----------------------|---------------------------------------|---------------------------------------|  
+| while 				| iterates as long as condition true  	| while(con){ body; } 					|	 
+| do-while 				| executes atleast once  				|do{ body }while(condition);			|	 
+| for-loop 				| |for(intialize counter;test condition;inc or dec counter){ body; }			|
+| break 				| get out of loop 						| break; 								|
+| continue 				| back to continue next loop 			| continue;	 							|
+| continue with label	| Skips to next iteration of labeled loop | continue loop_label; 			| 
+| goto  				| Jumps to a labeled statement 			| goto label_name;						| 
+| labelled break		| Exits a labeled loop 					| break label_name;						| 
+| For-each 				| Iterates over elements of collection 	| for (DataType var : iterable) { body; }| 
 
 
 ## Array:    

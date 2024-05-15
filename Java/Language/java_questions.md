@@ -34,7 +34,7 @@ OOPS:
 6. When garbage collection get triggers?
 7. What is memory leak?  
 7. What are the types of encapsulation?
-8. What are teh types of inheriance?
+8. What are the types of inheriance?
 9. What is serialization? and syntax
 10. What is shallow and deep copy?   
 11. What are the access modifiers?

@@ -104,7 +104,7 @@ default has method body and also static method allowed inside interface
 | `filter((a)=>{return a%2==0})`| Select elements based on a predicate. |
 | `distinct()`              | Remove duplicate for primitive datatypes |
 | `sorted()`                | Sort elements.                        |
-| `limit(5)`                 | Limit the number of elements.         |
+| `limit(5)`                | Limit the number of elements.         |
 | `skip()`                  | Skip upto given index  |
 | `flatMap()`               | Map and flatten elements.             |
 
