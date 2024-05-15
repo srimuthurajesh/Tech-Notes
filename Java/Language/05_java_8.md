@@ -83,6 +83,8 @@ default has method body and also static method allowed inside interface
 ### 6. Stream API
 - stream means a continuos flow of data.  
 
+#### Source Operation
+
 | Source Operation                              | Defination                  |
 |-----------------------------------------------|-----------------------------|
 | `list.stream()`                               | Collection stream           |
@@ -93,6 +95,8 @@ default has method body and also static method allowed inside interface
 | `Stream.generate(()->{return 'raj'}).limit(5)`| infinite stream generation  |
 | `Stream.iterate(1, n -> n + 1).limit(5)`      | Unary operator stream       |
 | `Files.lines(Paths.get("path"))`              | File lines stream           |
+
+#### Intermediate Operation
 
 | Intermediate Operation    | Definition                            |
 |---------------------------|---------------------------------------|
@@ -119,21 +123,22 @@ sorted(Comparator.comparingInt(User::getAge))
             }
         })   
 ```
+#### Termination Function
 
-| Termination Function            | Description                              |
-|---------------------------------|------------------------------------------|
-| `forEach(System.out::println)`  | Perform an action for each element.      |
-| `count()`                       | Count the number of elements.            |
-| `collect(Collectors.toList())`  | Collect elements into a collection.      |
-| `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param |
-| `min()`                         | return min value                |
-| `max()`                         | return max value                |
-| `anyMatch()`                    | return boolean if any element matches a predicate|
-| `allMatch()`                    | return boolean if all element matches a predicate|
-| `noneMatch()`                   | return boolean if no elements match a predicate.  |
-| `findAny()`                     | Find any element (non-deterministic).    |
-| `findFirst()`                   | return Optional of first element.                  |
-| `toArray(String[]::new)`        | return array                  |
+| Termination Function            | Description                                         |
+|---------------------------------|-----------------------------------------------------|
+| `forEach(System.out::println)`  | Perform an action for each element.                 |
+| `count()`                       | Count the number of elements.                       |
+| `collect(Collectors.toList())`  | Collect elements into a collection.                 |
+| `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param  |
+| `min()`                         | return min value                                    |
+| `max()`                         | return max value                                    |
+| `anyMatch()`                    | return boolean if any element matches a predicate   |
+| `allMatch()`                    | return boolean if all element matches a predicate   |
+| `noneMatch()`                   | return boolean if no elements match a predicate.    |
+| `findAny()`                     | Find any element (non-deterministic).               |
+| `findFirst()`                   | return Optional of first element.                   |
+| `toArray(String[]::new)`        | return array                                        |
 
 
   a) Collecters.toList and Collecters.toSet    
@@ -146,15 +151,16 @@ sorted(Comparator.comparingInt(User::getAge))
 
 
 ### 7. Date time API  
--thread-safe: removed setters of Date api  
--new operations - added new methods for Date api  
+- thread-safe: removed setters of Date api  
+- new operations - added new methods for Date api  
 
 ### 8. StringJoiner class
 ```
 StringJoiner str = new StringJoiner(",","[","]"); 	//delimiter, prefix, suffix
 str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 ```
-#### Stream problems examples  
+#### Others
+##### Stream problems examples  
 1. Reducing for loop code using **IntStream**    
 ```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
 2. Remove duplicates using stream   

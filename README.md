@@ -5,10 +5,10 @@
    3. [Python](Python)  
 
 ## Databases
-      1. [Mysql](SQL/mysql.html)  
-      2. [Mongo](NoSql/Mongo.html)  
-      3. [Postgresql](NoSql/Mongo.html)  
-      4. [Cassandra](NoSql/Cassandra.html)  
+   1. [Mysql](SQL/mysql.html)  
+   2. [Mongo](NoSql/Mongo.html)  
+   3. [Postgresql](NoSql/Mongo.html)  
+   4. [Cassandra](NoSql/Cassandra.html)  
 
 ## Frameworks
    1. [Spring](Java/Spring)
