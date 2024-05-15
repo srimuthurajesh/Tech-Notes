@@ -4,5 +4,5 @@ plugins:
 - jekyll-sitemap
 - jekyll-feed
 title: Tech Notes
-description: This site includes all my tech learnins as a notes!
+description: This site includes all my tech learnings as a short notes!
 markdown: kramdown
