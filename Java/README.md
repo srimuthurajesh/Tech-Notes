@@ -5,7 +5,7 @@
 3. [Collections](Language/03_java_collections.html)
 4. [Multithreading](Language/04_java_multithreading.html)
 5. [Java8](Language/05_java_8.html)
-6. [Interview Questions](Language/java_questions.html)
+6. [Interview Questions](Language/java-interview-questions.html)
 
 ### Spring
 1. [Spring core](Spring/01_spring_core.html) 
