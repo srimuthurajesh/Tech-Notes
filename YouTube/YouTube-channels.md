@@ -73,6 +73,7 @@
 8. [Sudo code](https://www.youtube.com/@sudocode/videos) - microservices in detail
 9. [Telusko](https://www.youtube.com/@Telusko) - java teacher
 10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
+11. [RedSysTech](https://www.youtube.com/@RedSysTech/videos)- tamil java videos good
 
 ### Angular
 1. [Decoded Frontend](https://www.youtube.com/@DecodedFrontend) - master in Angular

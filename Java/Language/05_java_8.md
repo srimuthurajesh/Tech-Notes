@@ -81,20 +81,29 @@ should have only one abstract method. Eg:Runnable @Comparator .
 default has method body and also static method allowed inside interface  
 
 ### 6. Stream API
--process collections  
-#### Source operations:
+- stream means a continuos flow of data.  
 
-| Source Operation                | Defination              |
-|---------------------------------|-------------------------|
-| list.stream()                   | stream from collection  |
-| list.parallelStream()           | stream from collection  |
-| Arrays.stream()                 | stream from array       |
-| Stream.of(arr)                  | stream from array       |  
-| str.chars()                     | return IntStream i.e integer code of chars |
-| Stream.empty()                  | create an empty stream  |
-| Stream.generate(() -> {})       | infinite stream by repeatedly invoking function. |
-| Stream.iterate(1, n -> n + 1);  | stream by applying a unary operator |
-| Files.lines(Paths.get("path")); | stream of lines from a file |
+| Source Operation                              | Defination                  |
+|-----------------------------------------------|-----------------------------|
+| list.stream()                                 | Collection stream           |
+| list.parallelStream()                         | Parallel collection stream  |
+| Arrays.stream(arr) or Stream.of(arr)          | Array stream                |
+| str.chars()                                   | Character code stream       |
+| Stream.empty()                                | Empty stream creation       |
+| Stream.generate(()->{return 'raj'}).limit(5)  | infinite stream generation  |
+| Stream.iterate(1, n -> n + 1).limit(5);       | Unary operator stream       |
+| Files.lines(Paths.get("path"));               | File lines stream           |
+
+| Intermediate Operation    | Definition                            |
+|---------------------------|---------------------------------------|
+| `map()`                   | Transform each element.               |
+| `filter()`                | Select elements based on a predicate. |
+| `distinct()`              | Remove duplicate elements.            |
+| `sorted()`                | Sort elements.                        |
+| `limit()`                 | Limit the number of elements.         |
+| `skip()`                  | Skip a specified number of elements.  |
+| `flatMap()`               | Map and flatten elements.             |
+
 
 
 #### Intermediate Operations:
