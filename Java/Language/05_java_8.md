@@ -85,34 +85,25 @@ default has method body and also static method allowed inside interface
 
 | Source Operation                              | Defination                  |
 |-----------------------------------------------|-----------------------------|
-| list.stream()                                 | Collection stream           |
-| list.parallelStream()                         | Parallel collection stream  |
-| Arrays.stream(arr) or Stream.of(arr)          | Array stream                |
-| str.chars()                                   | Character code stream       |
-| Stream.empty()                                | Empty stream creation       |
-| Stream.generate(()->{return 'raj'}).limit(5)  | infinite stream generation  |
-| Stream.iterate(1, n -> n + 1).limit(5);       | Unary operator stream       |
-| Files.lines(Paths.get("path"));               | File lines stream           |
+| `list.stream()`                               | Collection stream           |
+| `list.parallelStream()`                       | Parallel collection stream  |
+| `Arrays.stream(arr) or Stream.of(arr)`        | Array stream                |
+| `str.chars()`                                 | Character code stream       |
+| `Stream.empty()`                              | Empty stream creation       |
+| `Stream.generate(()->{return 'raj'}).limit(5)`| infinite stream generation  |
+| `Stream.iterate(1, n -> n + 1).limit(5)`      | Unary operator stream       |
+| `Files.lines(Paths.get("path"))`              | File lines stream           |
 
 | Intermediate Operation    | Definition                            |
 |---------------------------|---------------------------------------|
-| `map()`                   | Transform each element.               |
-| `filter()`                | Select elements based on a predicate. |
-| `distinct()`              | Remove duplicate elements.            |
+| `map((a)=>{return a*10})` | Transform each element.               |
+| `filter((a)=>{return a%2==0})`| Select elements based on a predicate. |
+| `distinct()`              | Remove duplicate for primitive datatypes |
 | `sorted()`                | Sort elements.                        |
-| `limit()`                 | Limit the number of elements.         |
-| `skip()`                  | Skip a specified number of elements.  |
+| `limit(5)`                 | Limit the number of elements.         |
+| `skip()`                  | Skip upto given index  |
 | `flatMap()`               | Map and flatten elements.             |
 
-
-
-#### Intermediate Operations:
-1. map: returns a stream consists results of applying the given function    
- ```List square = listNumber.stream().map(x->x*x).collect(Collectors.toList());```  
-2. filter: select elements as per the Predicate passed as argument.    
-```List result = listNames.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());```    
-3. sorted: The sorted method is used to sort the stream.  
-```List result = listNames.stream().sorted().collect(Collectors.toList());```
 sorted()  
 sorted(Collections.reverseOrder())  
 sorted(Comparator.comparingInt(User::getAge))    
@@ -129,27 +120,29 @@ sorted(Comparator.comparingInt(User::getAge))
         })   
 ```
 
-4. distinct: works for predefined datatype  
-```List result = age.stream().distinct().collect(Collectors.toList());```    
-5. limit()  
-6. skip() - skip upto given index   
+| Termination Function            | Description                              |
+|---------------------------------|------------------------------------------|
+| `forEach(System.out::println)`  | Perform an action for each element.      |
+| `count()`                       | Count the number of elements.            |
+| `collect(Collectors.toList())`  | Collect elements into a collection.      |
+| `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param |
+| `min()`                         | return min value                |
+| `max()`                         | return max value                |
+| `anyMatch()`                    | return boolean if any element matches a predicate|
+| `allMatch()`                    | return boolean if all element matches a predicate|
+| `noneMatch()`                   | return boolean if no elements match a predicate.  |
+| `findAny()`                     | Find any element (non-deterministic).    |
+| `findFirst()`                   | return Optional of first element.                  |
+| `toArray(String[]::new)`        | return array                  |
 
-#### Terminal Operations:  
-1. collect: return the result       
-   	a) Collecters.toList    
+
+  a) Collecters.toList and Collecters.toSet    
 	b) Collecters.joining("deLimiter")    
 	c) Collectors.groupBy(obj::getYear)   //wil return map<int, obj>    
 	d) Collectors.averagingInt(obj::getYear)  //will return double  
 	e) Collectors.partitioningBy(m-> m.getRating() > 3)   //will return map<boolean, obj>  
-```Set square = number.stream().map(x->x*x).collect(Collectors.toSet());```       
-2. forEach: iterate through every element of the stream.  
-```number.stream().map(x->x*x).forEach(y->System.out.println(y));```   
-normal print usage ```list.forEach((k,v)->sysout(k))```       
 3. reduce: reduce elements stream to a single value. it takes a BinaryOperator as a parameter.     
 ```int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);```      
-4. toArray: return array of streams  
-5. min(), max(), count()  
-6. findFirst()       
 
 
 ### 7. Date time API  
