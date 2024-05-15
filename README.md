@@ -31,18 +31,18 @@
    7. [Vim](devops/vim.html)
 
 ## Cloud 
-   - [Aws](devops/AWS.html)
+   1. [Aws](devops/AWS.html)
 
 ## Web Design 
    
 ## Computer science
-   - [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
-   - [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
-   - [Algorithm](Computer%20science/algorithm.html)
-   - [Data Struture](Computer%20science/data_structure.html)
-   - [Design Patterns](Computer%20science/design_patterns.html)
-   - [SOLID Principles](Computer%20science/solid_principles.html) 
+   1. [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
+   2. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
+   3. [Algorithm](Computer%20science/algorithm.html)
+   4. [Data Struture](Computer%20science/data_structure.html)
+   5. [Design Patterns](Computer%20science/design_patterns.html)
+   6. [SOLID Principles](Computer%20science/solid_principles.html) 
 
 ## Others
-   - [YouTube](YouTube/YouTube-channels.html)
+   1. [YouTube](YouTube/YouTube-channels.html)
 ----
