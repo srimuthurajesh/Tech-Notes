@@ -1,5 +1,5 @@
 # Object oriented programming  
-> it is a programming paradigm like procedural programming paradigm.
+> programming paradigm based on concept of object which contains attributes and methods.
 
 **Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
 ### For ex: 
@@ -10,6 +10,7 @@ to understand class object. take shapes as class and box is shape model
 ## Class  
 > template or blueprint for object (defines variable and methods) noun & verbs    
 
+1. Regular class
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
 3. Anonymous : A obj = new A(){.........}  
@@ -21,7 +22,11 @@ Note: ClassNotFoundException=  while Class.forName() or loadClass()
 NoClassDefFoundError=class present in compiletime, but not in runtime    
 
 ## Constructor  
-> intialize object, no return type, cannot make constructor final.  
+> special type of method, been called while intialize object,   
+Note: it has no return type, we cannot make constructor final.  
+
+1. Default Constructor. 
+2. Parameterized Constructor  
 
 **super()** must call first line of child class constructor  
 **this()** will call current class constructor  
@@ -35,12 +40,12 @@ LHS (heap) reference = RHS (stack) instance
 
 ```
 ### Anonymous object 
-> for one time use.
+> created without assigned to any variable, for one time use.  
 
 new ClassName().functionName();  
 new ClassName().variableName = value  
 
-### Functions of object class:  
+### Methods of object class:  
 1. toString()  - String representation of an Object 
 2. hashCode() - JVM generates a unique number
 3. equals(Object obj) - Compares the given object to “this” object 

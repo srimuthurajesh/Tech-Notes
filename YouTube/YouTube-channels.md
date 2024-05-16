@@ -83,6 +83,7 @@
 5. [FunOfHeuristic](https://www.youtube.com/@FunOfHeuristic/videos)- good, signal+rxjs
 6. [JAFS Code School Tamil](https://www.youtube.com/@JAFSCodeSchoolTamil/videos) - js and angular
 7. [@Joshua Morony](https://www.youtube.com/@JoshuaMorony/videos) - good content, 
+8. [frontendInsights](https://www.youtube.com/@frontendInsights/videos) - for interview poijt of view
 
 ### Javascript
 1. [Tech sith tube](https://www.youtube.com/@Techsithtube) -  he is pakka js fellow

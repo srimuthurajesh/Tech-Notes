@@ -35,7 +35,15 @@ Core Java:
 
 
 OOPS:
-1. What is constuctor and its types?
+1. What is oops? and four pillars of oops? advantages.
+2. What is class? and its types?
+3. How to create a immutable class?
+4. What is constuctor and its types?
+5. What is this() and super()?
+6. What is object?
+7. What are methods in Object class?
+8. What are four ways to create object?
+9. What is garbage collection? explain finalize.
 1. What is lamda expression?
 2. What is interface? and its types.
 3. What is marker interface and example.
