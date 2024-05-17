@@ -190,21 +190,16 @@ mypool.shutdown();
 
 
 ### Volatile: 
-variable that shared across all objects  
+- we intimate compiler to always read from memory not from cache. 
+Note: This scenario is cache incoherence. 
 
 ### Atomic variables
 > synchronized works in variable level, and it has some methods   
 
-AtomicBoolean  
-AtomicInteger, AtomicIntegerArray, AtomicIntegerFieldUpdater  
-AtomicLong, AtomicLongArray, AtomicLongFieldUpdater  
-AtomicMarkableReference  
-AtomicReference, AtomicReferenceArray, AtomicReferenceFieldUpdater  
-AtomicStampedReference	  
-DoubleAccumulator  
-DoubleAdder  
-LongAccumulator	  
-LongAdder  
+1. AtomicInteger.  
+2. AtomicLong. 
+3. AtomicBoolean: Provides atomic operations on boolean values.
+4. AtomicReference: Allows atomic updates to a reference type.
 
 **Atomic methods**  
 incrementAndGet()    
