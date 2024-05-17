@@ -77,7 +77,7 @@ it is caused by three ways:
 > it has name,argument and return type
 
 pass by reference: done by passing object  
-**var-arg** :  void methodname(int...a){//use as a[];}  
+**var-arg** :  void methodname(int ...a){//use as a[];}  
 
 ## Encapsulation:   
 > hiding data
@@ -92,7 +92,7 @@ pass by reference: done by passing object
 	ii) abstract - does not have method body, cannot create object directly    
 	iii) static - belong to class rather object   
 	iv) transient - attribute&methods skipped while serialization  
-	v) synchronized - can access by oone thread at a time  
+	v) synchronized - can access by one thread at a time  
 	vi) volatile - value not cached for thread level rather in Main memory level   
 Note: we cannot use private, protected in class, but we can use in innerclass 
 

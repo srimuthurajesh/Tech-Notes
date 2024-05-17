@@ -32,18 +32,11 @@ Core Java:
 27. What is checked and unchecked exception?
 28. What is throw and throws?  
 29. When ClassNotFoundException and NoClassDefFoundError occurs?  runtime/compiletime  
+30. What is serialization? and syntax
 
 
 OOPS:
-1. What is oops? and four pillars of oops? advantages.
-2. What is class? and its types?
-3. How to create a immutable class?
-4. What is constuctor and its types?
-5. What is this() and super()?
-6. What is object?
-7. What are methods in Object class?
-8. What are four ways to create object?
-9. What is garbage collection? explain finalize.
+1. What is constuctor and its types?
 1. What is lamda expression?
 2. What is interface? and its types.
 3. What is marker interface and example.
@@ -52,14 +45,15 @@ OOPS:
 5. What are the four ways to create object?
 5. What is object cloning?  
 6. When garbage collection get triggers?
-7. What is memory leak?  
-7. What are the types of encapsulation?
-8. What are the types of inheriance?
-9. What is serialization? and syntax
-10. What is shallow and deep copy?   
-11. What are the access modifiers?
-12. What are the Non access modifiers?
-13. How to create an immutable class?
+7. What is method and vararg?
+7. What are the types and subtypes of encapsulation?
+8. What are inheriance and give its types?
+9. What is super and super()?
+10. What is polymorphism and its types?
+11. What is abstract class?
+12. What is interface and its types?
+13. What is IS-A and HAS-A relationship?
+15. What is shallow and deep copy?   
 
 
 MultiThreading:
