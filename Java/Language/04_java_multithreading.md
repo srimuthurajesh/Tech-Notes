@@ -1,9 +1,16 @@
 # Muti threading
-> concurrent execution, subset process  
+> concurrent execution 
+
+- [Ways to Implement Thread](#ways-to-implement-thread)
+- [Difference states of Thread](#difference-states-of-thread)
+- [Priority of a thread](#priority-of-a-thread)
+- [Thread class methods](#thread-class-methods)
+- [Deadlock](#deadlock)
+- [Java concurrency utilities](#java-concurrency-utilities)
+    - [Executer service](#executer-service-)
+    - [Threadpool executor](#threadpoolexecutor)
 
 **Thread**: unit of execution within the process  
-
-
 ## Ways to Implement Thread
 1. Extends Thread class  
 ```
@@ -87,7 +94,7 @@ i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely
 > group of worker threads that are waiting for the job and reuse many times.    
 
 ## Java Concurrency Utilities
-### Executer service : 
+### Executer Framework : 
 
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
@@ -157,6 +164,13 @@ mypool.shutdown();
     executorService.shutdown();
 ```
 
+### Concurrency Utilities:
+Thread-safe collections (e.g., ConcurrentHashMap, ConcurrentLinkedQueue).
+Synchronization primitives (e.g., Semaphore, CountDownLatch, CyclicBarrier).
+Atomic variables (e.g., AtomicInteger, AtomicReference).
+Locks (e.g., ReentrantLock, ReadWriteLock).
+Concurrent random number generators (e.g., ThreadLocalRandom).
+
 **Volatile**: variable that shared across all objects  
 
 ## Atomic variables
@@ -178,3 +192,5 @@ incrementAndGet()
 decrementAndGet()  
 addAndGet()  
 compareAndSet()  
+
+
