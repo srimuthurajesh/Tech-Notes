@@ -10,6 +10,7 @@
 - [Java concurrency utilities](#java-concurrency-utilities)
     - [Executer service](#executer-service-)
     - [Threadpool executor](#threadpoolexecutor)
+    - [Volatile](#volatile)
     - [Atomic variables](#atomic-variables)
     - [Callable & Future](#callable--future)
     - [Thread-safe Collections](#thread-safe-collections)
@@ -188,7 +189,8 @@ mypool.shutdown();
 4. Vector/Hashtable - uses synchronized method, it is legacy and not preferable in now. instead use  CopyOnWriteArrayList, ConcurrentHashMap. 
 
 
-#### Volatile**: variable that shared across all objects  
+#### Volatile: 
+variable that shared across all objects  
 
 #### Atomic variables
 > synchronized works in variable level, and it has some methods   
