@@ -4,11 +4,14 @@
 - [Ways to Implement Thread](#ways-to-implement-thread)
 - [Difference states of Thread](#difference-states-of-thread)
 - [Priority of a thread](#priority-of-a-thread)
+- [Synchronized](#synchronized)
 - [Thread class methods](#thread-class-methods)
 - [Deadlock](#deadlock)
 - [Java concurrency utilities](#java-concurrency-utilities)
     - [Executer service](#executer-service-)
     - [Threadpool executor](#threadpoolexecutor)
+    - [Atomic variables](#atomic-variables)
+    - [Callable & Future](#callable--future)
 
 **Thread**: unit of execution within the process  
 ## Ways to Implement Thread
@@ -55,7 +58,7 @@ threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
-
+## Synchronized. 
 **Synchronized method** - prevent multiple thread execute on same object  
 **Synchronized block** - lock on current object, synchronized(){ }  
 **Static synchronization** - lock on class, synchronized static void func(){  }   
@@ -165,15 +168,32 @@ mypool.shutdown();
 ```
 
 ### Concurrency Utilities:
-Thread-safe collections (e.g., ConcurrentHashMap, ConcurrentLinkedQueue).
-Synchronization primitives (e.g., Semaphore, CountDownLatch, CyclicBarrier).
-Atomic variables (e.g., AtomicInteger, AtomicReference).
-Locks (e.g., ReentrantLock, ReadWriteLock).
+- Synchronization primitives (e.g., Semaphore, CountDownLatch, CyclicBarrier).
+-Atomic variables (e.g., AtomicInteger, AtomicReference).
+-Locks (e.g., ReentrantLock, ReadWriteLock).
 Concurrent random number generators (e.g., ThreadLocalRandom).
 
-**Volatile**: variable that shared across all objects  
+#### Thread safe collections
+1. **ConcurrentHashMap** - modern thread-safe map implementation.  
+2. **CopyOnWriteArrayList** - uses a copy-on-write strategy.   
+3. **Collections.synchronizedList** - will force to use synchronized block otherwise throw exception.  
+```
+    List<Integer> list = new ArrayList<>();
+    List<Integer> synchronizedList = Collections.synchronizedList(list);
+    Collections.addAll(synchronizedList, 1, 2, 3);    
+    // Accessing elements in a synchronized block to avoid ConcurrentModificationException
+    synchronized (synchronizedList) {
+        for (Integer i : synchronizedList) {
+            System.out.println(i);
+        }
+    }
+```  
+4. Vector/Hashtable - uses synchronized method, it is legacy and not preferable in now. instead use  CopyOnWriteArrayList, ConcurrentHashMap. 
 
-## Atomic variables
+
+#### Volatile**: variable that shared across all objects  
+
+#### Atomic variables
 > synchronized works in variable level, and it has some methods   
 
 AtomicBoolean  
@@ -193,4 +213,14 @@ decrementAndGet()
 addAndGet()  
 compareAndSet()  
 
+#### Synchronization primitives
+CountDownLatch
+Semaphore
+CyclicBarrier
+Exchanger
+Phaser
+
+#### Locks
+ReentrantLock
+ReadWriteLock
 
