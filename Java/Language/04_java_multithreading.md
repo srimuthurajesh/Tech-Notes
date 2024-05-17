@@ -171,7 +171,7 @@ mypool.shutdown();
     executorService.shutdown();
 ```
 
-#### Thread safe collections
+### Thread safe collections
 1. **ConcurrentHashMap** - modern thread-safe map implementation.  
 2. **CopyOnWriteArrayList** - uses a copy-on-write strategy.   
 3. **Collections.synchronizedList** - will force to use synchronized block otherwise throw exception.  
@@ -189,10 +189,10 @@ mypool.shutdown();
 4. Vector/Hashtable - uses synchronized method, it is legacy and not preferable in now. instead use  CopyOnWriteArrayList, ConcurrentHashMap. 
 
 
-#### Volatile: 
+### Volatile: 
 variable that shared across all objects  
 
-#### Atomic variables
+### Atomic variables
 > synchronized works in variable level, and it has some methods   
 
 AtomicBoolean  
@@ -212,14 +212,14 @@ decrementAndGet()
 addAndGet()  
 compareAndSet()  
 
-#### Synchronization primitives
+### Synchronization primitives
 CountDownLatch
 Semaphore
 CyclicBarrier
 Exchanger
 Phaser
 
-#### Locks
+### Locks
 ReentrantLock
 ReadWriteLock
 
