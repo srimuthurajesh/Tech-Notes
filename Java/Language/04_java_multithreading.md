@@ -12,6 +12,9 @@
     - [Threadpool executor](#threadpoolexecutor)
     - [Atomic variables](#atomic-variables)
     - [Callable & Future](#callable--future)
+    - [Thread-safe Collections](#thread-safe-collections)
+    - [Locks](#locks)
+    - [Synchronization Primitives](#synchronization-primitives)
 
 **Thread**: unit of execution within the process  
 ## Ways to Implement Thread
@@ -166,12 +169,6 @@ mypool.shutdown();
     System.out.println("Result: " + result); // Output: Result: 42
     executorService.shutdown();
 ```
-
-### Concurrency Utilities:
-- Synchronization primitives (e.g., Semaphore, CountDownLatch, CyclicBarrier).
--Atomic variables (e.g., AtomicInteger, AtomicReference).
--Locks (e.g., ReentrantLock, ReadWriteLock).
-Concurrent random number generators (e.g., ThreadLocalRandom).
 
 #### Thread safe collections
 1. **ConcurrentHashMap** - modern thread-safe map implementation.  
