@@ -62,7 +62,9 @@ threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
+
 ## Synchronized. 
+>  allow only one thread to access the shared resource.  
 **Synchronized method** - prevent multiple thread execute on same object  
 **Synchronized block** - lock on current object, synchronized(){ }  
 **Static synchronization** - lock on class, synchronized static void func(){  }   
@@ -196,25 +198,31 @@ Note: This scenario is cache incoherence.
 ### Atomic variables
 > synchronized works in variable level, and it has some methods   
 
-1. AtomicInteger.  
-2. AtomicLong. 
-3. AtomicBoolean: Provides atomic operations on boolean values.
-4. AtomicReference: Allows atomic updates to a reference type.
+1. AtomicInteger    
+2. AtomicLong   
+3. AtomicBoolean  
+4. AtomicReference  
 
-**Atomic methods**  
-incrementAndGet()    
-decrementAndGet()  
-addAndGet()  
-compareAndSet()  
+**Atomic Methods**  :
+1. get() 
+2. set(value)
+3. compareAndSet(expectedValue, newValue):  sets value to newValue if current value equals expectedValue.
+4. getAndSet(newValue):  sets the new value and returns the old value.
+5. incrementAndGet(): increments by one and returns new value.
+6. decrementAndGet(): decrements by one and returns new value.
+7. addAndGet(delta):  adds given value to current value and returns new value.
+8. lazySet(value): Eventually sets to the new value.
+
 
 ### Synchronization primitives
-CountDownLatch
-Semaphore
-CyclicBarrier
-Exchanger
-Phaser
+1. CountDownLatch
+2. **Semaphore**: controls access to a resource with a set number of permits.  
+3. CyclicBarrier
+4. Exchanger
+5. Phaser
 
 ### Locks
-ReentrantLock
-ReadWriteLock
+1. **ReentrantLock**: ensures that only one thread can access a resource at a time  
+2. **ReadWriteLock**: allow multiple threads to read a resource simultaneously but only one thread to write at a time
+
 

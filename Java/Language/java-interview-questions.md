@@ -1,4 +1,4 @@
-Core Java:
+## Core Java:
 1. What is JDK, JRE, JVM
 2. What is Bytecode?
 3. What are types of comments in java?
@@ -35,7 +35,7 @@ Core Java:
 30. What is serialization? and syntax
 
 
-OOPS:
+## OOPS:
 1. What is constuctor and its types?
 1. What is lamda expression?
 2. What is interface? and its types.
@@ -56,28 +56,27 @@ OOPS:
 15. What is shallow and deep copy?   
 
 
-MultiThreading:
+## MultiThreading:
 1. What is multithreading?
-2. What are the 5 different states of lifecycle in Thread
-3. What is sychronized method and static synchronized?
-4. What is Synchronized block and static synchronized?
-5. What is deadLock, how to avoid?
-6. What is race condition?
-7. What is join? wait for thread to die
-6. What is yield?
-7. What is sleep? pause the thread
-8. What is interrupt?
-9. What is wait and notify method in Thread?
-10. What are teh methods available in Thread Object?
-11. What is daemon thread?
-12. What is volatile keyword?
-13. How do you stop the thread in java?  
+2. What is process and thread?
+3. What are the 5 different states of lifecycle in Thread
+4. What is thread priority? and its values. 
+5. What is sychronized method?
+6. What is Synchronized block?
+7. What is static synchronized?
+8. What are the Thread class methods?
+9. Explain wait, notify, notifyall
+10. What is deadLock, how to avoid?
+11. What is race condition?
+12. What are the methods available in Thread Object?
+13. What is volatile keyword?
+14. How do you stop the thread in java?  
+15. Explain about ExecuterService?
+16. What is Atomic variables. 
+17. List and explain thread safe collections 
 
 
-
-
-
-Collection:
+## Collection:
 1. How to calculate new arrayList size?
 2. How to convert a collection to iterator?
 3. Why String is popular HashMap key in Java?  
@@ -91,14 +90,14 @@ Collection:
 11. How HashMap handles collision
 12. What is the difference between poll() and remove() in queue?  
 
-Miscellenous questions:
+## Miscellenous questions:
 1. Why we overrider hashcode and equals?
 2. Why we implements cloneable?  
 3. What is static and dynamic classLoading? class.forName(String class_name)  
 4. Can you have virtual functions in Java? Y, all non static functions
 
 
-Tricky Questions:
+## Tricky Questions:
 1. Is Empty .java file name a valid source file name?
 2. If I don't provide any arguments on the command line, then arg will be empty or NULL?
 3. What if I write static public void instead of public static void?
