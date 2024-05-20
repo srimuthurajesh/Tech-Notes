@@ -77,18 +77,18 @@
 
 
 ## Collection:
-1. How to calculate new arrayList size?
+1. How to calculate new arrayList size? and default size.
+2. How does CopyOnWriteArrayList handle modifications?
 2. How to convert a collection to iterator?
 3. Why String is popular HashMap key in Java?  
 4. What is difference between ArrayList & LinkedList? 
 5. What is comparable & comparator interface?  
-6. How to remove duplicates from ArrayList
 7. What is difference between hashmap and hashtable  
 8. What is iterator and list_iterator
 9. What is difference between collection and collections  
-10. What is CopyOnWriteArrayList 
 11. How HashMap handles collision
-12. What is the difference between poll() and remove() in queue?  
+12. What is the difference between poll() and remove() in queue? 
+14. What is the difference between failfast and failsafe iterator?
 
 ## Miscellenous questions:
 1. Why we overrider hashcode and equals?
@@ -134,7 +134,8 @@
 34. In which way of object creation constructor not called? clone
 35.  Can we import same package/class two times? Y
 36. Can there be an abstract method without an abstract class? Y interface
-Output questions:
+
+## Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
 2.  System.out.println("Javatpoint" + 10 + 20);   //Javatpoint1020
 3. System.out.println(10 * 20 + "Javatpoint");    //200Javatpoint
@@ -144,14 +145,11 @@ Output questions:
 7. Write doubly linked list in java.
 
 
-Design patterns:
+## Design patterns:
 1. What is factory and abstract factory method?  
 
-IO
-Serialization questions:  
+## IO Serialization questions:  
 1. What is Transient?
 2. What is bufferInputStream and bufferOutputStream?  
 3. What is FileInputStream and FileOutputStream?  
 4. What is Serializable and Externalizable interface?  
-
-Concurrency

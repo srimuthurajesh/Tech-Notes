@@ -81,7 +81,8 @@ t1.setDaemon(true);t1.isDaemon(true);
 6. getPriority()-Get thread priority  
 7. isAlive()- check if thread is running  
 
-**Inter-thread communication**: object method  
+**Inter-thread communication**:   
+Note: we need to maintin a seperate object method to perform this. 
 1. **wait()**- causes current thread to wait until notify(), notifyall()  
 2. **notify()**-wakes up a single thread that waiting for object moniter    
 3. **notifyAll()**- wakes up all threads that waiting for object moniter  
