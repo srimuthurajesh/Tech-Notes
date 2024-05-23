@@ -1,39 +1,43 @@
-# Hibernate 
+# Spring JPA 
 
-> framework for database interactions  
-- **ORM tool** : maps java object to Database table   
-- **JPA tool** :  standard for ORM tools.
-- **dialect** : specify type of database  
-- **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
+## Overview
+- **Default JPA Provider:** Hibernate
+- **Framework for Database Interactions:**
+  - **ORM Tool:** Maps Java objects to database tables. 
+  - **JPA Tool:** Standard for ORM tools
+  - **Dialect:** Specifies the type of database
+  - **HQL (Hibernate Query Language):** DB-independent, works on persistent objects instead of tables/columns
 
 
-## Hibernate Architecture:  
-1. **Configuration object**  
--creates one time  
--connection properties by xml file  
--maps javaclasses and DBtables    
-2. **SessionFactory object**  
--creates one time, there will be one sessionFactory for on DB    
--created by configuration  
--thread safe  
--heavyweight object  
-3. **Session object**  
--created eachtime interact DB
--created by sessionfactory  
--not thread safe, so do close it  
--runtime interface(physical connection) between java and DB, 
-4. **Trasaction object**  
--unit of work with DB  
--handled by underlying transaction manager and transaction (from JDBC or JTA).  
-5. **Query object**- use SQL,HQL string to retrieve data  
-6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
-  
-### Hibernate Session Object lifecycle:
-1. Transient - new instance of pojo  
-2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
-2a. while get and load() it is in persistent stage    
-3. Removed - while remove(),delete()  
-4. Detached - closed from session(while clear(),close())  
+1. **Configuration Object**. 
+   - Created once. 
+   - Defines connection properties via an XML file. 
+   - Maps Java classes to database tables. 
+
+2. **SessionFactory Object**. 
+   - Created once per database. 
+   - Built using the Configuration object
+   - Thread-safe and heavyweight
+
+3. **Session Object**
+   - Created each time the database is accessed
+   - Not thread-safe, so it must be closed after use
+   - Acts as a runtime interface between Java and the database
+
+4. **Transaction Object**. 
+   - Represents a unit of work with the database. 
+   - Managed by the underlying transaction manager (JDBC or JTA). 
+5. **Query Object**. 
+   - Uses SQL or HQL to retrieve data. 
+6. **Criteria Object**. 
+   - Used for retrieval operations with additional conditional criteria
+
+### Hibernate Session Object Lifecycle
+1. **Transient:** New instance of a POJO
+2. **Persistent:** Associated with a session (using `save()`, `update()`, `persist()`, `lock()`, `merge()`, `saveOrUpdate()`)
+   - Also in this state when using `get()` and `load()`
+3. **Removed:** Deleted from the database (using `remove()`, `delete()`)
+4. **Detached:** Disconnected from the session (using `clear()`, `close()`)
 
 ## Annotations:  
 ### Entity class Annotation  

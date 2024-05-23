@@ -59,26 +59,25 @@ Annotation|usage
 
 ### Spring Rest Annotations:  
 
-Annotation|Level|Usage
---- |---| ---
-@Controller | Class | capable of handling multiple request mappings.  
-@RestController | Class | consists @Controller,@ResponseBody, handles Req/Res  
-@RequestMapping | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```  
-@RequestBody | Arg | ```public void addMember(@RequestBody Member member) { }```
-@RequestHeader | Arg | ```get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
-@RequestParam | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }``` where @Path("/{id}") used
-@PathVariable | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
-@CookieValue | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
-@RequestPath | Arg | same as @RequestParam, but used while having multipart file<br/>```public getItem(@RequestPath("username") String username, @RequestPath MultipartFile  file){ }```
-@ResponseBody | Method | ```@ResponseBody public Member getMember() { }```  
-@ResponseStatus | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
-@CrossOrigin | Method | ```@CrossOrigin(origins = "http://example.com")```  
-@ExceptionHandler | Method | Handles exception and return values. comes under@ControllerAdvice or @Controller class <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
-@ControllerAdvice | Class | Must declared class if it has methods of @ExceptionHandler, @InitBinder, or @ModelAttribute
+Annotation            |Level|Usage
+----------------------|---| ---
+@Controller           | Class | usually return string, handled by view resolver.  
+@ResponseBody         | Method | ```@ResponseBody public Member getMember() { }```  
+@RestController       | Class | combo of @Controller+@ResponseBody, usually return json object  
+@RequestMapping       | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```  
+@RequestBody          | Arg | ```public void addMember(@RequestBody Member member) { }```
+@RequestHeader        | Arg | ```get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
+@RequestParam         | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
+@PathParam            | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }``` where @Path("/{id}") used
+@PathVariable         | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
+@CookieValue          | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
+@RequestPath          | Arg | same as @RequestParam, but used while having multipart file<br/>```public getItem(@RequestPath("username") String username, @RequestPath MultipartFile  file){ }```
+@ResponseStatus       | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
+@CrossOrigin          | Method | ```@CrossOrigin(origins = "http://example.com")```  
+@ExceptionHandler     | Method | Handles exception and return values. comes under@ControllerAdvice or @Controller class <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
+@ControllerAdvice     | Class | Must declared class if it has methods of @ExceptionHandler, @InitBinder, or @ModelAttribute
 @RestControllerAdvice | Class | combines @ControllerAdvice and @ResponseBody  
-@Valid | Arg | addUser(@Valid @RequestBody User user), where support annotations are <br/> @NotBlank,   
-
+@Valid                | Arg | addUser(@Valid @RequestBody User user), where support annotations are <br/> @NotBlank,   
 
 @GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
 @PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
@@ -193,3 +192,15 @@ WebClient client = WebClient.builder()
   .defaultUriVariables(Collections.singletonMap("url", "http://localhost:8080"))
   .build();
 ```
+
+### Exceptions may occur in spring
+
+## Core Spring Framework Exceptions
+1. BeanCreationException: bean cannot be created. 
+2. NoSuchBeanDefinitionException: bean cannot be found. 
+3. BeanInstantiationException: bean instance cannot be created, due to missing or non-visible constructor.   
+4. NoUniqueBeanDefinationException: two component with implement same interface, but no @Qualifier/@Primary mentioned.  
+5. BeanCurrentlyInCreationException: circular dependency between beans. use @Lazy to solve this.    
+
+## Spring Boot Exceptions
+1. ApplicationContextException: error occurs in the application context initialization. if we miss @SpringBootApplication. 
