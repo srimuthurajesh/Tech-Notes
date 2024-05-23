@@ -5,16 +5,16 @@ Note: The default JPA provider for Spring boot is Hibernate
 # Hibernate
 > framework for database interactions  
 - **ORM tool** : maps java object to Database table   
-- **JPA tool** :  standard for ORM tools.
+- **JPA tool** :  provides standard methods for ORM tools.
 - **dialect** : specify type of database  
 - **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
 
 
 ## Hibernate Architecture:  
 1. **Configuration object**  
--creates one time  
--connection properties by xml file  
--maps javaclasses and DBtables    
+- creates only once during initialization
+- load db connection properties from hibernate.cfg.xml/properties file  
+- maps javaclasses and DBtables    
 2. **SessionFactory object**  
 -creates one time, there will be one sessionFactory for on DB    
 -created by configuration  
