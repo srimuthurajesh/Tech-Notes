@@ -168,3 +168,75 @@ String display(@PathVariable("id") String personId)
 5. **@SessionAttribute**:
 
 6. **@Qualifier("beanName")**: avoid ambiguity
+
+
+
+
+## for java config class
+
+> A Java class that uses annotations to configure and manage Spring beans and their dependencies, providing a type-safe and more maintainable alternative to XML-based configuration.
+
+
+
+1. Add maven dependency
+
+2. Configure Web Application Initializer:
+3. Create a class that extends AbstractAnnotationConfigDispatcherServletInitializer to replace web.xml.
+```
+public class DispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return null;
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[]{WebConfig.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+}
+
+```
+3. Configure dispatcherservelet
+```
+@Configuration
+@EnableWebMvc // Equivalent to <mvc:annotation-driven/>
+@ComponentScan(basePackages = "com.controller") // Scans for components (e.g., @Controller)
+public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        HikariConfig config = new HikariConfig();
+        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/mydatabase");
+        config.setUsername("myuser");
+        config.setPassword("mypassword");
+        config.setMaximumPoolSize(10);
+        return new HikariDataSource(config);
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
+
+    @Bean
+    public DataSourceTransactionManager transactionManager(DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
+}
+```
+remainings steps are same 
