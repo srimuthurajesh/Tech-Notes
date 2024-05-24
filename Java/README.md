@@ -8,16 +8,18 @@
 6. [Interview Questions](Language/java-interview-questions.html)
 
 ### Spring
-1. [Spring core](Spring/01_spring_core.html) 
-2. [Spring mvc](Spring/02_spring_mvc.html) 
-3. [Hibernate](Spring/04_Hibernate.html) 
-4. [Spring Boot](Spring/spring_boot.html)
-5. [Spring Cloud](Spring/spring_cloud.html) 
+
+- [Spring core](Spring/01-spring-core.html) 
+- [Spring mvc](Spring/02-spring-mvc.html) 
+- [Spring DAO](Spring/04-spring-dao.html) 
+- [Spring Boot](Spring/spring-boot.html)
+- [Spring Cloud](Spring/spring-cloud.html) 
+
 
 ### Other Spring
-1. [Spring Rest](Spring/03_spring_rest.html) 
-2. [Spring Aop](Spring/spring_aop.html) 
-3. [Spring Security](Spring/spring_security.html) 
+- [Spring Rest](Spring/03-spring-rest.html) 
+- [Spring Aop](Spring/spring-aop.html) 
+- [Spring Security](Spring/spring-security.html) 
 
 #### Interviwe Questions
 1. [Java QA](Language/java_questions.html)

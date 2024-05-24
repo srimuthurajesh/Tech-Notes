@@ -14,7 +14,8 @@ Note: The default JPA provider for Spring boot is Hibernate
 1. **Configuration object**  
 - creates only once during initialization
 - load db connection properties from hibernate.cfg.xml/properties file  
-- maps javaclasses and DBtables    
+- maps javaclasses and DBtables. 
+    
 2. **SessionFactory object**  
 -creates one time, there will be one sessionFactory for on DB    
 -created by configuration  
