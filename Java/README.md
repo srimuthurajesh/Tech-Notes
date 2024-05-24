@@ -9,17 +9,17 @@
 
 ### Spring
 
-- [Spring core](Spring/01-spring-core.html) 
-- [Spring mvc](Spring/02-spring-mvc.html) 
-- [Spring DAO](Spring/04-spring-dao.html) 
-- [Spring Boot](Spring/spring-boot.html)
-- [Spring Cloud](Spring/spring-cloud.html) 
+1. [Spring core](Spring/01-spring-core.html) 
+2. [Spring mvc](Spring/02-spring-mvc.html) 
+3. [Spring DAO](Spring/04-spring-dao.html) 
+4. [Spring Boot](Spring/spring-boot.html)
+5. [Spring Cloud](Spring/spring-cloud.html) 
 
 
 ### Other Spring
-- [Spring Rest](Spring/03-spring-rest.html) 
-- [Spring Aop](Spring/spring-aop.html) 
-- [Spring Security](Spring/spring-security.html) 
+1. [Spring Rest](Spring/03-spring-rest.html) 
+2. [Spring Aop](Spring/spring-aop.html) 
+3. [Spring Security](Spring/spring-security.html) 
 
 #### Interviwe Questions
 1. [Java QA](Language/java_questions.html)

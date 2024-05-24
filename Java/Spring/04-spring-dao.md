@@ -17,15 +17,17 @@ Note: The default JPA provider for Spring boot is Hibernate
 - maps javaclasses and DBtables. 
     
 2. **SessionFactory object**  
--creates one time, there will be one sessionFactory for on DB    
+-creates one time, there will be one sessionFactory for one DB    
 -created by configuration  
 -thread safe  
 -heavyweight object  
+
 3. **Session object**  
 -created eachtime interact DB
 -created by sessionfactory  
 -not thread safe, so do close it  
--runtime interface(physical connection) between java and DB, 
+-runtime interface(physical connection) between java and DB,  
+ 
 4. **Trasaction object**  
 -unit of work with DB  
 -handled by underlying transaction manager and transaction (from JDBC or JTA).  

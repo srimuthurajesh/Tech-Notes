@@ -1,11 +1,11 @@
 ### Spring
-- [Spring core](01-spring-core.html) 
-- [Spring mvc](02-spring-mvc.html) 
-- [Spring DAO](04-spring-dao.html) 
-- [Spring Boot](spring-boot.html)
-- [Spring Cloud](spring-cloud.html) 
+1. [Spring core](01-spring-core.html) 
+2. [Spring mvc](02-spring-mvc.html) 
+3. [Spring DAO](04-spring-dao.html) 
+4. [Spring Boot](spring-boot.html)
+5. [Spring Cloud](spring-cloud.html) 
 
 ### Other Spring
-- [Spring Rest](03-spring-rest.html) 
-- [Spring Aop](spring-aop.html) 
-- [Spring Security](spring-security.html) 
+1. [Spring Rest](03-spring-rest.html) 
+2. [Spring Aop](spring-aop.html) 
+3. [Spring Security](spring-security.html) 
