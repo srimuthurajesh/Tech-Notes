@@ -1,16 +1,19 @@
-**AOP** : Aspects of programming means cross cutting concerns
+# Spring AOP  
 
-Note: we should use @EnableAspectJAutoProxy before @Configuration file
+> Aspects of programming means cross cutting concerns. 
+
+Note: we should use @EnableAspectJAutoProxy before @Configuration file. 
 <aop:aspectj-autoproxy> in xml config file        
 
-**@Aspect** - declare class 
+**@Aspect** - declare class   
 
-**Types of Advice:**
-1. @Before - run before method
-2. @AfterReturning - run after method(if success)
-3. @AfterThrowing - run after method(if exception)
-4. @AfterFinally - run after method(both success/exception)
-5. @Around - run after and before method (using joinpoint.proceed())
+### Types of Advice:  
+1. @Before - run before method. 
+2. @AfterReturning - run after method(if success). 
+3. @AfterThrowing - run after method(if exception). 
+4. @AfterFinally - run after method(both success/exception). 
+5. @Around - run after and before method (using joinpoint.proceed()). 
+
 ```
 @Around("execution(public void org.controller.display())")
 void aroundMethod(JointPoint jp){
@@ -21,7 +24,10 @@ void aroundMethod(JointPoint jp){
 }
 ```
 
-**@Pointcut**: enable reuse of pointcut
+### @Pointcut 
+
+> enable reuse of pointcut
+
 ```
 @Pointcut("execution(public void org.controller.display())")
 void reuseMethod(){}
@@ -32,18 +38,19 @@ void methodName2(){
 void methodName3(){
 }
 ```
-**@Order** : gives order of execution to aspect class
+### @Order 
+> gives order of execution to aspect class
 
-**Access method details**:
+### Access method details. 
+
 ```
 public void display(JointPoint jointPoint){
   MethodSignature methodSig = (MethodSignature) jointPoint.getSignature();
   Object[] args = joinPoint.getArgs();  //get arguements 
 }
-
 ```
----
-**LOGGER**
+
+### LOGGER. 
 ```
  private Logger log = Logger.getLogger(getClass().getName());
  log.info("log message");
@@ -53,15 +60,14 @@ public void display(JointPoint jointPoint){
  log.warn("log message");
  log.trace("log message");
 ```
----
 
-**Spring security:**
-1. Create SecurityWebApplicationInitializer.java
+### Spring security. 
+1. Create SecurityWebApplicationInitializer.java. 
 ```
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 }
 ```
-2. create SecurityConfig.java
+2. create SecurityConfig.java. 
 ```
 @Configuration
 @EnableWebSecurity
