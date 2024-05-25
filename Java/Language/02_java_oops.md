@@ -47,7 +47,7 @@ new ClassName().variableName = value
 
 ### Methods of object class:  
 1. toString()  - String representation of an Object 
-2. hashCode() - JVM generates a unique number
+2. hashCode() - JVM generates a unique number, used for hash based DS. 
 3. equals(Object obj) - Compares the given object to “this” object 
 4. getClass() - Returns the class object of “this” object 
 	Class c = obj.getClass(); c.getClassName();
