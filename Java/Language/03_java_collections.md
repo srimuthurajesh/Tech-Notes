@@ -16,14 +16,14 @@ framework to access prepackaged data structure.
 |-----------------------|---|---|---|---|---|
 | ArrayList             | `add(element)`, `addAll(collection)` | `remove(index)`, `remove(element)`, `removeAll(collection)` | `get(index)` | `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
 | LinkedList            | `add(element)`, `addFirst(element)`, `addLast(element)` | `remove(index)`, `remove(element)`, `removeFirst()`, `removeLast()` | `get(index)` | `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
-| Vector                | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList | Yes |
-| CopyOnWriteArrayList  | `add(element)`, `addAll(collection)` (copies internally) | Not recommended (may lead to unexpected behavior) | `get(index)` |  `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` | Yes |
+| Vector                | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList |
+| CopyOnWriteArrayList  | `add(element)`, `addAll(collection)` (copies internally) | Not recommended (may lead to unexpected behavior) | `get(index)` |  `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
 | HashMap               | `put(key, value)` | `remove(key)`, `remove(key, value)` | `get(key)` | `containsKey(key)`, `getOrDefault(key, defaultValue)` | `for` loop over `entrySet()`, `keySet()`, or `values()` |
 | HashSet               | `add(element)` | `remove(element)` | Not applicable (unordered) | `contains(element)` | `for` loop over `iterator()` |
 | TreeSet               | `add(element)` | `remove(element)` | Not applicable (ordered) | `contains(element)`, `ceiling(element)`, `floor(element)` | `for` loop over `iterator()` |
 | PriorityQueue         | `add(element)` | `remove(element)`, `poll()` (removes and returns head) | `peek()` (returns head without removing) | Not applicable (ordered based on priority) | `for` loop over `iterator()` |
-| ConcurrentHashMap     | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap | Yes |
-| ConcurrentLinkedQueue | `add(element)`, `offer(element)` (similar to add) | `remove(element)`, `poll()` (removes and returns head) | `peek()` (returns head without removing) | Not applicable (unordered FIFO) | `for` loop over `iterator()` | Yes |
+| ConcurrentHashMap     | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap |
+| ConcurrentLinkedQueue | `add(element)`, `offer(element)` (similar to add) | `remove(element)`, `poll()` (removes and returns head) | `peek()` (returns head without removing) | Not applicable (unordered FIFO) | `for` loop over `iterator()` |
 
 
 ## Queue FIFO
