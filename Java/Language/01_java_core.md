@@ -336,6 +336,9 @@ class MyGen<T>{
 ## Serialization : 
 > mechanism of writing obj into byte stream, implement serializable marker interface
 
+Note: it is gonna depreacted not recommended due to security vulnerablities. 
+Data exchange formats: JSON, XML. these are alternatives for native serialization. 
+
 ```
 FileOuputStream file = new FileOutputStream(filename);
 ObjectOuputStream out = new ObjectOuputStream(file);
