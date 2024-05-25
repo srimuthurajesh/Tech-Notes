@@ -346,8 +346,22 @@ ObjectInputStream in = new ObjectInputStream(file);
 in.readObject();  //new object create 
 ```
 
+## File handling
+> do file operations using File class. 
+Stream: series/flow of data. 
+1. Byte Stream. Ex: FileInputStream. 
+2. Char Stream. Ex: FileWrite. 
 
----
+#### File Operations:
+1. Create file - fileObj.createNewFile();  
+2. Get file info - fileObj.exists(), fileObj.getName(), fileObj.getLenght(). 
+3. Delete file - fileObj.delete(). 
+4. Write file - fileWriterObj.write(). 
+5. Read file -  
+```
+Scanner scanner = new Scanner(fileObj);  
+while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }  
+```  
 
 ## Exception handling:  
 > Unexpected event that terminate program

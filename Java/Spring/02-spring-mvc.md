@@ -1,6 +1,11 @@
 ## Configuring spring MVC  
 - Follows MVC design pattern  
 
+1. XML-Based Configuration -  Load xml bean defination. 
+2. Java-Based Configuration - @ComponentScan. 
+3. Annotation-Based Configuration - Read @Bean Method signature. 
+
+
 **1. Configure pom.xml**: add dependency spring-webmvc  
 
 **2. Configure web.xml**

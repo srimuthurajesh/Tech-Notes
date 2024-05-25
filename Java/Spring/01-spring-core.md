@@ -204,3 +204,23 @@ WebClient client = WebClient.builder()
 
 ## Spring Boot Exceptions
 1. ApplicationContextException: error occurs in the application context initialization. if we miss @SpringBootApplication. 
+
+## Spring Bean Lifecycle hooks. 
+1. BeanFactoryPostProcessor: application context's internal bean factory after its standard initialization but before any bean instances are created.
+
+2. BeanPostProcessor:
+postProcessBeforeInitialization(Object bean, String beanName): Custom logic before a bean's initialization callback.  
+postProcessAfterInitialization(Object bean, String beanName): Custom logic after a bean's initialization callback.  
+
+3. InitializingBean:
+afterPropertiesSet(): Method for custom initialization logic after properties are set.  
+
+4. DisposableBean:  
+destroy(): Method for custom cleanup logic before a bean is destroyed.  
+
+5. Custom Init and Destroy Methods:  
+initMethod and destroyMethod attributes in @Bean annotation or XML configuration to specify custom initialization and destruction methods.  
+
+6. @PostConstruct: Annotation for a method to be executed after the bean's properties have been set and before it is put into service.  
+
+7. @PreDestroy: Annotation for a method to be executed before the bean is destroyed.  
