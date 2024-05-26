@@ -7,13 +7,13 @@ framework to access prepackaged data structure.
 3. [Stack](#stack) 
 4. [Set](#set)  
 5. [Map](#map) 
-6. [Synchronized Collections]()
+6. [Synchronized Collections](#synchronized-collection)
 7. [Concurrent Collections]()
-8. [Common Methods in Collections]()
-9. [Default Sizes and Load Factors]()
+8. [Common Methods in Collections](#common-methods-in-collection)
+9. [Default Sizes & Load Factors](#default-sizes-&-load-factors)
 10. [Utility Class - Collections]()
-11. [Comparable vs Comparator]()
-12. [Iterators]()
+11. [Comparable vs Comparator](#comparable-vs-comparator)
+12. [Iterators](#iterators)
 
 
 
@@ -137,7 +137,7 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 | ConcurrentLinkedQueue | `add(element)`, `offer(element)` | `remove(element)`, `poll()`  | `peek()` | NA | `for` loop over `iterator()` |
 
 
-## Default Sizes and Load Factors:  
+## Default Sizes & Load Factors:  
 
 | Collections | Default Size | Load factor|
 |-------------|--------------|------------|
