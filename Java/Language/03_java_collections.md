@@ -147,8 +147,8 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 | HashMap     | 16           | 0.75       |
 | HashTable   | 11           | 0.75       |
 
-## Utility class - Collections.  
-Collections are utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection.  
+## Utility class - Collections  
+from java.util package, consists only static methods which are used to operate on objects of type Collection.  
 
 | Collections Methods                  | Description                                                  |
 |--------------------------------------|--------------------------------------------------------------|
@@ -202,7 +202,16 @@ Collection.sort(stList, comp);
 ```
 
 ## Iterators
-1. **FailFast Iterator** : ArrayList, HashMap    
+> traverse elements of a collection
+
+1. **FailFast Iterator** : 
+directly on the collection and detect concurrent modifications during iteration    
 - it works by checking internal flag called modCount, updated each time a collection is modified    
 - it will throw ConcurrentModificationException if modcount changes  
-2. **FailSafe** : CopyOnWriteArrayList, ConcurrentHashMap    
+Ex: ArrayList, HashMap , HashSet, LinkedList
+
+2. **FailSafe** :   
+- operate on a clone or copy of the collection,   
+- allowing safe traversal, even if the collection is modified during iteration.  
+- suits when collection modification are expected   
+Ex: CopyOnWriteArrayList, ConcurrentHashMap     
