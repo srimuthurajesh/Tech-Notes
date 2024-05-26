@@ -10,8 +10,8 @@ framework to access prepackaged data structure.
 6. [Synchronized Collections](#synchronized-collection)
 7. [Concurrent Collections]()
 8. [Common Methods in Collections](#common-methods-in-collection)
-9. [Default Sizes & Load Factors](#default-sizes-&-load-factors)
-10. [Utility Class - Collections]()
+9. [Default Sizes & Load Factors](#default-sizes--load-factors)
+10. [Utility Class - Collections](#utility-class---collections)
 11. [Comparable vs Comparator](#comparable-vs-comparator)
 12. [Iterators](#iterators)
 
@@ -104,7 +104,7 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 7. Collections.singletonMap("name","rajesh"); //cannot change it  
 
 
-**Concurrent Collections**:
+## Concurrent Collections:
 > Alternative to traditional collections providing concurrency.  
 
 1. ConcurrentHashMap.  
