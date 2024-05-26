@@ -121,7 +121,7 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 12. ConcurrentSkipListMap: Concurrent sorted map.  
 13. ConcurrentSkipListSet: Concurrent sorted set.  
 
-## Methods in Collection:
+## Common Methods in Collection:
 
 | Collection            | Add | Remove | Get | Search | Iterate | 
 |-----------------------|---|---|---|---|---|
@@ -137,40 +137,40 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 | ConcurrentLinkedQueue | `add(element)`, `offer(element)` | `remove(element)`, `poll()`  | `peek()` | NA | `for` loop over `iterator()` |
 
 
-**Default size**:  
+## Default Sizes and Load Factors:  
 
 | Collections | Default Size | Load factor|
 |-------------|--------------|------------|
 | ArrayList   | 10           | 0.75       |
-| Vector      | 10           |            |
-| HashSet     | 16           |            |
-| HashMap     | 16           | 0.75       |
-| HashTable   | 11           |            |
+| Vector      | 10           | 1.0        |
 | HashSet     | 16           | 0.75       |
+| HashMap     | 16           | 0.75       |
+| HashTable   | 11           | 0.75       |
 
-**Collections** 
+## Utility class - Collections.  
 Collections are utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection.  
 
-|Collections Methods                  | Description  |
-|:-------------------------------------|:-------------------------------------------------------------|
-|Collections.max()	                  |This method returns maximum element in the specified collection.|
-|Collections.min()	                  |This method returns minimum element in the given collection.|
-|Collections.sort()	                  |This method sorts the specified collection.|
-|Collections.shuffle()	              |This method randomly shuffles the elements in the specified collection.|
-|Collections.synchronizedCollection() |This method returns synchronized collection backed by the specified collection.|
-|Collections.binarySearch()	          |This method searches the specified collection for the specified object using binary search algorithm.|
-|Collections.disjoint()	              |This method returns true if two specified collections have no elements in c|ommon.|
-|Collections.copy()	                  |This method copies all elements from one collection to another collectio|n.|
-|Collections.reverse()	              |This method reverses the order of elements in the specified collection.|
-|Collections.unmodifiableList()	              |This method make List as Final|
+| Collections Methods                  | Description                                                  |
+|--------------------------------------|--------------------------------------------------------------|
+| Collections.max()	                   |returns maximum element in the specified collection.          |
+| Collections.min()	                   |returns minimum element in the given collection.              |
+| Collections.sort()	                 |sorts the specified collection.                               |
+| Collections.shuffle()	               |randomly shuffles the elements in the specified collection.   |
+| Collections.synchronizedCollection() |returns synchronized collection backed by the specified collection.|
+| Collections.binarySearch()	         |searches the specified collection for the specified object using binary search algorithm.|
+| Collections.disjoint()	             |returns true if two specified collections have no elements in c|ommon.|
+| Collections.copy()	                 |copies all elements from one collection to another collectio|n.   |
+| Collections.reverse()	               |reverses the order of elements in the specified collection.       |
+| Collections.unmodifiableList()	     |make List as Final                                                |
 
+## Comparable vs Comparator
 
-|Comparable                  | Comparator  |
-|:-------------------------------------|:-------------------------------------------------------------|
-|Single property sorting	                  |can write multiple property sorting|
-|Need to modify class	                  |does not need to modify class|
-|provides compareTo() method to sort elements	                  |provides compare() method to sort elements.|
-|Collections.sort(List) 	                  |Collections.sort(List,comparator) |
+| Comparable              | Comparator                          |
+|-------------------------|-------------------------------------|
+| Single property sorting | can write multiple property sorting |
+| Need to modify class	  | does not need to modify class       |
+| provides compareTo() 	  | provides compare() method           |
+| Collections.sort(List) 	| Collections.sort(List,comparator)   |
 
 ### Comparable
 ```
@@ -201,7 +201,8 @@ Comparator<Student> comp = new Comparator<Student>(){
 Collection.sort(stList, comp);
 ```
 
-**FailFast Iterator** : ArrayList, HashMap    
-it works by checking internal flag called modCount, updated each time a collection is modified    
-it will throw ConcurrentModificationException if modcount changes  
-**FailSafe** : CopyOnWriteArrayList, ConcurrentHashMap    
+## Iterators
+1. **FailFast Iterator** : ArrayList, HashMap    
+- it works by checking internal flag called modCount, updated each time a collection is modified    
+- it will throw ConcurrentModificationException if modcount changes  
+2. **FailSafe** : CopyOnWriteArrayList, ConcurrentHashMap    
