@@ -5,7 +5,15 @@ framework to access prepackaged data structure.
 1. [List](#list)
 2. [Queue](#queue)
 3. [Stack](#stack) 
-
+4. [Set](#set)  
+5. [Map](#map) 
+6. [Synchronized Collections]()
+7. [Concurrent Collections]()
+8. [Common Methods in Collections]()
+9. [Default Sizes and Load Factors]()
+10. [Utility Class - Collections]()
+11. [Comparable vs Comparator]()
+12. [Iterators]()
 
 
 
@@ -30,6 +38,11 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 2. poll(): return object and remove queue value, or return null if queue empty     
 3. remove(): same as poll(), but throw NoSuchElementException if queue empty  
 
+## Stack. 
+> follows LIFO principle. elements added and removed in same end. 
+
+1. **Stack**: legacy class of stack but not recommended. 
+2. **ArrayDeque**: double ended queue, recommended instead of stack class.   
 
 ## Set: 
 > does not allow duplicate elements.  
@@ -69,18 +82,44 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 4. Using map foreach  ``` map.forEach((k,v)->{ sysout(k+v)})```   
 
 
-**Concurrent collection classes**:  alternative to java collections classes with providing concurrency    
 
 **Iterator**  Iterator itr = list.iterator(); while (itr.hasNext()) {System.out.print(itr.next() + " "); }   
 **List Iterator**: traverse front and back,  ListIterator i = list.listIterator();while (i.hasPrevious()) {System.out.print(i.previous() + " "); }
-**Synchronized Collection**: 
-  1. Collections.synchronizedCollection(Collection c)
-` 2. Collections.synchronizedList(List list)
-  3. Collections.synchronizedMap(Map<K,V> m)
-  4. Collections.synchronizedSet(Set s)
-  5. Collections.synchronizedSortedMap(SortedMap<K,V> m)
-  6. Collections.synchronizedSortedSet(SortedSet s)
-  7. Collections.singletonMap("name","rajesh"); //cannot change it  
+
+
+## Synchronized Collection.  
+> not recommended for high-concurrency due to below performance and scalability issues.  
+
+1. Global Locking: Single lock for all operations, leading to bottlenecks in high-concurrency.
+2. Thread Safety Overhead: Locking on each method call adds overhead, degrading performance.
+3. Fail-Fast Iterators: Iterators throw ConcurrentModificationException if modified during iteration.
+
+**Synchronized collection Methods**
+1. Collections.synchronizedCollection(Collection c)
+2. Collections.synchronizedList(List list)
+3. Collections.synchronizedMap(Map<K,V> m)
+4. Collections.synchronizedSet(Set s)
+5. Collections.synchronizedSortedMap(SortedMap<K,V> m)
+6. Collections.synchronizedSortedSet(SortedSet s)
+7. Collections.singletonMap("name","rajesh"); //cannot change it  
+
+
+**Concurrent Collections**:
+> Alternative to traditional collections providing concurrency.  
+
+1. ConcurrentHashMap.  
+2. CopyOnWriteArrayList   
+3. CopyOnWriteArraySet. 
+4. ConcurrentLinkedQueue: Non-blocking FIFO queue.  
+5. ConcurrentLinkedDeque: Non-blocking double-ended queue.  
+6. LinkedBlockingQueue: Bounded blocking FIFO queue.  
+7. LinkedBlockingDeque: Bounded blocking double-ended queue.  
+8. ArrayBlockingQueue: Bounded blocking queue backed by an array.  
+9. PriorityBlockingQueue: Blocking priority queue.  
+10. DelayQueue: Delayed task scheduling queue.  
+11. SynchronousQueue: Zero-capacity queue for handoff designs.  
+12. ConcurrentSkipListMap: Concurrent sorted map.  
+13. ConcurrentSkipListSet: Concurrent sorted set.  
 
 ## Methods in Collection:
 
@@ -109,7 +148,7 @@ for (Map.Entry<String,Float> entry : map.entrySet())
 | HashTable   | 11           |            |
 | HashSet     | 16           | 0.75       |
 
-**Collections vs Collection** 
+**Collections** 
 Collections are utility class in java.util package. It consists of only static methods which are used to operate on objects of type Collection.  
 
 |Collections Methods                  | Description  |
