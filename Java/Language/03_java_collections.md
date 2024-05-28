@@ -73,15 +73,17 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 Iterator itr = map.keyset().iterator();
 while(itr.hasNext()){ map.get(it.next());}
 ```
-2. Using keyset() and value(): for (String State : map.keySet()) (or) for (String State : map.value())   
+2. Using keyset() and value(): `for (String State : map.keySet())` (or) for `(String State : map.value())`   
 3. Using Map.entry<K,V>method  
-```
+
+``` 
 for (Map.Entry<String,Float> entry : map.entrySet()) 
 {  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); }    
 
 for (Float item : list) { System.out.println("Item: " + item);}
 ```
-4. Using map foreach  ``` map.forEach((k,v)->{ sysout(k+v)})```   
+
+4. Using map foreach  ```map.forEach((k,v)->{ sysout(k+v)})```   
 
 
 
