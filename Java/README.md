@@ -22,10 +22,6 @@
 2. [Spring Aop](Spring/spring-aop.html) 
 3. [Spring Security](Spring/spring-security.html) 
 
-#### Interviwe Questions
-1. [Java QA](Language/java_questions.html)
-2. [Spring QA](Spring/spring-interview-questions.html)
-
 #### Others
 1. [Microservices](microservices.html)
 2. [JUnit](junit.html).  

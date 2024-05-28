@@ -50,8 +50,9 @@ Java : Code -> Compiler -> Interpreter(JVM) -> Machine code
 **Byte code**: low level representation of source code, not readable  
 **JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
 **ClassLoader**: part of JRE, loads class file to JVM    
-how to compile: ```javac -d directory javafilename.java```           	
-how to run: ```java myppack.javafilename```         
+
+1. how to compile: `javac -d directory javafilename.java`           	
+2. how to run: `java myppack.javafilename`         
 
 ## Basic Java program
 ``` 
@@ -95,18 +96,19 @@ class Hello{
 
 ## Java I/O
 1. Output  
- 	print with new line: ```System.out.println("Hellow world");```  
-	print without new line````System.out.print("Hellow world");```  
+ 	print with new line: `System.out.println("Hellow world");`  
+	print without new line: `System.out.print("Hellow world");`  
 2. Input
- 	```
-  	import java.util.Scanner;
-  	PSVM{
-	  	Scanner scanner = new Scanner(System.in);
-	   	String name = scanner.nextLine();
-	    	int age = scanner.nextInt();
-	     	char ch = scanner.next.charAt(0);
-	  }
-  	```
+
+```
+import java.util.Scanner;
+PSVM{
+	Scanner scanner = new Scanner(System.in);
+	String name = scanner.nextLine();
+		int age = scanner.nextInt();
+		char ch = scanner.next.charAt(0);
+	}
+```
 
 
 ## Datatype:  
@@ -148,26 +150,26 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 
 > performs mathemetical operations on operands. 
 
-|  Operators 		   	| Symbols 							|  
-|-----------------------|-----------------------------------|  
-| Arithmetic Operator  	| **+ - * / %**  					|  
-| Relational Operator  	| **<, <=, >, >=, ==, !=**  		|  
-| Logical Operator  	| **&&(AND), \|\| (OR), !(NOT)**  	|  
-| Assignment Operator  	| **a += 4**  						|  
-| Inc and Dec Operator  | **a++,a--,++a,--a**  				|  
-| Conditional Operator  | **exp1? exp2: exp3;**  			|  
-| Bitwise Operator  	| **&, <<, >>, >>>**  				|  
-| Special Operator  	| **instanceof, (.)**  				|  
-| Unary Operator  		| ~, !  							|    
+|  Operators 		   	| Symbols 						|  
+|-----------------------|-------------------------------|  
+| Arithmetic Operator  	| `+ - * / %`  					|  
+| Relational Operator  	| `<, <=, >, >=, ==, !=`  		|  
+| Logical Operator  	| `&&(AND), \|\| (OR), !(NOT)` 	|  
+| Assignment Operator  	| `a += 4`  					|  
+| Inc and Dec Operator  | `a++,a--,++a,--a`  			|  
+| Conditional Operator  | `exp1? exp2: exp3;`  			|  
+| Bitwise Operator  	| `&, <<, >>, >>>`  			|  
+| Special Operator  	| `instanceof, (.)`  			|  
+| Unary Operator  		| `~, !`  						|    
 
 ```
 int a=10; int b=-9;  
 System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
 System.out.println(~b);//9 (positive of total minus, positive starts from 0)   
 ```  
-Arithmetic operator order: System.out.println(10*10/5+3-1*4/2);  is 21  
-Left shift operator: 10<<2 is 10\*2^2= 40   
-Right shift operator: 10>>2 is 10/2^2= 2    , when negative number it will -2
+Arithmetic operator order: ```System.out.println(10*10/5+3-1*4/2);```  is 21  
+Left shift operator: `10 << 2 is 10 * 2^2 = 40`
+Right shift operator: `10 >> 2 is 10 / 2^2 = 2`    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 
 
