@@ -6,7 +6,7 @@
 
 **Advantages**: loosely coupling, lightweight, easy to test, flexible(configurable)
 
-**MODULES IN SPRING**:  
+## MODULES IN SPRING:  
 1. Spring core - basic, IOC & DI    
 2. Spring DAO - Data access/integration - Jdbc orm  
 3. Spring MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller  	 
@@ -14,13 +14,45 @@
 5. Spring Test	- junit, testNG  
 so many...  
 
-### IOC container  
+## IOC container  
 - create,manage,wire,configure object. It performs:    
+
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
 2. **Dependency Injection(DI)**: where object define their dependencies via constructor parameters or setter methods,   
 
+## Two types of IOC container**     
+### 1. Bean factory 
+> lazy intialization, no annotated injection support   
+
+```
+BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+MyBean myBean = (MyBean) factory.getBean("myBean");
+```   
+2. **Application context** - aggresive intialization, supports annotated injection, superset of BeanFactory  
+```
+ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+MyBean myBean = context.getBean(MyBean.class);
+```
+
 **Two Ways of Injections**: setter/contructor injection  
 **Beans**: objects present in IOC container  
+
+**Bean scope**:  
+1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
+2. Prototype - new instance will create Each time, the bean requested    
+3. Request - each HTTP request will have its own instance of bean  
+4. Session - bean defined to Http session scope
+5. Global-session - bean defined to Http Global session scope   
+Syntax:  
+XML Configuration: `<bean id="" class="" scope="singleton">`. 
+Annotation Configuration: `@Scope("prototype")`. 
+
+**Bean Lifecycle**:  
+1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
+2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
+3. Annotation approach- ```@PostContruct  @PreDestroy```  
+4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
+-it will force to define afterPropertiesSet(), destroy() methods  
 
 ### Beans configured ways:  
 1. **XML** - in applicationContext.xml. 
@@ -46,7 +78,7 @@ public class AppConfig {
     }
 }
 ```
-3. **Java code**. 
+3. **Java code**.   
 ```
 public class Main {
     public static void main(String[] args) {
@@ -57,22 +89,6 @@ public class Main {
 }
 ```
 
-**Bean scope**:  
-1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
-2. Prototype - new instance will create Each time, the bean requested    
-3. Request - each HTTP request will have its own instance of bean  
-4. Session - bean defined to Http session scope
-5. Global-session - bean defined to Http Global session scope   
-Syntax:  
-XML Configuration: `<bean id="" class="" scope="singleton">`. 
-Annotation Configuration: `@Scope("prototype")`. 
-
-**Bean Lifecycle**:  
-1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
-2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
-3. Annotation approach- ```@PostContruct  @PreDestroy```  
-4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
--it will force to define afterPropertiesSet(), destroy() methods  
 
 ## Annotations to remember:  
 
@@ -163,9 +179,6 @@ Annotation                  | Usage                                             
 public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
 ```
 
-**Two types of IOC container**:     
-1. Bean factory - lazy intialization, no annotated injection support    
-2. Application context - aggresive intialization, supports annotated injection, superset of BeanFactory  
 
 **Classes of ApplicationContext**:  
 1. FileSystemXmlApplicationContext  
