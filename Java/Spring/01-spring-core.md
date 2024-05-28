@@ -1,25 +1,61 @@
 # Spring Framework    
 
--When: 1998 -2002 by spring.org- Rod johnson  
--Name reason: interface21 is old name  -EJB framework seems like winter, thus spring name came    
--called as Framework of Frameworks  
+- 1998 -2002 by spring.org- Rod johnson  
+- **Name reason:** interface21 is old name. EJB framework seems like winter, thus spring name came    
+- called as Framework of Frameworks  
 
 **Advantages**: loosely coupling, lightweight, easy to test, flexible(configurable)
 
 **MODULES IN SPRING**:  
-1. IOC - Spring core - basic, IOC & DI    
-2. DAO - Data access/integration - Jdbc orm  
-3. MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller  	 
-4. AOP - security, logging, profiling  
-5. Test	- junit, testNG  
+1. Spring core - basic, IOC & DI    
+2. Spring DAO - Data access/integration - Jdbc orm  
+3. Spring MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller  	 
+4. Spring AOP - security, logging, profiling  
+5. Spring Test	- junit, testNG  
+so many...  
 
 ### IOC container  
--create,manage,wire,configure object. It performs:    
+- create,manage,wire,configure object. It performs:    
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
-2. **Dependency Injection(DI)**: where object define their dependencies via 
+2. **Dependency Injection(DI)**: where object define their dependencies via constructor parameters or setter methods,   
 
 **Two Ways of Injections**: setter/contructor injection  
 **Beans**: objects present in IOC container  
+
+### Beans configured ways:  
+1. **XML** - in applicationContext.xml. 
+```
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car" class="com.example.Car">
+        <property name="engine" ref="engine"/>
+    </bean>
+    <bean id="engine" class="com.example.Engine"/>
+</beans>
+```
+2. **Java configuration class** - in AppConfig.java.  
+```
+@Configuration
+public class AppConfig {
+    @Bean
+    public Car car() {
+        return new Car(engine());
+    }
+    @Bean
+    public Engine engine() {
+        return new Engine();
+    }
+}
+```
+3. **Java code**. 
+```
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Car car = context.getBean(Car.class);
+        car.start();
+    }
+}
+```
 
 **Bean scope**:  
 1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
@@ -27,7 +63,9 @@
 3. Request - each HTTP request will have its own instance of bean  
 4. Session - bean defined to Http session scope
 5. Global-session - bean defined to Http Global session scope   
-Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")   
+Syntax:  
+XML Configuration: `<bean id="" class="" scope="singleton">`. 
+Annotation Configuration: `@Scope("prototype")`. 
 
 **Bean Lifecycle**:  
 1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
@@ -37,53 +75,79 @@ Syntax:``` <bean id="" class="" scope="singleton">```  @Scope("prototype")
 -it will force to define afterPropertiesSet(), destroy() methods  
 
 ## Annotations to remember:  
-### Spring core Annotations
 
-Annotation|usage
---- | --- 
-@Configuration | Indicate that a class declares one or more @Bean methods
-@Bean | Used inside @Configuration class and indicates that a method produces a bean <br/>```@Bean(name="comp", initMethod="turnOn", destroyMethod="turnOff")``` <br/>```Computer computer(){ return new Computer();  }```
-@PreDestroy, @PostConstruct | Alternative way for bean initMethod and destroyMethod.
-@ComponentScan("com.controller")| Used with @Configuration and use to know packages of annotated classes
-@Component | Spring auto detect our custom beans 
-@Service | same like @Component, serve as service  
-@Repository | same like @Component, advisable as persistance classes, throws Spring’s DataAccessException    
-@PropertySource | class level, along with @Configuration, Adding property file for spring env, <br/>also @PropertySources for multi files  <br/> ```@PropertySource(classpath:rasna-info.properties)```
-@Autowired | Automatic injection of beans. from spring 4.3 @Autowired not need for single constrcutor <br/> **Setter injection**:```@Autowired public void setPerson (Person person) {this.person=person;}```<br/> **Constructor injection**:```@Autowired public Customer (Person person) { this.person=person;}``` <br/> **Property injection**: @Autowired Person person;  //not preferred     
-@Autowired(requeried=false)| for optional bean loading   
-@Required | Bean must be populated at configuration time, otherwise BeanInitializationException  
-@Qualifier | when there is two implementation for the interface <br/>```@Autowired @Qualifier("beanB2") private BeanInterface dependency;```
-@Lazy | Used along with @Component, bean will be created and initialized only when it is first requested.   
-@Value | Indicates default value from property file or hardcode <br/> ```@Value("rajesh") @Value("${value.from.file}") String name;```  
-@ConfigurationProperties | behave as @Value, but apply for entire pojo class ```@ConfigurationProperties(prefix="api")``` 
+### 1. Spring core Annotations
+Annotation                  | Usage                                                                     |Level
+----------------------------| --------------------------------------------------------------------------| ---
+@Configuration              | Indicates a class declares one or more @Bean methods.                     | Class
+@Bean                       | Indicate that method produces a bean.                                     | Method
+@PostConstruct              | method executed after bean initialization.                                | Method
+@PreDestroy                 | method executed before bean destruction.                                  | Method
+@ComponentScan("com")       | Specifies the packages to be scanned for annotated classes.               | Class
+@Component                  | Indicates that a class is a spring bean                                   | Class
+@Service                    | Indicate service classes, Identical to @Component                         | Class
+@Repository                 | Inticate DAOimpl/persistence classes, Identical to @Component             | Class
+@Autowired                  | Enables bean injection for @Component,@Service,@Repository                | Field/Method/Constructor
+@Autowired(required=false)  | Spring'll not fail if bean not found, instead assign null.                | Field/Method/Constructor
+@PropertySource             | Specifies a property file @PropertySource("classpath:app.properties")     | Class
+@Value                      | inject values from @PropertySource file  @Value("${my.custom.property}")  | Field
+@Required                   | Ensures bean property must be populated otherwise thrownException         | Field/Method/Constructor
+@Qualifier                  | give bean id, avoid ambiquity when multi implementation exist             | Field/Parameter
+@Lazy                       | Delays bean creation and intialized when it is first requested.           | Class/Method
+@ConfigurationProperties    | Specifies configuration properties for entire POJO classes.               | Class
 
-### Spring Rest Annotations:  
 
-Annotation            |Level|Usage
-----------------------|---| ---
-@Controller           | Class | usually return string, handled by view resolver.  
-@ResponseBody         | Method | ```@ResponseBody public Member getMember() { }```  
-@RestController       | Class | combo of @Controller+@ResponseBody, usually return json object  
-@RequestMapping       | Method | mapping of web request Url path <br/>```@RequestMapping(path="/employees", method=RequestMethod.GET, ```<br/>```consumes="application/json", produces="application/json")```  
-@RequestBody          | Arg | ```public void addMember(@RequestBody Member member) { }```
-@RequestHeader        | Arg | ```get(@RequestHeader("accept-language") String language){ }```<br/>```void get(@RequestHeader HttpHeaders headers){ }```
-@RequestParam         | Arg | ```public void getItem(@RequestParam("username") String username){ }``` <br/>Dont confuse with @Queryparam  
-@PathParam            | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathParam("id") String id){ }``` where @Path("/{id}") used
-@PathVariable         | Arg | ```@GetMapping("/members/{id}") public void getValue(@PathVariable String id){ }```
-@CookieValue          | Arg |  ```public void getCookieValue(@CookieValue "JSESSIONID" String cookie){ }```
-@RequestPath          | Arg | same as @RequestParam, but used while having multipart file<br/>```public getItem(@RequestPath("username") String username, @RequestPath MultipartFile  file){ }```
-@ResponseStatus       | Method | ```@ResponseStatus(HttpStatus.BAD_REQUEST)```
-@CrossOrigin          | Method | ```@CrossOrigin(origins = "http://example.com")```  
-@ExceptionHandler     | Method | Handles exception and return values. comes under@ControllerAdvice or @Controller class <br/>```@ExceptionHandler(InvalidLoginException.class)public ModelAndView invalidLogin(){ }```
-@ControllerAdvice     | Class | Must declared class if it has methods of @ExceptionHandler, @InitBinder, or @ModelAttribute
-@RestControllerAdvice | Class | combines @ControllerAdvice and @ResponseBody  
-@Valid                | Arg | addUser(@Valid @RequestBody User user), where support annotations are <br/> @NotBlank,   
 
-@GetMapping :  shortcut for @RequestMapping(method = RequestMethod.GET)  
-@PostMapping :  shortcut for @RequestMapping(method = RequestMethod.POST)  
-@PutMapping :  shortcut for @RequestMapping(method = RequestMethod.PUT)  
-@DeleteMapping :  shortcut for @RequestMapping(method = RequestMethod.DELETE)
-@PatchMapping :  shortcut for @RequestMapping(method = RequestMethod.PATCH)
+| Annotation        | Usage                                                                 | Level    |
+|-------------------|-----------------------------------------------------------------------|----------|
+| @Controller       | Handle req/res. returns string(view name) used by view resolver       | Class    |
+| @ResponseBody     | Converts object to Json/Xml using jackson library                     | Method   |
+| @RestController   | combo of @Controller + @ResponseBody                                  | Class    |
+| @RequestMapping   | maps html request to methods, based on Httpmethods,content type etc   | Method   |
+| @RequestBody      | data from http body, `@RequestBody User user`                         | Argument |
+| @RequestHeader    | data from http header, `@RequestHeader("Authorization") String auth`  | Argument |
+| @RequestParam     | data from http requestparam                                           | Argument |
+| @PathVariable     | data from http url, used in Spring MVC                                | Argument |
+| @PathParam        | DONT USE. data from http url, used in JAX-RS framework                | Argument |
+| @CookieValue      | data from http cookies `@CookieValue(value = "uname") String name`    | Argument |
+| @CrossOrigin      | enables Cross-Origin Resource Sharing (CORS)                          | Method  |
+| @GetMapping       | shortcut for @RequestMapping(method = RequestMethod.GET)              | Method  |
+| @PostMapping      | shortcut for @RequestMapping(method = RequestMethod.POST)             | Method  |
+| @PutMapping       | shortcut for @RequestMapping(method = RequestMethod.PUT)              | Method  | 
+| @DeleteMapping    | shortcut for @RequestMapping(method = RequestMethod.DELETE)           | Method  |
+| @PatchMapping     | shortcut for @RequestMapping(method = RequestMethod.PATCH)            | Method  |
+
+
+```@RequestMapping(value = "/hello", method = RequestMethod.GET, params = "name", headers = "Content-Type=application/json",  consumes = "application/json", produces = "application/json", name = "HelloEndpoint")```
+
+
+### 3. Exception handling. 
+| Annotation        | Usage                                                                 | Level    |
+|-------------------|-----------------------------------------------------------------------|----------|
+| @ControllerAdvice | Defines global exception handlers class, model attributes, data binding| Class   |
+| @RestControllerAdvice| Combines @ControllerAdvice and @ResponseBody functionalities.      | Class   |
+| @ExceptionHandler | handle exceptions thrown by controllers.                              | Method  |
+| @ResponseStatus   | Sets the HTTP status code for the response, while exception           | Method  |
+
+### 4. Validation Annotations. 
+| Annotation      | Usage                                                                            | Level    |
+|-----------------|----------------------------------------------------------------------------------|----------|
+| @Validated      | indicate that the class should be subject to validation constraints.             | class    |
+| @Valid          | `@Valid @RequestParam("name") String name`. throws MethodArgumentNotValidException | Argument |
+| @NotNull        | Ensures field is not null. `@NotNull(message = "Name cannot be null")`            | Field |
+| @NotBlank       | ensure field is not blank ""  `@NotBlank(message = "Name cannot be blank")`       | Field |
+| @NotEmpty       | Ensures field is not null or empty.`@NotEmpty(message = "Name cannot be empty")`  | Field |
+| @Size           | Validates field's size `@Size(min = 2, max = 30, message = "invalid")`            | Field |
+| @Min            | Ensures field value more than given value `@Min(value = 18, message = "invalid"`  | Field |
+| @Max            | Ensures field value less than given value `@Max(value = 18, message = "invalid"`  | Field |
+| @Email          | Ensure field has valid email format `@Email(message = "Email should be valid")`   | Field |
+| @Pattern        | Ensure field matches specified regex `@Pattern(regexp = "^[a-z]+$", message = "Usernam`| Field |
+| @Past           | Ensure date is less then today `@Past(message = "invalid")`                         | Field |
+| @Future         | Ensure date is more then today `@Future(message = "invalid")`                       | Field |
+| @Positive       | number should be positive  `@Positive(message = "invalid")`                         | Field |
+| @Negative       | number should be negative `@Negative(message = "invalid")`                          | Field |
+| @PositiveOrZero | number should be positive or zero `@PositiveOrZero(message = "invalid")`            | Field |
+| @NegativeOrZero | number should be negative or zero `@NegativeOrZero(message = "invalid")`            | Field |
 
 
 **Two types of Response @RestController**:  
