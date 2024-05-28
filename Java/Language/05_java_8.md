@@ -168,21 +168,22 @@ sorted(Comparator.comparingInt(User::getAge))
 | `mapToInt()`                    | only for primitive streams IntStream                                                    |
 | `forEachOrdered()`              |                                                     |
 
-| Collectors Function   | Description                                                                               |
-|-----------------------|-------------------------------------------------------------------------------------------|
-| To Collections        | `Collectors.toList()`, `Collectors.toSet()`, `Collectors.toMap()`                               |
+| Collectors Function   | Description                                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------------|
+| To Collections        | `Collectors.toList()`, `Collectors.toSet()`, `Collectors.toMap()`                           |
 | Joining               | `Collectors.joining("deLimiter")`                                                           |
 | Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, Collectors.summarizingLong() |
-| Grouping By           | `Collectors.groupingBy(obj::getYear)`                                                       |
+| Grouping By           | `Collectors.groupingBy(obj::getYear)` `Collectors.groupingBy(Map.Entry::getValue)`          |
 | Partitioning By       | `Collectors.partitioningBy(m-> m.getRating() > 3)`  //map<boolean, obj>                     |
 | Averaging             | `Collectors.averagingInt()`, Collectors.averagingDouble(), Collectors.averagingLong()       |
 | Reducing              | `Collectors.reducing()`                                                                     |
+| Counting              | `Collectors.counting()`                                                                     |
 
 
 
-Stream of primitive types  
-IntStream
-LongStream
+### Stream of primitive types  
+IntStream. 
+LongStream. 
 DoubleStream. 
 
 

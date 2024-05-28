@@ -97,7 +97,10 @@ Note: we need to maintin a seperate object method to perform this.
 
 because each process is holding a resource and waiting for another resource acquired by some other process.   
 i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
-
+**How to resolve**: try to interrupt thread1 and later call it
+```
+if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}
+ ````           
 **Race condition**: When multiple threads try to access same resources 
 
 ## Thread Pool:   
@@ -105,7 +108,6 @@ i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely
 
 ## Java Concurrency Utilities
 ### Executer Framework : 
-
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
 #### Types of Executer Service:
@@ -193,11 +195,12 @@ mypool.shutdown();
 
 
 ### Volatile: 
-- we intimate compiler to always read from memory not from cache. 
+- we intimate compiler to always read from memory not from cache. (or stop memory optimization)
 Note: This scenario is cache incoherence. 
 
 ### Atomic variables
 > synchronized works in variable level, and it has some methods   
+> provides atomicity. 
 
 1. AtomicInteger    
 2. AtomicLong   

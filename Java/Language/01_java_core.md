@@ -176,41 +176,43 @@ Bitwise operator & : (a>1&b<3) second condition also been check, where && wont g
 ## Control statements:
 > control flow of program
 
-| Name				| defination  				| syntax		|  
-|-------------------|---------------------------|----------------|  
-| If 				| control code 				| if(con){ exp1; } |
-| If-else 			| alternative for two ifs 	| if(con){ exp1; } else{ exp2; } |
-| If-elseif 		| for more than one else  	| if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; } |
-| Tenary operator 	| short form of ifelse 		| condition ? expersion 1: expersion 2; |
-| Switch case 		| use lookup table 			| switch(varible){case constant: operation; break;default: operation;break;}  |
+| Name				| defination  				| syntax																	|  
+|-------------------|---------------------------|---------------------------------------------------------------------------|  
+| If 				| control code 				| `if(con){ exp1; }` 														|
+| If-else 			| alternative for two ifs 	| `if(con){ exp1; } else{ exp2; }` 											|
+| If-elseif 		| for more than one else  	| `if(con){ exp1; }else if(condition2){ exp2; }else{ exp3; }` 				|
+| Tenary operator 	| short form of ifelse 		| `condition ? expersion 1: expersion 2;` 									|
+| Switch case 		| use lookup table 			| `switch(varible){case constant: operation; break;default: operation;break;}`  |
 
 Note: long float double and custom classes cannot be use in switch   
 
 ## Looping statements:
 > repeat the execution
 
-| Name					| defination  							| syntax								|  
-|-----------------------|---------------------------------------|---------------------------------------|  
-| while 				| iterates as long as condition true  	| while(con){ body; } 					|	 
-| do-while 				| executes atleast once  				|do{ body }while(condition);			|	 
-| for-loop 				| |for(intialize counter;test condition;inc or dec counter){ body; }			|
-| break 				| get out of loop 						| break; 								|
-| continue 				| back to continue next loop 			| continue;	 							|
-| continue with label	| Skips to next iteration of labeled loop | continue loop_label; 			| 
-| goto  				| Jumps to a labeled statement 			| goto label_name;						| 
-| labelled break		| Exits a labeled loop 					| break label_name;						| 
-| For-each 				| Iterates over elements of collection 	| for (DataType var : iterable) { body; }| 
+| Name					| defination  							| syntax									|  
+|-----------------------|---------------------------------------|-------------------------------------------|  
+| while 				| iterates as long as condition true  	| `while(con){ body; }` 					|	 
+| do-while 				| executes atleast once  				| `do{ body }while(condition);`				|		 
+| for-loop 				| |`for(intialize counter;test condition;inc or dec counter){ body; }`				|
+| break 				| get out of loop 						| `break;` 									|
+| continue 				| back to continue next loop 			| `continue;`	 							|
+| continue with label	| Skips to next iteration of labeled loop | `continue loop_label;` 					| 
+| goto  				| Jumps to a labeled statement 			| `goto label_name;`						| 
+| labelled break		| Exits a labeled loop 					| `break label_name;`						| 
+| For-each 				| Iterates over elements of collection 	| `for (DataType var : iterable) { body; }`	| 
 
 
 ## Array:    
 > Group of similar datatype refered by single variable name
 
+#### Array Creation:
+Declaration: `int a[];`    
+Defination: `int[] a;`   
+Complete: `int[] a = new int[4];`    
+Give values: `int[] a = new int[]{1,2,3,4};` or `int[] a = {1,2,3,4};`. 
+Method return value: `return new int[]{1,2};`   
+
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
-int a[];  
-int[] a;    
-int[] a = new int[4];    
-int[] a = new int[]{1,2,3,4};    
-int[] a = {1,2,3,4};
 
 ### Arrays Important methods:   
 Arrays.asList(arr);      	//conver array into List (collection framework)  
@@ -228,7 +230,7 @@ List<?> a = Lists.newArrayList(a);
 
 
 ## String:  
-> class represents sequence of char, immutable, uses double quotes
+> sequence of char, immutable, uses double quotes. 
 
 - implements Serializable, Comparable and CharSequence interfaces  
 
@@ -371,8 +373,8 @@ while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }
 ## Exception handling:  
 > Unexpected event that terminate program
 
-1. checked expception - ioexception, sqlexception  
-2. unchecked exception - nullpointerexception  
+1. checked expception - checked at compile time. ex: ioexception, sqlexception  
+2. unchecked exception - not checked at compile time. ex:nullpointerexception  
 3. error - OutOfMemory, StackOverFlow.  
 ```
 try{

@@ -78,6 +78,8 @@ while(itr.hasNext()){ map.get(it.next());}
 ```
 for (Map.Entry<String,Float> entry : map.entrySet()) 
 {  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); }    
+
+for (Float item : list) { System.out.println("Item: " + item);}
 ```
 4. Using map foreach  ``` map.forEach((k,v)->{ sysout(k+v)})```   
 
