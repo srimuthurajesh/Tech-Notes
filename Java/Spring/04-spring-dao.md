@@ -344,8 +344,7 @@ public class EmployeeDAO {
 
 ### 2. XML Configuration
 1. Define required beans in xml
-```xml
-<xml>
+```
 	<!-- Add support for component scanning -->
 	<context:component-scan base-package="com.luv2code.springdemo" />
 
@@ -397,8 +396,6 @@ public class EmployeeDAO {
 	
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
-</beans>
-</xml>
 ```
 2. Use session factory in DAO Class
 ```
