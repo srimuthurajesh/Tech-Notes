@@ -397,7 +397,9 @@ public class EmployeeDAO {
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 ```
+
 2. Use session factory in DAO Class. 
+
 ```
 @Repository
 public class EmployeeDAO {
