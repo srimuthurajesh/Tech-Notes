@@ -399,7 +399,6 @@ public class EmployeeDAO {
 ```
 
 2. Use session factory in DAO Class. 
-
 ```
 @Repository
 public class EmployeeDAO {
