@@ -44,6 +44,12 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 1. **Stack**: legacy class of stack but not recommended. 
 2. **ArrayDeque**: double ended queue, recommended instead of stack class.   
 
+
+1. peek(): return object at top of current stack  
+2. pop(): return object and remove stack value, or return null if stack empty     
+3. remove(): same as pop(), but throw NoSuchElementException if stack empty  
+
+
 ## Set: 
 > does not allow duplicate elements.  
 
@@ -55,6 +61,7 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 
 ## Map: 
 > maps keys value pair   
+
 1. **HashTable**: legacy impl of map, not allow Null key/value, slow, thread safe  
 2. **HashMap**: Null key allowed, not thread safe. 
     - hashcode of null always zero 0
@@ -68,19 +75,23 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 7. **LinkedHashMap**: ordered HashMap  
 
 **Looping through Map**  
-1. Using Iterator  
+
+1. Using Iterator with while - **map.keyset.iterator**  
 ```
-Iterator itr = map.keyset().iterator();
+Iterator itr = map.keyset().iterator(); //for map
+Iterator itr = list.iterator();         //for list
 while(itr.hasNext()){ map.get(it.next());}
 ```
-2. Using keyset() and value(): `for (String State : map.keySet())` (or) for `(String State : map.value())`   
-3. Using Map.entry<K,V>method  
+2. Using keyset() in for: `for (String State : map.keySet()){ }`   
+3. Using Map.entry<K,V>method   in for. 
 
 ``` 
-for (Map.Entry<String,Float> entry : map.entrySet()) 
-{  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); }    
-
-for (Float item : list) { System.out.println("Item: " + item);}
+for (Map.Entry<String,Float> entry : map.entrySet()) {  
+  System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); 
+}    
+for (Float item : list) { 
+  System.out.println("Item: " + item);
+}
 ```
 
 4. Using map foreach  ```map.forEach((k,v)->{ sysout(k+v)})```   
@@ -146,10 +157,7 @@ for (Float item : list) { System.out.println("Item: " + item);}
 | Collections | Default Size | Load factor|
 |-------------|--------------|------------|
 | ArrayList   | 10           | 0.75       |
-| Vector      | 10           | 1.0        |
-| HashSet     | 16           | 0.75       |
 | HashMap     | 16           | 0.75       |
-| HashTable   | 11           | 0.75       |
 
 ## Utility class - Collections  
 from java.util package, consists only static methods which are used to operate on objects of type Collection.  

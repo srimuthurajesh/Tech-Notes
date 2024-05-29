@@ -56,7 +56,7 @@ Annotation Configuration: `@Scope("prototype")`.
 
 ### Beans configured ways:  
 1. **XML** - in applicationContext.xml. 
-```
+```xml
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="car" class="com.example.Car">
         <property name="engine" ref="engine"/>
