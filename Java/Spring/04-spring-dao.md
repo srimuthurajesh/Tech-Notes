@@ -344,7 +344,7 @@ public class EmployeeDAO {
 
 ### 2. XML Configuration
 1. Define required beans in xml
-```
+```xml
 <xml>
 	<!-- Add support for component scanning -->
 	<context:component-scan base-package="com.luv2code.springdemo" />
