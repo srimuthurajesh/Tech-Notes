@@ -1,9 +1,42 @@
 # Spring JPA
 
+1. [Hibernate Architecture](#hibernate-architecture). 
+2. [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
+3. [Annotations](#annotations). 
+4. Steps for Hibernate
+CRUD Operations in Hibernate
+Hibernate Query Language (HQL)
+Hibernate Criteria
+HQL Examples
+Hibernate Mappings
+	OneToOne
+	OneToMany
+	ManyToOne
+	ManyToMany
+Eager & Lazy Loading
+Cascading in Hibernate
+Caching in Hibernate
+Hibernate Configuration
+	DAO Class
+	ApplicationContext Configuration (Java)
+	Hibernate.cfg.xml (XML)
+Index for Miscellaneous Topics
+	Second Level Cache
+	Query Cache
+	Transaction Management
+	Enabling Annotations for Transaction Management
+	Web Resource Configuration
+
+
+
+
+
+
 Note: The default JPA provider for Spring boot is Hibernate
 
 # Hibernate
 > framework for database interactions  
+
 - **ORM tool** : maps java object to Database table   
 - **JPA tool** :  provides standard methods for ORM tools.
 - **dialect** : specify type of database  
@@ -61,44 +94,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
 or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	  
 
-**Steps for Hibernate**:  
-1. create persistant class    
-  ```  
-@Entity  @Table(name="employee")  
-public class Employee {  
-	@Id  @GeneratedValue(strategy=GenerationType.IDENTITY)  @Column(name="empid")  
-	private int empid;  
-```  
-2. create hiberate.cfg.xml
 
-```
-<hibernate-configuration>
-    <session-factory>
-        <propertyerty name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <propertyerty name="connection.url">jdbc:mysql://localhost:3306/dbName</property>
-        <propertyerty name="connection.username">hbstudent</property>
-        <propertyerty name="connection.password">hbstudent</property>
-        <propertyerty name="dialect">org.hibernate.dialect.MySQLDialect</property>  
-		<propertyerty name="hbm2ddl.auto">create</property>  
-        <propertyerty name="show_sql">true</property>
-    </session-factory>
-</hibernate-configuration>
-```
-
-3.create main class
-
-```
-SessionFactory factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedCLass(Student.class)
-                .buildSessionFactory();
-Session session = factory.getCurrentSession(); //session object 
-session.beginTransaction();	//begin and return transaction obj  
-session.save(persistantObj); /*CRUD Operations*/   
-session.getTransaction().commit();	//get transaction obj asso with session  
-```
-
-----
 
 ## CRUD
 
@@ -165,8 +161,8 @@ INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+
 
 ## Mappings
 
-### OneToOne
-#### OneToOne unidirectional: 
+### 1. OneToOne
+#### 1a. OneToOne unidirectional: 
 between customer and customerCart table  
 ```
 class Customer{
@@ -192,7 +188,9 @@ CREATE TABLE `cart` (
 `cart_name` varchar NULL,
 PRIMARY KEY(`cart_id`));  
 ```
-**OneToOne Bidirectional**: for hibernate purpose 
+#### OneToOne Bidirectional: 
+> for hibernate purpose 
+
 ```
 class Customer{
 	@OneToOne(cascade=CascadeType.ALL) 	
@@ -209,8 +207,8 @@ class CustomerCart{
 }
 ```
 
-### OneToMany
-**OneToMany Bidirectional**:  
+### 2. OneToMany
+2a. **OneToMany Bidirectional**:  
 ```
 class Cart{
 	@OneToMany(mappedBy="customerCart")
@@ -223,14 +221,14 @@ class Products{
 }
 ```
 
-
-**OneToOne,ManyToOne,OneToMany**:
+2.b **OneToOne,ManyToOne,OneToMany**:
 ```
 @OneToOne
 @JoinColumn(name="student_detail_id")
 private StudentDetail studentDetail;
 ```
-**ManyToMany**:
+
+### ManyToMany:
 ```
 @ManyToMany
 @JoinTable(name="student_join",joinColumns=@JoinColumn(name="student_id"),
@@ -286,14 +284,10 @@ public class Employee {   }
 1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
 2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
 
-**Hibernate configurations**:
-1.DAO class  
-```
-@Autowired  
-SessionFactory sessionFactory;  
-Session session = sessionFactory.openSession(); we can use session objects  
-```
-2a.hibernate.AppplicationContextConfig.java  
+## Hibernate configurations
+### 1. Java-Based Configuration
+
+1. Define datasource bean in configuration class
 ```
 @Configuration 						
 @EnableTransactionManagement  //<tx:annotation-driven transaction-manager="myTransactionManager" />		
@@ -318,39 +312,40 @@ public class AppplicationContextConfig {
 	@Autowired
 	@Bean(name = "sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource) { 
-	 LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource); 
-	 sessionBuilder.addProperties(getHibernateProperties());								
-	 sessionBuilder.scanPackages("com.model");
-	 sessionBuilder.addAnnotatedClasses(User.class);     									
-     return sessionBuilder.buildSessionFactory();
+		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource); 
+		sessionBuilder.addProperties(getHibernateProperties());								
+		sessionBuilder.scanPackages("com.model");
+		sessionBuilder.addAnnotatedClasses(User.class);     									
+		return sessionBuilder.buildSessionFactory();
 	}
 	@Autowired
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-	HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-	return transactionManager;
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+		return transactionManager;
 	}
 }
-
 ```
-2b.Hibernate.cfg.xml  
+2. Use sessionfactory in DAO class
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="
-		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context
-		http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/mvc
-		http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/tx 
-		http://www.springframework.org/schema/tx/spring-tx.xsd">
+@Repository
+public class EmployeeDAO {
 
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    @Transactional
+    public void save(Employee employee) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(employee);
+    }
+}
+```
+
+### 2. XML Configuration
+1. Define required beans in xml
+```
+<xml>
 	<!-- Add support for component scanning -->
 	<context:component-scan base-package="com.luv2code.springdemo" />
 
@@ -397,10 +392,27 @@ public class AppplicationContextConfig {
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-    <!-- Step 4: Enable configuration of transactional behavior based on annotations -->
+    <!-- Step 4: Enable Transaction Management -->
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
 	
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 </beans>
+</xml>
+```
+2. Use session factory in DAO Class
+```
+@Repository
+public class EmployeeDAO {
+
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    @Transactional
+    public void save(Employee employee) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(employee);
+    }
+}
+
 ```

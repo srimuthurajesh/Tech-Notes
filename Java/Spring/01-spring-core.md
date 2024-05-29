@@ -10,7 +10,7 @@
 1. Spring core - basic, IOC & DI    
 2. Spring DAO - Data access/integration - Jdbc orm  
 3. Spring MVC - Web mvc - webservice, servlet, mvc pattern implementation, front controller  	 
-4. Spring AOP - security, logging, profiling  
+4. Spring AOP - (aspect oriented programming) security, logging, profiling  
 5. Spring Test	- junit, testNG  
 so many...  
 
@@ -19,20 +19,6 @@ so many...
 
 1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
 2. **Dependency Injection(DI)**: where object define their dependencies via constructor parameters or setter methods,   
-
-## Two types of IOC container**     
-### 1. Bean factory 
-> lazy intialization, no annotated injection support   
-
-```
-BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
-MyBean myBean = (MyBean) factory.getBean("myBean");
-```   
-2. **Application context** - aggresive intialization, supports annotated injection, superset of BeanFactory  
-```
-ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-MyBean myBean = context.getBean(MyBean.class);
-```
 
 **Two Ways of Injections**: setter/contructor injection  
 **Beans**: objects present in IOC container  
@@ -53,6 +39,22 @@ Annotation Configuration: `@Scope("prototype")`.
 3. Annotation approach- ```@PostContruct  @PreDestroy```  
 4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
 -it will force to define afterPropertiesSet(), destroy() methods  
+
+
+## Two types of IOC container**     
+### 1. Bean factory 
+> lazy intialization, no annotated injection support   
+
+```
+BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+MyBean myBean = (MyBean) factory.getBean("myBean");
+```   
+2. **Application context** - aggresive intialization, supports annotated injection, superset of BeanFactory  
+```
+ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+MyBean myBean = context.getBean(MyBean.class);
+```
+
 
 ### Beans configured ways:  
 1. **XML** - in applicationContext.xml. 

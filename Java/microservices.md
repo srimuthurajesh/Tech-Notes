@@ -43,6 +43,8 @@
 Note: service registry internally fetches from spring cloud load balancer. 
 Libraries: spring cloud LoadBalancer. 
 
+**Load balancer vs Reverse proxy**: Load balancers focus on distributing traffic ,whereas reverse proxies forward request to backend servers.  
+
 ### Rate limiter pattern
 > its limit the number of request to microservice. (eg 5call at a time). 
 
@@ -51,7 +53,7 @@ Microservices should be resilient, may have a fallback response.
 Library: resilient4j in spring 
 
 #### Circuit Breakers:
-Prevents cascading failures by stopping requests to a failing service after a threshold of failures.  
+Prevents retrying failures to a failing service after a threshold of failures.  
 States: 
 Closed - if failure rates are below threshold   
 Open - if failure rate are above threashold.   
@@ -76,6 +78,12 @@ Isolates different parts of the system to prevent failure in one part from affec
 ### How to track slower microservices
 using zipkin ui. 
 
+### Inbox-Outbox pattern. 
+> ensure reliable message delivery and consistency between services, 
+
+Inbox pattern: 
+Outbox pattern: ensures that changes in the Outbox table and sending of messages (events) to other services. 
+
 
 ## The Twelve Factors
 1. Codebase - One codebase tracked in revision control, many deploys. 
@@ -90,3 +98,12 @@ using zipkin ui.
 10. Dev/prod parity - Keep development, staging, and production as similar as possible
 11. Logs - Treat logs as event streams
 12. Admin processes - Run admin/management tasks as one-off processes
+
+
+## JWT
+> Json web token
+
+Format Structure: header.payload.signature  
+1. Header - consists of type:jwt and algo. 
+2. Payload - consists of emailid, createddate, roles, subject. 
+3. Signature - signing header payload with public key. 
