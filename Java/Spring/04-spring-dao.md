@@ -262,6 +262,7 @@ Ex: @OneToOne(cascade=CascadeType.PERSIST) -> if entity persist/saved, related e
 Steps to enable 2nd level cache:  
 1. in pom.xml add hibernate-ehcache  
 2. Add properties in xml   
+
 ```
 <property name="hibernate.cache.use_second_level_cache">true</property>
 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
@@ -269,7 +270,9 @@ Steps to enable 2nd level cache:
 org.hibernate.cache.ehcache.EhCacheRegionFactory
 </property>
 ```
+
 3. Add annotation in entity class  
+
 ```
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 /*	1.READ_ONLY: work for readonly operation  
@@ -288,6 +291,7 @@ public class Employee {   }
 ### 1. Java-Based Configuration
 
 1. Define datasource bean in configuration class
+
 ```
 @Configuration 						
 @EnableTransactionManagement  //<tx:annotation-driven transaction-manager="myTransactionManager" />		
@@ -326,7 +330,9 @@ public class AppplicationContextConfig {
 	}
 }
 ```
+
 2. Use sessionfactory in DAO class
+
 ```
 @Repository
 public class EmployeeDAO {
@@ -399,6 +405,7 @@ public class EmployeeDAO {
 ```
 
 2. Use session factory in DAO Class. 
+
 ```
 @Repository
 public class EmployeeDAO {
