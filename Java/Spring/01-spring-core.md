@@ -46,13 +46,16 @@ Annotation Configuration: `@Scope("prototype")`.
 > lazy intialization, no annotated injection support   
 
 ```
-BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
-MyBean myBean = (MyBean) factory.getBean("myBean");
+    BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+    MyBean myBean = (MyBean) factory.getBean("myBean");
 ```   
 2. **Application context** - aggresive intialization, supports annotated injection, superset of BeanFactory  
 ```
-ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-MyBean myBean = context.getBean(MyBean.class);
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+    ApplicationContext context = new FileSystemXmlApplicationContext("C:/path/to/spring-config.xml");
+    ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    WebApplicationContext context = new GenericWebApplicationContext(servletContext);
+    MyBean myBean = context.getBean(MyBean.class);
 ```
 
 

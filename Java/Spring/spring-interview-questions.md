@@ -4,3 +4,4 @@
 3. Why we write @NoRepositoryBean Over JPARepository. if we dont want to initialize the interface 
 5. Tell about spring bean lifecycle hooks. 
 6. What are the two types of IOC container. 
+7. What is @Component vs @Service vs @Repository  

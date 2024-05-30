@@ -76,6 +76,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 
 ## Annotations:  
 ### Entity class Annotation  
+
 | Annotation Name | Definition |
 |-----------------|------------|
 | @Entity         | Specifies that the class is an entity and is mapped to a database table. |
@@ -104,6 +105,33 @@ Note: The default JPA provider for Spring boot is Hibernate
 	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
 
 ### Persistance class Annotation 
+
+| Annotation             | Description                                                                                  |
+|------------------------|----------------------------------------------------------------------------------------------|
+| `@Repository`          | Indicates that the class is a Spring Data Repository.                                        |
+| `@Transactional`       | Declares that all methods in the annotated class should be wrapped in a transaction.         |
+| `@Query`               | Specifies a JPQL query or native SQL query to be executed when the method is called.         |
+| `@Modifying`           | Indicates that a method modifies data (used in conjunction with `@Query`).                   |
+| `@Lock`                | Configures the lock mode type to be used in query methods.                                   |
+| `@Cacheable`           | Indicates that the result of the method invocation should be cached.                         |
+| `@CachePut`            | Updates the cache with the method's return value.                                            |
+| `@CacheEvict`          | Evicts entries from the cache.                                                               |
+| `@EntityGraph`         | Defines a graph of entities for fetching.                                                    |
+| `@Procedure`           | Indicates a method that is used to call a stored procedure.                                  |
+| `@Param`               | Specifies a parameter name for a query method.                                               |
+| `@PersistenceContext`  | Injects an EntityManager into the repository.                                                |
+| `@EnableJpaRepositories`| Enables JPA repositories and scans for repository interfaces.                               |
+| `@NoRepositoryBean`    | Indicates that an interface is not to be treated as a repository by Spring Data.             |
+| `@EnableTransactionManagement` | Enables annotation-driven transaction management.                                    |
+| `@DynamicUpdate`       | Indicates that the update statement should include only changed fields.                      |
+| `@DynamicInsert`       | Indicates that the insert statement should include only non-null fields.                     |
+| `@Audited`             | Marks an entity or a field to be audited.                                                    |
+| `@SQLDelete`           | Specifies the custom SQL to be used for deleting an entity.                                  |
+| `@Where`               | Adds a specific clause to the generated SQL queries for the annotated entity.                |
+| `@OptimisticLocking`   | Configures optimistic locking for an entity.                                                 |
+
+
+
 1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
 2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```    
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
