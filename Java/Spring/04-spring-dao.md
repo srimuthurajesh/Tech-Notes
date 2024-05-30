@@ -76,6 +76,21 @@ Note: The default JPA provider for Spring boot is Hibernate
 
 ## Annotations:  
 ### Entity class Annotation  
+| Annotation Name | Definition |
+|-----------------|------------|
+| @Entity         | Specifies that the class is an entity and is mapped to a database table. |
+| @Table          | Specifies the table in the database with which the entity is mapped. |
+| @Id             | Specifies the primary key of an entity. |
+| @GeneratedValue | Provides the specification of generation strategies for the values of primary keys. |
+| @Column         | Specifies the mapped column for a persistent property or field. |
+| @OneToOne       | Specifies a single-valued association to another entity that has a one-to-one multiplicity. |
+| @OneToMany      | Specifies a collection-valued association with one-to-many multiplicity. |
+| @ManyToOne      | Specifies a single-valued association to another entity with many-to-one multiplicity. |
+| @ManyToMany     | Specifies a collection-valued association with many-to-many multiplicity. |
+| @JoinColumn     | Specifies a column for joining an entity association or element collection. |
+| @JoinTable      | Specifies the mapping of associations, typically used in many-to-many relationships. |
+| @Transient      | Specifies that the annotated field is not persistent and should not be mapped to the database. |
+
 1. @Entity - make class as entity bean  
 2. @Table - specify details of table. name,catalogue,schema,unique constraints  
 3. @Column - specify details of column. name,length,nullable,unique  
@@ -309,7 +324,7 @@ public class AppplicationContextConfig {
 	    Properties properties = new Properties();
 	    properties.put("hibernate.show_sql", "true");								
 	    properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");		
-	    properties.put("hibernate.hbm2ddl.auto", "update");							// create | update | validate | create-drop
+	    properties.put("hibernate.hbm2ddl.auto", "update");	// create | update | validate | create-drop
 	    return properties;
 	}
 
