@@ -107,3 +107,5 @@ Format Structure: header.payload.signature
 1. Header - consists of type:jwt and algo. 
 2. Payload - consists of emailid, createddate, roles, subject. 
 3. Signature - signing header payload with public key. 
+
+Note: we need to pass JWT in header as key Authorization and value "Bearer tokenxxxxxxx".  
