@@ -237,7 +237,7 @@ PRIMARY KEY(`cart_id`));
 ```
 class Customer{
 	@OneToOne(cascade=CascadeType.ALL) 	
-	@JoinColumn(name="customerCartId")		//foreign key column name
+	@JoinColumn(name="customerCart_Id")		//foreign key column name
 	private CustomerCart customerCart;
 }
 class CustomerCart{

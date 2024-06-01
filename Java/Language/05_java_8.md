@@ -105,8 +105,8 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 |-------------------------|-------------------------|-----------|
 | Collection Streams      | collObj.stream()        | Stream<T> |
 |                         | collObj.parallelStream()| Stream<T> |
+| From elements           | Stream.of("s","a")      | Stream<T> |
 | Array Streams           | Arrays.stream(array)    | primitive(IntStream,DoubleStream,LongStream) or Stream<T>|
-|                         | Stream.of(array)        | Stream<T> |
 | String Streams          | str.chars()             | IntStream i.e UTF-16 code |
 |                         | str.codePoints()        | InStream i.e Uni code |
 | Stream Builders         | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
@@ -130,6 +130,7 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | `limit(5)`                | Limit the number of elements.         |
 | `skip()`                  | Skip upto given index                 |
 | `flatMap()`               | each inner list into a single stream             |
+| `flatMapToInd(String::chars)`| each inner list into a single stream             |
 | `peek()`                  | used to debug stream elements         |
 
 sorted()  
@@ -163,7 +164,7 @@ sorted(Comparator.comparingInt(User::getAge))
 | `findAny()`                     | Find any element (non-deterministic).               |
 | `findFirst()`                   | return Optional of first element.                   |
 | `toArray(String[]::new)`        | return array                                        |
-| `average()`                     | only for primitive streams IntStream                                                    |
+| `average()`                     | only for primitive streams IntStream                |
 | `sum()`                         | only for primitive streams IntStream                                                    |
 | `mapToInt()`                    | only for primitive streams IntStream                                                    |
 | `forEachOrdered()`              |                                                     |
@@ -178,7 +179,7 @@ sorted(Comparator.comparingInt(User::getAge))
 | Averaging             | `Collectors.averagingInt()`, Collectors.averagingDouble(), Collectors.averagingLong()       |
 | Reducing              | `Collectors.reducing()`                                                                     |
 | Counting              | `Collectors.counting()`                                                                     |
-
+| Uniqueu               | `Collectors.toSet()`                                                                        |
 
 
 ### Stream of primitive types  
@@ -191,7 +192,7 @@ DoubleStream.
 
 ## Stream problems examples  
 1. Reducing for loop code using **IntStream**    
-```int sumValue = IntStream.rangeClosed(0,4).sum(); ```  
+```int sumValue = IntStream.rangeClosed(0,4).forEach(); ```  
 2. Remove duplicates using stream   
 ```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```    
 3. Get age greater than 10:   
@@ -222,25 +223,24 @@ list.stream().filter(i->i<40).collect(Collectors.toList());
 ```
 9. List by frequency
 ```
+```
+1. Create a program to find the sum of squares of all even numbers from a list of integers using streams.    
+```
+int[] input = new int[]{1,2,3,4,5};
+Arrays.stream(input).filter(x->x%2==0).map(x->x*x).forEach(System.out::println)
+```
+2. Find max of student age. 
+```
+int age = list.stream.mapToInt(student::getAge).max();
+```
 
-1. Create a program to find the sum of squares of all even numbers from a list of integers using streams.  
-2. Write a program to convert a list of strings to uppercase using streams and the map() method.
-3. Implement a program to find the average of all numbers in an integer array using streams.
-Create a program to check if all elements in a list of strings start with the letter "A" using streams.
-Write a program to remove null values from a list of strings using streams and the filter() method.
-Implement a program to sort a list of integers in ascending order using streams and the sorted() method.
-Create a program to find the maximum and minimum lengths of strings from a list of strings using streams.
-Write a program to concatenate all strings from a list into a single string using streams and the collect() method.
-Implement a program to find the product of all elements in a list of integers using streams.
-Create a program to find the frequency of each character in a string using streams and the groupingBy() collector.
-Write a program to convert a list of integers to a list of strings representing their squares using streams.
-Implement a program to count the number of words in a sentence using streams and the split() method.
-Create a program to check if any element in a list of integers is divisible by 5 using streams.
-Write a program to find the second-largest element in a list of integers using streams.
-Implement a program to remove duplicate elements from a list of strings using streams.
-Create a program to extract digits from a list of numbers and find their sum using streams.
-Write a program to convert a list of strings to a comma-separated string using streams and the joining() collector.
-Implement a program to find the longest string from a list of strings using streams.
-Create a program to calculate the factorial of a given number using streams and the reduce() method.
-These questions cover a range of operations that can be performed
+3. Given a list of strings, return a list of unique characters present in all the strings.
+
+```
+ List<String> strings = Arrays.asList("hello", "world", "java");
+
+        Set<Character> uniqueCharacters = strings.stream()
+                .flatMapToInt(CharSequence::chars)
+                .mapToObj(ch -> (char) ch)
+                .collect(Collectors.toSet());
 ```
