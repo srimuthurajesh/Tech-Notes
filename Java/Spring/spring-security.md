@@ -224,7 +224,7 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 }
 ```
-6. Change the configure method , by passing the jwtfilter
+6. Change the configure method , by passing the jwtfilter. 
 ```
 	protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests().antMatchers("/authenticate")
