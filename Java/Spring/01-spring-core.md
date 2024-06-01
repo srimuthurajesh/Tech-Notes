@@ -41,6 +41,27 @@ Annotation Configuration: `@Scope("prototype")`.
 -it will force to define afterPropertiesSet(), destroy() methods  
 
 
+## Spring Bean Lifecycle hooks. 
+1. BeanFactoryPostProcessor: application context's internal bean factory after its standard initialization but before any bean instances are created.
+
+2. BeanPostProcessor:
+postProcessBeforeInitialization(Object bean, String beanName): Custom logic before a bean's initialization callback.  
+postProcessAfterInitialization(Object bean, String beanName): Custom logic after a bean's initialization callback.  
+
+3. InitializingBean:
+afterPropertiesSet(): Method for custom initialization logic after properties are set.  
+
+4. DisposableBean:  
+destroy(): Method for custom cleanup logic before a bean is destroyed.  
+
+5. Custom Init and Destroy Methods:  
+initMethod and destroyMethod attributes in @Bean annotation or XML configuration to specify custom initialization and destruction methods.  
+
+6. @PostConstruct: Annotation for a method to be executed after the bean's properties have been set and before it is put into service.  
+
+7. @PreDestroy: Annotation for a method to be executed before the bean is destroyed.  
+
+
 ## Two types of IOC container**     
 ### 1. Bean factory 
 > lazy intialization, no annotated injection support   
@@ -56,6 +77,9 @@ Annotation Configuration: `@Scope("prototype")`.
     ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
     WebApplicationContext context = new GenericWebApplicationContext(servletContext);
     MyBean myBean = context.getBean(MyBean.class);
+    context.registerShutdownHook();   //a hook ensures that close() method is called when JVM shuts down.  
+    context.stop();                   //Temporarily halts application context. restarted by start()    
+    context.close();                  //will call preDestroy(), shutdown context, destroy beans  
 ```
 
 
@@ -170,6 +194,37 @@ Annotation                  | Usage                                             
 | @PositiveOrZero | number should be positive or zero `@PositiveOrZero(message = "invalid")`            | Field |
 | @NegativeOrZero | number should be negative or zero `@NegativeOrZero(message = "invalid")`            | Field |
 
+## Custom validator  
+1. Define annotation  
+```
+@Constraint(validatedBy = MyCustomValidator.class)
+@Target({ ElementType.METHOD, ElementType.FIELD })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyCustomConstraint {
+    String message() default "Invalid value";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+}
+```
+2. Create the Validator Class  
+```
+public class MyCustomValidator implements ConstraintValidator<MyCustomConstraint, String> {
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        // Custom validation logic
+        if (value == null) {
+            return false;
+        }
+    }
+}
+```
+3. Use annotation  
+```
+ @NotNull
+    @MyCustomConstraint
+    private String myField;
+```
+
 
 **Two types of Response @RestController**:  
 1.Add Jackdon-bind pom.xml, just return object list  
@@ -247,33 +302,6 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 	
 ---
 	
-## Http Call  
-
-1. **RestTemplate**  
-
-```
-RestTemplate restTemplate = new RestTemplate();
-1. Foo foo = restTemplate.getForObject(fooResourceUrl, Foo.class);
-2. Foo foo = restTemplate.postForObject(fooResourceUrl, new HttpEntity<>(new Foo("bar")), Foo.class);  
-3. restTemplate.delete(entityUrl);
-4. ResponseEntity<Foo> response = restTemplate.exchange(fooResourceUrl, HttpMethod.POST, new HttpEntity<>(new Foo("bar")), Foo.class); 
-response.getBody();
-
-```
-2. **WebClient** : non-blocking client and it belongs to the spring-webflux library. uses spring web reactive   
-```
-Flux<Foo> fooFlux = WebClient.create().get().uri(fooResourceUrl).retrieve().bodyToFlux(Foo.class);
-fooFlux.subscribe(x->sysout(x));
-	
-(or)
-
-WebClient client = WebClient.builder()
-  .baseUrl("http://localhost:8080")
-  .defaultCookie("cookieKey", "cookieValue")
-  .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE) 
-  .defaultUriVariables(Collections.singletonMap("url", "http://localhost:8080"))
-  .build();
-```
 
 ### Exceptions may occur in spring
 
@@ -286,23 +314,3 @@ WebClient client = WebClient.builder()
 
 ## Spring Boot Exceptions
 1. ApplicationContextException: error occurs in the application context initialization. if we miss @SpringBootApplication. 
-
-## Spring Bean Lifecycle hooks. 
-1. BeanFactoryPostProcessor: application context's internal bean factory after its standard initialization but before any bean instances are created.
-
-2. BeanPostProcessor:
-postProcessBeforeInitialization(Object bean, String beanName): Custom logic before a bean's initialization callback.  
-postProcessAfterInitialization(Object bean, String beanName): Custom logic after a bean's initialization callback.  
-
-3. InitializingBean:
-afterPropertiesSet(): Method for custom initialization logic after properties are set.  
-
-4. DisposableBean:  
-destroy(): Method for custom cleanup logic before a bean is destroyed.  
-
-5. Custom Init and Destroy Methods:  
-initMethod and destroyMethod attributes in @Bean annotation or XML configuration to specify custom initialization and destruction methods.  
-
-6. @PostConstruct: Annotation for a method to be executed after the bean's properties have been set and before it is put into service.  
-
-7. @PreDestroy: Annotation for a method to be executed before the bean is destroyed.  

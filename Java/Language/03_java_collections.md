@@ -82,6 +82,9 @@ Iterator itr = map.keyset().iterator(); //for map
 Iterator itr = list.iterator();         //for list
 while(itr.hasNext()){ map.get(it.next());}
 ```
+1a. **List Iterator**: traverse front and back,  
+`ListIterator i = list.listIterator();while (i.hasPrevious()) {System.out.print(i.previous() + " "); }`
+
 2. Using keyset() in for: `for (String State : map.keySet()){ }`   
 3. Using Map.entry<K,V>method   in for. 
 
@@ -96,10 +99,6 @@ for (Float item : list) {
 
 4. Using map foreach  ```map.forEach((k,v)->{ sysout(k+v)})```   
 
-
-
-**Iterator**  Iterator itr = list.iterator(); while (itr.hasNext()) {System.out.print(itr.next() + " "); }   
-**List Iterator**: traverse front and back,  ListIterator i = list.listIterator();while (i.hasPrevious()) {System.out.print(i.previous() + " "); }
 
 
 ## Synchronized Collection.  

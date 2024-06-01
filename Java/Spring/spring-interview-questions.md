@@ -5,3 +5,4 @@
 5. Tell about spring bean lifecycle hooks. 
 6. What are the two types of IOC container. 
 7. What is @Component vs @Service vs @Repository  
+8. What is the version of spring we used  

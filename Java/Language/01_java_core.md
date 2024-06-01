@@ -215,7 +215,7 @@ Method return value: `return new int[]{1,2};`
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 
 ### Arrays Important methods:   
-Arrays.asList(arr);      	//conver array into List (collection framework)  
+Arrays.asList(arr);      	//conver array into immutable raw list (collection framework)  
 Arrays.sort(arr);   		//use mergeosrt for object, and quick sort fro primitive datatype   
 Arrays.sort(arr, new Comparator());    
 Arrays.binarySearch(arr, searchValue);    

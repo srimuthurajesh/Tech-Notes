@@ -75,6 +75,7 @@
 10. [Thoughts On Java](https://www.youtube.com/@ThoughtsOnJava/videos) - hibernate
 11. [RedSysTech](https://www.youtube.com/@RedSysTech/videos)- tamil java videos good
 12. [Code Decode](https://www.youtube.com/@CodeDecode/videos) - spring mock interviews good
+13. [Java techie](https://www.youtube.com/@Javatechie/videos) - spring boot interview amazing
 
 ### Angular
 1. [Decoded Frontend](https://www.youtube.com/@DecodedFrontend) - master in Angular
