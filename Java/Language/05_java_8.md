@@ -101,9 +101,15 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 
 #### Source Operation
 
+1. .stream(). 
+From List: `Stream<T> s = list.stream()` 
+From Map: `Stream<T> s = map.keySet.stream()`, `Stream<T> s = map.values.stream()`
+
+2. .parallelStream(). 
+
 | Source Operation        | code                    | return    |
 |-------------------------|-------------------------|-----------|
-| Collection Streams      | collObj.stream()        | Stream<T> |
+| From List               | list.stream()           | Stream<T> |
 |                         | collObj.parallelStream()| Stream<T> |
 | From elements           | Stream.of("s","a")      | Stream<T> |
 | Array Streams           | Arrays.stream(array)    | primitive(IntStream,DoubleStream,LongStream) or Stream<T>|
@@ -165,8 +171,9 @@ sorted(Comparator.comparingInt(User::getAge))
 | `findFirst()`                   | return Optional of first element.                   |
 | `toArray(String[]::new)`        | return array                                        |
 | `average()`                     | only for primitive streams IntStream                |
-| `sum()`                         | only for primitive streams IntStream                                                    |
-| `mapToInt()`                    | only for primitive streams IntStream                                                    |
+| `sum()`                         | only for primitive streams IntStream                |
+| `mapToInt()`                    | convert obj into intstream                          |
+| `summaryStatistics()`           | only for primitive streams IntStream, we can use .getMax(), getMin() etc                |
 | `forEachOrdered()`              |                                                     |
 
 | Collectors Function   | Description                                                                                 |
@@ -181,6 +188,12 @@ sorted(Comparator.comparingInt(User::getAge))
 | Counting              | `Collectors.counting()`                                                                     |
 | Uniqueu               | `Collectors.toSet()`                                                                        |
 
+### Grouping By
+#### Overloaded methods:
+The default second parameter is HashMap::new and third parameter Collectors.toList().  
+`Collectors.groupingBy(obj::getYear, Collectors.toList())`.  
+Make obj unique: `Collectors.groupingBy(obj::getYear, Collectors.toSet())`.  
+Make obj in order: `Collectors.groupingBy(obj::getYear, TreeMap::new, Collectors.toList())`.  
 
 ### Stream of primitive types  
 IntStream. 
@@ -195,52 +208,34 @@ DoubleStream.
 ```int sumValue = IntStream.rangeClosed(0,4).forEach(); ```  
 2. Remove duplicates using stream   
 ```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```    
-3. Get age greater than 10:   
-```list.stream().filter(x->x.getAge()>10).foreach(x->System.out.println(x.getName()))```  
-4. Get maximum age :   
-```
-int maxAge = list.stream().map(x=>x.getAge).max(Integer::compare).get();
-list.stream().filter(x->x.getAge==maxAge).foreach(x->System.out.println(x.getName()));
-```    
-5. Get Average of Array
-```
-OperationalDouble avg = Arrays.stream(arr).average();
-avg.getAsDouble();  
-```
-6. Join two array using Stream  
-```
-String[] str = {"a","b"}; String[] str1 = {"c","d"};
-Stream.concat(Arrays.stream(str),Arrays.stream(str1)).toArray(size->new String[size]);
-```
-7. Count the particular chars from string  
-```
-String name= "rajesh";
-name.chars().filter(x->x=='a').count();
-```
-8. Print object greater than some attreibute  
-```
-list.stream().filter(i->i<40).collect(Collectors.toList());
-```
-9. List by frequency
-```
-```
+
+### Important Stream interview programs. 
 1. Create a program to find the sum of squares of all even numbers from a list of integers using streams.    
 ```
 int[] input = new int[]{1,2,3,4,5};
 Arrays.stream(input).filter(x->x%2==0).map(x->x*x).forEach(System.out::println)
 ```
-2. Find max of student age. 
+
+2. Find max of student age.  
 ```
 int age = list.stream.mapToInt(student::getAge).max();
 ```
 
-3. Given a list of strings, return a list of unique characters present in all the strings.
+2a. Find second max of student age.  
+```
+int age = list.stream.mapToInt(student::getAge).skip(1).max();
+```
 
+3. Given a list of strings, return a list of unique characters present in all the strings.  
 ```
  List<String> strings = Arrays.asList("hello", "world", "java");
-
         Set<Character> uniqueCharacters = strings.stream()
                 .flatMapToInt(CharSequence::chars)
                 .mapToObj(ch -> (char) ch)
                 .collect(Collectors.toSet());
+```
+4. Group students count by age. 
+```
+  Map<Integer, Long> m = list.stream().collect(Collectors.groupingBy(Student::getAge,Collectors.counting()));
+  m.forEach((age, count) -> System.out.println("Age: " + age + ", Count: " + count));
 ```

@@ -371,7 +371,7 @@ while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }
 ```  
 
 ## Exception handling:  
-> Unexpected event that terminate program
+> Handles Unexpected event that terminate program
 
 1. checked expception - checked at compile time. ex: ioexception, sqlexception  
 2. unchecked exception - not checked at compile time. ex:nullpointerexception  
