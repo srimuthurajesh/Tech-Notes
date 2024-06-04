@@ -109,7 +109,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 |                           | map.values.stream()     | Stream<T> |
 | ParallelStream            | collObj.parallelStream()| Stream<T> |
 | From Array                | Stream.of(array), Stream.of("s","a")      | Stream<T> |
-| From Array                | Arrays.stream(array)    | only works **int,double,long**(IntStream,DoubleStream,LongStream) or **Object**(Stream<T>)|
+| From Array                | Arrays.stream(array)    | only works for(IntStream,DoubleStream,LongStream) & **Object**(Stream<T>)|
 | String Streams            | str.chars()             | IntStream i.e UTF-16 code |
 |                           | str.codePoints()        | InStream i.e Uni code |
 | Stream Builders           | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
