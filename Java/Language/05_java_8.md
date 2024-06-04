@@ -110,15 +110,15 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | ParallelStream            | collObj.parallelStream()| Stream<T> |
 | From Array                | Stream.of(array), Stream.of("s","a")      | Stream<T> |
 | From Array                | Arrays.stream(array)    | only works for(IntStream,DoubleStream,LongStream) & **Object**(Stream<T>)|
-| String Streams            | str.chars()             | IntStream i.e UTF-16 code |
-|                           | str.codePoints()        | InStream i.e Uni code |
+| String Streams            | str.chars()             | IntStream i.e UTF-16 code, we need to use boxed() |
 | Stream Builders           | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
-|                           | Stream.generate()       | Stream<Integer> r = Stream.generate(random::nextInteger).limit(10); |
-|                           | Stream.iterate()        | Stream<Integer> s = Stream.iterate(1, n -> n + 1).limit(10) |
+|                           | Stream.generate()-java10| Stream<Integer> r = Stream.generate(random::nextInteger).limit(10); |
+|                           | Stream.iterate() - java9| Stream<Integer> s = Stream.iterate(1, n -> n + 1).limit(10) |
 | Streams from Functions    | Stream.ofNullable()     | Stream<String> s = Stream.ofNullable(name);//return empty stream instead of null |
 |                           | Stream.concat()         | Stream<String> s = Stream.concat(Stream.of("A"), Stream.of("B"))|
 |                           | Stream.empty()          | return empty stream|
 | File Streams              | Files.lines(Paths.get("path"))                        ||
+| String Streams                           | str.codePoints()        | InStream i.e Uni code, used when working with text file |
 
 Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
 
@@ -169,7 +169,7 @@ sorted(Comparator.comparingInt(User::getAge))
 | `toArray(String[]::new)`        | return array                                        |
 | `average()`                     | only for primitive streams IntStream                |
 | `sum()`                         | only for primitive streams IntStream                |
-| `mapToInt()`                    | convert obj into intstream                          |
+| `mapToInt()`                    | convert obj list into intstream                     |
 | `summaryStatistics()`           | only for primitive streams IntStream, we can use .getMax(), getMin() etc                |
 | `forEachOrdered()`              |                                                     |
 
