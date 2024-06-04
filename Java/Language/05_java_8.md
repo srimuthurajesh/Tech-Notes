@@ -97,31 +97,28 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 > process sequences of elements, such as collections or arrays. 
 
 - enabling functional programming ie.Processing data with functions. 
-- **Stream**: means a continuos flow of data.  
+- **Stream**: means a continuos flow of data, immutable  
 
-#### Source Operation
+#### Source Operation 
 
-1. .stream(). 
-From List: `Stream<T> s = list.stream()` 
-From Map: `Stream<T> s = map.keySet.stream()`, `Stream<T> s = map.values.stream()`
-
-2. .parallelStream(). 
-
-| Source Operation        | code                    | return    |
-|-------------------------|-------------------------|-----------|
-| From List               | list.stream()           | Stream<T> |
-|                         | collObj.parallelStream()| Stream<T> |
-| From elements           | Stream.of("s","a")      | Stream<T> |
-| Array Streams           | Arrays.stream(array)    | primitive(IntStream,DoubleStream,LongStream) or Stream<T>|
-| String Streams          | str.chars()             | IntStream i.e UTF-16 code |
-|                         | str.codePoints()        | InStream i.e Uni code |
-| Stream Builders         | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
-|                         | Stream.generate()       | Stream<Integer> r = Stream.generate(random::nextInteger).limit(10); |
-|                         | Stream.iterate()        | Stream<Integer> s = Stream.iterate(1, n -> n + 1).limit(10) |
-| Streams from Functions  | Stream.ofNullable()     | Stream<String> s = Stream.ofNullable(name);//return empty stream instead of null |
-|                         | Stream.concat()         | Stream<String> s = Stream.concat(Stream.of("A"), Stream.of("B"))|
-|                         | Stream.empty()          | return empty stream|
-| File Streams            | Files.lines(Paths.get("path"))                        ||
+| Source Operation          | code                    | return    |
+|---------------------------|-------------------------|-----------|
+| From list,set,queue,stack | collObj.stream()        | Stream<T> |
+| From Map                  | map.entrySet.stream()   | Stream<T> |
+|                           | map.keySet.stream()     | Stream<T> |
+|                           | map.values.stream()     | Stream<T> |
+| ParallelStream            | collObj.parallelStream()| Stream<T> |
+| From Array                | Stream.of(array), Stream.of("s","a")      | Stream<T> |
+| From Array                | Arrays.stream(array)    | only works **int,double,long**(IntStream,DoubleStream,LongStream) or **Object**(Stream<T>)|
+| String Streams            | str.chars()             | IntStream i.e UTF-16 code |
+|                           | str.codePoints()        | InStream i.e Uni code |
+| Stream Builders           | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
+|                           | Stream.generate()       | Stream<Integer> r = Stream.generate(random::nextInteger).limit(10); |
+|                           | Stream.iterate()        | Stream<Integer> s = Stream.iterate(1, n -> n + 1).limit(10) |
+| Streams from Functions    | Stream.ofNullable()     | Stream<String> s = Stream.ofNullable(name);//return empty stream instead of null |
+|                           | Stream.concat()         | Stream<String> s = Stream.concat(Stream.of("A"), Stream.of("B"))|
+|                           | Stream.empty()          | return empty stream|
+| File Streams              | Files.lines(Paths.get("path"))                        ||
 
 Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
 
