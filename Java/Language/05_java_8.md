@@ -20,17 +20,17 @@ default has method body and also static method allowed inside interface
 - can have default and static method with body  
 - use @FunctionalInterface and make any interface as Functional interface  
 
-| Interface             | Structure           | Method      | Example                                                               |
-|-----------------------|---------------------|-------------|-----------------------------------------------------------------------|
-| `Function<T, R>`      | 1 arg 1 returntype  | .apply()    | Function<String, Integer> lengthFunction = str -> str.length();       |
-| `BiFunction<T, U, R>` | 2 arg 1 returntype  | .apply()    | BiFunction<Integer, Integer, Integer> sumFunction = (a, b) -> a + b;  |
-| `UnaryOperator<T>`    | 1 arg               | .apply()    | UnaryOperator<Integer> squareFunction = x -> x * x;                   |
-| `BinaryOperator<T>`   | 2 arg               | .apply()    | BinaryOperator<String> concatFunction = (a, b) -> a + b;              |
-| `Predicate<T>`        | 1 arg boolean return | .test()    | Predicate<Integer> isEven = num -> num % 2 == 0;                      |
-| `BiPredicate<T>`      | 2 arg boolean return | .test()    | BiPredicate<String, String> areEqual = (a, b) -> a.equals(b);         |
-| `Consumer<T>`         | 1 arg no return type | .accept()  | Consumer<String> printConsumer = str -> System.out.println(str);      |
-| `BiConsumer<T, U>`    | 1 arg no return type | .accept()  | BiConsumer<String, String> printTwoStrings = (a, b) -> Sysout(a+""+b);|
-| `Supplier<T>`         | no arg return random | .get()     | Supplier<Double> randomSupplier = () -> Math.random();                |
+| Interface           | Structure           | Method      | Example                                                               |
+|---------------------|---------------------|-------------|-----------------------------------------------------------------------|
+| `Function<T,R>`     | diff type           | .apply()    | Function<String, Integer> lengthFunction = str -> str.length();       |
+| `BiFunction<T,U,R>` | diff type           | .apply()    | BiFunction<Integer, Integer, Integer> sumFunction = (a, b) -> a + b;  |
+| `UnaryOperator<T>`  | same type           | .apply()    | UnaryOperator<Integer> squareFunction = x -> x * x;                   |
+| `BinaryOperator<T>` | same type             | .apply()    | BinaryOperator<String> concatFunction = (a, b) -> a + b;              |
+| `Predicate<T>`      | 1 arg return boolean | .test()    | Predicate<Integer> isEven = num -> num % 2 == 0;                      |
+| `BiPredicate<T>`    | 2 arg return boolean | .test()    | BiPredicate<String, String> areEqual = (a, b) -> a.equals(b);         |
+| `Consumer<T>`       | 1 arg no return type | .accept()  | Consumer<String> printConsumer = str -> System.out.println(str);      |
+| `BiConsumer<T,U>`   | 1 arg no return type | .accept()  | BiConsumer<String, String> printTwoStrings = (a, b) -> Sysout(a+""+b);|
+| `Supplier<T>`       | no arg return random | .get()     | Supplier<Double> randomSupplier = () -> Math.random();                |
 
 **Primitive Specializations**:
 
@@ -50,14 +50,11 @@ default has method body and also static method allowed inside interface
 
 - often used as an argument to a method or assigned to a variable.   
 **Syntax**: ```(argument-list) -> {body}```
-Some lambda expression:    
-a) foreach: list.foreach(x){sysout(x)};  
-b) Predicate<?>  test()  
-c) IntFunction(int value)
 
 
 ## Method reference   
-- able to assign a method/constructor to functional interface   
+>  can refer existing method implementations as lambdas, using `::`.   
+
 i) staticMethod reference - className::Method  
 ii) InstanceMethod reference - objectName::Method   
 iii) constructor reference - className::new   
@@ -96,17 +93,17 @@ interface PersonFactory {
 
 ## Optional   
 - forcing the caller to handle the null check, this is achieved by wrapping the value with Optional class. 
-- uses to avoid NullpointerException smartly   
+- uses to deal with NullpointerException smartly   
 
 ### Creation Methods:
 
-| Methods     | Code                      | Description                     |
-|-------------|---------------------------|---------------------------------|
-| empty()     | `Optional.empty()`        | Returns empty Optional          |
-| of()        | `Optional.of("Hello");`   | Returns Optional                |
-| ofNullable()| `Optional.ofNullable(a.name);`| if u are expecting nullpointerexception, use this to avoid it, return Optional<Null> |
-| isPresent() |	`optionalObj.isPresent()` |	Checks if value is present      |
-| isEmpty()	  | `optionalObj.isEmpty()`   | (Java 9)similar to !isPresent() |
+| Methods     | Code                          | Description                     |
+|-------------|-------------------------------|---------------------------------|
+| empty()     | `Optional.empty()`            | Returns empty Optional          |
+| of()        | `Optional.of("Hello");`       | Returns Optional, throws Nullpointerexception if value null |
+| ofNullable()| `Optional.ofNullable(a.name);`| if u are expecting Nullpointerexception, use this to avoid it, return Optional<Null> |
+| isPresent() |	`optionalObj.isPresent()`     |	Checks if value is present      |
+| isEmpty()	  | `optionalObj.isEmpty()`       | (Java 9)similar to !isPresent() |
 
 ### Transformation and Consumption Methods:
 
@@ -116,7 +113,7 @@ interface PersonFactory {
 | orElse()	  | `optionalObj.orElse(val)`	                | Returns value if present or provided default value |
 | orElseGet()	| `optionalObj.orElseGet(supplier)`         |	Returns value or value obtained from supplier function |
 | ifPresent() | `optionalObj.ifPresent(consumer)`         |	execute consumer function if value present |
-| ifPresentOrElse() | `optionalObj.ifPresent(consumer, consumer)`         |	execute consumer function if value present |
+| ifPresentOrElse() | `optionalObj.ifPresent(consumer, supplier)` |	(Java 9) execute consumer function if value present |
 
 
 
