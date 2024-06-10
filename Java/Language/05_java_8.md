@@ -1,15 +1,49 @@
 
 # Features of Java 8:  
 
-1. [Lambda Expression](#1-Lambda-expression)
-2. [Method reference](#2-method-reference)
-3. [Optional](#3-optional)
-4. [Functional interface](#4-functional-interface)
-5. [Default Method](#5-default-method)
+1. [Default Method](#5-default-method)
+2. [Functional interface](#4-functional-interface)
+3. [Lambda Expression](#1-Lambda-expression)
+4. [Method reference](#2-method-reference)
+5. [Optional](#3-optional)
 6. [Date time API](#7-date-time-api)
 7. [StringJoiner class](#8-stringjoiner-class)
 8. [Stream API](#6-stream-api)
   - [Stream problems examples](#stream-problems-examples)
+
+## Default Method   
+default has method body and also static method allowed inside interface  
+
+## Functional interface   
+> should have only one abstract method. Eg:Runnable @Comparator .   
+
+- can have default and static method with body  
+- use @FunctionalInterface and make any interface as Functional interface  
+
+| Interface             | Structure           | Method      | Example                                                               |
+|-----------------------|---------------------|-------------|-----------------------------------------------------------------------|
+| `Function<T, R>`      | 1 arg 1 returntype  | .apply()    | Function<String, Integer> lengthFunction = str -> str.length();       |
+| `BiFunction<T, U, R>` | 2 arg 1 returntype  | .apply()    | BiFunction<Integer, Integer, Integer> sumFunction = (a, b) -> a + b;  |
+| `UnaryOperator<T>`    | 1 arg               | .apply()    | UnaryOperator<Integer> squareFunction = x -> x * x;                   |
+| `BinaryOperator<T>`   | 2 arg               | .apply()    | BinaryOperator<String> concatFunction = (a, b) -> a + b;              |
+| `Predicate<T>`        | 1 arg boolean return | .test()    | Predicate<Integer> isEven = num -> num % 2 == 0;                      |
+| `BiPredicate<T>`      | 2 arg boolean return | .test()    | BiPredicate<String, String> areEqual = (a, b) -> a.equals(b);         |
+| `Consumer<T>`         | 1 arg no return type | .accept()  | Consumer<String> printConsumer = str -> System.out.println(str);      |
+| `BiConsumer<T, U>`    | 1 arg no return type | .accept()  | BiConsumer<String, String> printTwoStrings = (a, b) -> Sysout(a+""+b);|
+| `Supplier<T>`         | no arg return random | .get()     | Supplier<Double> randomSupplier = () -> Math.random();                |
+
+**Primitive Specializations**:
+
+| Primitive int     | Primitive long     | Primitive double     |
+|-------------------|--------------------|----------------------|
+| IntFunction<R>    | LongFunction<R>    | DoubleFunction<R>    |
+| IntConsumer       | LongConsumer       | DoubleConsumer       |
+| IntPredicate      | LongPredicate      | DoublePredicate      |
+| IntSupplier       | LongSupplier       | DoubleSupplier       |
+| IntUnaryOperator  | LongUnaryOperator  | DoubleUnaryOperator  |
+| IntBinaryOperator | LongBinaryOperator | DoubleBinaryOperator |
+| ToIntFunction<T>  | ToLongFunction<T>  | ToDoubleFunction<T>  |
+| ToIntBiFunction<T,U> | ToIntBiFunction<T,U> | ToIntBiFunction<T,U> |
 
 ## Lambda Expression   
 > block of code that takes parameters and returns a value,   
@@ -31,7 +65,7 @@ iii) constructor reference - className::new
 class Hello{
   public static void main(String[] args){
     // Normal lampda expression  	
-    BiFunction<Integer, Interger, Double> biFunction = (x1, x2) -> (x1 + x2).doubleValue();
+      <Integer, Interger, Double> biFunction = (x1, x2) -> (x1 + x2).doubleValue();
     
     // Using Static Method reference  
     BiFunction<Integer, Interger, Double> biFunction = Hello::addNumbers;
@@ -61,27 +95,30 @@ interface PersonFactory {
 ```
 
 ## Optional   
-- forcing the caller to handle the null check, this is achieved by wrapping the value with Optional  
-uses to avoid NullpointerException smartly   
-```
-Optional<String> getName(){
-  return Optional.ofNullable(this.name);
-}
-Optional<String> checkNull = getName();  
-if (checkNull.isPresent()) { sysout(str)} 
-String name = checkNull.orElse("hii");
-String name = checkNull.orElseGet(() -> getRandomName());
-checkNull.ifPresent((x)->{  });
-checkNull.ifPresentOrElse((x)->{  }, ()->{ });
-```
+- forcing the caller to handle the null check, this is achieved by wrapping the value with Optional class. 
+- uses to avoid NullpointerException smartly   
 
-## Functional interface   
-should have only one abstract method. Eg:Runnable @Comparator .   
--can have default and static method with body  
--use @FunctionalInterface and make any interface as Functional interface  
+### Creation Methods:
 
-## Default Method   
-default has method body and also static method allowed inside interface  
+| Methods     | Code                      | Description                     |
+|-------------|---------------------------|---------------------------------|
+| empty()     | `Optional.empty()`        | Returns empty Optional          |
+| of()        | `Optional.of("Hello");`   | Returns Optional                |
+| ofNullable()| `Optional.ofNullable(a.name);`| if u are expecting nullpointerexception, use this to avoid it, return Optional<Null> |
+| isPresent() |	`optionalObj.isPresent()` |	Checks if value is present      |
+| isEmpty()	  | `optionalObj.isEmpty()`   | (Java 9)similar to !isPresent() |
+
+### Transformation and Consumption Methods:
+
+| Methods     | Code                                      | Description                     |
+|-------------|-------------------------------------------|---------------------------------|
+| get()	      | `optionalObj.get()`	                      | Returns value ifexist or Throws **NoSuchElementException** |
+| orElse()	  | `optionalObj.orElse(val)`	                | Returns value if present or provided default value |
+| orElseGet()	| `optionalObj.orElseGet(supplier)`         |	Returns value or value obtained from supplier function |
+| ifPresent() | `optionalObj.ifPresent(consumer)`         |	execute consumer function if value present |
+| ifPresentOrElse() | `optionalObj.ifPresent(consumer, consumer)`         |	execute consumer function if value present |
+
+
 
 ## Date time API  
 - thread-safe: removed setters of Date api  
@@ -118,7 +155,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 |                           | Stream.concat()         | Stream<String> s = Stream.concat(Stream.of("A"), Stream.of("B"))|
 |                           | Stream.empty()          | return empty stream|
 | File Streams              | Files.lines(Paths.get("path"))                        ||
-| String Streams                           | str.codePoints()        | InStream i.e Uni code, used when working with text file |
+| String Streams            | str.codePoints()        | InStream i.e Uni code, used when working with text file |
 
 Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
 
@@ -127,12 +164,12 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | Intermediate Operation    | Definition                            |
 |---------------------------|---------------------------------------|
 | `map((a)=>{return a*10})` | Transform each element.               |
-| `filter((a)=>{return a%2==0})`| Select elements based on a predicate. |
+| `filter((a)=>{return })`  | Select elements based on a predicate. |
+| `flatMap()`               | combination of flat&map, convert stream of stream into single stream |
 | `distinct()`              | Remove duplicate for primitive datatypes |
 | `sorted()`                | Sort elements.                        |
 | `limit(5)`                | Limit the number of elements.         |
 | `skip()`                  | Skip upto given index                 |
-| `flatMap()`               | each inner list into a single stream             |
 | `flatMapToInd(String::chars)`| each inner list into a single stream             |
 | `peek()`                  | used to debug stream elements         |
 
@@ -158,6 +195,7 @@ sorted(Comparator.comparingInt(User::getAge))
 | `forEach(System.out::println)`  | Perform an action for each element.                 |
 | `count()`                       | Count the number of elements.                       |
 | `collect(Collectors.toList())`  | Collect elements into a collection.                 |
+| `findFirst()`                   | return Optional so handle orElse()                  |
 | `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param  |
 | `min()`                         | return min value                                    |
 | `max()`                         | return max value                                    |
@@ -165,7 +203,6 @@ sorted(Comparator.comparingInt(User::getAge))
 | `allMatch()`                    | return boolean if all element matches a predicate   |
 | `noneMatch()`                   | return boolean if no elements match a predicate.    |
 | `findAny()`                     | Find any element (non-deterministic).               |
-| `findFirst()`                   | return Optional of first element.                   |
 | `toArray(String[]::new)`        | return array                                        |
 | `average()`                     | only for primitive streams IntStream                |
 | `sum()`                         | only for primitive streams IntStream                |
@@ -176,8 +213,8 @@ sorted(Comparator.comparingInt(User::getAge))
 | Collectors Function   | Description                                                                                 |
 |-----------------------|---------------------------------------------------------------------------------------------|
 | To Collections        | `Collectors.toList()`, `Collectors.toSet()`, `Collectors.toMap()`                           |
-| Joining               | `Collectors.joining("deLimiter")`                                                           |
-| Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, Collectors.summarizingLong() |
+| Joining               | `Collectors.joining(",")`                                                                   |
+| Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, `Collectors.summarizingLong()` |
 | Grouping By           | `Collectors.groupingBy(obj::getYear)` `Collectors.groupingBy(Map.Entry::getValue)`          |
 | Partitioning By       | `Collectors.partitioningBy(m-> m.getRating() > 3)`  //map<boolean, obj>                     |
 | Averaging             | `Collectors.averagingInt()`, Collectors.averagingDouble(), Collectors.averagingLong()       |
@@ -235,4 +272,8 @@ int age = list.stream.mapToInt(student::getAge).skip(1).max();
 ```
   Map<Integer, Long> m = list.stream().collect(Collectors.groupingBy(Student::getAge,Collectors.counting()));
   m.forEach((age, count) -> System.out.println("Age: " + age + ", Count: " + count));
+```
+5. Convert a list into map
+```
+list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));
 ```

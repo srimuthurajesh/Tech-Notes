@@ -5,9 +5,19 @@
 Note: we should use @EnableAspectJAutoProxy before @Configuration file. 
 ```<aop:aspectj-autoproxy>``` in xml config file          
 
+## Defination
+Join point : any point in your program such as method execution, exception handling, field access etc. Spring supports only method execution join point.  
+Advice: represents an action taken by an aspect at a particular join point. 
+Pointcut: expression language of AOP that matches join points, enable reuse of pointcut
+
+
+
 **@Aspect** - declare class   
 
-### Types of Advice:  
+### Advice
+> Advice represents an action taken by an aspect at a particular join point. 
+
+#### Types of Advice:  
 1. @Before - run before method. 
 2. @AfterReturning - run after method(if success). 
 3. @AfterThrowing - run after method(if exception). 
@@ -26,7 +36,7 @@ void aroundMethod(JointPoint jp){
 
 ### @Pointcut 
 
-> enable reuse of pointcut
+> expression language of AOP that matches join points, enable reuse of pointcut
 
 ```
 @Pointcut("execution(public void org.controller.display())")

@@ -1,31 +1,14 @@
 **REST**  
-- Representation state transfer  
-- has set of constraints, such as being stateless,uniform interface  
-- controlling request based on http method not url  
-- Richardson maturity model evalute the design of rest api
+- abbr Representation state transfer  
+- aka Richardson maturity model evalute the design of rest api  
 
-
-**Principls:**  
--RESOURCES-easy directory structure URL  
--REPRESENTATION-json xml to represent data object  
--MESSAGE - use http method  
--STATELESS -   
-  
-Method  | Usage             |
---------|-------------------| 
-POST    | create            |
-GET     | retrieve          |
-PUT     | update            |
-DELETE  | remove            |
-PATCH   | partial update    |            
-
-Code| usage                     |
-----|---------------------------|
-100 | information               |
-200 | success                   |
-300 | rediretion                |
-400 | client error,not found    |
-500 | server error              |
+| Code | usage                     |
+|------|---------------------------|
+| 100  | information               |
+| 200  | success                   |
+| 300  | rediretion                |
+| 400  | client error,not found    |
+| 500  | server error              |
 
 
 **Best practices in REST**  
@@ -36,14 +19,13 @@ POST    | create new customer   | http://www.example.com/v1/api/customers       
 GET     | retrieve all customer | http://www.example.com/v1/api/customers           |
 GET     | read single customer  | http://www.example.com/v1/api/customers/{cusId}   |
 PUT     | update customer       | http://www.example.com/v1/api/customers           | 
+PATCH   | partial update customer| http://www.example.com/v1/api/customers           | 
 DELETE  | delete customer       | http://www.example.com/v1/api/customers/{cusId}   |   
 
 Versioning:  
 
 Request param, query. 
 
-Pagination:
-> pagination along with  filtering and sorting
 
 Stateless: 
 > we need to make token authentication instead of cookies based authentication, since we are using microservices 
