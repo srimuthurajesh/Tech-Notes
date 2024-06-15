@@ -15,13 +15,39 @@
 so many...  
 
 ## IOC container  
-- create,manage,wire,configure object. It performs:    
+> core part of the Spring Framework. It helps in managing lifecycle and configuration of objects. 
 
-1. **Inversion of control**: bean instantiation/location of dependices using mechanism Service Locator Pattern, loose coupling       
-2. **Dependency Injection(DI)**: where object define their dependencies via constructor parameters or setter methods,   
+It performs:    
+1. **Inversion of control**: takes control of the bean creation , loose coupling       
+2. **Dependency Injection(DI)**: Objects define their dependencies through their constructors or setter methods.     
 
-**Two Ways of Injections**: setter/contructor injection  
+#### Two Ways of Injections: 
+1. Contructor injection  - for mandatory dependencies, but complex
+2. Setter injection - simple, partial intialization. 
 **Beans**: objects present in IOC container  
+
+
+## Two types of IOC container**     
+### 1. Bean factory 
+> lazy intialization(bean load when getbean called), no annotated injection support   
+
+```
+    BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+    MyBean myBean = (MyBean) factory.getBean("myBean");
+```   
+### 2. Application context. 
+> aggresive intialization, supports annotated injection, superset of BeanFactory  
+
+```
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+    ApplicationContext context = new FileSystemXmlApplicationContext("C:/path/to/spring-config.xml");
+    ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    WebApplicationContext context = new GenericWebApplicationContext(servletContext);
+    MyBean myBean = context.getBean(MyBean.class);
+    context.registerShutdownHook();   //a hook ensures that close() method is called when JVM shuts down.  
+    context.stop();                   //Temporarily halts application context. restarted by start()    
+    context.close();                  //will call preDestroy(), shutdown context, destroy beans  
+```
 
 **Bean scope**:  
 1. Singleton - Default scope, only one bean created and shared per IOC container, not thread safe.    
@@ -62,39 +88,33 @@ initMethod and destroyMethod attributes in @Bean annotation or XML configuration
 7. @PreDestroy: Annotation for a method to be executed before the bean is destroyed.  
 
 
-## Two types of IOC container**     
-### 1. Bean factory 
-> lazy intialization, no annotated injection support   
-
-```
-    BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
-    MyBean myBean = (MyBean) factory.getBean("myBean");
-```   
-2. **Application context** - aggresive intialization, supports annotated injection, superset of BeanFactory  
-```
-    ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-    ApplicationContext context = new FileSystemXmlApplicationContext("C:/path/to/spring-config.xml");
-    ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-    WebApplicationContext context = new GenericWebApplicationContext(servletContext);
-    MyBean myBean = context.getBean(MyBean.class);
-    context.registerShutdownHook();   //a hook ensures that close() method is called when JVM shuts down.  
-    context.stop();                   //Temporarily halts application context. restarted by start()    
-    context.close();                  //will call preDestroy(), shutdown context, destroy beans  
-```
 
 
-### Beans configured ways:  
-1. **XML** - in applicationContext.xml. 
+### Beans configuration ways:  
+#### 1. XML Configuration  
+> in applicationContext.xml. high performance, readability is tuff, complex to write. 
+
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="car" class="com.example.Car">
-        <property name="engine" ref="engine"/>
+        <property name="engine" ref="engine"/> <!-- setter injection. ref means another bean id -->
+        <constrctor-args ref="engine"> <!-- constructor injection ref means another bean id-->
     </bean>
     <bean id="engine" class="com.example.Engine"/>
 </beans>
 ```
-2. **Java configuration class** - in AppConfig.java.  
 ```
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Car car = context.getBean(Car.class);
+        car.start();
+    }
+}
+```
+#### 2. Java based  
+```
+//AppConfig.java
 @Configuration
 public class AppConfig {
     @Bean
@@ -107,16 +127,13 @@ public class AppConfig {
     }
 }
 ```
-3. **Java code**.   
 ```
-public class Main {
-    public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        Car car = context.getBean(Car.class);
-        car.start();
-    }
-}
+ ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+ Car car = context.getBean(Car.class);
 ```
+
+#### 3. Annotation based   
+
 
 
 ## Annotations to remember:  

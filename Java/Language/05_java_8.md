@@ -167,7 +167,7 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | `sorted()`                | Sort elements.                        |
 | `limit(5)`                | Limit the number of elements.         |
 | `skip()`                  | Skip upto given index                 |
-| `flatMapToInd(String::chars)`| each inner list into a single stream             |
+| `flatMapToInt(String::chars)`| each inner list into a single stream             |
 | `peek()`                  | used to debug stream elements         |
 
 sorted()  
@@ -221,8 +221,8 @@ sorted(Comparator.comparingInt(User::getAge))
 
 ### Grouping By
 #### Overloaded methods:
-The default second parameter is HashMap::new and third parameter Collectors.toList().  
-`Collectors.groupingBy(obj::getYear, Collectors.toList())`.  
+Collectors.groupingBy(classifier, Hashmap::new, toList());  
+Make obj : `Collectors.groupingBy(obj::getYear)`.  
 Make obj unique: `Collectors.groupingBy(obj::getYear, Collectors.toSet())`.  
 Make obj in order: `Collectors.groupingBy(obj::getYear, TreeMap::new, Collectors.toList())`.  
 

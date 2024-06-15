@@ -11,6 +11,16 @@ public class SwapWithoutTemp {
     }
 }
 ```
+### Swap without temp without arithmetic opr
+```
+int a=5,b=9;
+a = a ^ b;  // 8 4 2 1   //0101^1001 = 1100(12)
+b = a ^ b;               //1100^1001 = 0101(5)
+a = a ^ b;               //1100^0101 = 1001(9)
+System.out.println(a);
+System.out.println(b);
+        
+```
 ### Count Digits
 ```
 public class CountDigits {

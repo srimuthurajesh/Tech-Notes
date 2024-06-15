@@ -1,14 +1,15 @@
 ### Math logic
 1. [Swap two number without temp](DSA-problems-solutions/math-logic#swap-without-temp)
-2. [Coun digits](DSA-problems-solutions/math-logic#count-digits)
-3. [Factorial](DSA-problems-solutions/math-logic#factorial)
-4. [Print pattern](DSA-problems-solutions/math-logic#print-astreik-pattern)
-5. [Reverse a number](DSA-problems-solutions/math-logic#reverse-a-number) - LC7
-6. [Prime](DSA-problems-solutions/math-logic#prime) - LC204
-7. [Palindrome](DSA-problems-solutions/math-logic#palindrome) - LC125
-8. [Armstrong](DSA-problems-solutions/math-logic#armsstrong) -LC1134
-9. [LCM](DSA-problems-solutions/math-logic#lcm)
-10. [GCD/HCF](DSA-problems-solutions/math-logic#gcdhcf)
+2. [Swap two number without arithmetic oper] (DSA-problems-solutions/math-logic#swap-without-temp-without-arithmetic-opr)
+3. [Coun digits](DSA-problems-solutions/math-logic#count-digits)
+4. [Factorial](DSA-problems-solutions/math-logic#factorial)
+5. [Print pattern](DSA-problems-solutions/math-logic#print-astreik-pattern)
+6. [Reverse a number](DSA-problems-solutions/math-logic#reverse-a-number) - LC7
+7. [Prime](DSA-problems-solutions/math-logic#prime) - LC204
+8. [Palindrome](DSA-problems-solutions/math-logic#palindrome) - LC125
+9. [Armstrong](DSA-problems-solutions/math-logic#armsstrong) -LC1134
+10. [LCM](DSA-problems-solutions/math-logic#lcm)
+11. [GCD/HCF](DSA-problems-solutions/math-logic#gcdhcf)
 
 ### Searching
 1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704. 

@@ -171,7 +171,7 @@ mypool.shutdown();
     };
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     Future<Integer> future = executorService.submit(callableTask);
-    Integer result = future.get();
+    Integer result = future.get();  //will block/wait until Future is complete. 
     System.out.println("Result: " + result); // Output: Result: 42
     executorService.shutdown();
 ```
