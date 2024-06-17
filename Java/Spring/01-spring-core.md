@@ -133,6 +133,20 @@ public class AppConfig {
 ```
 
 #### 3. Annotation based   
+```
+@Configuration
+@ComponentScan(basePackages = "com.example.ioc.demo")
+public class AnnotationJavaConfig {
+}
+```
+```
+ApplicationContext context = new AnnotationConfigApplicationContext(AnnotationJavaConfig.class);
+CarInterface car = context.getBean(Car.class);		
+```
+```
+@Component //@services //@Respository
+class Car{}
+```
 
 
 
