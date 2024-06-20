@@ -75,9 +75,6 @@ Tools like Istio provide retries, circuit breakers, and observability.
 #### Bulkheads:
 Isolates different parts of the system to prevent failure in one part from affecting others.
 
-### How to track slower microservices
-using zipkin ui. 
-
 ### Inbox-Outbox pattern. 
 > ensure reliable message delivery and consistency between services, 
 
@@ -109,3 +106,24 @@ Format Structure: header.payload.signature
 3. Signature - signing header payload with public key. 
 
 Note: we need to pass JWT in header as key Authorization and value "Bearer tokenxxxxxxx".  
+
+## Application performance monitering tool (APM)
+1. Prometheus : For collecting and soring metrics. 
+2. Grafana : for visualizing metrics. 
+Integretion with spring boot: using micrometer library, which export metrics from actuator to prometheus. 
+Other APM tools: AppDynamics, Datadog, Dynatrace, New Relic. 
+
+## Alerting
+1. Prometheus alerting manager
+2. Third party APM alerts. 
+
+## Logging tools
+1. Log Aggregation : ELK stack(Elastic search, logstash, kibana) to aggregate logs from multiple instances. 
+2. Structed logging: JSON format to make logse easier to search and analyse. 
+
+## Distributed tracing
+1. zipkin ui or Jaeger: use to track slower microservices, performance bottlneck and latency issues. 
+2. Spring cloud sleuth: add trace and span id to logs automatically, easier to trace flow of requests. 
+
+## Distributed transaction
+1. Saga pattern
