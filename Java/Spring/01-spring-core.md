@@ -199,6 +199,7 @@ Annotation                  | Usage                                             
 
 
 ### 3. Exception handling. 
+
 | Annotation        | Usage                                                                 | Level    |
 |-------------------|-----------------------------------------------------------------------|----------|
 | @ControllerAdvice | Defines global exception handlers class, model attributes, data binding| Class   |
@@ -207,6 +208,7 @@ Annotation                  | Usage                                             
 | @ResponseStatus   | Sets the HTTP status code for the response, while exception           | Method  |
 
 ### 4. Validation Annotations. 
+
 | Annotation      | Usage                                                                            | Level    |
 |-----------------|----------------------------------------------------------------------------------|----------|
 | @Validated      | indicate that the class should be subject to validation constraints.             | class    |
