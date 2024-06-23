@@ -153,6 +153,7 @@ class Car{}
 ## Annotations to remember:  
 
 ### 1. Spring core Annotations
+
 Annotation                  | Usage                                                                     |Level
 ----------------------------| --------------------------------------------------------------------------| ---
 @Configuration              | Indicates a class declares one or more @Bean methods.                     | Class

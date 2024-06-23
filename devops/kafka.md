@@ -2,15 +2,26 @@
 -open-source stream-processing software platform  
 -handles real-time data storage   
 
-**Advantage of kafka**:  
+| Feature           | Kafka                                              | RabbitMQ                                          |
+|---------------------------------|----------------------------------------------------|--------------------------------------------------|
+| **Architecture**  | Distributed streaming platform, publish-subscribe  | Traditional message broker, broker-centric model |
+| **Message Model** | Messages stored in topics, offset-based consumption| Messages sent to queues via exchanges, various routing mechanisms |
+| **Performance**   | High throughput, suitable for real-time streaming  | Low-latency delivery, suitable for complex routing |
+| **Persistence**   | Messages persisted to disk with configurable retention | Messages can be persisted, but focus on delivery |
+| **Scalability**   | Easy horizontal scaling with partitions            | Scalable but more complex, involves clustering and federation |
+| **Ordering**      | Strong ordering within partitions                  | Weaker ordering guarantees, especially in clusters |
 
-
-**Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
-**Topic**: category/name for records published, similar to DB tablr    
-**Partition**: topic splits into several parts, ordered, immutable  
-**Offset**: unique id for each record in partition  
-**replication factor**: number of copies of data over multiple brokers  
-**GroupId**: avoid multiple delivery, by giving same groupid for multiple same projects    
+### Components of kafka:  
+1. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
+2. **Topic**: category/name for records published, similar to DB table    
+3. **Producers**: Application that publish the kafka topics
+4. **Consumers**: Applications that subscribe topics and consume messages. 
+5. **Zookeeper**: Manages and coordinate kafka broker and maintain configuration infos and leader election.  
+6. **Partition**: topic splits into several parts, ordered, immutable  
+7. **Offset**: unique id for each record in partition  
+8. **replication factor**: number of copies of data over multiple brokers  
+9. **GroupId**: avoid multiple delivery, by giving same groupid for multiple same projects   
+ 
 
 
 

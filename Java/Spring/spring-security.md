@@ -20,7 +20,7 @@ Http  ->.
 	d) JaasAuthenticationProvider. - JAAS-compliant authentication. 
 	d) PreAuthenticatedAuthenticationProvider. - external identity provider, OAUTH2 or saml. SSO. 
 	e) RememberMeAuthenticationProvider - handle token generation and validation.  
-	f) JwtAuthenticationProvider - WT-based authentication. 
+	f) JwtAuthenticationProvider - Web token based authentication. 
 
 spring.security.user.name=root  
 spring.security.user.password=root 

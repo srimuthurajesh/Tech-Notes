@@ -55,10 +55,10 @@ Library: resilient4j in spring
 #### Circuit Breakers:
 Prevents retrying failures to a failing service after a threshold of failures.  
 States: 
-Closed - if failure rates are below threshold   
-Open - if failure rate are above threashold.   
-Half-Open - happens after the wait duration. then repeats from above two condition. 
-
+1. Closed - if failure rates are below threshold   
+2. Open - if failure rate are above threashold.   
+3. Half-Open - happens after the wait duration. then repeats from above two condition.   
+Ex: Hystrix or Resilience4j. 
 #### Retry Mechanism:
 Automatically retries failed requests a specified number of times before giving up.  
 
@@ -126,4 +126,10 @@ Other APM tools: AppDynamics, Datadog, Dynatrace, New Relic.
 2. Spring cloud sleuth: add trace and span id to logs automatically, easier to trace flow of requests. 
 
 ## Distributed transaction
-1. Saga pattern
+Saga pattern
+a) Choreography based. 
+b) Orchestrator based - prefered 
+
+## Microservice internal communication
+1. Synchronous: Rest or gRPC
+2. Asynchronous: message brokers like kafka & RabbitMQ
