@@ -182,7 +182,7 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 ## Angular Pipes    
 > used to Transform the Data.  
 
-1. {{comments | uppercase}}   
+1. ```{{comments | uppercase}} ``` 
 2. {{comments | lowercase}}   
 3. {{6589.23 | currency:"USD"}}   
 4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  

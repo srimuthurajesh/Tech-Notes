@@ -16,7 +16,7 @@ to understand class object. take shapes as class and box is shape model
 3. Anonymous : A obj = new A(){.........}  
 
 ### Steps to create immutable class: 
-> class and variables are final, parameterized constructor, only getters no setters  
+> class and variables are final, parameterized constructor, only getters no setters, return a copy on clone
 
 Note: ClassNotFoundException=  while Class.forName() or loadClass()   
 NoClassDefFoundError=class present in compiletime, but not in runtime    

@@ -263,7 +263,8 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 5. static class - only nested class can be static
 6. static block - ```static {}``` //execute while class get loaded
 7. Instance block { } inside class, runs after static block & before constructor
--```class.forName(" ");``` executes static block & load class
+-```class.forName(" ");``` executes static block & load class  
+Note: we can call static using obj reference also.
 
 ## Final :  
 > assigned only once, cannot modify once it assigned
@@ -406,7 +407,8 @@ try(FileOutputStream fileOutputStream=new FileOutputStream("/home/irfan/scala-wo
        System.out.println(exception);  
 }  
 finally{  
-       System.out.println("Finally executes after closing of declared resources.");  
+       System.out.println("Finally executes after closing of declared resources.");
+	   //Note: finally wont execute if system.exit() and system crash  
 }  
 ```  
 NoClassDefFoundError: runtime, classfile missing at run time. 

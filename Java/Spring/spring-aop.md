@@ -6,8 +6,9 @@ Note: we should use @EnableAspectJAutoProxy before @Configuration file.
 ```<aop:aspectj-autoproxy>``` in xml config file          
 
 ## Defination
-Join point : any point in your program such as method execution, exception handling, field access etc. Spring supports only method execution join point.  
-Advice: represents an action taken by an aspect at a particular join point. 
+Aspect: class which define pointcuts and advices  
+Advice: behaviour that executes at join point. 
+Join point : argument value of the aop method
 Pointcut: expression language of AOP that matches join points, enable reuse of pointcut
 
 
