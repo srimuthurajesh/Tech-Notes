@@ -6,7 +6,8 @@
 3. [Spring DAO](04-spring-dao.html) 
 4. [Spring Boot](spring-boot.html)
 5. [Spring Cloud](spring-cloud.html). 
-6. [Spring Interview Questions](spring-interview-questions.html) 
+6. [Spring Thymeleaf](spring-thymeleaf.html)    
+7. [Spring Interview Questions](spring-interview-questions.html) 
 
 
 ### Other Spring
