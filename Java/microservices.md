@@ -123,48 +123,31 @@ b) Orchestrator based - prefered
 
 
 ## How to implement Microservices
-### 1. Define Microservices   
+1. Define Microservices   
 - Identify Boundaries of each microservice based on business capabilities and domains.
 - Decompose the Monolith into smaller, manageable services.
 
-2. Choose Technology Stack  
-Programming Languages: Choose languages based on your team's expertise (e.g., Java, Python, Go, Node.js).
-Frameworks: Select frameworks that support microservices (e.g., Spring Boot for Java, Flask for Python).
-3. Design APIs
-REST or gRPC: Design your APIs using REST for simplicity or gRPC for performance and type safety.
-API Documentation: Use tools like Swagger/OpenAPI for documenting your APIs.
-4. Implement Services
-Service Development: Develop each service independently, ensuring they can be deployed and scaled individually.
-Database per Service: Implement a database per service to ensure loose coupling and independence.
-5. Implement Communication Mechanisms
-Synchronous Communication: Use REST or gRPC for direct service-to-service calls.
-Asynchronous Communication: Use message brokers like Kafka, RabbitMQ, or AWS SQS for asynchronous communication.
-6. Service Discovery and Registration
-Service Registry: Implement a service registry to keep track of service instances (e.g., Eureka, Consul, Zookeeper).
-Client-Side Load Balancing: Use libraries like Spring Cloud LoadBalancer to distribute requests among service instances.
-7. API Gateway
-API Gateway: Use an API gateway to provide a single entry point for client requests, handling routing, authentication, and rate limiting (e.g., Netflix Zuul, Spring Cloud Gateway, NGINX).
-8. Configuration Management
-Centralized Configuration: Use a centralized configuration management tool to manage service configurations (e.g., Spring Cloud Config, Consul).
+2. Choose Technology Stack - Select frameworks that support microservices (e.g., Spring Boot for Java, Flask for Python).
+3. Design APIs: REST or gRPC
+4. Develop each Services:   
+5. Implement Communication Mechanisms: sync or async  
+6. Service Discovery and Registration (e.g., Eureka, Consul, Zookeeper)    
+7. API Gateway (e.g., Netflix Zuul, Spring Cloud Gateway, NGINX).  
+8. Configuration Management: (e.g., Spring Cloud Config, Consul).
 9. Implement Fault Tolerance
-Circuit Breakers: Use libraries like Resilience4j or Hystrix to prevent cascading failures.
-Retries and Timeouts: Implement retries and timeouts to handle transient failures.
-Fallbacks: Provide fallback methods to ensure graceful degradation of services.
+- Circuit Breakers: Resilience4j or Hystrix  
+- Retries and Timeouts: Implement retries and timeouts to handle transient failures.
+- Fallbacks: Provide fallback methods to ensure graceful degradation of services.
+
 10. Logging and Monitoring
-Centralized Logging: Use the ELK stack (Elasticsearch, Logstash, Kibana) or Fluentd for aggregating logs.
-Distributed Tracing: Implement distributed tracing using tools like Zipkin or Jaeger with Spring Cloud Sleuth.
-Metrics and Monitoring: Use Prometheus for collecting metrics and Grafana for visualizing them.
-11. Security
-Authentication and Authorization: Implement OAuth2 and JWT for secure service-to-service communication.
-API Gateway Security: Ensure the API gateway handles authentication and authorization for incoming requests.
-12. Continuous Integration and Continuous Deployment (CI/CD)
-CI/CD Pipeline: Set up a CI/CD pipeline to automate the build, test, and deployment process using tools like Jenkins, GitLab CI, or CircleCI.
-Containerization: Use Docker to containerize your microservices.
-Orchestration: Use Kubernetes or Docker Swarm for managing containerized services.
-13. Testing
-Unit Testing: Write unit tests for individual service components.
-Integration Testing: Ensure that services work together correctly.
-Contract Testing: Use tools like Pact to verify that services can communicate correctly based on predefined contracts.
-14. Documentation
-API Documentation: Maintain up-to-date API documentation using Swagger/OpenAPI.
-Architecture Documentation: Document your microservices architecture, including service dependencies, data flow, and design decisions.
+- Centralized Logging: Use the ELK stack (Elasticsearch, Logstash, Kibana) or Fluentd for aggregating logs.
+- Distributed Tracing: ex: Zipkin or Jaeger with Spring Cloud Sleuth.
+- Metrics and Monitoring: ex: Prometheus for collecting metrics and Grafana for visualizing them.
+11. Security: OAuth2 and JWT   
+12. Continuous Integration and Continuous Deployment (CI/CD)  
+13. Testing  
+- Unit Testing: Write unit tests for individual service components.  
+- Integration Testing: Ensure that services work together correctly.  
+- Contract Testing: Use tools like Pact to verify that services can communicate correctly based on predefined contracts.  
+14. Documentation: Swagger/OpenAPI.  
+- Architecture Documentation ex: service dependencies, data flow, and design decisions.  
