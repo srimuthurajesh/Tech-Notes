@@ -6,20 +6,6 @@
 4. Event-Driven Architecture -  A design that centers around the production, detection, and reaction to events.    
 5. Service-Oriented Architecture (SOA) - provide reusable business functionalities accessible over a network.  
 6. Serverless Architecture - cloud provider dynamically manages the allocation of machine resources.  
-7. Microkernel Architecture (Plug-in Architecture) - extendable with additional plug-in modules.  
-8. Space-Based Architecture -  Uses the concept of a tuple space for distributed coordination and parallel processing.  
-9. Peer-to-Peer (P2P) Architecture - decentralized where each node can act as both a client and a server.  
-10. Client-Server Architecture -  Divides the system into client and server roles. 
-11. Hexagonal Architecture (Ports and Adapters) -  Emphasizes separation between business logic and external interfaces. 
-12. Component-Based Architecture -  Structures an application as a collection of components.  
-13. CQRS (Command Query Responsibility Segregation) -  Segregates operations into command (write) and query (read)   
-14. Master-Slave Architecture -  one master component controls nultiple slave components, distributing tasks among them.  
-15. Pipe-and-Filter Architecture -  Divides a process into a series of components (filters)   
-16. Broker Architecture -  Uses middleware (broker) to coordinate communication between decoupled components or services.  
-17. Interpreter Architecture -  Defines a virtual machine that interprets commands or instructions for a specific language.  
-18. Blackboard Architecture -  Consists of a common knowledge base (blackboard) where different components (knowledge sources) contribute to the solution incrementally.  
-19. MVC (Model-View-Controller) Architecture - Separates an app into three interconnected components: model (data), view (UI), and controller (logic).  
-20. MVVM (Model-View-ViewModel) Architecture -  Facilitates separation of development of the graphical user interface from the business logic or back-end logic.  
 
 
 ### Service Registry.  
@@ -39,9 +25,9 @@
 4. Etcd.    
 
 ### Client side vs service side load balancing
-- in client side load balacing there is no need to extra server for load balancing work. 
-Note: service registry internally fetches from spring cloud load balancer. 
-Libraries: spring cloud LoadBalancer. 
+- in client side load balacing there is no need to extra server for load balancing work.   
+Note: service registry internally fetches from spring cloud load balancer.   
+*Libraries*: spring cloud LoadBalancer.   
 
 **Load balancer vs Reverse proxy**: Load balancers focus on distributing traffic ,whereas reverse proxies forward request to backend servers.  
 
@@ -133,3 +119,52 @@ b) Orchestrator based - prefered
 ## Microservice internal communication
 1. Synchronous: Rest or gRPC
 2. Asynchronous: message brokers like kafka & RabbitMQ
+
+
+
+## How to implement Microservices
+### 1. Define Microservices   
+- Identify Boundaries of each microservice based on business capabilities and domains.
+- Decompose the Monolith into smaller, manageable services.
+
+2. Choose Technology Stack  
+Programming Languages: Choose languages based on your team's expertise (e.g., Java, Python, Go, Node.js).
+Frameworks: Select frameworks that support microservices (e.g., Spring Boot for Java, Flask for Python).
+3. Design APIs
+REST or gRPC: Design your APIs using REST for simplicity or gRPC for performance and type safety.
+API Documentation: Use tools like Swagger/OpenAPI for documenting your APIs.
+4. Implement Services
+Service Development: Develop each service independently, ensuring they can be deployed and scaled individually.
+Database per Service: Implement a database per service to ensure loose coupling and independence.
+5. Implement Communication Mechanisms
+Synchronous Communication: Use REST or gRPC for direct service-to-service calls.
+Asynchronous Communication: Use message brokers like Kafka, RabbitMQ, or AWS SQS for asynchronous communication.
+6. Service Discovery and Registration
+Service Registry: Implement a service registry to keep track of service instances (e.g., Eureka, Consul, Zookeeper).
+Client-Side Load Balancing: Use libraries like Spring Cloud LoadBalancer to distribute requests among service instances.
+7. API Gateway
+API Gateway: Use an API gateway to provide a single entry point for client requests, handling routing, authentication, and rate limiting (e.g., Netflix Zuul, Spring Cloud Gateway, NGINX).
+8. Configuration Management
+Centralized Configuration: Use a centralized configuration management tool to manage service configurations (e.g., Spring Cloud Config, Consul).
+9. Implement Fault Tolerance
+Circuit Breakers: Use libraries like Resilience4j or Hystrix to prevent cascading failures.
+Retries and Timeouts: Implement retries and timeouts to handle transient failures.
+Fallbacks: Provide fallback methods to ensure graceful degradation of services.
+10. Logging and Monitoring
+Centralized Logging: Use the ELK stack (Elasticsearch, Logstash, Kibana) or Fluentd for aggregating logs.
+Distributed Tracing: Implement distributed tracing using tools like Zipkin or Jaeger with Spring Cloud Sleuth.
+Metrics and Monitoring: Use Prometheus for collecting metrics and Grafana for visualizing them.
+11. Security
+Authentication and Authorization: Implement OAuth2 and JWT for secure service-to-service communication.
+API Gateway Security: Ensure the API gateway handles authentication and authorization for incoming requests.
+12. Continuous Integration and Continuous Deployment (CI/CD)
+CI/CD Pipeline: Set up a CI/CD pipeline to automate the build, test, and deployment process using tools like Jenkins, GitLab CI, or CircleCI.
+Containerization: Use Docker to containerize your microservices.
+Orchestration: Use Kubernetes or Docker Swarm for managing containerized services.
+13. Testing
+Unit Testing: Write unit tests for individual service components.
+Integration Testing: Ensure that services work together correctly.
+Contract Testing: Use tools like Pact to verify that services can communicate correctly based on predefined contracts.
+14. Documentation
+API Documentation: Maintain up-to-date API documentation using Swagger/OpenAPI.
+Architecture Documentation: Document your microservices architecture, including service dependencies, data flow, and design decisions.

@@ -97,7 +97,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 3. @Column - specify details of column. name,length,nullable,unique  
 	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
 4. @Id - to mention primary key for persistant class  
-5. @GeneratedValue(strategy=GenerationType.IDENTITY)  - also use AUTO,SEQUENCE,TABLE  
+5. @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 	a) GenerationType.AUTO- appropreiate stategy for particular DB  
 	b) GenerationType.Identity- assign primarykey using db identity column    
 	c) GenerationType.SEQUENCE- assign primarykey using db sequence  

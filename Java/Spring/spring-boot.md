@@ -53,6 +53,7 @@ server.port=8080
 spring.dataSource.url=jdbc:mysql://localhost:3306/test  
 spring.dataSource.username=sa  
 spring.dataSource.password=sa    
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.show-sql=true
 spring.jpa.generate-ddl=update  
 server.servlet.context-path=/myapp   // http://localhost:8080/myapp/  
