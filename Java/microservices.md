@@ -24,10 +24,12 @@
 3. Zookeeper.    
 4. Etcd.    
 
-### Client side vs service side load balancing
-- in client side load balacing there is no need to extra server for load balancing work.   
-Note: service registry internally fetches from spring cloud load balancer.   
-*Libraries*: spring cloud LoadBalancer.   
+### Load balancing
+> distributing incoming network traffic across multiple servers  
+
+1. Client-Side Load Balancing: client queries a service registry and do internal load-balancing algorithm and send request  
+Libraries: Spring Cloud LoadBalancer  
+2. Load Balancer vs Reverse Proxy: Load balancers focus on distributing traffic, whereas reverse proxies forward requests to backend servers.
 
 **Load balancer vs Reverse proxy**: Load balancers focus on distributing traffic ,whereas reverse proxies forward request to backend servers.  
 
