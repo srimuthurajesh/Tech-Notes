@@ -24,14 +24,17 @@
 3. Zookeeper.    
 4. Etcd.    
 
+### Api Gateway  
+> a service, act as a single entry point that manages, optimizes, and secures client requests to a system of microservices.  
+Functions:  Routing, Load Balancing, Authentication and Authorization, Rate Limiting, Caching, Request and Response Transformation, Logging and Monitoring, security 
+
 ### Load balancing
 > distributing incoming network traffic across multiple servers  
 
-1. Client-Side Load Balancing: client queries a service registry and do internal load-balancing algorithm and send request  
+1. Client-Side: client queries a service registry and do internal load-balancing algorithm and send request  
 Libraries: Spring Cloud LoadBalancer  
-2. Load Balancer vs Reverse Proxy: Load balancers focus on distributing traffic, whereas reverse proxies forward requests to backend servers.
-
-**Load balancer vs Reverse proxy**: Load balancers focus on distributing traffic ,whereas reverse proxies forward request to backend servers.  
+2. Server-side: client sends a request to load balancer server, in which uses load-balancing algorithm and forward request  
+Libraries: AWS Elastic Load Balancing (ELB)  
 
 ### Rate limiter pattern
 > its limit the number of request to microservice. (eg 5call at a time). 
@@ -84,8 +87,8 @@ Outbox pattern: ensures that changes in the Outbox table and sending of messages
 11. Logs - Treat logs as event streams
 12. Admin processes - Run admin/management tasks as one-off processes
 
-
-## JWT
+## Security
+### JWT
 > Json web token
 
 Format Structure: header.payload.signature  
@@ -153,3 +156,6 @@ b) Orchestrator based - prefered
 - Contract Testing: Use tools like Pact to verify that services can communicate correctly based on predefined contracts.  
 14. Documentation: Swagger/OpenAPI.  
 - Architecture Documentation ex: service dependencies, data flow, and design decisions.  
+
+## Interview Questions: 
+1. What if service registry goes down? 
