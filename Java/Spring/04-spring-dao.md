@@ -1,10 +1,12 @@
-# Spring JPA
+# Spring DAO
 
+- [Hibernate](#hibernate)
+	- [Hibernate vs JDBC](#hibernate-vs-jdbc)
 - [Hibernate Architecture](#hibernate-architecture). 
 - [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
 - [Annotations](#annotations). 
+- [CRUD Operations](#crud)
 - Steps for Hibernate
-CRUD Operations in Hibernate
 Hibernate Query Language (HQL)
 Hibernate Criteria
 HQL Examples
@@ -82,7 +84,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 5. **Query object**- use SQL,HQL string to retrieve data  
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
-### Hibernate Session Object lifecycle:
+## Hibernate Session Object lifecycle:
 1. Transient - new instance of pojo ```Cust cust = new Cust();```    
 2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
 2a. while get and load() it is in persistent stage    
