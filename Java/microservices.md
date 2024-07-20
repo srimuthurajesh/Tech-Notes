@@ -125,6 +125,15 @@ b) Orchestrator based - prefered
 1. Synchronous: Rest or gRPC
 2. Asynchronous: message brokers like kafka & RabbitMQ
 
+## CI/CD pipeline steps
+1. Code commit  
+2. CI -  
+    a) when code pushed, CI kicks automatically  
+    b) pull latest code and do sonarqube, unittest, integration test  
+    c) if everything pass fine, otherwise notify the team   
+3. Build - mvn clean install, and put jar inside docker image and store in registry(eg.jFrog, dockerhub)   
+4. CD - kubernetest manifest(deployment.yml) define how app will be deployed in EKS. Then apply manifest.
+5. Monitor - Prometheus, Grafana, AWS CloudWatch       
 
 
 ## How to implement Microservices
@@ -159,3 +168,5 @@ b) Orchestrator based - prefered
 
 ## Interview Questions: 
 1. What if service registry goes down? 
+2. what happen if change a value in config server, does my other services will have that change
+3. Where you store the docker images? ACR- amazon cloud registry

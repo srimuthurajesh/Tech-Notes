@@ -42,6 +42,21 @@ Note: The default JPA provider for Spring boot is Hibernate
 - **dialect** : specify type of database  
 - **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
 
+### Hibernate vs JDBC
+| Feature                       | Hibernate                                     | JDBC                                         |
+|-------------------------------|-----------------------------------------------|----------------------------------------------|
+| **Abstraction Level**         | Higher-level ORM 								| Lower-level database interaction API         |
+| **Query Language**            | HQL (Hibernate Query Language), Criteria API  | Plain SQL                                    |
+| **Data Mapping**              | Automatically maps Java objects to database tables | Manual mapping via SQL and result sets        |
+| **Caching**                   | Built-in caching mechanisms                   | No built-in caching                          |
+| **Transaction Management**    | Built-in, integrated with JTA and Spring      | Needs to be manually handled                 |
+| **Lazy Loading**              | Supported                                     | Not supported                                |
+| **Performance**               | Can be slower due to abstraction overhead     | Generally faster due to direct SQL execution |
+| **Schema Generation**         | Can automatically generate database schema    | Schema must be manually created              |
+| **Portability**               | High - abstracts database-specific features   | Lower - SQL may need changes for different DBs|
+| **Error Handling**            | Throws Hibernate exceptions                   | Throws SQLExceptions                         |
+
+
 
 ## Hibernate Architecture:  
 1. **Configuration object**  
@@ -50,12 +65,13 @@ Note: The default JPA provider for Spring boot is Hibernate
 - maps javaclasses and DBtables. 
     
 2. **SessionFactory object**  
--creates one time, there will be one sessionFactory for one DB    
 -created by configuration  
+-creates one time, there will be one sessionFactory for one DB    
 -thread safe  
 -heavyweight object  
 
-3. **Session object**  
+3. **Session object**   
+-also called as Persistent context  
 -created eachtime interact DB
 -created by sessionfactory  
 -not thread safe, so do close it  
@@ -68,7 +84,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
 ### Hibernate Session Object lifecycle:
-1. Transient - new instance of pojo  
+1. Transient - new instance of pojo ```Cust cust = new Cust();```    
 2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
 2a. while get and load() it is in persistent stage    
 3. Removed - while remove(),delete()  
@@ -77,27 +93,22 @@ Note: The default JPA provider for Spring boot is Hibernate
 ## Annotations:  
 ### Entity class Annotation  
 
-| Annotation Name | Definition |
-|-----------------|------------|
-| @Entity         | Specifies that the class is an entity and is mapped to a database table. |
-| @Table          | Specifies the table in the database with which the entity is mapped. |
-| @Id             | Specifies the primary key of an entity. |
-| @GeneratedValue | Provides the specification of generation strategies for the values of primary keys. |
-| @Column         | Specifies the mapped column for a persistent property or field. |
-| @OneToOne       | Specifies a single-valued association to another entity that has a one-to-one multiplicity. |
-| @OneToMany      | Specifies a collection-valued association with one-to-many multiplicity. |
-| @ManyToOne      | Specifies a single-valued association to another entity with many-to-one multiplicity. |
-| @ManyToMany     | Specifies a collection-valued association with many-to-many multiplicity. |
-| @JoinColumn     | Specifies a column for joining an entity association or element collection. |
-| @JoinTable      | Specifies the mapping of associations, typically used in many-to-many relationships. |
-| @Transient      | Specifies that the annotated field is not persistent and should not be mapped to the database. |
+| Annotation Name  | Definition                                            |
+|------------------|-------------------------------------------------------|
+| @Entity          | Marks a class as an entity                            |
+| @Table           | specify details of table. name,catalogue,schema,unique constraints                                   |
+| @Id              | Marks primary key field                               |
+| @GeneratedValue  | Defines primary key generation strategy               |
+| @Column          | Maps field to column                                  |
+| @OneToOne        | Defines one-to-one relationship                       |
+| @OneToMany       | Defines one-to-many relationship                      |
+| @ManyToOne       | Defines many-to-one relationship                      |
+| @ManyToMany      | Defines many-to-many relationship                     |
+| @JoinColumn      | Defines join column for relationships                 |
+| @JoinTable       | Defines join table for many-to-many relationships     |
+| @Transient       | Excludes field from database mapping                  |
 
-1. @Entity - make class as entity bean  
-2. @Table - specify details of table. name,catalogue,schema,unique constraints  
-3. @Column - specify details of column. name,length,nullable,unique  
-	Ex:```@Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)```  
-4. @Id - to mention primary key for persistant class  
-5. @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
+@GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 	a) GenerationType.AUTO- appropreiate stategy for particular DB  
 	b) GenerationType.Identity- assign primarykey using db identity column    
 	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
@@ -105,30 +116,29 @@ Note: The default JPA provider for Spring boot is Hibernate
 	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
 
 ### Persistance class Annotation 
-
-| Annotation             | Description                                                                                  |
-|------------------------|----------------------------------------------------------------------------------------------|
-| `@Repository`          | Indicates that the class is a Spring Data Repository.                                        |
-| `@Transactional`       | Declares that all methods in the annotated class should be wrapped in a transaction.         |
-| `@Query`               | Specifies a JPQL query or native SQL query to be executed when the method is called.         |
-| `@Modifying`           | Indicates that a method modifies data (used in conjunction with `@Query`).                   |
-| `@Lock`                | Configures the lock mode type to be used in query methods.                                   |
-| `@Cacheable`           | Indicates that the result of the method invocation should be cached.                         |
-| `@CachePut`            | Updates the cache with the method's return value.                                            |
-| `@CacheEvict`          | Evicts entries from the cache.                                                               |
-| `@EntityGraph`         | Defines a graph of entities for fetching.                                                    |
-| `@Procedure`           | Indicates a method that is used to call a stored procedure.                                  |
-| `@Param`               | Specifies a parameter name for a query method.                                               |
-| `@PersistenceContext`  | Injects an EntityManager into the repository.                                                |
-| `@EnableJpaRepositories`| Enables JPA repositories and scans for repository interfaces.                               |
-| `@NoRepositoryBean`    | Indicates that an interface is not to be treated as a repository by Spring Data.             |
-| `@EnableTransactionManagement` | Enables annotation-driven transaction management.                                    |
-| `@DynamicUpdate`       | Indicates that the update statement should include only changed fields.                      |
-| `@DynamicInsert`       | Indicates that the insert statement should include only non-null fields.                     |
-| `@Audited`             | Marks an entity or a field to be audited.                                                    |
-| `@SQLDelete`           | Specifies the custom SQL to be used for deleting an entity.                                  |
-| `@Where`               | Adds a specific clause to the generated SQL queries for the annotated entity.                |
-| `@OptimisticLocking`   | Configures optimistic locking for an entity.                                                 |
+| Annotation                     | Description                                   |
+|--------------------------------|-----------------------------------------------|
+| `@Repository`                  | Marks a Spring Data repository.               |
+| `@Transactional`               | Wraps methods in a transaction.               |
+| `@Query`                       | Specifies a custom query.                     |
+| `@Modifying`                   | Indicates a modifying query method.           |
+| `@Param`                       | Names query method parameter.                 |
+| `@PersistenceContext`          | Injects an EntityManager.                     |
+| `@EnableJpaRepositories`       | Enables JPA repositories.                     |
+| `@DynamicUpdate`               | Updates only changed fields.                  |
+| `@DynamicInsert`               | Inserts only non-null fields.                 |
+| `@Lock`                        | Sets lock mode type.                          |
+| `@Cacheable`                   | Caches method result.                         |
+| `@CachePut`                    | Updates cache with result.                    |
+| `@CacheEvict`                  | Evicts entries from cache.                    |
+| `@EntityGraph`                 | Defines entity fetching graph.                |
+| `@Procedure`                   | Calls a stored procedure.                     |
+| `@NoRepositoryBean`            | Excludes interface as repository.             |
+| `@EnableTransactionManagement` | Enables transaction management.               |
+| `@Audited`                     | Marks entity/field for audit.                 |
+| `@SQLDelete`                   | Custom SQL for deleting entity.               |
+| `@Where`                       | Adds clause to SQL queries.                   |
+| `@OptimisticLocking`           | Configures optimistic locking.                |
 
 
 
@@ -139,18 +149,91 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 
 
 
+
 ## CRUD
 
-**CREATE**:  
-1. SESSION - session.save(entityObj)  
-// we cant directly write insert query, instead we can perform insertion from other table  
-2. HQL - session.createQuery("insert into Product(productId,proName,price) select i.itemId,i.itemName,i.itemPrice from Items i where i.itemId= 22");  
-3. SQL - session.createSQLQuery("insert into Product value ('raj',25)");  
+### 1. JPA_RESPOSITORY
+| Method                              			| Description                                   |
+|-----------------------------------------------|-----------------------------------------------|
+| `beginTransaction()`                			| Starts a new transaction.                    |
+| `getTransaction()`                  			| Gets the current transaction.                |
+| `save(Object entity)`               			| Saves an entity.                             |
+| `update(Object entity)`             			| Updates an entity.                           |
+| `saveOrUpdate(Object entity)`       			| Saves or updates an entity.                  |
+| `delete(Object entity)`             			| Deletes an entity.                           |
+| `get(Class<T> entityClass, Serializable id)` 	| Finds entity by ID.                        |
+| `load(Class<T> entityClass, Serializable id)`	| Loads entity by ID (proxy).                |
+| `createQuery(String hql)`           			| Creates an HQL query.                        |
+| `createSQLQuery(String sql)`        			| Creates a SQL query.                         |
+| `createCriteria(Class<T> entityClass)` 		| Creates a Criteria query.                   |
+| `flush()`                           			| Syncs changes to database.                   |
+| `clear()`                           			| Clears the session.                         |
+| `evict(Object entity)`             		 	| Detaches an entity.                          |
+| `close()`                           			| Closes the session.                         |
+| `isOpen()`                          			| Checks if session is open.                   |
+| `contains(Object entity)`           			| Checks if entity is managed.                 |
+| `refresh(Object entity)`            			| Refreshes entity from database.              |
+| `merge(Object entity)`              			| Merges detached entity.                      |
+| `getSessionFactory()`               			| Gets the session factory.                    |
+| `setFlushMode(FlushMode flushMode)` 			| Sets the flush mode.                         |
+| `getFlushMode()`                    			| Gets the flush mode.                         |
+| `getEntityName(Object object)`      			| Gets the entity name.                        |
 
-**RETRIVE**:  
-1. SESSION - session.get(Student.class, stdId); session.load(Student.class, stdId);  
-	load method: wont hit DB until result object been used,proxy obj, throw exception if result not found  
-	get method: surely hit DB eventhough result obj not used, return null if result not found   	
+
+### 2. Session
+```
+public class HibernateUtil {
+    private static SessionFactory sessionFactory;
+    static {
+		Configuration configuration = new Configuration().configure();
+		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties())
+				.build();
+		sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
+    }
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+    public static void shutdown() {
+        getSessionFactory().close();
+    }
+}
+
+```
+```
+	Session session = HibernateUtil.getSessionFactory().openSession();
+    session.beginTransaction();
+	session.getTransaction().commit();
+    session.close();
+```
+| Method                              			| Description                                   |
+|-----------------------------------------------|-----------------------------------------------|
+| `beginTransaction()`                 			| Starts a new transaction.                    	|
+| `getTransaction()`                  			| Retrieves the current transaction.           	|
+| `save(Object entity)`               			| Saves an entity.                             	|
+| `update(Object entity)`             			| Updates an entity.                           	|
+| `saveOrUpdate(Object entity)`       			| Saves or updates an entity.                  	|
+| `delete(Object entity)`             			| Deletes an entity.                           	|
+| `get(Class<T> entityClass, Serializable id)` 	| surely hit DB eventhough result obj not used, return null if result not found   	                     		|
+| `load(Class<T> entityClass, Serializable id)` | wont hit DB until result object been used,proxy obj, throw exception if result not found . (uses proxy design pattern)                		|
+| `createQuery(String hql)`           			| Creates an HQL query.                        	|
+| `createSQLQuery(String sql)`        			| Creates a SQL query.                         	|
+| `createCriteria(Class<T> entityClass)` 		| Creates a Criteria query.                   	|
+| `flush()`                           			| Syncs changes to the database.               	|
+| `clear()`                           			| Clears the persistence context.             	|
+| `evict(Object entity)`              			| Detaches an entity.                          	|
+| `close()`                           			| Closes the session.                         	|
+| `isOpen()`                          			| Checks if session is open.                   	|
+| `contains(Object entity)`           			| Checks if entity is managed.                 	|
+| `refresh(Object entity)`            			| Refreshes entity from database.              	|
+| `merge(Object entity)`              			| Merges detached entity into session.         	|
+| `getSessionFactory()`               			| Gets the session factory.                    	|
+| `setFlushMode(FlushMode flushMode)` 			| Sets the flush mode.                         	|
+| `getFlushMode()`                    			| Gets the current flush mode.                 	|
+| `getEntityName(Object object)`      			| Gets the entity name.                        	|
+
+#### HQL
+1. HQL - session.createQuery("insert into Product(productId,proName,price) select i.itemId,i.itemName,i.itemPrice from Items i where i.itemId= 22");  
 2. HQL - 	
 		session.createQuery("from student").list();   
 		session.createQuery("from student s where s.name='raj'").list();  
@@ -160,8 +243,15 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 		Query query = session.createQuery(hql);session.createQuery("from student s where s.name=?").setParameter(0,"raj").list(); 	// can replace by position ? symbol
 		query.setFirstResult(1);				// limit start  
 		query.setMaxResults(10); 				// limit end  
-	
+3. HQL - session.CreateQuery("update student set name='raj'").executeUpdate();  
+4. HQL - session.CreateQuery("delete from student where name='raj'").executeUpdate();
+
+### Session SQO
+4. SQL - session.createSQLQuery("insert into Product value ('raj',25)");  
 3. SQL -  session.CreateSQLQuery("select name from students").executeUpdate(); 
+3. SQL - session.CreateSQLQuery("update student set name='raj'").executeUpdate();
+3. SQL - session.CreateSQLQuery("delete from student where name='raj'").executeUpdate();
+
 4. CreateCriteria - read only   
 ```
 Criteria cr = session.createCriteria(Employee.class).list();
@@ -179,15 +269,10 @@ cr.setProjection(Projections.sum("salary")); //aggregate functions  //min,max,av
 List<Employee> results = cr.list();  
 ```
 
-**UPDATE**  
-1. SESSION - session.update(entityObj);  
-2. HQL - session.CreateQuery("update student set name='raj'").executeUpdate();  
-3. SQL - session.CreateSQLQuery("update student set name='raj'").executeUpdate();
 
-**DELETE**  
-1. SESSION - session.delete(entityObj);  
-2. HQL - session.CreateQuery("delete from student where name='raj'").executeUpdate();
-3. SQL - session.CreateSQLQuery("delete from student where name='raj'").executeUpdate();
+
+
+
 
 ---
 
