@@ -1,9 +1,9 @@
 # Spring JPA
 
-1. [Hibernate Architecture](#hibernate-architecture). 
-2. [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
-3. [Annotations](#annotations). 
-4. Steps for Hibernate
+- [Hibernate Architecture](#hibernate-architecture). 
+- [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
+- [Annotations](#annotations). 
+- Steps for Hibernate
 CRUD Operations in Hibernate
 Hibernate Query Language (HQL)
 Hibernate Criteria
@@ -35,7 +35,7 @@ Index for Miscellaneous Topics
 Note: The default JPA provider for Spring boot is Hibernate
 
 # Hibernate
-> framework for database interactions  
+> open-source ORM (Object-Relational Mapping) framework, simplifies db interactions/portability.
 
 - **ORM tool** : maps java object to Database table   
 - **JPA tool** :  provides standard methods for ORM tools.
@@ -43,6 +43,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 - **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
 
 ### Hibernate vs JDBC
+
 | Feature                       | Hibernate                                     | JDBC                                         |
 |-------------------------------|-----------------------------------------------|----------------------------------------------|
 | **Abstraction Level**         | Higher-level ORM 								| Lower-level database interaction API         |
@@ -51,9 +52,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 | **Caching**                   | Built-in caching mechanisms                   | No built-in caching                          |
 | **Transaction Management**    | Built-in, integrated with JTA and Spring      | Needs to be manually handled                 |
 | **Lazy Loading**              | Supported                                     | Not supported                                |
-| **Performance**               | Can be slower due to abstraction overhead     | Generally faster due to direct SQL execution |
-| **Schema Generation**         | Can automatically generate database schema    | Schema must be manually created              |
-| **Portability**               | High - abstracts database-specific features   | Lower - SQL may need changes for different DBs|
+| **Performance**               | slower     									| faster |
 | **Error Handling**            | Throws Hibernate exceptions                   | Throws SQLExceptions                         |
 
 
