@@ -37,9 +37,9 @@ Index for Miscellaneous Topics
 Note: The default JPA provider for Spring boot is Hibernate
 
 # Hibernate
-> open-source ORM (Object-Relational Mapping) framework, simplifies db interactions/portability.
+> open-source ORM framework, simplifies db interactions/portability.
 
-- **ORM tool** : maps java object to Database table   
+- **ORM tool** : (Object-Relational Mapping) maps java object to Database table   
 - **JPA tool** :  provides standard methods for ORM tools.
 - **dialect** : specify type of database  
 - **HQL**: Hibernate query language, DB intependent, works on persistant object instead of tables/columns  
@@ -85,11 +85,10 @@ Note: The default JPA provider for Spring boot is Hibernate
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
 ## Hibernate Session Object lifecycle:
-1. Transient - new instance of pojo ```Cust cust = new Cust();```    
-2. Persistent - associate with session (while save(),update(),persist(),lock(),merge(),saveOrUpdate())  
-2a. while get and load() it is in persistent stage    
-3. Removed - while remove(),delete()  
-4. Detached - closed from session(while clear(),close())  
+1. **Transient** - new instance of pojo ```Cust cust = new Cust();```    
+2. **Persistent** - associate with session (while save(),get(),load(),update(),persist(),lock(),merge(),saveOrUpdate())  
+3. **Removed** - while remove(),delete()  
+4. **Detached** - closed from session(while clear(),close())  
 
 ## Annotations:  
 ### Entity class Annotation  
@@ -152,33 +151,31 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 
 
 ## CRUD
-
 ### 1. JPA_RESPOSITORY
-| Method                              			| Description                                   |
-|-----------------------------------------------|-----------------------------------------------|
-| `beginTransaction()`                			| Starts a new transaction.                    |
-| `getTransaction()`                  			| Gets the current transaction.                |
-| `save(Object entity)`               			| Saves an entity.                             |
-| `update(Object entity)`             			| Updates an entity.                           |
-| `saveOrUpdate(Object entity)`       			| Saves or updates an entity.                  |
-| `delete(Object entity)`             			| Deletes an entity.                           |
-| `get(Class<T> entityClass, Serializable id)` 	| Finds entity by ID.                        |
-| `load(Class<T> entityClass, Serializable id)`	| Loads entity by ID (proxy).                |
-| `createQuery(String hql)`           			| Creates an HQL query.                        |
-| `createSQLQuery(String sql)`        			| Creates a SQL query.                         |
-| `createCriteria(Class<T> entityClass)` 		| Creates a Criteria query.                   |
-| `flush()`                           			| Syncs changes to database.                   |
-| `clear()`                           			| Clears the session.                         |
-| `evict(Object entity)`             		 	| Detaches an entity.                          |
-| `close()`                           			| Closes the session.                         |
-| `isOpen()`                          			| Checks if session is open.                   |
-| `contains(Object entity)`           			| Checks if entity is managed.                 |
-| `refresh(Object entity)`            			| Refreshes entity from database.              |
-| `merge(Object entity)`              			| Merges detached entity.                      |
-| `getSessionFactory()`               			| Gets the session factory.                    |
-| `setFlushMode(FlushMode flushMode)` 			| Sets the flush mode.                         |
-| `getFlushMode()`                    			| Gets the flush mode.                         |
-| `getEntityName(Object object)`      			| Gets the entity name.                        |
+
+| JpaRepository Method                                 | Description                           		| Alternative in Hibernate Session                     |
+|-----------------------------------------------------|---------------------------------------------|------------------------------------------------------|
+| `save(S entity)`                                  | Saves an entity.                              | `save(Object entity)`                               |
+| `saveAll(Iterable<S> entities)`                   | Saves all entities.                           | `save(Object entity)` (repeat for each entity)      |
+| `findById(ID id)`                                 | Retrieves entity by ID.                       | `get(Class<T> entityClass, Serializable id)`       |
+| `findAll()`                                       | Returns all entities.                         | `createQuery("from Entity")` or `createCriteria()`  |
+| `findAllById(Iterable<ID> ids)`                   | Returns entities by IDs.                      | Use `createQuery` or `createCriteria` with `IN` clause |
+| `deleteById(ID id)`                               | Deletes entity by ID.                         | `delete(Object entity)` (find first, then delete)   |
+| `delete(T entity)`                                | Deletes an entity.                            | `delete(Object entity)`                             |
+| `deleteAll()`                                     | Deletes all entities.                         | `createQuery("delete from Entity")`                 |
+| `deleteAll(Iterable<? extends T> entities)`       | Deletes given entities.                       | `delete(Object entity)` (repeat for each entity)    |
+| `count()`                                         | Counts all entities.                          | `createQuery("select count(*) from Entity")`        |
+| `existsById(ID id)`                               | Checks if ID exists.                          | `findById(ID id)` (check if result is present)      |
+| `flush()`                                         | Flushes changes to database.                  | `flush()`                                           |
+| `saveAndFlush(S entity)`                          | Saves and flushes entity.                     | `save(Object entity)`, followed by `flush()`        |
+| `findAll(Sort sort)`                              | Returns sorted entities.                      | `createQuery("from Entity order by property")`       |
+| `findAll(Pageable pageable)`                      | Returns paginated entities.                   | Use `setFirstResult()` and `setMaxResults()` in query |
+| `findOne(Specification<T> spec)`                  | Finds one by specification.                   | Use `createQuery` with criteria for one result       |
+| `findAll(Specification<T> spec)`                  | Finds all by specification.                   | Use `createQuery` with criteria                      |
+| `findAll(Specification<T> spec, Sort sort)`       | Finds and sorts by specification.             | Use `createQuery` with criteria and order by clause  |
+| `findAll(Specification<T> spec, Pageable pageable)` | Finds and paginates by specification.	| Use `createQuery` with criteria, and paging methods  |
+| `count(Specification<T> spec)`                    | Counts by specification.                  | Use `createQuery("select count(*) from Entity where criteria")` |
+| `exists(Specification<T> spec)`                   | Checks if exists by specification.        | Use `createQuery` with criteria and check if result is present |
 
 
 ### 2. Session
@@ -207,31 +204,33 @@ public class HibernateUtil {
 	session.getTransaction().commit();
     session.close();
 ```
-| Method                              			| Description                                   |
-|-----------------------------------------------|-----------------------------------------------|
-| `beginTransaction()`                 			| Starts a new transaction.                    	|
-| `getTransaction()`                  			| Retrieves the current transaction.           	|
-| `save(Object entity)`               			| Saves an entity.                             	|
-| `update(Object entity)`             			| Updates an entity.                           	|
-| `saveOrUpdate(Object entity)`       			| Saves or updates an entity.                  	|
-| `delete(Object entity)`             			| Deletes an entity.                           	|
-| `get(Class<T> entityClass, Serializable id)` 	| surely hit DB eventhough result obj not used, return null if result not found   	                     		|
-| `load(Class<T> entityClass, Serializable id)` | wont hit DB until result object been used,proxy obj, throw exception if result not found . (uses proxy design pattern)                		|
-| `createQuery(String hql)`           			| Creates an HQL query.                        	|
-| `createSQLQuery(String sql)`        			| Creates a SQL query.                         	|
-| `createCriteria(Class<T> entityClass)` 		| Creates a Criteria query.                   	|
-| `flush()`                           			| Syncs changes to the database.               	|
-| `clear()`                           			| Clears the persistence context.             	|
-| `evict(Object entity)`              			| Detaches an entity.                          	|
-| `close()`                           			| Closes the session.                         	|
-| `isOpen()`                          			| Checks if session is open.                   	|
-| `contains(Object entity)`           			| Checks if entity is managed.                 	|
-| `refresh(Object entity)`            			| Refreshes entity from database.              	|
-| `merge(Object entity)`              			| Merges detached entity into session.         	|
-| `getSessionFactory()`               			| Gets the session factory.                    	|
-| `setFlushMode(FlushMode flushMode)` 			| Sets the flush mode.                         	|
-| `getFlushMode()`                    			| Gets the current flush mode.                 	|
-| `getEntityName(Object object)`      			| Gets the entity name.                        	|
+
+| Method                               | Description                         | Alternative in JpaRepository         |
+|--------------------------------------|-------------------------------------|--------------------------------------|
+| `beginTransaction()`                  | Starts a new transaction.          | -                                    |
+| `getTransaction()`                   | Retrieves the current transaction.  | -                                    |
+| `save(Object entity)`                | Saves an entity.                    | `save(S entity)`                     |
+| `update(Object entity)`              | Updates an entity.                  | `save(S entity)`                     |
+| `saveOrUpdate(Object entity)`        | Saves or updates an entity.         | `save(S entity)`                     |
+| `delete(Object entity)`              | Deletes an entity.                  | `deleteById(ID id)`, `delete(S entity)` |
+| `get(Class<T> entityClass, Serializable id)`  | Hits DB, returns `null` if not found. | `findById(ID id)`                     |
+| `load(Class<T> entityClass, Serializable id)` | Won’t hit DB until object is used; throws exception if not found. | `getReferenceById(ID id)`             |
+| `createQuery(String hql)`            | Creates an HQL query.                | `@Query("HQL query")`                |
+| `createSQLQuery(String sql)`         | Creates a SQL query.                 | `@Query("SQL query")`                |
+| `createCriteria(Class<T> entityClass)` | Creates a Criteria query.          | `@Query` with Criteria API or `QueryDSL` |
+| `flush()`                            | Syncs changes to the database.       | -                                    |
+| `clear()`                            | Clears the persistence context.      | -                                    |
+| `evict(Object entity)`               | Detaches an entity.                  | -                                    |
+| `close()`                            | Closes the session.                  | -                                    |
+| `isOpen()`                           | Checks if session is open.           | -                                    |
+| `contains(Object entity)`            | Checks if entity is managed.         | -                                    |
+| `refresh(Object entity)`             | Refreshes entity from database.      | -                                    |
+| `merge(Object entity)`               | Merges detached entity into session. | `save(S entity)` (merges implicitly) |
+| `getSessionFactory()`                | Gets the session factory.            | `EntityManagerFactory`               |
+| `setFlushMode(FlushMode flushMode)`  | Sets the flush mode.                 | `@Transactional` (flush mode can be managed via transaction settings) |
+| `getFlushMode()`                     | Gets the current flush mode.         | -                                    |
+| `getEntityName(Object object)`       | Gets the entity name.                | -                                    |
+
 
 #### HQL
 1. HQL - session.createQuery("insert into Product(productId,proName,price) select i.itemId,i.itemName,i.itemPrice from Items i where i.itemId= 22");  
