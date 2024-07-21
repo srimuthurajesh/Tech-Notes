@@ -6,7 +6,14 @@
 - [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
 - [Annotations](#annotations). 
 - [CRUD Operations](#crud)
-- Steps for Hibernate
+	- [JPA Repository](#jpa_respository)
+	- [Session Object](#session-object)
+		- [HQL](#session-hql)
+		- [SQL](#session-sql)
+		- [Criteria](#session-criteria)
+- [Hibernate Configuration](#hibernate-configuration)
+	- [XML Configuration](#1-xml-configuration)
+	- [Java configuration](#2-java-configuration)
 Hibernate Query Language (HQL)
 Hibernate Criteria
 HQL Examples
@@ -88,7 +95,8 @@ Note: The default JPA provider for Spring boot is Hibernate
 1. **Transient** - new instance of pojo ```Cust cust = new Cust();```    
 2. **Persistent** - associate with session (while save(),get(),load(),update(),persist(),lock(),merge(),saveOrUpdate())  
 3. **Removed** - while remove(),delete()  
-4. **Detached** - closed from session(while clear(),close())  
+4. **Detached** - closed from session(while `session.clear()`, `session.close();`,   
+manually `session.evict(entity);`, `session.detach(entity);`)   
 
 ## Annotations:  
 ### Entity class Annotation  
@@ -116,6 +124,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
 
 ### Persistance class Annotation 
+
 | Annotation                     | Description                                   |
 |--------------------------------|-----------------------------------------------|
 | `@Repository`                  | Marks a Spring Data repository.               |
@@ -147,56 +156,86 @@ Note: The default JPA provider for Spring boot is Hibernate
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
 or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	  
 
-
-
-
-## CRUD
-### 1. JPA_RESPOSITORY
-
-| JpaRepository Method                                 | Description                           		| Alternative in Hibernate Session                     |
-|-----------------------------------------------------|---------------------------------------------|------------------------------------------------------|
-| `save(S entity)`                                  | Saves an entity.                              | `save(Object entity)`                               |
-| `saveAll(Iterable<S> entities)`                   | Saves all entities.                           | `save(Object entity)` (repeat for each entity)      |
-| `findById(ID id)`                                 | Retrieves entity by ID.                       | `get(Class<T> entityClass, Serializable id)`       |
-| `findAll()`                                       | Returns all entities.                         | `createQuery("from Entity")` or `createCriteria()`  |
-| `findAllById(Iterable<ID> ids)`                   | Returns entities by IDs.                      | Use `createQuery` or `createCriteria` with `IN` clause |
-| `deleteById(ID id)`                               | Deletes entity by ID.                         | `delete(Object entity)` (find first, then delete)   |
-| `delete(T entity)`                                | Deletes an entity.                            | `delete(Object entity)`                             |
-| `deleteAll()`                                     | Deletes all entities.                         | `createQuery("delete from Entity")`                 |
-| `deleteAll(Iterable<? extends T> entities)`       | Deletes given entities.                       | `delete(Object entity)` (repeat for each entity)    |
-| `count()`                                         | Counts all entities.                          | `createQuery("select count(*) from Entity")`        |
-| `existsById(ID id)`                               | Checks if ID exists.                          | `findById(ID id)` (check if result is present)      |
-| `flush()`                                         | Flushes changes to database.                  | `flush()`                                           |
-| `saveAndFlush(S entity)`                          | Saves and flushes entity.                     | `save(Object entity)`, followed by `flush()`        |
-| `findAll(Sort sort)`                              | Returns sorted entities.                      | `createQuery("from Entity order by property")`       |
-| `findAll(Pageable pageable)`                      | Returns paginated entities.                   | Use `setFirstResult()` and `setMaxResults()` in query |
-| `findOne(Specification<T> spec)`                  | Finds one by specification.                   | Use `createQuery` with criteria for one result       |
-| `findAll(Specification<T> spec)`                  | Finds all by specification.                   | Use `createQuery` with criteria                      |
-| `findAll(Specification<T> spec, Sort sort)`       | Finds and sorts by specification.             | Use `createQuery` with criteria and order by clause  |
-| `findAll(Specification<T> spec, Pageable pageable)` | Finds and paginates by specification.	| Use `createQuery` with criteria, and paging methods  |
-| `count(Specification<T> spec)`                    | Counts by specification.                  | Use `createQuery("select count(*) from Entity where criteria")` |
-| `exists(Specification<T> spec)`                   | Checks if exists by specification.        | Use `createQuery` with criteria and check if result is present |
-
-
-### 2. Session
+## Hibernate Configuration
+### 1. XML Configuration
+- The primary XML files used are `hibernate.cfg.xml`  
 ```
-public class HibernateUtil {
-    private static SessionFactory sessionFactory;
-    static {
-		Configuration configuration = new Configuration().configure();
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/yourdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">password</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+    </session-factory>
+</hibernate-configuration>
+```
+```
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+```
+### 2. Java Configuration
+```
+Configuration configuration = new Configuration();
+configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/yourdb");
+configuration.setProperty("hibernate.connection.username", "root");
+configuration.setProperty("hibernate.connection.password", "password");
+configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+configuration.setProperty("hibernate.show_sql", "true");
+configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+
+// Add annotated classes
+configuration.addAnnotatedClass(YourEntity.class);
+
+SessionFactory sessionFactory = configuration.buildSessionFactory();
+Session session = sessionFactory.openSession();
+
+```
+## CRUD
+### JPA_RESPOSITORY
+
+| JpaRepository Method                       | Description                    | Alternative in Hibernate Session                     |
+|--------------------------------------------|---------------------------------|------------------------------------------------------|
+| `save(S entity)`                           | Saves an entity.                  | `save(Object entity)`                               |
+| `saveAll(Iterable<S> entities)`            | Saves all entities.               | `save(Object entity)` (repeat for each entity)      |
+| `findById(ID id)`                          | Retrieves entity by ID.           | `get(Class<T> entityClass, Serializable id)`       |
+| `findAll()`                                | Returns all entities.             | `createQuery("from Entity")` or `createCriteria()`  |
+| `findAllById(Iterable<ID> ids)`            | Returns entities by IDs.          | Use `createQuery` or `createCriteria` with `IN` clause |
+| `deleteById(ID id)`                        | Deletes entity by ID.             | `delete(Object entity)` (find first, then delete)   |
+| `delete(T entity)`                         | Deletes an entity.                | `delete(Object entity)`                             |
+| `deleteAll()`                              | Deletes all entities.             | `createQuery("delete from Entity")`                 |
+| `deleteAll(Iterable<? extends T> entities)`| Deletes given entities.           | `delete(Object entity)` (repeat for each entity)    |
+| `count()`                                  | Counts all entities.              | `createQuery("select count(*) from Entity")`        |
+| `existsById(ID id)`                        | Checks if ID exists.              | `findById(ID id)` (check if result is present)      |
+| `flush()`                                  | Flushes changes to database.      | `flush()`                                           |
+| `saveAndFlush(S entity)`                   | Saves and flushes entity.         | `save(Object entity)`, followed by `flush()`        |
+| `findAll(Sort sort)`                       | Returns sorted entities.          | `createQuery("from Entity order by property")`       |
+| `findAll(Pageable pageable)`               | Returns paginated entities.       | Use `setFirstResult()` and `setMaxResults()` in query |
+| `findOne(Specification<T> spec)`           | Finds one by specification.       | Use `createQuery` with criteria for one result       |
+| `findAll(Specification<T> spec)`           | Finds all by specification.       | Use `createQuery` with criteria                      |
+| `findAll(Specification<T> spec, Sort sort)`| Finds and sorts by specification. | Use `createQuery` with criteria and order by clause  |
+| `findAll(Specification<T> s, Pageable p)` | Finds and paginates by specification.		| Use `createQuery` with criteria, and paging methods  |
+| `count(Specification<T> spec)`             | Counts by specification.          | Use `createQuery("select count(*) from Entity where criteria")` |
+| `exists(Specification<T> spec)`            | Checks if exists by specification.| Use `createQuery` with criteria and check if result is present |
+
+
+### Session Object
+```
+		SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
 		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(configuration.getProperties())
 				.build();
 		sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
-    }
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
-    public static void shutdown() {
-        getSessionFactory().close();
-    }
-}
-
 ```
 ```
 	Session session = HibernateUtil.getSessionFactory().openSession();
@@ -214,7 +253,7 @@ public class HibernateUtil {
 | `saveOrUpdate(Object entity)`        | Saves or updates an entity.         | `save(S entity)`                     |
 | `delete(Object entity)`              | Deletes an entity.                  | `deleteById(ID id)`, `delete(S entity)` |
 | `get(Class<T> entityClass, Serializable id)`  | Hits DB, returns `null` if not found. | `findById(ID id)`                     |
-| `load(Class<T> entityClass, Serializable id)` | Won’t hit DB until object is used; throws exception if not found. | `getReferenceById(ID id)`             |
+| `load(Class<T> entityClass, Serializable id)` | Won’t hit DB until object is used;throws exception if not found. |`getReferenceById(ID id)`|
 | `createQuery(String hql)`            | Creates an HQL query.                | `@Query("HQL query")`                |
 | `createSQLQuery(String sql)`         | Creates a SQL query.                 | `@Query("SQL query")`                |
 | `createCriteria(Class<T> entityClass)` | Creates a Criteria query.          | `@Query` with Criteria API or `QueryDSL` |
@@ -232,10 +271,9 @@ public class HibernateUtil {
 | `getEntityName(Object object)`       | Gets the entity name.                | -                                    |
 
 
-#### HQL
-1. HQL - session.createQuery("insert into Product(productId,proName,price) select i.itemId,i.itemName,i.itemPrice from Items i where i.itemId= 22");  
-2. HQL - 	
-		session.createQuery("from student").list();   
+#### Session HQL
+1. Select - session.createQuery("insert into Product(productId,proName,price) select i.itemId,i.itemName,i.itemPrice from Items i where i.itemId= 22");  
+2. Retrival - 	
 		session.createQuery("from student s where s.name='raj'").list();  
 		session.createQuery("from student s where s.id=:id").setParameter("id",2).list(); // replace :id by given param  
 		session.createQuery("from student s where s.name=:name").setString("name","raj").list(); // set string datatype 
@@ -243,34 +281,32 @@ public class HibernateUtil {
 		Query query = session.createQuery(hql);session.createQuery("from student s where s.name=?").setParameter(0,"raj").list(); 	// can replace by position ? symbol
 		query.setFirstResult(1);				// limit start  
 		query.setMaxResults(10); 				// limit end  
-3. HQL - session.CreateQuery("update student set name='raj'").executeUpdate();  
-4. HQL - session.CreateQuery("delete from student where name='raj'").executeUpdate();
+3. Update - session.CreateQuery("update student set name='raj'").executeUpdate();  
+4. Delete - session.CreateQuery("delete from student where name='raj'").executeUpdate();
 
-### Session SQO
-4. SQL - session.createSQLQuery("insert into Product value ('raj',25)");  
-3. SQL -  session.CreateSQLQuery("select name from students").executeUpdate(); 
-3. SQL - session.CreateSQLQuery("update student set name='raj'").executeUpdate();
-3. SQL - session.CreateSQLQuery("delete from student where name='raj'").executeUpdate();
+#### Session SQl
+4. Create - session.createSQLQuery("insert into Product value ('raj',25)");  
+3. Retrival -  session.CreateSQLQuery("select name from students").executeUpdate(); 
+3. Update - session.CreateSQLQuery("update student set name='raj'").executeUpdate();
+3. Delete - session.CreateSQLQuery("delete from student where name='raj'").executeUpdate();
 
-4. CreateCriteria - read only   
-```
-Criteria cr = session.createCriteria(Employee.class).list();
-Criterion salary = cr.add(Restrictions.eq("salary", 2000)); 
+#### Session Criteria
+> CreateCriteria - read only   
+
+1. Create criteria Object: `Criteria cr = session.createCriteria(Employee.class).list();`  
+2. Adding restriction: `Criterion salary = cr.add(Restrictions.eq("salary", 2000)); `
 //eq,lt,gt,like,ilike,between,isNull,isNotNull,isEmpty,isNotEmpty  
 Criterion name = Restrictions.ilike("firstNname","zara%");  
 LogicalExpression orExp = Restrictions.or(salary, name); //eq. or,and    
-cr.add( orExp );
-cr.setFirstResult(1);				// limit start  
-cr.setMaxResults(10); 				// limit end  
-cr.addOrder(Order.asc("salary")); //orderBy   
-cr.setProjection(Projections.rowCount());  //count*  
-cr.setProjection(Projections.countDistinct("firstName"));	//distinct count*  
-cr.setProjection(Projections.sum("salary")); //aggregate functions  //min,max,avg   
+
+3. Additin restriction in criteria: `cr.add( orExp );`
+4. Limit start: `cr.setFirstResult(1);`			
+5. Limit end: `cr.setMaxResults(10);` 				
+6. Order Asc Dec : `cr.addOrder(Order.asc("salary"));`      
+7. Count: `cr.setProjection(Projections.rowCount());`    
+8. Distinct: `cr.setProjection(Projections.countDistinct("firstName"));`  
+9. Aggregate function:min, max,sum,avg `cr.setProjection(Projections.sum("salary"));`   
 List<Employee> results = cr.list();  
-```
-
-
-
 
 
 
@@ -414,138 +450,3 @@ public class Employee {   }
 **Query cache:** data stored as hashmap where query text param is key, result is value 
 1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
 2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
-
-## Hibernate configurations
-### 1. Java-Based Configuration
-
-1. Define datasource bean in configuration class
-
-```
-@Configuration 						
-@EnableTransactionManagement  //<tx:annotation-driven transaction-manager="myTransactionManager" />		
-public class AppplicationContextConfig {    
-	@Bean(name = "dataSource")        							
-	public DataSource getDataSource() {     		
-	    DriverManagerDataSource dataSource = new DriverManagerDataSource();   
-	    dataSource.setDriverClassName("org.h2.Driver");			
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test3");		
-	    dataSource.setUsername("sa");
-		dataSource.setPassword("sa"); 
-	    return dataSource;
-	}
-	private Properties getHibernateProperties() {					
-	    Properties properties = new Properties();
-	    properties.put("hibernate.show_sql", "true");								
-	    properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");		
-	    properties.put("hibernate.hbm2ddl.auto", "update");	// create | update | validate | create-drop
-	    return properties;
-	}
-
-	@Autowired
-	@Bean(name = "sessionFactory")
-	public SessionFactory getSessionFactory(DataSource dataSource) { 
-		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource); 
-		sessionBuilder.addProperties(getHibernateProperties());								
-		sessionBuilder.scanPackages("com.model");
-		sessionBuilder.addAnnotatedClasses(User.class);     									
-		return sessionBuilder.buildSessionFactory();
-	}
-	@Autowired
-	@Bean(name = "transactionManager")
-	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-		return transactionManager;
-	}
-}
-```
-
-2. Use sessionfactory in DAO class
-
-```
-@Repository
-public class EmployeeDAO {
-
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    @Transactional
-    public void save(Employee employee) {
-        Session session = sessionFactory.getCurrentSession();
-        session.save(employee);
-    }
-}
-```
-
-### 2. XML Configuration
-1. Define required beans in xml. 
-```
-	<!-- Add support for component scanning -->
-	<context:component-scan base-package="com.luv2code.springdemo" />
-
-	<!-- Add support for conversion, formatting and validation support -->
-	<mvc:annotation-driven/>
-
-	<!-- Define Spring MVC view resolver -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-
-    <!-- Step 1: Define Database DataSource / connection pool -->
-	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-          destroy-method="close">
-        <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/web_customer_tracker?useSSL=false&amp;serverTimezone=UTC" />
-        <property name="user" value="springstudent" />
-        <property name="password" value="springstudent" /> 
-
-        <!-- these are connection pool properties for C3P0 -->
-        <property name="minPoolSize" value="5" />
-        <property name="maxPoolSize" value="20" />
-        <property name="maxIdleTime" value="30000" />
-	</bean>  
-	
-    <!-- Step 2: Setup Hibernate session factory -->
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="myDataSource" />
-		<property name="packagesToScan" value="com.luv2code.springdemo.entity" />
-		<property name="hibernateProperties">
-		   <props>
-		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-		      <prop key="hibernate.show_sql">true</prop>
-		   </props>
-		</property>
-   </bean>	  
-
-    <!-- Step 3: Setup Hibernate transaction manager -->
-	<bean id="myTransactionManager"
-            class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    
-    <!-- Step 4: Enable Transaction Management -->
-	<tx:annotation-driven transaction-manager="myTransactionManager" />
-	
-	<!-- Add support for reading web resources: css, images, js, etc ... -->
-	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
-```
-
-2. Use session factory in DAO Class. 
-
-```
-@Repository
-public class EmployeeDAO {
-
-    @Autowired
-    private SessionFactory sessionFactory;
-
-    @Transactional
-    public void save(Employee employee) {
-        Session session = sessionFactory.getCurrentSession();
-        session.save(employee);
-    }
-}
-
-```
