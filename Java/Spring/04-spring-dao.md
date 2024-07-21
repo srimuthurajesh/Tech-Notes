@@ -93,10 +93,12 @@ Note: The default JPA provider for Spring boot is Hibernate
   
 ## Hibernate Session Object lifecycle:
 1. **Transient** - new instance of pojo ```Cust cust = new Cust();```    
-2. **Persistent** - associate with session (while save(),get(),load(),update(),persist(),lock(),merge(),saveOrUpdate())  
+2. **Persistent** - associate with session (while save())  
 3. **Removed** - while remove(),delete()  
 4. **Detached** - closed from session(while `session.clear()`, `session.close();`,   
 manually `session.evict(entity);`, `session.detach(entity);`)   
+
+Note: `session.contain(entity);` will check entity is in persistent stage or not
 
 ## Annotations:  
 ### Entity class Annotation  
@@ -159,7 +161,7 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 ## Hibernate Configuration
 ### 1. XML Configuration
 - The primary XML files used are `hibernate.cfg.xml`  
-```
+```xml
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->

@@ -125,6 +125,11 @@ b) Orchestrator based - prefered
 1. Synchronous: Rest or gRPC
 2. Asynchronous: message brokers like kafka & RabbitMQ
 
+## Connection Pool
+> technique used to manage database connections efficiently by maintaining a pool of reusable connections
+
+Library: Hikari connection pool in spring boot  
+
 ## CI/CD pipeline steps
 1. Code commit  
 2. CI -  
