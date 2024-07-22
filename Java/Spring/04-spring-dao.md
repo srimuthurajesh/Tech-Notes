@@ -123,7 +123,8 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @Transient       | Excludes field from database mapping                  |
 | @NamedQuery      | static query expressed in metadata of entity class    |
 
-#### Generated Type  
+#### Generated Type
+  
 @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
@@ -133,6 +134,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
 #### Named query
 > static query expressed in metadata of entity class. For reusability, maintainability, performance  
+
 `@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`  
 Using Jpa repository:  
 ```
