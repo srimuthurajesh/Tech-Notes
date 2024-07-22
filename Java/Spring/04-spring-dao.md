@@ -121,15 +121,31 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @JoinColumn      | Defines join column for relationships                 |
 | @JoinTable       | Defines join table for many-to-many relationships     |
 | @Transient       | Excludes field from database mapping                  |
+| @NamedQuery      | static query expressed in metadata of entity class    |
 
 #### Generated Type
 @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
-| `AUTO`            | hibernate will choose id generation strategy and generate | General use, database-agnostic                |
+| `AUTO`            | handled by hibernate, from hibernate_sequence table 		| General use, database-agnostic                |
 | `IDENTITY`        | handled by db identity column                            	| Databases that support identity columns       |
 | `SEQUENCE`        | assign primarykey using db sequence                       | sequence support (e.g., Oracle, PostgreSQL) |
 | `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
+#### Named query
+> static query expressed in metadata of entity class. For reusability, maintainability, performance  
+`@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`  
+Using Jpa repository:  
+```
+	@Query(name = "Customer.findByName")
+	List<Customer> findByName(@Param("name") String name);
+```
+Using session:  
+```
+List<Customer> customers = session.createNamedQuery("Customer.findByName", Customer.class)
+                                          .setParameter("name", name)
+                                          .getResultList();
+```
+
 
 ### Persistance class Annotation 
 
@@ -164,10 +180,20 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
 or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	  
 
+| Propagation Type  | Description                         | Use Case                                     |
+|-------------------|-------------------------------------|----------------------------------------------|
+| `REQUIRED`        | Joins or starts a transaction.      | Default, shared transactions.                |
+| `REQUIRES_NEW`    | Always starts a new transaction.    | Independent transactions, logging.           |
+| `MANDATORY`       | Requires an existing transaction.   | Must run within a transaction.               |
+| `NESTED`          | Nested within an existing one.      | Savepoints, nested transactions.             |
+| `SUPPORTS`        | Joins if exists, else none.         | Optional transaction context.                |
+| `NOT_SUPPORTED`   | Runs outside of transactions.       | Ensure no transaction context.               |
+| `NEVER`           | Fails if a transaction exists.      | Must not run within a transaction.           |
+
 ## Hibernate Configuration
 ### 1. XML Configuration
 - The primary XML files used are `hibernate.cfg.xml`  
-```xml
+```
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
