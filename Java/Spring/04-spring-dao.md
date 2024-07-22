@@ -10,6 +10,8 @@
 		- [Named query](#named-query)
 - [CRUD Operations](#crud)
 	- [JPA Repository](#jpa_respository)
+		- [Entity Manager - criteria](#entity-manager-criteria)
+		- [Entity manager - createquery](#entity-manager-createquery)
 	- [Session Object](#session-object)
 		- [HQL](#session-hql)
 		- [SQL](#session-sql)
@@ -138,13 +140,15 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 > static query expressed as alias in metadata of entity class.   
 
 For reusability by alias, maintainability, performance  
-`@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`  
-Using Jpa repository:  
+`@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`    
+or  
+`@NamedQueries(value={@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")})`
+#### Using Jpa repository:  
 ```
 	@Query(name = "Customer.findByName")
 	List<Customer> findByName(@Param("name") String name);
 ```
-Using session:  
+#### Using session:  
 ```
 List<Customer> customers = session.createNamedQuery("Customer.findByName", Customer.class)
                                           .setParameter("name", name)
@@ -268,7 +272,27 @@ Session session = sessionFactory.openSession();
 | `count(Specification<T> spec)`             | Counts by specification.          | Use `createQuery("select count(*) from Entity where criteria")` |
 | `exists(Specification<T> spec)`            | Checks if exists by specification.| Use `createQuery` with criteria and check if result is present |
 
-
+#### Entity manager Criteria
+```
+@PersistenceContext
+private EntityManager entityManager;
+```
+```
+CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+Root<Employee> employee = cq.from(Employee.class);
+Predicate salaryPredicate = cb.equal(employee.get("salary"), salary);
+Predicate namePredicate = cb.like(employee.get("firstName"), firstNamePattern);
+Predicate orPredicate = cb.or(salaryPredicate, namePredicate);
+cq.where(orPredicate);
+return entityManager.createQuery(cq).getResultList();
+```
+#### Entity manager CreateQuery
+```
+Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
+query.setParameter("name", "example");
+List<Entity> results = query.getResultList();
+```
 ### Session Object
 ```
 		SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
@@ -331,7 +355,7 @@ Session session = sessionFactory.openSession();
 3. Delete - session.CreateSQLQuery("delete from student where name='raj'").executeUpdate();
 
 #### Session Criteria
-> CreateCriteria - read only   
+> CreateCriteria - programmatically constructing queries for retrieving data       
 
 1. Create criteria Object: `Criteria cr = session.createCriteria(Employee.class).list();`  
 2. Adding restriction: `Criterion salary = cr.add(Restrictions.eq("salary", 2000)); `
