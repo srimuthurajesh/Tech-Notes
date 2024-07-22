@@ -123,7 +123,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @Transient       | Excludes field from database mapping                  |
 | @NamedQuery      | static query expressed in metadata of entity class    |
 
-#### Generated Type
+#### Generated Type  
 @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
