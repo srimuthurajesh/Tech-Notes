@@ -193,6 +193,7 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 ## Hibernate Configuration
 ### 1. XML Configuration
 - The primary XML files used are `hibernate.cfg.xml`  
+
 ```
 <hibernate-configuration>
     <session-factory>
