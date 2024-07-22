@@ -7,6 +7,7 @@
 - [Annotations](#annotations)  
 	- [Entity class annotation](#entity-class-annotation)
 		- [Generated Type](#generated-type)
+		- [Named query](#named-query)
 - [CRUD Operations](#crud)
 	- [JPA Repository](#jpa_respository)
 	- [Session Object](#session-object)
@@ -68,7 +69,8 @@ Note: The default JPA provider for Spring boot is Hibernate
 | **Performance**               | slower     									| faster |
 | **Error Handling**            | Throws Hibernate exceptions                   | Throws SQLExceptions                         |
 
-
+#### SQL vs HQL
+> Hql has entity name in query syntax, sql will have db table name  
 
 ## Hibernate Architecture:  
 1. **Configuration object**  
@@ -124,7 +126,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @NamedQuery      | static query expressed in metadata of entity class    |
 
 #### Generated Type
-  
+
 @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
@@ -133,8 +135,9 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | `SEQUENCE`        | assign primarykey using db sequence                       | sequence support (e.g., Oracle, PostgreSQL) |
 | `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
 #### Named query
-> static query expressed in metadata of entity class. For reusability, maintainability, performance  
+> static query expressed as alias in metadata of entity class.   
 
+For reusability by alias, maintainability, performance  
 `@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`  
 Using Jpa repository:  
 ```
@@ -439,7 +442,9 @@ private StudentDetail studentDetail;
 ## Fetch types
 ### 1. Lazy
 > related entities are loaded only when they are explicitly accessed.  
-default for @OneToMany and @ManyToMany:
+
+default for @OneToMany and @ManyToMany:  
+**LazyInitializationException**: occurs if we try to use get related entities after session close  
 
 ### 2. Eager
 > related entities are loaded immediately with their parent entity.  
