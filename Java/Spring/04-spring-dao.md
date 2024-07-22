@@ -4,7 +4,9 @@
 	- [Hibernate vs JDBC](#hibernate-vs-jdbc)
 - [Hibernate Architecture](#hibernate-architecture). 
 - [Hibernate session object lifecycle](#hibernate-session-object-lifecycle)
-- [Annotations](#annotations). 
+- [Annotations](#annotations)  
+	- [Entity class annotation](#entity-class-annotation)
+		- [Generated Type](#generated-type)
 - [CRUD Operations](#crud)
 	- [JPA Repository](#jpa_respository)
 	- [Session Object](#session-object)
@@ -22,7 +24,9 @@ Hibernate Mappings
 	OneToMany
 	ManyToOne
 	ManyToMany
-Eager & Lazy Loading
+- [Fetch Types](#fetch-types)
+	- [Lazy](#lazy)
+	- [Eager](#eager)
 Cascading in Hibernate
 Caching in Hibernate
 Hibernate Configuration
@@ -118,12 +122,14 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @JoinTable       | Defines join table for many-to-many relationships     |
 | @Transient       | Excludes field from database mapping                  |
 
+#### Generated Type
 @GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
-	a) GenerationType.AUTO- appropreiate stategy for particular DB  
-	b) GenerationType.Identity- assign primarykey using db identity column    
-	c) GenerationType.SEQUENCE- assign primarykey using db sequence  
-	d) GenerationType.TABLE- assign primarykey using underlying DB to ensure uniqueness  
-	e) implement org.hibernate.id.IdentifierGenerator and override Serializable generate()  
+| GenerationType	| Description                             					| Use Case                                      |
+|-------------------|-----------------------------------------------------------|-----------------------------------------------|
+| `AUTO`            | hibernate will choose id generation strategy and generate | General use, database-agnostic                |
+| `IDENTITY`        | handled by db identity column                            	| Databases that support identity columns       |
+| `SEQUENCE`        | assign primarykey using db sequence                       | sequence support (e.g., Oracle, PostgreSQL) |
+| `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
 
 ### Persistance class Annotation 
 
@@ -401,8 +407,19 @@ private StudentDetail studentDetail;
                                inverseJoinColumns=@JoinColumn("student_details_id"))
 
 ```
+## Fetch types
+### 1. Lazy
+> related entities are loaded only when they are explicitly accessed.  
+default for @OneToMany and @ManyToMany:
 
-**Eager & lazy loading:** mention whether to retreive related entities or not, load chile entity based on Demand  
+### 2. Eager
+> related entities are loaded immediately with their parent entity.  
+default for @ManyToOne and @OneToOne  
+
+`@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)`
+`@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)`
+
+
 ```
 @OneToMany(fetch=fetchType.LAZY);
 @OneToMany(fetch=fetchType.EAGER)
