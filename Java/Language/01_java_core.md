@@ -40,15 +40,15 @@
 - Write Once, Run Anywhere
 - lot of oppurtunities, already lot of projects using java  
 
-Other: Code -> Compiler -> Machine code  
-Java : Code -> Compiler -> Interpreter(JVM) -> Machine code  
+**Other lang** : Code -> Compiler -> Machine code  
+**Java lang** : Code -> Compiler -> Interpreter(JVM) -> Machine code  
 
 **JDK** is (JRE+devTools) - For developer contains javac,debugging tools,archieve tool(jar), javadoc   
 **JRE** is (JVM+lib) - For layman users to run java program  
-**JVM** is Interpreter execute byte code to machine code, contins JustInTime compiler  
+**JVM** is Interpreter execute byte code to machine code, contains JustInTime compiler  
 
 **Byte code**: low level representation of source code, not readable  
-**JIT**: Just-In-Time (JIT) compiler, a component of JVM, that dynamically compiles bytecode into native machine code for efficient execution.  
+**JIT**: Just-In-Time (JIT) compiler, a component of JVM, that efficiently compiles bytecode into native machine code  
 **ClassLoader**: part of JRE, loads class file to JVM    
 
 1. how to compile: `javac -d directory javafilename.java`           	
@@ -168,7 +168,7 @@ System.out.println(~a);//-11 (minus of total positive value which starts from 0)
 System.out.println(~b);//9 (positive of total minus, positive starts from 0)   
 ```  
 Arithmetic operator order: ```System.out.println(10*10/5+3-1*4/2);```  is 21  
-Left shift operator: `10 << 2 is 10 * 2^2 = 40`
+Left shift operator: `10 << 2 is 10 * 2^2 = 40`  
 Right shift operator: `10 >> 2 is 10 / 2^2 = 2`    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
 
@@ -234,14 +234,14 @@ List<?> a = Lists.newArrayList(a);
 
 - implements Serializable, Comparable and CharSequence interfaces  
 
-**String creation**:  
+### String creation:    
 - String - by string literal 
 - new String() - create new space from string pool  
 - new String().intern() - used to return value from string pool     
 - StringBuffer - mutable, thread safe  
 - StringBuilder - mutable, no thread safe, efficient  
 
-**String comparision**:  
+### String comparision:    
 - ```s1.equals(s2);```  check for each char are same or not   
 - ```s1==s2;```  check address is same or not  
 - ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
@@ -251,6 +251,34 @@ List<?> a = Lists.newArrayList(a);
 StringTokenizer st = new StringTokenizer("my name is raj");
 while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
 ```
+### String methods:
+
+| Method                                      | Description                         |
+|---------------------------------------------|-------------------------------------|
+| `charAt(int index)`                        | Character at specified index        |
+| `length()`                                 | Length of the string                |
+| `substring(int beginIndex)`                | Substring from beginIndex to end    |
+| `substring(int beginIndex, int endIndex)`  | Substring from begin to endIndex-1  |
+| `indexOf(int ch)`                          | First occurrence index of character |
+| `indexOf(String str)`                      | First occurrence index of substring |
+| `lastIndexOf(int ch)`                      | Last occurrence index of character  |
+| `lastIndexOf(String str)`                  | Last occurrence index of substring  |
+| `equals(Object anObject)`                  | Compare with another object         |
+| `equalsIgnoreCase(String anotherString)`   | Compare ignoring case               |
+| `compareTo(String anotherString)`          | Lexicographical comparison          |
+| `compareToIgnoreCase(String str)`          | Compare ignoring case               |
+| `contains(CharSequence s)`                 | Contains the specified sequence     |
+| `startsWith(String prefix)`                | Starts with specified prefix        |
+| `endsWith(String suffix)`                  | Ends with specified suffix          |
+| `toUpperCase()`                            | Convert to upper case               |
+| `toLowerCase()`                            | Convert to lower case               |
+| `trim()`                                   | Remove leading and trailing whitespace |
+| `replace(char oldChar, char newChar)`      | Replace characters                  |
+| `replace(CharSequence target, CharSequence replacement)` | Replace substring      |
+| `split(String regex)`                      | Split string by regex               |
+| `join(CharSequence delimiter, CharSequence... elements)` | Join elements with delimiter  |
+| `isEmpty()`                                | Check if the string is empty        |
+| `format(String format, Object... args)`    | Format string with arguments        |
 
 
 ## Static :  
@@ -433,10 +461,30 @@ ClassNotFoundException: runtime, try to load the class while Class.forName() or 
 - [a-zA-Z] represents that the first character must be an alphabet  
 - [a-zA-Z0-9] represents the alphanumeric character  
 - {8,19} represents that the length of the password must be in between 8 and 20.
+
 ```
-import java.util.regex.*;  
+str.matches("[a-z]+"); //return boolean
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
+| Regex		| Description                             | Example              | Matches                                      |
+|-----------|-----------------------------------------|----------------------|----------------------------------------------|
+| `.`       | Any single character                    | `"a.b"`             | `"aab"`, `"a-b"`, `"a*b"`, etc.            |
+| `*`       | 0 or more occurrences                   | `"a*"`              | `"a"`, `"aa"`, `""` (empty string), etc.   |
+| `+`       | 1 or more occurrences                   | `"a+"`              | `"a"`, `"aa"`, `"aaa"`, but not `""`       |
+| `?`       | 0 or 1 occurrence                       | `"a?"`              | `""` (empty string) or `"a"`               |
+| `{n}`     | Exactly `n` occurrences                 | `"a{3}"`            | `"aaa"`                                    |
+| `{n,}`    | `n` or more occurrences                 | `"a{2,}"`           | `"aa"`, `"aaa"`, `"aaaa"`, etc.            |
+| `{n,m}`   | Between `n` and `m` occurrences         | `"a{2,4}"`          | `"aa"`, `"aaa"`, `"aaaa"`                 |
+| `[abc]`   | Any one of the listed characters        | `"[abc]"`           | `"a"`, `"b"`, `"c"`                        |
+| `[^abc]`  | Any character except listed ones        | `"[^abc]"`          | `"d"`, `"1"`, etc.                         |
+| `(a|b)`   | Either `a` or `b`                       | `"(cat|dog)"`       | `"cat"` or `"dog"`                         |
+| `\d`      | Any digit                               | `"\d"`              | `"1"`, `"2"`, `"9"`, etc.                 |
+| `\D`      | Any non-digit character                 | `"\D"`              | `"a"`, `"!"`, `" "`, etc.                 |
+| `\w`      | Any word character                      | `"\w"`              | `"a"`, `"Z"`, `"9"`, `"_"`, etc.         |
+| `\W`      | Any non-word character                  | `"\W"`              | `"!"`, `" "`, `"@"`, etc.                 |
+| `\s`      | Any whitespace character                | `"\s"`              | `" "`, `"\t"`, `"\n"`, etc.               |
+| `\S`      | Any non-whitespace character            | `"\S"`              | `"a"`, `"1"`, `"!"`, etc.                 |
+
 ## Keywords List
 #### Strictly Reserved Keywords (51):
 1. Access Modifiers: private, public, protected
