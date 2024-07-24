@@ -51,8 +51,6 @@ Note: The default JPA provider for Spring boot is Hibernate
 | **Caching**                   | Built-in caching mechanisms                   | No built-in caching                          |
 | **Transaction Management**    | Built-in, integrated with JTA and Spring      | Needs to be manually handled                 |
 | **Lazy Loading**              | Supported                                     | Not supported                                |
-| **Performance**               | slower     									| faster |
-| **Error Handling**            | Throws Hibernate exceptions                   | Throws SQLExceptions                         |
 
 #### SQL vs HQL
 > Hql has entity name in query syntax, sql will have db table name  
@@ -64,21 +62,16 @@ Note: The default JPA provider for Spring boot is Hibernate
 - maps javaclasses and DBtables. 
     
 2. **SessionFactory object**  
--created by configuration  
--creates one time, there will be one sessionFactory for one DB    
--thread safe  
--heavyweight object  
+- creates one time, there will be one sessionFactory for one DB    
+- thread safe , heavyweight object  
 
 3. **Session object**   
--also called as Persistent context  
--created eachtime interact DB
--created by sessionfactory  
--not thread safe, so do close it  
--runtime interface(physical connection) between java and DB,  
+- created eachtime interact DB
+- not thread safe, so do close it  
  
 4. **Trasaction object**  
--unit of work with DB  
--handled by underlying transaction manager and transaction (from JDBC or JTA).  
+- unit of work with DB  
+- handled by underlying transaction manager and transaction (from JDBC or JTA).  
 5. **Query object**- use SQL,HQL string to retrieve data  
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
@@ -94,31 +87,30 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 ## Annotations:  
 ### Entity class Annotation  
 
-| Annotation Name  | Definition                                            |
-|------------------|-------------------------------------------------------|
-| @Entity          | Marks a class as an entity                            |
-| @Table           | specify details of table. name,catalogue,schema,unique constraints                                   |
-| @Id              | Marks primary key field                               |
-| @GeneratedValue  | Defines primary key generation strategy               |
-| @Column          | Maps field to column                                  |
-| @OneToOne        | Defines one-to-one relationship                       |
-| @OneToMany       | Defines one-to-many relationship                      |
-| @ManyToOne       | Defines many-to-one relationship                      |
-| @ManyToMany      | Defines many-to-many relationship                     |
-| @JoinColumn      | Defines join column for relationships and properties like name |
-| @JoinTable       | Defines join table for many-to-many relationships     |
-| @Transient       | Excludes field from database mapping                  |
-| @NamedQuery      | static query expressed in metadata of entity class    |
+| Annotation Name  	| Definition                                            |
+|-------------------|-------------------------------------------------------|
+| @Entity          	| Marks a class as an entity                            |
+| @Table           	| db table details. name,catalogue,schema,unique constraints|
+| @Id              	| Marks primary key field                               |
+| @GeneratedValue	| Defines primary key generation strategy               |
+| @Column          	| Maps field to column                                  |
+| mappings       	| @OneToMany, @ManyToOne, @ManyToMany, @ManyToMany      |
+| @JoinColumn      	| Defines join column for relationships and properties like name |
+| @JoinTable       	| Defines join table for many-to-many relationships     |
+| @Transient       	| Excludes field/methods from database mapping          |
+| @NamedQuery      	| query expressed as alias in metadata of entity class 	|
 
 #### Generated Type
+> configures entity primary key generation, conjunction with @Id    
 
-@GeneratedValue(strategy=GenerationType.AUTO)  - also use AUTO,SEQUENCE,TABLE  
+`@GeneratedValue(strategy=GenerationType.AUTO)`  
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
 | `AUTO`            | handled by hibernate, from hibernate_sequence table 		| General use, database-agnostic                |
 | `IDENTITY`        | handled by db identity column                            	| Databases that support identity columns       |
 | `SEQUENCE`        | assign primarykey using db sequence                       | sequence support (e.g., Oracle, PostgreSQL) |
 | `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
+
 #### Named query
 > static query expressed as alias in metadata of entity class.   
 
