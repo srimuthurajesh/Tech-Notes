@@ -89,16 +89,18 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 
 | Annotation Name  	| Definition                                            |
 |-------------------|-------------------------------------------------------|
-| @Entity          	| Marks a class as an entity                            |
-| @Table           	| db table details. name,catalogue,schema,unique constraints|
-| @Id              	| Marks primary key field                               |
-| @GeneratedValue	| Defines primary key generation strategy               |
-| @Column          	| Maps field to column                                  |
-| mappings       	| @OneToMany, @ManyToOne, @ManyToMany, @ManyToMany      |
-| @JoinColumn      	| Defines join column for relationships and properties like name |
-| @JoinTable       	| Defines join table for many-to-many relationships     |
-| @Transient       	| Excludes field/methods from database mapping          |
-| @NamedQuery      	| query expressed as alias in metadata of entity class 	|
+| `@Entity`          	| Marks a class as an entity                            |
+| `@Table`           	| db table details. name,catalogue,schema,unique constraints|
+| `@Id`              	| Marks primary key field                               |
+| `@GeneratedValue`	| Defines primary key generation strategy               |
+| `@Column`          	| Maps field to column                                  |
+| `mappings`       	| @OneToMany, @ManyToOne, @ManyToMany, @ManyToMany      |
+| `@JoinColumn`      	| Defines join column for relationships and properties like name |
+| `@JoinTable`       	| Defines join table for many-to-many relationships     |
+| `@Transient`       	| Excludes field/methods from database mapping          |
+| `@NamedQuery`      	| query expressed as alias in metadata of entity class 	|
+| `@DynamicUpdate`  | class level, while preparing update query, it takes only changed fields |
+| `@DynamicInsert`  | class level, while preparing insert query, it takes only non-null fields |
 
 #### Generated Type
 > configures entity primary key generation, conjunction with @Id    
@@ -107,7 +109,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
-| `AUTO`            | handled by hibernate, from hibernate_sequence table 		| General use, database-agnostic                |
+| `AUTO`            | handled by hibernate, table:hibernate_sequence  			| General use, database-agnostic                |
 | `IDENTITY`        | handled by db identity column                            	| Databases that support identity columns       |
 | `SEQUENCE`        | assign primarykey using db sequence                       | sequence support (e.g., Oracle, PostgreSQL) |
 | `TABLE`           | assign primarykey using underlying DB to ensure uniqueness| Databases without sequence or identity support, legacy systems |
@@ -116,14 +118,13 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 > static query expressed as alias in metadata of entity class.   
 
 Adv: For reusability by alias, maintainability, performance  
-
+```
 @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")  
-(or)  
 @NamedQueries(value={
 	@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
 	})  
 class Customer {}  
-
+```
 
 **Using namedquery in Jpa repository:**  
 ```
@@ -143,27 +144,34 @@ List<Customer> customers = session.createNamedQuery("Customer.findByName", Custo
 |--------------------------------|-----------------------------------------------|
 | `@Repository`                  | Marks class as spring Data repository.        |
 | `@Transactional`               | rollback behavior for exceptions              |
-| `@Query(value="",nativeQuery = false)` | using in jparepository, Specifies a custom query.|
-| `@Modifying`                   | Indicates a modifying query method.           |
+| `@Query()` 					 | using in jparepository, Specifies custom query|
+| `@Modifying`                   | Mark method that performs a non-read operation. for @Transactional|
 | `@Param`                       | Names query method parameter.                 |
+| `@Lock`                        | controls concurrent access to data            |
+| `@Cacheable`                   | Caches the 	method result.                   |
 | `@PersistenceContext`          | Injects an EntityManager.                     |
-| `@EnableJpaRepositories`       | Enables JPA repositories.                     |
-| `@DynamicUpdate`               | Updates only changed fields.                  |
-| `@DynamicInsert`               | Inserts only non-null fields.                 |
-| `@Lock`                        | Sets lock mode type.                          |
-| `@Cacheable`                   | Caches method result.                         |
-| `@CachePut`                    | Updates cache with result.                    |
+| `@EnableJpaRepositories`       | not required in spring boot                   |
 | `@CacheEvict`                  | Evicts entries from cache.                    |
+| `@CachePut`                    | Updates cache with result.                    |
 | `@EntityGraph`                 | Defines entity fetching graph.                |
-| `@Procedure`                   | Calls a stored procedure.                     |
-| `@NoRepositoryBean`            | Excludes interface as repository.             |
-| `@EnableTransactionManagement` | Enables transaction management.               |
-| `@Audited`                     | Marks entity/field for audit.                 |
-| `@SQLDelete`                   | Custom SQL for deleting entity.               |
-| `@Where`                       | Adds clause to SQL queries.                   |
-| `@OptimisticLocking`           | Configures optimistic locking.                |
+| `@Procedure(procedureName="")` | Calls a stored procedure.                     |
+| `@NoRepositoryBean`            | Excludes parent interface as repository, when we extends interface.|
+| `@EnableTransactionManagement` | not required in springboot, used in configuration |
+| `@Audited`                     | track changes and able to query historical data |
+| `@SQLDelete(sql="")`           | soft delete, Custom SQL query while we perform delete() |
+| `@Where(clause = "deleted = false")`| works alone with @SQLDelete              |
+| `@OptimisticLocking`           | dont lock entire row, only lock @version column |
 
-
+```
+public interface ProductRepository extends JpaRepository<Product, Long> {
+	@Modifying
+    @Transactional
+    @Lock(LockModeType.PESSIMISTIC_WRITE) 
+    @Query("select p from Product p where p.id = :id", nativeQuery=false)
+    @Audited
+	Product findByIdAndNameWithLock(Long id, @Param("name") String name);
+}
+```
 
 1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
 2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```    
