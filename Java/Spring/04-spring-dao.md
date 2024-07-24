@@ -114,16 +114,22 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 #### Named query
 > static query expressed as alias in metadata of entity class.   
 
-For reusability by alias, maintainability, performance  
-`@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")`    
-or  
-`@NamedQueries(value={@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")})`
-#### Using Jpa repository:  
+Adv: For reusability by alias, maintainability, performance  
+``` 
+@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
+(or)
+@NamedQueries(value={
+	@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
+	})
+class Customer {}
+```
+
+**Using namedquery in Jpa repository:**  
 ```
 	@Query(name = "Customer.findByName")
 	List<Customer> findByName(@Param("name") String name);
 ```
-#### Using session:  
+**Using namedquery in session**    
 ```
 List<Customer> customers = session.createNamedQuery("Customer.findByName", Customer.class)
                                           .setParameter("name", name)
