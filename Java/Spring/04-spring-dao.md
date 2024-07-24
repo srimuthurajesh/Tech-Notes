@@ -19,14 +19,10 @@
 - [Hibernate Configuration](#hibernate-configuration)
 	- [XML Configuration](#1-xml-configuration)
 	- [Java configuration](#2-java-configuration)
-Hibernate Query Language (HQL)
-Hibernate Criteria
-HQL Examples
-Hibernate Mappings
-	OneToOne
-	OneToMany
-	ManyToOne
-	ManyToMany
+- [Hibernate Mappings](#hibernate-mappings)
+	- [OneToOne](#1-onetoone)
+	- [OneToMany](#2-onetomany)
+	- [ManyToMany](#manytomany)
 - [Fetch Types](#fetch-types)
 	- [Lazy](#lazy)
 	- [Eager](#eager)
@@ -206,25 +202,21 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 ```
 <hibernate-configuration>
     <session-factory>
-        <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/yourdb</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">password</property>
-
-        <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        
-        <!-- Echo all executed SQL to stdout -->
         <property name="hibernate.show_sql">true</property>
-
-        <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
     </session-factory>
 </hibernate-configuration>
 ```
 ```
-	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	//even if we didnt give the xml, in default it will pick hibernate-cfg.xml
+	Configuration configuration = new Configuration().configure("hibernate-cfg.xml");
+	configuration.addAnnotatedClass(customerentity.class);
+	SessionFactory sessionFactory = configuration.buildSessionFactory();
 	Session session = sessionFactory.openSession();
 ```
 ### 2. Java Configuration
@@ -387,7 +379,7 @@ UPDATE clause: String hql = "UPDATE Employee set salary = :salary WHERE id = :em
 DELETE clause: String hql = "DELETE FROM Employee WHERE id = :employee_id";  
 INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+"SELECT firstName, lastName, salary FROM old_employee";
 
-## Mappings
+## Hibernate Mappings
 
 ### 1. OneToOne
 #### 1a. OneToOne unidirectional: 
@@ -456,7 +448,7 @@ class Products{
 private StudentDetail studentDetail;
 ```
 
-### ManyToMany:
+### 3. ManyToMany:
 ```
 @ManyToMany
 @JoinTable(name="student_join",joinColumns=@JoinColumn(name="student_id"),
