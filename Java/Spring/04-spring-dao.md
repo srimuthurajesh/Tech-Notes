@@ -26,21 +26,8 @@
 - [Fetch Types](#fetch-types)
 	- [Lazy](#lazy)
 	- [Eager](#eager)
-- [Cascade]
-Caching in Hibernate
-Hibernate Configuration
-	DAO Class
-	ApplicationContext Configuration (Java)
-	Hibernate.cfg.xml (XML)
-Index for Miscellaneous Topics
-	Second Level Cache
-	Query Cache
-	Transaction Management
-	Enabling Annotations for Transaction Management
-	Web Resource Configuration
-
-
-
+- [Cascade](#cascade)
+- [Cache](#cache)
 
 
 
