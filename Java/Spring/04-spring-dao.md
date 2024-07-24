@@ -103,7 +103,8 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 #### Generated Type
 > configures entity primary key generation, conjunction with @Id    
 
-`@GeneratedValue(strategy=GenerationType.AUTO)`  
+`@GeneratedValue(strategy=GenerationType.AUTO)`
+
 | GenerationType	| Description                             					| Use Case                                      |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------|
 | `AUTO`            | handled by hibernate, from hibernate_sequence table 		| General use, database-agnostic                |
@@ -115,19 +116,19 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 > static query expressed as alias in metadata of entity class.   
 
 Adv: For reusability by alias, maintainability, performance  
-``` 
-@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
-(or)
+
+@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")  
+(or)  
 @NamedQueries(value={
 	@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
-	})
-class Customer {}
-```
+	})  
+class Customer {}  
+
 
 **Using namedquery in Jpa repository:**  
 ```
-	@Query(name = "Customer.findByName")
-	List<Customer> findByName(@Param("name") String name);
+@Query(name = "Customer.findByName")
+List<Customer> findByName(@Param("name") String name);
 ```
 **Using namedquery in session**    
 ```
@@ -136,14 +137,13 @@ List<Customer> customers = session.createNamedQuery("Customer.findByName", Custo
                                           .getResultList();
 ```
 
-
 ### Persistance class Annotation 
 
 | Annotation                     | Description                                   |
 |--------------------------------|-----------------------------------------------|
-| `@Repository`                  | Marks a Spring Data repository.               |
-| `@Transactional`               | Wraps methods in a transaction.               |
-| `@Query`                       | Specifies a custom query.                     |
+| `@Repository`                  | Marks class as spring Data repository.        |
+| `@Transactional`               | rollback behavior for exceptions              |
+| `@Query(value="",nativeQuery = false)` | using in jparepository, Specifies a custom query.|
 | `@Modifying`                   | Indicates a modifying query method.           |
 | `@Param`                       | Names query method parameter.                 |
 | `@PersistenceContext`          | Injects an EntityManager.                     |
