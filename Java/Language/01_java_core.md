@@ -279,6 +279,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 | `join(CharSequence delimiter, CharSequence... elements)` | Join elements with delimiter  |
 | `isEmpty()`                                | Check if the string is empty        |
 | `format(String format, Object... args)`    | Format string with arguments        |
+| `matches(String regex)`    				 | regex        |
 
 
 ## Static :  
@@ -324,6 +325,7 @@ Level myVar = Level.MEDIUM;
 2. Explicit casting ```int a = (int) 3.14;	//3```   
 Byte -> short -> int -> long -> float -> double
 
+Note: typecasting char to int will give unicode. A=65, a=97
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.
 

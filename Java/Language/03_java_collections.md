@@ -29,6 +29,7 @@ framework to access prepackaged data structure.
 ## Queue
 > follows FIFO principle. 
 
+`Queue<String> queue = new LinkedList<>();`   
 Note: in java there is no impl for direct Queue, instead we need to use prioity queue. 
 1. **Priority queue**: ordered in FIFO or by comparator.    
 2. **ArrayDeque** : doubled ended queue using array, used as both FIFO & LIFO.    
@@ -41,6 +42,7 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 ## Stack. 
 > follows LIFO principle. elements added and removed in same end. 
 
+`Stack<String> stack = new Stack<>();`  
 1. **Stack**: legacy class of stack but not recommended. 
 2. **ArrayDeque**: double ended queue, recommended instead of stack class.   
 
