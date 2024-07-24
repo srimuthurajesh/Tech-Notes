@@ -168,7 +168,9 @@ List<Customer> customers = session.createNamedQuery("Customer.findByName", Custo
 1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
 2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```    
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
-or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />	  
+or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />
+
+Note: Transaction is alterntive for session.begin, session.commit, session.rollback  
 
 | Propagation Type  | Description                         | Use Case                                     |
 |-------------------|-------------------------------------|----------------------------------------------|
@@ -198,11 +200,11 @@ or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager
 </hibernate-configuration>
 ```
 ```
-	//even if we didnt give the xml, in default it will pick hibernate-cfg.xml
-	Configuration configuration = new Configuration().configure("hibernate-cfg.xml");
-	configuration.addAnnotatedClass(customerentity.class);
-	SessionFactory sessionFactory = configuration.buildSessionFactory();
-	Session session = sessionFactory.openSession();
+//even if we didnt give the xml, in default it will pick hibernate-cfg.xml
+Configuration configuration = new Configuration().configure("hibernate-cfg.xml");
+configuration.addAnnotatedClass(customerentity.class);
+SessionFactory sessionFactory = configuration.buildSessionFactory();
+Session session = sessionFactory.openSession();
 ```
 ### 2. Java Configuration
 ```
@@ -255,34 +257,34 @@ Session session = sessionFactory.openSession();
 private EntityManager entityManager;
 ```
 ```
-	CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-	CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
-	Root<Employee> employee = cq.from(Employee.class);
-	Predicate salaryPredicate = cb.equal(employee.get("salary"), salary);
-	Predicate namePredicate = cb.like(employee.get("firstName"), firstNamePattern);
-	Predicate orPredicate = cb.or(salaryPredicate, namePredicate);
-	cq.where(orPredicate);
-	return entityManager.createQuery(cq).getResultList();
+CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+Root<Employee> employee = cq.from(Employee.class);
+Predicate salaryPredicate = cb.equal(employee.get("salary"), salary);
+Predicate namePredicate = cb.like(employee.get("firstName"), firstNamePattern);
+Predicate orPredicate = cb.or(salaryPredicate, namePredicate);
+cq.where(orPredicate);
+return entityManager.createQuery(cq).getResultList();
 ```
 #### Entity manager CreateQuery
 ```
-	Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
-	query.setParameter("name", "example");
-	List<Entity> results = query.getResultList();
+Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
+query.setParameter("name", "example");
+List<Entity> results = query.getResultList();
 ```
 ### Session Object
 ```
-	SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
-	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-			.applySettings(configuration.getProperties())
-			.build();
-	sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
+SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
+ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+		.applySettings(configuration.getProperties())
+		.build();
+sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
 ```
 ```
-	Session session = HibernateUtil.getSessionFactory().openSession();
-    session.beginTransaction();
-	session.getTransaction().commit();
-    session.close();
+Session session = HibernateUtil.getSessionFactory().openSession();
+session.beginTransaction();
+session.getTransaction().commit();
+session.close();
 ```
 
 | Method                               | Description                         | Alternative in JpaRepository         |
@@ -463,6 +465,7 @@ Adv: avoid database round-trips.
 #### Steps to enable 2nd level cache:  
 1. in pom.xml add hibernate-ehcache  
 2. Add properties in xml   
+
 ```
 <property name="hibernate.cache.use_second_level_cache">true</property>
 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
