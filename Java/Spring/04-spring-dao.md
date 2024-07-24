@@ -26,7 +26,7 @@
 - [Fetch Types](#fetch-types)
 	- [Lazy](#lazy)
 	- [Eager](#eager)
-Cascading in Hibernate
+- [Cascade]
 Caching in Hibernate
 Hibernate Configuration
 	DAO Class
@@ -118,7 +118,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 | @OneToMany       | Defines one-to-many relationship                      |
 | @ManyToOne       | Defines many-to-one relationship                      |
 | @ManyToMany      | Defines many-to-many relationship                     |
-| @JoinColumn      | Defines join column for relationships                 |
+| @JoinColumn      | Defines join column for relationships and properties like name |
 | @JoinTable       | Defines join table for many-to-many relationships     |
 | @Transient       | Excludes field from database mapping                  |
 | @NamedQuery      | static query expressed in metadata of entity class    |
@@ -270,28 +270,28 @@ Session session = sessionFactory.openSession();
 private EntityManager entityManager;
 ```
 ```
-CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
-Root<Employee> employee = cq.from(Employee.class);
-Predicate salaryPredicate = cb.equal(employee.get("salary"), salary);
-Predicate namePredicate = cb.like(employee.get("firstName"), firstNamePattern);
-Predicate orPredicate = cb.or(salaryPredicate, namePredicate);
-cq.where(orPredicate);
-return entityManager.createQuery(cq).getResultList();
+	CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+	CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+	Root<Employee> employee = cq.from(Employee.class);
+	Predicate salaryPredicate = cb.equal(employee.get("salary"), salary);
+	Predicate namePredicate = cb.like(employee.get("firstName"), firstNamePattern);
+	Predicate orPredicate = cb.or(salaryPredicate, namePredicate);
+	cq.where(orPredicate);
+	return entityManager.createQuery(cq).getResultList();
 ```
 #### Entity manager CreateQuery
 ```
-Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
-query.setParameter("name", "example");
-List<Entity> results = query.getResultList();
+	Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
+	query.setParameter("name", "example");
+	List<Entity> results = query.getResultList();
 ```
 ### Session Object
 ```
-		SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-				.applySettings(configuration.getProperties())
-				.build();
-		sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
+	SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
+	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+			.applySettings(configuration.getProperties())
+			.build();
+	sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
 ```
 ```
 	Session session = HibernateUtil.getSessionFactory().openSession();
@@ -382,39 +382,10 @@ INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+
 ## Hibernate Mappings
 
 ### 1. OneToOne
-#### 1a. OneToOne unidirectional: 
-between customer and customerCart table  
-```
-class Customer{
-	@OneToOne
-	@JoinColumn(name="cart_id")//foreign key column name
-	private CustomerCart customerCart;
-}
-class Cart{
-	@Column("cart_id")
-	private int cartId;
-}
-```
-```
-CREATE TABLE `customer`(
-`customer_id` int NOT NULL AUTO_INCREMENT,
-`customer_name` varchar(22) DEFAULT NULL,
-`cart_id` int,
-PRIMARY KEY (`customer_id`),
-FOREIGN KEY (`cart_id`) REFERENCES cart(`cart_id`));
-
-CREATE TABLE `cart` (
-`cart_id` int NOT NULL AUTO_INCREMENT,
-`cart_name` varchar NULL,
-PRIMARY KEY(`cart_id`));  
-```
-#### OneToOne Bidirectional: 
-> for hibernate purpose 
-
 ```
 class Customer{
 	@OneToOne(cascade=CascadeType.ALL) 	
-	@JoinColumn(name="customerCart_Id")		//foreign key column name
+	@JoinColumn(name="customerCart_id")		//foreign key column name
 	private CustomerCart customerCart;
 }
 class CustomerCart{
@@ -426,96 +397,110 @@ class CustomerCart{
 	private Customer customer;
 }
 ```
+```
+CREATE TABLE `customer`( `customer_id` int NOT NULL AUTO_INCREMENT, `customer_name` varchar(22) DEFAULT NULL, PRIMARY KEY (`customer_id`),
+`cart_id` int, FOREIGN KEY (`cart_id`) REFERENCES cart(`cart_id`));
+CREATE TABLE `cart` ( `cart_id` int NOT NULL AUTO_INCREMENT,`cart_name` varchar NULL, PRIMARY KEY(`cart_id`));  
+```
 
 ### 2. OneToMany
-2a. **OneToMany Bidirectional**:  
 ```
 class Cart{
-	@OneToMany(mappedBy="customerCart")
-	private List<Product> products;
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Product> products;
 }
 class Products{
-	@OneToOne
-	@JoinColumn(name="cart_cartId")
-	private Customer customer;
+	@ManyToOne
+    @JoinColumn(name = "cart_id", nullable = false)
+    private Cart cart;
 }
 ```
-
-2.b **OneToOne,ManyToOne,OneToMany**:
 ```
-@OneToOne
-@JoinColumn(name="student_detail_id")
-private StudentDetail studentDetail;
+CREATE TABLE Cart (cart_id BIGINT PRIMARY KEY AUTO_INCREMENT);
+CREATE TABLE Product (product_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+cart_id BIGINT NOT NULL, FOREIGN KEY (cart_id) REFERENCES Cart(cart_id));
 ```
-
 ### 3. ManyToMany:
 ```
-@ManyToMany
-@JoinTable(name="student_join",joinColumns=@JoinColumn(name="student_id"),
-                               inverseJoinColumns=@JoinColumn("student_details_id"))
+public class Student {
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @JoinTable(
+        name = "student_course",
+        joinColumns = @JoinColumn(name = "student_id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
+}
+public class Course {
+    @ManyToMany(mappedBy = "courses", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    private Set<Student> students = new HashSet<>();
+}
 
 ```
 ## Fetch types
 ### 1. Lazy
 > related entities are loaded only when they are explicitly accessed.  
 
+`@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)`  
 default for @OneToMany and @ManyToMany:  
-**LazyInitializationException**: occurs if we try to use get related entities after session close  
+Note: **LazyInitializationException**: occurs if we try to use get related entities after session close  
 
 ### 2. Eager
 > related entities are loaded immediately with their parent entity.  
 default for @ManyToOne and @OneToOne  
 
-`@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)`
-`@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)`
 
+## Cascade
+> apply same operation to related entities or joined tables.
 
-```
-@OneToMany(fetch=fetchType.LAZY);
-@OneToMany(fetch=fetchType.EAGER)
-```
-**Cascading**: apply same operation to related entities or joined tables. Defalt:No cascade      
-Ex: @OneToOne(cascade=CascadeType.PERSIST) -> if entity persist/saved, related entity also persist   
-@OneToOne(cascade=CascadeType.REMOVE) -> if entity is removed/deleted related entity also deleted     
-@OneToOne(cascade=CascadeType.REFRESH) -> if entity refreshed, releated entity wil also refreshed    
-@OneToOne(cascade=CascadeType.DETACH) ->  if entity is detached, related entity will also detached   
-@OneToOne(cascade=CascadeType.MERGE) ->  if entity is mereged, related entity also merged   
-@OneToOne(cascade=CascadeType.ALL) -> all above cascade tpes applied    
+Defalt value :No cascade    // need to explicitly call save() for related entity    
+Ex: @OneToOne(cascade=CascadeType.PERSIST) -> save()   
+1. @OneToOne(cascade=CascadeType.REMOVE) -> delete() - Deletes an entity from the database.    
+2. @OneToOne(cascade=CascadeType.REFRESH) -> refresh() - Reloads an entity’s state from the database  
+3. @OneToOne(cascade=CascadeType.DETACH) ->  detach() - Disassociates an entity from the persistence context.    
+4. @OneToOne(cascade=CascadeType.MERGE) ->  merge() - reattaches the entity to the persistence context  
+5. @OneToOne(cascade=CascadeType.ALL) -> all above cascade tpes applied    
 
 
 ## Cache:
- 
-**First level cache**: default, hold by session object  
-**Secound level cache:**  
--hold by session factory  
--data stored in hashmap format eg.<22,{"raj","ECE"}> where primarykey is key and result is value   
--works only for session object, not work for createQuery/createSQLQuery   
--some cache providers are EH(Easy Hibernate), Swarm, OS, JBoss Cache  
 
-Steps to enable 2nd level cache:  
+### First level cache
+>  session-level cache, stores data specific to single session. default cannot be disabled  
+
+Adv: avoid database round-trips.  
+### Secound level cache:  
+> hold by session factory, shared across multiple sessions.
+
+- data stored in hashmap format eg.<22,{"raj","ECE"}> where primarykey is key and result is value   
+- works only for session object, not work for createQuery/createSQLQuery   
+- some cache providers are Ehcache(Easy Hibernate), Swarm, OS, JBoss Cache  
+
+#### Steps to enable 2nd level cache:  
 1. in pom.xml add hibernate-ehcache  
 2. Add properties in xml   
-
 ```
 <property name="hibernate.cache.use_second_level_cache">true</property>
 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
-<property name="hibernate.cache.region.factory_class">
-org.hibernate.cache.ehcache.EhCacheRegionFactory
-</property>
+<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 ```
 
 3. Add annotation in entity class  
-
 ```
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
-/*	1.READ_ONLY: work for readonly operation  
-	2.NONSTRICT-READ-WRITE: work for readwrite but one at a time  
-	3.READ-WRITE: work for readwrite, can be used simultaneously  
-	4.TRANSACTIONAL: work for transaction  
-*?
+@Entity
+@Cacheable
+@Cache(region = "authors", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Employee {   } 
 ```  
+**Region**- logical grouping of cached data. Each region has its own settings ex:eviction policies, time-to-live, concurrency strategies.    
+**CacheConcurrencyStrategy**: defines how cached data is accessed and managed  
+	i). READ_ONLY: work for readonly operation  
+	ii). NONSTRICT-READ-WRITE: work for readwrite but one at a time  
+	iii). READ-WRITE: work for readwrite, can be used simultaneously  
+	iv). TRANSACTIONAL: work for transaction  
 
-**Query cache:** data stored as hashmap where query text param is key, result is value 
+### Query cache
+> data stored as hashmap where query text param is key, result is value 
+
 1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
 2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
