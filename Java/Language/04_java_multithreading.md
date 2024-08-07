@@ -46,6 +46,7 @@ class MyThread implements Runnable {
     }
 }
 ```
+
 ## Difference states of Thread:
 1. New - obj of thread created but start not yet called  
 2. Runnable - start called but no cpu available, so not running  
