@@ -32,9 +32,9 @@
    1. [Aws](devops/AWS.html)
 
 ## Web Design 
-   1. [HTML](web-design/html.html)
-   2. [CSS](web-design/css.html)
-   3. [SAAS](web-design/saas.html)
+   1. [HTML](web-design/html)
+   2. [CSS](web-design/css)
+   3. [SAAS](web-design/saas)
 ## Computer science
    1. [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
    2. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
