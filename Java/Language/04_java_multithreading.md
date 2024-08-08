@@ -66,6 +66,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 
 ## Synchronized. 
 >  allow only one thread to access the shared resource.  
+
 **Synchronized method** - prevent multiple thread execute on same object  
 **Synchronized block** - lock on current object, synchronized(){ }  
 **Static synchronization** - lock on class, synchronized static void func(){  }   
@@ -91,17 +92,18 @@ Note: we need to maintin a seperate object method to perform this.
 **Interrupting Thread**:  
 1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
 2. Thread.interrupted() - return true/false   
+
 ---
 
 ## DeadLock  
 > situation where a set of processes are blocked   
 
 because each process is holding a resource and waiting for another resource acquired by some other process.   
-i)Avoid nested locks, 2)Lock Only What is Required, 3)Avoid waiting indefinitely  
+1. Avoid nested locks
+2. Lock Only What is Required
+3. Avoid waiting indefinitely  
 **How to resolve**: try to interrupt thread1 and later call it
-```
-if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}
- ````           
+`if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}`           
 **Race condition**: When multiple threads try to access same resources 
 
 ## Thread Pool:   
@@ -172,7 +174,10 @@ mypool.shutdown();
     };
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     Future<Integer> future = executorService.submit(callableTask);
+    Future<Integer> future2 = executorService.submit(callableTask);
+    
     Integer result = future.get();  //will block/wait until Future is complete. 
+    Integer result2 = future2.get();  //will block/wait until Future2 is complete. 
     System.out.println("Result: " + result); // Output: Result: 42
     executorService.shutdown();
 ```

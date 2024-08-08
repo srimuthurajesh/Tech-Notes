@@ -137,7 +137,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 
 | Source Operation          | code                    | return    |
 |---------------------------|-------------------------|-----------|
-| From list,set,queue,stack | collObj.stream()        | Stream<T> |
+| From list,set,queue,stack | collectionObj.stream()  | Stream<T> |
 | From Map                  | map.entrySet.stream()   | Stream<T> |
 |                           | map.keySet.stream()     | Stream<T> |
 |                           | map.values.stream()     | Stream<T> |
