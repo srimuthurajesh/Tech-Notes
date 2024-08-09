@@ -468,6 +468,7 @@ ClassNotFoundException: runtime, try to load the class while Class.forName() or 
 str.matches("[a-z]+"); //return boolean
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
+
 | Regex		| Description                             | Example              | Matches                                      |
 |-----------|-----------------------------------------|----------------------|----------------------------------------------|
 | `.`       | Any single character                    | `"a.b"`             | `"aab"`, `"a-b"`, `"a*b"`, etc.            |

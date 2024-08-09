@@ -98,7 +98,6 @@ export class AppComponent {
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
 	3. [ngTemplateOutlet]  
 3. **Component Directive**: selector in component  
-4. **Angular custom Directive**  
 ```
 @Directive({ selector: '[appHighlight]'})
 export class HighlightDirective {
@@ -111,7 +110,7 @@ export class HighlightDirective {
 > binding data into html template
 
 1. One way binding	
-	1. **Interpolation** :  insert variables, method, string literals into template ```{{age}},{{methodWithbracket}},{{'22'}}```
+	1. **Interpolation** :  insert variables, method, string literals into template - Ex:{{age}},{{methodWithbracket}},{{'22'}}  
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
@@ -138,6 +137,28 @@ export class AppModule { }
 
 
 ## ROUTING:	
+> enables navigation between different views or components  
+create Single Page Applications (SPAs) by managing the URLs   
+
+```
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  {
+    path: 'parent',
+    component: ParentComponent,
+    children: [
+      { path: 'child', component: ChildComponent },
+    ]
+  }
+];
+// Add RouterModule.forRoot(routes) to the imports array in AppModule
+```
+Navigation: 
+`<a [routerLink]="['/home']">Home</a>`  
+`this.router.navigate(['/home']);`
+
+
 
 ## Input Output decorators
 ```
