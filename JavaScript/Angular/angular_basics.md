@@ -46,7 +46,7 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 // app.component.ts
 @Component({
   selector: 'app-root',   		             /* defines how the component is identified and utilized in html templates */
-  template: '<div>{{ content }}</div>',              /* innline HTML template for the component */
+  template: '<div></div>',              /* innline HTML template for the component */
   templateUrl: './app.component.html',               /* Path to an external HTML template file */ 
   styleUrls: ['./app.component.css'],                /* Array of paths to external CSS files */ 
   styles: ['h1 { color: blue; }'],                   /* Inline styles */
