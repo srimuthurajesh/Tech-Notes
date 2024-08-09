@@ -266,6 +266,9 @@ var obj = new Car(arg);
 ```
 
 ### Promise – resolve,reject:
+> object represents result of asynchronous operation, 
+allowing you to handle success or failure once the operation is complete. 
+
 ```
 var promise = new Promise(function(resolve,reject){
     setTimeout(function(){ 
