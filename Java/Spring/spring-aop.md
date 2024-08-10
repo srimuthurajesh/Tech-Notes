@@ -20,20 +20,21 @@ Pointcut: expression language of AOP that matches join points, enable reuse of p
 
 #### Types of Advice:  
 1. @Before - run before method. 
-2. @AfterReturning - run after method(if success). 
-3. @AfterThrowing - run after method(if exception). 
-4. @AfterFinally - run after method(both success/exception). 
-5. @Around - run after and before method (using joinpoint.proceed()). 
+2. @After - run after method. 
+3. @AfterReturning - run after method(if success). `void afterReturningMethod(Object result)`
+4. @AfterThrowing - run after method(if exception). `void afterThrowingMethod(Exception ex)`
+5. @Around - run after and before method (using joinpoint.proceed()). `void aroundMethod(ProceedingJoinPoint jp)`
 
 ```
 @Around("execution(public void org.controller.display())")
-void aroundMethod(JointPoint jp){
+void aroundMethod(ProceedingJoinPoint jp){
   Object[] args = jp.getArgs();
   sysout("before execution of function");
   Object result = jp.proceed(args);   //method executes
   sysout("after execution of function");
 }
 ```
+
 
 ### @Pointcut 
 

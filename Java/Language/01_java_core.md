@@ -469,8 +469,8 @@ str.matches("[a-z]+"); //return boolean
 System.out.println(Pattern.matches(".s", "as")); //line 4  
 ```
 
-| Regex		| Description                             | Example              | Matches                                      |
-|-----------|-----------------------------------------|----------------------|----------------------------------------------|
+| Regex		| Description                             | Example             | Matches                                      |
+|-----------|-----------------------------------------|---------------------|----------------------------------------------|
 | `.`       | Any single character                    | `"a.b"`             | `"aab"`, `"a-b"`, `"a*b"`, etc.            |
 | `*`       | 0 or more occurrences                   | `"a*"`              | `"a"`, `"aa"`, `""` (empty string), etc.   |
 | `+`       | 1 or more occurrences                   | `"a+"`              | `"a"`, `"aa"`, `"aaa"`, but not `""`       |
