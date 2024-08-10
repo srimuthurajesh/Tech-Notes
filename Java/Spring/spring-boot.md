@@ -18,18 +18,18 @@
 4. database driver - h2,mysql etc  
 
 ### Actuator: 
-1) List beans configures in runtime   
-2) can view auto configuration decisions  
-3) View Env variable, commandline args, application properties  
 	a) http://localhost:8080/actuator/health =>UP or DOWN    
 	b) http://localhost:8080/actuator/env => port, active profile  
 	c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
 	d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
 	e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
-4) We can configure in Application.properties  
-management.endpoints.web.exposure.include=*  			// Enable all actuator endpoints  
-management.endpoints.web.exposure.exclude=beans,mapping  	// endpoints to exclude  
-management.endpoints.web.base-path=/actuatorSample 		// http://localhost:8080/actuatorSample/health  
+#### Steps to enable actuater:  
+1. Add dependencies `spring-boot-starter-actuator`.  
+2. Add it in appliction.properties  
+`management.endpoints.web.exposure.include=*`  			// Enable all actuator endpoints  
+`management.endpoints.web.exposure.exclude=beans,mapping`  	// endpoints to exclude  
+`management.endpoints.web.base-path=/actuatorSample` 		// http://localhost:8080/actuatorSample/health  
+
 
 ### CLI Commands:    
 ```mvn spring-boot:run```    // only if maven locally installed  

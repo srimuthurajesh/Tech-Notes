@@ -26,12 +26,17 @@ Pointcut: expression language of AOP that matches join points, enable reuse of p
 5. @Around - run after and before method (using joinpoint.proceed()). `void aroundMethod(ProceedingJoinPoint jp)`
 
 ```
-@Around("execution(public void org.controller.display())")
-void aroundMethod(ProceedingJoinPoint jp){
-  Object[] args = jp.getArgs();
-  sysout("before execution of function");
-  Object result = jp.proceed(args);   //method executes
-  sysout("after execution of function");
+
+@Aspect
+@Component
+public class AOPsample {
+  @Around("execution(public void org.controller.display())")
+  void aroundMethod(ProceedingJoinPoint jp){
+    Object[] args = jp.getArgs();
+    sysout("before execution of function");
+    Object result = jp.proceed(args);   //method executes
+    sysout("after execution of function");
+  }
 }
 ```
 

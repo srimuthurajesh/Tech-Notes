@@ -1,62 +1,84 @@
 
 # Spring security  
-Browser -> **Security interceptor**(Default login page) -> spring controller
+> highly customizable authentication and authorization framework.
 
 
-## Flow of spring security. 
-Http  ->. 
-1. Basic authentication filter
-	BasicAuthenticationFilter.java:doFilterInternal(). 
-	converts HttpServelet into authentication object.  
-2. Authentication manager interface.
-	- default impl is ProiderManager.java:authenticate()
-	- this impl will have list of authenticationProviders, 
-	- where it will check whether its supports() current authentication obj. 
+### Flow  
+Browser -> Security interceptor -> spring controller
 
-3. Authentication Provider. 
-	a) AnonymousAuthenticationProvider- anonymous users. 
-	b) DaoAuthenticationProvider - Uses UserDetailsService     
-	c) LdapAuthenticationProvider - retrieves user details & authorities from LDAP directory.   
-	d) JaasAuthenticationProvider. - JAAS-compliant authentication. 
-	d) PreAuthenticatedAuthenticationProvider. - external identity provider, OAUTH2 or saml. SSO. 
-	e) RememberMeAuthenticationProvider - handle token generation and validation.  
-	f) JwtAuthenticationProvider - Web token based authentication. 
+## Flow of Spring Security
 
-spring.security.user.name=root  
-spring.security.user.password=root 
+### HTTP Request Flow:
+#### 1. Basic Authentication Filter  
+   - Class: `BasicAuthenticationFilter`  
+   - Method: `doFilterInternal()`  
+   - Description: Converts HttpServletRequest into an Authentication object.
+
+#### 2. Authentication Manager Interface 
+   - Default Implementation: `ProviderManager`  
+   - Method: `authenticate()`  
+   - Description:   
+		1. The default implementation (`ProviderManager`) has a list of `AuthenticationProvider` instances. 
+		2. It checks whether each `AuthenticationProvider` supports the current `Authentication` object.
+
+#### 3. Authentication Providers
+   a) JwtAuthenticationProvider - Web token-based authentication.
+   b) PreAuthenticatedAuthenticationProvider - Supports external identity providers such as OAuth2 or SAML for Single Sign-On (SSO).
+   c) DaoAuthenticationProvider - Uses `UserDetailsService` to retrieve user details.
+   d) OAuth2AuthenticationProvider - Handles authentication using OAuth2 tokens.
+  
+## Spring Security Configurations
+### 1. UserDetailsService Implementations
 
 ```	
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/", "/home").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
-				.loginPage("/login")
-				.permitAll()
-				.and()
-			.logout()
-				.permitAll();
-	}
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // default Spring Security login and logout pages
+       	http
+            .authorizeHttpRequests()
+                .requestMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin().permitAll().and()
+            .logout().permitAll();
+		 
+		 // custom login and logout pages
+		 http
+            .authorizeHttpRequests()
+                .requestMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin().loginPage("/custom-login").permitAll().and()
+            .logout().logoutUrl("/custom-logout").permitAll();
 
+		// redirect to a specified URL after logout
+		http    
+			.logout().logoutSuccessUrl("/login?custom-logout").permitAll();
+	
+        return http.build();
+    }
+	
+	// Custom user details service
+    // If this method is not provided, Spring Security will use the default credentials from application.properties:
+    /*
+        spring.security.user.name=admin
+        spring.security.user.password=password
+    */
 	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user =
-			 User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
-				.roles("USER")
-				.build();
-
-		return new InMemoryUserDetailsManager(user);
-	}
+    public UserDetailsService userDetailsService() {
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        UserDetails user = User.builder()
+                               .username("user")      //our custom username
+                               .password(passwordEncoder().encode("password")) // out custom password 
+                               .roles("USER")
+                               .build();
+        return new InMemoryUserDetailsManager(user);
+    }
 }
+
 ```
 ```
 @Configuration
