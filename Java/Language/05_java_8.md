@@ -11,6 +11,7 @@
 8. [Stream API](#6-stream-api)
   - [Stream problems examples](#stream-problems-examples)
 
+## write jaava 11 fucntionalityeis ples
 ## Default Method   
 default has method body and also static method allowed inside interface  
 
