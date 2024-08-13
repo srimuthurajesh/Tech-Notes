@@ -22,14 +22,14 @@ Browser -> Security interceptor -> spring controller
 		2. It checks whether each `AuthenticationProvider` supports the current `Authentication` object.
 
 #### 3. Authentication Providers
-   a) JwtAuthenticationProvider - Web token-based authentication.
-   b) PreAuthenticatedAuthenticationProvider - Supports external identity providers such as OAuth2 or SAML for Single Sign-On (SSO).
-   c) DaoAuthenticationProvider - Uses `UserDetailsService` to retrieve user details.
-   d) OAuth2AuthenticationProvider - Handles authentication using OAuth2 tokens.
+	1. JwtAuthenticationProvider - Web token-based authentication.
+	2. PreAuthenticatedAuthenticationProvider - Supports external identity providers such as OAuth2 or SAML for Single Sign-On (SSO).
+	3. DaoAuthenticationProvider - Uses `UserDetailsService` to retrieve user details.
+	4. OAuth2AuthenticationProvider - Handles authentication using OAuth2 tokens.
   
 ## Spring Security Configurations
-### 1. UserDetailsService Implementations
 
+### 1. UserDetailsService Implementations
 ```	
 @Configuration
 @EnableWebSecurity
@@ -42,21 +42,19 @@ public class SecurityConfig {
                 .requestMatchers("/", "/home").permitAll()
                 .anyRequest().authenticated()
                 .and()
-            .formLogin().permitAll().and()
+            // default spring login/logout page
+			.formLogin().permitAll().and()
             .logout().permitAll();
-		 
-		 // custom login and logout pages
-		 http
-            .authorizeHttpRequests()
-                .requestMatchers("/", "/home").permitAll()
-                .anyRequest().authenticated()
-                .and()
-            .formLogin().loginPage("/custom-login").permitAll().and()
-            .logout().logoutUrl("/custom-logout").permitAll();
 
-		// redirect to a specified URL after logout
-		http    
-			.logout().logoutSuccessUrl("/login?custom-logout").permitAll();
+			// custom login/logout page
+			.formLogin().loginPage("/custom-login").permitAll().and()
+            .logout().logoutUrl("/custom-logout")
+				
+			
+			// redirect page after logout
+			.logout().logoutSuccessUrl("/login?custom-logout")
+				.deleteCookies("JSESSIONID").invalidateHttpSession(true)
+				.permitAll();
 	
         return http.build();
     }

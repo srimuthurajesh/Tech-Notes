@@ -500,3 +500,7 @@ public class Employee {   }
 
 1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
 2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
+
+## Sort
+`Sort sort= Sort.by(Sort.Direction.fromString(sortDirection), sortBy);`
+## Pagination
