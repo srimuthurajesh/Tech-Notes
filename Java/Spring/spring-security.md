@@ -105,6 +105,7 @@ public class SecurityConfig {
 #### d) User Details from DB
 ##### i) Using password column as password
 1. Security config
+
 ```
 @Configuration
 @EnableWebSecurity
@@ -125,6 +126,7 @@ public class SecurityConfig {
 }
 ```
 2. CustomerUserDetailService
+
 ```
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -142,6 +144,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 }
 ```
 3. User class Entity
+
 ```
 @Entity
 public class User implements UserDetails {
