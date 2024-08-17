@@ -28,16 +28,56 @@ Browser -> Security interceptor -> spring controller
 	4. OAuth2AuthenticationProvider - Handles authentication using OAuth2 tokens.
   
 ## Spring Security Configurations
+### 1. Login Logout page
+#### a) Default spring login/logout page
+```
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests()
+                .requestMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated().and()
+            .formLogin().permitAll().and()
+            .logout().permitAll();
+        return http.build();
+    }
+}
+```
+#### b) Custom login/logout page
+```
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests()                           
+                .requestMatchers("/", "/home").permitAll()
+                .anyRequest().authenticated().and()
+            .formLogin()
+                .loginPage("/custom-login").permitAll().and()
+            .logout()
+                .logoutUrl("/custom-logout")		
+			    .logoutSuccessUrl("/custom-login?custom-logout=true")
+				.deleteCookies("JSESSIONID").invalidateHttpSession(true)
+				.permitAll();
+        return http.build();
+    }
+}
+```
 
-### 1. UserDetailsService Implementations
+### 2. UserDetailsService Implementations
+#### a) Inmemory User Details
 ```	
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // default Spring Security login and logout pages
-       	http
+        http
             .authorizeHttpRequests()
                 .requestMatchers("/", "/home").permitAll()
                 .anyRequest().authenticated()
@@ -49,8 +89,7 @@ public class SecurityConfig {
 			// custom login/logout page
 			.formLogin().loginPage("/custom-login").permitAll().and()
             .logout().logoutUrl("/custom-logout")
-				
-			
+					
 			// redirect page after logout
 			.logout().logoutSuccessUrl("/login?custom-logout")
 				.deleteCookies("JSESSIONID").invalidateHttpSession(true)
@@ -78,6 +117,7 @@ public class SecurityConfig {
 }
 
 ```
+#### 2. 
 ```
 @Configuration
 @EnableWebSecurity

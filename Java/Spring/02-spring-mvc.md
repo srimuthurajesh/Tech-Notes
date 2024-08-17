@@ -1,3 +1,104 @@
+| Annotation        | Usage                                                                 | Level    |
+|-------------------|-----------------------------------------------------------------------|----------|
+| @Controller       | Handle req/res. returns string(view name) used by view resolver       | Class    |
+| @ResponseBody     | Converts object to Json/Xml using jackson library                     | Method   |
+| @RestController   | combo of @Controller + @ResponseBody                                  | Class    |
+| @RequestMapping   | maps html request to methods, based on Httpmethods,content type etc   | Method   |
+| @RequestBody      | data from http body, `@RequestBody User user`                         | Argument |
+| @RequestHeader    | data from http header, `@RequestHeader("Authorization") String auth`  | Argument |
+| @RequestParam     | data from http requestparam                                           | Argument |
+| @PathVariable     | data from http url, used in Spring MVC                                | Argument |
+| @PathParam        | DONT USE. data from http url, used in JAX-RS framework                | Argument |
+| @CookieValue      | data from http cookies `@CookieValue(value = "uname") String name`    | Argument |
+| @CrossOrigin      | enables Cross-Origin Resource Sharing (CORS)                          | Method  |
+| @GetMapping       | shortcut for @RequestMapping(method = RequestMethod.GET)              | Method  |
+| @PostMapping      | shortcut for @RequestMapping(method = RequestMethod.POST)             | Method  |
+| @PutMapping       | shortcut for @RequestMapping(method = RequestMethod.PUT)              | Method  | 
+| @DeleteMapping    | shortcut for @RequestMapping(method = RequestMethod.DELETE)           | Method  |
+| @PatchMapping     | shortcut for @RequestMapping(method = RequestMethod.PATCH)            | Method  |
+
+
+```@RequestMapping(value = "/hello", method = RequestMethod.GET, params = "name", headers = "Content-Type=application/json",  consumes = "application/json", produces = "application/json", name = "HelloEndpoint")```
+
+
+### 3. Exception handling. 
+
+| Annotation        | Usage                                                                 | Level    |
+|-------------------|-----------------------------------------------------------------------|----------|
+| @ControllerAdvice | Defines global exception handlers class, model attributes, data binding| Class   |
+| @RestControllerAdvice| Combines @ControllerAdvice and @ResponseBody functionalities.      | Class   |
+| @ExceptionHandler | handle exceptions thrown by controllers.                              | Method  |
+| @ResponseStatus   | Sets the HTTP status code for the response, while exception           | Method  |
+
+### 4. Validation Annotations. 
+
+| Annotation      | Usage                                                                            | Level    |
+|-----------------|----------------------------------------------------------------------------------|----------|
+| @Validated      | indicate that the class should be subject to validation constraints.             | class    |
+| @Valid          | `@Valid @RequestParam("name") String name`. throws MethodArgumentNotValidException | Argument |
+| @NotNull        | Ensures field is not null. `@NotNull(message = "Name cannot be null")`            | Field |
+| @NotBlank       | ensure field is not blank ""  `@NotBlank(message = "Name cannot be blank")`       | Field |
+| @NotEmpty       | Ensures field is not null or empty.`@NotEmpty(message = "Name cannot be empty")`  | Field |
+| @Size           | Validates field's size `@Size(min = 2, max = 30, message = "invalid")`            | Field |
+| @Min            | Ensures field value more than given value `@Min(value = 18, message = "invalid"`  | Field |
+| @Max            | Ensures field value less than given value `@Max(value = 18, message = "invalid"`  | Field |
+| @Email          | Ensure field has valid email format `@Email(message = "Email should be valid")`   | Field |
+| @Pattern        | Ensure field matches specified regex `@Pattern(regexp = "^[a-z]+$", message = "Usernam`| Field |
+| @Past           | Ensure date is less then today `@Past(message = "invalid")`                         | Field |
+| @Future         | Ensure date is more then today `@Future(message = "invalid")`                       | Field |
+| @Positive       | number should be positive  `@Positive(message = "invalid")`                         | Field |
+| @Negative       | number should be negative `@Negative(message = "invalid")`                          | Field |
+| @PositiveOrZero | number should be positive or zero `@PositiveOrZero(message = "invalid")`            | Field |
+| @NegativeOrZero | number should be negative or zero `@NegativeOrZero(message = "invalid")`            | Field |
+
+## Custom validator  
+1. Define annotation  
+```
+@Constraint(validatedBy = MyCustomValidator.class)
+@Target({ ElementType.METHOD, ElementType.FIELD })
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MyCustomConstraint {
+    String message() default "Invalid value";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+}
+```
+2. Create the Validator Class  
+```
+public class MyCustomValidator implements ConstraintValidator<MyCustomConstraint, String> {
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        // Custom validation logic
+        if (value == null) {
+            return false;
+        }
+    }
+}
+```
+3. Use annotation  
+```
+ @NotNull
+    @MyCustomConstraint
+    private String myField;
+```
+
+
+**Two types of Response @RestController**:  
+1.Add Jackdon-bind pom.xml, just return object list  
+2.use ResponseEntity<> class - ex: return new ResponseEntity<>(ResBody,HttpCode);  
+
+
+**File upload:**
+
+```
+@POST
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
+```
+
+
+
+
 ## Configuring spring MVC  
 - Follows MVC design pattern  
 
