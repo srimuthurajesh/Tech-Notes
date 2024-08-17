@@ -1,5 +1,49 @@
-
 # Spring security  
+
+- [What is Spring security](#spring-security-1)
+- [Spring Security Flow](#flow)
+   - [Basic Authentication Filter](#1-basic-authentication-filter)
+   - [Authentication Manager Interface](#2-authentication-manager-interface)
+   - [Authentication Providers](#3-authentication-providers)
+
+### 3. Spring Security Configurations
+   - Legacy Approach: Extending `WebSecurityConfigurerAdapter`
+   - Modern Approach: Using `@Bean` Configuration
+     - Security Filter Chain
+     - Password Encoder
+
+### 4. Login and Logout Pages
+   - Default Spring Login/Logout Page
+   - Custom Login/Logout Page
+
+### 5. UserDetailsService Implementations
+   - Default User Details
+   - User Details from Application Properties
+   - In-Memory User Details
+   - User Details from Database
+     - Using Password Column
+     - Using Custom Column as Password
+     - Using Email Column as Username
+
+### 6. OAuth2 Single Sign-On (SSO)
+   - Enabling OAuth2 SSO
+   - Configuration Properties for OAuth2
+
+### 7. Azure Active Directory Integration
+   - Setting up Azure Active Directory
+   - App Registration and Client Configuration
+   - Application YAML Configuration
+
+### 8. JWT (JSON Web Token)
+   - JWT Format Structure
+   - Steps to Implement JWT in Spring Security
+     - JWT Utility Class
+     - Security Configuration for JWT
+     - JWT Filter Implementation
+
+
+
+## Spring Security
 > highly customizable authentication and authorization framework.
 
 
@@ -10,16 +54,14 @@ Browser -> Security interceptor -> spring controller
 
 ### HTTP Request Flow:
 #### 1. Basic Authentication Filter  
-   - Class: `BasicAuthenticationFilter`  
-   - Method: `doFilterInternal()`  
+   - Class: `BasicAuthenticationFilter` Method: `doFilterInternal()`  
    - Description: Converts HttpServletRequest into an Authentication object.
 
 #### 2. Authentication Manager Interface 
-   - Default Implementation: `ProviderManager`  
-   - Method: `authenticate()`  
+   - Default Implementation: `ProviderManager` Method: `authenticate()`  
    - Description:   
-		1. The default implementation (`ProviderManager`) has a list of `AuthenticationProvider` instances. 
-		2. It checks whether each `AuthenticationProvider` supports the current `Authentication` object.
+		1. The default impl (`ProviderManager`) has list of `AuthenticationProvider` instances. 
+		2. It checks whether each `AuthenticationProvider` supports current `Authentication` obj.
 
 #### 3. Authentication Providers
 	1. JwtAuthenticationProvider - Web token-based authentication.
@@ -104,47 +146,7 @@ public class SecurityConfig {
 ```
 #### d) User Details from DB
 ##### i) Using password column as password
-1. Security config
-
-```
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-    private final CustomUserDetailsService customUserDetailsService;
-    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
-        this.customUserDetailsService = customUserDetailsService;
-    }
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // refer login logout page topic above  }
-    @Bean
-    public UserDetailsService userDetailsService() { return customUserDetailsService; }
-    //we can skip below bean, it will then use NoOpPasswordEncoder.getInstance();
-    @Bean
-    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
-    
-}
-```
-2. CustomerUserDetailService
-
-```
-@Service
-public class CustomUserDetailsService implements UserDetailsService {
-    private final UserRepository userRepository;
-    public CustomUserDetailsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username); //write findByUsername method inside jpa interface
-        if (user == null)
-            throw new UsernameNotFoundException("User not found");
-        return user;
-    }
-}
-```
-3. User class Entity
-
+1. User class Entity
 ```
 @Entity
 public class User implements UserDetails {
@@ -171,6 +173,49 @@ public class User implements UserDetails {
     public boolean isEnabled() { return true; }
 }
 ```
+2. CustomerUserDetailService
+```
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+    private final UserRepository userRepository;
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByUsername(username); //write findByUsername method inside jpa interface
+        if (user == null)
+            throw new UsernameNotFoundException("User not found");
+        return user;
+    }
+}
+```
+2. Security config class
+```
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    private final CustomUserDetailsService customUserDetailsService;
+    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // refer login logout page topic above  }
+    @Bean
+    public UserDetailsService userDetailsService() { return customUserDetailsService; }
+    //we can skip below bean, it will then use NoOpPasswordEncoder.getInstance();
+    @Bean
+    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+    @Bean
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService)
+            .passwordEncoder(passwordEncoder());
+    }
+}
+```
+4. In html give `<form action="/login" method="post">`
+
 ##### ii) Using custom column as password
 
 1. @Entity class is same as above  
