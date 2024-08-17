@@ -2,13 +2,8 @@
 
 - [What is Spring security](#spring-security-1)
 - [Spring Security Flow](#flow)
-    - [Basic Authentication Filter](#1-basic-authentication-filter)
-    - [Authentication Manager Interface](#2-authentication-manager-interface)
-    - [Authentication Providers](#3-authentication-providers)
 - [Spring Security Configurations](#spring-security-configurations)
     - [Login and Logout Pages](#1-login-logout-page)
-        - [Default Spring Login/Logout Page](#a-default-spring-loginlogout-page)
-        - [Custom Login/Logout Page](#b-custom-loginlogout-page)
     - [UserDetailsService Implementations](#2-userdetailsservice-implementations)
         - [User Details from console](#a-default-user-details)
         - [User Details from Application Properties](#b-user-details-from-applicationproperties)
@@ -17,7 +12,6 @@
             - [Using username/password Column](#i-using-usernamepassword-columns)
             - [Using username and custom password](#ii-using-username-and-custom-password-column)
             - [Using custom username & password](#iii-using-custom-username-and-password-column)
-
 - [OAuth2 Single Sign-On (SSO)](#oauth2-sso)
 - [Azure Active Directory Integration](#azure-service-directory)
 - [JWT (JSON Web Token)](#jwt)

@@ -1,7 +1,8 @@
 # Muti threading
-> concurrent execution 
 
 - [Ways to Implement Thread](#ways-to-implement-thread)
+    - [Extends Thread class](#1-extends-thread-class)
+    - [Implements Runnable](#2-implementing-the-runnable-interface)
 - [Difference states of Thread](#difference-states-of-thread)
 - [Priority of a thread](#priority-of-a-thread)
 - [Synchronized](#synchronized)
@@ -17,9 +18,13 @@
     - [Locks](#locks)
     - [Synchronization Primitives](#synchronization-primitives)
 
+## MultiThreading
+> concurrent execution 
+
 **Thread**: unit of execution within the process  
+
 ## Ways to Implement Thread
-1. Extends Thread class  
+### 1. Extends Thread class  
 ```
 public class MyThread extends Thread {
      
@@ -32,7 +37,7 @@ public class MyThread extends Thread {
     }
 }
 ```
-2. Implementing the Runnable Interface
+## 2. Implementing the Runnable Interface
 ```
 class MyThread implements Runnable {
 
