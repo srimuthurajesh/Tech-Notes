@@ -102,7 +102,6 @@ public class SecurityConfig {
     }
 }
 ```
-
 #### d) User Details from DB
 
 ```
@@ -115,16 +114,11 @@ public class SecurityConfig {
     }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // refer login logout page topic above  
-    }
+        // refer login logout page topic above  }
     @Bean
-    public UserDetailsService userDetailsService() {
-        return customUserDetailsService;
-    }
+    public UserDetailsService userDetailsService() { return customUserDetailsService; }
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); 
-    }
+    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
 }
 ```
 ```
@@ -136,10 +130,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(username); //write findByEmail method inside jpaRespository interface
-        if (user == null) {
+        User user = userRepository.findByEmail(username); //write findByEmail method inside jpa interface
+        if (user == null)
             throw new UsernameNotFoundException("User not found");
-        }
         return user;
     }
 }
@@ -155,6 +148,8 @@ public class User implements UserDetails {
     // Getters and setters
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        if (roles == null || roles.isEmpty()) 
+            return Arrays.asList(); 
         return Arrays.stream(roles.split(",")).map(SimpleGrantedAuthority::new)
             .collect(Collectors.toList());
     }
