@@ -28,6 +28,8 @@ Browser -> Security interceptor -> spring controller
 	4. OAuth2AuthenticationProvider - Handles authentication using OAuth2 tokens.
   
 ## Spring Security Configurations
+1. extends WebSecurityConfigurerAdapter Still valid but considered legacy after spring security 5.0   
+2. using @Beans preferred modern approach. we can use SecurityConfigurer directly and configure via beans. Provides more flexibility 
 ### 1. Login Logout page
 #### a) Default spring login/logout page
 ```
@@ -61,94 +63,112 @@ public class SecurityConfig {
                 .loginPage("/custom-login").permitAll().and()
             .logout()
                 .logoutUrl("/custom-logout")		
-			    .logoutSuccessUrl("/custom-login?custom-logout=true")
-				.deleteCookies("JSESSIONID").invalidateHttpSession(true)
-				.permitAll();
+                .logoutSuccessUrl("/custom-login?custom-logout=true")
+                .deleteCookies("JSESSIONID").invalidateHttpSession(true)
+                .permitAll();
         return http.build();
     }
 }
 ```
 
 ### 2. UserDetailsService Implementations
-#### a) Inmemory User Details
+#### a) Default User Details
+> username is `user` and password comes in console  
+
+#### b) User Details from Application.properties  
+1. spring.security.user.name=user
+2. spring.security.user.password=password
+3. spring.security.user.roles=USER
+ 
+#### c) User Details from Inmemory
+
 ```	
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests()
-                .requestMatchers("/", "/home").permitAll()
-                .anyRequest().authenticated()
-                .and()
-            // default spring login/logout page
-			.formLogin().permitAll().and()
-            .logout().permitAll();
-
-			// custom login/logout page
-			.formLogin().loginPage("/custom-login").permitAll().and()
-            .logout().logoutUrl("/custom-logout")
-					
-			// redirect page after logout
-			.logout().logoutSuccessUrl("/login?custom-logout")
-				.deleteCookies("JSESSIONID").invalidateHttpSession(true)
-				.permitAll();
-	
-        return http.build();
+       // refer login logout page topic above  
     }
-	
-	// Custom user details service
-    // If this method is not provided, Spring Security will use the default credentials from application.properties:
-    /*
-        spring.security.user.name=admin
-        spring.security.user.password=password
-    */
 	@Bean
     public UserDetailsService userDetailsService() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         UserDetails user = User.builder()
-                               .username("user")      //our custom username
-                               .password(passwordEncoder().encode("password")) // out custom password 
-                               .roles("USER")
+                               .username("srimuthurajesh@gmail.com")      
+                               .password(passwordEncoder().encode("rajesh123")) 
+                               .roles("ADMIN")
                                .build();
         return new InMemoryUserDetailsManager(user);
     }
 }
-
 ```
-#### 2. 
+
+#### d) User Details from DB
+
 ```
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-	@Autowired
-	private UserDetailsService userDetailsService;
-
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(encodePWD());
-	}
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
-
-		http.authorizeRequests().antMatchers("/rest/**").authenticated().anyRequest().permitAll().and()
-				.authorizeRequests().antMatchers("/secure/**").authenticated().anyRequest().hasAnyRole("ADMIN").and()
-				.formLogin().permitAll();
-
-	}
-
-	@Bean
-	public BCryptPasswordEncoder encodePWD() {
-		return new BCryptPasswordEncoder();
-	}
+public class SecurityConfig {
+    private final CustomUserDetailsService customUserDetailsService;
+    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // refer login logout page topic above  
+    }
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return customUserDetailsService;
+    }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(); 
+    }
 }
 ```
+```
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+    private final UserRepository userRepository;
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(username); //write findByEmail method inside jpaRespository interface
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
+        return user;
+    }
+}
+```
+```
+@Entity
+public class User implements UserDetails {
+    @Id
+    private Long id;
+    private String username;
+    private String password;
+    private String roles; 
+    // Getters and setters
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Arrays.stream(roles.split(",")).map(SimpleGrantedAuthority::new)
+            .collect(Collectors.toList());
+    }
+    @Override
+    public boolean isAccountNonExpired() { return true;}
+    @Override
+    public boolean isAccountNonLocked() { return true; }
+    @Override
+    public boolean isCredentialsNonExpired() { return true; }
+    @Override
+    public boolean isEnabled() { return true; }
+}
 
+```
 ## OAuth2 sso. 	
 add @EnableOAuth2Sso in main method  
 add spring configuration
