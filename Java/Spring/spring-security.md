@@ -103,7 +103,8 @@ public class SecurityConfig {
 }
 ```
 #### d) User Details from DB
-
+##### i) Using password column as password
+1. Security config
 ```
 @Configuration
 @EnableWebSecurity
@@ -117,10 +118,13 @@ public class SecurityConfig {
         // refer login logout page topic above  }
     @Bean
     public UserDetailsService userDetailsService() { return customUserDetailsService; }
+    //we can skip below bean, it will then use NoOpPasswordEncoder.getInstance();
     @Bean
     public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+    
 }
 ```
+2. CustomerUserDetailService
 ```
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -130,13 +134,14 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByEmail(username); //write findByEmail method inside jpa interface
+        User user = userRepository.findByUsername(username); //write findByUsername method inside jpa interface
         if (user == null)
             throw new UsernameNotFoundException("User not found");
         return user;
     }
 }
 ```
+3. User class Entity
 ```
 @Entity
 public class User implements UserDetails {
@@ -154,7 +159,7 @@ public class User implements UserDetails {
             .collect(Collectors.toList());
     }
     @Override
-    public boolean isAccountNonExpired() { return true;}
+    public boolean isAccountNonExpired() { return true; }
     @Override
     public boolean isAccountNonLocked() { return true; }
     @Override
@@ -162,7 +167,72 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() { return true; }
 }
+```
+##### ii) Using custom column as password
 
+1. @Entity class is same as above  
+2. Authentication Provider
+```
+public class BranchLocationAuthenticationProvider implements AuthenticationProvider {
+    private final UserDetailsService userDetailsService;
+    public BranchLocationAuthenticationProvider(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        String username = authentication.getName();
+        String branchLocation = (String) authentication.getCredentials();
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        if (userDetails == null || !((User) userDetails).getBranchLocation().equals(branchLocation)) 
+            throw new BadCredentialsException("Invalid branch location");
+        return new UsernamePasswordAuthenticationToken(userDetails, branchLocation, userDetails.getAuthorities());
+    }
+    @Override
+    public boolean supports(Class<?> authentication) {
+        return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
+    }
+}
+```
+3. Security Config
+```
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    private final CustomUserDetailsService customUserDetailsService;
+    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+       // refer login logout page topic above  }
+    @Bean
+    public BranchLocationAuthenticationProvider branchLocationAuthenticationProvider() {
+        return new BranchLocationAuthenticationProvider(customUserDetailsService);
+    }
+    @Bean
+    public AuthenticationManagerBuilder authenticationManagerBuilder(HttpSecurity http) throws Exception {
+        AuthenticationManagerBuilder authenticationManagerBuilder = new AuthenticationManagerBuilder(http.getSharedObject(AuthenticationConfiguration.class).getAuthenticationManager());
+        authenticationManagerBuilder.authenticationProvider(branchLocationAuthenticationProvider());
+        return authenticationManagerBuilder;
+    }
+}
+```
+##### iii) Using emailId column as username
+```
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+    private final UserRepository userRepository;
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email); // Load user by email
+        if (user == null) 
+            throw new UsernameNotFoundException("User not found with email: " + email);
+        return user;
+    }
+}
 ```
 ## OAuth2 sso. 	
 add @EnableOAuth2Sso in main method  
