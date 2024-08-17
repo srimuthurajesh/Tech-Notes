@@ -2,44 +2,26 @@
 
 - [What is Spring security](#spring-security-1)
 - [Spring Security Flow](#flow)
-   - [Basic Authentication Filter](#1-basic-authentication-filter)
-   - [Authentication Manager Interface](#2-authentication-manager-interface)
-   - [Authentication Providers](#3-authentication-providers)
+    - [Basic Authentication Filter](#1-basic-authentication-filter)
+    - [Authentication Manager Interface](#2-authentication-manager-interface)
+    - [Authentication Providers](#3-authentication-providers)
+- [Spring Security Configurations](#spring-security-configurations)
+    - [Login and Logout Pages](#1-login-logout-page)
+        - [Default Spring Login/Logout Page](#a-default-spring-loginlogout-page)
+        - [Custom Login/Logout Page](#b-custom-loginlogout-page)
+    - [UserDetailsService Implementations](#2-userdetailsservice-implementations)
+        - [User Details from console](#a-default-user-details)
+        - [User Details from Application Properties](#b-user-details-from-applicationproperties)
+        - [User Details from InMemory](#c-user-details-from-inmemory)
+        - [User Details from Database](#d-user-details-from-db)
+            - [Using username/password Column](#i-using-usernamepassword-columns)
+            - [Using username and custom password](#ii-using-username-and-custom-password-column)
+            - [Using custom username & password](#iii-using-custom-username-and-password-column)
 
-### 3. Spring Security Configurations
-   - Legacy Approach: Extending `WebSecurityConfigurerAdapter`
-   - Modern Approach: Using `@Bean` Configuration
-     - Security Filter Chain
-     - Password Encoder
-
-### 4. Login and Logout Pages
-   - Default Spring Login/Logout Page
-   - Custom Login/Logout Page
-
-### 5. UserDetailsService Implementations
-   - Default User Details
-   - User Details from Application Properties
-   - In-Memory User Details
-   - User Details from Database
-     - Using Password Column
-     - Using Custom Column as Password
-     - Using Email Column as Username
-
-### 6. OAuth2 Single Sign-On (SSO)
-   - Enabling OAuth2 SSO
-   - Configuration Properties for OAuth2
-
-### 7. Azure Active Directory Integration
-   - Setting up Azure Active Directory
-   - App Registration and Client Configuration
-   - Application YAML Configuration
-
-### 8. JWT (JSON Web Token)
-   - JWT Format Structure
-   - Steps to Implement JWT in Spring Security
-     - JWT Utility Class
-     - Security Configuration for JWT
-     - JWT Filter Implementation
+- [OAuth2 Single Sign-On (SSO)](#oauth2-sso)
+- [Azure Active Directory Integration](#azure-service-directory)
+- [JWT (JSON Web Token)](#jwt)
+   - [Steps to Implement JWT in Spring Security](#steps-to-implement)
 
 
 
@@ -145,7 +127,7 @@ public class SecurityConfig {
 }
 ```
 #### d) User Details from DB
-##### i) Using password column as password
+##### i) Using username/password columns
 1. User class Entity
 ```
 @Entity
@@ -216,7 +198,7 @@ public class SecurityConfig {
 ```
 4. In html give `<form action="/login" method="post">`
 
-##### ii) Using custom column as password
+##### ii) Using username and custom password column
 
 1. @Entity class is same as above  
 2. Authentication Provider
@@ -265,7 +247,7 @@ public class SecurityConfig {
     }
 }
 ```
-##### iii) Using emailId column as username
+##### iii) Using custom username and password column
 ```
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
