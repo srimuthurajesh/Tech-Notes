@@ -15,7 +15,6 @@
 - [OAuth2 Single Sign-On (SSO)](#oauth2-sso)
 - [Azure Active Directory Integration](#azure-service-directory)
 - [JWT (JSON Web Token)](#jwt)
-   - [Steps to Implement JWT in Spring Security](#steps-to-implement)
 
 
 

@@ -1,3 +1,45 @@
+# JavaScript Notes
+
+## Table of Contents
+
+- [JavaScript Overview](#javascript-overview)
+- [JavaScript Identifiers](#javascript-identifiers)
+- [Variables](#variables)
+- [Data Types](#data-types)
+- [Arrays](#arrays)
+- [Strings](#strings)
+7. [Numbers](#numbers)
+   - Special Values
+8. [Operators](#operators)
+   - Destructuring Assignment
+9. [Control Structures](#control-structures)
+   - Conditions
+   - Loops
+10. [Functions](#functions)
+    - Declaration and Invocation
+    - Arrow Functions
+    - Default Parameters
+    - Spread Operator
+11. [Objects](#objects)
+    - Creation
+    - Object Methods
+    - Object Wrapper
+12. [Classes](#classes)
+    - ES6 Class Syntax
+    - Inheritance
+13. [Call, Apply, Bind](#call-apply-bind)
+14. [Advanced Objects](#advanced-objects)
+    - `Object.create`
+    - `Object.setPrototypeOf`
+    - `Object.assign`
+15. [Sets and Maps](#sets-and-maps)
+    - Set
+    - Map
+16. [Promises](#promises)
+17. [Modules](#modules)
+    - Export/Import
+18. [Error Handling](#error-handling)
+
 Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
 - Why name as script – it execute as the page loads
 - ```<script type="text/javascript">``` type="text/javascript" is not needed
