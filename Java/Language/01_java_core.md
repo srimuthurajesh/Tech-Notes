@@ -322,17 +322,18 @@ Level myVar = Level.MEDIUM;
 > Convert one datatype to another
 
 1. Implicit casting    
-2. Explicit casting ```int a = (int) 3.14;	//3```   
-Byte -> short -> int -> long -> float -> double
+2. Explicit casting `int a = (int) 3.14;	//3` 
+Byte -> short -> int -> long -> float -> double  
+3. Convert to String: `String.valueOf(33); //"33"`
 
-Note: typecasting char to int will give unicode. A=65, a=97
+Note: typecasting char to int will give unicode. A=65, a=97  
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.
 
-```import pkg1 [.pkg2].(classname | *); //import java.io.*;```  
-how to define a package in that program: ```package packagename;```    
-how to import package: ```import packagename.\*;```     
-how to import using fully qualified name without import keyword: ```package classname```;   
+`import pkg1 [.pkg2].(classname | *); //import java.io.*;` 
+how to define a package in that program: `package packagename;`    
+how to import package: `import packagename.\*;`    
+how to import using fully qualified name without import keyword: `package classname`;   
 
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence

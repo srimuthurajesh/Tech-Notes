@@ -40,7 +40,18 @@
     - Export/Import
 18. [Error Handling](#error-handling)
 
-Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
+## Overview
+> Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
+
+**Developed By**: Brendan Eich at Netscape in 1995.
+**Name Evolution**: Mocha → LiveScript → JavaScript.
+**Script Tag**: <script type="text/javascript"> — type="text/javascript" is optional.
+External JS Files: Can be cached by browsers for faster load times.
+Strict Mode: 'use strict'; enables the latest JavaScript features and helps avoid common errors.
+JavaScript Characteristics:
+Whitespace: Ignored by JavaScript.
+Case-Sensitive: Variable names, function names, etc., are case-sensitive.
+
 - Why name as script – it execute as the page loads
 - ```<script type="text/javascript">``` type="text/javascript" is not needed
 - External js files can be stored as cache in browsers

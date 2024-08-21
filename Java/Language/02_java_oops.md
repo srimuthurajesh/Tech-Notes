@@ -111,6 +111,26 @@ if I call a constructor of child class, first parent class constructors will exe
 1. Method overriding : same method name, same no. of arguements, same type ie.static/compiletime  
 2. Method overloading : same method name, diff no. of arguements, diff type ie.dynamic/runtime  
 
+Method overriding rules:     
+1. Return Type
+	i) Same Return Type:    
+	`int getValue(){}} -> int getValue(){}` 
+	ii) Covariant Return Type  
+	`Parent getValue(){} -> Child getValue(){}`
+	iii) Incompatible Return Type: Not allowed
+	`int getValue(){} -> String getValue(){}` 
+2. Throws Exception  
+	i) Same exception
+	`int getValue() throws IOException{} -> int getValue() throws IOException{}` 
+	ii) Subclass Exceptions:
+	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}` 
+	iii) No Exceptions: will work
+	`int getValue() throws IOException{} -> int getValue(){}` 
+	iv) Broader or new Exceptions: error
+	`int getValue() throws IOException{} -> int getValue() throws Exception{}` 
+	iv) Broader or new Exceptions: will work
+	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}` 
+	
 ## Abstraction  
 > Hiding the implementation  
 
