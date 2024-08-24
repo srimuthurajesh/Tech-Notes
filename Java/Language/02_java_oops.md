@@ -137,30 +137,18 @@ Note: When a child class constructor is called, the parent class constructor is 
 2. Method overloading : same method name, diff no. of arguements, diff type ie.dynamic/runtime  
 
 #### Method overriding Scenarios:     
-1. Return Type  
-	i) Incompatible Return Type: not allowed  
-	`int getValue(){} -> String getValue(){}`    
-	ii) Same Return Type: allowed   
-	`int getValue(){}} -> int getValue(){}`   
-	iii) Covariant Return Type - allowed     
+1. Return Type : not allowed on diff return type    
+	i) Covariant Return Type - allowed     
 	`ParentClass getValue(){} -> ChildClass getValue(){}`  
 	   
-2. Throws Exception   
-	i) Broader or new Exceptions: not allowed  
-	`int getValue() throws IOException{} -> int getValue() throws Exception{}`   
-	ii) Same exception  - allowed  
-	`int getValue() throws IOException{} -> int getValue() throws IOException{}`   
-	iii) Subclass Exceptions:  allowed  
+2. Throws Exception - should be same or have child exception   
+	i) Subclass Exceptions:  allowed  
 	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`   
-	iv) No Exceptions: allowed    
+	ii) No Exceptions: allowed    
 	`int getValue() throws IOException{} -> int getValue(){}`   
-3. Access Modifiers  
-	i) Same or Broader Access Level - allowed  
-	`protected void display() {} -> public void display() {}`  
-	ii) Narrower Access Level - not allowed   
-	`public void display() {} -> protected void display() {}`	
-4. Final method:   
-     `public final void calculate() {} -> public void calculate() {} // Not allowed`
+3. Access Modifiers - only same or narrow access can be override   
+	Ex: `protected -> public`    
+4. Final method - cannot be override     
 5. Static method:  
 	`public static void show(){} -> public static void show(){} // Method hiding, not overriding`
 6. Synchroniezed method: synchronized keyword does not affect method overriding  
