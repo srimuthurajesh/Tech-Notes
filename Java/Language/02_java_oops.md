@@ -139,8 +139,8 @@ Note: When a child class constructor is called, the parent class constructor is 
 #### Method overriding Scenarios:     
 1. Return Type  
 	i) Incompatible Return Type: not allowed  
-	`int getValue(){} -> String getValue(){}`  
-	ii) Same Return Type: allowed 
+	`int getValue(){} -> String getValue(){}`    
+	ii) Same Return Type: allowed   
 	`int getValue(){}} -> int getValue(){}`   
 	iii) Covariant Return Type - allowed     
 	`ParentClass getValue(){} -> ChildClass getValue(){}`  
@@ -152,7 +152,7 @@ Note: When a child class constructor is called, the parent class constructor is 
 	`int getValue() throws IOException{} -> int getValue() throws IOException{}`   
 	iii) Subclass Exceptions:  allowed  
 	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`   
-	iv) No Exceptions: allowed  
+	iv) No Exceptions: allowed    
 	`int getValue() throws IOException{} -> int getValue(){}`   
 3. Access Modifiers  
 	i) Same or Broader Access Level - allowed  
