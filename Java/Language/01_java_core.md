@@ -405,16 +405,20 @@ while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }
 ## Exception handling:  
 > Handles Unexpected event that terminate program
 
-1. checked expception - checked at compile time. ex: ioexception, sqlexception  
+1. checked expception - checked at compile time. ex: ioexception, sqlexception, FileNotFoundException   
 2. unchecked exception - not checked at compile time. ex:nullpointerexception  
 3. error - OutOfMemory, StackOverFlow.  
 ```
-try{
-	throw new exception_name(“”);        
+try {
+    throw new Exception("Custom exception message");        
+} catch (Exception e) {
+    // Handle the exception
+} catch (ArithmeticException | NullPointerException e) { 
+    // This is a multi-catch block
+} finally {
+    // Code that always executes, regardless of whether an exception was thrown or not
+    // Note: `finally` will not execute if the JVM exits (e.g., System.exit()) or if there's a system crash.
 }
-catch(exception e){ }
-catch(arithmeticException|Exception e){} //this is multicatch
-finally{}// occur for sure even though exception handled or not.
 ```
 **Throws** :  indicates caller functions of that method  to handling that exception.  void methodName throws Exception{ }
 
@@ -428,8 +432,7 @@ class InvalidAgeException extends Exception{
 ```
 **Try with resources:**   resource is as an object that must be closed after finishing the program  
 ```
-try(FileOutputStream fileOutputStream=new FileOutputStream("/home/irfan/scala-workspace/java7-new-features/src/abc.txt")){  
-    // -----------------------------Code to write data into file--------------------------------------------//  
+try(FileOutputStream fileOutputStream=new FileOutputStream("abc.txt")){  
         String msg = "Welcome to javaTpoint!";      
         byte byteArray[] = msg.getBytes();  // Converting string into byte array      
         fileOutputStream.write(byteArray);  // Writing  data into file  
@@ -439,7 +442,6 @@ try(FileOutputStream fileOutputStream=new FileOutputStream("/home/irfan/scala-wo
 }  
 finally{  
        System.out.println("Finally executes after closing of declared resources.");
-	   //Note: finally wont execute if system.exit() and system crash  
 }  
 ```  
 NoClassDefFoundError: runtime, classfile missing at run time. 

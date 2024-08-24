@@ -111,26 +111,38 @@ if I call a constructor of child class, first parent class constructors will exe
 1. Method overriding : same method name, same no. of arguements, same type ie.static/compiletime  
 2. Method overloading : same method name, diff no. of arguements, diff type ie.dynamic/runtime  
 
-Method overriding rules:     
-1. Return Type
-	i) Same Return Type:    
-	`int getValue(){}} -> int getValue(){}` 
-	ii) Covariant Return Type  
-	`Parent getValue(){} -> Child getValue(){}`
-	iii) Incompatible Return Type: Not allowed
-	`int getValue(){} -> String getValue(){}` 
-2. Throws Exception  
-	i) Same exception
-	`int getValue() throws IOException{} -> int getValue() throws IOException{}` 
-	ii) Subclass Exceptions:
-	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}` 
-	iii) No Exceptions: will work
-	`int getValue() throws IOException{} -> int getValue(){}` 
-	iv) Broader or new Exceptions: error
-	`int getValue() throws IOException{} -> int getValue() throws Exception{}` 
-	iv) Broader or new Exceptions: will work
-	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}` 
-	
+#### Method overriding Scenarios:     
+1. Return Type  
+	i) Incompatible Return Type: not allowed  
+	`int getValue(){} -> String getValue(){}`
+	ii) Same Return Type: allowed 
+	`int getValue(){}} -> int getValue(){}`   
+	iii) Covariant Return Type - allowed   
+	`ParentClass getValue(){} -> ChildClass getValue(){}`  
+	   
+2. Throws Exception   
+	i) Broader or new Exceptions: not allowed  
+	`int getValue() throws IOException{} -> int getValue() throws Exception{}`   
+	ii) Same exception  - allowed
+	`int getValue() throws IOException{} -> int getValue() throws IOException{}`   
+	iii) Subclass Exceptions:  allowed
+	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`   
+	iv) No Exceptions: allowed  
+	`int getValue() throws IOException{} -> int getValue(){}`   
+3. Access Modifiers
+	i) Same or Broader Access Level - allowed  
+	`protected void display() {} -> public void display() {}`  
+	ii) Narrower Access Level - not allowed 
+	`public void display() {} -> protected void display() {}`	
+4. Final method: 
+     `public final void calculate() {} -> public void calculate() {} // Not allowed`
+5. Static method:
+	`public static void show(){} -> public static void show(){} // Method hiding, not overriding`
+6. Synchroniezed method: synchronized keyword does not affect method overriding  
+	`public synchronized void execute() {} -> public void execute() {} // Allowed`  
+7. Varargs Methods: allowed
+	`public void log(String... messages) {} -> public void log(String... messages) {}`
+
 ## Abstraction  
 > Hiding the implementation  
 
