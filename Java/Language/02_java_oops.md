@@ -2,7 +2,7 @@
 > programming paradigm based on concept of object which contains attributes and methods.
 
 **Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
-### For ex: 
+### Example: 
 to understand class object. take shapes as class and box is shape model    
 **attributes** are characteristics of Box is length, breadth, heigth  
 **methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}  
@@ -10,20 +10,25 @@ to understand class object. take shapes as class and box is shape model
 ## Class  
 > template or blueprint for object (defines variable and methods) noun & verbs    
 
+### Types of Classes:
 1. Regular class
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
 3. Anonymous : A obj = new A(){.........}  
 
 ### Steps to create immutable class: 
-> class and variables are final, parameterized constructor, only getters no setters, return a copy on clone
+1. Mark the class and its variables as final.
+2. Use a parameterized constructor to initialize variables.
+3. Provide only getters (no setters).
+4. Return a copy of objects in the clone() method.
 
-Note: ClassNotFoundException=  while Class.forName() or loadClass()   
-NoClassDefFoundError=class present in compiletime, but not in runtime    
+### Common Exceptions:
+**ClassNotFoundException**: while Class.forName() or loadClass()   
+**NoClassDefFoundError**: class present in compiletime, but not in runtime    
 
 ## Constructor  
-> special type of method, been called while intialize object,   
-Note: it has no return type, we cannot make constructor final.  
+> special type of method, been called while intialize object     
+Note: it has no return type, cannot be final.  
 
 1. Default Constructor. 
 2. Parameterized Constructor  
