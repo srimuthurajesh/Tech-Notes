@@ -76,8 +76,14 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 6. **NavigableMap**: provide navigation methods. 
 7. **LinkedHashMap**: ordered HashMap  
 
-**Looping through Map**  
+#### Common method in map
+1. keySet() - `Set<String> keys = map.keySet();`
+2. values() - `Collection<Integer> values = map.values();`
+3. entrySet() - `Set<Map.Entry<String, Integer>> entries = map.entrySet();`
+4. size()
 
+
+**Looping through Map**  
 1. Using Iterator with while - **map.keyset.iterator**  
 ```
 Iterator itr = map.keyset().iterator(); //for map

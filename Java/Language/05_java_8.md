@@ -10,6 +10,7 @@
 7. [StringJoiner class](#8-stringjoiner-class)
 8. [Stream API](#6-stream-api)
   - [Stream problems examples](#stream-problems-examples)
+9. [Java11](#java11)
 
 ## write jaava 11 fucntionalityeis ples
 ## Default Method   
@@ -275,3 +276,20 @@ int age = list.stream.mapToInt(student::getAge).skip(1).max();
 ```
 list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));
 ```
+
+
+## Java11
+1. **var**: allows the compiler to infer the type of a local variable based on the assigned value.
+```
+var result = calculateSum(10, 20);
+System.out.println("Sum: " + result); // Output: Sum: 30
+public static int calculateSum(int a, int b) {
+    return a + b;
+}
+```  
+2. String Methods
+  i) "  ".isBlank(); // true
+  ii) lines: "Hello\nWorld".lines().forEach(System.out::println);  
+  iii) strip(): "  Hello  ".strip(); // "Hello"   
+  iv) "Hi".repeat(3); // "HiHiHi"  
+3. Optional Enhancements: isEmpty(), orElseThrow()
