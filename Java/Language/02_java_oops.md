@@ -124,13 +124,11 @@ Note: we cannot use private, protected in class, but we can use in innerclass
 1. Single inheritance
 2. Multilevel inheritance
 3. Hierarchical inheritance
-
 Note: When a child class constructor is called, the parent class constructor is executed first.
-#### Super keyword*:  
+#### Super keyword:  
 1. super.variablename;    
 2. super.methodname();    
 3. super();  
-
 
 ## Polymorphism  
 > ability to define a method(&constructor) in many forms     
@@ -141,29 +139,29 @@ Note: When a child class constructor is called, the parent class constructor is 
 #### Method overriding Scenarios:     
 1. Return Type  
 	i) Incompatible Return Type: not allowed  
-	`int getValue(){} -> String getValue(){}`
+	`int getValue(){} -> String getValue(){}`  
 	ii) Same Return Type: allowed 
 	`int getValue(){}} -> int getValue(){}`   
-	iii) Covariant Return Type - allowed   
+	iii) Covariant Return Type - allowed     
 	`ParentClass getValue(){} -> ChildClass getValue(){}`  
 	   
 2. Throws Exception   
 	i) Broader or new Exceptions: not allowed  
 	`int getValue() throws IOException{} -> int getValue() throws Exception{}`   
-	ii) Same exception  - allowed
+	ii) Same exception  - allowed  
 	`int getValue() throws IOException{} -> int getValue() throws IOException{}`   
-	iii) Subclass Exceptions:  allowed
+	iii) Subclass Exceptions:  allowed  
 	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`   
 	iv) No Exceptions: allowed  
 	`int getValue() throws IOException{} -> int getValue(){}`   
-3. Access Modifiers
+3. Access Modifiers  
 	i) Same or Broader Access Level - allowed  
 	`protected void display() {} -> public void display() {}`  
-	ii) Narrower Access Level - not allowed 
+	ii) Narrower Access Level - not allowed   
 	`public void display() {} -> protected void display() {}`	
-4. Final method: 
+4. Final method:   
      `public final void calculate() {} -> public void calculate() {} // Not allowed`
-5. Static method:
+5. Static method:  
 	`public static void show(){} -> public static void show(){} // Method hiding, not overriding`
 6. Synchroniezed method: synchronized keyword does not affect method overriding  
 	`public synchronized void execute() {} -> public void execute() {} // Allowed`  
