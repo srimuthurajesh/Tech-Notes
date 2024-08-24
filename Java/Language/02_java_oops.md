@@ -165,7 +165,7 @@ Note: When a child class constructor is called, the parent class constructor is 
 	`public static void show(){} -> public static void show(){} // Method hiding, not overriding`
 6. Synchroniezed method: synchronized keyword does not affect method overriding  
 	`public synchronized void execute() {} -> public void execute() {} // Allowed`  
-7. Varargs Methods: allowed
+7. Varargs Methods: allowed  
 	`public void log(String... messages) {} -> public void log(String... messages) {}`
 
 ## Abstraction  
