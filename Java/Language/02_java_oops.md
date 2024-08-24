@@ -102,17 +102,18 @@ new ClassName().variableName = value
 > hiding data
 
 ### Access Modifiers:  
-	1. Public- Any class any package  
-	2. Default- Specific package - default if no specifier mentioned  
-	3. private - Specified Class  
-	4. protected –subsiding class(inheritance)  
+1. Public- Any class any package  
+2. Default- Specific package - default if no specifier mentioned  
+3. private - Specified Class  
+4. protected –subsiding class(inheritance)  
+
 ### Non Access Modifiers:  
-	1. final - cannot be overrided/modified/extended  
-	2. abstract - does not have method body, cannot create object directly    
-	3. static - belong to class rather object   
-	4. transient - attribute&methods skipped while serialization  
-	5. synchronized - can access by one thread at a time  
-	6. volatile - value not cached for thread level rather in Main memory level
+1. final - cannot be overrided/modified/extended  
+2. abstract - does not have method body, cannot create object directly    
+3. static - belong to class rather object   
+4. transient - attribute&methods skipped while serialization  
+5. synchronized - can access by one thread at a time  
+6. volatile - value not cached for thread level rather in Main memory level
 
 Note: we cannot use private, protected in class, but we can use in innerclass 
 
