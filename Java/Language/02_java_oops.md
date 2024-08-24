@@ -1,4 +1,17 @@
 # Object oriented programming  
+
+- [Introduction](#introduction)
+- [Class](#class)
+- [Constructor](#constructor)
+- [Object](#object)
+- [Methods](#methods)
+- [Encapsulation](#encapsulation)
+- [Inheritance](#inheritance)
+- [Polymorphism](#polymorphism)
+- [Abstraction](#abstraction)
+- [Other Topics](#other-topics)
+
+## Introduction
 > programming paradigm based on concept of object which contains attributes and methods.
 
 **Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
@@ -28,6 +41,7 @@ to understand class object. take shapes as class and box is shape model
 
 ## Constructor  
 > special type of method, been called while intialize object     
+
 Note: it has no return type, cannot be final.  
 
 1. Default Constructor. 
@@ -42,7 +56,6 @@ Note: it has no return type, cannot be final.
 ``` 
 ClassName obj = new ClassName(); //
 LHS (heap) reference = RHS (stack) instance
-
 ```
 ### Anonymous object 
 > created without assigned to any variable, for one time use.  
@@ -67,10 +80,11 @@ new ClassName().variableName = value
 4. Deserialization while readObject()
 	
 ### Garbage collection  
-automatic destruction, if no references to an object exist  
-uses Mark and Sweep algorithm    
-System.gc(); invoke garbage collection.  
-it is caused by three ways:    
+> Automatic memory management that destroys objects that are no longer referenced.  
+
+- uses Mark and Sweep algorithm    
+- System.gc(); invokes garbage collection.  
+#### Ways Garbage Collection is Triggered:
 	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;  
 	2. while assigning reference to other         obj1=obj2  
 	3. while using anonymous object  
@@ -81,34 +95,41 @@ it is caused by three ways:
 > block of code that perform specific task.
 > it has name,argument and return type
 
-pass by reference: done by passing object  
-**var-arg** :  void methodname(int ...a){//use as a[];}  
+**Varargs** : Allows passing a variable number of arguments to a method  
+`void methodname(int ...a){//use as a[];} ` 
 
 ## Encapsulation:   
 > hiding data
 
-1. Access Modifiers:  
-	i) Public- Any class any package  
-	ii) Default- Specific package - default if no specifier mentioned  
-	iii) private - Specified Class  
-	iv) protected –subsiding class(inheritance)  
-2. Non Access Modifiers:  
-	i) final - cannot be overrided/modified/extended  
-	ii) abstract - does not have method body, cannot create object directly    
-	iii) static - belong to class rather object   
-	iv) transient - attribute&methods skipped while serialization  
-	v) synchronized - can access by one thread at a time  
-	vi) volatile - value not cached for thread level rather in Main memory level   
+### Access Modifiers:  
+	1. Public- Any class any package  
+	2. Default- Specific package - default if no specifier mentioned  
+	3. private - Specified Class  
+	4. protected –subsiding class(inheritance)  
+### Non Access Modifiers:  
+	1. final - cannot be overrided/modified/extended  
+	2. abstract - does not have method body, cannot create object directly    
+	3. static - belong to class rather object   
+	4. transient - attribute&methods skipped while serialization  
+	5. synchronized - can access by one thread at a time  
+	6. volatile - value not cached for thread level rather in Main memory level
+
 Note: we cannot use private, protected in class, but we can use in innerclass 
 
 ## Inheritances  
 > one class acquires the properties of another class.  
 
-if I call a constructor of child class, first parent class constructors will execute than only base class constructor
+### Types of Inheritance
 1. Single inheritance
 2. Multilevel inheritance
 3. Hierarchical inheritance
-*Super keyword* :  ```super.variablename; super.methodname(); super();```
+
+Note: When a child class constructor is called, the parent class constructor is executed first.
+#### Super keyword*:  
+1. super.variablename;    
+2. super.methodname();    
+3. super();  
+
 
 ## Polymorphism  
 > ability to define a method(&constructor) in many forms     
@@ -159,14 +180,15 @@ if I call a constructor of child class, first parent class constructors will exe
 	d) defualt access modfier, method which has body	  
 
 
-## Relationship
+## Other Topic
+### Relationship
 1. IS-A relationship. also called as inheritance    
 eg: Circle(child class) IS A Shape(parent class)    
 2. HAS-A reltionship. also called as association.    
 eg  Circle(class) HAS A radius(attribute)  
 eg: Circle(class) HAS A CalculationUtil(class)  
 
-**Forms of Association**:  
+#### Forms of Association:    
 1. Aggregation  - week bond  
 eg: Car HAS A MusicPlayer  
 2. Composition  - strong bond  
