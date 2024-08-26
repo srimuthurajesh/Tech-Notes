@@ -118,6 +118,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 > static query expressed as alias in metadata of entity class.   
 
 Adv: For reusability by alias, maintainability, performance  
+
 ```
 @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")  
 @NamedQueries(value={
@@ -189,6 +190,8 @@ Note: Transaction is alterntive for session.begin, session.commit, session.rollb
 | `SUPPORTS`        | Joins if exists, else none.         | Optional transaction context.                |
 | `NOT_SUPPORTED`   | Runs outside of transactions.       | Ensure no transaction context.               |
 | `NEVER`           | Fails if a transaction exists.      | Must not run within a transaction.           |
+
+`@Transactional(propagation = Propagation.REQUIRED)`
 
 ## Hibernate Configuration
 ### 1. XML Configuration
@@ -503,4 +506,14 @@ public class Employee {   }
 
 ## Sort
 `Sort sort= Sort.by(Sort.Direction.fromString(sortDirection), sortBy);`
+
 ## Pagination
+
+```
+Sort sort = Sort.by(sortBy);
+if (!ascending) {
+	sort = sort.descending();
+}
+PageRequest pageRequest = PageRequest.of(page - 1, pageSize, sort);
+return itemRepository.findAll(pageRequest);
+```

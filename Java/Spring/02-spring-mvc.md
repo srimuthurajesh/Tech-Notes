@@ -1,3 +1,13 @@
+# Spring MVC
+
+## Classes involved in mvc
+1. Controller - Manages HTTP requests/req
+2. DTO (Data Transfer Object) - data between Controller and Service layers
+3. Service - Contains the business logic
+4. Repository (DAO - Data Access Object) - handles DB crud operations
+5. Model - represents data in business logic  
+6. Entity - maps db table
+
 | Annotation        | Usage                                                                 | Level    |
 |-------------------|-----------------------------------------------------------------------|----------|
 | @Controller       | Handle req/res. returns string(view name) used by view resolver       | Class    |

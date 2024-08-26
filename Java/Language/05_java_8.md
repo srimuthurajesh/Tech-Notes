@@ -1,20 +1,21 @@
 
 # Features of Java 8:  
 
-1. [Default Method](#5-default-method)
-2. [Functional interface](#4-functional-interface)
-3. [Lambda Expression](#1-Lambda-expression)
-4. [Method reference](#2-method-reference)
-5. [Optional](#3-optional)
-6. [Date time API](#7-date-time-api)
-7. [StringJoiner class](#8-stringjoiner-class)
-8. [Stream API](#6-stream-api)
+1. [Default Method](#default-method)
+2. [Functional interface](#functional-interface)
+3. [Lambda Expression](#Lambda-expression)
+4. [Method reference](#method-reference)
+5. [Optional](#optional)
+6. [Date time API](#date-time-api)
+7. [StringJoiner class](#stringjoiner-class)
+8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
 9. [Java11](#java11)
 
 ## write jaava 11 fucntionalityeis ples
 ## Default Method   
-default has method body and also static method allowed inside interface  
+allows method to have body
+Note: for static method, implementation allowed inside interface  
 
 ## Functional interface   
 > should have only one abstract method. Eg:Runnable @Comparator .   
@@ -169,12 +170,14 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | `sorted()`                | Sort elements.                        |
 | `limit(5)`                | Limit the number of elements.         |
 | `skip()`                  | Skip upto given index                 |
-| `flatMapToInt(String::chars)`| each inner list into a single stream             |
+| `flatMapToInt(String::chars)`| converting nested primitive arrays into a single stream of primitives  |
+| `boxed()`| convert premitive stream insto wrapped type  |
 | `peek()`                  | used to debug stream elements         |
 
-sorted()  
-sorted(Collections.reverseOrder())  
-sorted(Comparator.comparingInt(User::getAge))    
+##### Sorted
+1. sorted(Collections.reverseOrder())    
+2. sorted(Comparator.comparingInt(User::getAge))    
+3. sorted(Comparator.comparingInt(User::getAge).reversed())  
 ```
 .sorted(new Comparator<User>() {
             @Override
@@ -217,22 +220,16 @@ sorted(Comparator.comparingInt(User::getAge))
 | Grouping By           | `Collectors.groupingBy(obj::getYear)` `Collectors.groupingBy(Map.Entry::getValue)`          |
 | Partitioning By       | `Collectors.partitioningBy(m-> m.getRating() > 3)`  //map<boolean, obj>                     |
 | Averaging             | `Collectors.averagingInt()`, Collectors.averagingDouble(), Collectors.averagingLong()       |
-| Reducing              | `Collectors.reducing()`                                                                     |
+| Reducing              | `Collectors.reducing()` collect(Collectors.reducing(0, Integer::intValue, Integer::sum));   |
 | Counting              | `Collectors.counting()`                                                                     |
 | Uniqueu               | `Collectors.toSet()`                                                                        |
 
 ### Grouping By
-#### Overloaded methods:
-Collectors.groupingBy(classifier, Hashmap::new, toList());  
-Make obj : `Collectors.groupingBy(obj::getYear)`.  
-Make obj unique: `Collectors.groupingBy(obj::getYear, Collectors.toSet())`.  
-Make obj in order: `Collectors.groupingBy(obj::getYear, TreeMap::new, Collectors.toList())`.  
-
-### Stream of primitive types  
-IntStream. 
-LongStream. 
-DoubleStream. 
-
+Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`  
+1. groupby attribute: `Collectors.groupingBy(obj::getYear)`.  
+2. same like 1, but remove duplicates:  `Collectors.groupingBy(obj::getYear, Collectors.toSet())`.  
+3. same like 2, but store in treemap: `Collectors.groupingBy(obj::getYear, TreeMap::new, Collectors.toSet())`.  
+4. groupby count : `collect(Collectors.groupingBy(Function.identity(),Collectors.counting());`
 
 
 
