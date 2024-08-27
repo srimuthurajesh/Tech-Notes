@@ -11,7 +11,7 @@
 8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
 9. [Java11](#java11)
-
+10. [Java Latest version features](#)
 ## write jaava 11 fucntionalityeis ples
 ## Default Method   
 allows method to have body
@@ -290,3 +290,40 @@ public static int calculateSum(int a, int b) {
   iii) strip(): "  Hello  ".strip(); // "Hello"   
   iv) "Hi".repeat(3); // "HiHiHi"  
 3. Optional Enhancements: isEmpty(), orElseThrow()
+
+
+
+Java Version          Key New Features
+
+Java 8
+- Lambda Expressions
+- Stream API
+- Date and Time API (java.time)
+- Optional class
+- Default and Static Interface Methods
+
+Java 11
+- HTTP Client (Standard)
+- Local-Variable Syntax for Lambda Parameters
+- String Improvements
+- Optional HTTP/2 Client
+- Enhanced Core Libraries
+
+Java 17
+- Sealed Classes and Interfaces
+- Pattern Matching for instanceof
+- Records
+- Switch Expressions (Enhanced)
+- Removed Experimental AOT and JIT Compiler
+
+Java 21
+- String Templates (Preview)
+- Sequenced Collections
+- Pattern Matching for switch and Record Patterns
+- Virtual Threads
+- Foreign Function and Memory API (Incubator)
+
+
+
+
+
