@@ -5,14 +5,15 @@
 2. [Functional interface](#functional-interface)
 3. [Lambda Expression](#Lambda-expression)
 4. [Method reference](#method-reference)
-5. [Optional](#optional)
+5. [Optional](#optional)`
 6. [Date time API](#date-time-api)
 7. [StringJoiner class](#stringjoiner-class)
 8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
 9. [Java11](#java11)
 10. [Java Latest version features](#)
-## write jaava 11 fucntionalityeis ples
+
+
 ## Default Method   
 allows method to have body
 Note: for static method, implementation allowed inside interface  
@@ -131,7 +132,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 ```
 
 ## Stream API
-> process sequences of elements, such as collections or arrays. 
+> helps to process sequences of elements, such as collections or arrays. 
 
 - enabling functional programming ie.Processing data with functions. 
 - **Stream**: means a continuos flow of data, immutable  
