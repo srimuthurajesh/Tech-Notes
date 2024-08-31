@@ -112,7 +112,7 @@ PSVM{
 
 
 ## Datatype:  
-> defined type of data, ie.Predefined memory storage
+> defines type of data, ie.Predefined memory storage
 
 - Java is not fully oops language, due usage of primitive datatypes.  
 
@@ -206,11 +206,10 @@ Note: long float double and custom classes cannot be use in switch
 > Group of similar datatype refered by single variable name
 
 #### Array Creation:
-Declaration: `int a[];`    
-Defination: `int[] a;`   
-Complete: `int[] a = new int[4];`    
-Give values: `int[] a = new int[]{1,2,3,4};` or `int[] a = {1,2,3,4};`. 
-Method return value: `return new int[]{1,2};`   
+1. Declaration: `int a[];`  `int[] a;`   
+2. Declaration with size: `int[] a = new int[4];`    
+3. Giving values: `int[] a = new int[]{1,2,3,4};` or `int[] a = {1,2,3,4};`. 
+4. Method return value: `return new int[]{1,2};`   
 
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 
@@ -235,16 +234,16 @@ List<?> a = Lists.newArrayList(a);
 - implements Serializable, Comparable and CharSequence interfaces  
 
 ### String creation:    
-- String - by string literal 
-- new String() - create new space from string pool  
-- new String().intern() - used to return value from string pool     
-- StringBuffer - mutable, thread safe  
-- StringBuilder - mutable, no thread safe, efficient  
+1. String - by string literal 
+2. new String() - create new space from string pool  
+3. new String().intern() - used to return value from string pool     
+4. StringBuffer - mutable, thread safe  
+5. StringBuilder - mutable, no thread safe, efficient  
 
 ### String comparision:    
-- ```s1.equals(s2);```  check for each char are same or not   
-- ```s1==s2;```  check address is same or not  
-- ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
+1. ```s1.equals(s2);```  check for each char are same or not   
+2. ```s1==s2;```  check address is same or not  
+3. ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
 
 **String tokenizer**: break a string into tokens    
 ```
@@ -321,19 +320,22 @@ Level myVar = Level.MEDIUM;
 ## Typecasting:  
 > Convert one datatype to another
 
-1. Implicit casting    
-2. Explicit casting `int a = (int) 3.14;	//3` 
-Byte -> short -> int -> long -> float -> double  
+1. Implicit casting - lower to higher data type    
+2. Explicit casting - higher to lower data type. 
+`int a = (int) 3.14;	//3`. 
+Order : Byte -> short -> int -> long -> float -> double  
 3. Convert to String: `String.valueOf(33); //"33"`
 
 Note: typecasting char to int will give unicode. A=65, a=97  
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.
 
-`import pkg1 [.pkg2].(classname | *); //import java.io.*;` 
-how to define a package in that program: `package packagename;`    
-how to import package: `import packagename.\*;`    
-how to import using fully qualified name without import keyword: `package classname`;   
+Syntax : `import pkg1 [.pkg2].(classname | *);`. 
+ import java.io.*;`. 
+Define package in program: `package packagename;`    
+how to import whole package: `import packagename.\*;`    
+Note: we can use fully qualified name. 
+`java.util.List<> list = new java.util.ArrayList<String>();`
 
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence
@@ -388,6 +390,7 @@ in.readObject();  //new object create
 ## File handling
 > do file operations using File class. 
 Stream: series/flow of data. 
+
 1. Byte Stream. Ex: FileInputStream. 
 2. Char Stream. Ex: FileWrite. 
 
@@ -444,8 +447,8 @@ finally{
        System.out.println("Finally executes after closing of declared resources.");
 }  
 ```  
-NoClassDefFoundError: runtime, classfile missing at run time. 
-ClassNotFoundException: runtime, try to load the class while Class.forName() or loadClass()     
+1. NoClassDefFoundError: runtime, classfile missing at run time. 
+2. ClassNotFoundException: runtime, try to load the class while Class.forName() or loadClass()     
 
 ---
 
