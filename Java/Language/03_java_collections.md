@@ -35,6 +35,7 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 2. **ArrayDeque** : doubled ended queue using array, used as both FIFO & LIFO.    
 3. **ArrayBlocking queue** : Bounded blocking queue, thread-safe, suitable for concurrent producer-consumer scenarios.   
 
+#### Queue methods:  
 1. peek(): return object at top of current queue  
 2. poll(): return object and remove queue value, or return null if queue empty     
 3. remove(): same as poll(), but throw NoSuchElementException if queue empty  
@@ -46,7 +47,7 @@ Note: in java there is no impl for direct Queue, instead we need to use prioity 
 1. **Stack**: legacy class of stack but not recommended. 
 2. **ArrayDeque**: double ended queue, recommended instead of stack class.   
 
-
+#### Stack methods:  
 1. peek(): return object at top of current stack  
 2. pop(): return object and remove stack value, or return null if stack empty     
 3. remove(): same as pop(), but throw NoSuchElementException if stack empty  
@@ -110,11 +111,11 @@ for (Float item : list) {
 
 
 ## Synchronized Collection.  
-> not recommended for high-concurrency due to below performance and scalability issues.  
+> Not suitable for high-concurrency because:  
 
-1. Global Locking: Single lock for all operations, leading to bottlenecks in high-concurrency.
-2. Thread Safety Overhead: Locking on each method call adds overhead, degrading performance.
-3. Fail-Fast Iterators: Iterators throw ConcurrentModificationException if modified during iteration.
+1. Single Lock: One lock for all operations causes delays when many threads try to access the collection.
+2. Performance Overhead: Locking each method adds extra time and slows down performance.
+3. Fail-Fast Iterators: Iterators throw ConcurrentModificationException if the collection changes while iterating.
 
 **Synchronized collection Methods**
 1. Collections.synchronizedCollection(Collection c)
@@ -144,19 +145,28 @@ for (Float item : list) {
 13. ConcurrentSkipListSet: Concurrent sorted set.  
 
 ## Common Methods in Collection:
+### Add element 
+1. `add(element)`, `addAll(collection)` - ArrayList, Vector, CopyOnWriteArrayList
+2. `add(element), addFirst(element), addLast(element)`- LinkedList
+3. `put(key, value)` - HashMap, ConcurrentHashMap
+4. `add(element)` - HashSet, TreeSet, PriorityQueue
 
-| Collection            | Add | Remove | Get | Search | Iterate | 
-|-----------------------|---|---|---|---|---|
-| ArrayList             | `add(element)`, `addAll(collection)` | `remove(index)`, `remove(element)`, `removeAll(collection)` | `get(index)` | `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
-| LinkedList            | `add(element)`, `addFirst(element)`, `addLast(element)` | `remove(index)`, `remove(element)`, `removeFirst()`, `removeLast()` | `get(index)` | `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
-| Vector                | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList | Same as ArrayList |
-| CopyOnWriteArrayList  | `add(element)`, `addAll(collection)` | Not recommended | `get(index)` |  `indexOf(element)`, `lastIndexOf(element)` | `for` loop, `iterator()`, `forEach()` |
-| HashMap               | `put(key, value)` | `remove(key)`, `remove(key, value)` | `get(key)` | `containsKey(key)`, `getOrDefault(key, defaultValue)` | `for` loop over `entrySet()`, `keySet()`, or `values()` |
-| HashSet               | `add(element)` | `remove(element)` | NA | `contains(element)` | `for` loop over `iterator()` |
-| TreeSet               | `add(element)` | `remove(element)` | NA | `contains(element)`, `ceiling(element)`, `floor(element)` | `for` loop over `iterator()` |
-| PriorityQueue         | `add(element)` | `remove(element)`, `poll()`  | `peek()` | NA | `for` loop over `iterator()` |
-| ConcurrentHashMap     | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap | Same as HashMap |
-| ConcurrentLinkedQueue | `add(element)`, `offer(element)` | `remove(element)`, `poll()`  | `peek()` | NA | `for` loop over `iterator()` |
+### Remove element
+1. `remove(index), remove(element), removeAll(collection)` - ArrayList, Vector, CopyOnWriteArrayList
+2. `remove(index), remove(element), removeFirst(), removeLast()` - LinkedList 
+3. `remove(key), remove(key, value)` - Hashmap, ConcurrentHashMap
+4. `remove(element)` - HashSet, TreeSet
+5. `remove(element), poll()` - PriorityQueue, ConcurrentLinkedQueue
+
+### Retrive element
+1. `get(index)`  - ArrayList, LinkedList, Vector, CopyOnWriteArrayList
+2. `get(key)` - HashMap, ConcurrentHashMap
+3. `peek` - PriorityQueue, ConcurrentLinkedQueue
+
+### Find element  
+1. `indexOf(element), lastIndexOf(element)`- ArrayList, LinkedList, Vector, CopyOnWriteArrayList
+2. `containsKey(key), getOrDefault(key, defaultValue` - HashMap, ConcurrentHashMap 
+3. `contains(element)`: HashSet   
 
 
 ## Default Sizes & Load Factors:  

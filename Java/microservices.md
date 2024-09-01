@@ -128,6 +128,9 @@ b) Orchestrator based - prefered
 ## Connection Pool
 > technique used to manage database connections efficiently by maintaining a pool of reusable connections
 
+## Http Connection Pool
+> technique used to manage http connections efficiently by maintaining a pool of reusable connections
+
 Library: Hikari connection pool in spring boot  
 
 ## CI/CD pipeline steps
