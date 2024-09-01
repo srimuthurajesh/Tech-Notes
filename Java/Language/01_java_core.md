@@ -340,18 +340,19 @@ Note: we can use fully qualified name.
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence
 
- **Advantages:**   
  - generics support only object
- - can use null value  
+### 1. Autoboxing: 
+> primitive into wrapper- it uses cache value
 
-**Autoboxing:** primitive into wrapper- it uses cache value
 ``` 
 int j=1;
 Integer i = Integer.valueof(j);  or Integer i =j;
 ```
 
-**Unboxing** : wrapper into primitive
- ```
+### 2. Unboxing
+> wrapper into primitive
+
+```
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
@@ -371,7 +372,7 @@ class MyGen<T>{
 ## Serialization: 
 > mechanism of writing obj into byte stream, implement serializable marker interface
 
-Note: it is gonna depreacted not recommended due to security vulnerablities. 
+Note: it is gonna depreacted not recommended due to security vulnerablities.   
 Data exchange formats: JSON, XML. these are alternatives for native serialization. 
 
 ```
@@ -430,36 +431,34 @@ class InvalidAgeException extends Exception{
  }  
 }  
 ```
-**Try with resources:**   resource is as an object that must be closed after finishing the program  
-```
-try(FileOutputStream fileOutputStream=new FileOutputStream("abc.txt")){  
-        String msg = "Welcome to javaTpoint!";      
-        byte byteArray[] = msg.getBytes();  // Converting string into byte array      
-        fileOutputStream.write(byteArray);  // Writing  data into file  
-        System.out.println("Data written successfully!");  
-}catch(Exception exception){  
-       System.out.println(exception);  
-}  
-finally{  
-       System.out.println("Finally executes after closing of declared resources.");
-}  
-```  
-1. NoClassDefFoundError: runtime, classfile missing at run time. 
-2. ClassNotFoundException: runtime, try to load the class while Class.forName() or loadClass()     
-
----
 
 ## Annotations:
+> metadata that provides data about a program to compiler  
+
 1. Built-In Java Annotations used in Java code
- - @Override
- - @SuppressWarnings
- - @Deprecated
+ - @Override: Indicates method is intended to override method in parent class
+ - @SuppressWarnings: ignore specific warnings 
+ - @Deprecated: indicating code may be removed in future versions
+ - @SafeVarargs: indicates method with varargs 
 2. Built-In Java Annotations used in other annotations
  - @Target
  - @Retention
  - @Inherited
  - @Documented - ensure class is available in javadoc
 
+### Custom annotation
+```
+//optional- specifies where annotation can be applied
+@Target(ElementType.METHOD) 
+//optional- SOURCE, CLASS, RUNTIME // specify where it is accessible
+@Retention(RetentionPolicy.RUNTIME) 
+@interface MyAnnotation {
+    String value(); int number() default 0;
+}
+@MyAnnotation(value = "example", number = 5)
+public void myMethod() { // method implementation }
+
+```
 ## Regex:    
 **^[a-zA-Z][a-zA-Z0-9]{8,19}**  
 - Where  ^ represents the start of the regex   
@@ -493,15 +492,15 @@ System.out.println(Pattern.matches(".s", "as")); //line 4
 
 ## Keywords List
 #### Strictly Reserved Keywords (51):
-1. Access Modifiers: private, public, protected
-2. Data Types: boolean, byte, short, int, long, float, double, char
-3. Control Flow: if, else, switch, for, while, do, break, continue, return
-4. Object-Oriented Programming: abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
-5. Exception Handling: try, catch, finally, throw, throws
-6. Generics: extends, super
-7. Module System: exports, module, opens, provides, requires, to, uses
-8. Record System: record
-9. Underscore (introduced in Java 9): _
+1. **Access Modifiers:** private, public, protected
+2. **Data Types:** boolean, byte, short, int, long, float, double, char
+3. **Control Flow:** if, else, switch, for, while, do, break, continue, return
+4. **Oops:** abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
+5. **Exception Handling:** try, catch, finally, throw, throws
+6. **Generics:** extends, super
+7. **Module System:** exports, module, opens, provides, requires, to, uses
+8. **Record System:** record
+9. **Underscore** (introduced in Java 9): _
 
 #### Contextually Reserved Keywords (17):
 1. const (reserved within enum declarations)
