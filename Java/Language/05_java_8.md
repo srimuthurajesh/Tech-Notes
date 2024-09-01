@@ -15,26 +15,28 @@
 
 
 ## Default Method   
-allows method to have body
+> allows interface method to have body
+
 Note: for static method, implementation allowed inside interface  
 
 ## Functional interface   
-> should have only one abstract method. Eg:Runnable @Comparator .   
+> should have only one abstract method ie one functionality.   
+Ex:Runnable @Comparator .   
 
 - can have default and static method with body  
 - use @FunctionalInterface and make any interface as Functional interface  
 
-| Interface           | Structure           | Method      | Example                                                               |
-|---------------------|---------------------|-------------|-----------------------------------------------------------------------|
-| `Function<T,R>`     | diff type           | .apply()    | Function<String, Integer> lengthFunction = str -> str.length();       |
-| `BiFunction<T,U,R>` | diff type           | .apply()    | BiFunction<Integer, Integer, Integer> sumFunction = (a, b) -> a + b;  |
-| `UnaryOperator<T>`  | same type           | .apply()    | UnaryOperator<Integer> squareFunction = x -> x * x;                   |
-| `BinaryOperator<T>` | same type             | .apply()    | BinaryOperator<String> concatFunction = (a, b) -> a + b;              |
-| `Predicate<T>`      | 1 arg return boolean | .test()    | Predicate<Integer> isEven = num -> num % 2 == 0;                      |
-| `BiPredicate<T>`    | 2 arg return boolean | .test()    | BiPredicate<String, String> areEqual = (a, b) -> a.equals(b);         |
-| `Consumer<T>`       | 1 arg no return type | .accept()  | Consumer<String> printConsumer = str -> System.out.println(str);      |
-| `BiConsumer<T,U>`   | 1 arg no return type | .accept()  | BiConsumer<String, String> printTwoStrings = (a, b) -> Sysout(a+""+b);|
-| `Supplier<T>`       | no arg return random | .get()     | Supplier<Double> randomSupplier = () -> Math.random();                |
+| Interface           | arg | return  | Method    | Example                                                               |
+|---------------------|-----|---------|-----------|-----------------------------------------------------------------------|
+| `Function<T,R>`     | 1   | 1       | .apply()  | Function<String, Integer> lengthFunction = str -> str.length();       |
+| `BiFunction<T,U,R>` | 2   | 1       | .apply()  | BiFunction<Integer, Integer, Integer> sumFunction = (a, b) -> a + b;  |
+| `UnaryOperator<T>`  | 1   | 1 same  | .apply()  | UnaryOperator<Integer> squareFunction = x -> x * x;                   |
+| `BinaryOperator<T>` | 2   | 1 same  | .apply()  | BinaryOperator<String> concatFunction = (a, b) -> a + b;              |
+| `Predicate<T>`      | 1   | 1 bool  | .test()   | Predicate<Integer> isEven = num -> num % 2 == 0;                      |
+| `BiPredicate<T>`    | 2   | 1 bool  | .test()   | BiPredicate<String, String> areEqual = (a, b) -> a.equals(b);         |
+| `Consumer<T>`       | 1   | no      | .accept() | Consumer<String> printConsumer = str -> System.out.println(str);      |
+| `BiConsumer<T,U>`   | 1   | no      | .accept() | BiConsumer<String, String> printTwoStrings = (a, b) -> Sysout(a+""+b);|
+| `Supplier<T>`       | no  | 1       | .get()    | Supplier<Double> randomSupplier = () -> Math.random();                |
 
 **Primitive Specializations**:
 
