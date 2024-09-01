@@ -491,32 +491,13 @@ System.out.println(Pattern.matches(".s", "as")); //line 4
 | `\S`      | Any non-whitespace character            | `"\S"`              | `"a"`, `"1"`, `"!"`, etc.                 |
 
 ## Keywords List
-#### Strictly Reserved Keywords (51):
 1. **Access Modifiers:** private, public, protected
-2. **Data Types:** boolean, byte, short, int, long, float, double, char
-3. **Control Flow:** if, else, switch, for, while, do, break, continue, return
-4. **Oops:** abstract, class, extends, final, implements, interface, instanceof, new, package, super, this
+2. **Data Types:** boolean, byte, short, int, long, float, double, char, enum
+3. **Control Flow:** if, else, switch, for, while, do, break, continue, return, case, default
+4. **Oops:** abstract, class, interface, extends, final, implements, interface, instanceof, new, package, super, this
 5. **Exception Handling:** try, catch, finally, throw, throws
-6. **Generics:** extends, super
-7. **Module System:** exports, module, opens, provides, requires, to, uses
-8. **Record System:** record
-9. **Underscore** (introduced in Java 9): _
-
-#### Contextually Reserved Keywords (17):
-1. const (reserved within enum declarations)
-2. goto (not currently used, but reserved for future use)
-3. strictfp (reserved for future use)
-4. volatile (can be used as a variable modifier)
-5. transient (can be used as a variable modifier)
-6. native (can be used as a method modifier)
-7. synchronized (can be used as a method modifier)
-8. assert (can be used in conjunction with the -enableassertions flag)
-9. enum (can be used to declare enum types)
-10. goto (reserved for future use)
-11. interface (can be used to declare interfaces)
-12. package (can be used to declare packages)
-13. protected (can be used as an access modifier)
-14. public (can be used as an access modifier)
-15. static (can be used as a variable or method modifier)
-16. strictfp (reserved for future use)
-17. volatile (can be used as a variable modifier)
+7. **Module System:** exports, import, module, opens, provides, requires, to, uses
+9. **Others**: _ , record
+10. **For future use**: strictfp, goto
+11. **Variable modifier**: volatile, transient
+12. **Method modifier**: native, synchronized, static
