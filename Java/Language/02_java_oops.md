@@ -12,32 +12,32 @@
 - [Other Topics](#other-topics)
 
 ## Introduction
-> programming paradigm based on concept of object which contains attributes and methods.
+> Oops is a programming paradigm(style), based on concept of object & class  
 
-**Need of oops**: loose control(easy to extend/improve), avoid code repetative, readability
+**Adv of oops**: easy to extend/improve, code reusability, readability
 ### Example: 
-to understand class object. take shapes as class and box is shape model    
-**attributes** are characteristics of Box is length, breadth, heigth  
-**methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}  
+- to understand class object. take shapes as class and box is shape model    
+**Attribute** are characteristics of Box ie:length, breadth, height 
+**Methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}  
 
 ## Class  
-> template or blueprint for object (defines variable and methods) noun & verbs    
+> template or blueprint for object (defines variable and methods) ie:noun & verbs    
 
 ### Types of Classes:
 1. Regular class
 1. Nested class : A.B bObj = Aobj.new B();  
 2. Nested static: A.B Bobj = new A.B();  
-3. Anonymous : A obj = new A(){.........}  
+3. Anonymous : A obj = new A(){//class body};    
 
 ### Steps to create immutable class: 
-1. Mark the class and its variables as final.
-2. Use a parameterized constructor to initialize variables.
+1. Make class & variables as final.
+2. Use parameterized constructor to initialize variables.
 3. Provide only getters (no setters).
 4. Return a copy of objects in the clone() method.
 
-### Common Exceptions:
-**ClassNotFoundException**: while Class.forName() or loadClass()   
-**NoClassDefFoundError**: class present in compiletime, but not in runtime    
+##### Common class Exceptions:
+1. **ClassNotFoundException**: while Class.forName() or loadClass()   
+2. **NoClassDefFoundError**: class present in compiletime, but not in runtime    
 
 ## Constructor  
 > special type of method, been called while intialize object     
@@ -58,12 +58,11 @@ ClassName obj = new ClassName(); //
 LHS (heap) reference = RHS (stack) instance
 ```
 ### Anonymous object 
-> created without assigned to any variable, for one time use.  
+>  created and used only omce without assigning    
 
-new ClassName().functionName();  
-new ClassName().variableName = value  
+`new ClassName().functionName();`  
 
-### Methods of object class:  
+### Methods of Object class:  
 1. toString()  - String representation of an Object 
 2. hashCode() - JVM generates a unique number, used for hash based DS. 
 3. equals(Object obj) - Compares the given object to “this” object 
@@ -123,12 +122,13 @@ Note: we cannot use private, protected in class, but we can use in innerclass
 ### Types of Inheritance
 1. Single inheritance
 2. Multilevel inheritance
-3. Hierarchical inheritance
-Note: When a child class constructor is called, the parent class constructor is executed first.
+3. Hierarchical inheritance  
+
 #### Super keyword:  
 1. super.variablename;    
 2. super.methodname();    
-3. super();  
+3. super();  - explicitly call a specific constructor of the parent class  
+Note: When child constructor is called, parent constructor is executed first automatically without super().  
 
 ## Polymorphism  
 > ability to define a method(&constructor) in many forms     
@@ -137,24 +137,19 @@ Note: When a child class constructor is called, the parent class constructor is 
 2. Method overloading : same method name, diff no. of arguements, diff type ie.dynamic/runtime  
 
 #### Method overriding Scenarios:     
-1. Return Type : not allowed on diff return type    
-	i) Covariant Return Type - allowed     
+1. Covariant Return Type - allowed     
 	`ParentClass getValue(){} -> ChildClass getValue(){}`  
-	   
-2. Throws Exception - should be same or have child exception   
-	i) Subclass Exceptions:  allowed  
-	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`   
-	ii) No Exceptions: allowed    
+2. Subclass or without Exceptions:  allowed  
+	`int getValue() throws IOException{} -> int getValue() throws FileNotFoundException{}`     
 	`int getValue() throws IOException{} -> int getValue(){}`   
-3. Access Modifiers - only same or narrow access can be override   
-	Ex: `protected -> public`    
-4. Final method - cannot be override     
-5. Static method:  
-	`public static void show(){} -> public static void show(){} // Method hiding, not overriding`
-6. Synchroniezed method: synchronized keyword does not affect method overriding  
-	`public synchronized void execute() {} -> public void execute() {} // Allowed`  
-7. Varargs Methods: allowed  
-	`public void log(String... messages) {} -> public void log(String... messages) {}`
+3. Access Modifiers - same or narrow access allowed 
+	`protected void show()-> public void show()`    
+4. Static method:  method hiding will happen not overriding 
+	`static void show(){} -> static void show(){} `
+5. Synchroniezed method: allowed, no effect    
+	` synchronized void execute() {} -> void execute() {} `  
+6. Varargs Methods: allowed  
+	`void log(String... messages) {} -> void log(String... messages) {}`
 
 ## Abstraction  
 > Hiding the implementation  

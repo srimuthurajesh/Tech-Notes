@@ -380,9 +380,9 @@ while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }
 ## Exception handling:  
 > Handles Unexpected event that terminate program
 
-1. checked expception - checked at compile time. ex: ioexception, sqlexception, FileNotFoundException   
-2. unchecked exception - not checked at compile time. ex:nullpointerexception  
-3. error - OutOfMemory, StackOverFlow.  
+1. Checked expception - checked at compile time. ex: ioexception, sqlexception, FileNotFoundException   
+2. Unchecked exception - not checked at compile time. ex:nullpointerexception  
+3. Error - OutOfMemory, StackOverFlow.  
 ```
 try {
     throw new Exception("Custom exception message");        
