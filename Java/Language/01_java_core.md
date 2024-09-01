@@ -281,7 +281,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 | `matches(String regex)`    				 | regex        |
 
 
-## Static :  
+## Static:  
 > create only one time, called without reference
 
 1. static variable -     ```className.variableName;```
@@ -294,7 +294,7 @@ while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj
 -```class.forName(" ");``` executes static block & load class  
 Note: we can call static using obj reference also.
 
-## Final :  
+## Final:  
 > assigned only once, cannot modify once it assigned
 
 1. final variable - cannot changed  ```final int maxSpeed =100;```
@@ -320,31 +320,28 @@ Level myVar = Level.MEDIUM;
 ## Typecasting:  
 > Convert one datatype to another
 
-1. Implicit casting - lower to higher data type    
-2. Explicit casting - higher to lower data type. 
-`int a = (int) 3.14;	//3`. 
-Order : Byte -> short -> int -> long -> float -> double  
-3. Convert to String: `String.valueOf(33); //"33"`
+1. Up casting - lower to higher data type    
+2. Down casting - higher to lower data type. 
+`int a = (int) 3.14;	//3`.   
+Casting Order : Byte -> short -> int -> long -> float -> double  
+Convert to String: `String.valueOf(33); //"33"`
 
 Note: typecasting char to int will give unicode. A=65, a=97  
 ## Packages & import: 
 > Collection of similar classes, interfaces and sub packages.
 
-Syntax : `import pkg1 [.pkg2].(classname | *);`. 
- import java.io.*;`. 
-Define package in program: `package packagename;`    
-how to import whole package: `import packagename.\*;`    
-Note: we can use fully qualified name. 
-`java.util.List<> list = new java.util.ArrayList<String>();`
+Syntax : `import pkg1 [.pkg2].(classname | *);`.   
+ import java.io.*;`.   
+Define package in program: `package packagename;`      
+how to import whole package: `import packagename.\*;`      
+Note: we can use fully qualified name.   
+`java.util.List<> list = new java.util.ArrayList<String>();`  	
 
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence
 
  **Advantages:**   
- - call by reference supports only in object
- - serialization supports object
- - collection framework
- - java util package
+ - generics support only object
  - can use null value  
 
 **Autoboxing:** primitive into wrapper- it uses cache value
@@ -371,7 +368,7 @@ class MyGen<T>{
 }  
 ```
 
-## Serialization : 
+## Serialization: 
 > mechanism of writing obj into byte stream, implement serializable marker interface
 
 Note: it is gonna depreacted not recommended due to security vulnerablities. 

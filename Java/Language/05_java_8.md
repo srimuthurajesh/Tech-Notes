@@ -146,7 +146,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 |                           | map.keySet.stream()     | Stream<T> |
 |                           | map.values.stream()     | Stream<T> |
 | ParallelStream            | collObj.parallelStream()| Stream<T> |
-| From Array                | Stream.of(array), Stream.of("s","a")      | Stream<T> |
+| From Array (of)           | Stream.of(array), Stream.of("s","a")      | Stream<T> |
 | From Array                | Arrays.stream(array)    | only works for(IntStream,DoubleStream,LongStream) & **Object**(Stream<T>)|
 | String Streams            | str.chars()             | IntStream i.e UTF-16 code, we need to use boxed() |
 | Stream Builders           | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
