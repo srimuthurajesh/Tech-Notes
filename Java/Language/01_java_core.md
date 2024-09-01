@@ -214,15 +214,15 @@ Note: long float double and custom classes cannot be use in switch
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 
 ### Arrays Important methods:   
-1. Arrays.toString(arr);  		
-2. Arrays.equals(arr1, arr2);    
-3. Arrays.asList(arr);      	//conver array into immutable raw list 
-4. Arrays.sort(arr);   		//use mergeosrt for object, and quick sort fro primitive datatype   
-5. Arrays.sort(arr, new Comparator());    
-6. Arrays.binarySearch(arr, searchValue);    
-7. Arrays.compare(intArr, intArr1);    
-8. Arrays.copyOf(arr, 10); 	//create new clone array, also with initial size   
-9. Arrays.copyOfRange(intArr, 1, 3);   
+1. `Arrays.toString(arr);`  		
+2. `Arrays.equals(arr1, arr2);`    
+3. `Arrays.asList(arr);`      	//conver array into immutable raw list 
+4. `Arrays.sort(arr);`   		//use mergeosrt for object, and quick sort fro primitive datatype   
+5. `Arrays.sort(arr, new Comparator());`    
+6. `Arrays.binarySearch(arr, searchValue);`    
+7. `Arrays.compare(intArr, intArr1);`    
+8. `Arrays.copyOf(arr, 10);` 	//create new clone array, also with initial size   
+9. `Arrays.copyOfRange(intArr, 1, 3);`   
 
 
 ## String:  
@@ -264,15 +264,13 @@ Note: long float double and custom classes cannot be use in switch
 ## Static:  
 > create only one time, called without reference
 
-1. static variable -     ```className.variableName;```
-2. static method -    ```className.functionName();``` 
-3. static import-       
-4. static object -      ``` import static java.lang.System.out;```
-5. static class - only nested class can be static
-6. static block - ```static {}``` //execute while class get loaded
-7. Instance block { } inside class, runs after static block & before constructor
--```class.forName(" ");``` executes static block & load class  
-Note: we can call static using obj reference also.
+1. static variable - `className.variableName;`
+2. static method -   `className.functionName();` 
+3. static import-   `import static java.lang.Math.PI;`    
+4. static class - only nested class can be static
+5. static block - `static {}` //execute while class get loaded
+6. Instance block `{ }` inside class, runs before constructor & after static block   
+Note: we can call static using obj also.
 
 ## Final:  
 > assigned only once, cannot modify once it assigned
@@ -320,18 +318,14 @@ Note: we can use fully qualified name.
 ## Wrapper class:  
  > wrap around primitive datatype & give object appearence
 
- - generics support only object
-### 1. Autoboxing: 
-> primitive into wrapper- it uses cache value
+- generics support only object
 
+1. **Autoboxing**: primitive into wrapper- it uses cache value
 ``` 
 int j=1;
 Integer i = Integer.valueof(j);  or Integer i =j;
 ```
-
-### 2. Unboxing
-> wrapper into primitive
-
+2. **Unboxing**: wrapper into primitive
 ```
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
