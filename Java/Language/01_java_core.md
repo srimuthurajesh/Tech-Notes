@@ -214,18 +214,15 @@ Note: long float double and custom classes cannot be use in switch
 **Multi Dimensional arrays**: array of arrays. int a[][]; //used to define matrix    
 
 ### Arrays Important methods:   
-Arrays.asList(arr);      	//conver array into immutable raw list (collection framework)  
-Arrays.sort(arr);   		//use mergeosrt for object, and quick sort fro primitive datatype   
-Arrays.sort(arr, new Comparator());    
-Arrays.binarySearch(arr, searchValue);    
-Arrays.binarySearch(arr, fromIndex, toIndex, searchValue);  
-Arrays.compare(intArr, intArr1);    
-Arrays.copyOf(arr, 10); 	//create new clone array, also with initial size   
-Arrays.copyOfRange(intArr, 1, 3);   
-Arrays.hashCode(arr);  		//return hashcode  
-Arrays.equals(arr1, arr2);    
-Arrays.toString(arr);  		//print array   
-List<?> a = Lists.newArrayList(a);   
+1. Arrays.toString(arr);  		
+2. Arrays.equals(arr1, arr2);    
+3. Arrays.asList(arr);      	//conver array into immutable raw list 
+4. Arrays.sort(arr);   		//use mergeosrt for object, and quick sort fro primitive datatype   
+5. Arrays.sort(arr, new Comparator());    
+6. Arrays.binarySearch(arr, searchValue);    
+7. Arrays.compare(intArr, intArr1);    
+8. Arrays.copyOf(arr, 10); 	//create new clone array, also with initial size   
+9. Arrays.copyOfRange(intArr, 1, 3);   
 
 
 ## String:  
@@ -245,40 +242,23 @@ List<?> a = Lists.newArrayList(a);
 2. ```s1==s2;```  check address is same or not  
 3. ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
 
-**String tokenizer**: break a string into tokens    
-```
-StringTokenizer st = new StringTokenizer("my name is raj");
-while(st.hasMoreTokens()){st.nextToken(); } //prints //my //name //is //raj  
-```
 ### String methods:
-
-| Method                                      | Description                         |
-|---------------------------------------------|-------------------------------------|
-| `charAt(int index)`                        | Character at specified index        |
-| `length()`                                 | Length of the string                |
-| `substring(int beginIndex)`                | Substring from beginIndex to end    |
-| `substring(int beginIndex, int endIndex)`  | Substring from begin to endIndex-1  |
-| `indexOf(int ch)`                          | First occurrence index of character |
-| `indexOf(String str)`                      | First occurrence index of substring |
-| `lastIndexOf(int ch)`                      | Last occurrence index of character  |
-| `lastIndexOf(String str)`                  | Last occurrence index of substring  |
-| `equals(Object anObject)`                  | Compare with another object         |
-| `equalsIgnoreCase(String anotherString)`   | Compare ignoring case               |
-| `compareTo(String anotherString)`          | Lexicographical comparison          |
-| `compareToIgnoreCase(String str)`          | Compare ignoring case               |
-| `contains(CharSequence s)`                 | Contains the specified sequence     |
-| `startsWith(String prefix)`                | Starts with specified prefix        |
-| `endsWith(String suffix)`                  | Ends with specified suffix          |
-| `toUpperCase()`                            | Convert to upper case               |
-| `toLowerCase()`                            | Convert to lower case               |
-| `trim()`                                   | Remove leading and trailing whitespace |
-| `replace(char oldChar, char newChar)`      | Replace characters                  |
-| `replace(CharSequence target, CharSequence replacement)` | Replace substring      |
-| `split(String regex)`                      | Split string by regex               |
-| `join(CharSequence delimiter, CharSequence... elements)` | Join elements with delimiter  |
-| `isEmpty()`                                | Check if the string is empty        |
-| `format(String format, Object... args)`    | Format string with arguments        |
-| `matches(String regex)`    				 | regex        |
+1. `charAt(int index)`
+2. `length()` 
+3. `isEmpty()`   
+4. `toUpperCase()`, `toLowerCase()`
+5. `str1.equals(str2)`, `str1.equalsIgnoreCase(str2)`
+6. `compareTo(str)`, `compareToIgnoreCase(str)` - Lexicographical comparison
+7. `contains(str)`  
+8. `startsWith(prefix)`, `endsWith(suffix)` 
+9. `trim()` - Removes whitespace from front and back.
+10. `indexOf(String str)`, `lastIndexOf(String str)`
+11. `replace(str1, str2)`- replace all occurrences of str1 with str2.
+12. `substring(int beginIndex, int endIndex)`
+13. `split(String regex)`
+14. `join(delimiter, str2)`
+15. `format(String format, Object... args)`-format string with arguments        |
+16. `matches(regex)` 
 
 
 ## Static:  
