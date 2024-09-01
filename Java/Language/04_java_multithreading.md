@@ -19,31 +19,25 @@
     - [Synchronization Primitives](#synchronization-primitives)
 
 ## MultiThreading
-> concurrent execution 
+> concurrent execution of thread  
 
 **Thread**: unit of execution within the process  
 
 ## Ways to Implement Thread
-### 1. Extends Thread class  
+#### 1. Extends Thread class  
 ```
 public class MyThread extends Thread {
-     
-    public void run() {
-      System.out.println("Thread started running..");
-    }
+    public void run() { System.out.println("Thread started running.."); }
     public static void main( String args[] ) {
        MyThread mt = new  MyThread();
        mt.start();
     }
 }
 ```
-## 2. Implementing the Runnable Interface
+#### 2. Implementing the Runnable Interface
 ```
 class MyThread implements Runnable {
-
-    public void run() {
-        System.out.println("Thread started running..");
-    }
+    public void run() { System.out.println("Thread started running.."); }
     public static void main(String args[]) {
         MyThread mt = new MyThread();
         Thread t = new Thread(mt);
@@ -52,14 +46,14 @@ class MyThread implements Runnable {
 }
 ```
 
-## Difference states of Thread:
+### Difference states of Thread:
 1. New - obj of thread created but start not yet called  
 2. Runnable - start called but no cpu available, so not running  
 3. Running - start called running  
 4. Waiting/Blocked - wait for i/o or another thread  
 5. Terminated/Dead - completed  
 	
-## Priority of a Thread  
+### Priority of a Thread  
 > Thread scheduler prioritize based on (Range 1-10) (default-5)
 
 ```
@@ -69,7 +63,7 @@ threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
 
-## Synchronized. 
+### Synchronized. 
 >  allow only one thread to access the shared resource.  
 
 **Synchronized method** - prevent multiple thread execute on same object  
@@ -78,7 +72,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 **Daemon threads** - low priority threads which always run in background. Ex:GC     
 t1.setDaemon(true);t1.isDaemon(true);   
 
-## Thread class Methods:
+### Thread class Methods:
 1. **join()**: wait for another thread to comlete execution  
    ```thread3.join(); thread4.join(200); //wait for 200ms```       
 2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
@@ -100,7 +94,7 @@ Note: we need to maintin a seperate object method to perform this.
 
 ---
 
-## DeadLock  
+### DeadLock  
 > situation where a set of processes are blocked   
 
 because each process is holding a resource and waiting for another resource acquired by some other process.   
@@ -111,22 +105,19 @@ because each process is holding a resource and waiting for another resource acqu
 `if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}`           
 **Race condition**: When multiple threads try to access same resources 
 
-## Thread Pool:   
+### Thread Pool:   
 > group of worker threads that are waiting for the job and reuse many times.    
 
-## Java Concurrency Utilities
-### Executer Framework : 
+### Java Concurrency Utilities
+#### Executer Framework : 
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
-#### Types of Executer Service:
-1. **CachedThreadPool**: dynamically adjust pool size, suits for short-lived tasks with varying loads.  
-``` ExecutorService executer = Executors.newCacheThreadPool(); ```. 
+##### Types of Executer Service:
+1. **FixedThreadPool**: fixed-size pool of worker threads, suits for task with limited resource usage.  
+``` ExecutorService executer = Executors.FixedThreadPool(); ```. 
 2. **SingleThreadExecutor**: Uses single worker thread, sequential execution    
-``` ExecutorService executer = Executors.newSingleThreadExecutor(); ```.  
-3. **FixedThreadPool**: fixed-size pool of worker threads, suits for task with limited resource usage.  
-``` ExecutorService executer = Executors.newFixedThreadPool(10) ```. 
+3. **CachedThreadPool**: dynamically adjust pool size, suits for short-lived tasks with varying loads.  
 4. **ScheduledThreadPool**: same like FixedThreadPool along with delayed/periodic execution.  
-``` ExecutorService executer = Executors.newScheduledThreadPool(10);```
 
 Syntax:
 ```
@@ -149,7 +140,7 @@ executor.shutdown();
 9. scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task schedules at fixed rate  
 
 
-### ThreadPoolExecutor
+#### ThreadPoolExecutor
 > class that implements ExecutorService, offers more control and customization options. 
 
 Syntax:
@@ -187,7 +178,7 @@ mypool.shutdown();
     executorService.shutdown();
 ```
 
-### Thread safe collections
+#### Thread safe collections
 1. **ConcurrentHashMap** - modern thread-safe map implementation.  
 2. **CopyOnWriteArrayList** - uses a copy-on-write strategy.   
 3. **Collections.synchronizedList** - will force to use synchronized block otherwise throw exception.  
