@@ -171,26 +171,22 @@ for (Float item : list) {
 
 ## Default Sizes & Load Factors:  
 
-| Collections | Default Size | Load factor|
-|-------------|--------------|------------|
-| ArrayList   | 10           | 0.75       |
-| HashMap     | 16           | 0.75       |
+| Collections | Default Size | Load factor| growa by            |
+|-------------|--------------|------------|---------------------|
+| ArrayList   | 10           | 0.75       | 50% of current size |
+| HashMap     | 16           | 0.75       | Double its size     |
 
 ## Utility class - Collections  
-from java.util package, consists only static methods which are used to operate on objects of type Collection.  
-
-| Collections Methods                  | Description                                                  |
-|--------------------------------------|--------------------------------------------------------------|
-| Collections.max()	                   |returns maximum element in the specified collection.          |
-| Collections.min()	                   |returns minimum element in the given collection.              |
-| Collections.sort()	                 |sorts the specified collection.                               |
-| Collections.shuffle()	               |randomly shuffles the elements in the specified collection.   |
-| Collections.synchronizedCollection() |returns synchronized collection backed by the specified collection.|
-| Collections.binarySearch()	         |searches the specified collection for the specified object using binary search algorithm.|
-| Collections.disjoint()	             |returns true if two specified collections have no elements in c|ommon.|
-| Collections.copy()	                 |copies all elements from one collection to another collectio|n.   |
-| Collections.reverse()	               |reverses the order of elements in the specified collection.       |
-| Collections.unmodifiableList()	     |make List as Final                                                |
+1. Collections.max()
+2. Collections.min()
+3. Collections.sort()
+4. Collections.shuffle()
+5. Collections.synchronizedCollection() - convert to synchronized  
+6. Collections.binarySearch()
+7. Collections.disjoint() - returns true if two specified collections have no elements in common  
+8. Collections.copy()
+9. Collections.reverse()
+10. Collections.unmodifiableList() - make list as final 
 
 ## Comparable vs Comparator
 
