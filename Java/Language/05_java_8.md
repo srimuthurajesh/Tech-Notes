@@ -6,7 +6,6 @@
 3. [Lambda Expression](#Lambda-expression)
 4. [Method reference](#method-reference)
 5. [Optional](#optional)`
-6. [Date time API](#date-time-api)
 7. [StringJoiner class](#stringjoiner-class)
 8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
@@ -103,27 +102,30 @@ interface PersonFactory {
 
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
-| empty()     | `Optional.empty()`            | Returns empty Optional          |
 | of()        | `Optional.of("Hello");`       | throws NullPointerException if value is null |
 | ofNullable()| `Optional.ofNullable(a.name);`| return Optional<Null> if value is null|
+
+### Conditional Methods:
+
+| Methods     | Code                          | Description                     |
+|-------------|-------------------------------|---------------------------------|
+| empty()     | `Optional.empty()`            | Returns empty Optional          |
 | isPresent() |	`optionalObj.isPresent()`     |	Checks if value is present      |
 | isEmpty()	  | `optionalObj.isEmpty()`       | (Java 9)similar to !isPresent() |
 
-### Transformation and Consumption Methods:
+### Transformation Methods:
 
 | Methods     | Code                                      | Description                     |
 |-------------|-------------------------------------------|---------------------------------|
-| get()	      | `optionalObj.get()`	                      | Returns value ifexist or Throws **NoSuchElementException** |
-| orElse()	  | `optionalObj.orElse(val)`	                | Returns value if present or provided default value |
-| orElseGet()	| `optionalObj.orElseGet(supplier)`         |	Returns value or value obtained from supplier function |
+| get()	      | `optionalObj.get()`	                      | Throws **NoSuchElementException** if value not present |
+| orElse()	  | `optionalObj.orElse(val)`	                | provided default value if value not present|
+| orElseGet()	| `optionalObj.orElseGet(supplier)`         |	value obtained from supplier function, if value not present |
+
+### Consumption Methods:
+
 | ifPresent() | `optionalObj.ifPresent(consumer)`         |	execute consumer function if value present |
 | ifPresentOrElse() | `optionalObj.ifPresent(consumer, supplier)` |	(Java 9) execute consumer function if value present |
 
-
-
-## Date time API  
-- thread-safe: removed setters of Date api  
-- new operations - added new methods for Date api  
 
 ## StringJoiner class
 ```
