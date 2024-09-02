@@ -78,31 +78,27 @@ class Person{
 - forcing the caller to handle the null check, this is achieved by wrapping the value with Optional class. 
 - uses to deal with NullpointerException smartly   
 
-### Creation Methods:
-
+**Creation Methods:**
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
 | of()        | `Optional.of("Hello");`       | throws NullPointerException if value is null |
 | ofNullable()| `Optional.ofNullable(a.name);`| return Optional<Null> if value is null|
 
-### Conditional Methods:
-
+**Conditional Methods:**
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
 | empty()     | `Optional.empty()`            | Returns empty Optional          |
 | isPresent() |	`optionalObj.isPresent()`     |	Checks if value is present      |
 | isEmpty()	  | `optionalObj.isEmpty()`       | (Java 9)similar to !isPresent() |
 
-### Transformation Methods:
-
+**Transformation Methods:**
 | Methods     | Code                                      | Description                     |
 |-------------|-------------------------------------------|---------------------------------|
 | get()	      | `optionalObj.get()`	                      | Throws **NoSuchElementException** if value not present |
 | orElse()	  | `optionalObj.orElse(val)`	                | provided default value if value not present|
 | orElseGet()	| `optionalObj.orElseGet(supplier)`         |	value obtained from supplier function, if value not present |
 
-### Consumption Methods:
-
+**Consumption Methods:**
 | Methods     | Code                                      | Description                     |
 |-------------|-------------------------------------------|---------------------------------|
 | ifPresent() | `optionalObj.ifPresent(consumer)`         |	execute consumer function if value present |
