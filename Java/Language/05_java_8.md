@@ -62,35 +62,15 @@ i) staticMethod reference - className::Method
 ii) InstanceMethod reference - objectName::Method   
 iii) constructor reference - className::new   
 ```
-class Hello{
+class Person{
   public static void main(String[] args){
-    // Normal lampda expression  	
-      <Integer, Interger, Double> biFunction = (x1, x2) -> (x1 + x2).doubleValue();
-    
-    // Using Static Method reference  
-    BiFunction<Integer, Interger, Double> biFunction = Hello::addNumbers;
-    biFunction.apply(3,4);
-    
-    // Using Constructor reference
-    PersonFactory personFactory = Person::new;
-    Person personObj = personFactory.create("John", 30);
-
     // Using Instance method reference
     BiFunction<Integer, Interger, Double> biFunction = personObj::addNumbers;
     biFunction.apply(3,4);
-
   }
-  private static Double addNumbers(Interger a, Interger b){
+  Double addNumbers(Interger a, Interger b){
     return a+b.doubleValue();	
   }
-  Hello(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-}
-@FunctionalInterface
-interface PersonFactory {
-    Person create(String name, int age);
 }
 ```
 
