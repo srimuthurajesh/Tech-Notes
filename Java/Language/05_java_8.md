@@ -52,11 +52,9 @@ Ex:Runnable @Comparator .
 | ToIntBiFunction<T,U> | ToIntBiFunction<T,U> | ToIntBiFunction<T,U> |
 
 ## Lambda Expression   
-> block of code that takes parameters and returns a value,   
+> anonymous function implements functional interface
 
-- often used as an argument to a method or assigned to a variable.   
-**Syntax**: ```(argument-list) -> {body}```
-
+Syntax: `(argument-list) -> {body}`
 
 ## Method reference   
 >  can refer existing method implementations as lambdas, using `::`.   
@@ -106,8 +104,8 @@ interface PersonFactory {
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
 | empty()     | `Optional.empty()`            | Returns empty Optional          |
-| of()        | `Optional.of("Hello");`       | Returns Optional, throws Nullpointerexception if value null |
-| ofNullable()| `Optional.ofNullable(a.name);`| if u are expecting Nullpointerexception, use this to avoid it, return Optional<Null> |
+| of()        | `Optional.of("Hello");`       | throws NullPointerException if value is null |
+| ofNullable()| `Optional.ofNullable(a.name);`| return Optional<Null> if value is null|
 | isPresent() |	`optionalObj.isPresent()`     |	Checks if value is present      |
 | isEmpty()	  | `optionalObj.isEmpty()`       | (Java 9)similar to !isPresent() |
 
