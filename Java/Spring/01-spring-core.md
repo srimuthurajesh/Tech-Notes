@@ -21,11 +21,11 @@ It performs:
 1. **Inversion of control**: takes control of the bean creation , loose coupling       
 2. **Dependency Injection(DI)**: Objects define their dependencies through their constructors or setter methods.     
 
-#### Two Ways of Injections: 
+#### Three Ways of Injections: 
 1. Contructor injection  - for mandatory dependencies, but complex
 2. Setter injection - simple, partial intialization. 
 **Beans**: objects present in IOC container  
-
+3. Field injection 
 
 ## Two types of IOC container**     
 ### 1. Bean factory 
