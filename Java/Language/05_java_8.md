@@ -79,12 +79,14 @@ class Person{
 - uses to deal with NullpointerException smartly   
 
 **Creation Methods:**  
+
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
 | of()        | `Optional.of("Hello");`       | throws NullPointerException if value is null |
 | ofNullable()| `Optional.ofNullable(a.name);`| return Optional<Null> if value is null|
 
 **Conditional Methods:**  
+
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
 | empty()     | `Optional.empty()`            | Returns empty Optional          |
