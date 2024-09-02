@@ -103,6 +103,8 @@ class Person{
 
 ### Consumption Methods:
 
+| Methods     | Code                                      | Description                     |
+|-------------|-------------------------------------------|---------------------------------|
 | ifPresent() | `optionalObj.ifPresent(consumer)`         |	execute consumer function if value present |
 | ifPresentOrElse() | `optionalObj.ifPresent(consumer, supplier)` |	(Java 9) execute consumer function if value present |
 
