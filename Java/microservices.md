@@ -12,7 +12,7 @@
 > a service maintains a database of other service instances info (name, IPs, ports)
 
 **Problem**: As instances count goes up and down, we cannot track its ip/url/ports by hardcoding it.   
-**Solution**: To track those, we use registration and discovery pattern. 
+**Solution**: To track those, we use registration and discovery pattern.   
 **Steps**:   
     1. Service Registration: Service registers its network details and metadata on startup.  
     2. Service Discovery: other Services query the registry to find the current network location of other services.  

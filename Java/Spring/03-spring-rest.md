@@ -26,6 +26,8 @@ Versioning:
 
 Request param, query. 
 
+Url standards: GET /api/items?page=2&size=10&sort=name,asc&sort=date,desc
+Url version: /api/v1/items 
 
 Stateless: 
 > we need to make token authentication instead of cookies based authentication, since we are using microservices 

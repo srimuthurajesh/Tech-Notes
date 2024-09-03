@@ -517,3 +517,5 @@ if (!ascending) {
 PageRequest pageRequest = PageRequest.of(page - 1, pageSize, sort);
 return itemRepository.findAll(pageRequest);
 ```
+
+Note: url is GET /api/items?page=2&size=10&sort=name,asc&sort=date,desc

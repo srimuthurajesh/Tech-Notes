@@ -42,7 +42,7 @@
 -combines of @Configuration,@EnableAutoConfiguraion,@ComponentScan    
 -scan its current package/subpackage for componentscan controllers   
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
-2. @EnableAutoConfiguration: 
+2. @EnableAutoConfiguration: configure your application based on the dependencies that you have added to your project
 
 ### Application.properties File 
 -File path: src/resources/  
