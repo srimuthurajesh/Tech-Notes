@@ -405,6 +405,22 @@ class InvalidAgeException extends Exception{
  }  
 }  
 ```
+| **Exception Type**              | **Description**                                                                 | **Checked/Unchecked** |
+|----------------------------------|---------------------------------------------------------------------------------|-----------------------|
+| **IOException**                  | Occurs when an input-output operation fails or is interrupted.                  | Checked               |
+| **SQLException**                 | Indicates a database access error or other issues with SQL.                     | Checked               |
+| **FileNotFoundException**        | Thrown when a file with the specified pathname does not exist.                  | Checked               |
+| **ClassNotFoundException**       | Thrown when trying to load a class that cannot be found.                        | Checked               |
+| **NullPointerException**         | Thrown when an application attempts to use null where an object is required.    | Unchecked             |
+| **ArrayIndexOutOfBoundsException**| Occurs when trying to access an array index that is out of bounds.              | Unchecked             |
+| **ArithmeticException**          | Occurs during illegal arithmetic operations, such as division by zero.          | Unchecked             |
+| **IllegalArgumentException**     | Thrown when a method receives an illegal argument.                              | Unchecked             |
+| **NumberFormatException**        | Occurs when trying to convert a string into a number but the string is not valid.| Unchecked             |
+| **ClassCastException**           | Thrown when trying to cast an object to a subclass it is not an instance of.    | Unchecked             |
+| **OutOfMemoryError**             | Thrown when the JVM cannot allocate more memory.                                | Error                 |
+| **StackOverflowError**           | Thrown when the stack space is exhausted, usually due to deep or infinite recursion.| Error              |
+| **NoClassDefFoundError**         | Occurs when the JVM or class loader cannot find a required class definition during runtime.| Error       |
+
 
 ## Annotations:
 > metadata that provides data about a program to compiler  

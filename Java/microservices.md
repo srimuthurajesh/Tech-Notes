@@ -18,18 +18,27 @@
     2. Service Discovery: other Services query the registry to find the current network location of other services.  
     3. Health Monitoring: The registry at certain time interval(30sec) checks and removes non-responsive services.    
 
+Dependency: 
 **Popular Service Registries**:
-1. Eurekha.   
-2. Consul.    
-3. Zookeeper.    
-4. Etcd.    
+1.Eurekha, 2.Consul, 3.Zookeeper, 4.Etcd.    
 
 ### Api Gateway  
 > a service, act as a single entry point that manages, optimizes, and secures client requests to a system of microservices.  
-Functions:  Routing, Load Balancing, Authentication and Authorization, Rate Limiting, Caching, Request and Response Transformation, Logging and Monitoring, security 
 
-### Load balancing
+Functions:  Routing, Load Balancing, Authentication and Authorization, Rate Limiting, Caching, Request and Response Transformation, Logging and Monitoring, security 
+Dependecny: spring-cloud-starter-gateway  
+### Load balancing  
 > distributing incoming network traffic across multiple servers  
+
+Dependency: spring-cloud-starter-loadbalancer  
+
+```
+@Bean
+@LoadBalanced
+public RestTemplate restTemplate() {
+    return new RestTemplate();
+}
+```
 
 1. Client-Side: client queries a service registry and do internal load-balancing algorithm and send request  
 Libraries: Spring Cloud LoadBalancer  

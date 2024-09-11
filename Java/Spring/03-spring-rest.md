@@ -10,6 +10,27 @@
 | 400  | client error,not found    |
 | 500  | server error              |
 
+#### other must know http codes
+| Code | Message                          |
+|------|----------------------------------|
+| 200  | OK - Success                     |
+| 201  | Created - Resource created        |
+| 202  | Accepted - Accepted request       |
+| 204  | No Content - Accepted request     |
+| 301  | Moved Permanently                 |
+| 302  | Found - Temporarily moved         |
+| 304  | Not Modified                      |
+| 400  | Bad Request                       |
+| 401  | Unauthorized                      |
+| 403  | Forbidden                         |
+| 404  | Not Found                         |
+| 405  | Method Not Allowed                |
+| 408  | Request Timeout                   |
+| 500  | Internal Server Error             |
+| 501  | Not Implemented                   |
+| 502  | Bad Gateway                       |
+| 504  | Gateway Timeout                   |
+
 
 **Best practices in REST**  
 
