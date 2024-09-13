@@ -27,15 +27,15 @@ framework to access prepackaged data structure.
 
 
 ## Queue
-> follows FIFO principle. 
+> follows the First-In-First-Out (FIFO) principle. 
+ 
+Note: in java there is no impl for direct Queue  
+1. **LinkedList queue**: `Queue<String> queue = new LinkedList<>();`   
+2. **PriorityQueue**: ordered in FIFO or by comparator.    
+3. **ArrayDeque** : doubled ended queue using array, used as both FIFO & LIFO.    
+4. **SynchronousQueue**
 
-`Queue<String> queue = new LinkedList<>();`   
-Note: in java there is no impl for direct Queue, instead we need to use prioity queue. 
-1. **Priority queue**: ordered in FIFO or by comparator.    
-2. **ArrayDeque** : doubled ended queue using array, used as both FIFO & LIFO.    
-3. **ArrayBlocking queue** : Bounded blocking queue, thread-safe, suitable for concurrent producer-consumer scenarios.   
-
-#### Queue methods:  
+**Queue methods**: peek(), poll(), remove()
 1. peek(): return object at top of current queue  
 2. poll(): return object and remove queue value, or return null if queue empty     
 3. remove(): same as poll(), but throw NoSuchElementException if queue empty  

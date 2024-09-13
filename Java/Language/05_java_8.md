@@ -5,7 +5,7 @@
 2. [Functional interface](#functional-interface)
 3. [Lambda Expression](#Lambda-expression)
 4. [Method reference](#method-reference)
-5. [Optional](#optional)`
+5. [Optional](#optional)  
 7. [StringJoiner class](#stringjoiner-class)
 8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
@@ -38,22 +38,23 @@ Ex:Runnable @Comparator .
 | `Supplier<T>`       | no  | 1       | .get()    | Supplier<Double> randomSupplier = () -> Math.random();                |
 
 **Primitive Specializations**:
-
-| Primitive int     | Primitive long     | Primitive double     |
-|-------------------|--------------------|----------------------|
-| IntFunction<R>    | LongFunction<R>    | DoubleFunction<R>    |
-| IntConsumer       | LongConsumer       | DoubleConsumer       |
-| IntPredicate      | LongPredicate      | DoublePredicate      |
-| IntSupplier       | LongSupplier       | DoubleSupplier       |
-| IntUnaryOperator  | LongUnaryOperator  | DoubleUnaryOperator  |
-| IntBinaryOperator | LongBinaryOperator | DoubleBinaryOperator |
-| ToIntFunction<T>  | ToLongFunction<T>  | ToDoubleFunction<T>  |
-| ToIntBiFunction<T,U> | ToIntBiFunction<T,U> | ToIntBiFunction<T,U> |
+generics not needed, applies for all above functions  
+Ex: IntFunction<R>, LongFunction<R>, DoubleFunction<R>
 
 ## Lambda Expression   
 > anonymous function implements functional interface
 
 Syntax: `(argument-list) -> {body}`
+**Anonymous class**: 
+```
+interface Action { void execute(); } 
+Action action = new Action() {
+    @Override
+    public void execute() {
+        System.out.println("Action executed!");
+    }
+};
+```
 
 ## Method reference   
 >  can refer existing method implementations as lambdas, using `::`.   
@@ -84,12 +85,12 @@ class Person{
 |-------------|-------------------------------|---------------------------------|
 | of()        | `Optional.of("Hello");`       | throws NullPointerException if value is null |
 | ofNullable()| `Optional.ofNullable(a.name);`| return Optional<Null> if value is null|
+| empty()     | `Optional.empty()`            | Returns empty Optional          |
 
 **Conditional Methods:**  
 
 | Methods     | Code                          | Description                     |
 |-------------|-------------------------------|---------------------------------|
-| empty()     | `Optional.empty()`            | Returns empty Optional          |
 | isPresent() |	`optionalObj.isPresent()`     |	Checks if value is present      |
 | isEmpty()	  | `optionalObj.isEmpty()`       | (Java 9)similar to !isPresent() |
 
@@ -116,48 +117,43 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 ```
 
 ## Stream API
-> helps to process sequences of elements, such as collections or arrays. 
+> helps to process sequences of elements   
 
 - enabling functional programming ie.Processing data with functions. 
 - **Stream**: means a continuos flow of data, immutable  
 
-#### Source Operation 
+#### Source Operations
 
-| Source Operation          | code                    | return    |
-|---------------------------|-------------------------|-----------|
-| From list,set,queue,stack | collectionObj.stream()  | Stream<T> |
-| From Map                  | map.entrySet.stream()   | Stream<T> |
-|                           | map.keySet.stream()     | Stream<T> |
-|                           | map.values.stream()     | Stream<T> |
-| ParallelStream            | collObj.parallelStream()| Stream<T> |
-| From Array (of)           | Stream.of(array), Stream.of("s","a")      | Stream<T> |
-| From Array                | Arrays.stream(array)    | only works for(IntStream,DoubleStream,LongStream) & **Object**(Stream<T>)|
-| String Streams            | str.chars()             | IntStream i.e UTF-16 code, we need to use boxed() |
-| Stream Builders           | Stream.builder()        | Stream<T> s= Stream.builder().add(1).build() |
-|                           | Stream.generate()-java10| Stream<Integer> r = Stream.generate(random::nextInteger).limit(10); |
-|                           | Stream.iterate() - java9| Stream<Integer> s = Stream.iterate(1, n -> n + 1).limit(10) |
-| Streams from Functions    | Stream.ofNullable()     | Stream<String> s = Stream.ofNullable(name);//return empty stream instead of null |
-|                           | Stream.concat()         | Stream<String> s = Stream.concat(Stream.of("A"), Stream.of("B"))|
-|                           | Stream.empty()          | return empty stream|
-| File Streams              | Files.lines(Paths.get("path"))                        ||
-| String Streams            | str.codePoints()        | InStream i.e Uni code, used when working with text file |
+| Source Operation          | description                   |
+|---------------------------|-------------------------------|
+| collectionObj.stream()    | Stream from collection object |
+| mapObj.entrySet.stream()  | Stream from collection Map    |
+| Arrays.stream(array)      | generate IntStream,DoubleStream,LongStream |
+| str.chars().stream()      | need to use mapToObj(c->(Char)c) |
+| Stream.of("1","b")        |  |
+| Stream.builder()          | Stream.builder().add(1).build() |
+| Stream.concat()           | Stream.concat(Stream.of("A"), Stream.of("B"))|
+| Stream.empty()            | return empty stream|
+| Stream.generate()-java10  | Stream.generate(random::nextInteger).limit(10); |
+| Stream.iterate() - java9  | Stream.iterate(1, n -> n + 1).limit(10) |
+| Stream.ofNullable()-java9 | Stream.ofNullable(name);//return empty stream instead of null |
 
 Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
 
 #### Intermediate Operation
 
-| Intermediate Operation    | Definition                            |
-|---------------------------|---------------------------------------|
-| `map((a)=>{return a*10})` | Transform each element.               |
-| `filter((a)=>{return })`  | Select elements based on a predicate. |
-| `flatMap()`               | combination of flat&map, convert stream of stream into single stream |
-| `distinct()`              | Remove duplicate for primitive datatypes |
-| `sorted()`                | Sort elements.                        |
-| `limit(5)`                | Limit the number of elements.         |
-| `skip()`                  | Skip upto given index                 |
-| `flatMapToInt(String::chars)`| converting nested primitive arrays into a single stream of primitives  |
-| `boxed()`| convert premitive stream insto wrapped type  |
-| `peek()`                  | used to debug stream elements         |
+| Intermediate Operation        | Definition                            |
+|-------------------------------|---------------------------------------|
+| `map((a)=>{return a*10})`     | Transform each element.               |
+| `filter((a)=>{return })`      | Select elements based on a predicate. |
+| `flatMap()`                   | combination of flat&map, convert stream of stream into single stream |
+| `distinct()`                  | Remove duplicate for primitive datatypes |
+| `sorted()`                    | Sort elements.                        |
+| `limit(5)`                    | Limit the number of elements.         |
+| `skip()`                      | Skip upto given index                 |
+| `flatMapToInt(String::chars)` | converting nested primitive arrays into a single stream of primitives  |
+| `boxed()`                     | convert premitive stream insto wrapped type  |
+| `peek()`                      | used to debug stream elements         |
 
 ##### Sorted
 1. sorted(Collections.reverseOrder())    
