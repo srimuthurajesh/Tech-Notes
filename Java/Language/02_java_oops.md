@@ -17,16 +17,16 @@
 **Adv of oops**: easy to extend/improve, code reusability, readability
 ### Example: 
 - to understand class object. take shapes as class and box is shape model    
-**Attribute** are characteristics of Box ie:length, breadth, height 
-**Methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}  
+**Attribute** are characteristics of Box ie:length, breadth, height   
+**Methods** are abilities/functionalities of Box. eg: calculateVolume(){l*b*h}    
 
 ## Class  
 > template or blueprint for object (defines variable and methods) ie:noun & verbs    
 
 ### Types of Classes:
 1. Regular class
-1. Nested class : A.B bObj = Aobj.new B();  
-2. Nested static: A.B Bobj = new A.B();  
+1. Nested class : OuterClass.InnerClass obj = outerObject.new InnerClass();   
+2. Nested static: OuterClass.NestedStaticClass obj = new OuterClass.NestedStaticClass();   
 3. Anonymous : A obj = new A(){//class body};    
 
 ### Steps to create immutable class: 
@@ -36,8 +36,8 @@
 4. Return a copy of objects in the clone() method.
 
 ##### Common class Exceptions:
-1. **ClassNotFoundException**: while Class.forName() or loadClass()   
-2. **NoClassDefFoundError**: class present in compiletime, but not in runtime    
+1. **NoClassDefFoundError**: Class present at compiletime but missing at runtime.    
+2. **ClassNotFoundException**: Occurs during runtime, Class.forName() or loadClass(   
 
 ## Constructor  
 > special type of method, been called while intialize object     
@@ -87,12 +87,13 @@ LHS (heap) reference = RHS (stack) instance
 	1. while nullfying the object     rajesh obj1=new rajesh();    obj1=null;  
 	2. while assigning reference to other         obj1=obj2  
 	3. while using anonymous object  
-**Finalize() Method** : Called before GC  
-**Memory leak**:  objects no longer used, unable removed by garbage collector. cause OutOfMemoryError. Solution: Memory management tools   
+**Finalize() Method** : Called before Garbage Collector  
+Note: finalize method deprecated in java9 & removed in java18. use  `AutoCloseable` and `try-with-resources`         
+cause OutOfMemoryError     
 
 ## Methods  
 > block of code that perform specific task.
-> it has name,argument and return type
+> it has methodName, arguments, returnType & returnValue  
 
 **Varargs** : Allows passing a variable number of arguments to a method  
 `void methodname(int ...a){//use as a[];} ` 

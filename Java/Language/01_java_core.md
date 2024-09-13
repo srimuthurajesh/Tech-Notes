@@ -405,6 +405,7 @@ class InvalidAgeException extends Exception{
  }  
 }  
 ```
+
 | **Exception Type**              | **Description**                                                                 | **Checked/Unchecked** |
 |----------------------------------|---------------------------------------------------------------------------------|-----------------------|
 | **IOException**                  | Occurs when an input-output operation fails or is interrupted.                  | Checked               |
