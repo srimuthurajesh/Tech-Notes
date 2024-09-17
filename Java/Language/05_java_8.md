@@ -147,12 +147,13 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | `map((a)=>{return a*10})`     | Transform each element.               |
 | `filter((a)=>{return })`      | Select elements based on a predicate. |
 | `flatMap()`                   | combination of flat&map, convert stream of stream into single stream |
+| `flatMapToInt(String::chars)` | converting nested primitive arrays into a single stream of primitives  |
+| `flatMapToObj(String::chars)` |   |
 | `distinct()`                  | Remove duplicate for primitive datatypes |
 | `sorted()`                    | Sort elements.                        |
 | `limit(5)`                    | Limit the number of elements.         |
 | `skip()`                      | Skip upto given index                 |
-| `flatMapToInt(String::chars)` | converting nested primitive arrays into a single stream of primitives  |
-| `boxed()`                     | convert premitive stream insto wrapped type  |
+| `boxed()`                     | convert premitive stream into wrapped type  |
 | `peek()`                      | used to debug stream elements         |
 
 ##### Sorted
