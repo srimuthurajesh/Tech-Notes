@@ -1,8 +1,11 @@
 # Angular
 
-- [Typescript](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular/typescript.html)
-- [Angular Basics](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular/angular_basics.html)
-- [Dependency Injection](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular/angular_dependency_injection.html)
-- [Angular Forms](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular/angular_forms.html)
-- [RxJS](https://srimuthurajesh.github.io/Tech-Notes/JavaScript/Angular/rxjs.html)
+- [Typescript](typescript.html)
+- [Angular Basics](angular_basics.html)
+- [Dependency Injection](angular_dependency_injection.html)
+- [Angular Forms](angular_forms.html)
+- [Angular Forms](angular_forms.html)
+- [Angular Http](angular_http.html)
+- [Angular Routing](angular_routing.html)
+- [RxJS](rxjs.html)
 - [Angular Interview](angular-interview.html)
