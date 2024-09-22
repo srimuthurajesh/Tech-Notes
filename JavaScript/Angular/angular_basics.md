@@ -74,8 +74,9 @@ export class AppComponent {
   <span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
   <ng-template #anotherTag> <span>else case</span><ng-template>
 ```
-3. ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
-4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+
+2. ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
+3. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
 
 ```
 <div [ngSwitch]="Switch_Expression"> 
