@@ -9,4 +9,3 @@
 - [RxJS](rxjs.html)
 - [NgRx](ngrx.html)
 - [Versions](angular_version.html)
-- [Angular Interview](angular-interview.html)
