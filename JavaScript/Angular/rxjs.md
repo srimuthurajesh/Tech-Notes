@@ -54,27 +54,22 @@ setTimeout(() => {
 2. Reactive Programming: The observable pushes data to the listener.
     - Think of it as a Publisher-Subscriber model where the publisher (observable) pushes data to the subscriber (observer).  
  
- 
-
 
 ## Subject & BehaviourSubject
 1. Subject:
     - Acts as both an observable and an observer, enabling multicasting.
+    ```
+    const subject = new Subject();
+    subject.subscribe(value => console.log('Subject:', value));
+    subject.next('Subject Value');
+    ```
 2. BehaviorSubject:
     - Emits the current value (or last value) to new subscribers.
-
-```
-import { Subject, BehaviorSubject } from 'rxjs';
-
-const subject = new Subject();
-subject.subscribe(value => console.log('Subject:', value));
-subject.next('Subject Value');
-
-const behaviorSubject = new BehaviorSubject('Initial Value');
-behaviorSubject.subscribe(value => console.log('BehaviorSubject:', value));
-behaviorSubject.next('BehaviorSubject Value');
-
- ```  
+    ```
+    const behaviorSubject = new BehaviorSubject('Initial Value');
+    behaviorSubject.subscribe(value => console.log('BehaviorSubject:', value));
+    behaviorSubject.next('BehaviorSubject Value');
+    ```  
 
 ## Operators
 ### 1. Creational Operators
