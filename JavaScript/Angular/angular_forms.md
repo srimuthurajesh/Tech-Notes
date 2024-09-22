@@ -1,46 +1,53 @@
 ## Angular Forms
 > handle users input as a form
 
-1. Template Driven form
-2. Reactive form
+## Types of Angular Forms
+1. Template Driven Forms
+- Simple to use, suitable for small forms.
+- Utilizes Angular directives in the template.
+- Forms are created and managed using Angular's ngForm directive.
 
-- need to import FormsModule or ReactiveFormsModule
+2. Reactive Forms  
+- More robust, ideal for complex forms.
+- Based on reactive programming principles.
+- Provides a model-driven approach where form controls are created in the component class.
 
-### Building blocks of Angular forms
-1. **formControl** - represents a single input field
+## Modules to Import
+1. For Template Driven Forms, import FormsModule.
+2. For Reactive Forms, import ReactiveFormsModule.
+
+## Core concepts of Angular forms
+### 1. FormControl  
+> represents a single input field
+
   ```
-  let firstname= new FormControl(); //Creating a FormControl in a Reactive forms
-  firstname.value   //Returns the value of the first name field
-  firstname.errors      // returns the list of errors
-  firstname.dirty       // true if the value has changed (dirty)
-  firstname.touched     // true if input field is touched
-  firstname.valid       // true if the input value has passed all the validation
-  firstname.statusChanges.subscribe(x => {console.log('firstname status changes')});
-  firstname.valueChanges.subscribe(x => {console.log('firstname status changes')});
+    let firstname = new FormControl(); // Create a FormControl
+    console.log(firstname.value);        // Get the current value
+    console.log(firstname.errors);       // Get validation errors
+    console.log(firstname.dirty);        // Check if the value has changed
+    console.log(firstname.touched);      // Check if the field has been touched
   ```  
-2. **formGroup** - is a collection of FormControls  
+### 2. FormGroup  
+> is a collection of FormControls  
   
   ```
-  let address= new FormGroup({
-      name : new FormControl({value: ‘Rahul’, disabled: true}),
-      city : new FormControl(""),
-      pinCode : new FormControl('', [Validators.required, Validators.minLength(6)], Validators.email])
-  })
-  reactiveForm.getValue('city');   //return formControl
-  reactiveForm.setValue({all inputs});
-  reactiveForm.patchValue({partial inputs});
-  reactiveForm.statusChanges.subscribe(x => {console.log('reactiveForm status changes')});
-  reactiveForm.valueChanges.subscribe(x => {console.log('reactiveForm status changes')});
+  let address = new FormGroup({
+    name: new FormControl({ value: 'Rahul', disabled: true }),
+    city: new FormControl(""),
+    pinCode: new FormControl('', [Validators.required, Validators.minLength(6), Validators.email])
+  });
+  console.log(address.value);            // Get the form values as a JSON object
+  console.log(address.get("city"));       // Access specific FormControl
+  ```  
+### 3. formArray
+> array of formControls
 
-  address.value;       	// return json object
-  address.get("street")   // get formcontrol by name, inside formgroup
-  address.errors     	// returns the list of errors
-  address.dirty      	// true if the value of one of the child control has changed (dirty)
-  address.touched    	// true if one of the child control is touched
-  address.valid      	// true if all the child controls passed the validation
-  ```
-3. **formArray** : array of formControls
-
+```
+let phoneNumbers = new FormArray([
+    new FormControl(''),
+    new FormControl('')
+]);
+```
 
 ##### Template Driven form
 ```
@@ -61,6 +68,8 @@
 </form>
 ```
 ##### FormBuilder
+> A convenient way to create forms.
+
 ```
 constructor(private formBuilder: FormBuilder) { }
 this.contactForm = this.formBuilder.group({
@@ -70,3 +79,13 @@ this.contactForm = this.formBuilder.group({
 });
 ```
 
+### Validation
+> required, minLength, maxLength, and custom validators can also be created.
+
+```
+let emailControl = new FormControl('', [Validators.required, Validators.email]);
+```
+
+### Subscribing to Value Changes
+1. firstname.statusChanges.subscribe(x => {console.log('firstname status changes')});  
+2. firstname.valueChanges.subscribe(x => {console.log('firstname status changes')});
