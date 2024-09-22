@@ -18,7 +18,7 @@
   - [Built-in Pipes]()
   - [Custom Pipes]()
 - [Miscellaneous](#Miscellaneous)
-  - [HostBinding and HostListener]
+  - [HostBinding and HostListener]()
   - [NgTemplate]
 - [Other Features]()
   - [Angular CLI](#angular-cli-commands)
@@ -30,35 +30,6 @@
   - [Build Files]()
   - [Third-party Libraries Integration]()
   
-#### Bootstrapping in angular:
-1. Loads index.html, which contains ```<app-root></app-root>```
-2. Loads Angular & Third-party libraries & Application
-3. Executes application entry point (main.ts)
-4. Load & execute Root Module (app.module.ts) and Root Component (app.component.ts)
-5. Displayes the template (app.component.html)
-
-### Angular folder structure
-```
-e2e  			-> has e2e test files
-node_modules  		-> contains all the libraries and dependencies mentioned in the package.json file.
-src
-    app			-> contains the components, modules, services, etc.,
-    assets		-> contains static assets like images, fonts, etc.
-    environments	-> contains environment-specific configuration files
-    favicon.ico		-> icon file that appears in the browser tab.
-    index.html		-> main HTML file that serves as the entry point 
-    main.ts		-> main ts file that bootstraps Angular app.
-    style.css		-> Global style sheet apply entire app
-    tslint.json         -> extension of root folder file(tslint.json)
-    tsconfig.app.json   -> extension of root folder file(tsconfig.json)
-    test.ts             -> will have all test cases register here
-    polyfills.ts	-> it required to support various browsers
-angular.json   		-> has assets, root, script, env details , main.ts path 
-package.json   		-> has dependencies, dev dependencies, scrip command details  
-package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
-tsconfig.json		-> specifies compiler options and file inclusion/exclusion rules.
-tslint.json		-> config file for linting ts. used to enforce coding standards and catch errors. 
-```
     
 ## Components
 > building blocks for Angular. It consists of
@@ -245,10 +216,6 @@ export class SqrtPipe implements PipeTransform {
 <ng-template #elseBlock1> <p>content to render when selected is false.</p></ng-template>
 ```
 
-# More Informations
-#### Adding boostrap to the project 
-1. Install bootstrap ```npm install --save bootstrap```
-2. __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
 
 
 ## Ng Build  
@@ -261,19 +228,65 @@ Commamd: ```ng build```
  4. style.js.map    	- contains global style rules bundled as a js file
  5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
 
-
+## Other Features
 ### Angular CLI commands
 
-| Command | Description |
-| -- | -- |
-| Install Nodejs and npm | [Nodejs](https://nodejs.org/) |
-| ```npm install –g @angular/cli``` | install Angular cli  |
-| ```ng –version``` | check version |
-| ```ng new projectname``` | create new angular project |
-| ```ng serve``` | run project |
-| ```ng g c componentname``` | generate new component |
-| ```ng g m modulename``` | generate new module |
-| ```ng g p pipename``` | generate new pipe |
-| ```ng g directive directivename``` | generate new directive |
-| ```ng g s servicename``` | generate new service |
+| Command                       | Description                   |
+| ------------------------------| ------------------------------|
+| Install Nodejs and npm        | [Nodejs](https://nodejs.org/) |
+| `npm install –g @angular/cli` | install Angular cli           |
+| `ng –version`                 | check version                 |
+| `ng new projectname`          | create new angular project    |
+| `ng serve`                    | run project                   |
+| `ng g c componentname`        | generate new component        |
+| `ng g m modulename`           | generate new module           |
+| `ng g p pipename`             | generate new pipe             |
+| `ng g directive directivename`| generate new directive        |
+| `ng g s servicename`          | generate new service          |
 
+### Bootstrapping in angular:
+1. Loads index.html, which contains ```<app-root></app-root>```
+2. Loads Angular & Third-party libraries & Application
+3. Executes application entry point (main.ts)
+4. Load & execute Root Module (app.module.ts) and Root Component (app.component.ts)
+5. Displayes the template (app.component.html)
+
+### Angular folder structure
+```
+e2e  			-> has e2e test files
+node_modules  		-> contains all the libraries and dependencies mentioned in the package.json file.
+src
+    app			-> contains the components, modules, services, etc.,
+    assets		-> contains static assets like images, fonts, etc.
+    environments	-> contains environment-specific configuration files
+    favicon.ico		-> icon file that appears in the browser tab.
+    index.html		-> main HTML file that serves as the entry point 
+    main.ts		-> main ts file that bootstraps Angular app.
+    style.css		-> Global style sheet apply entire app
+    tslint.json         -> extension of root folder file(tslint.json)
+    tsconfig.app.json   -> extension of root folder file(tsconfig.json)
+    test.ts             -> will have all test cases register here
+    polyfills.ts	-> it required to support various browsers
+angular.json   		-> has assets, root, script, env details , main.ts path 
+package.json   		-> has dependencies, dev dependencies, scrip command details  
+package.lock.json   	-> has dependencies needed for dependencies mentioned in package json
+tsconfig.json		-> specifies compiler options and file inclusion/exclusion rules.
+tslint.json		-> config file for linting ts. used to enforce coding standards and catch errors. 
+```
+
+## Utilities
+### Testing:
+1. e2e Tests
+2. Unit Testing Components and Services
+
+### Configuration Files:
+`angular.json, tsconfig.json, package.json, polyfills.ts`
+
+### Build Files:
+- Output Files in dist Folder after ng build
+
+### Third-party Libraries Integration:
+1. Adding Bootstrap to the Angular Project
+  i) Install bootstrap ```npm install --save bootstrap```
+  ii) __angular-cli.json__, add ```"styles": [ "../node_modules/bootstrap/dist/css/bootstrap.min.css","styles.css"]```
+2. Managing Dependencies with npm
