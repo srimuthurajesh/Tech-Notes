@@ -149,11 +149,11 @@ syntax is value | pipeName surrounded by double flower bracket
 
 ### 1. Built-in Pipes
   i) uppercase, lowercase  
-  ii) 6589.23 | currency:'USD'  
-  iii) todayDate | date:'d/M/y' 
-  iv) todayDate | date:'shortTime' 
-  v) json
-  vi) 'Angular Pipes' | slice:8:13
+  ii) 6589.23 | currency:'USD'    
+  iii) todayDate | date:'d/M/y'   
+  iv) todayDate | date:'shortTime'   
+  v) json  
+  vi) 'Angular Pipes' | slice:8:13  
 
 #### 2. Custom pipe
 1. Pure Pipes: Executes only in input data changes. 
