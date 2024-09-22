@@ -95,31 +95,31 @@ behaviorSubject.next('BehaviorSubject Value');
 
 ### 2. Join Creational Operators
 
-| Operator        | Description                                                                      | Example                                                            |
-|-----------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| `Merge`         | Combines multiple observables                                                    |                                                                    |
-| `Concat`        | Starts the next observable after one completes                                   |                                                                    |
-| `forkJoin`      | Waits for multiple observables to complete, then emits final values              | `forkJoin([of(1), of(2)])`                                         |
-| `combineLatest` | Emits the latest values from multiple observables whenever any of them emits      | `combineLatest([of(1), of(2)])`                                    |
+| Operator        | Description                                       | Example                         |
+|-----------------|---------------------------------------------------|---------------------------------|
+| `Merge`         | Combines multiple observables                     |                                 |
+| `Concat`        | Starts the next observable after one completes    |                                 |
+| `forkJoin`      | Waits for multiple observables to complete        | `forkJoin([of(1), of(2)])`      |
+| `combineLatest` | Emits the latest values from multiple observables | `combineLatest([of(1), of(2)])` |
 
 ### 3. Transformation Operators
 
-| Operator       | Description                                                                      | Example                                                           |
-|----------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| `Map`          | Transforms the data                                                              | `of(1, 2, 3).pipe(map(x => x * 10))`                              |
-| `concatMap`    | Subscribes to observables sequentially, concatenating their emissions             | `of(1, 2, 3).pipe(concatMap(x => of(x * 10)))`                    |
-| `switchMap`    | Unsubscribes from the previous observable if a new value is emitted               | `of(1, 2).pipe(switchMap(x => of(x * 10)))`                       |
-| `Pluck`        | Selects a property from emitted objects                                           |                                                                   |
-| `MergeMap`     | Merges all the inner observables into one                                         | `of(1, 2).pipe(mergeMap(x => of(x * 10)))`                        |
+| Operator       | Description                                          | Example                                           |
+|----------------|------------------------------------------------------|---------------------------------------------------|
+| `Map`          | Transforms the data                                  | `of(1, 2, 3).pipe(map(x => x * 10))`              |
+| `concatMap`    | Subscribes to observables sequentially               | `of(1, 2, 3).pipe(concatMap(x => of(x * 10)))`    |
+| `switchMap`    | Unsubscribes previous observable if new value emitted| `of(1, 2).pipe(switchMap(x => of(x * 10)))`       |
+| `Pluck`        | Selects a property from emitted objects              |                                                   | 
+| `MergeMap`     | Merges all the inner observables into one            | `of(1, 2).pipe(mergeMap(x => of(x * 10)))`        |
 
 ### 4. Filtering Operators
 
-| Operator              | Description                                              | Example                                                           |
-|-----------------------|----------------------------------------------------------|-------------------------------------------------------------------|
-| `Filter`              | Filters data based on a condition                        | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`                   |
-| `distinctUntilChanged`| Emits only if the current value differs from the last     | `of(1, 1, 2).pipe(distinctUntilChanged())`                        |
-| `take`                | Emits only the first N values                            | `of(1, 2, 3).pipe(take(2))`                                       |
-| `debounceTime`        | Emits the last value if a specified time has passed       | `fromEvent(document, 'click').pipe(debounceTime(500))`             |
+| Operator              | Description                                           | Example                                           |
+|-----------------------|-------------------------------------------------------|---------------------------------------------------|
+| `Filter`              | Filters data based on a condition                     | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`   |
+| `distinctUntilChanged`| Emits only if the current value differs from the last | `of(1, 1, 2).pipe(distinctUntilChanged())`        |
+| `take`                | Emits only the first N values                         | `of(1, 2, 3).pipe(take(2))`                       |
+| `debounceTime`        | Emits the last value if a specified time has passed   | `fromEvent(document, 'click').pipe(debounceTime(500))`|
 
 ### 5. Utility Operators
 
