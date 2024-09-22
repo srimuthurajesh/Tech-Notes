@@ -108,6 +108,7 @@ export class HighlightDirective {
 4. **Class bindings** : ```[class.className]="expression"```
 5. **Style bindings** :	```[style.styleProperty]="expression"```
 6. **Event bindings** : ```(event)="function($event)"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
+
 ### 2. Two way binding:   
 [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
 
