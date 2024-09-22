@@ -110,8 +110,8 @@ import { Car } from './Car';
 function log(value: string | number): void {
     console.log(value);
 }
-```
-2. Intersection Types: Combine multiple types into one
+```  
+2. Intersection Types: Combine multiple types into one  
 ```
 interface Person {
     name: string;

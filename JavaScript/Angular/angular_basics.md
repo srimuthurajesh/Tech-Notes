@@ -203,13 +203,13 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 ## Angular Pipes    
 > used to Transform the Data.  
 
-1. ```{{comments | uppercase}} ``` 
-2. {{comments | lowercase}}   
-3. {{6589.23 | currency:"USD"}}   
-4. {{todaydate | date:'d/M/y'}}, {{todaydate | date:'shortTime'}}  
-5. {{ jsonval | json }}  
-6. {{00.54565 | percent}}
-7. msg | slice:11:20		
+1. `{{ comments | uppercase }}`
+2. `{{ comments | lowercase }}`
+3. `{{ 6589.23 | currency: "USD" }}`
+4. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
+5. `{{ jsonval | json }}`
+6. `{{ 0.54565 | percent }}`
+7. `{{ msg | slice: 11:20 }}`
 
 **1. Pure Pipes**: Execute change in value.  
 **2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
