@@ -17,7 +17,7 @@ firstname.valid       // true if the input value has passed all the validation
 firstname.statusChanges.subscribe(x => {console.log('firstname status changes')});
 firstname.valueChanges.subscribe(x => {console.log('firstname status changes')});
 ```
-2. **formGroup** - is a collection of FormControls
+2. **formGroup** - is a collection of FormControls  
 ```
 let address= new FormGroup({
     name : new FormControl({value: ‘Rahul’, disabled: true}),
