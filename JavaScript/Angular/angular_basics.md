@@ -137,7 +137,7 @@ export class AppModule { }
 onSubmit(){ this.sendData.emit("from child to parent");}
 
 //parent.component.html
-<app-child customname='rajesh' (sendData)="someFunctionInParent($event)"></app-child>
+<app-child custom name='rajesh' (sendData)="someFunctionInParent($event)"></app-child>
 //parent.component.ts
 export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
@@ -149,10 +149,7 @@ syntax: {{comments | uppercase}}
 ### 1. Built-in Pipes
   i. {{ comments | uppercase }}
   ii. ```{{ comments | lowercase }}```
-  iv. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
-  v. `{{ jsonval | json }}`
-  vi. `{{ 0.54565 | percent }}`
-  vii. `{{ msg | slice: 11:20 }}`
+
 
 
 #### 2. Custom pipe
