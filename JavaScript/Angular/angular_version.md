@@ -9,8 +9,6 @@
   - Built-in **Dependency Injection**.
   - Usage of **Scopes** to bind models to views.
 
----
-
 ## Angular 2
 - **Released**: 2016
 - **Key Features**:
@@ -21,8 +19,6 @@
   - Support for **RxJS Observables**.
   - **Hierarchical Dependency Injection** system.
 
----
-
 ## Angular 4
 - **Released**: 2017
 - **Key Features**:
@@ -32,8 +28,6 @@
   - **Animation Package** moved to its own module.
   - Support for **TypeScript 2.1+**.
 
----
-
 ## Angular 5
 - **Released**: 2017
 - **Key Features**:
@@ -41,8 +35,6 @@
   - **HttpClient** became the default for HTTP requests.
   - Enhanced **compiler performance** with incremental compilation.
   - Support for **Progressive Web Apps (PWA)**.
-
----
 
 ## Angular 6
 - **Released**: 2018
@@ -52,8 +44,6 @@
   - Enhanced **Service Workers** for better PWA support.
   - Support for **Tree-shakable services** to reduce bundle size.
 
----
-
 ## Angular 7
 - **Released**: 2018
 - **Key Features**:
@@ -61,8 +51,6 @@
   - Improved **drag and drop** module via `@angular/cdk`.
   - Better performance through **virtual scrolling**.
   - Updated **Angular Material** with new components and accessibility improvements.
-
----
 
 ## Angular 8
 - **Released**: 2019
@@ -72,16 +60,12 @@
   - **Lazy Loading** with dynamic imports.
   - **Web Workers** support for improving application performance.
 
----
-
 ## Angular 9
 - **Released**: 2020
 - **Key Features**:
   - **Ivy** became the default rendering engine, improving build times and smaller bundle sizes.
   - Improved **type checking** in templates.
   - Faster **compilation and testing** process.
-
----
 
 ## Angular 10
 - **Released**: 2020
@@ -90,16 +74,12 @@
   - Improved performance with the introduction of **optional strict mode**.
   - **Updated TypeScript support** for version 3.9.
 
----
-
 ## Angular 11
 - **Released**: 2020
 - **Key Features**:
   - **Automatic font inlining** in the production build.
   - **Improved HMR** (Hot Module Replacement) support.
   - Enhanced **webpack 5 support** for improved performance.
-
----
 
 ## Angular 12
 - **Released**: 2021
@@ -108,8 +88,6 @@
   - Added **strict mode** for more optimized builds.
   - Improved **internationalization** (i18n) features.
 
----
-
 ## Angular 13
 - **Released**: 2021
 - **Key Features**:
@@ -117,11 +95,39 @@
   - Improved support for **CSS module styles**.
   - TypeScript **4.4** support and performance improvements.
 
----
-
 ## Angular 14
 - **Released**: 2022
 - **Key Features**:
   - Support for **Standalone Components** to simplify application structure.
   - **Typed Forms** for better type-checking and form controls.
   - **CLI improvements** for smaller and more efficient builds.
+
+### Angular 15
+- **Released**: 2022
+- **Key Features**:
+  - Directive composition API, allowing reuse of common directive logic.
+  - Simplified standalone APIs for services and guards.
+  - Enhanced router transitions and data retrieval in resolvers.
+  - Advanced debugging tools in Angular DevTools.
+
+### Angular 16
+- **Released**: 2023
+- **Key Features**:
+  - **Standalone APIs**: Continued improvements to standalone components.
+  - **Signals API**: Reactive signal-based state management.
+  - **ESM (EcmaScript Modules)**: Faster builds and tree-shaking.
+  - **SSR Hydration**: Improved server-side rendering with environment-independent hydration.
+
+### Angular 17 (Upcoming)
+- **Key Features**:
+  - New compilation model for faster application startup and rendering.
+  - Expanded Signals API for better reactive state management.
+  - Further performance enhancements, including smaller bundle sizes and faster builds.
+  - Integration with the latest TypeScript versions.
+  - Continued updates to SSR hydration techniques.
+
+### Angular 18 (Future)
+- **Key Features**:
+  - Further evolution of the standalone component model, simplifying application structure.
+  - Possible ML integration to optimize application performance and compilation.
+  - UI and form enhancements, improving reactivity and declarative patterns.
