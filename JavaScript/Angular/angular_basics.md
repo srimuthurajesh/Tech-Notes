@@ -28,7 +28,8 @@
   - [Testing]()
   - [Configuration Files]()
   - [Build Files]()
-  - [Third-party Libraries Integratio]()
+  - [Third-party Libraries Integration]()
+  
 #### Bootstrapping in angular:
 1. Loads index.html, which contains ```<app-root></app-root>```
 2. Loads Angular & Third-party libraries & Application
