@@ -20,6 +20,25 @@
   ```  
 2. **formGroup** - is a collection of FormControls  
   
+  ```
+  let address= new FormGroup({
+      name : new FormControl({value: ‘Rahul’, disabled: true}),
+      city : new FormControl(""),
+      pinCode : new FormControl('', [Validators.required, Validators.minLength(6)], Validators.email])
+  })
+  reactiveForm.getValue('city');   //return formControl
+  reactiveForm.setValue({all inputs});
+  reactiveForm.patchValue({partial inputs});
+  reactiveForm.statusChanges.subscribe(x => {console.log('reactiveForm status changes')});
+  reactiveForm.valueChanges.subscribe(x => {console.log('reactiveForm status changes')});
+
+  address.value;       	// return json object
+  address.get("street")   // get formcontrol by name, inside formgroup
+  address.errors     	// returns the list of errors
+  address.dirty      	// true if the value of one of the child control has changed (dirty)
+  address.touched    	// true if one of the child control is touched
+  address.valid      	// true if all the child controls passed the validation
+  ```
 3. **formArray** : array of formControls
 
 
