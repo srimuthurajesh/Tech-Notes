@@ -42,7 +42,7 @@
 
 
 ## Http Params & Headers
-queryparam Url: https://dummyjson.com/products?limit=10  
+1. queryparam Url: https://dummyjson.com/products?limit=10  
 ```
 const params = new HttpParams().set('limit', 10);
 let headers = new HttpHeaders();
@@ -51,8 +51,9 @@ headers .set('Access-Control-Allow-Origin', '*')
 
 this.httpClient.get<repos[]>('https://dummyjson.com/products',{headers, params})
 ```
-or directly edit the url string for param 
-```this.httpClient.get<repos[]>('https://dummyjson.com/products?limit='+10)```  
+
+2. or directly edit the url string for param 
+`this.httpClient.get<repos[]>('https://dummyjson.com/products?limit='+10)` 
 
 ## Http Interceptor  
 > can modify request and response data  

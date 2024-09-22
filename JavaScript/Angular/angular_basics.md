@@ -10,6 +10,7 @@
 - [Data Binding](#angular-data-binding)
   - [One-way Binding ](#1-one-way-binding)
   - [Two-way Binding](#2-two-way-binding)
+- [Angular Services](#angular-services)
 - [Modules](#angular-modules)
 - [Event Emitters](#event-emitters)
 - [Pipes](#angular-pipes)
@@ -110,6 +111,18 @@ export class HighlightDirective {
 
 ### 2. Two way binding:   
 [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
+
+
+## Angular Services
+> reusable common functionality/data across multiple components  
+
+```
+//sample.service.ts
+@injectable
+export class SampleService{
+    public  getSomething() { return "Hello world"; }
+}
+```
 
 ## Angular Modules  
 > group of components, directives, pipes, services based on functionality
