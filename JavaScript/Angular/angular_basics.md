@@ -69,10 +69,10 @@ export class AppComponent {
 
 ### 1. Structural Directive
 1. *ngIf:  
-    ```
+```
   <span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
   <ng-template #anotherTag> <span>else case</span><ng-template>
-    ```
+```
 3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
 4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
     ```
