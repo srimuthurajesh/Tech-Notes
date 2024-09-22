@@ -114,20 +114,20 @@ behaviorSubject.next('BehaviorSubject Value');
 
 ### 4. Filtering Operators
 
-| Operator              | Description                                           | Example                                           |
-|-----------------------|-------------------------------------------------------|---------------------------------------------------|
-| `Filter`              | Filters data based on a condition                     | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`   |
-| `distinctUntilChanged`| Emits only if the current value differs from the last | `of(1, 1, 2).pipe(distinctUntilChanged())`        |
-| `take`                | Emits only the first N values                         | `of(1, 2, 3).pipe(take(2))`                       |
-| `debounceTime`        | Emits the last value if a specified time has passed   | `fromEvent(document, 'click').pipe(debounceTime(500))`|
+| Operator              | Description                                       | Example                                           |
+|-----------------------|---------------------------------------------------|---------------------------------------------------|
+| `Filter`              | Filters data based on a condition                 | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`   |
+| `distinctUntilChanged`| Emits only if current value differs from last     | `of(1, 1, 2).pipe(distinctUntilChanged())`        |
+| `take`                | Emits only the first N values                     | `of(1, 2, 3).pipe(take(2))`                       |
+| `debounceTime`        | Emits last value if a specified time has passed   | `fromEvent(document, 'click').pipe(debounceTime(500))`|
 
 ### 5. Utility Operators
 
-| Operator      | Description                                                      | Example                                                           |
-|---------------|------------------------------------------------------------------|-------------------------------------------------------------------|
-| `Delay`       | Delays the emission of values                                    | `of(1, 2, 3).pipe(delay(1000))`                                   |
-| `tap`         | Allows logging or executing logic without affecting the stream   | `of(1, 2, 3).pipe(tap(x => console.log('Processing:', x)))`        |
-| `catchError`  | Catches errors and allows recovery by returning a new observable | `throwError('Error!').pipe(catchError(err => of('Recovered')))`    |
+| Operator      | Description                           | Example                                                |
+|---------------|---------------------------------------|--------------------------------------------------------|
+| `Delay`       | Delays the emission of values         | `of(1, 2, 3).pipe(delay(1000))`                        |
+| `tap`         | Allows logging or executing logic     | `of(1, 2, 3).pipe(tap(x => console.log('test', x)))`   |
+| `catchError`  | Catches errors and recover gracefully | `throwError('Error!').pipe(catchError(err => of('recovered')))`|
 
 
 ```
