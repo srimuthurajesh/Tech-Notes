@@ -130,6 +130,7 @@ export class AppModule { }
 ```
 ## Event Emitters
 ### Input Output decorators
+
 ```
 //child.component.ts
 @Input('customname') name:string
