@@ -6,7 +6,7 @@
 3. Inject httpclient, ```constructor(public http: HttpClient) { }```
 
 
-## Get
+## Structure
 ```
  this.HttpClient.get<any[]>('https://dummyjson.com/products/1',
           options: {
@@ -33,6 +33,13 @@
     const body=JSON.stringify(person);
     return this.http.post(this.baseURL + 'people', body,{headers})
 ```
+
+## HTTP Requests
+1. this.http.get('https://api.example.com/data').subscribe(response => { ... });
+2. this.http.post('https://api.example.com/data', body).subscribe(response => { ... });  
+3. this.http.put('https://api.example.com/data/1', updatedData).subscribe(response => { ... });  
+4. this.http.delete('https://api.example.com/data/1').subscribe(response => { ... });
+
 
 ## Http Params & Headers
 queryparam Url: https://dummyjson.com/products?limit=10  
@@ -77,4 +84,11 @@ export class AppHttpInterceptor implements HttpInterceptor {
             });
     }
 }
+```
+
+## Retrying Failed Requests
+```
+this.http.get('https://api.example.com/data').pipe(
+  retry(3)  // Retry the request up to 3 times
+).subscribe();
 ```

@@ -3,5 +3,136 @@ RxJS - Reactive Extension for Javascript
 
 > to handle asynchrouns data stream easiliy
 
-Observable: we should convert async data into observable
-Observers: we should convert listerner function to observer
+Observable: represent async object to be function , http stream , port , time data stream. 
+Observers: function subcrib the data stream or lisen or recive the data stream 
+
+### Installation
+> npm install rxjs
+  
+  
+### Subscription
+```
+import { Observable } from 'rxjs';
+// Creating an observable that emits values
+const observable = new Observable(subscriber => {
+  subscriber.next('First value'); subscriber.next('Second value');
+  setTimeout(() => {
+    subscriber.next('Third value');
+    subscriber.complete(); // Indicates the end of the stream
+  }, 2000);
+});
+
+// Creating an observer
+const observer = {
+  next: (value) => console.log('Received:', value),
+  error: (err) => console.error('Error:', err),
+  complete: () => console.log('Stream completed')
+};
+
+// Subscribing to the observable
+const subscription = observable.subscribe(observer);
+setTimeout(() => {
+  subscription.unsubscribe();
+  console.log('Unsubscribed');
+}, 1000);
+```
+
+### Difference Between RxJS and Promises
+1. RxJS (Observable):
+    - Handles a stream of data.
+    - Can subscribe and unsubscribe.
+2. Promise:
+    - Handles a single resolved value.
+    - Cannot be canceled.
+  
+
+## Why is RxJS called "Push/Reactive" instead of "Pull/Imperative"?
+1. Imperative Programming: The listener pulls the stream of data when needed.
+2. Reactive Programming: The observable pushes data to the listener.
+    - Think of it as a Publisher-Subscriber model where the publisher (observable) pushes data to the subscriber (observer).  
+ 
+ 
+
+
+## Subject & BehaviourSubject
+1. Subject:
+    - Acts as both an observable and an observer, enabling multicasting.
+2. BehaviorSubject:
+    - Emits the current value (or last value) to new subscribers.
+
+```
+import { Subject, BehaviorSubject } from 'rxjs';
+
+const subject = new Subject();
+subject.subscribe(value => console.log('Subject:', value));
+subject.next('Subject Value');
+
+const behaviorSubject = new BehaviorSubject('Initial Value');
+behaviorSubject.subscribe(value => console.log('BehaviorSubject:', value));
+behaviorSubject.next('BehaviorSubject Value');
+
+// Output:
+// Subject: Subject Value
+// BehaviorSubject: Initial Value
+// BehaviorSubject: BehaviorSubject Value
+
+ ```  
+ 12.what is diff b/w subject and behaviour subjact ?
+   -->subjact
+        -->Subjects are used for multicasting  observable
+   -->behavour subjact 
+        -->it will return current value or last value
+
+
+## Operators
+
+### 1. Creational
+1. from: Converts arrays, promises, or iterables into observables `from([1, 2, 3])`  
+2. of: Emits a set of values as an observable.  `of(1, 2, 3)`    
+3. fromEvent: Creates an observable from DOM events`fromEvent(document, 'click');`  
+
+### 2. Join Creational
+1. Merge: Combines multiple observables.
+2. Concat: Starts the next observable after one completes.
+3. forkJoin: Waits for multiple observables to complete, then emits final values.`forkJoin([of(1), of(2)])`
+4. combineLatest: Emits the latest values from multiple observables whenever any of them emits. `combineLatest([of(1), of(2)])`
+
+### 3. Transformation 
+1. Map: Transforms the data. `of(1, 2, 3).pipe(map(x => x * 10))`
+2. concatMap: subscribes to them sequentially, concatenating their emissions.`of(1, 2, 3).pipe(concatMap(x => of(x * 10)))`  
+3. switchMap: unsubscribes from the previous observable if a new value is emitted. `of(1, 2).pipe(switchMap(x => of(x * 10)))`
+4. Pluck: Selects a property from emitted objects.  
+5. MergeMap: merges all the inner observables into one.  `of(1, 2).pipe(mergeMap(x => of(x * 10)))`
+
+#### 4. Filtering
+1. Filter: Filters data based on a condition.`of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`
+2. distinctUntilChanged: Emits only if the current value differs from the last. `of(1, 1, 2).pipe(distinctUntilChanged()).`
+4. take: Emits only the first N values. `of(1, 2, 3).pipe(take(2))`
+6. debounceTime: Emits the last value if a specified time`fromEvent(document, 'click').pipe(debounceTime(500))`  
+
+#### 5. Utility
+1. Delay: Delays the emission of values.`of(1, 2, 3).pipe(delay(1000))`
+2. tap: logging/any logic .`of(1, 2, 3).pipe(tap(x => console.log('Processing:', x)))`
+3. catchError: Catches errors and allows recovery. `throwError('Error!').pipe(catchError(err => of('Recovered')))`
+
+```
+of(1, 2, 3, 4, 5)
+  .pipe(
+    filter(x => x % 2 === 0), // Filters even numbers
+    map(x => x * 10)          // Multiplies each value by 10
+  )
+  .subscribe(value => console.log(value)); 
+```
+
+13.⁠ ⁠Diff between fork join and map?
+14.  How rxjs is used in angular?
+15.  Map, mergeMap, concatMap, switchMap, forkJoin, combine latest?
+16.  What is use of switchMap ?
+    ->switchMap giving last response and it will not consider previews request and response 
+    --> very usefull for search operation (with api request)
+
+
+NGRX:
+What is ngRx ?
+-->ngRx is frame work for building reactive state management angular application - inspired by redux concept
+-->Used maintain global and local state management system
