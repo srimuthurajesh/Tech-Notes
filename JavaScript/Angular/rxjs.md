@@ -11,9 +11,9 @@ Observers: function subcrib the data stream or lisen or recive the data stream
   
   
 ### Subscription
+1. Creating an observable that emits values
 ```
 import { Observable } from 'rxjs';
-// Creating an observable that emits values
 const observable = new Observable(subscriber => {
   subscriber.next('First value'); subscriber.next('Second value');
   setTimeout(() => {
@@ -21,16 +21,20 @@ const observable = new Observable(subscriber => {
     subscriber.complete(); // Indicates the end of the stream
   }, 2000);
 });
+```
 
-// Creating an observer
+2. Creating an observer
+```
 const observer = {
   next: (value) => console.log('Received:', value),
   error: (err) => console.error('Error:', err),
   complete: () => console.log('Stream completed')
 };
-
-// Subscribing to the observable
-const subscription = observable.subscribe(observer);
+```
+3. Subscribing to the observable
+`const subscription = observable.subscribe(observer);`
+4. Unscubscribing:
+```
 setTimeout(() => {
   subscription.unsubscribe();
   console.log('Unsubscribed');
@@ -71,18 +75,7 @@ const behaviorSubject = new BehaviorSubject('Initial Value');
 behaviorSubject.subscribe(value => console.log('BehaviorSubject:', value));
 behaviorSubject.next('BehaviorSubject Value');
 
-// Output:
-// Subject: Subject Value
-// BehaviorSubject: Initial Value
-// BehaviorSubject: BehaviorSubject Value
-
  ```  
- 12.what is diff b/w subject and behaviour subjact ?
-   -->subjact
-        -->Subjects are used for multicasting  observable
-   -->behavour subjact 
-        -->it will return current value or last value
-
 
 ## Operators
 ### 1. Creational Operators
