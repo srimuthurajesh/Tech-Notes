@@ -9,46 +9,132 @@
 
 Note: JS only provides string and number datatype
 
-## 1. Basic Types
-1. String: Represents textual data.
-`let name: string = "Alice";`
-
-2. Boolean: Represents true or false values.
-`let isActive: boolean = true;` 
-
-3. Any: A flexible type that can hold any value
-`let randomValue: any = 42; // Can also be a string, object, etc.`
+## Basic Types
+1. String: `let name: string = "Alice";`
+2. Boolean: `let isActive: boolean = true;` 
+3. Any: `let randomValue: any = 42; // Can also be a string, object, etc.`
 
 
-### Defining types
+## Arrays and Tuples
+1. Arrays: `let numbers: number[] = [1, 2, 3];`  
+2. Tuples:  Fixed-length arrays with different types   
+`let person: [string, number] = ["Bob", 25];`
+
+## Enums
+
 ```
-const user = {
-  name: "Hayes",
-  id: 0,
-};
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}
+let move: Direction = Direction.Up;
+```
+## Functions
+1. Function type
 
-//You can explicitly describe this object’s shape using an interface declaration:
+```
+function add(x: number, y: number): number {
+    return x + y;
+}
+```
+
+2. Optional Parameters
+
+```
+function greet(name: string, age?: number): string {
+    return `Hello, ${name}!`;
+}
+```
+
+## Interface
+
+```
 interface User {
-  name: string;
-  id: number;
+    name: string;
+    age: number;
 }
 
 const user: User = {
-  name: "Hayes",
-  id: 0,
+    name: "Alice",
+    age: 30
 };
 ```
-Create class using tha above interface
+## Classes
+
 ```
-class UserAccount {
-  name: string;
-  id: number;
- 
-  constructor(name: string, id: number) {
-    this.name = name;
-    this.id = id;
-  }
+class Animal {
+    constructor(public name: string) {}
+    
+    speak(): void {
+        console.log(`${this.name} makes a noise.`);
+    }
 }
- 
-const user: User = new UserAccount("Murphy", 1);
+
+class Dog extends Animal {
+    speak(): void {
+        console.log(`${this.name} barks.`);
+    }
+}
+```
+## Generics
+
+```
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+let output = identity<string>("Hello");
+```
+
+## Type Assertions
+
+```
+let someValue: any = "This is a string";
+let strLength: number = (someValue as string).length;
+```
+
+## Modules
+
+```
+export class Car {
+    // class implementation
+}
+import { Car } from './Car';
+```
+
+## Union and Intersection Types
+1. Union Types: Allow a variable to hold multiple types
+```
+function log(value: string | number): void {
+    console.log(value);
+}
+```
+2. Intersection Types: Combine multiple types into one
+```
+interface Person {
+    name: string;
+}
+
+interface Employee {
+    employeeId: number;
+}
+
+type EmployeePerson = Person & Employee;
+```
+
+## Decorators
+
+```
+function Log(target: any, propertyName: string, descriptor: PropertyDescriptor) {
+    console.log(`Logging ${propertyName}`);
+}
+
+class Example {
+    @Log
+    method() {
+        // method implementation
+    }
+}
 ```
