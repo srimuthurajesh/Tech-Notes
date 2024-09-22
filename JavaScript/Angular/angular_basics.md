@@ -284,9 +284,49 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 
 ## Utilities
 ### Testing:
-1. e2e Tests
-2. Unit Testing Components and Services
+#### Unit testing
+1. **Jasmine**: The default testing framework bundled with Angular. It allows you to write tests using behavior-driven development (BDD) syntax (`describe`, `it`, `expect`).
+2. **Karma**: The default test runner for Angular applications. It launches browsers, runs tests, and provides feedback.
+3. **TestBed**: A testing utility provided by Angular to configure and initialize environments for unit testing components and services.
+4. **Mocks and Stubs**: Techniques used to replace real dependencies with mock objects or services to isolate the unit under test.
 
+```
+import { TestBed } from '@angular/core/testing';
+import { MyComponent } from './my-component';
+
+describe('MyComponent', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [MyComponent],
+    }).compileComponents();
+  });
+
+  it('should create the component', () => {
+    const fixture = TestBed.createComponent(MyComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+});
+```
+#### E2E testing
+##### Tools and Frameworks
+1. Protractor (Deprecated): Initially bundled with Angular for E2E testing, but deprecated in favor of modern tools.
+2. Cypress: A popular modern testing framework for E2E testing that offers fast and reliable testing with a better debugging experience.
+3. WebdriverIO: Another tool used for running automated tests against web applications in real browsers.
+
+```
+describe('Angular App', () => {
+  it('should load the home page', () => {
+    cy.visit('/');
+    cy.contains('Welcome to Angular');
+  });
+
+  it('should navigate to about page', () => {
+    cy.get('a[routerLink="/about"]').click();
+    cy.url().should('include', '/about');
+  });
+});
+```
 ### Configuration Files:
 `angular.json, tsconfig.json, package.json, polyfills.ts`
 
