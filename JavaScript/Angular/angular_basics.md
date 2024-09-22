@@ -68,26 +68,26 @@ export class AppComponent {
 > used to manipulate the structure of the DOM. need to use * before this.
 
 ### 1. Structural Directive
-	1. *ngIf:  
-	   ```
-		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
-		<ng-template #anotherTag> <span>else case</span><ng-template>
-	   ```
-	3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
-	4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
-	    ```
-	    <div [ngSwitch]="Switch_Expression"> 
-		    <div *ngSwitchCase="MatchExpression1”> First Template</div>
-		    <div *ngSwitchCase="MatchExpression2">Second template</div>
-		    <div *ngSwitchDefault?>Default Template</div>
-	    </div>
-	    ```
-	Note: ngIf & ngFor on same div, will result in an an Template parse errors  
+1. *ngIf:  
+    ```
+  <span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
+  <ng-template #anotherTag> <span>else case</span><ng-template>
+    ```
+3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
+4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
+    ```
+    <div [ngSwitch]="Switch_Expression"> 
+      <div *ngSwitchCase="MatchExpression1”> First Template</div>
+      <div *ngSwitchCase="MatchExpression2">Second template</div>
+      <div *ngSwitchDefault?>Default Template</div>
+    </div>
+    ```
+Note: ngIf & ngFor on same div, will result in an an Template parse errors  
 ### 2. Attribute Directive   
-	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```    
-	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
-	Note: allow multiple properties, so we need to prefer this than [style], [class]  
-	3. [ngTemplateOutlet]  
+1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```    
+2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
+Note: allow multiple properties, so we need to prefer this than [style], [class]  
+3. [ngTemplateOutlet]  
 ### 3. Component Directive
 > selector in component  
 
@@ -103,12 +103,12 @@ export class HighlightDirective {
 > binding data into html template
 
 ### 1. One way binding	
-	1. **Interpolation** :  insert variables, method, string literals into template - Ex:{{age}},{{methodWithbracket}},{{'22'}}  
-	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
- 	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
-	4. **Class bindings** : ```[class.className]="expression"```
- 	5. **Style bindings** :	```[style.styleProperty]="expression"```
-	6. **Event bindings** : ```(event)="function($event)"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
+1. **Interpolation** :  insert variables, method, string literals into template - Ex:{{age}},{{methodWithbracket}},{{'22'}}  
+2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
+3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
+4. **Class bindings** : ```[class.className]="expression"```
+5. **Style bindings** :	```[style.styleProperty]="expression"```
+6. **Event bindings** : ```(event)="function($event)"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
 ### 2. Two way binding:   
 [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
 
@@ -128,6 +128,7 @@ export class HighlightDirective {
 })
 export class AppModule { }
 ```
+
 ## Event Emitters
 ### Input Output decorators
 
