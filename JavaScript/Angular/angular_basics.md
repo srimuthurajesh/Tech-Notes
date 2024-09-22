@@ -2,18 +2,17 @@
 > javascript component based framework, for building SPA 
 
 - [Components](#components)
-  - [Lifecycle hook](#component-lifecycle-hooks)
+  - [Lifecycle hook](#lifecycle-hooks)
 - [Directives](#directives)
-  - [Structural]()
-  - [Attribute Directives]()
-  - [Custom Directives]()
+  - [Structural](#1-structural-directive)
+  - [Attribute Directives](#2-attribute-directive)
+  - [Custom Directives](#3-component-directive)
 - [Data Binding](#angular-data-binding)
-  - [One-way Binding ]()
-  - [Two-way Binding]()
-  - [Event Binding]()
+  - [One-way Binding ](#1-one-way-binding)
+  - [Two-way Binding](#2-two-way-binding)
 - [Angular Services]()
 - [Modules](#angular-modules)
-- [Event Emitters]()
+- [Event Emitters](#event-emitters)
 - [Pipes](#angular-pipes)
   - [Built-in Pipes]()
   - [Custom Pipes]()
@@ -55,7 +54,7 @@ export class AppComponent {
 }
 ```
 
-#### Component Lifecycle hooks:
+### Lifecycle hooks:
 1. ngOnChange()  - triggers while any data change happens
 2. ngOnInit() - while initialize the component
 3. ngDocheck() - check while @input changes, attribute changes
@@ -68,7 +67,7 @@ export class AppComponent {
 ## Directives
 > used to manipulate the structure of the DOM. need to use * before this.
 
-1. **Structural Directive**
+### 1. Structural Directive
 	1. *ngIf:  
 	   ```
 		<span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
@@ -84,12 +83,14 @@ export class AppComponent {
 	    </div>
 	    ```
 	Note: ngIf & ngFor on same div, will result in an an Template parse errors  
-2. **Attribute Directive**  
+### 2. Attribute Directive   
 	1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```    
 	2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 	Note: allow multiple properties, so we need to prefer this than [style], [class]  
 	3. [ngTemplateOutlet]  
-3. **Component Directive**: selector in component  
+### 3. Component Directive
+> selector in component  
+
 ```
 @Directive({ selector: '[appHighlight]'})
 export class HighlightDirective {
@@ -101,14 +102,15 @@ export class HighlightDirective {
 ## Angular Data Binding
 > binding data into html template
 
-1. One way binding	
+### 1. One way binding	
 	1. **Interpolation** :  insert variables, method, string literals into template - Ex:{{age}},{{methodWithbracket}},{{'22'}}  
 	2. **Property binding** : ```[property]="expression"``` HTML element properties such as ```src, disabled, value, innerHtml, title```
  	3. **Attribute bindings** : ```[attr.property]="expression"``` attr.placeholder,attr.colspan,attr.aria-label
 	4. **Class bindings** : ```[class.className]="expression"```
  	5. **Style bindings** :	```[style.styleProperty]="expression"```
 	6. **Event bindings** : ```(event)="function($event)"``` events are ```click, input, keyup, mouseover, mouseout, change, focus, blur``` 
-2. Two way binding: [(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
+### 2. Two way binding:   
+[(ngModel)] ```<input type="text" [(ngModel)]="val" (ngModelChange)="change($event)">  ```
 
 ## Angular Modules  
 > group of components, directives, pipes, services based on functionality
@@ -126,8 +128,8 @@ export class HighlightDirective {
 })
 export class AppModule { }
 ```
-
-## Input Output decorators
+## Event Emitters
+### Input Output decorators
 ```
 //child.component.ts
 @Input('customname') name:string
@@ -170,13 +172,14 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 ## Angular Pipes    
 > used to Transform the Data.  
 
-1. {{ comments | uppercase }}
-2. ```{{ comments | lowercase }}```
-3. `{{ 6589.23 | currency: "USD" }}`
-4. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
-5. `{{ jsonval | json }}`
-6. `{{ 0.54565 | percent }}`
-7. `{{ msg | slice: 11:20 }}`
+syntax: {{comments | uppercase}}
+### 1. Built-in Pipes
+  i. {{ comments | uppercase }}
+  ii. ```{{ comments | lowercase }}```
+  iv. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
+  v. `{{ jsonval | json }}`
+  vi. `{{ 0.54565 | percent }}`
+  vii. `{{ msg | slice: 11:20 }}`
 
 
 #### Custom pipe
