@@ -14,11 +14,11 @@
 - [Modules](#angular-modules)
 - [Event Emitters](#event-emitters)
 - [Pipes](#angular-pipes)
-  - [Built-in Pipes]()
-  - [Custom Pipes]()
+  - [Built-in Pipes](#1-built-in-pipes)
+  - [Custom Pipes](#2-custom-pipe)
 - [Miscellaneous](#Miscellaneous)
-  - [HostBinding and HostListener]()
-  - [NgTemplate]
+  - [HostBinding and HostListener](#hostbinding-and-hostlistener-in-angular)
+  - [NgTemplate](#ngtemplate)
 - [Other Features]()
   - [Angular CLI](#angular-cli-commands)
   - [Bootstrapping Angular](#bootstrapping-in-angular)
@@ -141,7 +141,35 @@ onSubmit(){ this.sendData.emit("from child to parent");}
 //parent.component.ts
 export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
-## @HostBinding and @HostListener in Angular
+
+## Angular Pipes    
+> used to Transform the Data.  
+
+syntax: {{comments | uppercase}}
+### 1. Built-in Pipes
+  i. {{ comments | uppercase }}
+  ii. ```{{ comments | lowercase }}```
+  iv. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
+  v. `{{ jsonval | json }}`
+  vi. `{{ 0.54565 | percent }}`
+  vii. `{{ msg | slice: 11:20 }}`
+
+
+#### 2. Custom pipe
+**1. Pure Pipes**: Execute change in value. 
+**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
+
+```
+@Pipe({ name: 'sqrt', pure: true }) // pure is true by default 
+export class SqrtPipe implements PipeTransform {  
+  transform(val : number) : number {  
+    return Math.sqrt(val);  
+  }  
+}
+```
+
+## Miscellenous
+### @HostBinding and @HostListener in Angular
 **Host**: element is the element on which we attach our directive or component
 **HostBinding**:binds element property to host 
 ```
@@ -168,34 +196,7 @@ onResize(event: Event) { console.log('Window resized', event); }
 onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', event.detail); }
 ```
 
-
-## Angular Pipes    
-> used to Transform the Data.  
-
-syntax: {{comments | uppercase}}
-### 1. Built-in Pipes
-  i. {{ comments | uppercase }}
-  ii. ```{{ comments | lowercase }}```
-  iv. `{{ todaydate | date: 'd/M/y' }}`, `{{ todaydate | date: 'shortTime' }}`
-  v. `{{ jsonval | json }}`
-  vi. `{{ 0.54565 | percent }}`
-  vii. `{{ msg | slice: 11:20 }}`
-
-
-#### Custom pipe
-**1. Pure Pipes**: Execute change in value. 
-**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
-
-```
-@Pipe({ name: 'sqrt', pure: true }) // pure is true by default 
-export class SqrtPipe implements PipeTransform {  
-  transform(val : number) : number {  
-    return Math.sqrt(val);  
-  }  
-}
-```
-
-## NgTemplate
+### NgTemplate
 > it contains html template. reuse by ngTemplateOutlet and template reference variable
 
 ```
@@ -205,14 +206,14 @@ export class SqrtPipe implements PipeTransform {
   This text is not displayed
 </ng-container> 
 ```
-## Template Reference variable
+### Template Reference variable
 ```
 <!--one way binding-->
 <input type="text" #inputTemplate /> <button (click)="submitted(inputTemplate.value)">submit</button> 
 <!--two way binding-->
 <input type="text" #inputTemplate ngModel /> <button (click)="submitted(inputTemplate.value)">submit</button> 
 ```
-## IF THEN ELSE useing ngTemplate
+### IF THEN ELSE useing ngTemplate
 ```
 <div *ngIf="selected; then thenBlock1 else elseBlock1"><p>This content is not shown</p></div>
 <ng-template #thenBlock1> <p>content to render when the selected is true.</p> </ng-template>
@@ -220,16 +221,6 @@ export class SqrtPipe implements PipeTransform {
 ```
 
 
-
-## Ng Build  
-Commamd: ```ng build```
-  
-#### ng build output files in dist folder  
- 1. main.ts.map  	- code of our application
- 2. polyfills.js.map  	- scripts for supporting variety of modern browsers
- 3. runtime.js.map  	- Webpack runtime file
- 4. style.js.map    	- contains global style rules bundled as a js file
- 5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
 
 ## Other Features
 ### Angular CLI commands
@@ -246,6 +237,7 @@ Commamd: ```ng build```
 | `ng g p pipename`             | generate new pipe             |
 | `ng g directive directivename`| generate new directive        |
 | `ng g s servicename`          | generate new service          |
+| `ng build`                    | build and generate dist       |
 
 ### Bootstrapping in angular:
 1. Loads index.html, which contains ```<app-root></app-root>```
@@ -286,7 +278,15 @@ tslint.json		-> config file for linting ts. used to enforce coding standards and
 `angular.json, tsconfig.json, package.json, polyfills.ts`
 
 ### Build Files:
-- Output Files in dist Folder after ng build
+- Output Files in dist Folder after ng build  
+Commamd: `ng build`
+  a
+#### ng build output files in dist folder  
+ 1. main.ts.map  	- code of our application
+ 2. polyfills.js.map  	- scripts for supporting variety of modern browsers
+ 3. runtime.js.map  	- Webpack runtime file
+ 4. style.js.map    	- contains global style rules bundled as a js file
+ 5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
 
 ### Third-party Libraries Integration:
 1. Adding Bootstrap to the Angular Project
