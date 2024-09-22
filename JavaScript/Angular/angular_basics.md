@@ -86,6 +86,7 @@ Note: ngIf & ngFor on same div, will result in an an Template parse errors
 2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
 Note: allow multiple properties, so we need to prefer this than [style], [class]  
 3. [ngTemplateOutlet]  
+
 ### 3. Component Directive
 > selector in component  
 
