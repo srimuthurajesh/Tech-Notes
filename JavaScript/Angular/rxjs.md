@@ -116,25 +116,3 @@ setTimeout(() => {
 | `tap`         | Allows logging or executing logic     | `of(1, 2, 3).pipe(tap(x => console.log('test', x)))`   |
 | `catchError`  | Catches errors and recover gracefully | `throwError('Error!').pipe(catchError(err => of('recovered')))`|
 
-
-```
-of(1, 2, 3, 4, 5)
-  .pipe(
-    filter(x => x % 2 === 0), // Filters even numbers
-    map(x => x * 10)          // Multiplies each value by 10
-  )
-  .subscribe(value => console.log(value)); 
-```
-
-13.⁠ ⁠Diff between fork join and map?
-14.  How rxjs is used in angular?
-15.  Map, mergeMap, concatMap, switchMap, forkJoin, combine latest?
-16.  What is use of switchMap ?
-    ->switchMap giving last response and it will not consider previews request and response 
-    --> very usefull for search operation (with api request)
-
-
-NGRX:
-What is ngRx ?
--->ngRx is frame work for building reactive state management angular application - inspired by redux concept
--->Used maintain global and local state management system
