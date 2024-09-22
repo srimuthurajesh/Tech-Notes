@@ -2,13 +2,33 @@
 > javascript component based framework, for building SPA 
 
 - [Components](#components)
+  - [Lifecycle hook](#component-lifecycle-hooks)
 - [Directives](#directives)
+  - [Structural]()
+  - [Attribute Directives]()
+  - [Custom Directives]()
 - [Data Binding](#angular-data-binding)
+  - [One-way Binding ]()
+  - [Two-way Binding]()
+  - [Event Binding]()
+- [Angular Services]()
 - [Modules](#angular-modules)
-- [Forms](#angular-forms)
+- [Event Emitters]()
 - [Pipes](#angular-pipes)
-- [Angular CLI command](#angular-cli-commands)
-  
+  - [Built-in Pipes]()
+  - [Custom Pipes]()
+- [Miscellaneous](#Miscellaneous)
+  - [HostBinding and HostListener]
+  - [NgTemplate]
+- [Other Features]()
+  - [Angular CLI](#angular-cli-commands)
+  - [Bootstrapping Angular](#bootstrapping-in-angular)
+  - [Folder Structure](#angular-folder-structure)
+- [Utilities]()
+  - [Testing]()
+  - [Configuration Files]()
+  - [Build Files]()
+  - [Third-party Libraries Integratio]()
 #### Bootstrapping in angular:
 1. Loads index.html, which contains ```<app-root></app-root>```
 2. Loads Angular & Third-party libraries & Application
@@ -135,31 +155,6 @@ export class HighlightDirective {
 export class AppModule { }
 ```
 
-
-## ROUTING:	
-> enables navigation between different views or components  
-create Single Page Applications (SPAs) by managing the URLs   
-
-```
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  {
-    path: 'parent',
-    component: ParentComponent,
-    children: [
-      { path: 'child', component: ChildComponent },
-    ]
-  }
-];
-// Add RouterModule.forRoot(routes) to the imports array in AppModule
-```
-Navigation: 
-`<a [routerLink]="['/home']">Home</a>`  
-`this.router.navigate(['/home']);`
-
-
-
 ## Input Output decorators
 ```
 //child.component.ts
@@ -211,20 +206,20 @@ onCustomEvent(event: CustomEvent) {    console.log('Custom event triggered', eve
 6. `{{ 0.54565 | percent }}`
 7. `{{ msg | slice: 11:20 }}`
 
-**1. Pure Pipes**: Execute change in value.  `@Pipe({ name: 'sqrt', pure: true }) // pure is true by default`
-**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
 
 #### Custom pipe
+**1. Pure Pipes**: Execute change in value. 
+**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
+
 ```
-@Pipe ({  
-  name : 'sqrt'  
-})  
+@Pipe({ name: 'sqrt', pure: true }) // pure is true by default 
 export class SqrtPipe implements PipeTransform {  
   transform(val : number) : number {  
     return Math.sqrt(val);  
   }  
 }
 ```
+
 ## NgTemplate
 > it contains html template. reuse by ngTemplateOutlet and template reference variable
 
@@ -266,7 +261,7 @@ Commamd: ```ng build```
  5. vendor.js.map 	- contains scripts from Angular core and any other 3rd party library
 
 
-#### Angular CLI commands
+### Angular CLI commands
 
 | Command | Description |
 | -- | -- |
