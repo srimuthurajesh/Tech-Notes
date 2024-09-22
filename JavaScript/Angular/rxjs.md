@@ -30,8 +30,8 @@ const observer = {
   complete: () => console.log('Stream completed')
 };
 ```
-3. Subscribing to the observable
-`const subscription = observable.subscribe(observer);`
+3. Subscribing to the observable  
+```const subscription = observable.subscribe(observer);````
 4. Unscubscribing:
 ```
 setTimeout(() => {
