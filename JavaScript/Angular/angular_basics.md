@@ -68,12 +68,12 @@ export class AppComponent {
 > used to manipulate the structure of the DOM. need to use * before this.
 
 ### 1. Structural Directive
-1. *ngIf:  
+1. ngIf:  
 ```
   <span *ngIf="booleanValue; else anotherTag"></span>	//if condition fails, element will remove from dom	
   <ng-template #anotherTag> <span>else case</span><ng-template>
 ```
-3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
+3. ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
 4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
 ```
 <div [ngSwitch]="Switch_Expression"> 
