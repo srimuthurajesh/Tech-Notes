@@ -144,18 +144,20 @@ export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ```
 
 ## Angular Pipes    
-> used to Transform the Data.  
+> used to Transform the Data.   
+syntax is value | pipeName surrounded by double flower bracket
 
-Note consider everything inside double flower bracket closed
 ### 1. Built-in Pipes
-  i. comments | uppercase   
-  ii. ```{{ comments | lowercase }}```
-
-
+  i) uppercase, lowercase  
+  ii) 6589.23 | currency:'USD'  
+  iii) todayDate | date:'d/M/y' 
+  iv) todayDate | date:'shortTime' 
+  v) json
+  vi) 'Angular Pipes' | slice:8:13
 
 #### 2. Custom pipe
-**1. Pure Pipes**: Execute change in value. 
-**2. Impure Pipes**: Execute every time change detection cycle runs, regardless of value has changed.  
+1. Pure Pipes: Executes only in input data changes. 
+2. Impure Pipes:  Execute every time change detection cycle runs, regardless of value has changed.  
 
 ```
 @Pipe({ name: 'sqrt', pure: true }) // pure is true by default 
