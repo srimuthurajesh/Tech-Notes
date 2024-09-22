@@ -75,14 +75,15 @@ export class AppComponent {
 ```
 3. *ngFor : ```<span *ngFor="let i of names; let n =index"></span>```
 4. [ngSwitch], *ngSwitchCase, *ngSwitchDefault
-    ```
-    <div [ngSwitch]="Switch_Expression"> 
-      <div *ngSwitchCase="MatchExpression1”> First Template</div>
-      <div *ngSwitchCase="MatchExpression2">Second template</div>
-      <div *ngSwitchDefault?>Default Template</div>
-    </div>
-    ```
+```
+<div [ngSwitch]="Switch_Expression"> 
+  <div *ngSwitchCase="MatchExpression1”> First Template</div>
+  <div *ngSwitchCase="MatchExpression2">Second template</div>
+  <div *ngSwitchDefault?>Default Template</div>
+</div>
+```
 Note: ngIf & ngFor on same div, will result in an an Template parse errors  
+
 ### 2. Attribute Directive   
 1. [ngStyle]    - ```[ngStyle]="{backgrounColor: getColor()}```    
 2. [ngClass]    - ```<span [ngClass]="{className: status=='1'}">RAJESH</span>```    
