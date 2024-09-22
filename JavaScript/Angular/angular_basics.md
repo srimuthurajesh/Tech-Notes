@@ -19,15 +19,15 @@
 - [Miscellaneous](#Miscellaneous)
   - [HostBinding and HostListener](#hostbinding-and-hostlistener-in-angular)
   - [NgTemplate](#ngtemplate)
-- [Other Features]()
+- [Other Features](#other-features)
   - [Angular CLI](#angular-cli-commands)
   - [Bootstrapping Angular](#bootstrapping-in-angular)
   - [Folder Structure](#angular-folder-structure)
-- [Utilities]()
-  - [Testing]()
-  - [Configuration Files]()
-  - [Build Files]()
-  - [Third-party Libraries Integration]()
+- [Utilities](#utilities)
+  - [Testing](#testing)
+  - [Configuration Files](#configuration-files)
+  - [Build Files](#build-files)
+  - [Third-party Libraries Integration](#third-party-libraries-integration)
   
     
 ## Components
