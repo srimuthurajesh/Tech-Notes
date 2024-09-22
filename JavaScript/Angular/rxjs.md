@@ -114,12 +114,12 @@ behaviorSubject.next('BehaviorSubject Value');
 
 ### 4. Filtering Operators
 
-| Operator              | Description                                       | Example                                           |
-|-----------------------|---------------------------------------------------|---------------------------------------------------|
-| `Filter`              | Filters data based on a condition                 | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`   |
-| `distinctUntilChanged`| Emits only if current value differs from last     | `of(1, 1, 2).pipe(distinctUntilChanged())`        |
-| `take`                | Emits only the first N values                     | `of(1, 2, 3).pipe(take(2))`                       |
-| `debounceTime`        | Emits last value if a specified time has passed   | `fromEvent(document, 'click').pipe(debounceTime(500))`|
+| Operator              | Description                                   | Example                                           |
+|-----------------------|-----------------------------------------------|---------------------------------------------------|
+| `Filter`              | Filters data based on a condition             | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`   |
+| `distinctUntilChanged`| Emits if current value differs from last      | `of(1, 1, 2).pipe(distinctUntilChanged())`        |
+| `take`                | Emits first N values                          | `of(1, 2, 3).pipe(take(2))`                       |
+| `debounceTime`        | Emits last value if specified time has passed | `fromEvent(document, 'click').pipe(debounceTime(500))`|
 
 ### 5. Utility Operators
 
