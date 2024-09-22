@@ -3,15 +3,13 @@ RxJS - Reactive Extension for Javascript
 
 > to handle asynchrouns data stream easiliy
 
-Observable: represent async object to be function , http stream , port , time data stream. 
-Observers: function subcrib the data stream or lisen or recive the data stream 
-
 ### Installation
 > npm install rxjs
   
   
 ### Subscription
 1. Creating an observable that emits values
+> represent async object to be function , http stream , port , time data stream. 
 ```
 import { Observable } from 'rxjs';
 const observable = new Observable(subscriber => {
@@ -24,6 +22,7 @@ const observable = new Observable(subscriber => {
 ```
 
 2. Creating an observer
+> function subcrib the data stream or lisen or recive the data stream 
 ```
 const observer = {
   next: (value) => console.log('Received:', value),
