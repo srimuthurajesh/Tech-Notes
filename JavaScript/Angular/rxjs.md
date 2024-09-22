@@ -85,35 +85,50 @@ behaviorSubject.next('BehaviorSubject Value');
 
 
 ## Operators
+### 1. Creational Operators
 
-### 1. Creational
-1. from: Converts arrays, promises, or iterables into observables `from([1, 2, 3])`  
-2. of: Emits a set of values as an observable.  `of(1, 2, 3)`    
-3. fromEvent: Creates an observable from DOM events`fromEvent(document, 'click');`  
+| Operator   | Description                                          | Example                       |
+|------------|------------------------------------------------------|-------------------------------|
+| `from`     | Converts arrays, promises,iterables into observables | `from([1, 2, 3])`             |
+| `of`       | Emits a set of values as an observable               | `of(1, 2, 3)`                 |
+| `fromEvent`| Creates an observable from DOM events                | `fromEvent(document, 'click')`|
 
-### 2. Join Creational
-1. Merge: Combines multiple observables.
-2. Concat: Starts the next observable after one completes.
-3. forkJoin: Waits for multiple observables to complete, then emits final values.`forkJoin([of(1), of(2)])`
-4. combineLatest: Emits the latest values from multiple observables whenever any of them emits. `combineLatest([of(1), of(2)])`
+### 2. Join Creational Operators
 
-### 3. Transformation 
-1. Map: Transforms the data. `of(1, 2, 3).pipe(map(x => x * 10))`
-2. concatMap: subscribes to them sequentially, concatenating their emissions.`of(1, 2, 3).pipe(concatMap(x => of(x * 10)))`  
-3. switchMap: unsubscribes from the previous observable if a new value is emitted. `of(1, 2).pipe(switchMap(x => of(x * 10)))`
-4. Pluck: Selects a property from emitted objects.  
-5. MergeMap: merges all the inner observables into one.  `of(1, 2).pipe(mergeMap(x => of(x * 10)))`
+| Operator        | Description                                                                      | Example                                                            |
+|-----------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| `Merge`         | Combines multiple observables                                                    |                                                                    |
+| `Concat`        | Starts the next observable after one completes                                   |                                                                    |
+| `forkJoin`      | Waits for multiple observables to complete, then emits final values              | `forkJoin([of(1), of(2)])`                                         |
+| `combineLatest` | Emits the latest values from multiple observables whenever any of them emits      | `combineLatest([of(1), of(2)])`                                    |
 
-#### 4. Filtering
-1. Filter: Filters data based on a condition.`of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`
-2. distinctUntilChanged: Emits only if the current value differs from the last. `of(1, 1, 2).pipe(distinctUntilChanged()).`
-4. take: Emits only the first N values. `of(1, 2, 3).pipe(take(2))`
-6. debounceTime: Emits the last value if a specified time`fromEvent(document, 'click').pipe(debounceTime(500))`  
+### 3. Transformation Operators
 
-#### 5. Utility
-1. Delay: Delays the emission of values.`of(1, 2, 3).pipe(delay(1000))`
-2. tap: logging/any logic .`of(1, 2, 3).pipe(tap(x => console.log('Processing:', x)))`
-3. catchError: Catches errors and allows recovery. `throwError('Error!').pipe(catchError(err => of('Recovered')))`
+| Operator       | Description                                                                      | Example                                                           |
+|----------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| `Map`          | Transforms the data                                                              | `of(1, 2, 3).pipe(map(x => x * 10))`                              |
+| `concatMap`    | Subscribes to observables sequentially, concatenating their emissions             | `of(1, 2, 3).pipe(concatMap(x => of(x * 10)))`                    |
+| `switchMap`    | Unsubscribes from the previous observable if a new value is emitted               | `of(1, 2).pipe(switchMap(x => of(x * 10)))`                       |
+| `Pluck`        | Selects a property from emitted objects                                           |                                                                   |
+| `MergeMap`     | Merges all the inner observables into one                                         | `of(1, 2).pipe(mergeMap(x => of(x * 10)))`                        |
+
+### 4. Filtering Operators
+
+| Operator              | Description                                              | Example                                                           |
+|-----------------------|----------------------------------------------------------|-------------------------------------------------------------------|
+| `Filter`              | Filters data based on a condition                        | `of(1, 2, 3, 4).pipe(filter(x => x % 2 === 0))`                   |
+| `distinctUntilChanged`| Emits only if the current value differs from the last     | `of(1, 1, 2).pipe(distinctUntilChanged())`                        |
+| `take`                | Emits only the first N values                            | `of(1, 2, 3).pipe(take(2))`                                       |
+| `debounceTime`        | Emits the last value if a specified time has passed       | `fromEvent(document, 'click').pipe(debounceTime(500))`             |
+
+### 5. Utility Operators
+
+| Operator      | Description                                                      | Example                                                           |
+|---------------|------------------------------------------------------------------|-------------------------------------------------------------------|
+| `Delay`       | Delays the emission of values                                    | `of(1, 2, 3).pipe(delay(1000))`                                   |
+| `tap`         | Allows logging or executing logic without affecting the stream   | `of(1, 2, 3).pipe(tap(x => console.log('Processing:', x)))`        |
+| `catchError`  | Catches errors and allows recovery by returning a new observable | `throwError('Error!').pipe(catchError(err => of('Recovered')))`    |
+
 
 ```
 of(1, 2, 3, 4, 5)
