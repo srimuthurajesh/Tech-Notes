@@ -146,9 +146,9 @@ export ParentComponent{someFunctionInParent(event){console.log(event);}}
 ## Angular Pipes    
 > used to Transform the Data.  
 
-syntax: {{comments | uppercase}}
+Note consider everything inside double flower bracket closed
 ### 1. Built-in Pipes
-  i. {{ comments | uppercase }}
+  i. comments | uppercase   
   ii. ```{{ comments | lowercase }}```
 
 
