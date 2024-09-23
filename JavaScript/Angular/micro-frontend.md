@@ -36,7 +36,7 @@ module.exports = {
   ],
 };
 ```
-5. Use Remote Components in the Shell App:
+5. Use Remote Components in the Shell App:  
 ```
 import { loadRemoteModule } from '@angular-architects/module-federation';
 
