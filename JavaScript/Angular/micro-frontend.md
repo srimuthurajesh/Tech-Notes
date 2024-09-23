@@ -37,17 +37,6 @@ module.exports = {
 };
 ```
 5. Use Remote Components in the Shell App:  
-```
-import { loadRemoteModule } from '@angular-architects/module-federation';
-
-loadRemoteModule({
-  remoteEntry: 'http://localhost:4201/remoteEntry.js',
-  remoteName: 'userDashboard',
-  exposedModule: './UserComponent',
-}).then((m) => {
-  // Use the loaded module or component
-});
-```
 
 we can use this above code in routing app-routing.module.ts  
 ```
