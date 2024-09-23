@@ -8,5 +8,5 @@
 - [Angular Routing](angular_routing.html)
 - [RxJS](rxjs.html)
 - [NgRx](ngrx.html)
-- [MicroFrontend](microfrontend.html)
+- [MicroFrontend](micro-frontend.html)
 - [Versions](angular_version.html)
