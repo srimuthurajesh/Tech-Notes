@@ -10,7 +10,7 @@
 8. [Stream API](#stream-api)
   - [Stream problems examples](#stream-problems-examples)
 9. [Java11](#java11)
-10. [Java Latest version features](#)
+10. [Java versions & features](#java-version--features)
 
 
 ## Default Method   
@@ -275,8 +275,7 @@ public static int calculateSum(int a, int b) {
 
 
 
-Java Version          Key New Features
-
+## Java version & features
 Java 8
 - Lambda Expressions
 - Stream API
