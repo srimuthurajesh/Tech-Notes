@@ -5,11 +5,12 @@
     - [Implements Runnable](#2-implementing-the-runnable-interface)
 - [Difference states of Thread](#difference-states-of-thread)
 - [Priority of a thread](#priority-of-a-thread)
+- [Gathering data using Thread](#gathering-data-using-legacy-thread-class)
 - [Synchronized](#synchronized)
 - [Thread class methods](#thread-class-methods)
 - [Deadlock](#deadlock)
 - [Java concurrency utilities](#java-concurrency-utilities)
-    - [Executer service](#executer-service-)
+    - [Executer service](#executer-framework-)
     - [Threadpool executor](#threadpoolexecutor)
     - [Volatile](#volatile)
     - [Atomic variables](#atomic-variables)
@@ -61,6 +62,28 @@ threadObj.setPriority(8);
 threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
+```
+
+### Gathering data using legacy Thread class
+```
+    Map<String, String> results = new ConcurrentHashMap<>();
+
+    Thread thread1 = new Thread(() -> results.put("Thread 1", "Result from Thread 1"));
+    Thread thread2 = new Thread(() -> results.put("Thread 2", "Result from Thread 2"));
+    Thread thread3 = new Thread(() -> results.put("Thread 3", "Result from Thread 3"));
+
+    thread1.start(); thread2.start(); thread3.start();
+
+    // Wait for each thread to complete using join()
+    thread1.join();
+    System.out.println("Thread 1 completed: " + results.get("Thread 1"));
+
+    thread2.join();
+    System.out.println("Thread 2 completed: " + results.get("Thread 2"));
+
+    thread3.join();
+    System.out.println("Thread 3 completed: " + results.get("Thread 3"));
+
 ```
 
 ### Synchronized. 

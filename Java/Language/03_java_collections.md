@@ -31,7 +31,7 @@ framework to access prepackaged data structure.
  
 Note: in java there is no impl for direct Queue  
 1. **LinkedList queue**: `Queue<String> queue = new LinkedList<>();`   
-2. **PriorityQueue**: ordered in FIFO or by comparator.    
+2. **PriorityQueue**: ordered in FIFO or by comparator. ie min heap    
 3. **ArrayDeque** : doubled ended queue using array, used as both FIFO & LIFO.    
 4. **SynchronousQueue**
 
