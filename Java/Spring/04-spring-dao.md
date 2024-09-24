@@ -510,11 +510,7 @@ public class Employee {   }
 ## Pagination
 
 ```
-Sort sort = Sort.by(sortBy);
-if (!ascending) {
-	sort = sort.descending();
-}
-PageRequest pageRequest = PageRequest.of(page - 1, pageSize, sort);
+PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize, Sort.by("name").ascending());
 return itemRepository.findAll(pageRequest);
 ```
 

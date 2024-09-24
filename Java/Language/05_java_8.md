@@ -225,17 +225,17 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 3. Find list of unique characters present in all the strings.  
 `strings.stream().flatMapToInt(CharSequence::chars).mapToObj(ch -> (char) ch).collect(Collectors.toSet());`
 
-4. Group students count by age. 
+4. Group students count by age.   
 `list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));`
 
-5. Convert a list into map
+5. Convert a list into map  
 `list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));`
-6. Sort and reverseorder
+6. Sort and reverseorder  
 `Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).limit(2)`
-7. Get count of each char  
+7. Get count of each char    
 `str.chars().boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));`
 
-8. Sort by salary
+8. Sort by salary  
 `employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))`
 
 
