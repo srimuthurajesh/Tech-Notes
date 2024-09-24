@@ -223,7 +223,7 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 `int age = list.stream.mapToInt(student::getAge).skip(1).max();`
 
 3. Find list of unique characters present in all the strings.  
-`strings.stream().flatMapToInt(CharSequence::chars).mapToObj(ch -> (char) ch).collect(Collectors.toSet());`
+`strings.stream().mapToObj(ch -> (char) ch).collect(Collectors.toSet());`
 
 4. Group students count by age.   
 `list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));`
@@ -237,6 +237,12 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 
 8. Sort by salary  
 `employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))`
+9. Find employee with lowest salary
+`employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))`
+10. Join given list values with comma
+`Arrays.stream(names).collect(Collectors.joining(","));`
+11. Combine array matrix values in a set
+`Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())`
 
 
 ## Java11
