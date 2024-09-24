@@ -216,45 +216,20 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 
 
 ## Stream problems examples  
-1. Reducing for loop code using **IntStream**    
-```int sumValue = IntStream.rangeClosed(0,4).forEach(); ```  
-2. Remove duplicates using stream   
-```List<String> uniqueList = names.stream().distinct().collect(Collectors.toList());```    
+1. find the sum of squares of all even numbers      
+`Arrays.stream(input).filter(x->x%2==0).map(x->x*x).forEach(System.out::println)`
 
-### Important Stream interview programs. 
-1. Create a program to find the sum of squares of all even numbers from a list of integers using streams.    
-```
-int[] input = new int[]{1,2,3,4,5};
-Arrays.stream(input).filter(x->x%2==0).map(x->x*x).forEach(System.out::println)
-```
+2. Find second max of student age.  
+`int age = list.stream.mapToInt(student::getAge).skip(1).max();`
 
-2. Find max of student age.  
-```
-int age = list.stream.mapToInt(student::getAge).max();
-```
+3. Find list of unique characters present in all the strings.  
+`strings.stream().flatMapToInt(CharSequence::chars).mapToObj(ch -> (char) ch).collect(Collectors.toSet());`
 
-2a. Find second max of student age.  
-```
-int age = list.stream.mapToInt(student::getAge).skip(1).max();
-```
-
-3. Given a list of strings, return a list of unique characters present in all the strings.  
-```
- List<String> strings = Arrays.asList("hello", "world", "java");
-        Set<Character> uniqueCharacters = strings.stream()
-                .flatMapToInt(CharSequence::chars)
-                .mapToObj(ch -> (char) ch)
-                .collect(Collectors.toSet());
-```
 4. Group students count by age. 
-```
-  Map<Integer, Long> m = list.stream().collect(Collectors.groupingBy(Student::getAge,Collectors.counting()));
-  m.forEach((age, count) -> System.out.println("Age: " + age + ", Count: " + count));
-```
+`list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));`
+
 5. Convert a list into map
-```
-list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));
-```
+`list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));`
 
 
 ## Java11
