@@ -230,6 +230,13 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 
 5. Convert a list into map
 `list.stream().collect(Collection.toMap(Function.identity(),Function.identity()));`
+6. Sort and reverseorder
+`Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).limit(2)`
+7. Get count of each char  
+`str.chars().boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));`
+
+8. Sort by salary
+`employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))`
 
 
 ## Java11
