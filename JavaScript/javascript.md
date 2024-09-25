@@ -2,8 +2,8 @@
 
 ## Table of Contents
 
-- [JavaScript Overview](#overview)
-- [JavaScript Identifiers](#identifiers--total-48)
+- [Overview](#overview)
+- [Identifiers](#identifiers--total-48)
 - [Variables](#variable)
 - [Data Types](#datatype)
 - [Arrays](#array)
@@ -43,9 +43,9 @@ Whitespace: Ignored by JavaScript.
 Case-Sensitive: Variable names, function names, etc., are case-sensitive.
 
 - Why name as script – it execute as the page loads
-- ```<script type="text/javascript">``` type="text/javascript" is not needed
+- `<script type="text/javascript">` type="text/javascript" is not needed
 - External js files can be stored as cache in browsers
-- ```’use strict’;``` to use only latest functionality of javascript versions
+- `’use strict’;` to use only latest functionality of javascript versions
 - whitespace, case-sensitive
 
 
@@ -56,26 +56,31 @@ break,as,any,switch,case,if,throw,else,var,number,string,get,module,type,instanc
 ```
 
 ### Variable:
+> named storage of a data, case sensitive    
+
 1. **var** name="rajesh";     //scope dependent for a function or window object  
 2. **let** name="rajesh"    //used as block scope, cannot be re-declared  
 3. **const** NAME="rajesh"    //cannot be reassigned, redeclared, requires declaration, immutable  
 4. **Template literal**: can use ${name} inside string.   var name = ‘rajesh’;  console.log("my name is ${name}");  
     -  var {name,age,job}={name:"rajesh",age:"22",job:"it"};            console.log(name);    //rajesh
 
+Note:  
+- name must contain only letters, digits, or the symbols $ and _.  
+- first character must not be a digit.  
 
 ### Datatype:
 
-| **Datatype**    | **Example**                   |
-|--------------|-------------------------------|
-| `undefined`  | `let x; console.log(typeof x); // "undefined"` |
-| `boolean`    | `let x = true; console.log(typeof x); // "boolean"` |
-| `number`     | `let x = 42; console.log(typeof x); // "number"` |
-| `bigint`     | `let x = 9007199254740991n; console.log(typeof x); // "bigint"` |
-| `string`     | `let x = "hello"; console.log(typeof x); // "string"` |
-| `symbol`     | `let x = Symbol(); console.log(typeof x); // "symbol"` |
-| `object`     | `let x = { name: "John" }; console.log(typeof x); // "object"` <br> `let y = null; console.log(typeof y); // "object"` |
-| `function`   | `function example() {} console.log(typeof example); // "function"` |
-    
+| **Data Type**  | **Range**                | **typeof Return** |
+|----------------|--------------------------|-------------------|
+| **Number**     | ±9,007,199,254,740,991   | `"number"`        |
+| **BigInt**     | No limit                 | `"bigint"`        |
+| **String**     | sequence of characters   | `"string"`        |
+| **Boolean**    | `true` or `false`        | `"boolean"`       |
+| **Undefined**  | undefined                | `"undefined"`     |
+| **Null**       | null                     | `"object"`        |
+| **Symbol**     | N/A                      | `"symbol"`        |
+| **Object**     | key-value pairs          | `"object"`        |
+| **Function**   | N/A                      | `"function"`      |
 
 
 ### Array: 
