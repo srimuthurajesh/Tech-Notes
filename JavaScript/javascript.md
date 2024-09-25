@@ -2,43 +2,41 @@
 
 ## Table of Contents
 
-- [JavaScript Overview](#javascript-overview)
-- [JavaScript Identifiers](#javascript-identifiers)
+- [JavaScript Overview](#overview)
+- [JavaScript Identifiers](#identifiers--total-48)
 - [Variables](#variable)
 - [Data Types](#datatype)
-- [Arrays](#arrays)
-- [Strings](#strings)
-7. [Numbers](#numbers)
+- [Arrays](#array)
+- [Strings](#string)
+- [Numbers](#number)
    - Special Values
-8. [Operators](#operators)
+8. [Operators](#operator)
    - Destructuring Assignment
-9. [Control Structures](#control-structures)
-   - Conditions
-   - Loops
-10. [Functions](#functions)
+9. Control Structures
+   - [Conditions](#conditions)
+   - [Loops](#loops)
+10. [Functions](#function)
     - Declaration and Invocation
     - Arrow Functions
     - Default Parameters
     - Spread Operator
-11. [Objects](#objects)
+11. [Objects](#object)
     - Creation
     - Object Methods
     - Object Wrapper
-12. [Classes](#classes)
+12. [Classes](#class)
     - ES6 Class Syntax
     - Inheritance
 13. [Call, Apply, Bind](#call-apply-bind)
-14. [Advanced Objects](#advanced-objects)
-    - `Object.create`
-    - `Object.setPrototypeOf`
-    - `Object.assign`
-15. [Sets and Maps](#sets-and-maps)
-    - Set
-    - Map
-16. [Promises](#promises)
-17. [Modules](#modules)
-    - Export/Import
-18. [Error Handling](#error-handling)
+14. [Advanced Objects](#advance-object)
+    - Object.create
+    - Object.setPrototypeOf
+    - Object.assign
+15. Sets and Maps
+    - [Set](#sets)
+    - [Map](#maps)
+16. [Promises](#promise--resolvereject)
+17. [Error Handling](#error-handling)
 
 ## Overview
 > Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
@@ -250,7 +248,7 @@ var func=function(a,b){ console.log(this.num+a+b);}
 
 Note: Arrow functions (=>) in JavaScript do not have their own this binding and do not have call, apply, or bind methods.
 
-### Object     
+## Advance Object     
 #### create: 
 - create an empty object.  Make the given arg object as prototype of the created empty object  
     oldObj = {this.name:"rajesh"}  
@@ -400,3 +398,4 @@ event listeners fires not only on single element, but also fires from all its Do
 ### Event Delegation:   
 event listeners fires not only on single element, but also fires from all its Dom decendents   
 
+## Error Handling
