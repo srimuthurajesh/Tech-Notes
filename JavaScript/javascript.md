@@ -13,23 +13,15 @@
 - [Conditions](#conditions)
 - [Loops](#loops)
 - [Functions](#function)
-    - Declaration and Invocation
-    - Arrow Functions
-    - Default Parameters
-    - Spread Operator
+    - [Closure](#closure)
+    - [Arrow Functions](#arrow-function)
+    - [Default Parameters](#default-parameter)
+    - [Spread Operator](#spread-operatorrest-parameters)
 - [Objects](#object)
-    - Creation
-    - Object Methods
-    - Object Wrapper
 - [Classes](#class)
-    - ES6 Class Syntax
-    - Inheritance
 - [Call, Apply, Bind](#call-apply-bind)
-- [Advanced Objects](#advance-object)
-    - Object.create
-    - Object.setPrototypeOf
-    - Object.assign
-- Sets and Maps
+- [Advanced Object creation](#advance-object-creation)
+- [Collections](#collectionsa)
     - [Set](#sets)
     - [Map](#maps)
 - [Promises](#promise--resolvereject)
@@ -246,7 +238,7 @@ var func=function(a,b){ console.log(this.num+a+b);}
 
 Note: Arrow functions (=>) in JavaScript do not have their own this binding and do not have call, apply, or bind methods.
 
-## Advance Object     
+## Advance Object Creation     
 #### create: 
 - create an empty object.  Make the given arg object as prototype of the created empty object  
     oldObj = {this.name:"rajesh"}  
@@ -284,9 +276,8 @@ let sayHiMixin = { __proto__: anotherObject}  //but we should nor use __proto__ 
 ```
 - you can merge more than one object eg: Object.assign(obj2, obj1.1,obj1.2)
     
-
-
-#### Sets: 
+## Collections
+### Sets: 
 collection of unique values   
 ```
     var mySet = new Set();
@@ -298,14 +289,14 @@ collection of unique values
 can convert Sets to array:     console.log([..new Set([1,2,2,3])]);    
                     Array.from(new Set([12,2,3]));      
 
-#### WeakSets:  
+### WeakSets:  
 can have only as objects   
 ```
 var myWeakSet = new WeakSet([{a:1},{b:2}]);
 myWeakSet.add(1);    //throw error
 myWeakSet.add({a:1});
 ```
-#### Maps: 
+### Maps: 
 can have more than one object key
 ```
 var myMap = new Map();
