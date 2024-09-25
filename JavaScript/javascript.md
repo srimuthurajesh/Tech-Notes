@@ -69,6 +69,7 @@ Note:
 - first character must not be a digit.  
 
 ### Datatype:
+> specifies type of data in a variable
 
 | **Data Type**  | **Range**                | **typeof Return** |
 |----------------|--------------------------|-------------------|
