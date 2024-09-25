@@ -141,7 +141,20 @@ functionName();    //function calling
 - function cannot be access outside scope
     if(true){function add(){…}} add();//cannot be called, undefined
 
+#### Closure
+> closure can remember environment variables in which it was created, allowing it to access variables from that scope even after the outer function has finished executing.
 
+```
+function outerFunction() {
+    let outerVariable = "I'm from outer scope!";
+    function innerFunction() {
+        console.log(outerVariable); // Accessing outerVariable from outerFunction
+    }
+    return innerFunction; // Returning the inner function
+}
+const closureFunc = outerFunction(); // outerFunction executes, but innerFunction is still accessible
+closureFunc(); // Logs: I'm from outer scope!
+```
 #### Arrow Function:
 let functionName = (parameter)=>{...function body..…};
 it does not have its own this object. 
