@@ -9,34 +9,31 @@
 - [Arrays](#array)
 - [Strings](#string)
 - [Numbers](#number)
-   - Special Values
-8. [Operators](#operator)
-   - Destructuring Assignment
-9. Control Structures
-   - [Conditions](#conditions)
-   - [Loops](#loops)
-10. [Functions](#function)
+- [Operators](#operator)
+- [Conditions](#conditions)
+- [Loops](#loops)
+- [Functions](#function)
     - Declaration and Invocation
     - Arrow Functions
     - Default Parameters
     - Spread Operator
-11. [Objects](#object)
+- [Objects](#object)
     - Creation
     - Object Methods
     - Object Wrapper
-12. [Classes](#class)
+- [Classes](#class)
     - ES6 Class Syntax
     - Inheritance
-13. [Call, Apply, Bind](#call-apply-bind)
-14. [Advanced Objects](#advance-object)
+- [Call, Apply, Bind](#call-apply-bind)
+- [Advanced Objects](#advance-object)
     - Object.create
     - Object.setPrototypeOf
     - Object.assign
-15. Sets and Maps
+- Sets and Maps
     - [Set](#sets)
     - [Map](#maps)
-16. [Promises](#promise--resolvereject)
-17. [Error Handling](#error-handling)
+- [Promises](#promise--resolvereject)
+- [Error Handling](#error-handling)
 
 ## Overview
 > Javascript developed by Brendan Eich, Netscape,1995. Mocha->Livescript->javascript
@@ -72,7 +69,8 @@ break,as,any,switch,case,if,throw,else,var,number,string,get,module,type,instanc
 
 
 ### Datatype:
-| **Value**    | **Example**                   |
+
+| **Datatype**    | **Example**                   |
 |--------------|-------------------------------|
 | `undefined`  | `let x; console.log(typeof x); // "undefined"` |
 | `boolean`    | `let x = true; console.log(typeof x); // "boolean"` |
