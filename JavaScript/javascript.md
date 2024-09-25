@@ -21,7 +21,7 @@
 - [Classes](#class)
 - [Call, Apply, Bind](#call-apply-bind)
 - [Advanced Object creation](#advance-object-creation)
-- [Collections](#collectionsa)
+- [Collections](#collections)
     - [Set](#sets)
     - [Map](#maps)
 - [Promises](#promise--resolvereject)
