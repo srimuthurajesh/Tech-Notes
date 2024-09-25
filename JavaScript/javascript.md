@@ -24,7 +24,9 @@
 - [Collections](#collections)
     - [Set](#sets)
     - [Map](#maps)
-- [Promises](#promise--resolvereject)
+- [Asynchronous Operations](#asynchronous-operations)
+    - [Promises](#promise--resolvereject)
+    - [Async Await](#async-await)
 - [Error Handling](#error-handling)
 
 ## Overview
@@ -327,7 +329,7 @@ class Honda extends Car{
     func1();    }
 var obj = new Car(arg);
 ```
-
+##  Asynchronous Operations
 ### Promise – resolve,reject:
 > object represents result of asynchronous operation, 
 allowing you to handle success or failure once the operation is complete. 
