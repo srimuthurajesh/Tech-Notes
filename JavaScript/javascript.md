@@ -24,6 +24,7 @@
 - [Collections](#collections)
     - [Set](#sets)
     - [Map](#maps)
+    - [Weakset](#weaksets)
 - [Asynchronous Operations](#asynchronous-operations)
     - [Promises](#promise--resolvereject)
     - [Async Await](#async-await)
@@ -390,3 +391,16 @@ event listeners fires not only on single element, but also fires from all its Do
 event listeners fires not only on single element, but also fires from all its Dom decendents   
 
 ## Error Handling
+> manage error gracefully
+
+```
+try {
+  let result = someFunction();
+} catch (error) {
+  console.log("An error occurred: " + error.message + error.stack + error.name);
+} finally {
+  console.log("This will always run, even if an error occurs.");
+}
+```
+Throw statement: `throw new Error("Age cannot be negative");`  
+Customer error:   `throw new TypeError("This is a type error");`
