@@ -205,7 +205,6 @@ Annotation                  | Usage                                             
 -no need to write object injection <property name="color" ref="anotherBeanName"/>, no @Autowired  
 1.byType, 2.byName, 3.constructor, 4.default 
  
- ---
  ## Java approach  
  
 **Steps to create spring bean(IOC via JAVA)**:  

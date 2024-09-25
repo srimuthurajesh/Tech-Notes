@@ -4,8 +4,8 @@
 
 - [JavaScript Overview](#javascript-overview)
 - [JavaScript Identifiers](#javascript-identifiers)
-- [Variables](#variables)
-- [Data Types](#data-types)
+- [Variables](#variable)
+- [Data Types](#datatype)
 - [Arrays](#arrays)
 - [Strings](#strings)
 7. [Numbers](#numbers)
@@ -74,13 +74,16 @@ break,as,any,switch,case,if,throw,else,var,number,string,get,module,type,instanc
 
 
 ### Datatype:
-1. **Number** - integer & floating point
-2. **String** -  one or more characters
-3. **Boolean** - true/false
-4. **Null** - Unknown but (null==undefined) is true , (null==0) is false
-5. **Undefined** – Known by non - defined
-6. **Object** - collections of variables and properties
-7. **Symbol** – unique identifiers
+| **Value**    | **Example**                   |
+|--------------|-------------------------------|
+| `undefined`  | `let x; console.log(typeof x); // "undefined"` |
+| `boolean`    | `let x = true; console.log(typeof x); // "boolean"` |
+| `number`     | `let x = 42; console.log(typeof x); // "number"` |
+| `bigint`     | `let x = 9007199254740991n; console.log(typeof x); // "bigint"` |
+| `string`     | `let x = "hello"; console.log(typeof x); // "string"` |
+| `symbol`     | `let x = Symbol(); console.log(typeof x); // "symbol"` |
+| `object`     | `let x = { name: "John" }; console.log(typeof x); // "object"` <br> `let y = null; console.log(typeof y); // "object"` |
+| `function`   | `function example() {} console.log(typeof example); // "function"` |
     
 
 
@@ -168,6 +171,13 @@ function bigNum(a,b, ...argArray){
 We can combine two arrays. a=[1,2,3];  b=[4,5];     c= [...a,...b];        //c is [1,2,3,4,5]  
 console.log(...a);    //1 2 3  
 We can combine two arrays. A=[3,4,5];b=[1,2]; a.push(...b); instead of // Array.prototype.push.apply(a,b);  
+
+Note: this operator also use for shallow copy(only first level not applicable for nested objects)  
+```
+var a={name:'UST', age:17};
+var b= {...a}; //shallow/new copy
+b.age = 18; console.log(a.age);//17
+```
 
 ### Object:  
 1. via constructor ```let user = new Object();```  
