@@ -4,12 +4,6 @@
    2. [JavaScript](JavaScript)  
    3. [Python](Python)  
 
-## Databases
-   1. [Mysql](SQL/mysql.html)  
-   2. [Mongo](NoSql/Mongo.html)  
-   3. [Postgresql](NoSql/Mongo.html)  
-   4. [Cassandra](NoSql/Cassandra.html)  
-
 ## Frameworks
    1. [Spring](Java/Spring)
    2. [Angular](JavaScript/Angular)
@@ -17,7 +11,23 @@
 ## Datastructure & Algorithm
    1. [DSA Concepts](datastructure-algorithm) 
    2. [My Striver's List](datastructure-algorithm/my-strivers-list)
-    
+   3. [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
+   4. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
+   5. [Algorithm](Computer%20science/algorithm.html)
+   6. [Data Struture](Computer%20science/data_structure.html)
+   7. [Design Patterns](Computer%20science/design_patterns.html)
+   8. [SOLID Principles](Computer%20science/solid_principles.html) 
+
+## Web Design 
+   1. [HTML](web-design/html.html)
+   2. [CSS](web-design/css.html)
+   3. [SAAS](web-design/saas.html)
+
+## Databases
+   1. [Mysql](SQL/mysql.html)  
+   2. [Mongo](NoSql/Mongo.html)  
+   3. [Postgresql](NoSql/Mongo.html)  
+   4. [Cassandra](NoSql/Cassandra.html)  
 
 ## Devops    
    1. [Git](devops/git.html)
@@ -31,22 +41,10 @@
 ## Cloud 
    1. [Aws](devops/AWS.html)
 
-## Web Design 
-   1. [HTML](web-design/html.html)
-   2. [CSS](web-design/css.html)
-   3. [SAAS](web-design/saas.html)
-
 ## Project Management 
    1. [Scrum](project-management/scrum.html)
    2. [Kanban](project-management/kanban.html)
 
-## Computer science
-   1. [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
-   2. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
-   3. [Algorithm](Computer%20science/algorithm.html)
-   4. [Data Struture](Computer%20science/data_structure.html)
-   5. [Design Patterns](Computer%20science/design_patterns.html)
-   6. [SOLID Principles](Computer%20science/solid_principles.html) 
 
 ## Others
    1. [YouTube](YouTube/YouTube-channels.html)
