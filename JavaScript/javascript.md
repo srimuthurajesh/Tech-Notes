@@ -83,6 +83,8 @@ Note:
 | **Object**     | key-value pairs          | `"object"`        |
 | **Function**   | N/A                      | `"function"`      |
 
+Note: number also support nfinity, -Infinity and NaN
+
 
 ### Array: 
 let arr = new Array();  

@@ -4,12 +4,6 @@
 
 - [History](#history)
 - [Basic Java program](#basic-java-program)
-	- [Comments](#comments)
-	- [Identifiers](#identifiers)
-	- [Literals](#literals)
-	- [Expression](#expression)
-   	- [Seperators](#seperators)
-	- [Keywords](#keywords)  
 - [Variable](#variable)
 - [Datatype](#datatype)
 - [Operators](#operators)
@@ -31,7 +25,6 @@
 - [Exception handling](#exception-handling)
 - [Annotations](#annotations)
 - [Regex](#regex)
-- [Keywords List](#keywords-list)
 
 
 
@@ -92,7 +85,7 @@ class Hello{
 4. Colon(:), Semicolon(;), Comma(,), dot(.)
    
 ### Keywords: 
-> Predefined meaning (68) words.  
+> Predefined meaning (68) words. [Keywords list](#keywords-list) 
 
 ## Java I/O
 1. Output  
@@ -102,7 +95,7 @@ class Hello{
 
 ```
 import java.util.Scanner;
-PSVM{
+public static void main(String[] args){
 	Scanner scanner = new Scanner(System.in);
 	String name = scanner.nextLine();
 		int age = scanner.nextInt();
