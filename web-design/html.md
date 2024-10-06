@@ -2,6 +2,7 @@
 - standard markup language for creating web page in browsers
 - Latest version is HTML 5.2
 - is not case sensitive  
+
 ```
 <!DOCTYPE html>  
 <html>
