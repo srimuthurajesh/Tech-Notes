@@ -1,13 +1,9 @@
 ## Python
 
 1. [Python I/O](#python-io)
-2. [Indentation](#indentation)
-3. [Comments](#comments)
-4. [Escape Characters](#escape-characters)
-5. [Keywords](#keywords)
-6. [Variables](#variables)
+2. [Indentation, Comments, Escape chars](#indentation)
+5. [Keywords, Variables](#keywords)
 7. [Data Types](#data-types)
-8. [Typecasting](#typecasting)
 9. [Operators](#operators)
 10. [Conditional Statements](#conditional-statements)
 11. [Loop Statements](#loop-statements)
@@ -20,11 +16,6 @@
 18. [Multithreading](#multithreading)
 19. [Multiprocessing](#multiprocessing)
 20. [Debugging](#debugging)
-21. [JSON](#json)
-22. [Iterator](#iterator)
-23. [Generator](#generator)
-24. [Commandline Arguments](#commandline-arguments)
-25. [For Loop](#for-loop)
 
 ### Overview
 >  interpreted, object-oriented, high-level programming language with dynamic typed
