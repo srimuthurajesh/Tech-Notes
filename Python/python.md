@@ -1,74 +1,99 @@
-## Python
-> widely-used, interpreted, object-oriented, and high-level programming language with dynamic typed
+# Python
+>  interpreted, object-oriented, high-level programming language with dynamic typed
 - created by Guido van Rossum on 1991.  
-- python means large snake, comes from BBC tv comedy sketch series called Monty Python’s Flying Circus.   
+Misc Note: `Python` does not refer to the snake, but comes from the BBC comedy series `Monty Python’s Flying Circus`.
 
-Output: ```print("Hello, World!")```  
-Input: ```x=input();```  	
+## Python I/O
+1. Input: `x = input("Enter something: ")`  	
+2. Output: `print("Hello, World!")` 
 
-Note: Indentation mandatory.  
-### Comments:	
-1. Single line comment: #shell comment
-2. Multi line/docstring: """.......""" or '''.......'''
+## Indentation  
+> Important Note: Python is indentation-sensitive, meaning indentation is mandatory to define blocks of code.
 
-### Escape Characters. 
-> Use backslashes (\): \' \" \t \n \\			
+## Comments:	
+1. Single line comment: `#shell comment`  
+2. Multi line/docstring: `"""This is a multi-line comment"""` or `'''multi-line comment'''`
 
-### Keywords  
+## Escape Characters. 
+Backslashes \ are used to insert special characters in a string.    
+1. \', \" for quotes
+2. \t for a tab
+3. \n for a new line
+4. \\ for a backslash
+
+## Keywords  
 35 keywords in python  
-```['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']```
+`['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']`
 
-### Variables:
-> name for the memory location  
+## Variables:
+> name given to a memory location  
+
 ```
 a=7
 print(a)
 ```
 
-### Data Types:  
-1. Number: integer(```a=10```), float(```a=10.0```), complex(```a=10+1j```)	  
-2. Dictionary : key value pair ```d = {1:'Jimmy', 2:'Alex', 3:'john', 4:'mike'}```
-3. Boolean : true/false
-4. Set: unique values ```set1 = {'James', 2, 3,'Python'} ```
-5. string: works with single/double quote  
-6. list, tuples: (```tup=["hi", "Python", 2]```#index works)
-**Important functions in tuple**:
-len(tuple)  
+## Data Types:  
+### 1. Number: 
+- integer: `a=10`
+- float: `a=10.0` 
+- complex: `a=10+1j`  	  
+
+### 2. Dictionary : key value pair  
+ `d = {1:'Jimmy', 2:'Alex', 3:'john', 4:'mike'}`  
+
+### 3. Boolean :
+`true/false`  
+
+### 4. Set: unique values 
+`set1 = {'James', 2, 3,'Python'}`
+
+### 5. string  
+> A sequence of characters, defined using single or double quotes. 
+
+`a='rajesh'`  
+
+### 6. list & tuples: 
+- List: Mutable sequence: `lst = ["hi", "Python", 2]`
+- Tuple: Immutable sequence: `tup = ("hi", "Python", 2)`    
+Example tuple functions: `len(tuple)`  
 
 
 
-### Typecasting:  
-int('22') #conv string to int   
-float(2)  #conv int to float  
-str(3.1)  #conv float to string   
+## Typecasting:  
+1. string to int `int('22')`    
+2. int to float `float(2)`      
+3. float to string `str(3.1)`   
 
-### Operators:  
+Note: Find type of object; using syntax   type(object)
+
+## Operators:  
 
 | Arithmetic Operators  | Example	|  
 |-----------------------|---------------|
-| Exponent		| 2 ** 3 = 8	|
-| Modulus/Remainder	| 22 % 8 = 6	|
-| Integer division	| 22 // 8 = 2	|
-| Division		| 22 / 8 = 2.75	|
-| Multiplication	| 3 * 3 = 9	|
-| Subtraction		| 5 - 2 = 3	|
-| Addition		| 2 + 2 = 4	|
+| Exponent				| 2 ** 3 = 8	|
+| Modulus/Remainder		| 22 % 8 = 6	|
+| Integer division		| 22 // 8 = 2	|
+| Division				| 22 / 8 = 2.75	|
+| Multiplication		| 3 * 3 = 9		|
+| Subtraction			| 5 - 2 = 3		|
+| Addition				| 2 fzaq``+ 2 = 4|
 
-|  Operators		| Symbols  			|  
+|  Operators			| Symbols  					|  
 |-----------------------|-------------------------------|  
 | Arithmetic Operator  	| ** + - * / % ** // **  	|  
-| Relational Operator  	| ** <, <=, >, >=, ==, != **  	|  
+| Relational Operator  	| ** <, <=, >, >=, ==, != ** |  
 | Logical Operator  	| ** and, or, not **  		|  
-| Assignment Operator  	| ** a += 4 **  		|  
-| Inc and Dec Operator  | Not supported		  	|
-| Tenary Operator	| 'kid' if age < 18 else 'adult'|
+| Assignment Operator  	| ** a += 4 **  			|  
+| Inc and Dec Operator  | Not supported		  		|
+| Tenary Operator		| 'kid' if age < 18 else 'adult'|
 | Identity Operator  	| ** is, is not **  		|  
-| Bitwise Operator 	| ** &, <<, >>, >>> **  	|  
+| Bitwise Operator 		| ** &, <<, >>, >>> **  	|  
 | Membership operators  | ** in, not in **  		|
-| Walrus Operator	| print(my_var:="Hello")	|
+| Walrus Operator		| print(my_var:="Hello")	|
 
 	
-### Condition Statements:  
+## Condition Statements:  
 1. If: ```if 5>2: ``` 
 2. If else: ```if 5>2: else:```  
 2. If elif: ```if 5>2: elif 5<2: ```  
@@ -83,7 +108,7 @@ match response_code:
 		print("invalid")
 ```
    
-### Loop Statements:
+## Loop Statements:
 1. For    
 ```
 for n in lists:
@@ -103,7 +128,7 @@ for i in range(5):
 ```
 5. sys.exit(): exit from script
    
-### Functions:
+## Functions:
 **Syntax**:  
 ```
 def functionName(arg1,arg2=defaultVal):
@@ -117,25 +142,28 @@ def functionName(arg1,arg2=defaultVal):
 4. Anonymous(lamda) function: ```func = lamda arg1: ...fun body...```
 5. Global statement: ```global variableName=5```    #to make changes in global variable inside function  	
 			
-CLASSES & OBJECTS:
-	class ClassName:
-		num = 4
-		def __init__(self):
-			print('this is constructor')
-		def add(self,x):
-			self.num = self.num + x
-	obj = ClassName()		#creating object
-	obj.num					#accessing variable
-	obj.add(3)	 			#accessing function	
+## Class & Object:
+```
+class ClassName:
+	num = 4
+	def __init__(self):
+		print('this is constructor')
+	def add(self,x):
+		self.num = self.num + x
+obj = ClassName()		#creating object
+obj.num					#accessing variable
+obj.add(3)	 			#accessing function	
+```
 
-INHERITANCE:
+## Inheritance:
+```	
 	class Parent():
 	class Child(Parent):	#child inherited parent	if overriding occurs, current class func overrides parent class function
 	class StepParent:
 	class Child(Parent,StepParent):	#multiple inheritance, if overriding occurs, 1st arg override 2nd arg
-	
+```	
 		
-MODULES:
+## Modules:
 	import myModule
 	myModule.functionName()		#access function
 	myModule.varName			#access variable
@@ -143,27 +171,32 @@ MODULES:
 	dir(myModule)				#print all functions available in that module		
 	from myModule import variableName	#import particular variables from module
 
-FILE HANDLING:
-	x=create, r=read, a=append, w=write
-	t=textMode, b=binaryMode
+## File Handling:
+	x=create, r=read, a=append, w=write  
+	t=textMode, b=binaryMode  
+### File reading	  
 	fileObj = open('filaName.text',rt)
-	fileObj.read()						#return entire file text
-	fileObj.read(n)						#return n number of chars from file
-	fileObj.readline()					#we can read line by line, by calling it after and after
-	for x in fileObj					#loop each line by using file object	
-	fileObj = open('fileName.txt','a')
-	fileObj.write('text')				#append text to existing file	
-	fileObj = open('fileName.txt','w')
-	fileObj.write('text')				#overwrite text to existing file
-	fileObj = open('newFile.txt','x')	#new file will be created
-	fileObj = open('newFile.txt','w')	#create new file if doesnt exist
-	fileObj.close()						#close file object
-	import os
-	os.remove('fileName.txt')			#delete file
-	os.path.exists('fileName.txt')		#check file exist
-	os.rmdir('folderPath')				#remove directory
+	fileObj.read()						#return entire file text  
+	fileObj.read(n)						#return n number of chars from file  
+	fileObj.readline()					#we can read line by line, by calling it after and after  
+	for x in fileObj					#loop each line by using file object	  
+### File Writing  
+	fileObj = open('fileName.txt','a')  
+	fileObj.write('text')				#append text to existing file	  
+### File Edit  
+	fileObj = open('fileName.txt','w')  
+	fileObj.write('text')				#overwrite text to existing file  
+	fileObj = open('newFile.txt','x')	#new file will be created  
+	fileObj = open('newFile.txt','w')	#create new file if doesnt exist  
+	fileObj.close()						#close file object  
+### Using OS  
+	import os  
+	os.remove('fileName.txt')			#delete file  
+	os.path.exists('fileName.txt')		#check file exist  
+	os.rmdir('folderPath')				#remove directory  
 	
-EXCEPTION HANDLING:
+## Exception Handling:
+```
 	try:
 		number = int(input("What is your fav number?"))
 		print(18/number)
@@ -175,8 +208,9 @@ EXCEPTION HANDLING:
 		print('something error, but i dunno what')				
 	finally:
 		print('it will print finnaly, whatever happended')
+```
 
-MULTITHREADING:
+## Multithreading:
 	import threading
 	class ClassName(threading.Thread):
 		def run(self):
@@ -195,7 +229,8 @@ MULTITHREADING:
 	t1.join()
 	t2.join()
 
-MULTIPROCESSING
+## Multiprocessing: 
+```
 	import multiprocessing
 	p1 = multiprocessing.Process(target=func1,args(args1))	
 	p1 = multiprocessing.Process(target=func2,args(args1))	
@@ -203,45 +238,54 @@ MULTIPROCESSING
 	p2.start()
 	p1.join()
 	p2.join()
-	
-DEBUGGING:
+```	
+## Debugging:
+```
 	import logging
 	logging.debug('program starts')
 	logging.debug('program ends')	
+```
 	
-	
-JSON
-json_dumps(dictVariable)		#json encode
-json_loads(string)				#json decode
+## Json
+1. Json encode: `json_dumps(dictVariable)`
+2. Json decode: `json_loads(string)`
 
-__name__
-it will give "__main__" if it called from actual page
+__name__  
+it will give "__main__" if it called from actual page  
 it will give "__anotherPageName__" if it called from another page
 
 
-ITERATOR:
+## Iterator:
 itr = iter(obj)		#we can call next value by using   next(itr)
 
-GENERATOR: simple way to create an iterator
+## Generator: 
+> simple way to create an iterator
+
+```
 	def gen():
 		yield "one"
 		yeild "two"
 	Now we can gen as iterator 	
-
-COMMANDLINE ARGUEMENT:
+```
+## Commandline arguments:
+```
 	parser = argparse.ArgumentParser()
 	parser.add_arguement("firstargName")
 	args =parser.parse_args()
 	print(arg.firstargName)
-	
-Find type of object; using syntax   type(object)
-FORLOOP: 
-	ENUMERATE:
+```
+
+## Forloop: 
+1. Enumerate:
+		```
 		presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe", "Adams", "Jackson"]
 		for num, name in enumerate(presidents, start=1):
 			print(presidents[num])
-	ZIP:
+		```
+2. ZIP:
+	```	
 		colors = ["red", "green", "blue", "purple"]
 		ratios = [0.2, 0.3, 0.1, 0.4]
 		for color, ratio in zip(colors, ratios):
 			print("{}% {}".format(ratio * 100, color))	
+	```
