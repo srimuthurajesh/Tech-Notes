@@ -19,6 +19,7 @@
 
 ### Overview
 >  interpreted, object-oriented, high-level programming language with dynamic typed
+
 - created by Guido van Rossum on 1991.  
 Misc Note: `Python` does not refer to the snake, but comes from the BBC comedy series `Monty Python’s Flying Circus`.
 

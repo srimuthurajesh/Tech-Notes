@@ -1,42 +1,56 @@
 ## Kubernetes
-- open source container orchestration tool for manageing microservices or contanierized application     
-- developed by Google    
+> open source container orchestration tool for manageing microservices or contanierized application     
+
+- developed by Google 
+
+### Key featues
+1. **Resilient Infrastructure**: Ensures application availability through automatic scaling, health checks, and failover.
+2. **Zero-Downtime Deployment**: Facilitates smooth rollouts and automatic rollbacks during updates.
+3. **Self-Healing**: Automatically handles tasks like container placement, restarts, replication, and scaling based on metrics.
+
+
 - provides resiliant infrastrcuture, zero downtime deployment, automatic rollback, scalling  
 - provides self healing which consists of auto-placement, auto-restart, auto replication and scaling of container based on metrics       
 
 ## Components of k8s:
-Master :  
-          1. kube-apiserver(gateway, authentication)   
-          2. etcd storage(key value store, cluster state info which used by master processes)   
-          3. kube-controller-manager(detects cluster state changes, maintain no downtime)  
-          4. cloud-controller-manager  
-          5. kube scheduler(which node new pod should schedule)  
-**Node** : kubelet, kube proxy  
+### Master Components:
+1. kube-apiserver: The gateway for all requests to the Kubernetes cluster, responsible for authentication and communication.
+2. etcd storage: A key-value store that holds cluster state information and is used by Kubernetes components for coordination.
+3. kube-controller-manager: Monitors the cluster state and ensures that the desired state is maintained (e.g., replication, node management).
+4. cloud-controller-manager: Manages cloud-specific operations (like load balancing, storage) for Kubernetes clusters running in cloud environments.
+5. kube-scheduler: Decides on which node a new pod should be scheduled based on resource availability and constraints.
 
-**Minikube**:1 node k8s cluster for local dev testing    
-**Kubectl**: cli to interact with minikube cluster  
 
+### Node Components:
+1. kubelet: An agent that runs on each node, ensuring containers are running in a pod.
+2. kube-proxy: Handles network routing and forwarding requests between containers and services in the cluster.
+
+### Additional Concepts:
+1. Minikube: A single-node Kubernetes cluster used for local development and testing.
+2. Kubectl: The command-line interface (CLI) tool used to interact with Kubernetes clusters.
+
+
+## Kubernetes Objects:
 #### 1. Pod:  
-**abstract** one or more containers  
-**encapsulate** container, storage resources, neworkId, other configs  
+> The smallest deployable unit in Kubernetes, encapsulating one or more containers, storage resources, network identities, and configuration.  
 
 #### 2. Service:  
-- provides external ip address for each pod and also a load balancer  
-ConfigMap : file which have config values for each pod  
-Secret: same like configMap but base64 encrypted  
+> Exposes a pod or a set of pods to the network with a stable IP address. Services also act as load balancers to distribute traffic between pods.
+
+- ConfigMap: A file containing configuration data that can be used by pods.
+- Secret: Similar to a ConfigMap but used for storing sensitive information (e.g., passwords) in a base64-encoded format.
 
 #### 3. Deployment:
-- describe state of pod or replica set in yaml file  
+> Describes the desired state of pods and replica sets in a YAML file, allowing you to manage scaling and updates.
 
-
-3 things must be installed
-1. Container runtime(like Docker)  
-2. Kubelet (interacts container and node, assign resources for nodes)    
-3. kube proxy (forward the request) 
+### Kubernetes Installation Requirements:
+1. Container Runtime: Like Docker, responsible for running containers.
+2. Kubelet: Communicates with the Kubernetes control plane, manages the container lifecycle on the node.
+3. Kube Proxy: Manages network routing and forwarding traffic between services.
 
 
 #### Kubectl commands:  
-kubectl get pod  
+kubectl get pod    
 kubectl get nodes  
 kubectl get deployment   
 kubectl create deployment nginx-depl --image=ngnix  
@@ -50,54 +64,60 @@ kubectl apply -f [yaml fileName]
 kubectl delete -f [yaml fileName]  
 
 
-#### Yaml Configuration file:  
+#### Yaml Configuration:  
+1. Pod Configuration:
 ```
-apiVersion : v1
-kind: pod  
+apiVersion: v1
+kind: Pod  
 metadata:
   name: nginx  
   labels:
-     name: nginx
+    name: nginx
 spec:
   containers:
   - name: nginx
-    image: ngnix  
+    image: nginx  
     ports:
     - containerPort: 80
----
-apiVersion : v1
-kind: service  
+```
+2. Service Configuration:
+
+```
+apiVersion: v1
+kind: Service  
 metadata:
   name: my-nginx  
   labels:
-     run: my-nginx
+    run: my-nginx
 spec:
-  port:
+  ports:
   - port: 80
     protocol: TCP  
   selector:
     run: my-nginx
----
-apiVersion : apps/v1
+```
+4. Deployment Configuration:
+```
+apiVersion: apps/v1
 kind: Deployment  
 metadata:
   name: nginx-deployment  
-  labels:~
+  labels:
+    run: my-nginx
 spec:
-  selector:
-      matchLabels:
-          run: my-nginx
   replicas: 2
+  selector:
+    matchLabels:
+      run: my-nginx
   template:
-      metadata:
-          labels:
-              run: my-ngnix
-      spec:
-          containers:
-          - name: my-ngnix
-            image: nginx
-            ports:
-            - containerPort: 80
----
+    metadata:
+      labels:
+        run: my-nginx
+    spec:
+      containers:
+      - name: my-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
 
-```  
+```
