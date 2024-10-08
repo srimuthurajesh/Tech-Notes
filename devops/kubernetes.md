@@ -17,13 +17,9 @@
 4. **cloud-controller-manager** : Manages cloud-specific operations (like load balancing, storage) while running in cloud .
 5. **kube-scheduler**: Decides on which node a new pod should be scheduled based on resource availability
 
-
 ### Node Components:
-#### 1. kubelet: 
-> An agent that runs on each node, ensuring containers are running in a pod.
-
-#### 2. kube-proxy: 
-> Handles network routing and forwarding requests between containers and services in the cluster.
+1. **kubelet**: An agent that runs on each node, ensuring containers are running.
+2. **kube-proxy**: Handles network routing and forwarding requests between containers and services.
 
 ### Additional Concepts:
 #### 1. Minikube: 
