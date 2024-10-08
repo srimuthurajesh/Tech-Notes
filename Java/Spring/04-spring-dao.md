@@ -76,7 +76,7 @@ Note: The default JPA provider for Spring boot is Hibernate
 6. **Criteria Object**-used only to retreive operation, has additional conditional criterias       
   
 ## Hibernate Session Object lifecycle:
-1. **Transient** - new instance of pojo ```Cust cust = new Cust();```    
+1. **Transient** - new instance of pojo `Cust cust = new Cust();`    
 2. **Persistent** - associate with session (while save())  
 3. **Removed** - while remove(),delete()  
 4. **Detached** - closed from session(while `session.clear()`, `session.close();`,   
@@ -119,7 +119,7 @@ Note: `session.contain(entity);` will check entity is in persistent stage or not
 
 Adv: For reusability by alias, maintainability, performance  
 
-```
+```java
 @NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")  
 @NamedQueries(value={
 	@NamedQuery(name = "Customer.findByName", query = "SELECT c FROM Customer c WHERE c.name = :name")
@@ -128,12 +128,12 @@ class Customer {}
 ```
 
 **Using namedquery in Jpa repository:**  
-```
+```java
 @Query(name = "Customer.findByName")
 List<Customer> findByName(@Param("name") String name);
 ```
 **Using namedquery in session**    
-```
+```java
 List<Customer> customers = session.createNamedQuery("Customer.findByName", Customer.class)
                                           .setParameter("name", name)
                                           .getResultList();
@@ -163,7 +163,7 @@ List<Customer> customers = session.createNamedQuery("Customer.findByName", Custo
 | `@Where(clause = "deleted = false")`| works alone with @SQLDelete              |
 | `@OptimisticLocking`           | dont lock entire row, only lock @version column |
 
-```
+```java
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	@Modifying
     @Transactional
@@ -175,7 +175,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 ```
 
 1. @EnableTransactionManagement - along with @Configuration class, not used if we using spring-data or spring-tx  
-2. @Transactional - class level. perform rollback ```@Transactional(rollbackFor = { SQLException.class })```    
+2. @Transactional - class level. perform rollback `Transactional(rollbackFor = { SQLException.class })`    
 so beingtransaction,transaction.commit are not needed.. to enable this we need @EnableTransactionManagement in java file   
 or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />
 
@@ -197,7 +197,7 @@ Note: Transaction is alterntive for session.begin, session.commit, session.rollb
 ### 1. XML Configuration
 - The primary XML files used are `hibernate.cfg.xml`  
 
-```
+```xml
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
@@ -210,7 +210,7 @@ Note: Transaction is alterntive for session.begin, session.commit, session.rollb
     </session-factory>
 </hibernate-configuration>
 ```
-```
+```java
 //even if we didnt give the xml, in default it will pick hibernate-cfg.xml
 Configuration configuration = new Configuration().configure("hibernate-cfg.xml");
 configuration.addAnnotatedClass(customerentity.class);
@@ -218,7 +218,7 @@ SessionFactory sessionFactory = configuration.buildSessionFactory();
 Session session = sessionFactory.openSession();
 ```
 ### 2. Java Configuration
-```
+```java
 Configuration configuration = new Configuration();
 configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
 configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/yourdb");
@@ -263,11 +263,11 @@ Session session = sessionFactory.openSession();
 | `exists(Specification<T> spec)`            | Checks if exists by specification.| Use `createQuery` with criteria and check if result is present |
 
 #### Entity manager Criteria
-```
+```java
 @PersistenceContext
 private EntityManager entityManager;
 ```
-```
+```java
 CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
 Root<Employee> employee = cq.from(Employee.class);
@@ -278,20 +278,20 @@ cq.where(orPredicate);
 return entityManager.createQuery(cq).getResultList();
 ```
 #### Entity manager CreateQuery
-```
+```java
 Query query = entityManager.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
 query.setParameter("name", "example");
 List<Entity> results = query.getResultList();
 ```
 ### Session Object
-```
+```java
 SessionFactory sessionFactory = new Configuration().configure("hibernate-cfg.xml");
 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 		.applySettings(configuration.getProperties())
 		.build();
 sessionFactory = configuration.buildSessionFactory(serviceRegistry);   
 ```
-```
+```java
 Session session = HibernateUtil.getSessionFactory().openSession();
 session.beginTransaction();
 session.getTransaction().commit();
@@ -380,7 +380,7 @@ INSERT clause: String hql = "INSERT INTO Employee(firstName, lastName, salary)"+
 ## Hibernate Mappings
 
 ### 1. OneToOne
-```
+```java
 class Customer{
 	@OneToOne(cascade=CascadeType.ALL) 	
 	@JoinColumn(name="customerCart_id")		//foreign key column name
@@ -395,14 +395,14 @@ class CustomerCart{
 	private Customer customer;
 }
 ```
-```
+```sql
 CREATE TABLE `customer`( `customer_id` int NOT NULL AUTO_INCREMENT, `customer_name` varchar(22) DEFAULT NULL, PRIMARY KEY (`customer_id`),
 `cart_id` int, FOREIGN KEY (`cart_id`) REFERENCES cart(`cart_id`));
 CREATE TABLE `cart` ( `cart_id` int NOT NULL AUTO_INCREMENT,`cart_name` varchar NULL, PRIMARY KEY(`cart_id`));  
 ```
 
 ### 2. OneToMany
-```
+```java
 class Cart{
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products;
@@ -413,13 +413,13 @@ class Products{
     private Cart cart;
 }
 ```
-```
+```sql
 CREATE TABLE Cart (cart_id BIGINT PRIMARY KEY AUTO_INCREMENT);
 CREATE TABLE Product (product_id BIGINT PRIMARY KEY AUTO_INCREMENT,
 cart_id BIGINT NOT NULL, FOREIGN KEY (cart_id) REFERENCES Cart(cart_id));
 ```
 ### 3. ManyToMany:
-```
+```java
 public class Student {
     @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
@@ -477,14 +477,14 @@ Adv: avoid database round-trips.
 1. in pom.xml add hibernate-ehcache  
 2. Add properties in xml   
 
-```
+```xml
 <property name="hibernate.cache.use_second_level_cache">true</property>
 <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
 <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 ```
 
 3. Add annotation in entity class  
-```
+```java
 @Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 @Entity
 @Cacheable
@@ -501,15 +501,15 @@ public class Employee {   }
 ### Query cache
 > data stored as hashmap where query text param is key, result is value 
 
-1. Add properties in xml ```<propertyerty name="hibernate.cache.use_query_cache">true</property>```  
-2. Set cache in query ``` Query q=session.createQuery("from employee").setCacheable(true).list();```
+1. Add properties in xml `<propertyerty name="hibernate.cache.use_query_cache">true</property>`  
+2. Set cache in query ` Query q=session.createQuery("from employee").setCacheable(true).list();`
 
 ## Sort
 `Sort sort= Sort.by(Sort.Direction.fromString(sortDirection), sortBy);`
 
 ## Pagination
 
-```
+```java
 PageRequest pageRequest = PageRequest.of(pageNumber-1, pageSize, Sort.by("name").ascending());
 return itemRepository.findAll(pageRequest);
 ```

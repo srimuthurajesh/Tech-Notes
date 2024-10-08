@@ -226,8 +226,8 @@ Annotation                  | Usage                                             
 3. Retrieve bean from container `InterfaceName obj = (InterfaceName)context.getBean("beanId");`  
 
 **Annotation Enabling**  
-1. Add this tag in XML - `<context:annotation-config />```  
-2. Or add this tag in XML - `<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
+1. Add this tag in XML - `<context:annotation-config />` 
+2. Or add this tag in XML - `<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">`  
 
 @Component - define class as bean    
 @Qualifier - give bean id, avoid ambiquity while using autowired  

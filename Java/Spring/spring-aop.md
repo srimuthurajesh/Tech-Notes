@@ -3,7 +3,7 @@
 > Aspects of programming means cross cutting concerns. 
 
 Note: we should use @EnableAspectJAutoProxy before @Configuration file. 
-```<aop:aspectj-autoproxy>``` in xml config file          
+`<aop:aspectj-autoproxy>` in xml config file          
 
 ## Defination
 Aspect: class which define pointcuts and advices  
@@ -25,8 +25,7 @@ Pointcut: expression language of AOP that matches join points, enable reuse of p
 4. @AfterThrowing - run after method(if exception). `void afterThrowingMethod(Exception ex)`
 5. @Around - run after and before method (using joinpoint.proceed()). `void aroundMethod(ProceedingJoinPoint jp)`
 
-```
-
+```java
 @Aspect
 @Component
 public class AOPsample {
@@ -45,7 +44,7 @@ public class AOPsample {
 
 > expression language of AOP that matches join points, enable reuse of pointcut
 
-```
+```java
 @Pointcut("execution(public void org.controller.display())")
 void reuseMethod(){}
 @Before("reuseMethod()")
@@ -60,7 +59,7 @@ void methodName3(){
 
 ### Access method details. 
 
-```
+```java
 public void display(JointPoint jointPoint){
   MethodSignature methodSig = (MethodSignature) jointPoint.getSignature();
   Object[] args = joinPoint.getArgs();  //get arguements 
@@ -68,7 +67,7 @@ public void display(JointPoint jointPoint){
 ```
 
 ### LOGGER. 
-```
+```java
  private Logger log = Logger.getLogger(getClass().getName());
  log.info("log message");
  log.fatal("log message");
@@ -80,12 +79,12 @@ public void display(JointPoint jointPoint){
 
 ### Spring security. 
 1. Create SecurityWebApplicationInitializer.java. 
-```
+```java
 public class SecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 }
 ```
 2. create SecurityConfig.java. 
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {	

@@ -49,7 +49,7 @@ Browser -> Security interceptor -> spring controller
 2. using @Beans preferred modern approach. we can use SecurityConfigurer directly and configure via beans. Provides more flexibility 
 ### 1. Login Logout page
 #### a) Default spring login/logout page
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -66,7 +66,7 @@ public class SecurityConfig {
 }
 ```
 #### b) Custom login/logout page
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -99,7 +99,7 @@ public class SecurityConfig {
  
 #### c) User Details from Inmemory
 
-```	
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -122,7 +122,7 @@ public class SecurityConfig {
 #### d) User Details from DB
 ##### i) Using username/password columns
 1. User class Entity
-```
+```java
 @Entity
 public class User implements UserDetails {
     @Id
@@ -149,7 +149,7 @@ public class User implements UserDetails {
 }
 ```
 2. CustomerUserDetailService
-```
+```java
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
@@ -166,7 +166,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 }
 ```
 2. Security config class
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -195,7 +195,7 @@ public class SecurityConfig {
 
 1. @Entity class is same as above  
 2. Authentication Provider
-```
+```java
 public class BranchLocationAuthenticationProvider implements AuthenticationProvider {
     private final UserDetailsService userDetailsService;
     public BranchLocationAuthenticationProvider(UserDetailsService userDetailsService) {
@@ -217,7 +217,7 @@ public class BranchLocationAuthenticationProvider implements AuthenticationProvi
 }
 ```
 3. Security Config
-```
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -241,7 +241,7 @@ public class SecurityConfig {
 }
 ```
 ##### iii) Using custom username and password column
-```
+```java
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
@@ -260,7 +260,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 ## OAuth2 sso. 	
 add @EnableOAuth2Sso in main method  
 add spring configuration
-```
+```java
 okta.oauth2.issuer= https://dev-165093.okta.com/oauth2/default
 okta.oauth2.clientId=0oaz16emnjw4TZVZ0356
 okta.oauth2.clientSecret=zEeuINnfu36oNGCWTdmnadAjgT-BtbTu79XdFwe0
@@ -276,7 +276,7 @@ spring.main.allow-bean-definition-overriding=true
 6. Create app role in [App registration]-> [app role]
 7. Map role and user in [Enterprise application] -> [user&roles].
 8 . Add application.yml in spring boot. 
-```
+```yaml
 	spring:
 	cloud:
 		azure:
@@ -303,7 +303,7 @@ Format Structure: header.payload.signature
 
 ### Steps to implement
 1. Add jwt in pom and create util class
-```
+```java
 @Service
 public class JwtUtil {
 
@@ -343,7 +343,7 @@ public class JwtUtil {
 }
 ```
 2. Exclude the authenticate api which calls generatetoken inside
-```
+```java
 protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests().antMatchers("/authenticate")
                 .permitAll().anyRequest().authenticated();
@@ -352,7 +352,7 @@ protected void configure(HttpSecurity http) throws Exception {
 3. We wil get jwt token when we hit localhost:8080/authenticate. 
 4. then we need to pass JWT in header as key Authorization and value "Bearer tokenxxxxxxx".  
 5. Add jwt filter by extending OncePerRequestFilter. 
-```
+```java
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -393,7 +393,7 @@ public class JwtFilter extends OncePerRequestFilter {
 }
 ```
 6. Change the configure method , by passing the jwtfilter. 
-```
+```java
 	protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests().antMatchers("/authenticate")
                 .permitAll().anyRequest().authenticated()

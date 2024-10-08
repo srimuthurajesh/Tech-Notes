@@ -1,7 +1,7 @@
 > Template engine
 
 ### Depdendiceies
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -9,7 +9,7 @@
 ```
 
 #### Controller
-```
+```java
 package com.example.contact.controller;
 
 import org.springframework.stereotype.Controller;
@@ -50,7 +50,7 @@ public class ContactController {
 ```
 
 #### Template
-```
+```jsp
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>

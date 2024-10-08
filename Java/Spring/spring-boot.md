@@ -32,10 +32,10 @@
 
 
 ### CLI Commands:    
-```mvn spring-boot:run```    // only if maven locally installed  
-```mvnw spring-boot:run``` // if maven not installed   
-```mvn package``` 	// to make jar file in taget folder  
-```java -jar app.jar```  // to run jar file  
+`mvn spring-boot:run`    // only if maven locally installed  
+`mvnw spring-boot:run` // if maven not installed   
+`mvn package` 	// to make jar file in taget folder  
+`java -jar app.jar`  // to run jar file  
 
 ### Annotations:
 1. **@SpringBootApplication**  
@@ -94,7 +94,7 @@ We can use EntityManager:
 #### 2. via JPA api methods: support JPQL, persist(),find(),createQuery(),merge(),remove()   
 #### 3. via spring data JPA : create interface DAO and extends JpaRepository<Employee, Integer>     
 automatic implementation of deleteById(int empId), findAll(), save(Employee emp), findById();  
-```
+```java
 public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Integer> {
     /**
      *  
@@ -110,7 +110,7 @@ public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Intege
 a)add pom.xml spring-boot-starter-data-rest  
 b)create entity class Employee  
 c)create interface DAO and extends JpaRepository<Employee, Integer>     
-```
+```java
 @RespositoryRestResource(path="employees")   //usually plural lowercase of entity class  
 public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Integer> {
 ``` 
@@ -128,7 +128,7 @@ spring.data.rest.max-page-size=4       //only four pages allowed menas 40 record
 ### Spring Logging:
 SpringConreoller -> slf4j -> logback  
 
-```
+```java
 Logger log = LoggerFactory.getLogger(HelloController.class);  
 logger.info("it is log info");  
 

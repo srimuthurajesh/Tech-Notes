@@ -44,7 +44,7 @@ Note: we can refresh the cache using actuator
 ## API Gateway  - Routing  
 1. Starter pack - spring-cloud-zuul, spring-discovery-client, spring-web, actuator  
 2. Add Application.properties  
-```
+```java
 eureka.instance.preferIpAddress=true
 eureka.client.registerWithEureka=true
 eureka.client.fetchRegistry=true
@@ -56,7 +56,7 @@ spring.application.name=zuul-gateway
 
 ## Circuite Breaker  
 call RestTemplate via circuit breaker  
-```
+```java
 @Autowired
 private RestTemplate restTemplate;
 @Autowired

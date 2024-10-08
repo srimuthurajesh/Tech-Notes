@@ -28,7 +28,7 @@
 | @PatchMapping     | shortcut for @RequestMapping(method = RequestMethod.PATCH)            | Method  |
 
 
-```@RequestMapping(value = "/hello", method = RequestMethod.GET, params = "name", headers = "Content-Type=application/json",  consumes = "application/json", produces = "application/json", name = "HelloEndpoint")```
+`@RequestMapping(value = "/hello", method = RequestMethod.GET, params = "name", headers = "Content-Type=application/json",  consumes = "application/json", produces = "application/json", name = "HelloEndpoint")`
 
 
 ### 3. Exception handling. 
@@ -63,7 +63,7 @@
 
 ## Custom validator  
 1. Define annotation  
-```
+```java
 @Constraint(validatedBy = MyCustomValidator.class)
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
@@ -74,7 +74,7 @@ public @interface MyCustomConstraint {
 }
 ```
 2. Create the Validator Class  
-```
+```java
 public class MyCustomValidator implements ConstraintValidator<MyCustomConstraint, String> {
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
@@ -86,7 +86,7 @@ public class MyCustomValidator implements ConstraintValidator<MyCustomConstraint
 }
 ```
 3. Use annotation  
-```
+```java
  @NotNull
     @MyCustomConstraint
     private String myField;
@@ -100,7 +100,7 @@ public class MyCustomValidator implements ConstraintValidator<MyCustomConstraint
 
 **File upload:**
 
-```
+```java
 @POST
 @Consumes(MediaType.MULTIPART_FORM_DATA)
 public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,@FormDataParam("file") FormDataContentDisposition fileDetail){}
@@ -121,7 +121,7 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 
 **2. Configure web.xml**
 
-```
+```xml
 <web-app>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -156,7 +156,7 @@ public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStrea
 
 **2a.DispatcherServletInitializer.java** add pom.xml dependency servlet-api
 
-```
+```java
 public class DispatcherServletInitializer implments abstractAnnotationConfigDispatcherServletInitializer{
 	@Override
 	protected Class<?>[] getRootConfigClasses(){
@@ -175,7 +175,7 @@ public class DispatcherServletInitializer implments abstractAnnotationConfigDisp
 
 **3. Configure dispatcher-servlet.xml**
 
-```
+```xml
 <beans>
   <context:component-scan base-package="com.controller">
   <mvc:annotation-driven>
@@ -188,7 +188,7 @@ public class DispatcherServletInitializer implments abstractAnnotationConfigDisp
 
 **3a. DispatcherServlet.java**
 
-```
+```java
 @Configuration
 @EnableWebMvc //it is <mvc:annotaion-driven/>
 @ComponentScan(basePackages="org.myApp")
@@ -205,7 +205,7 @@ public class DispatcherServlet(){
 
 **4. Create controller class**
 
-```
+```java
 @Controller  
 public class HelloController {  
 @RequestMapping("/display")  
@@ -233,7 +233,7 @@ public class HelloController {
       
 **Model interface:**
 
-```
+```java
 public String display(Model m){
   m.addAllAttributes(Collection<?> arg);
   m.addAttribute("attributeName",attributeValue);
@@ -244,7 +244,7 @@ public String display(Model m){
 
 **ModelAndView class:**
 
-```
+```java
 public ModelAndView display(){
   ModelAndView m = new ModelAndView("pageName");
   m.addObject("objectName",objValue);
@@ -259,7 +259,7 @@ public ModelAndView display(){
 			it consists of @Component,@Target(value=TYPE),@Retention(value=RUNTIME),@Documented	
 2. **@RequestMapping** - handles http request and map to controler methods(or class) 
 
-```
+```java
 @RequestMapping(value={"/display","/show"})   //handles multiple url
 @RequestMapping(method = RequestMethod.GET)   //handles based on http get,post,delete,put,patch
 @RequestMapping()                             //handles default url
@@ -268,7 +268,7 @@ public ModelAndView display(){
 
 3. **@RequestParam** - get request parameters
 
-```
+```java
 @RequestMapping(value = "user") 
 String display(@RequestParam("id") String personId)       //id will come in post parameters
 String display(@RequestParam(value="id",required = false, defaultValue = "John") String personId)
@@ -276,7 +276,7 @@ String display(@RequestParam(value="id",required = false, defaultValue = "John")
 
 4. **@PathVariable** - extracts value from url
 
-```
+```java
 @RequestMapping(value = "user/{id}") 
 String display(@PathVariable("id") String personId)      
 ```
@@ -298,7 +298,7 @@ String display(@PathVariable("id") String personId)
 
 2. Configure Web Application Initializer:
 3. Create a class that extends AbstractAnnotationConfigDispatcherServletInitializer to replace web.xml.
-```
+```java
 public class DispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
@@ -319,7 +319,7 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
 ```
 3. Configure dispatcherservelet
-```
+```java
 @Configuration
 @EnableWebMvc // Equivalent to <mvc:annotation-driven/>
 @ComponentScan(basePackages = "com.controller") // Scans for components (e.g., @Controller)

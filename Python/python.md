@@ -48,7 +48,7 @@ Backslashes \ are used to insert special characters in a string.
 ### Variables:
 > name given to a memory location  
 
-```
+```python
 a=7
 print(a)
 ```
@@ -117,26 +117,26 @@ Note: Use type(object) to find the type of an object.   `type(object)`
 	
 ### Conditional Statements:  
 1. If
-```
+```python
 if 5 > 2:
     print("True")
 ``` 
 2. If else
-```
+```python
 if 5 > 2:
     print("True")
 else:
     print("False")
 ```
 2. If elif: 
-```
+```python
 if 5 > 2:
     print("True")
 elif 5 < 2:
     print("False")
 ``` 
 3. Switch:  
-```
+```python
 match response_code:
 	case 200:
 		print("OK")
@@ -148,19 +148,19 @@ match response_code:
    
 ### Loop Statements:
 1. For    
-```
+```python
 for n in lists:
 	print(n)	
 ```
 2. For else: else block execute when break used inside for  
 3. While
-```
+```python
 while counter < 10:  
 	counter = counter + 3  
 ```
 3. Loop control statement: break, continue, pass
 4. Range: starts from 0, increments by 1
-```
+```python
 for i in range(5):
 	print('printed {i}')
 ```
@@ -169,7 +169,7 @@ for i in range(5):
 ### Functions:
 > Functions in Python are defined using the def keyword:
 
-```
+```python
 def functionName(arg1,arg2=defaultVal):
 	#function body
 	return something
@@ -185,7 +185,7 @@ for code readability, no need arg order
 ## Class & Object:
 > classes define the blueprint for creating objects.
 
-```
+```python
 class ClassName:
 	num = 4
 	def __init__(self):
@@ -201,7 +201,7 @@ obj.add(3)	 			#accessing function
 > acquires properties from parent to child class
 
 Note: Python supports single and multiple inheritance.  
-```	
+```	python
 	class Parent():
 	class Child(Parent):	#child inherited parent	if overriding occurs, current class func overrides parent class function
 	class StepParent:
@@ -211,7 +211,7 @@ Note: Python supports single and multiple inheritance.
 ### Modules:
 >  allow you to organize code into separate files.
 
-```
+```python
 import my_module
 my_module.function_name()
 my_module.variable_name
@@ -235,26 +235,26 @@ Note: dir(myModule)				#print all functions available in that module
 6. b - Binary mode
 
 ### File reading	  
-```
+```python
 file = open('file.txt', 'rt')
 content = file.read()
 file.close()
 ```
 ### File Writing  
-```
+```python
 file = open('file.txt', 'w')
 file.write("New text")
 file.close()
 ```
 
 ### Using OS  
-```
+```python
 import os
 os.remove('file.txt')
 ```	
 
 ### Exception Handling:
-```
+```python
 	try:
 		number = int(input("What is your fav number?"))
 		print(18/number)
@@ -270,7 +270,7 @@ os.remove('file.txt')
 
 ### Multithreading:
 	
-```
+```python
 import threading
 class MyThread(threading.Thread):
     def run(self):
@@ -284,7 +284,7 @@ thread2.start()
 ```	
 
 ### Multiprocessing: 
-```
+```python
 import multiprocessing
 def my_function():
     print("Hello from process")
@@ -294,7 +294,7 @@ process1.start()
 process1.join()
 ```	
 ### Debugging:
-```
+```python
 	import logging
 	logging.debug('program starts')
 	logging.debug('program ends')	
@@ -310,14 +310,14 @@ itr = iter(obj)		#we can call next value by using   next(itr)
 ### Generator: 
 > simple way to create an iterator
 
-```
+```python
 	def gen():
 		yield "one"
 		yeild "two"
 	Now we can gen as iterator 	
 ```
 ### Commandline arguments:
-```
+```python
 	parser = argparse.ArgumentParser()
 	parser.add_arguement("firstargName")
 	args =parser.parse_args()
@@ -328,13 +328,13 @@ itr = iter(obj)		#we can call next value by using   next(itr)
 ### 1. Enumerate:
 The `enumerate()` function allows you to loop through a list while keeping track of the index position:
 
-```
+```python
 presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe", "Adams", "Jackson"]
 for num, name in enumerate(presidents, start=1):
     print(presidents[num])
 ```
 2. ZIP:
-	```	
+	```python	
 		colors = ["red", "green", "blue", "purple"]
 		ratios = [0.2, 0.3, 0.1, 0.4]
 		for color, ratio in zip(colors, ratios):
