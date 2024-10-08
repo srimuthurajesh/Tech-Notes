@@ -97,7 +97,8 @@
 3. Kube Proxy: Manages network routing and forwarding traffic between services.
 
 
-#### Kubectl commands:  
+#### Kubectl commands: 
+ 
 | Command                                      | Description                                                |
 |----------------------------------------------|------------------------------------------------------------|
 | `kubectl get pod`                            | Lists all pods in the current namespace.                    |
