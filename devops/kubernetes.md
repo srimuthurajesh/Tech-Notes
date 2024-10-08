@@ -98,18 +98,20 @@
 
 
 #### Kubectl commands:  
-kubectl get pod    
-kubectl get nodes  
-kubectl get deployment   
-kubectl create deployment nginx-depl --image=ngnix  
-kubectl get replicaset  
-kubectl edit deploymenet [deploymentName]     # will get aurogenerated config file for the deployment  
-kubectl logs [podName]   
-kubectl describe pod [podName]  # more informations like list of state changes  
-kubectl exec -it [podName] -- bin/bash  
-kuebectl delete deployment [deploymentName]  
-kubectl apply -f [yaml fileName]  
-kubectl delete -f [yaml fileName]  
+| Command                                      | Description                                                |
+|----------------------------------------------|------------------------------------------------------------|
+| `kubectl get pod`                            | Lists all pods in the current namespace.                    |
+| `kubectl get nodes`                          | Lists all nodes in the Kubernetes cluster.                  |
+| `kubectl get deployment`                     | Lists all deployments in the current namespace.             |
+| `kubectl create deployment nginx-depl --image=nginx` | Creates a new deployment with the specified image.  |
+| `kubectl get replicaset`                     | Lists all ReplicaSets in the current namespace.             |
+| `kubectl edit deployment [deploymentName]`   | Opens the auto-generated YAML configuration file of the deployment for editing. |
+| `kubectl logs [podName]`                     | Fetches the logs of the specified pod.                      |
+| `kubectl describe pod [podName]`             | Shows detailed information about a pod, including events and status changes. |
+| `kubectl exec -it [podName] -- /bin/bash`    | Opens an interactive shell session inside the container running in the pod. |
+| `kubectl delete deployment [deploymentName]` | Deletes the specified deployment.                           |
+| `kubectl apply -f [yaml fileName]`           | Applies a YAML configuration file to create/update resources. |
+| `kubectl delete -f [yaml fileName]`          | Deletes resources defined in the YAML configuration file.   |
 
 
 #### Yaml Configuration:  
