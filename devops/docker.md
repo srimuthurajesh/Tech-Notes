@@ -1,189 +1,263 @@
-## Docker  
-Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called container  
+# Docker
 
-Three layers in OS: 1.Hardware, 2.kernel 3.Application  
-ie:VM uses -> Hypervisor(virualization) which virualize kernel layer,   
-Docker uses -> dockerEngine(containerization) which virtualize OS Application layer     
+1. [Docker Overview](#docker-overview)
+5. [Docker Architecture](#docker-architecture)
+6. [Core Components](#core-components)
+7. [Docker Commands](#docker-commands)
+8. [Dockerfile](#dockerfile)
+9. [Docker Hub](#docker-hub)
+10. [Image Creation](#image-creation)
+11. [Building the Image](#building-the-image)
+13. [Docker Compose](#docker-compose)
+14. [Docker Volume](#docker-volume)
 
-**Theory:**   
-In linux os, two version of same software maintains by using Namespace & ControlGroups(cgroups)  
-likewise Docker engine these feature and perform containerization   
+## Docker Overview 
+> Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called container  
 
-**Docker Engine**: is a client-server application. 
-1. Server (Docker Daemons or dockerd, listens for Docker API requests and manages Docker objects )  
-2. REST API(over UNIX sockets or a network interface.)  
-3. CLI (docker commands uses docker API)  
+### OS Architecture
+1. Hardware Layer
+2. Kernel Layer
+3. Application Layer
 
-**Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub    
-**Container**: an instance of image or Runtime environment for image  
+## Virtualization Techniques:
+1. Virtual Machines (VMs) use a Hypervisor to virtualize the kernel layer.
+2. Docker uses Docker Engine to perform containerization at the application layer.
 
-## COMMANDS 
-### Docker options command
-  1. ```-v, --version```  : Print version information and quit
-  2. ```-D, --debug```    : Enable debug mode    
-  3. ```--help```         : Print usage  
-  4. ```--name```         : user defined name for container  Ex:docker run --name=rajCont redis:alpine  
-  5. ```-d```             : detached, means dont stop image and run container in background even after ctrl+c given  
-  6. ```-a```             : attached, for printing output  
-  7. ```-it```            : interactive terminal  
-  8. ```--name```         : can provide userdefined container name    
-  9. ```-e```             : Environment variable  
-  10. ```-p```            : Port outside and inside docker  
-  11. ```--net```         : network name where container need to run  
-  
-  
-#### Image Commands:  
-docker images                                                   # list all images present in our local machine  
-docker create [IMAGE] 	                                        # creates container layer over specified image, prints container_id   
-docker rmi [IMAGE]                                              # remove docker image  
-docker start [CONTAINER]                                        # start container  
-**Note:docker run = docker create + docker start**     
-docker run [IMAGE]   ```Ex: docker run busybox```               # get image from local or from dockerhub     
-docker run [IMAGE]:[VERSION]                                    # pull particular version of docker image    
-docker run [IMAGE] --name [userdefinedContainerName]            # we can provide name for container    
-docker run [IMAGE] [COMMAND]                                     ```Ex: docker run busybox /bin/sh```  
-docker run -it [CONTAINER] [COMMAND]                            # -i=allowInput, -t=beautify   or it= interactive terminal  
-docker run -a [CONTAINER] [COMMAND]                             # -a attached/foreground mode, Print output of the command  
-docker run -d [IMAGE]                                           # -d detached/background mode, means dont stop image and run container in background even after ctrl+c given   
-docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]          ```docker run -p 8080:8080 rajDock/redis```  
+## Key Concepts
+> In linux os, two version of same software maintains by using Namespace & ControlGroups(cgroups)  
 
-docker exec [CONTAINER] [COMMAND]                               # add command to already running container  
-docker exec -it [CONTAINER] /bin/bash                           # add command to already running container     
-docker exec -it [CONTAINER] bash  
+- likewise Docker engine use these feature and perform containerization   
+
+**Namespaces**: allowing multiple instances of the same software to run simultaneously without interference.
+**Control Groups** (cgroups): Manage resource allocation (CPU, memory, etc.) for containers.
+
+## Docker Architecture
+### Docker Engine
+> The Docker Engine is a client-server application that consists of:
+
+1. Server (Docker Daemon or dockerd): Listens for Docker API requests and manages Docker objects.
+2. REST API: Communicates over UNIX sockets or a network interface.
+3. Command Line Interface (CLI): Users interact with Docker using commands that call the Docker API.
+
+## Core Components
+1. **Image**: series of instructions(layers), executed from image's Dockerfile  eg.all artifacts in dockerhub    
+2. **Container**: an instance of image or Runtime environment for image  
+## Docker Commands
+
+### Docker Options Command
+
+| Command                        | Description                                                                |
+|-------------------------------|----------------------------------------------------------------------------|
+| `-v, --version`               | Print version information and quit                                          |
+| `-D, --debug`                 | Enable debug mode                                                          |
+| `--help`                      | Print usage information                                                    |
+| `--name`                      | User-defined name for the container. Example: `docker run --name=rajCont redis:alpine` |
+| `-d`                          | Detached mode: runs container in the background, even after `ctrl+c`     |
+| `-a`                          | Attached mode: prints output to the terminal                                 |
+| `-it`                         | Interactive terminal mode                                                   |
+| `-e`                          | Set environment variables                                                   |
+| `-p`                          | Maps ports from the host to the container                                   |
+| `--net`                       | Specifies the network where the container will run                         |
+
+### Image Commands
+
+| Command                                                | Description                                        |
+|-------------------------------------------------------|----------------------------------------------------|
+| `docker images`                                       | List all images present on the local machine      |
+| `docker create [IMAGE]`                               | Create a container layer over the specified image, printing the container ID |
+| `docker rmi [IMAGE]`                                  | Remove a Docker image                              |
+| `docker start [CONTAINER]`                            | Start the specified container                      |
+| `docker run [IMAGE]`                                  | Run an image from local or Docker Hub. Example: `docker run busybox` |
+| `docker run [IMAGE]:[VERSION]`                        | Pull a specific version of a Docker image         |
+| `docker run --name [CONTAINER] [IMAGE]`              | Run an image with a user-defined container name    |
+| `docker run [IMAGE] [COMMAND]`                        | Run a command in a new container                   |
+| `docker run -it [CONTAINER] [COMMAND]`                | Run a command in an interactive terminal           |
+| `docker run -a [CONTAINER] [COMMAND]`                 | Run a command in attached mode                      |
+| `docker run -d [IMAGE]`                               | Run a container in detached mode                   |
+| `docker run -p [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]` | Map host port to container port                   |
+| `docker exec [CONTAINER] [COMMAND]`                   | Execute a command in an already running container  |
+| `docker exec -it [CONTAINER] /bin/bash`               | Open a shell in the running container              |
+
+### Container Commands
+
+| Command                                   | Description                                          |
+|-------------------------------------------|------------------------------------------------------|
+| `docker ps`                               | Show running containers                              |
+| `docker ps -a` or `docker ps --all`     | Show history of all containers                       |
+| `docker start -a [CONTAINER]`            | Start and attach to the specified container          |
+| `docker --restart [CONTAINER]`           | Restart the specified container                      |
+| `docker stop [CONTAINER]`                | Gracefully stop a running container                  |
+| `docker kill [CONTAINER]`                | Forcefully stop a running container                  |
+| `docker pause [CONTAINER]`               | Pause a running container                            |
+| `docker unpause [CONTAINER]`             | Unpause a paused container                           |
+| `docker rm [CONTAINER]`                  | Remove a stopped container                           |
+| `docker attach [CONTAINER]`              | Attach to a running container's shell                |
+| `docker run [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]` | Map ports from host to container              |
+
+### Other Docker Commands
+
+| Command                                   | Description                                          |
+|-------------------------------------------|------------------------------------------------------|
+| `docker ps --all`                        | List all previously run containers                    |
+| `docker run --rm [CONTAINER]`            | Remove container after execution                      |
+| `docker system prune`                     | Remove stopped containers and unused resources       |
+| `docker inspect [CONTAINER]`             | Show low-level details about a container, like IP    |
+
+### Docker Network Commands
+
+| Command                                    | Description                                          |
+|--------------------------------------------|------------------------------------------------------|
+| `docker network ls`                        | List all networks                                    |
+| `docker network create [NETWORKNAME]`     | Create a new network                                 |
+| `docker network create --driver bridge [NETWORKNAME]` | Create a new network with a bridge driver     |
+
+### Docker Network Types
+
+1. **Closed/None/Null Network**: Not allowed to connect to external HTTP.
+2. **Bridge Network**: Default network for containers.
+3. **Host Network**: Open access to all host machine network connections.
+4. **Overlay Network**: Used for Docker Swarm mode, allowing communication between containers on different hosts.
+
+### Example Network Commands
+
+- Run a container with no network:  
+  `docker run -d --net none [CONTAINER]`
+
+- Show network details:  
+  `docker network ls`  
+  Example outputs:
+  1. `eth0` - Bridge private  
+  2. `lo`   - Loopback      
+
+- Connect a container to a specific network:  
+  `docker run --net [NETWORK_NAME] [CONTAINER]`  
+
+- Disconnect a container from a network:  
+  `docker network disconnect [NETWORK_NAME] [CONTAINER]`  
+
+- Run a container with the host network:  
+  `docker run --net host [CONTAINER]`  
 
 
-#### Container Commands:  
-docker ps  		                        # show running containers  
-docker ps -a  || docker ps --all      # show history of running containers  
-docker start -a [CONTAINER]           # start the given container id  
-docker start -a [CONTAINER]           # start container, -a attached for printing output  
-docker --restart [CONTAINER]          # restart container  
-docker stop [CONTAINER]               # trigger SIGTERM, thus cleanups happen, proper shutdown    
-docker kill [CONTAINER]               # trigger SIGKILL, instant shutdown. If stop command take morethan 10s then kill triggers   
-docker pause [CONTAINER]
-docker unpause [CONTAINER]
+## Dockerfile
+> A Dockerfile is a text file containing instructions to assemble a Docker image.  
 
+It consists of three main parts:  
+1. **Specify the Base Image**
+2. **Commands to Download, Copy, and Install Dependencies**
+3. **Startup Command**
 
+### Dockerfile Commands
 
-docker rm [CONTAINER]
+| Command                                | Description                                                  |
+|----------------------------------------|--------------------------------------------------------------|
+| `docker build [DOCKERFILE_PATH]`       | Build an image using the Dockerfile from the specified path, generating an image ID. |
+| `docker build -t [DOCKER_ID]/[PROJECT_ID]:[VERSION] [DOCKERFILE_PATH]` | Build an image with a customized name. Example: `docker build -t rajDock/redis:latest .` |
+| `docker run [IMAGE_NAME]`              | Run a container from the specified image (default version is latest). |
+| `docker commit -c 'CMD ["redis-server"]' [RUNNING_CONTAINER_ID]` | Create a new image from an existing running container.      |
 
-docker attach [CONTAINER]                 #enter into shell
-docker run [HOST_PORT]:[CONTAINER_PORT] [CONTAINER]
+### Example Dockerfile
 
-### Docker Other commands   
-docker ps --all                             #list all previously runned containers  
-docker run -rm [CONTAINER]                  #remove container after executing  
-docker system prune                         #remove stopped containers  
-docker inspect [CONTAINER]                  #low level details like IP  
-
-
-### Docker network commands  
-docker network ls                       #list the networks  
-docker network create [NETWORKNAME]                   # create new network   
-docker network create --driver bridge network_name    # create new network   
-
-**Docker network types**:
-1. closed/None/Null network - not allowed to connect outer http
-2. Bridge network
-3. Host network - open & access to all host machine network connection
-4. Overlay network - running docker in swarm mode
-
-
-docker run -d --net none [CONTAINER]  
-docker network ls                       #list the networks   
-                                        1.eth0 - bridge private   
-                                        2.lo   - loopback      
-docker run --net network_name [CONTAINER]  
-docker network diconnect network_name [CONTAINER]  
-
-docker run --net host [CONTAINER]  
-
-
-
-   
-### Dockerfile:   
-text file of commands to assemble image. consists three parts syntax    
-1. Specify base image
-2. Commands to download,copy,install dependency
-3. Startup command  
-
-### Dockerfile commands  
-docker build [DOCKERFILE_PATH]		#pick Dockerfile from given dir and build it. generate image_id   
-docker build -t [DOCKER_ID]/[PROJECT_ID]:[VERSION] [DOCKERFILE_PATH]   #give customized name for builded image    
-```docker build -t rajDock/redis:latest .```  
-docker run [IMAGE_NAME]     #version not needed, default version is latest  
-docker commit -c 'CMD ["redid-server"]' _running_container_id_     #it will build new image from existing running container  
-
+```dockerfile
+FROM node:alpine        # Alpine is a lightweight version of an image
+COPY ./ ./              # Copy files from the current directory to the container
+RUN apt-get update      # Update package index
+RUN npm install         # Install dependencies
+CMD ["npm", "start"]    # Command to run when the container starts
 ```
-#Dockerfile Example
-FROM node:alphine    #alphine is small size version of an image  
-COPY ./ ./  
-RUN apt-get update     
-RUN npm install  
-CMD ["npm start"]
-```
-**Dockerfile Instructions**:  
-1. FROM	-set base image  ex: ```FROM alphine```   
-2. RUN 	-executed when create container,executed on top of current image layer ex:```RUN apt-get update```    
-3. CMD 	-executed when run container. ex:```CMD echo 'hello world'```    
-4. ENTRYPOINT -same like CMD, but not ovverride by commandline command.  
-5. COPY	-copy files to container. COPY [FROM_PATH] [TO_PATH] ex:```COPY composer.json /.```   
-5. ADD - same as COPY, additionaly has copy from URL, extract tarFile    
-7. ENV		-set environment variable ex:```ENV name=rajesh``` ```ENV name rajesh``` ```ENV name=${arg1}```    
-8. EXPOSE 	-container listen to this port in runtime ex:```EXPOSE 80/tcp```  
-9. LABEL 	-add metadata to image ex:```LABEL description="this is cool"```  
-10. USER	-set username/usergroup . USER _user_[:_group_]    
-11. VOLUME 	-mount given dir as external mount from container  ex:```VOLUME /var/log/```    
-12. WORKDIR -set given path as initial working directory  ex:```WORKDIR /var/log/```  
-13. ONBUILD  
-14. STOPSIGNAL  
+
+### Dockerfile Instructions:
+
+| Instruction | Description                                                                 | Example                                      |
+|-------------|-----------------------------------------------------------------------------|----------------------------------------------|
+| `FROM`      | Set the base image.                                                         | `FROM alpine`                                |
+| `RUN`       | Executed during the image build process, on top of the current image layer. | `RUN apt-get update`                         |
+| `CMD`       | Command executed when the container starts.                                 | `CMD echo 'hello world'`                     |
+| `ENTRYPOINT`| Similar to CMD, but cannot be overridden by command line arguments.         | `ENTRYPOINT ["redis-server"]`                |
+| `COPY`      | Copy files from the host file system into the container.                    | `COPY composer.json ./`                      |
+| `ADD`       | Similar to COPY, but can also copy files from URLs and extract tar files.   | `ADD http://example.com/file.tar.gz ./`      |
+| `ENV`       | Set environment variables.                                                  | `ENV name=rajesh`                            |
+| `EXPOSE`    | container listens on the specified network ports at runtime.                | `EXPOSE 80/tcp`                              |
+| `LABEL`     | Add metadata to the image.                                                  | `LABEL description="this is cool"`           |
+| `USER`      | Specify the username or user group to use when running the image.           | `USER user:group`                            |
+| `VOLUME`    | Create a mount point with specified path and mark it as holding externally mounted volumes. | `VOLUME /var/log/`           |
+| `WORKDIR`   | Set the working directory for any subsequent instructions.                  | `WORKDIR /var/log/`                          |
+| `ONBUILD`   | Adds a trigger instruction to image that will be executed at a later time.  | `ONBUILD RUN echo "This runs on build"`      |
+| `STOPSIGNAL`| Sets the system call signal that will be sent to the container to stop it.  | `STOPSIGNAL SIGKILL`                         |
 
 
-**Docker hub:**  
-docker login --username=rajesh  
-docker pull username/imageName  
-docker push username/imageName  
-docker tag user/image:tag user/image:newtag         #add new tag to image  
-docker search searchterm    
 
 
-**Image creation**  
-Way 1: ```docker commit container_id imagename:tag```  
-Way 2: create Dockerfile  
-```
+## Docker hub:
+> cloud-based registry service for sharing and managing Docker image
+
+| Command                                    | Description                                   |
+|--------------------------------------------|-----------------------------------------------|
+| `docker login --username=rajesh`          | Log in to Docker Hub with the specified username. |
+| `docker pull username/imageName`           | Pull an image from Docker Hub to your local machine. |
+| `docker push username/imageName`           | Push an image from your local machine to Docker Hub. |
+| `docker tag user/image:tag user/image:newtag` | Add a new tag to an existing image.             |
+| `docker search searchterm`                 | Search for images on Docker Hub using the specified search term. |
+
+
+## Image creation  
+### Two Ways to Create an Image
+
+1. Using docker commit:  
+- To create an image from a running container, use the command:
+
+`docker commit <container_id> <image_name>:<tag>`
+
+2. Using a Dockerfile:
+- Create a Dockerfile with the following commands:
+
+```dockerfile
 FROM debian:jessie
 RUN apt-get update
 COPY abc.txt /src/abc.txt
 ADD abc.txt /src/abc.txt
 WORKDIR /src
 USER admin
-CMD["initial command"]
+CMD ["initial command"]
 ```
-Docker build
-```
-docker build -t image_name
-docker build -t image_name --no-cache=true
-```
-**Docker link**: ```docker run --link redis container_id```
+
+## Building the Image
+> To build an image from a Dockerfile, use the following command:
+
+`docker build -t <image_name>`
+ .
+- If you want to rebuild the image without using the cache, use:
+
+`docker build -t <image_name> --no-cache=true`
+
+### Linking Containers
+> To link a container to another (e.g., a Redis container), use:
+
+`docker run --link redis <container_id>`
+
 
 ## Docker-compose
-docker-compose -f [YMLFILENAME] up   
-docker-compose -f [YMLFILENAME] down  
+> tool that simplifies the process of defining and running multi-container Docker applications. 
 
-docker-compose start  
-docker-compose stop  
-docker-compose pause  
-docker-compose unpause  
-docker-compose build          #rebuild all image  
+- manage services, networks, and volumes in a single file, typically named `docker-compose.yml`.
 
-#log  
-docker logs -f [CONTAINERID]  
-docker logs -f [CONTAINERNAME]  
-docker-compose ps  
-docker-compose log [CONTAINER]  
+| Command                               | Description                            |
+|---------------------------------------|----------------------------------------|
+| `docker-compose -f [YMLFILENAME] up`  | Start services defined in YML file     |
+| `docker-compose -f [YMLFILENAME] down`| Stop and remove services               |
+| `docker-compose start`                | Start existing services                |
+| `docker-compose stop`                 | Stop running services                  |
+| `docker-compose pause`                | Pause services                         |
+| `docker-compose unpause`              | Resume paused services                 |
+| `docker-compose build`                | Rebuild all images                     |
+| `docker logs -f [CONTAINERID]`        | View logs for specific container       |
+| `docker logs -f [CONTAINERNAME]`      | View logs using container name         |
+| `docker-compose ps`                   | List running services                  |
+| `docker-compose log [CONTAINER]`      | Show logs for a specific service       |
 
-**docker-compose.yml:**  
-```
+
+### docker-compose.yml  
+```yaml
 version: '3'
 
 services:
@@ -204,8 +278,20 @@ services:
     volumes:
      - .db-data
  ```
+### Explanation
+- version: Specifies the version of the Docker Compose file format.
+- services: Defines the services (containers) that will be created.
+  - mongodb: The name of the service.
+    - image: Specifies the Docker image to use for the service.
+    - ports: Maps the container port to the host port.
+    - environment: Sets environment variables for the container.
+    - volumes: Defines volume mappings for persistent data storage.
+    - build: Indicates that the service should be built from a Dockerfile located in the specified context.
 
 ## Docker Volume  
-1. Host Volume: docker run -v [HOST_DIR]:[CONTAINER_DIR] [CONTAINER]  
-2. Anonymous Volume: docker run -v [CONTAINER_DIR] [CONTAINER]  
-3. Named Volumne: docker run -v [ANYNAME]:/[CONTINER_DIR]   
+
+| Volume Type     | Command Example                                         | Description                                 |
+|-----------------|---------------------------------------------------------|---------------------------------------------|
+| **Host Volume** | `docker run -v [HOST_DIR]:[CONTAINER_DIR] [CONTAINER]`  | Useful for sharing files between the host and container. |
+| **Anonymous Volume**  | `docker run -v [CONTAINER_DIR] [CONTAINER]`       | Automatically managed by Docker; less control over storage. |
+| **Named Volume**| `docker run -v [ANYNAME]:[CONTAINER_DIR] [CONTAINER]`   | Creates a named volume for easier data management. |

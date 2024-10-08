@@ -54,7 +54,7 @@
 | Amend only the commit message         | `git commit --amend -m "new message"`         |
 
 
-### Difference Viewing:
+### Difference Viewing:  
 
 | Description                           | Command                                       |
 | ------------------------------------- | --------------------------------------------- |
@@ -132,7 +132,7 @@ The reset command moves the branch pointer and optionally modifies the working d
 | Show a tag    |  `git show tagname`               | 
 | Delete a tag  |  `git tag -d tagname`             | 
 
-### Remote Operations:
+### Remote Operations:  
 
 | Description                           | Command                                               |
 | ------------------------------------- | ----------------------------------------------------- |
