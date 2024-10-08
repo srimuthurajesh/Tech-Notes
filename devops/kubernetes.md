@@ -32,10 +32,10 @@
 
 ### Additional Concepts:
 
-| **Term** | **Description**                                                                 |
-|----------|---------------------------------------------------------------------------------|
-| Minikube | A single-node Kubernetes cluster used for local development and testing.        |
-| Kubectl  | The command-line interface (CLI) tool used to interact with Kubernetes clusters. |
+| **Term**     | **Description**                                                                 |
+|--------------|---------------------------------------------------------------------------------|
+| **Minikube** | A single-node Kubernetes cluster used for local development and testing.        |
+| **Kubectl**  | The command-line interface (CLI) tool used to interact with Kubernetes clusters. |
 
 
 ## Key Kubernetes Concepts:
