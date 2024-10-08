@@ -2,7 +2,7 @@
 ## Programming Languages
    1. [Java](Java)  
    2. [JavaScript](JavaScript)  
-   3. [Python](Python)  
+   3. [Python](Python/python.md)  
 
 ## Frameworks
    1. [Spring](Java/Spring)
