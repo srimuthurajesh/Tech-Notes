@@ -1,7 +1,5 @@
 # Git  
 
-# Git Notes Index
-
 1. [Introduction](#Introduction)
 2. [Checking Git Version](#checking-git-version)
 3. [Git Configuration](#git-configuration)

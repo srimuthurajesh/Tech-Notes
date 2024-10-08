@@ -202,5 +202,6 @@ spec:
       - containers: Describes the container inside each Pod.
         - name: The name of the container (my-nginx).
         - image: The Docker image to be used (nginx).
-        - ports: Exposes port 80 for the container.
+        - ports: Exposes port 80 for the container.  
+
 **Summary**: This YAML file defines a Deployment that will ensure 2 replicas (copies) of a Pod running an Nginx web server are always up and running. It also allows for easier updates and scaling of Pods.
