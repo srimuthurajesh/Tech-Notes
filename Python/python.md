@@ -103,15 +103,15 @@ Note: Use type(object) to find the type of an object.   `type(object)`
 
 |  Other Operators		| Symbols  					|  
 |-----------------------|-------------------------------|  
-| Arithmetic Operator  	| ** + - * / % ** // **  	|  
-| Relational Operator  	| ** <, <=, >, >=, ==, != ** |  
-| Logical Operator  	| ** and, or, not **  		|  
-| Assignment Operator  	| ** a += 4 **  			|  
+| Arithmetic Operator  	| **+ - * / % ** //**  	|  
+| Relational Operator  	| **<, <=, >, >=, ==, !=** |  
+| Logical Operator  	| **and, or, not**  		|  
+| Assignment Operator  	| **a += 4**  			|  
 | Inc and Dec Operator  | Not supported		  		|
 | Tenary Operator		| 'kid' if age < 18 else 'adult'|
-| Identity Operator  	| ** is, is not **  		|  
-| Bitwise Operator 		| ** &, <<, >>, >>> **  	|  
-| Membership operators  | ** in, not in **  		|
+| Identity Operator  	| **is, is not**  		|  
+| Bitwise Operator 		| **&, <<, >>, >>>**  	|  
+| Membership operators  | **in, not in**  		|
 | Walrus Operator		| print(my_var:="Hello")	|
 
 	
