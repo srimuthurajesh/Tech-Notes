@@ -48,7 +48,7 @@
 2. how to run: `java myppack.javafilename`         
 
 ## Basic Java program
-``` 
+```java 
 import java.util.Scanner ;
 class Hello{
   public static void main(String[]args){
@@ -93,7 +93,7 @@ class Hello{
 	print without new line: `System.out.print("Hellow world");`  
 2. Input
 
-```
+```java
 import java.util.Scanner;
 public static void main(String[] args){
 	Scanner scanner = new Scanner(System.in);
@@ -155,12 +155,12 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 | Special Operator  	| `instanceof, (.)`  			|  
 | Unary Operator  		| `~, !`  						|    
 
-```
+```java
 int a=10; int b=-9;  
 System.out.println(~a);//-11 (minus of total positive value which starts from 0)    
 System.out.println(~b);//9 (positive of total minus, positive starts from 0)   
 ```  
-Arithmetic operator order: ```System.out.println(10*10/5+3-1*4/2);```  is 21  
+Arithmetic operator order: `System.out.println(10*10/5+3-1*4/2);`  is 21  
 Left shift operator: `10 << 2 is 10 * 2^2 = 40`  
 Right shift operator: `10 >> 2 is 10 / 2^2 = 2`    , when negative number it will -2
 Bitwise operator & : (a>1&b<3) second condition also been check, where && wont go to second condition   
@@ -231,9 +231,9 @@ Note: long float double and custom classes cannot be use in switch
 5. StringBuilder - mutable, no thread safe, efficient  
 
 ### String comparision:    
-1. ```s1.equals(s2);```  check for each char are same or not   
-2. ```s1==s2;```  check address is same or not  
-3. ```s1.compareTo(s2);``` compare string lexicographically. ie <0,>0  
+1. `s1.equals(s2);`  check for each char are same or not   
+2. `s1==s2;`  check address is same or not  
+3. `s1.compareTo(s2);` compare string lexicographically. ie <0,>0  
 
 ### String methods:
 1. `charAt(int index)`
@@ -268,7 +268,7 @@ Note: we can call static using obj also.
 ## Final:  
 > assigned only once, cannot modify once it assigned
 
-1. final variable - cannot changed  ```final int maxSpeed =100;```
+1. final variable - cannot changed  `final int maxSpeed =100;`
 2. final method - cannot overriden 
 3. final class - cannot extend, immutable   
 Note: finalize() - called just before an object is garbage collected. overrides to dispose system resources, perform clean-up, minimize memory leaks.
@@ -281,7 +281,7 @@ Note: if it is declared as private inside a class, it can be redeclare in anothe
 ## Enum:  
 > group of constant( final,static)
 
-```
+```java
 enum Level { LOW, MEDIUM, HIGH }
 Level myVar = Level.MEDIUM;
 ```
@@ -314,12 +314,12 @@ Note: we can use fully qualified name.
 - generics support only object
 
 1. **Autoboxing**: primitive into wrapper- it uses cache value
-``` 
+```java
 int j=1;
 Integer i = Integer.valueof(j);  or Integer i =j;
 ```
 2. **Unboxing**: wrapper into primitive
-```
+```java
  Integer i = new Integer(7);
  int = i.intValue();  or  int j=i;
  ```
@@ -328,7 +328,7 @@ Integer i = Integer.valueof(j);  or Integer i =j;
 > parameterized types
 
 Adv: 1.Type safety, 2.Typecast not needed, 3.Compilertime checking  
-```
+```java
 class MyGen<T>{  
 	T obj;  
 	void add(T obj){this.obj=obj;}  
@@ -342,7 +342,7 @@ class MyGen<T>{
 Note: it is gonna depreacted not recommended due to security vulnerablities.   
 Data exchange formats: JSON, XML. these are alternatives for native serialization. 
 
-```
+```java
 FileOuputStream file = new FileOutputStream(filename);
 ObjectOuputStream out = new ObjectOuputStream(file);
 out.writeObject(object); out.close(); file.close();
@@ -365,7 +365,7 @@ Stream: series/flow of data.
 3. Delete file - fileObj.delete(). 
 4. Write file - fileWriterObj.write(). 
 5. Read file -  
-```
+```java
 Scanner scanner = new Scanner(fileObj);  
 while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }  
 ```  
@@ -376,7 +376,7 @@ while (scanner.hasNextLine()) {  System.out.println(dataReader.nextLine());  }
 1. Checked expception - checked at compile time. ex: ioexception, sqlexception, FileNotFoundException   
 2. Unchecked exception - not checked at compile time. ex:nullpointerexception  
 3. Error - OutOfMemory, StackOverFlow.  
-```
+```java
 try {
     throw new Exception("Custom exception message");        
 } catch (Exception e) {
@@ -391,7 +391,7 @@ try {
 **Throws** :  indicates caller functions of that method  to handling that exception.  void methodName throws Exception{ }
 
 **Custom Exception class**
-```
+```java
 class InvalidAgeException extends Exception{  
  InvalidAgeException(String s){  
   super(s);  
@@ -431,7 +431,7 @@ class InvalidAgeException extends Exception{
  - @Documented - ensure class is available in javadoc
 
 ### Custom annotation
-```
+```java
 //optional- specifies where annotation can be applied
 @Target(ElementType.METHOD) 
 //optional- SOURCE, CLASS, RUNTIME // specify where it is accessible
