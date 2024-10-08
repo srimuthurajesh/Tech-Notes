@@ -14,16 +14,16 @@
 > gateway for all requests, responsible for authentication and communication.
 
 #### 2. etcd storage: 
-> A key-value store that holds cluster state information and is used by Kubernetes components for coordination.
+> key-value store that holds cluster state information.
 
 #### 3. kube-controller-manager: 
-> Monitors the cluster state and ensures that the desired state is maintained (e.g., replication, node management).
+> Monitors the cluster state 
 
 #### 4. cloud-controller-manager: 
-> Manages cloud-specific operations (like load balancing, storage) for Kubernetes clusters running in cloud environments.
+> Manages cloud-specific operations (like load balancing, storage) while running in cloud environments.
 
 #### 5. kube-scheduler: 
-> Decides on which node a new pod should be scheduled based on resource availability and constraints.
+> Decides on which node a new pod should be scheduled based on resource availability
 
 
 ### Node Components:
@@ -114,8 +114,8 @@
 | `kubectl delete -f [yaml fileName]`          | Deletes resources defined in the YAML configuration file.   |
 
 
-#### Yaml Configuration:  
-1. Pod Configuration:
+### Yaml Configuration:  
+#### 1. Pod Configuration:
 
 ```
 apiVersion: v1
@@ -131,6 +131,19 @@ spec:
     ports:
     - containerPort: 80
 ```
+##### Explanation:
+- apiVersion: Specifies the version of the Kubernetes API (v1). This is the stable version for core objects like Pods.
+- kind: Defines the type of object you're creating, in this case, a Pod.
+- metadata: Provides identifying information for the Pod.
+  - name: The name of the Pod (nginx).
+  - labels: Key-value pairs that help in organizing and selecting the Pod (name: nginx).
+- spec: Specifies the desired state of the Pod.
+  - containers: This section defines the containers that will run in this Pod.
+    - name: The container’s name (nginx).
+    - image: The Docker image to use (nginx), which pulls the official Nginx container image from a registry.
+    - ports: The port that the container will expose (80), which is the standard HTTP port for web servers.
+
+**Summary**: This YAML file defines a Pod named nginx that runs an Nginx web server container, exposing port 80.
 
 2. Service Configuration:
 
