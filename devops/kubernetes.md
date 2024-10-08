@@ -10,8 +10,7 @@
 
 ## Components of k8s:
 ### Master Components:
-#### 1. kube-apiserver: 
-> gateway for all requests, responsible for authentication and communication.
+1. **kube-apiserver**: - gateway for all requests, responsible for authentication and communication.
 
 #### 2. etcd storage: 
 > key-value store that holds cluster state information.
@@ -98,7 +97,7 @@
 
 
 #### Kubectl commands: 
- 
+
 | Command                                      | Description                                                |
 |----------------------------------------------|------------------------------------------------------------|
 | `kubectl get pod`                            | Lists all pods in the current namespace.                    |
@@ -133,20 +132,20 @@ spec:
     - containerPort: 80
 ```
 ##### Explanation:
-- apiVersion: Specifies the version of the Kubernetes API (v1). This is the stable version for core objects like Pods.
-- kind: Defines the type of object you're creating, in this case, a Pod.
-- metadata: Provides identifying information for the Pod.
-  - name: The name of the Pod (nginx).
+- apiVersion: Specifies the version of the Kubernetes API (v1)
+- kind: Defines type of object
+- metadata: Provides information for the Pod.
+  - name: name of the Pod (nginx).
   - labels: Key-value pairs that help in organizing and selecting the Pod (name: nginx).
 - spec: Specifies the desired state of the Pod.
   - containers: This section defines the containers that will run in this Pod.
     - name: The container’s name (nginx).
-    - image: The Docker image to use (nginx), which pulls the official Nginx container image from a registry.
-    - ports: The port that the container will expose (80), which is the standard HTTP port for web servers.
+    - image: docker image name.
+    - ports: The port that the container will expose (80).
 
 **Summary**: This YAML file defines a Pod named nginx that runs an Nginx web server container, exposing port 80.
 
-2. Service Configuration:
+#### 2. Service Configuration:
 
 ```
 apiVersion: v1
@@ -162,8 +161,22 @@ spec:
   selector:
     run: my-nginx
 ```
+##### Explanation:
+- apiVersion: The API version for core objects, still v1.
+- kind: Specifies this object as a Service.
+- metadata: Identifying information for the service.
+  - name: The name of the Service (my-nginx).
+  - labels: Labels associated with the service (run: my-nginx).
+- spec: The specification for the service.
+  - ports: Defines which port the service should expose.
+    - port: The port that will be exposed to the outside world (80).
+    - protocol: The communication protocol used (TCP), which is the standard for web traffic.
+  - selector: Selects Pods based on their labels, in this case, any Pod with the label run: my-nginx.
 
-3. Deployment Configuration:
+**Summary**: This YAML file defines a Service that exposes port 80 using TCP and directs traffic to Pods with the label run: my-nginx. It acts as a load balancer or a gateway for external traffic to reach the Pods.
+
+
+#### 3. Deployment Configuration:
 
 ```
 apiVersion: apps/v1
@@ -189,3 +202,21 @@ spec:
         - containerPort: 80
 
 ```
+##### Explanation:
+- apiVersion: The version for managing applications (apps/v1).
+- kind: Defines this as a Deployment object, which helps manage and scale Pods.
+- metadata: Contains identifying information for the deployment.
+  - name: The name of the Deployment (nginx-deployment).
+  - labels: Labels for organizational purposes (run: my-nginx).
+-  spec: The specification for the deployment.
+  - replicas: The desired number of Pod replicas (2 Pods will be created).
+  - selector: Specifies which Pods this deployment will manage, by matching labels.
+    - matchLabels: The label used to identify and manage the Pods (run: my-nginx).
+  - template: Defines the Pod template that the deployment will use to create Pods.
+    - metadata: The metadata for Pods created by this deployment (with the label run: my-nginx).
+    - spec: Describes the containers that will run inside each Pod.
+      - containers: Describes the container inside each Pod.
+        - name: The name of the container (my-nginx).
+        - image: The Docker image to be used (nginx).
+        - ports: Exposes port 80 for the container.
+**Summary**: This YAML file defines a Deployment that will ensure 2 replicas (copies) of a Pod running an Nginx web server are always up and running. It also allows for easier updates and scaling of Pods.
