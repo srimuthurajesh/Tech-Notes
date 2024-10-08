@@ -143,7 +143,7 @@ functionName();    //function calling
 #### Closure
 > closure can remember environment variables in which it was created, allowing it to access variables from that scope even after the outer function has finished executing.
 
-```
+```js
 function outerFunction() {
     let outerVariable = "I'm from outer scope!";
     function innerFunction() {
@@ -158,7 +158,7 @@ closureFunc(); // Logs: I'm from outer scope!
 let functionName = (parameter)=>{...function body..…};
 it does not have its own this object. 
 eg:     
-```
+```js
 var obj = {name:"rajesh",
     getName: function(){ (function(){console.log(this.name)})();  },
     getNameArrow: function(){ (()=>{console.log(this.name)})(); }
@@ -174,7 +174,7 @@ obj.getName();            //undefined
 
 #### Spread Operator(rest parameters)
 
-```
+```js
 function bigNum(a,b, ...argArray){
     //a=1,b=2,arrgArray is an array[3,4,5]
 }
@@ -185,15 +185,15 @@ console.log(...a);    //1 2 3
 We can combine two arrays. A=[3,4,5];b=[1,2]; a.push(...b); instead of // Array.prototype.push.apply(a,b);  
 
 Note: this operator also use for shallow copy(only first level not applicable for nested objects)  
-```
+```js
 var a={name:'UST', age:17};
 var b= {...a}; //shallow/new copy
 b.age = 18; console.log(a.age);//17
 ```
 
 ### Object:  
-1. via constructor ```let user = new Object();```  
-2. via literal ```let user = {};```    
+1. via constructor `let user = new Object();`  
+2. via literal `let user = {};`    
 delect user ;    //to delete the object    
 - {} means each time new reference allocated  
 - can use object key with text, but need to use quotes  
@@ -212,7 +212,7 @@ eg. str = new String("rajeh"); str.test=5; console.log(str.test);//undefined
 
 ### Class
 Es6
-```
+```js
 function Cricketer(name,age,position){
       this.name=name; this.age=age; this.position=position;
  }
@@ -224,7 +224,7 @@ console.log(cricketer);
 crickter.changePosition("bowler");
 console.log(crickter);
 ```
-```
+```js
 class Cricketer {
     constructor(name,age,position){
         this.name=name;this.age=age;this.postion=position;
@@ -243,9 +243,9 @@ console.log(cricketer);
 These methods are useful for controlling the value of this within a function  
 var obj = {num:2};    
 var func=function(a,b){ console.log(this.num+a+b);}  
-```func.call(obj,1,2);```  //**call** allows you to explicitly set the context (the value of this)   
-```func.apply(obj,[1,2]);```  //**apply** same like call but get arguments as array  
-```var bound = func.bind(obj);```     bound(1,2);   //**bind** unlike call,apply it won't immediately invoke, instead return a function  
+`func.call(obj,1,2);`  //**call** allows you to explicitly set the context (the value of this)   
+`func.apply(obj,[1,2]);`  //**apply** same like call but get arguments as array  
+`var bound = func.bind(obj);`     bound(1,2);   //**bind** unlike call,apply it won't immediately invoke, instead return a function  
 
 Note: Arrow functions (=>) in JavaScript do not have their own this binding and do not have call, apply, or bind methods.
 
@@ -255,7 +255,7 @@ Note: Arrow functions (=>) in JavaScript do not have their own this binding and 
     oldObj = {this.name:"rajesh"}  
     Object.create(oldObj);    //create obj {_proto_:this.name:rajesh………}
 eg:
-```
+```js
 var Car = function(){ this.color='red'; }
 Car.prototype.getColor=function(){ return this.color; }
 var ToyCar = function(){ };
@@ -269,7 +269,7 @@ let sayHiMixin = { __proto__: anotherObject}  //but we should nor use __proto__ 
 
 #### Object.setPrototypeOf: 
 - same like object create but it works for simple{} object literal not function constructor
-```
+```js
     var obj1 = {drive:function(){return ‘i can drive’;},    walk:function(){return ‘i can walk’;}};
     var obj2 = { drive(){return super.drive();}}
     Object.setPrototypeOf(obj2.obj1);    //obj1 will get obj1 as a prototype 
@@ -279,7 +279,7 @@ let sayHiMixin = { __proto__: anotherObject}  //but we should nor use __proto__ 
 
 #### Object .assign: 
 - copy and append object to existing(given) object
-```
+```js
     var obj1 = {color:’red’};
     var obj2={}; Object.assign(obj2,obj1);     //1st way to assign
     var obj3 = Object.assign({}.obj1);    //another way to assign
@@ -290,7 +290,7 @@ let sayHiMixin = { __proto__: anotherObject}  //but we should nor use __proto__ 
 ## Collections
 ### Sets: 
 collection of unique values   
-```
+```js
     var mySet = new Set();
     mySet.add(1).add(2).delete(1).clear();;
     var mySet = new Set([1,2,3,5,4,4,4,4,4]);    //mySet is 1,2,3,4
@@ -302,14 +302,14 @@ can convert Sets to array:     console.log([..new Set([1,2,2,3])]);
 
 ### WeakSets:  
 can have only as objects   
-```
+```js
 var myWeakSet = new WeakSet([{a:1},{b:2}]);
 myWeakSet.add(1);    //throw error
 myWeakSet.add({a:1});
 ```
 ### Maps: 
 can have more than one object key
-```
+```js
 var myMap = new Map();
 myMap.set(a,’a’).set(b:’b’).set(a:’c’).delete(b);
 for(let [key,value] of myMap.entries()){
@@ -317,7 +317,7 @@ for(let [key,value] of myMap.entries()){
 }
 ```
 #### Methods:     
-```
+```js
     new Map();
     map.set(key,value)
     map.get(key)
@@ -328,7 +328,7 @@ for(let [key,value] of myMap.entries()){
 ```
 ### Class constructor:
 Super constructor  
-```
+```js
 class Car{
    construct(arg){}
    func1(){}
@@ -343,7 +343,7 @@ var obj = new Car(arg);
 > object represents result of asynchronous operation, 
 allowing you to handle success or failure once the operation is complete. 
 
-```
+```js
 var promise = new Promise(function(resolve,reject){
     setTimeout(function(){ 
     success=true;
@@ -357,7 +357,7 @@ promise.all([promise1, promise2….promisen]);
 ```
 
 ### Async Await::
-```
+```js
 var promise1 = new Promise((resolve,reject)=>{setTimeout(resolve("rajesh"),3000);});  
 var promise2 = new Promise((resolve,reject)=>{setTimeout(resolve("23"),3000);});  
 var promise3 = new Promise((resolve,reject)=>{setTimeout(resolve("not a bad guy"),3000);});  
@@ -389,9 +389,9 @@ console.log(generator.next());            //{value:3,done:false}
 console.log(generator.next());            //{value:undefined,done:true}  
 
 ### Errors:
-1. Syntax error-   eg. ```Unexpected token```
-2. Reference error eg. ```a is not defined```
-3. Type error      eg. ```a is not a function```
+1. Syntax error-   eg. `Unexpected token`
+2. Reference error eg. `a is not defined`
+3. Type error      eg. `a is not a function`
                     
 ### Event Bubbling:  
 event listeners fires not only on single element, but also fires from all its Dom parents  
@@ -401,7 +401,7 @@ event listeners fires not only on single element, but also fires from all its Do
 ## Error Handling
 > manage error gracefully
 
-```
+```js
 try {
   let result = someFunction();
 } catch (error) {
