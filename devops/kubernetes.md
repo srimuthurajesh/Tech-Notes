@@ -4,17 +4,15 @@
 - developed by Google 
 
 ### Key featues
-1. **Resilient Infrastructure**: Ensures application availability through automatic scaling, health checks, and failover.
-2. **Zero-Downtime Deployment**: Facilitates smooth rollouts and automatic rollbacks during updates.
+1. **Resilient Infrastructure**: Ensures availability through automatic scaling, health checks, failover.
+2. **Zero-Downtime Deployment**: smooth rollouts and automatic rollbacks during updates.
 3. **Self-Healing**: Automatically handles tasks like container placement, restarts, replication, and scaling based on metrics.
-
-
-- provides resiliant infrastrcuture, zero downtime deployment, automatic rollback, scalling  
-- provides self healing which consists of auto-placement, auto-restart, auto replication and scaling of container based on metrics       
 
 ## Components of k8s:
 ### Master Components:
-1. kube-apiserver: The gateway for all requests to the Kubernetes cluster, responsible for authentication and communication.
+#### 1. kube-apiserver: 
+> The gateway for all requests to the Kubernetes cluster, responsible for authentication and communication.
+
 2. etcd storage: A key-value store that holds cluster state information and is used by Kubernetes components for coordination.
 3. kube-controller-manager: Monitors the cluster state and ensures that the desired state is maintained (e.g., replication, node management).
 4. cloud-controller-manager: Manages cloud-specific operations (like load balancing, storage) for Kubernetes clusters running in cloud environments.
@@ -66,6 +64,7 @@ kubectl delete -f [yaml fileName]
 
 #### Yaml Configuration:  
 1. Pod Configuration:
+
 ```
 apiVersion: v1
 kind: Pod  
@@ -80,6 +79,7 @@ spec:
     ports:
     - containerPort: 80
 ```
+
 2. Service Configuration:
 
 ```
@@ -96,7 +96,9 @@ spec:
   selector:
     run: my-nginx
 ```
-4. Deployment Configuration:
+
+3. Deployment Configuration:
+
 ```
 apiVersion: apps/v1
 kind: Deployment  
