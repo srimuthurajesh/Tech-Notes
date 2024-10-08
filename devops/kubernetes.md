@@ -10,19 +10,12 @@
 
 ## Components of k8s:
 ### Master Components:
+
 1. **kube-apiserver**: - gateway for all requests, responsible for authentication and communication.
-
-#### 2. etcd storage: 
-> key-value store that holds cluster state information.
-
-#### 3. kube-controller-manager: 
-> Monitors the cluster state 
-
-#### 4. cloud-controller-manager: 
-> Manages cloud-specific operations (like load balancing, storage) while running in cloud environments.
-
-#### 5. kube-scheduler: 
-> Decides on which node a new pod should be scheduled based on resource availability
+2. **etcd storage**: key-value store that holds cluster state information.
+3. **kube-controller-manager**: Monitors the cluster state 
+4. **cloud-controller-manager** : Manages cloud-specific operations (like load balancing, storage) while running in cloud .
+5. **kube-scheduler**: Decides on which node a new pod should be scheduled based on resource availability
 
 
 ### Node Components:
