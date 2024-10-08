@@ -36,54 +36,26 @@
 
 
 ## Key Kubernetes Concepts:
-#### 1. Pod:  
-> The smallest deployable unit in Kubernetes, encapsulating one or more containers, storage resources, network identities, and configuration.  
 
-#### 2. Service:  
-> Exposes a pod or a set of pods to the network with a stable IP address. Services also act as load balancers to distribute traffic between pods.
-
-- ConfigMap: A file containing configuration data that can be used by pods.
-- Secret: Similar to a ConfigMap but used for storing sensitive information (e.g., passwords) in a base64-encoded format.
-
-#### 3. Deployment:
-> Describes the desired state of pods and replica sets in a YAML file, allowing you to manage scaling and updates.
-
-#### 4. ReplicaSet
-> Ensures a specified number of pod replicas are running at all times.
-
-#### 5. StatefulSet
-> Manages the deployment of stateful applications (e.g., databases).
-
-- Ensures unique network identities and stable storage for each pod instance.
-
-#### 6. PersistentVolume (PV) & PersistentVolumeClaim (PVC)
-- PV: Provides persistent storage for Kubernetes.
-- PVC: A request for storage by a user, typically bound to a PV.
-
-#### 7. Ingress
-> Manages external access to services, usually providing load balancing and SSL termination.
-
-#### 8. Helm
-> A package manager for Kubernetes, simplifying application deployment through Helm charts.
-
-#### 9. Horizontal Pod Autoscaler (HPA)
-> Automatically scales the number of pods based on CPU usage or custom metrics.
-
-#### 10. DaemonSet
-> Ensures that a copy of a pod runs on every node (or specific nodes).
-
-#### 11. Jobs & CronJobs
-- Job: Ensures that a specified number of pods run to completion.
-- CronJob: Runs jobs at scheduled intervals, similar to cron jobs in Unix/Linux systems.
-
-#### 12. Role-Based Access Control (RBAC)
-> Manages permissions within the Kubernetes cluster by defining roles and policies.
-
-#### 13. Namespaces
-> Provides a way to divide cluster resources among different users and teams.
-
-#### 14. Minikube
-> A single-node Kubernetes cluster for local development and testing.
+| **Component**                        | **Description**                                         |
+|--------------------------------------|---------------------------------------------------------|
+| **Pod**                              | Basic unit with containers.                            |
+| **Service**                          | Exposes and balances traffic.                          |
+| **ConfigMap**                        | Stores configuration data for pods.                    |
+| **Secret**                           | Stores sensitive, encrypted data.                      |
+| **Deployment**                       | Manages pod scaling and updates.                       |
+| **ReplicaSet**                       | Ensures specified pod replicas are running.            |
+| **StatefulSet**                      | Manages stateful applications with stable storage.     |
+| **PersistentVolume (PV)**            | Provides persistent storage.                           |
+| **PersistentVolumeClaim (PVC)**      | Requests and binds to PV storage.                      |
+| **Ingress**                          | Manages external access and balancing.                 |
+| **Helm**                             | Kubernetes package manager.                            |
+| **Horizontal Pod Autoscaler (HPA)**  | Auto-scales pods based on usage.                       |
+| **DaemonSet**                        | Runs a pod on every node.                              |
+| **Job**                              | Runs pods until completion.                            |
+| **CronJob**                          | Schedules jobs at intervals.                           |
+| **Role-Based Access Control (RBAC)** | Manages cluster permissions and roles.                 |
+| **Namespaces**                       | Divides cluster resources among teams.                 |
 
 
 ### Kubernetes Installation Requirements:
