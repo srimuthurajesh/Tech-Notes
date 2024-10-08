@@ -2,7 +2,7 @@ Java SE\
 Java EE servelets, web projects\
 Java ME
 
-```
+```java
 package myproject;
 public class MyServlet extends HttpServlet{
   public void service(HttpServletRequest req,HttpServletResponse res){
@@ -14,7 +14,7 @@ public class MyServlet extends HttpServlet{
   }
 }
 ```
-```
+```xml
 <xml>
 <web-app>
  <display-name>myproject</display-name>
@@ -35,20 +35,20 @@ doPost() - handle post method
 
 
 **Call servlet from another servlet:**
-``` 
+```java 
     req.setAttribute("a","3");   //use res.getAttribute("a"); in another servlet
     RequestDispatcher rd = req.getRequestDispatcher("anotherServeletName"); 
     rd.forward(req,res); 
 ```
 
 **Redirect**:
-```
+```java
 req.setAttribute("a","3");   //use res.getAttribute("a"); in another servlet 
 req.sendRedirect("servletName");  // in browser url get changed
 ```
 
 **Session**:
-```
+```java
 HttpSession session = res.getSession();
 session.setAttribute("K","3");
 session.setAttribute("k");
@@ -56,14 +56,14 @@ session.removeAttribute("k");
 ```
 
 **Cookies**
-```
+```java
 Cookie cookie = new Cookie("k",k);
 res.addCookie(cookie);
 Cookie cookie[] = res.getCookies();
 ```
 
 **ServletContext**
-```
+```xml
 <context-param>
   <param-name>username</param-name>
   <param-value>muthu</param-value>
@@ -73,7 +73,7 @@ ServletContext ctx = getServletContext();
 String username = ctx.getInitParameter("username");
 ```
 **ServletConfig**
-```
+```xml
 <servlet>
   <servlet-name>add</servlet-name>
   <servlet-class>com.AddServlet</servlet-class>
@@ -91,7 +91,7 @@ String username = ctx.getInitParameter("username");
 
 ---
 **JSP**:
-```
+```jsp
 <%!  %> jsp declaration // int a =0;
 <%   %> jsp scriplet    // a= c+ d; 
 <%=  %> jsp expression  // equals to out.println();
@@ -123,14 +123,14 @@ config - (ServletConfig)
 
 ---
 **JSTL - Java standard tag libray**:\
-```
+```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <c:out value="hello world"/>
 <c:out value="${attributeName}"/>
 ${attributeName}     //call the jsp via requestDispatcher & setattribute
 ```
 **JSTL Sql tags**:
-```
+```jsp
 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3307/mysql" user="root" password=""/>
 <sql:query var="rs" dataSource="${db}">select * from user_details</sql:query>
 <c:foreach items="${rs.rows}" var="obj">
@@ -138,7 +138,7 @@ ${attributeName}     //call the jsp via requestDispatcher & setattribute
 </c:foreach>
 ```
 **JSTL function tags**:
-```
+```jsp
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 ${fn:length(str)}
 ${fn:split(str,",")}

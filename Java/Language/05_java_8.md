@@ -46,7 +46,7 @@ Ex: IntFunction<R>, LongFunction<R>, DoubleFunction<R>
 
 Syntax: `(argument-list) -> {body}`
 **Anonymous class**: 
-```
+```java
 interface Action { void execute(); } 
 Action action = new Action() {
     @Override
@@ -62,7 +62,7 @@ Action action = new Action() {
 i) staticMethod reference - className::Method  
 ii) InstanceMethod reference - objectName::Method   
 iii) constructor reference - className::new   
-```
+```java
 class Person{
   public static void main(String[] args){
     // Using Instance method reference
@@ -111,7 +111,7 @@ class Person{
 
 
 ## StringJoiner class
-```
+```java
 StringJoiner str = new StringJoiner(",","[","]"); 	//delimiter, prefix, suffix
 str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 ```
@@ -160,7 +160,7 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 1. sorted(Collections.reverseOrder())    
 2. sorted(Comparator.comparingInt(User::getAge))    
 3. sorted(Comparator.comparingInt(User::getAge).reversed())  
-```
+```java
 .sorted(new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {
@@ -247,7 +247,7 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 
 ## Java11
 1. **var**: allows the compiler to infer the type of a local variable based on the assigned value.
-```
+```java
 var result = calculateSum(10, 20);
 System.out.println("Sum: " + result); // Output: Sum: 30
 public static int calculateSum(int a, int b) {

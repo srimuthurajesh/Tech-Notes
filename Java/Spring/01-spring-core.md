@@ -31,14 +31,14 @@ It performs:
 ### 1. Bean factory 
 > lazy intialization(bean load when getbean called), no annotated injection support   
 
-```
+```java
     BeanFactory factory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
     MyBean myBean = (MyBean) factory.getBean("myBean");
 ```   
 ### 2. Application context. 
 > aggresive intialization, supports annotated injection, superset of BeanFactory  
 
-```
+```java
     ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
     ApplicationContext context = new FileSystemXmlApplicationContext("C:/path/to/spring-config.xml");
     ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -60,11 +60,11 @@ XML Configuration: `<bean id="" class="" scope="singleton">`.
 Annotation Configuration: `@Scope("prototype")`. 
 
 **Bean Lifecycle**:  
-1. XML approach - 		```<bean id="" class="" init-method="" destroy-method=""> ```  
-2. default for all bean in beans tag - ```<beans default-init-method="" default-destroy-method=""/>```    
-3. Annotation approach- ```@PostContruct  @PreDestroy```  
-4. Using interface(not recommended) - implement these interface ``` implements IntializingBean, DisposableBean ```   
--it will force to define afterPropertiesSet(), destroy() methods  
+1. XML approach - 		`<bean id="" class="" init-method="" destroy-method=""> `
+2. default for all bean in beans tag - `<beans default-init-method="" default-destroy-method=""/>`    
+3. Annotation approach- `@PostContruct  @PreDestroy`  
+4. Using interface(not recommended) - implement these interface ` implements IntializingBean, DisposableBean `   
+- it will force to define afterPropertiesSet(), destroy() methods  
 
 
 ## Spring Bean Lifecycle hooks. 
@@ -103,7 +103,7 @@ initMethod and destroyMethod attributes in @Bean annotation or XML configuration
     <bean id="engine" class="com.example.Engine"/>
 </beans>
 ```
-```
+```java
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -113,7 +113,7 @@ public class Main {
 }
 ```
 #### 2. Java based  
-```
+```java
 //AppConfig.java
 @Configuration
 public class AppConfig {
@@ -127,23 +127,23 @@ public class AppConfig {
     }
 }
 ```
-```
+```java
  ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
  Car car = context.getBean(Car.class);
 ```
 
 #### 3. Annotation based   
-```
+```java
 @Configuration
 @ComponentScan(basePackages = "com.example.ioc.demo")
 public class AnnotationJavaConfig {
 }
 ```
-```
+```java
 ApplicationContext context = new AnnotationConfigApplicationContext(AnnotationJavaConfig.class);
 CarInterface car = context.getBean(Car.class);		
 ```
-```
+```java
 @Component //@services //@Respository
 class Car{}
 ```
@@ -187,19 +187,19 @@ Annotation                  | Usage                                             
 
 ## XML approach
 **Steps to create spring bean(IOC via XML)**:  
-1. Configure spring bean.xml  	```<bean id="beanId" class="com.ClassName"></bean>```  
-2. Create spring container 	```ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");```    
-3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```    
+1. Configure spring bean.xml  	`<bean id="beanId" class="com.ClassName"></bean>`  
+2. Create spring container 	`ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");`    
+3. Retrieve bean from container `InterfaceName obj = (InterfaceName)context.getBean("beanId");`    
 
 **Dependency injection via XML**:   
-1. While Setter injection: ```<property name="color" value="red"/>```  
-2. While Constructor injection: ```<constructor-arg name="soda" value="True"/>```  
+1. While Setter injection: `<property name="color" value="red"/>`  
+2. While Constructor injection: `<constructor-arg name="soda" value="True"/>`  
 3. While Object injection via setter, constructor:      
-```<property name="color" ref="anotherBeanName"/>```  
-```<constructor-arg name="color" ref="anotherBeanName"/>```  
+`<property name="color" ref="anotherBeanName"/>`  
+`<constructor-arg name="color" ref="anotherBeanName"/>`  
 4. Via property file:  
-```<context:property-placeholder location="classpath:rasna-info.properties"/>```   
-```<property name="color" value="${foo.color}"/>```    
+`<context:property-placeholder location="classpath:rasna-info.properties"/>`   
+`<property name="color" value="${foo.color}"/>`    
 
 **Autowire attribute via XML**: <bean id="rasna" class="Rasna" autowire="constructor">  
 -no need to write object injection <property name="color" ref="anotherBeanName"/>, no @Autowired  
@@ -209,8 +209,8 @@ Annotation                  | Usage                                             
  
 **Steps to create spring bean(IOC via JAVA)**:  
 1. Configure spring Config.java - that has @Configuration 
-2. Create spring container 	```ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);```    
-3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```    
+2. Create spring container 	`ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);`    
+3. Retrieve bean from container `InterfaceName obj = (InterfaceName)context.getBean("beanId");`    
 
 @Bean annotation will be use, beanName will be function name. refer  practise repo.    
 @PropertySource("classpath:rasna-info.properties")
@@ -220,14 +220,14 @@ Annotation                  | Usage                                             
 -no need of bean defination in xml/java config file, we just mention folder to scan  
 
 1. Configre xml or java with folder scan  
-```@ComponentScan(basePackages="com.java.drinkMaker")```    
-```<context:component-scan base-package="com.luv2code.springdemo"/>```  
-2. Create spring container ```ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);```  
-3. Retrieve bean from container ```InterfaceName obj = (InterfaceName)context.getBean("beanId");```  
+`@ComponentScan(basePackages="com.java.drinkMaker")`   
+`<context:component-scan base-package="com.luv2code.springdemo"/>`  
+2. Create spring container `ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);`  
+3. Retrieve bean from container `InterfaceName obj = (InterfaceName)context.getBean("beanId");`  
 
 **Annotation Enabling**  
-1. Add this tag in XML - ```<context:annotation-config />```  
-2. Or add this tag in XML - ```<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
+1. Add this tag in XML - `<context:annotation-config />```  
+2. Or add this tag in XML - `<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">```  
 
 @Component - define class as bean    
 @Qualifier - give bean id, avoid ambiquity while using autowired  

@@ -53,10 +53,10 @@ Note: it has no return type, cannot be final.
 ## Object  
 > instant of a class
 
-``` 
-ClassName obj = new ClassName(); //
+ 
+`ClassName obj = new ClassName();`   
 LHS (heap) reference = RHS (stack) instance
-```
+
 ### Anonymous object 
 >  created and used only omce without assigning    
 

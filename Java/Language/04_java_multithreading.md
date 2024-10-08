@@ -26,7 +26,7 @@
 
 ## Ways to Implement Thread
 #### 1. Extends Thread class  
-```
+```java
 public class MyThread extends Thread {
     public void run() { System.out.println("Thread started running.."); }
     public static void main( String args[] ) {
@@ -36,7 +36,7 @@ public class MyThread extends Thread {
 }
 ```
 #### 2. Implementing the Runnable Interface
-```
+```java
 class MyThread implements Runnable {
     public void run() { System.out.println("Thread started running.."); }
     public static void main(String args[]) {
@@ -57,7 +57,7 @@ class MyThread implements Runnable {
 ### Priority of a Thread  
 > Thread scheduler prioritize based on (Range 1-10) (default-5)
 
-```
+```java
 threadObj.setPriority(8);
 threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
@@ -65,7 +65,7 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
 
 ### Gathering data using legacy Thread class
-```
+```java
     Map<String, String> results = new ConcurrentHashMap<>();
 
     Thread thread1 = new Thread(() -> results.put("Thread 1", "Result from Thread 1"));
@@ -97,9 +97,9 @@ t1.setDaemon(true);t1.isDaemon(true);
 
 ### Thread class Methods:
 1. **join()**: wait for another thread to comlete execution  
-   ```thread3.join(); thread4.join(200); //wait for 200ms```       
+   `thread3.join(); thread4.join(200); //wait for 200ms`       
 2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
-3. **sleep** : ```Thread.sleep(1000);``` //goes to runnable for given time  
+3. **sleep** : `Thread.sleep(1000);` //goes to runnable for given time  
 4. start()- start thread by calling run method  
 5. getName()- Get thread’s name  
 6. getPriority()-Get thread priority  
@@ -137,13 +137,13 @@ because each process is holding a resource and waiting for another resource acqu
 
 ##### Types of Executer Service:
 1. **FixedThreadPool**: fixed-size pool of worker threads, suits for task with limited resource usage.  
-``` ExecutorService executer = Executors.FixedThreadPool(); ```. 
+` ExecutorService executer = Executors.FixedThreadPool(); `. 
 2. **SingleThreadExecutor**: Uses single worker thread, sequential execution    
 3. **CachedThreadPool**: dynamically adjust pool size, suits for short-lived tasks with varying loads.  
 4. **ScheduledThreadPool**: same like FixedThreadPool along with delayed/periodic execution.  
 
 Syntax:
-```
+```java
 ExecutorService executor = Executors.newFixedThreadPool(5);
 executor.submit(() -> { // Task to be executed asynchronously});
 executor.submit(new MyRunnableImpl());
@@ -167,7 +167,7 @@ executor.shutdown();
 > class that implements ExecutorService, offers more control and customization options. 
 
 Syntax:
-```
+```java
 ThreadPoolExecutor mypool = (ThreadPoolExecutor) executorServiceObj;  
 mypool.submit(() -> { // Task to be executed asynchronously});
 mypool.submit(new MyRunnableImpl());
@@ -183,7 +183,7 @@ mypool.shutdown();
 ### Callable & Future: 
 **Callable**: interface that represents task, have call method that returns result.  
 **Future**: interface that represent result of callable->call method     
-```
+```java
     Callable<Integer> callableTask = new Callable<Integer>() {
         @Override
         public Integer call() throws Exception {
@@ -205,7 +205,7 @@ mypool.shutdown();
 1. **ConcurrentHashMap** - modern thread-safe map implementation.  
 2. **CopyOnWriteArrayList** - uses a copy-on-write strategy.   
 3. **Collections.synchronizedList** - will force to use synchronized block otherwise throw exception.  
-```
+```java
     List<Integer> list = new ArrayList<>();
     List<Integer> synchronizedList = Collections.synchronizedList(list);
     Collections.addAll(synchronizedList, 1, 2, 3);    

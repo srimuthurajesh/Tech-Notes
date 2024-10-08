@@ -28,7 +28,7 @@ target - compiled code by maven
 1. project meta data- projectName, version, filetype(JAR,WAR) etc
 2. dependencies- like spring, hibernate etc 
 3. plugins- custom task to run: junit test reports  
-```
+```xml
 <project>
   <modelVersion>4.0.0</modelVersion>
   
@@ -72,7 +72,7 @@ Note: m2eclipse plugin should installed of maven support in eclipse
 **2. Central repository**: https://repo.maven.apache.org/maven2/
 **3. Additional repository**: there are other 250 repositories in mvnrepository.com  
 -if we need dependencies from other repositories except Central we need to add respository in pom.xml
-```
+```xml
 <repositories>
   <repository>
     <id>atlassian</id> 

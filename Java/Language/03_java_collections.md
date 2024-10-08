@@ -86,7 +86,7 @@ Note: in java there is no impl for direct Queue
 
 **Looping through Map**  
 1. Using Iterator with while - **map.keyset.iterator**  
-```
+```java
 Iterator itr = map.keyset().iterator(); //for map
 Iterator itr = list.iterator();         //for list
 while(itr.hasNext()){ map.get(it.next());}
@@ -97,7 +97,7 @@ while(itr.hasNext()){ map.get(it.next());}
 2. Using keyset() in for: `for (String State : map.keySet()){ }`   
 3. Using Map.entry<K,V>method   in for. 
 
-``` 
+```java 
 for (Map.Entry<String,Float> entry : map.entrySet()) {  
   System.out.println("Item: " + entry.getKey() + ", Price: " + entry.getValue()); 
 }    
@@ -106,7 +106,7 @@ for (Float item : list) {
 }
 ```
 
-4. Using map foreach  ```map.forEach((k,v)->{ sysout(k+v)})```   
+4. Using map foreach  `map.forEach((k,v)->{ sysout(k+v)})`  
 
 
 
@@ -198,7 +198,7 @@ for (Float item : list) {
 | Collections.sort(List) 	| Collections.sort(List,comparator)   |
 
 ### Comparable
-```
+```java
 class Student implements Comparable{
   String name; int age;
   @override
@@ -213,7 +213,7 @@ Collection.sort(stList);
 ```
 
 ### Comparator  
-```
+```java
 Class Student{ String name; int age;}
 List<Student> stList = new ArrayList<Student>();//...fil the list
 Comparator<Student> comp = new Comparator<Student>(){
