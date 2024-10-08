@@ -11,24 +11,36 @@
 ## Components of k8s:
 ### Master Components:
 #### 1. kube-apiserver: 
-> The gateway for all requests to the Kubernetes cluster, responsible for authentication and communication.
+> gateway for all requests, responsible for authentication and communication.
 
-2. etcd storage: A key-value store that holds cluster state information and is used by Kubernetes components for coordination.
-3. kube-controller-manager: Monitors the cluster state and ensures that the desired state is maintained (e.g., replication, node management).
-4. cloud-controller-manager: Manages cloud-specific operations (like load balancing, storage) for Kubernetes clusters running in cloud environments.
-5. kube-scheduler: Decides on which node a new pod should be scheduled based on resource availability and constraints.
+#### 2. etcd storage: 
+> A key-value store that holds cluster state information and is used by Kubernetes components for coordination.
+
+#### 3. kube-controller-manager: 
+> Monitors the cluster state and ensures that the desired state is maintained (e.g., replication, node management).
+
+#### 4. cloud-controller-manager: 
+> Manages cloud-specific operations (like load balancing, storage) for Kubernetes clusters running in cloud environments.
+
+#### 5. kube-scheduler: 
+> Decides on which node a new pod should be scheduled based on resource availability and constraints.
 
 
 ### Node Components:
-1. kubelet: An agent that runs on each node, ensuring containers are running in a pod.
-2. kube-proxy: Handles network routing and forwarding requests between containers and services in the cluster.
+#### 1. kubelet: 
+> An agent that runs on each node, ensuring containers are running in a pod.
+
+#### 2. kube-proxy: 
+> Handles network routing and forwarding requests between containers and services in the cluster.
 
 ### Additional Concepts:
-1. Minikube: A single-node Kubernetes cluster used for local development and testing.
-2. Kubectl: The command-line interface (CLI) tool used to interact with Kubernetes clusters.
+#### 1. Minikube: 
+> A single-node Kubernetes cluster used for local development and testing.
+#### 2. Kubectl: 
+> The command-line interface (CLI) tool used to interact with Kubernetes clusters.
 
 
-## Kubernetes Objects:
+## Key Kubernetes Concepts:
 #### 1. Pod:  
 > The smallest deployable unit in Kubernetes, encapsulating one or more containers, storage resources, network identities, and configuration.  
 
@@ -40,6 +52,33 @@
 
 #### 3. Deployment:
 > Describes the desired state of pods and replica sets in a YAML file, allowing you to manage scaling and updates.
+
+#### 4. ReplicaSet
+Ensures a specified number of pod replicas are running at all times.
+#### 5. StatefulSet
+Manages the deployment of stateful applications (e.g., databases).
+Ensures unique network identities and stable storage for each pod instance.
+#### 6. PersistentVolume (PV) & PersistentVolumeClaim (PVC)
+PV: Provides persistent storage for Kubernetes.
+PVC: A request for storage by a user, typically bound to a PV.
+#### 7. Ingress
+Manages external access to services, usually providing load balancing and SSL termination.
+#### 8. Helm
+A package manager for Kubernetes, simplifying application deployment through Helm charts.
+#### 9. Horizontal Pod Autoscaler (HPA)
+Automatically scales the number of pods based on CPU usage or custom metrics.
+#### 10. DaemonSet
+Ensures that a copy of a pod runs on every node (or specific nodes).
+#### 11. Jobs & CronJobs
+Job: Ensures that a specified number of pods run to completion.
+CronJob: Runs jobs at scheduled intervals, similar to cron jobs in Unix/Linux systems.
+#### 12. Role-Based Access Control (RBAC)
+Manages permissions within the Kubernetes cluster by defining roles and policies.
+#### 13. Namespaces
+Provides a way to divide cluster resources among different users and teams.
+#### 14. Minikube
+A single-node Kubernetes cluster for local development and testing.
+
 
 ### Kubernetes Installation Requirements:
 1. Container Runtime: Like Docker, responsible for running containers.
