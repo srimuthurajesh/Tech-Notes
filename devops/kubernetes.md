@@ -54,30 +54,41 @@
 > Describes the desired state of pods and replica sets in a YAML file, allowing you to manage scaling and updates.
 
 #### 4. ReplicaSet
-Ensures a specified number of pod replicas are running at all times.
+> Ensures a specified number of pod replicas are running at all times.
+
 #### 5. StatefulSet
-Manages the deployment of stateful applications (e.g., databases).
-Ensures unique network identities and stable storage for each pod instance.
+> Manages the deployment of stateful applications (e.g., databases).
+
+- Ensures unique network identities and stable storage for each pod instance.
+
 #### 6. PersistentVolume (PV) & PersistentVolumeClaim (PVC)
-PV: Provides persistent storage for Kubernetes.
-PVC: A request for storage by a user, typically bound to a PV.
+- PV: Provides persistent storage for Kubernetes.
+- PVC: A request for storage by a user, typically bound to a PV.
+
 #### 7. Ingress
-Manages external access to services, usually providing load balancing and SSL termination.
+> Manages external access to services, usually providing load balancing and SSL termination.
+
 #### 8. Helm
-A package manager for Kubernetes, simplifying application deployment through Helm charts.
+> A package manager for Kubernetes, simplifying application deployment through Helm charts.
+
 #### 9. Horizontal Pod Autoscaler (HPA)
-Automatically scales the number of pods based on CPU usage or custom metrics.
+> Automatically scales the number of pods based on CPU usage or custom metrics.
+
 #### 10. DaemonSet
-Ensures that a copy of a pod runs on every node (or specific nodes).
+> Ensures that a copy of a pod runs on every node (or specific nodes).
+
 #### 11. Jobs & CronJobs
-Job: Ensures that a specified number of pods run to completion.
-CronJob: Runs jobs at scheduled intervals, similar to cron jobs in Unix/Linux systems.
+- Job: Ensures that a specified number of pods run to completion.
+- CronJob: Runs jobs at scheduled intervals, similar to cron jobs in Unix/Linux systems.
+
 #### 12. Role-Based Access Control (RBAC)
-Manages permissions within the Kubernetes cluster by defining roles and policies.
+> Manages permissions within the Kubernetes cluster by defining roles and policies.
+
 #### 13. Namespaces
-Provides a way to divide cluster resources among different users and teams.
+> Provides a way to divide cluster resources among different users and teams.
+
 #### 14. Minikube
-A single-node Kubernetes cluster for local development and testing.
+> A single-node Kubernetes cluster for local development and testing.
 
 
 ### Kubernetes Installation Requirements:
