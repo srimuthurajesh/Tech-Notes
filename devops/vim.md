@@ -34,6 +34,7 @@
 
 
 ## Advanced Navigation:
+
 | Command | Description |
 | ----------- | ----------- |
 | w |  next word begining | 
@@ -55,6 +56,7 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 
 
 ## File Operations:
+
 | File Command | Description |
 | ----------- | ----------- |
 | :enew 			|  new file| 
@@ -65,6 +67,7 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 | :e filename.txt  |  open file| 
 
 ## Undo Redo:
+
 | Command | Description |
 | ----------- | ----------- |
 | u |  undo| 
@@ -74,6 +77,7 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 | dd |  delete current line| 
 
 ## Copy Paste:
+
 | Command | Description |
 | ----------- | ----------- |
 | v |  visual mode, select text| 
@@ -85,6 +89,7 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 | dd |  cut current line| 
 
 ## Replace
+
 | Command | Description |
 | ----------- | ----------- |
 | /%s/oldword/newword/g |  replace word in whole file| 
@@ -94,6 +99,7 @@ Note: use number to multiply navigations  6fa  will go 6th 'a'
 | /s/oldword/newword/g  |  replace words in current line| 
 
 ## Spilt:
+
 | Command | Description |
 | ----------- | ----------- |
 | :sp		|  to enter new colon mode | 
