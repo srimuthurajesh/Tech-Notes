@@ -3,11 +3,11 @@
 	
 ### FIRST PROGRAM:  
 ```c
-	#include<stdio.h>		//preprocessor command which tell compiler to include stdio.h file   
-	int main(){				//c program starts from main function  
-		printf("Hello world!");
-		return 0;			//will return 0 for os
-	}	
+#include<stdio.h>		//preprocessor command which tell compiler to include stdio.h file   
+int main(){				//c program starts from main function  
+	printf("Hello world!");
+	return 0;			//will return 0 for os
+}	
 ``` 
 
 ### KEYWORDS:(44 keywords)  

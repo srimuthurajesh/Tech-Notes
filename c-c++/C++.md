@@ -165,7 +165,8 @@ int main()
 cout<<c.side;  return 0;}
 ```
 
-3. Copy construtor-
+3. Copy construtor
+
 ```cpp
 	#include <iostream.h>
 	Using namespace std;
@@ -258,6 +259,7 @@ return 0;}
 ## POLYMORPHISM: 
 	
 1. Method overriding
+
 ```cpp
 #include <iostream>
 using namespace std;
