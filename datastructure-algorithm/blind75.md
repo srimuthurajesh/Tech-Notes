@@ -124,7 +124,9 @@ You can return the answer in any order.
 Input: nums = [2,7,11,15], target = 9  
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
+
 ---
+
 ### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
 You are given an array of prices where prices[i] is the price of a given stock on an ith day.  
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.  
@@ -135,21 +137,27 @@ Input: prices = [7,1,5,3,6,4]
 Output: 5  
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
 profit = 6-1 = 5.  
+
 ---
+
 ### 3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[I].  
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.  
 You must write an algorithm that runs in O(n) time and without using the division operation.  
 Input: nums = [1,2,3,4]  
 Output: [24,12,8,6]  
+
 ---
+
 ### 4. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[I].  
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.  
 You must write an algorithm that runs in O(n) time and without using the division operation.  
 Input: nums = [1,2,3,4]  
 Output: [24,12,8,6]  
+
 ---
+
 ### 5. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 Given an integer array nums, find the subarray with the largest sum, and return its sum.  
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]  
@@ -158,7 +166,9 @@ Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 Input: nums = [1]  
 Output: 1  
 Explanation: The subarray [1] has the largest sum of 1.  
+
 ---
+
 ### 6. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
 Given an integer array nums, find a subarray that has the largest product, and return the product.  
 Input: nums = [2,3,-2,4]  
