@@ -1,6 +1,7 @@
 ## Easy
 ### Fine Second Largest element
-```
+
+```java
 public class LargestNumber {
     public static void main(String[] args) {
         int[] arr = {5, 3, 8, 4, 2, 7, 1};
@@ -35,4 +36,22 @@ public class LargestNumber {
     }
 }
 
+```
+
+## Best Time to Buy and Sell Stock
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min=prices[0];
+        int res=0;
+        for(int i=1;i<prices.length;i++){
+            if(min>prices[i])
+                min = prices[i];
+            if(res<(prices[i]-min))
+                res = prices[i]-min;    
+        }
+        return res;
+    }
+}
 ```

@@ -229,23 +229,3 @@ Explanation: The above vertical lines are represented by an array [1,8,6,2,5,4,8
 In this case, the max area of water (blue section) the container can contain is 49.  
 
 
-# Answers
-## 1. Two Sum - answer
-## 2. Best Time to Buy and Sell Stock - answer
-
-```java
-class Solution {
-    public int maxProfit(int[] prices) {
-        int min=prices[0];
-        int res=0;
-        for(int i=1;i<prices.length;i++){
-            if(min>prices[i])
-                min = prices[i];
-            if(res<(prices[i]-min))
-                res = prices[i]-min;    
-        }
-        return res;
-    }
-}
-```
-[Back](#2-best-time-to-buy-and-sell-stock)
