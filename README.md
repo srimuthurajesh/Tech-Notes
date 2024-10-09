@@ -17,6 +17,7 @@
    6. [Data Struture](Computer%20science/data_structure.html)
    7. [Design Patterns](Computer%20science/design_patterns.html)
    8. [SOLID Principles](Computer%20science/solid_principles.html) 
+   9. [Blind 75](#datastructure-algorithm/blind75.html)
 
 ## Web Design 
    1. [HTML](web-design/html.html)
