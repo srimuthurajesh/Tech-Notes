@@ -1,7 +1,7 @@
 ## Array
 
 - [Two Sum](#1-two-sum)
-- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock)
 - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 - [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 - [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
@@ -127,7 +127,9 @@ Input: nums = [2,7,11,15], target = 9
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
 ```
-### 2. Best Time to Buy and Sell Stock
+### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
+```
 You are given an array of prices where prices[i] is the price of a given stock on an ith day.  
 You want to maximize your profit by choosing a single day to buy one stock   
 and choosing a different day in the future to sell that stock.  
@@ -138,6 +140,7 @@ Input: prices = [7,1,5,3,6,4]
 Output: 5  
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
 profit = 6-1 = 5.  
+```
 
 Given an integer array nums, return an array answer such that
 answer[i] is equal to the product of all the elements of nums
