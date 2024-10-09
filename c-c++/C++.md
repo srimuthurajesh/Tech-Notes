@@ -4,7 +4,7 @@
 > created by Bjarne stroustrup in 1979 at Bell laboratories, NJ.  
 
 ## Basic program
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -21,7 +21,7 @@ int main() {
 ## Keywords: 	
 > All predefined words 48 keywords in C++
 
-```
+```cpp
 auto	Double	switch	else	enum
 break	Extern	float	For	register
 case	typedef	return	union	goto
@@ -39,7 +39,7 @@ Note: Datatype, operators, constant, variables are nearly same to C
 ## Constant: 
 > which is not change during program const int raj=23;
 
-```
+```cpp
 // Constant: a value that does not change during the program
 const int raj = 23; // constant integer variable named 'raj'
 
@@ -52,7 +52,8 @@ class Rajesh {
 
 
 ## Member intialisationi:
-```
+
+```cpp
 class MyClass {
 public:
     // Constructor with member initialization list
@@ -76,14 +77,15 @@ private:
 > Instance of type class
 
 ## Class: 
-> Specification of object contains data members and fucntions
+> Specification of object contains data members and fucntions  
 Separate file for classes- we need to add rajesh.h rajesh.cpp
 
 
-Certainly, I'll revamp the notes into a clearer structure:
+Certainly, I'll revamp the notes into a clearer structure:  
 
 ### rajesh.h (Header file for class declaration)
-```
+
+```cpp
 #ifndef RAJESH_H
 #define RAJESH_H
 
@@ -98,8 +100,9 @@ private:
 
 #endif // RAJESH_H
 ```
+
 rajesh.cpp
-```
+```cpp
 #include "rajesh.h"
 
 // Constructor definition
@@ -109,7 +112,7 @@ Rajesh::Rajesh() {
 ```
 
 main.cpp
-```
+```cpp
 #include <iostream>
 #include "rajesh.h" // Include the header file for class declaration
 
@@ -126,16 +129,19 @@ int main() {
 
 ## Destructor: 
 > used to delete a object ~r (cannot be overload, cant have any parameters)
+
 The arrow member selection operator(->): whe pointer is using instead of objects
+```cpp
 MyClass obj;
 MyClass *ptr = &obj;
 ptr->myPrint();
+```
 
 ## Constructor: 
-1. Default constructor- Default constructor is the constructor which doesn't take any argument. It has no parameter. 
+1. Default constructor- Default constructor is the constructor which doesn't take any argument. It has no parameter.   
 
 We can intialize it in two methods one normal and another syntax  ----classname():variable(45){}
-```
+```cpp
 #include <iostream>
 using namespace std;
 class Cube
@@ -143,8 +149,9 @@ class Cube
 Cube::Cube(){side=89}
 int main()	{Cube c;      cout << c.side;	return 0;}
 ```
+
 2. Parameterized constructor-
-```
+```cpp
 #include <iostream>
 using namespace std;
 class Cube{
@@ -157,8 +164,9 @@ int main()
 {Cube c(5);
 cout<<c.side;  return 0;}
 ```
+
 3. Copy construtor-
-```
+```cpp
 	#include <iostream.h>
 	Using namespace std;
 	Class rectangle{int width, int height;
@@ -174,19 +182,23 @@ int main(){rectangle obj1; rectangle onj2=obj1;}   // is copy constructor
 
 
 ## Fuctions:
-Pass by value: ```void func(int a, int a,  int c){a=+1;b=+1;c=+1;}          		   int main(){int x=1,y=2,z=3; func(x,y,z);} ```    ///passing by value
-Pass by reference	  
-```void func(int &a, int &b, int &c){a=+1;b=+1;c=+1;}
+1. Pass by value: ```void func(int a, int a,  int c){a=+1;b=+1;c=+1;}          		   int main(){int x=1,y=2,z=3; func(x,y,z);} ```    ///passing by value
+2. Pass by reference	  
+
+```cpp
+void func(int &a, int &b, int &c){a=+1;b=+1;c=+1;}
 int main(){int x=1,y=2,z=3; func(x,y,z);}  //passing to reference
-Pass by address	 void func(int *p){*p=3;}		          int main(){int a=4; func(&a);}  
-//passing address
+Pass by address	 void func(int *p){*p=3;}		          int main(){int a=4; func(&a);} 
+``` 
+//passing address  
 
 Default values in parameter	void add(a,b=4){c=a+b;return(c);} main(){add(3,7);}    // 7 dan b value, if u not give any value it take 4
 
 Inline function –	same as other normal functions just reduce time only used in short functions not in long functions
 
-Friend funtion:Public and protected function of class can be access from outside of same class
-	#include <iostream.h>
+Friend funtion:Public and protected function of class can be access from outside of same class  
+```cpp
+#include <iostream.h>
 Using namesapce std;
 Class Box{int width; 
 friend void printfunc(Box box);//to access object dot operator 
@@ -194,15 +206,12 @@ Private: void getfunc(double wid);}
 Box:: void getfunc(double wid){ wid=width;}
 Void printfunc(Box box){ cout<<box.width }//access privte
 Int main(){Box box; box.getfunc(83.5); printfunc(box); getch();}
-
-
- 
-
+```
 
 
 
-Optional parameter: we give value in function func(int n=5);
-Dynamic memory allocation- pointer=new type[i];    delete[]p;
+Optional parameter: we give value in function func(int n=5);  
+Dynamic memory allocation- pointer=new type[i];    delete[]p;  
 
 
 
@@ -211,6 +220,7 @@ Dynamic memory allocation- pointer=new type[i];    delete[]p;
 ## Inheritance:
 > Allows us to define a class in terms of another class, instead of writing completely new data members and member functions
 
+```cpp
 #include <iostream>
 using namespace std;
 class rajesh{
@@ -227,8 +237,10 @@ int main()
 m.setting(2,3);
 cout<<m.output();
 return 0;}
+```
 
-*if constructor is beed inherited , construtor of base class first occur and construtor of derived class is execute and it is reverse in case of destrutor
+*if constructor is beed inherited , construtor of base class first occur and construtor of derived class is execute and it is reverse in case of destrutor  
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -241,11 +253,12 @@ public:
 int main(){
 rajesh2 m;
 return 0;}
+```
 
-
-POLYMORPHISM: 
+## POLYMORPHISM: 
 	
-1.Method overriding
+1. Method overriding
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -267,9 +280,11 @@ a* aptr=&ao; 	aptr->f();
 aptr=&bo;		aptr->f();
 
 aptr=&co;		aptr->f();} 
+```
 
-2.Operator overloading:
-1.Uniary without return
+2. Operator overloading:
+    1. Uniary without return
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -286,18 +301,24 @@ m.display();
 -m;
 -m.display();
 }
+```
 
-Virtual function: two function having same will call virtual first and then other
-Pure virtual function: is vitual function which has no body. Class contains atleast one pure virtual function is called abstract base class // virtual int f()=0;
+## Virtual function: 
+> two function having same will call virtual first and then other
+
+Pure virtual function: is vitual function which has no body. Class contains atleast one pure virtual function is called abstract base class // virtual int f()=0;  
+```cpp
 Template function: userdefined datatype.// template<class T>
 							T fun(T a,T b){
 							return c+b;
 							//template<class T> class classname{}
+```
 
-Encapsultaion: concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse. Data encapsulation led to the important OOP concept of data hiding.
+## Encapsultaion: 
+> concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse. Data encapsulation led to the important OOP concept of data hiding.
 
 
-
+```cpp
 class Adder{
    public:
       // constructor
@@ -321,19 +342,25 @@ int main( )
    a.addNum(30);
    cout << "Total " << a.getTotal() <<endl;
    return 0;}
+```
 
 
 
 
+## Data abstraction: 
+> Data abstraction is a mechanism of exposing only the interfaces and hiding the implementation details from the user.(representing the implementation)
+                               
+## Data encapsulation 
+> is a mechanism of bundling the data, and the functions that use them (wraaping the implementation)
 
-Data abstraction: Data abstraction is a mechanism of exposing only the interfaces and hiding the implementation details from the user.(representing the implementation)
-                               Data encapsulation is a mechanism of bundling the data, and the functions that use them (wraaping the implementation)
-
-*Data abstration-  show what to show       encapsultaion- hide what to not show
-*Data abstraction is achieve through encapsultaion.
+1. *Data abstration-  show what to show       encapsultaion- hide what to not show
+2. *Data abstraction is achieve through encapsultaion.
 
                                
-File handling: <<reading, >>writing, ios::in //open a file for reading ios::out>>open a file for writing
+## File handling:
+ 
+```cpp
+ <<reading, >>writing, ios::in //open a file for reading ios::out>>open a file for writing
 Ios::trunc //if file already exist content will truncated before opening file
 Ios::app //append content to end of the file
 #include <iostream>
@@ -358,9 +385,12 @@ n>>data;
 cout<<data;
 n.close();
 return 0;}
+```
 
-Namespace: when possible to come using two same named function , we use namespace
+## Namespace: 
+> when possible to come using two same named function , we use namespace
 
+```cpp
 Namespace first_space{void fucn(){//info}}
 Namespace second_space{void fucn(){//info}} 
 Main(){
@@ -374,17 +404,23 @@ Using namespace first_space;
 Main(){
 func();
 }
- 
-EXCEPTIONS:
-Handles error in the program. Try, catch, throw 
+```
+
+## EXCEPTIONS:
+> Handles error in the program. Try, catch, throw 
+
+```cpp
 try {int motherAge = 29, sonAge = 36;
   if (sonAge > motherAge) { throw 99; }} 
 catch (int x) {
   cout<<"Wrong age values - Error "<<x;
 }		//Outputs "Wrong age values - Error 99"
 Catch(…)// catch all exceptions
+```
 
-File handling:
+## File handling:
+
+```cpp
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -401,4 +437,4 @@ int main() {
 
 MyFileonj.close();				//close file
 }
-![image](https://github.com/srimuthurajesh/Tech-Notes/assets/20147875/3e2673c0-4e33-4173-8de3-d7cef33cbebc)
+```
