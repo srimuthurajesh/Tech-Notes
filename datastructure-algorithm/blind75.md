@@ -1,153 +1,142 @@
 ## Array
 
-- [x] [Two Sum](#1-two-sum)
-- [x] [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-- [x] [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-- [x] [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-- [x] [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-- [x] [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-- [x] [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-- [x] [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-- [x] [3Sum](https://leetcode.com/problems/3sum/)
-- [x] [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [Two Sum](#1-two-sum)
+- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+- [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
+- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [3Sum](https://leetcode.com/problems/3sum/)
+- [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
----
 
 ## Binary
 
-- [ ] [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
-- [ ] [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
-- [ ] [Counting Bits](https://leetcode.com/problems/counting-bits/)
-- [ ] [Missing Number](https://leetcode.com/problems/missing-number/)
-- [ ] [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+- [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/)
+- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [Counting Bits](https://leetcode.com/problems/counting-bits/)
+- [Missing Number](https://leetcode.com/problems/missing-number/)
+- [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
 
----
 
 ## Dynamic Programming
 
-- [ ] [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
-- [ ] [Coin Change](https://leetcode.com/problems/coin-change/)
-- [ ] [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
-- [ ] [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
-- [ ] [Word Break Problem](https://leetcode.com/problems/word-break/)
-- [ ] [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
-- [ ] [House Robber](https://leetcode.com/problems/house-robber/)
-- [ ] [House Robber II](https://leetcode.com/problems/house-robber-ii/)
-- [ ] [Decode Ways](https://leetcode.com/problems/decode-ways/)
-- [ ] [Unique Paths](https://leetcode.com/problems/unique-paths/)
-- [ ] [Jump Game](https://leetcode.com/problems/jump-game/)
+- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- [Coin Change](https://leetcode.com/problems/coin-change/)
+- [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+- [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+- [Word Break Problem](https://leetcode.com/problems/word-break/)
+- [Combination Sum](https://leetcode.com/problems/combination-sum-iv/)
+- [House Robber](https://leetcode.com/problems/house-robber/)
+- [House Robber II](https://leetcode.com/problems/house-robber-ii/)
+- [Decode Ways](https://leetcode.com/problems/decode-ways/)
+- [Unique Paths](https://leetcode.com/problems/unique-paths/)
+- [Jump Game](https://leetcode.com/problems/jump-game/)
 
----
 
 ## Graph
 
-- [ ] [Clone Graph](https://leetcode.com/problems/clone-graph/)
-- [ ] [Course Schedule](https://leetcode.com/problems/course-schedule/)
-- [ ] [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
-- [ ] [Number of Islands](https://leetcode.com/problems/number-of-islands/)
-- [ ] [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
-- [ ] [Alien Dictionary (Leetcode Premium)](https://leetcode.com/problems/alien-dictionary/)
-- [ ] [Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
-- [ ] [Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
+- [Clone Graph](https://leetcode.com/problems/clone-graph/)
+- [Course Schedule](https://leetcode.com/problems/course-schedule/)
+- [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+- [Alien Dictionary (Leetcode Premium)](https://leetcode.com/problems/alien-dictionary/)
+- [Graph Valid Tree (Leetcode Premium)](https://leetcode.com/problems/graph-valid-tree/)
+- [Number of Connected Components in an Undirected Graph (Leetcode Premium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
----
 
 ## Interval
 
-- [ ] [Insert Interval](https://leetcode.com/problems/insert-interval/)
-- [ ] [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
-- [ ] [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
-- [ ] [Meeting Rooms (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms/)
-- [ ] [Meeting Rooms II (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms-ii/)
+- [Insert Interval](https://leetcode.com/problems/insert-interval/)
+- [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+- [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+- [Meeting Rooms (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms/)
+- [Meeting Rooms II (Leetcode Premium)](https://leetcode.com/problems/meeting-rooms-ii/)
 
----
 
 ## Linked List
 
-- [x] [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
-- [x] [Detect Cycle in a Linked List](https://leetcode.com/problems/linked-list-cycle/)
-- [x] [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-- [x] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
-- [x] [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-- [x] [Reorder List](https://leetcode.com/problems/reorder-list/)
+- [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [Detect Cycle in a Linked List](https://leetcode.com/problems/linked-list-cycle/)
+- [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+- [Reorder List](https://leetcode.com/problems/reorder-list/)
 
----
 
 ## Matrix
 
-- [ ] [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
-- [ ] [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
-- [ ] [Rotate Image](https://leetcode.com/problems/rotate-image/)
-- [ ] [Word Search](https://leetcode.com/problems/word-search/)
+- [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
+- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- [Rotate Image](https://leetcode.com/problems/rotate-image/)
+- [Word Search](https://leetcode.com/problems/word-search/)
 
----
 
 ## String
 
-- [ ] [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-- [ ] [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-- [ ] [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
-- [ ] [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-- [ ] [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
-- [ ] [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
-- [ ] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
-- [ ] [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
-- [ ] [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
-- [ ] [Encode and Decode Strings (Leetcode Premium)](https://leetcode.com/problems/encode-and-decode-strings/)
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+- [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+- [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+- [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+- [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+- [Encode and Decode Strings (Leetcode Premium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
----
 
 ## Tree
-- [x] [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-- [x] [Same Tree](https://leetcode.com/problems/same-tree/)
-- [x] [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
-- [ ] [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
-- [x] [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-- [ ] [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
-- [x] [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
-- [ ] [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-- [ ] [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-- [ ] [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
-- [ ] [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
-- [ ] [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
-- [ ] [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
-- [ ] [Word Search II](https://leetcode.com/problems/word-search-ii/)
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [Same Tree](https://leetcode.com/problems/same-tree/)
+- [Invert/Flip Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
+- [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
+- [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)
+- [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+- [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+- [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)
+- [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
+- [Word Search II](https://leetcode.com/problems/word-search-ii/)
 
----
 
 ## Heap
 
-- [ ] [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
-- [ ] [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
-- [ ] [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
+- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
+- [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 
 ## Important Link:
 [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 
 ## Array
 ### 1. [Two Sum](https://leetcode.com/problems/two-sum/)
-Given an array of integer nums and an integer target, return indices of the two numbers such that they add up to the target.  
+```Given an array of integer nums and an integer target, return indices of the two numbers such that they add up to the target.  
 You may assume that each input would have exactly one solution,and you may not use the same element twice.
 You can return the answer in any order.
 
 Input: nums = [2,7,11,15], target = 9  
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
-
-2. Best Time to Buy and Sell Stock
-You are given an array of prices where prices[i] is the price of a
-given stock on an ith day.
-You want to maximize your profit by choosing a single day to buy
-one stock and choosing a different day in the future to sell that
-stock.
+```
+### 2. Best Time to Buy and Sell Stock
+You are given an array of prices where prices[i] is the price of a given stock on an ith day.  
+You want to maximize your profit by choosing a single day to buy one stock   
+and choosing a different day in the future to sell that stock.  
 Return the maximum profit you can achieve from this transaction.
 If you cannot achieve any profit, return 0
-Input: prices = [7,1,5,3,6,4]
-Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),
-profit = 6-1 = 5.
-PRACTICE NOW
-PRACTICE NOW 01
+
+Input: prices = [7,1,5,3,6,4]  
+Output: 5  
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
+profit = 6-1 = 5.  
+
 Given an integer array nums, return an array answer such that
 answer[i] is equal to the product of all the elements of nums
 except nums[I].
