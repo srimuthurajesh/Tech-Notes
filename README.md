@@ -1,19 +1,3 @@
-<style>body {
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* Light text color */
-}
-
-a {
-    color: #bb86fc; /* Light purple for links */
-}
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #ffffff;
-    }
-}
-</style>
-
 ## Programming Languages
    1. [Java](Java)  
    2. [JavaScript](JavaScript)  
