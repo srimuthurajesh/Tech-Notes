@@ -8,14 +8,10 @@
    2. [Angular](JavaScript/Angular)
 
 ## Datastructure & Algorithm
-   1. [DSA Concepts](datastructure-algorithm) 
+   1. [Data Struture](datastructure-algorithm/data-structure)
+   2. [Algorithmn](datastructure-algorithm/algorithm) 
    2. [My Striver's List](datastructure-algorithm/my-strivers-list)
-   3. [DSA-problems-solutions](Computer%20science/DSA-problems-solutions)
    4. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
-   5. [Algorithm](Computer%20science/algorithm.html)
-   6. [Data Struture](Computer%20science/data_structure.html)
-   7. [Design Patterns](Computer%20science/design_patterns.html)
-   8. [SOLID Principles](Computer%20science/solid_principles.html) 
    9. [Blind 75](datastructure-algorithm/blind75.html)
 
 ## Web Design 
@@ -40,6 +36,11 @@
 ## Cloud 
    1. [Aws](devops/AWS.html)
 
+## Software Architecture & Design
+   1. [Design Patterns](software-development/design-patterns)
+   2. [SOLID Principles](software-development/solid_principles.md) 
+    
+
 ## Project Management 
    1. [Scrum](project-management/scrum.html)
    2. [Kanban](project-management/kanban.html)
@@ -47,4 +48,6 @@
 
 ## Others
    1. [YouTube](YouTube/YouTube-channels.html)
+   2. [C](c-c++/C)
+   3. [C++](c-c++/C++)
 
