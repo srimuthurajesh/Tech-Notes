@@ -124,7 +124,7 @@ You can return the answer in any order.
 Input: nums = [2,7,11,15], target = 9  
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
-
+[My Answer]()
 ---
 
 ### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
@@ -137,7 +137,7 @@ Input: prices = [7,1,5,3,6,4]
 Output: 5  
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
 profit = 6-1 = 5.  
-
+[My Answer](#2-best-time-to-buy-and-sell-stock---answer)
 ---
 
 ### 3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
@@ -228,3 +228,24 @@ Output: 49
 Explanation: The above vertical lines are represented by an array [1,8,6,2,5,4,8,3,7].  
 In this case, the max area of water (blue section) the container can contain is 49.  
 
+
+# Answers
+## 1. Two Sum - answer
+## 2. Best Time to Buy and Sell Stock - answer
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min=prices[0];
+        int res=0;
+        for(int i=1;i<prices.length;i++){
+            if(min>prices[i])
+                min = prices[i];
+            if(res<(prices[i]-min))
+                res = prices[i]-min;    
+        }
+        return res;
+    }
+}
+```
+[Back](#2-best-time-to-buy-and-sell-stock)
