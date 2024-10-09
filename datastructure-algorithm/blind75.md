@@ -168,12 +168,16 @@ Input: nums = [-2,0,-1]
 Output: 0  
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray
 
+--- 
+
 ### 7. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 Given the sorted rotated array nums of unique elements, return the minimum element of this array.  
 You must write an algorithm that runs in O(log n) time.  
 Input: nums = [3,4,5,1,2]  
 Output: 1  
 Explanation: The original array was [1,2,3,4,5] rotated 3 times.  
+
+---
 
 ### 8. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 Given the array nums after the possible rotation and an integer target, return the index of the target if it is in nums,  
@@ -184,6 +188,8 @@ Input: nums = [4,5,6,7,0,1,2], target = 0
 Output: 4  
 Input: nums = [4,5,6,7,0,1,2], target = 3   
 Output: -1  
+
+---
 
 ### 9. [3Sum](https://leetcode.com/problems/3sum/)  
 Given an integer array nums, return all the triplets [nums[i],nums[j], nums[k]]  
@@ -197,6 +203,8 @@ nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
 nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.  
 nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.  
 The distinct triplets are [-1,0,1] and [-1,-1,2].  
+
+---
 
 ### 10. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)  
 You are given an integer array height of length n.  
