@@ -83,11 +83,12 @@ $GLOBALS[] 	$name="rajesh";
 
 ## CONSTANT :   
 > (globally accessible)	  
+
 		`define(‘VAR_NAME,’rajesh’);`    
 		`const VAR_NAME = ‘rajesh’;` 		
-	- should be called without object using scope resolution operator.  eg.ClassName::VAR_NAME;
-	- while extends, it is called using PARENT::var_name ,  
-	- we need SELF::var_name instead of $this->var_name while using in same class	
+- should be called without object using scope resolution operator.  eg.ClassName::VAR_NAME;
+- while extends, it is called using PARENT::var_name ,  
+- we need SELF::var_name instead of $this->var_name while using in same class	
 
 ## MAGIC CONSTANTS:
 1. `__LINE__` 		return line number
@@ -181,9 +182,9 @@ $GLOBALS[] 	$name="rajesh";
 		body; //we can use $key
 	}
 	```
-5. BREAKS: break; 
+5. BREAKS: break;   
 	- exit(); # totally exit from program die(); #stop when previous error
-6. `goto varname; continue;`
+6. `goto varname; continue;`  
 
 ## FUNCTION:
 1. pass by value : `function functionname ( $varname ) { body;}`	
@@ -230,10 +231,12 @@ $_SESSION[‘varname’]="deep";
 3. $_REQUEST[‘varname’];
 
 ## FILES UPLOAD:
-	```php
-	<form action="" method="post" enctype="multipart/form-data">
-		<input type="file" name="image">
-	```
+
+```php
+<form action="" method="post" enctype="multipart/form-data">
+	<input type="file" name="image">
+```
+
 ```php
 $_FILES[‘image’][‘name’],
 $_FILES[‘image’][‘type’] 
@@ -253,9 +256,11 @@ move_upload_file($_FILES[‘image’][‘temp_name’],’target path’);
 	
 
 
-OBJECT ORIENTED PROGRAMMING
--------------------------------------------------------------------------------------------------------------------------------
-Class: template to make object, blueprint of properties and behaviours
+# OBJECT ORIENTED PROGRAMMING
+## Class 
+> template to make object, blueprint of properties and behaviours
+	
+```php	
 	class className{
 		function __construct(){	//it is called when $obj = new className()
 		}
@@ -264,15 +269,21 @@ Class: template to make object, blueprint of properties and behaviours
 		function __clone(){		//it is called when using clone keyword
 		}	
 	}
-$this – refer property of current class
+```
+**$this** – refer property of current class  
 
-Object: instance of class
+## Object: 
+> instance of class
+
+```php
 $obj = new className();	
 $obj->varnames; $obj->function();
-cloning object:  use clone keyword before object to be copied.   		eg $obj2= clone obj1;
+```
+**cloning object**:  use clone keyword before object to be copied.   		eg $obj2= clone obj1;
 
 
-ENCAPSULATION:
+## ENCAPSULATION:
+
 --------------------------------------------------
 |			| Same class |	Derived  |	outside  |
 |-----------|------------|-----------|-----------|
@@ -283,85 +294,116 @@ ENCAPSULATION:
 
 - We can access current class variable by $this->variablename;
 
-STATIC:	ex:can maintain count how many objects created for the class by incrementing each time.
-	can call without creating object with scope resolution operator.
-	We can declare static as private and protected
-	Static variable      public static $varname;
-	Static method      public static functionname(){
-				return obj;	return staticvariable;	}	//should not return normal variable,becz there will be no obj,so cant use $this->variablename
+## STATIC:	
+> ex:can maintain count how many objects created for the class by incrementing each time.
+	
+	- can call without creating object with scope resolution operator.
+	- We can declare static as private and protected
+
+1. Static variable      `public static $varname;`
+2. Static method      
+```php 
+	public static functionname(){
+	return obj;	return staticvariable;	}	//should not return normal variable,becz there will be no obj,so cant use $this->variablename
+```
 			
-	#calling static variables,methods
-	classname::methodname(); 	classname::variablename();
-	parent :: methodname();	parent :: variablename();
-	self::methodname(); 		self::variablename();
+3. calling static variables,methods
+	- classname::methodname(); 	classname::variablename();
+	- parent :: methodname();	parent :: variablename();
+	- self::methodname(); 		self::variablename();
 	
-	Dont use $this for static, its error
+Note: Dont use $this for static, its error
 	
 
-INHERITANCE: php support 	1.single and 
-							2.multilevel inheritance(extend by more than one child)
-	we should parent constructor by using parent::__construt();
-	if we need parent class function, parent::functionname();	
+## INHERITANCE: 
+1. single and 
+2. multilevel inheritance(extend by more than one child)
+	
+	- we should parent constructor by using parent::__construt();
+	- if we need parent class function, parent::functionname();	
 
 
-POLYMORPHISM: abilty to define method in many forms
-	method overriding – php does not allowed two same func names. We can use it in inheritance.
-	method overloading -  only works with magic functions like _call, __set etc
+## POLYMORPHISM: 
+> abilty to define method in many forms
+	
+1. method overriding – php does not allowed two same func names. We can use it in inheritance.
+2. method overloading -  only works with magic functions like _call, __set etc
 
-FINAL keyword will avoid overriding	//act as super keyword
-	final method: cannot be overload while being inherited
-	final class: cannot be inherited
-	Parent::methodname();			// act as super function
+## FINAL 
+> keyword will avoid overriding	//act as super keyword
+
+1. final method: cannot be overload while being inherited
+2. final class: cannot be inherited
+3. Parent::methodname();			// act as super function
 
 
-ABSTRACTION: hiding the implementation
-		have abstract and non abstract function
+## ABSTRACTION: 
+> hiding the implementation
+		
+		- have abstract and non abstract function
+```php
 	abstract classname{	//abstract class must have atleast one abstract class
 		abstract function funcname();	// have only function declaration not defination
 		function func2(){..... with defination.....}
 	}
+```
 
-INTERFACE: 100% abstraction, implements to child class. all function should public
+## INTERFACE: 
+> 100% abstraction, implements to child class. all function should public
+	
+```php	
 	interface fruit{
 	function funcname();
 	}
 	class apple implments fruit{
 		function funcname(){.....}
 	}
+```
 
-TRAIT:same like abstract interface.(for multiple inheritance)
+## TRAIT:
+> same like abstract interface.(for multiple inheritance)
+
+```php
 	trait A{
 		function functionname();----}
 	class B{
 		user A;}
 	$obj = new B(); obj->functionname();
+```
 
-ANONYMOUS FUNCTION:
-	$variableName = function(){----};
-ANONYMOUS CLASS:
-	$obj = (new class{-----functions and vairiables-----});
+## ANONYMOUS FUNCTION:
+`$variableName = function(){----};`
+
+## ANONYMOUS CLASS:
+`$obj = (new class{-----functions and vairiables-----});`
 	
-NAMCESPACE: can use same name function and class
+## NAMCESPACE: 
+> can use same name function and class
+
+```php
 	namespace namespacename;
 	class class1{ }
 		function func1(){------} 
 	$obj = new \namespacename\class1();	//creating object using namespace
 	\namespacename\func1():	//function calling using namespace
+```
 
-FILE HANDLING: w=write, r=read, a=append
-			$handle = fopen(‘filename’,’w’);
-	write:	fwrite($handle,’something’);
-			fgets($handle’);	//string
- 			fgetc($handle);	//char	
-			foeof($handle);	//endofline
-			fclose($handle);
-	read:	$read = file(‘filename’);	//return each line in array
-			echo fread(fopen(‘filename’),filesize(‘filename’))
-	delete:	unlink(‘filename’);
-	rename: rename(‘oldname’,’newname’);
-	opendirectory:	$handle = opendir(‘dirname’);	while(readir(‘filename’)){-----------}	
+## FILE HANDLING: 
+- w=write, r=read, a=append  
+			$handle = fopen(‘filename’,’w’);  
+	write:	fwrite($handle,’something’);  
+			fgets($handle’);	//string  
+ 			fgetc($handle);	//char	  
+			foeof($handle);	//endofline  
+			fclose($handle);  
+	read:	$read = file(‘filename’);	//return each line in array  
+			echo fread(fopen(‘filename’),filesize(‘filename’))  
+	delete:	unlink(‘filename’);  
+	rename: rename(‘oldname’,’newname’);  
+	opendirectory:	$handle = opendir(‘dirname’);	while(readir(‘filename’)){-----------}	  
 
-MYSQL CONNECTION:
+## MYSQL CONNECTION:
+```php	
 	$conn =mysqli_connect(‘localhost’,’root’,’password’,’dbname’);
 	$result= mysqli_query($conn,$query);
 	echo mysqli_num_rows($result); //return num of rows
@@ -374,9 +416,11 @@ MYSQL CONNECTION:
 	$row=$result->fetch_array($query);
 
 	$lastid = mysqli_insert_id($conn);
+```
 
+## AUTOLOADING:
 
-AUTOLOADING:
+```php	
 	import file having below function, and create object directly use it
 	spl_autoload_register(function($var){
 		include $var.’php’;
@@ -387,8 +431,12 @@ AUTOLOADING:
 	function __autoload($funName){
 		require_once($_SERVER["DOCUMENT_ROOT"] . "/classes/$class_name.php")
 	}
+```
 
-NAMESPACE: - can use same class/function name in same file
+## NAMESPACE: - 
+> can use same class/function name in same file
+
+```php
 	namespace class1;
 	class Hello{} function Hii(){}
 
@@ -397,68 +445,68 @@ NAMESPACE: - can use same class/function name in same file
 
 	$obj = new class1\Hello();	 class1\Hii():
 	$obj = new class2\Hello();	 class1\Hii():
+```
+
+## MAGIC METHODS:
+1. __set();			- while writing data inaccessible property
+2. __get();			-while reading data
+3. __isset();			-triggered while called isset() empty()
+4. __unset();			-invoke when unsert() used
+5. __construct()
+6. __destruct()
+7. __call()
+8. __callstatic()
+9. __sleep()
+10. __wakeup()
+11. __tostring()		-when echo the object
+12. __invoke()
+13. __set_state()		- print object
+14. __clone()
+15. __debugInfo()		- it will call, when using var_dump($obj), we can modify what should print 
+16. __invoke()			- call when we simple calling object with ();	
+
+## GLOBAL VARIABLE:
+1. $GLOBALS		
+2. $_SERVER		
+3. $_REQUEST
+4. $_POST
+5. $_GET
+6. $_FILES
+7. $_ENV
+8. $_COOKIE
+9. $_SESSION	
+10. $php_errormsg
+11. $HTTP_RAW_POST_DATA
+12. $http_response_header
+13. $argc -> number of arg passed to script
+14. $argv	-> array of arg passed to script
 
 
-MAGIC METHODS:
-	__set();			- while writing data inaccessible property
-	__get();			-while reading data
-	__isset();			-triggered while called isset() empty()
-	__unset();			-invoke when unsert() used
-	__construct()
-	__destruct()
-	__call()
-	__callstatic()
-	__sleep()
-	__wakeup()
-	__tostring()		-when echo the object
-	__invoke()
-	__set_state()		- print object
-	__clone()
-	__debugInfo()		- it will call, when using var_dump($obj), we can modify what should print 
-	__invoke()			- call when we simple calling object with ();	
-
-GLOBAL VARIABLE:
-	$GLOBALS		
-	$_SERVER		
-	$_REQUEST
-	$_POST
-	$_GET
-	$_FILES
-	$_ENV
-	$_COOKIE
-	$_SESSION	
-	$php_errormsg
-	$HTTP_RAW_POST_DATA
-	$http_response_header
-	$argc -> number of arg passed to script
-	$argv	-> array of arg passed to script
-
-
-SERVER VARIABLES:
-	$_SERVER[‘PHP_SELF’]			-filename with drectory
-	$_SERVER[‘SERVER_NAME’]			-name of host
-	$_SERVER[‘HTTP_HOST’]			-return host headers
-	$_SERVER[‘HTTP_REFERER’]		-complete url
-	$_SERVER[‘HTTP_USER_AGENT’]		-browser platform details
-	$_SERVER[‘SCRIPT_NAME’]			-current script filename
-	$_SERVER[‘GATEWAY_INTERFACE’]	-version of cgi
-	$_SERVER[‘SERVER_ADDR’]			-ip of host
-	$_SERVER[‘SERVER_SOFTWARE’]		-server identification string(apache/2.2.24)
-	$_SERVER[‘SERVER_PROTOCOL’]		-name and revision of port (HTTP/1.1)
-	$_SERVER[‘REQUEST_METHOD’]		-GET,POST
-	$_SERVER[‘REQUEST_TIME’]		- timestamp of request time
-	$_SERVER[‘QUERY_STRING’]		-return if query string exist
-	$_SERVER[‘HHTP_ACCEPT’]			-accept header of request
-	$_SERVER[‘HTTPS’]				-true false if https
-	$_SERVER[‘REMOTE_ADDR’]			-ip of user
-	$_SERVER[‘REMOTE_HOST’]			-hostname of user
-	$_SERVER[‘REMOTE_PORT’]			-port used on user machine
-	$_SERVER[‘SCRIPT_FILENAME’]		-seradmine directive 
-	$_SERVER[‘SERVER_NAME’]			- absolute filepath of script  
-	$_SERVER[‘SERVER_PORT’]			-return port 80
-	$_SERVER[‘SERVER_SIGNATURE’]	-server version virtual host script
-	$_SERVER[‘PATH_TRANSLATED’]		-file system path of current 
-	$_SERVER[‘SCRIPT_URI’]			-Url of current page
+## SERVER VARIABLES:
+1. $_SERVER[‘PHP_SELF’]			-filename with drectory
+2. $_SERVER[‘SERVER_NAME’]			-name of host
+3. $_SERVER[‘HTTP_HOST’]			-return host headers
+4. $_SERVER[‘HTTP_REFERER’]		-complete url
+5. $_SERVER[‘HTTP_USER_AGENT’]		-browser platform details
+$_SERVER[‘SCRIPT_NAME’]			-current script filename
+$_SERVER[‘GATEWAY_INTERFACE’]	-version of cgi
+$_SERVER[‘SERVER_ADDR’]			-ip of host
+$_SERVER[‘SERVER_SOFTWARE’]		-server identification string(apache/2.2.24)
+$_SERVER[‘SERVER_PROTOCOL’]		-name and revision of port (HTTP/1.1)
+$_SERVER[‘REQUEST_METHOD’]		-GET,POST
+$_SERVER[‘REQUEST_TIME’]		- timestamp of request time
+$_SERVER[‘QUERY_STRING’]		-return if query string exist
+$_SERVER[‘HHTP_ACCEPT’]			-accept header of request
+$_SERVER[‘HTTPS’]				-true false if https
+$_SERVER[‘REMOTE_ADDR’]			-ip of user
+$_SERVER[‘REMOTE_HOST’]			-hostname of user
+$_SERVER[‘REMOTE_PORT’]			-port used on user machine
+$_SERVER[‘SCRIPT_FILENAME’]		-seradmine directive 
+$_SERVER[‘SERVER_NAME’]			- absolute filepath of script  
+$_SERVER[‘SERVER_PORT’]			-return port 80
+$_SERVER[‘SERVER_SIGNATURE’]	-server version virtual host script
+$_SERVER[‘PATH_TRANSLATED’]		-file system path of current 
+$_SERVER[‘SCRIPT_URI’]			-Url of current page
 
 MAIL: mail($to,$subject,$body,$header);
 XML: simplexml_load_file(‘xmlfile’);
