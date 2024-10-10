@@ -44,49 +44,50 @@
 ### Comments tag: 
 `<!--this is comment-->`  
 
-|  Formated Elements | Details  | Semantic Alternative | Details  | Output|
-|---|---|---|---|--|
-| `<b>` | make text appear thicker | `<strong>` | important text. | <b>bold</b>|
-| `<i>` | Italic text | `<em>` | emphasizing text | <i>italic</i> | 
-| `<mark>` | Highlight text in yellow |
-| `<small>` | reduction in font size |  ||<sub><sup>small</sup></sub>|
-| `<del>` | indicates text deleted | `<s>` | not relevant| <s>strike</s>|
-| `<ins>` | indicates text inserted | `<u>` |misspelled text| <ins>underlline</ins> |
-| `<sup>` | Superscript text |  ||sup<sup>script</sup>|  
-| `<sub>` | Subscript text | ||sub<sub>script</sub>|
-| `<cite>` | defines title of book inside `<p>`(same as italic)  |  ||
-| `<address>` | defines contact information (same as italic)  |  ||
-| `<abbr>` | defines abbrevation (same as italic)  |  ||
-| `<dfn>` | defines title of a content in same line (same as italic)  |  ||
-| `<q>` | insert quotaion|||"quote"|
-| `<code>` | define computer code|`<kbd>`,`<pre>`,`<samp>`,`<var>`| keyboard shortcut |`code`|
-|`<article>`|specify a content (same like p tag)||||
-|`<blockquote>`|specifies text is quoted from another site.(same like p tag)|
-|`<aside>`|defines some content aside from the content it is placed in.mostly used in sidebar (same like p tag)|
-|`<base>`|specifies the base URL and/or target for all relative URLs|
-| `<bdi>` | bi directional isolation(used for arabic language in reverse)|
-|`<bdo>`| reverse the text(`<bdo dir="rtl">This</bdo>`)|
-|`<canvas>`| used to draw graphics by javascript|
-|`<data>`| machine readable value(`<data value="21053">Cherry Tomato</data`)|
-|`<dialog>`| show text in dialog box`<dialog open>text</dialog>`|  
-|`<div>`| defines division of web page|
-|`<fieldset>`| group related elements like form label & input|
-|`<figure>`| group `<img>` and `<figcaption>`(which provides caption for img)|  
-|`<footer>`| footer section |
-|`<header>`| contains h tags and p |
-|`<hr>`| thematic break|
-|`iframe`| embed another website|
-|`<legend>`| define caption for fieldset|
-|`<main>`| specifies main content|  
-|`<label>`| wrap around any content and has for attribute that id|  
-|`<meter>`| creates a progress bar `<meter id="disk_c" value="2" min="0" max="10"></meter>`|`<progress>`|
-|`<nav>`| wrap around navigation links|  
-|`<noscript>`| display text if script disabled in browser|  
-|`<output>`| used by javascript|
-|`<picture>`| responsive images|
-|`<section>`| defines section of webpage|
-|`<time>`| display time |
-|`<wbr>`| wont break the word if browser shrinks|
+### Format Elements
+| Elements      | Details                   | Alternative | Details         | Output        |
+|---------------|---------------------------|-------------|-----------------|---------------|
+| `<b>`         | make text appear thicker  | `<strong>`  | important text. | <b>bold</b>   |
+| `<i>`         | Italic text               | `<em>`      | emphasizing text| <i>italic</i> | 
+| `<mark>`      | Highlight text in yellow  |             |                 |               |
+| `<small>`     | reduction in font size    |             |                 | <sub><sup>small</sup></sub>|
+| `<del>`       | indicates text deleted    | `<s>`       | not relevant    | <s>strike</s>|
+| `<ins>`       | indicates text inserted   | `<u>`       | misspelled text | <ins>underlline</ins> |
+| `<sup>`       | Superscript text          |             |                 | sup<sup>script</sup>|  
+| `<sub>`       | Subscript text            |             |                 | sub<sub>script</sub>|
+| `<cite>`      | defines title of book inside `<p>`(same as italic)  |  ||
+| `<address>`   | defines contact information (same as italic)  |  ||
+| `<abbr>`      | defines abbrevation (same as italic)  |  ||
+| `<dfn>`       | defines title of a content in same line (same as italic)    |  ||
+| `<q>`         | insert quotaion           |             |                   |"quote"|
+| `<code>`      | define computer code      |`<kbd>`,`<pre>`,`<samp>`,`<var>`| keyboard shortcut |`code`|
+|`<article>`    | specify a content (same like p tag)||||
+|`<blockquote>` | specifies text is quoted from another site.(same like p tag)|
+|`<aside>`      | defines some content aside from the content it is placed in.mostly used in sidebar (same like p tag)|
+|`<base>`       | specifies the base URL and/or target for all relative URLs|
+| `<bdi>`       | bi directional isolation(used for arabic language in reverse)|
+|`<bdo>`        | reverse the text(`<bdo dir="rtl">This</bdo>`)|
+|`<canvas>`     | used to draw graphics by javascript|
+|`<data>`       | machine readable value(`<data value="21053">Cherry Tomato</data`)|
+|`<dialog>`     | show text in dialog box`<dialog open>text</dialog>`|  
+|`<div>`        | defines division of web page|
+|`<fieldset>`   | group related elements like form label & input|
+|`<figure>`     | group `<img>` and `<figcaption>`(which provides caption for img)|  
+|`<footer>`     | footer section            |
+|`<header>`     | contains h tags and p     | 
+|`<hr>`         | thematic break            |
+|`iframe`       | embed another website     |
+|`<legend>`     | define caption for fieldset|
+|`<main>`       | specifies main content    |  
+|`<label>`      | wrap around any content and has for attribute that id|  
+|`<meter>`      | creates a progress bar `<meter id="disk_c" value="2" min="0" max="10"></meter>`|`<progress>`|
+|`<nav>`        | wrap around navigation links|  
+|`<noscript>`   | display text if script disabled in browser|  
+|`<output>`     | used by javascript        |
+|`<picture>`    | responsive images         |
+|`<section>`    | defines section of webpage|
+|`<time>`       | display time              |    
+|`<wbr>`        | wont break the word if browser shrinks|
 
 **Form**: 
 `<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
