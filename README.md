@@ -47,7 +47,9 @@
 
 
 ## Others
-   1. [YouTube](YouTube/YouTube-channels.html)
-   2. [C](c-c++/C)
-   3. [C++](c-c++/C++)
+   1. [YouTube](others/YouTube-channels)
+   2. [C](others/c-c++/C)
+   3. [C++](others/c-c++/C)
+   4. [Php](others/PHP)
+   
 
