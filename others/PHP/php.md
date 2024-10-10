@@ -282,9 +282,8 @@ $obj->varnames; $obj->function();
 **cloning object**:  use clone keyword before object to be copied.   		eg $obj2= clone obj1;
 
 
-## ENCAPSULATION:
+## ENCAPSULATION:  
 
---------------------------------------------------
 |			| Same class |	Derived  |	outside  |
 |-----------|------------|-----------|-----------|
 |public		| yes		 |	yes		 |  yes 	 |
