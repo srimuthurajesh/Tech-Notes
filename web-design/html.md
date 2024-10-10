@@ -23,6 +23,7 @@
 ```
 
 ### Core tags  
+
 | Tag                   | Description                                     |
 |-----------------------|-------------------------------------------------|
 | `<!DOCTYPE html>`     | Declares the HTML version as 5.                 |
@@ -31,6 +32,7 @@
 | `<head>`              | Contains metadata like title, links, and meta tags. |
 
 ### Common tags
+
 | Tag                    | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
 | `<h1>`, `<h2>`, `<h3>` | Defines headings and subheadings from level 1 (largest) to level 6 (smallest).|
