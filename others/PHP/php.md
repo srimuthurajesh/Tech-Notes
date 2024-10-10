@@ -155,80 +155,101 @@ $GLOBALS[] 	$name="rajesh";
 
 ## LOOPS:
 1. for loop
- 	for ( intialisation; condition; inc/dec) {
+ 	```php
+	for ( intialisation; condition; inc/dec) {
 		body;
 	}
+	```
 2. while loop
+	```php
 	while ( condition ) {
 		body;
 	}
+	```
 3. do-while loop
+	```php
 	do {
  		body;
 	} while ( condition )
+	```
 4. foreach loop
+	```php
 	foreach ( $arrayname as $var) {			//foreach with value
 		body;
 	}
 	foreach ( $arrayname as $key =>  $var){		//foreach with reference
 		body; //we can use $key
 	}
-5. BREAKS: break; exit(); # totally exit from program die(); #stop when previous error
-		goto varname; continue;
+	```
+5. BREAKS: break; 
+	- exit(); # totally exit from program die(); #stop when previous error
+6. `goto varname; continue;`
 
-FUNCTION:
-	function functionname ( $varname ) { body;}	#pass by value
-	function functionname ( &$varname ) { body;}	#pass by reference
-	function functionname  ( ...$varname ) { body; }	#variable length parameters
-	function functionname ($varname=0) {body;}	#default arguements		
-	-same function name should not repeat in php
-	Return value by reference:
-		function &get_global_variable($name) {
-			return $GLOBALS[$name];	
-		}
-		$num = 10;
-		$value =& get_global_variable("num");
-		print $value . "\n";
-		$value = 20;
-		print $num;
+## FUNCTION:
+1. pass by value : `function functionname ( $varname ) { body;}`	
+2. pass by reference: `function functionname ( &$varname ) { body;}`
+3. variable length parameters: `function functionname  ( ...$varname ) { body; }`	
+4. default arguements: `function functionname ($varname=0) {body;}`		  
 
-	function chaining: $obj->func1()->func2();	// func1 should return $this
+Note: same function name should not repeat in php
+5. Return value by reference:
+	```php
+	function &get_global_variable($name) {
+		return $GLOBALS[$name];	
+	}
+	$num = 10;
+	$value =& get_global_variable("num");
+	print $value . "\n";
+	$value = 20;
+	print $num;
+	```
+6. function chaining: `$obj->func1()->func2();`	// func1 should return $this
 
-COOKIES: text files stored on client computer
-	setcookie("cookiename","cookevalue","expirytime",path,url,https,httponly);
-	secure way --> setcookie("cookiename","cookevalue","expirytime",'/',null,null,true);
-	
-	eg: setcookie("name","rajesh","time()-3600");
-	$_COOKIE("cookiename");			//getcookies
-	setcookie("cookiename",null,expirytime);	//remove cookie
+## COOKIES: 
+> text files stored on client computer
 
-SESSION: creates file in a temp folder in server, 32 hexadecimal number as unique id. A cookie called PHPSESSID is sent to client browser,
-	session_start();	
-	session_destroy();
-	$_SESSION[‘varname’]="deep";
+setcookie("cookiename","cookevalue","expirytime",path,url,https,httponly);  
+secure way --> setcookie("cookiename","cookevalue","expirytime",'/',null,null,true);  
 
-HTTP-superGlobals:
-	$_GET[‘varname’];
-	$_POST[‘varname’];
-	$_REQUEST[‘varname’];
+eg: `setcookie("name","rajesh","time()-3600");`
+1. getcookies: `$_COOKIE("cookiename");	`		
+2. Remove cookies: `setcookie("cookiename",null,expirytime);`
 
-FILES UPLOAD:
-	<fom action="" method="post" enctype="multipart/form-data">
+## SESSION: 
+> creates file in a temp folder in server, 32 hexadecimal number as unique id. A cookie called PHPSESSID is sent to client browser,
+```php
+session_start();	
+session_destroy();
+$_SESSION[‘varname’]="deep";
+```
+
+## HTTP
+> superGlobals:
+1. $_GET[‘varname’];
+2. $_POST[‘varname’];
+3. $_REQUEST[‘varname’];
+
+## FILES UPLOAD:
+	```php
+	<form action="" method="post" enctype="multipart/form-data">
 		<input type="file" name="image">
+	```
+```php
 $_FILES[‘image’][‘name’],
 $_FILES[‘image’][‘type’] 
 $_FILES[‘image’][‘size’] 
 move_upload_file($_FILES[‘image’][‘temp_name’],’target path’); 
+```
 
-REDIRECTION:
-	header(‘Location’:’pagename.php’);
-	header(‘Location’:$_SERVER[‘HTTP_REFERER’]);
+## REDIRECTION:
+1. header(‘Location’:’pagename.php’);
+2. header(‘Location’:$_SERVER[‘HTTP_REFERER’]);
 
-FILE INCLUSION:
-	include(‘filename’);		//throw error if file not exist
-	include_once(‘filename’);	//should not repeat
-	require(‘filename’);		//not throw error if file not exist
-	require_once(‘filname’);	//should not repeat
+## FILE INCLUSION:
+1. include(‘filename’);		//throw error if file not exist
+2. include_once(‘filename’);	//should not repeat
+3. require(‘filename’);		//not throw error if file not exist
+4. require_once(‘filname’);	//should not repeat
 	
 
 
