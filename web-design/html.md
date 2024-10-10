@@ -47,6 +47,7 @@
 `<!--this is comment-->`  
 
 ### Format Elements
+
 | Elements      | Details                   | Alternative | Details         | Output        |
 |---------------|---------------------------|-------------|-----------------|---------------|
 | `<b>`         | make text appear thicker  | `<strong>`  | important text. | <b>bold</b>   |
@@ -91,12 +92,14 @@
 |`<time>`       | display time              |    
 |`<wbr>`        | wont break the word if browser shrinks|
 
-**Form**: 
+## Form: 
 `<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
 
-**Input**:
+## Input(Textarea):
 `<textarea rows="4" cols="50"></textarea>`
-**Select autocomplete**:  
+
+## Select with autocomplete: 
+
 ```html
 <input list="browsers" name="browser" id="browser">
   <datalist id="browsers">
@@ -117,10 +120,14 @@
   </select>
 ```
 
-**Button**: creates a button element  
+## Button 
+> creates a button element  
+
 `<button type="button/submit/reset" disabled="false" formaction="URL" formmethod="post">Click Me!</button>`    
 
-**Description**: creates a decription list  
+## Description
+> creates a decription list  
+
 ```html
 <dl>
   <dt>Coffee</dt>
@@ -130,19 +137,24 @@
 </dl>
 ```
 
-**Detail Element**: minimize maximize content
+## Detail Element 
+> minimize maximize content
+
 ```html
 <details>
   <summary>Epcot Center</summary>
   <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
 </details>
 ```
-**Depreciated tags**:
-embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, big, center, dir
+
+## Depreciated tags:
+`embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, big, center, dir`
 
 
 
-**Map & area**: we can write hrefs inside an image based co ordinatinates    
+## Map & area: 
+> we can write hrefs inside an image based co ordinatinates    
+
 ```html
 <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
 <map name="workmap">
@@ -150,14 +162,18 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
   <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
 </map>
 ```
-**Audio**: embed sound content   
+
+## Audio 
+> embed sound content   
+
 ```html
 <audio controls>
   <source src="horse.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 ```
-**Video**: 
+
+## Video   
 ```html
 <video width="320" height="240" controls>
   <source src="forrest_gump.mp4" type="video/mp4">
@@ -166,7 +182,6 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
   <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
 </video>
 ```
-**base**
 
 ### List: 
 1. Ordered List 
