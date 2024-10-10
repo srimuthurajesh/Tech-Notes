@@ -13,6 +13,7 @@
    2. [My Striver's List](datastructure-algorithm/my-strivers-list)
    4. [Interview dsa handy notes](datastructure-algorithm/interview-dsa-handy-notes)
    9. [Blind 75](datastructure-algorithm/blind75.html)
+   9. [Blind 75](datastructure-algorithm/DSA-problems-solutions/array)
 
 ## Web Design 
    1. [HTML](web-design/html.html)
