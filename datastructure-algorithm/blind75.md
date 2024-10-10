@@ -148,7 +148,7 @@ Given an integer array nums, return true if any value appears at least twice in 
 Input: nums = [1,2,3,1]  
 Output: true  
 Explanation: The element 1 occurs at the indices 0 and 3.  
-[Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
+[Answer](DSA-problems-solutions/array#contains-duplicate)
 
 ---
 
