@@ -124,7 +124,7 @@ You can return the answer in any order.
 Input: nums = [2,7,11,15], target = 9  
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
-[My Answer]()
+[My Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
 ---
 
 ### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
