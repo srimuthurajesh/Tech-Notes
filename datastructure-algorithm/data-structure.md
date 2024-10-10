@@ -1,28 +1,18 @@
 # Data Structures
 
-- [Array](#1-array)
-- [Linked list](#2-linked-list)
-- [Stack](#3-stack)
-- [Queue](#4-queue)
-- [Priority Queue](#42-priority-queue)
-- [Tree](#5-tree)
-  - [Types of Traversals](#53-types-of-traversals)
-  - [Types of Binary Trees](#56-types-of-binary-trees)
-    1. Binary tree  
-    2. Binary search tree  
-    3. AVL tree  
-    4. Red Black tree  
-    5. Splay tree  
-    6. B tree  
-    7. B+ tree
-- [Heap](#6-heap)
-  1. MinHeap  
-  2. MaxHeap
-- [Hash](#7-hash)
-  - [Types of Hashing](#71-types-of-hashing)
-- [Graph](#8-graph)
-- [Advance Data Structures](#9-advance-data-structures)
-  - [XOR Linked list](#91-xor-linked-list)
+- [Array](#array)
+- [Linked list](#linked-list)
+- [Stack](#stack)
+- [Queue](#queue)
+- [Priority Queue](#priority-queue)
+- [Tree](#tree)
+  - [Types of Traversals](#types-of-traversals)
+  - [Types of Binary Trees](#types-of-binary-trees)
+- [Heap](#heap)
+- [Hash](#hash)
+- [Graph](#graph)
+- [Advance Data Structures](#advance-data-structures)
+  - [XOR Linked list](#xor-linked-list)
 
 
 
