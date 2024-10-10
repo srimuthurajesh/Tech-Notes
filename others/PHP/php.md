@@ -89,43 +89,48 @@ $GLOBALS[] 	$name="rajesh";
 	- while extends, it is called using PARENT::var_name ,  
 	- we need SELF::var_name instead of $this->var_name while using in same class	
 
-MAGIC CONSTANTS:
-	__LINE__ 		return line number
-	__FILE__		return filename
-	__DIR__		return directory
-	__FUNCTION__	return function name
-	__CLASS__		return classname
-	__TRAIT__		return trait name
-	__METHOD__ 	return classname and function name
-	__NAMESPACE__	return namespace name
+## MAGIC CONSTANTS:
+1. `__LINE__` 		return line number
+2. `__FILE__`		return filename
+3. `__DIR__	`	return directory
+4. `__FUNCTION__`	return function name
+5. `__CLASS__`		return classname
+6. `__TRAIT__`		return trait name
+7. `__METHOD__` 	return classname and function name
+8. `__NAMESPACE__`	return namespace name
 
-OPERATORS:
-	1. Arithmatic operator - +-*/%  a**2=a^2
-	2.Assignment operator - +=  -=  *=  /=  %=
-	3.Bitwise operator - &(and),|(or),^(xor),~(not),<<(swift left),>>(swift right)
-	4.Comparision operator - == === (!=,<>) !== <,>,<=,>=,<=>
-	5.Error control operator - @
-	6.Executor operator – backticks (` `)
-	7.Increment decrement – a++.a--.++a,--a
-	8.Logical operator – and,or,!,xor,&&,||
-	9.String operator - (.)concatenate dot operator
-	10.Array operator - (+)union, (==)equal, ===, !=, <>,!==
-	11.Type operator – (instanceof)     eg.objname instanceof classname
+## OPERATORS:
+1. Arithmatic operator - +-*/%  a**2=a^2
+2. Assignment operator - +=  -=  *=  /=  %=
+3. Bitwise operator - &(and),|(or),^(xor),~(not),<<(swift left),>>(swift right)
+4. Comparision operator - == === (!=,<>) !== <,>,<=,>=,<=>
+5. Error control operator - @
+6. Executor operator – backticks (` `)
+7. Increment decrement – a++.a--.++a,--a
+8. Logical operator – and,or,!,xor,&&,||
+9. String operator - (.)concatenate dot operator
+10. Array operator - (+)union, (==)equal, ===, !=, <>,!==
+11. Type operator – (instanceof)     eg.objname instanceof classname
 
-	Reference of(&): 	$b=10; $a = &$b;	echo $a;   //10	not a pointer,no new memory just pointing value	
+- Reference of(&): 	$b=10; $a = &$b;	echo $a;   //10	not a pointer,no new memory just pointing value	
 
-CONDITIONAL:
-1.if condition
+## CONDITIONAL:
+1. if condition
+	```php
 	if ( condition ){
 		body;
 	}
-2.if-else condition
+	```
+2. if-else condition
+	```php
 	if ( condition ){
 		body;
 	} else {
 		body;
 	}
-3.if-elseif condition
+	```
+3. if-elseif condition
+	```php
 	if ( condition ){
 		body;
 	} elseif ( condition ){
@@ -133,7 +138,9 @@ CONDITIONAL:
 	} else {
 		body;
 	}
-4.switch
+	```
+4. switch
+	```php
 	switch ( expression ) {
 		case value1:
 			statement;
@@ -141,31 +148,32 @@ CONDITIONAL:
 		case default:
 			statement;
 	}
-5.Single line condition
-	expression ? Statement1 : statement2;
+	```
+5. Single line condition
+	`expression ? Statement1 : statement2;`
 
 
-LOOPS:
-1.for loop
+## LOOPS:
+1. for loop
  	for ( intialisation; condition; inc/dec) {
 		body;
 	}
-2.while loop
+2. while loop
 	while ( condition ) {
 		body;
 	}
-3.do-while loop
+3. do-while loop
 	do {
  		body;
 	} while ( condition )
-4.foreach loop
+4. foreach loop
 	foreach ( $arrayname as $var) {			//foreach with value
 		body;
 	}
 	foreach ( $arrayname as $key =>  $var){		//foreach with reference
 		body; //we can use $key
 	}
-BREAKS: break; exit(); # totally exit from program die(); #stop when previous error
+5. BREAKS: break; exit(); # totally exit from program die(); #stop when previous error
 		goto varname; continue;
 
 FUNCTION:
