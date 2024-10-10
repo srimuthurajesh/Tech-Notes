@@ -49,7 +49,7 @@
 ## Others
    1. [YouTube](others/YouTube-channels)
    2. [C](others/c-c++/C)
-   3. [C++](others/c-c++/C)
+   3. [C++](others/c-c++/C++)
    4. [Php](others/PHP)
 
 

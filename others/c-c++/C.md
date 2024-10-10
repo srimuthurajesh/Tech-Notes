@@ -42,11 +42,11 @@ Typedef: rename a datatype, syntax: typedef int rajesh;   rajesh a=10;//rajesh b
 ### OPERATORS: 
 1. Arithmetic operators			+-*/%
 2. Relational operators			<, <=,>,>=, ==,! =,Take !a>=400 as a<=400.
-3. Logical operators			&&(and),||(or),!(not) is for bytes
+3. Logical operators			`&&(and),||(or),!(not)` is for bytes
 4. Assignment operators			x+=y is x=x+y
 5. Increment decrement operators	++,--
 6. Conditional operators(ternary)	condition?exp1:exp2;
-7. Bitwise operators			&(and),|(or),^(xor),~(1s compliment), <<(left),>>(rigth)		                
+7. Bitwise operators			`&(and),|(or),^(xor),~(1s compliment), <<(left),>>(rigth)	`	                
 8. Special operators		comma, sizeof, pointer, member selection
 9. Typecasting  			z=x(float)/y(float) where x and y is int
 	

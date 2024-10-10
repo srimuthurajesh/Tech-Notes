@@ -26,61 +26,68 @@
 ### Datatype : 	
 - Loosely typed language, no datatypes syntax
 1. Scalar   
-	a) int - whole number, equivalent C lang ‘long’ . 32Bit. –2,147,483,648 to +2,147,483,647. 
-		can be written in decimal, hexadecimal (prefixed with 0x), and
-		octal notation (prefixed with 0), and can include + / - signs
-	b) float  - real number, eqv to C lang ‘double’. 2.2E–308 to 1.8E+308
-	c) string, - series of char. $str="rajesh"; $str[1];  $str{1};	//a
-		heredoc- $string = <<<EOK rajesh EOK;
-	d)boolean -true or false, case sensitive, ((bool) other datatype) type-casting
+	1. int - whole number, equivalent C lang ‘long’ . 32Bit. –2,147,483,648 to +2,147,483,647. 
+		- can be written in decimal, hexadecimal (prefixed with 0x), and
+		- octal notation (prefixed with 0), and can include + / - signs
+	2. float  - real number, eqv to C lang ‘double’. 2.2E–308 to 1.8E+308
+	3. string, - series of char. $str="rajesh"; $str[1];  $str{1};	//a
+		- heredoc- `$string = <<<EOK rajesh EOK;`
+	4. boolean -true or false, case sensitive, ((bool) other datatype) type-casting
 3. Compound – object,	
 		b)array - collection of key/value pair
-			   array use hash tables, which complexity is 0(1).
+			- array use hash tables, which complexity is 0(1).
 				
-4. special - a) null - variable with no value.
-		it has been assigned the constant NULL.
-			it has not been set to any value yet.
-			it has been unset().	
-	b) resource - 	special data type, represent a PHP extension resource such as a database query, an open file, a database connection, and lots of other external types. You will never directly use this type, but will pass to the relevant functions
+4. special - 
+    1. null - variable with no value.
+		-it has been assigned the constant NULL.
+			- it has not been set to any value yet.
+			- it has been unset().	
+	2. resource - 	special data type, represent a PHP extension resource such as a database query, an open file, a database connection, and lots of other external types. You will never directly use this type, but will pass to the relevant functions  
 
-			Indirect reference variable: $name="rajesh";    $$name="good boy";      echo $rajesh;
-			we can declare variable without variable name.	//$var;
-			isset() - determine if a variable is set and is not NULL
-			unset() - undefined the variable
-			empty() -  determine whether a variable is empty
-			is_null() -  finds whether a variable is NULL
+			Indirect reference variable: $name="rajesh";    $$name="good boy";      echo $rajesh;  
+			we can declare variable without variable name.	//$var;  
+#### Important functions:
+1. isset() - determine if a variable is set and is not NULL  
+2. unset() - undefined the variable   
+3. empty() -  determine whether a variable is empty  
+4. is_null() -  finds whether a variable is NULL  
 
 ### SCOPES:
 1. Global scope -> need global keyword
 2. local scope
 3. super global scope
 4. static
-	```$GLOBALS[] 	$name="rajesh";
-				function getname(){
-					echo $GLOBALS['name'];		//access outer variable inside function
-				}getname();
+```php
+$GLOBALS[] 	$name="rajesh";
+			function getname(){
+				echo $GLOBALS['name'];		//access outer variable inside function
+			}getname();
 ```
 
-TYPE JUGGLING:
-	<?php
+### TYPE JUGGLING:
+
+```php	
+<?php
 	$foo = "1";  // $foo is string (ASCII 49)
 	$foo =$foo * 2;   // $foo is now an integer (2)
 	$foo = $foo * 1.3;  // $foo is now a float (2.6)
 	$foo = 5 * "10 Little Piggies"; // $foo is integer (50)
 	$foo = 5 * "10 Small Pigs";     // $foo is integer (50)
-	?>
+?>
+```
 
-ARRAY:
-	1.Indexed array- $varname=array(‘rajesh’,’arun’);
-	2.Associate array- $varname=array(1=>’raj’,2=>’arun’); //userdefined key
-	3.Multidimensional - $varname = array(2=>array(‘rajesh’))
+## ARRAY:
+1. Indexed array- $varname=array(‘rajesh’,’arun’);
+2. Associate array- $varname=array(1=>’raj’,2=>’arun’); //userdefined key
+3. Multidimensional - $varname = array(2=>array(‘rajesh’))
 
-CONSTANT : (globally accessible)	
-		define(‘VAR_NAME,’rajesh’);  
-		const VAR_NAME = ‘rajesh’;  		
-	-should be called without object using scope resolution operator.  eg.ClassName::VAR_NAME;
-	-while extends, it is called using PARENT::var_name ,  
-	-we need SELF::var_name instead of $this->var_name while using in same class	
+## CONSTANT :   
+> (globally accessible)	  
+		`define(‘VAR_NAME,’rajesh’);`    
+		`const VAR_NAME = ‘rajesh’;` 		
+	- should be called without object using scope resolution operator.  eg.ClassName::VAR_NAME;
+	- while extends, it is called using PARENT::var_name ,  
+	- we need SELF::var_name instead of $this->var_name while using in same class	
 
 MAGIC CONSTANTS:
 	__LINE__ 		return line number
