@@ -1,22 +1,33 @@
 # Algorithm: 
+
+# Table of Contents
+
+1. [Time Complexity](#1-time-complexity)
+2. [Type of Cases](#2-type-of-cases)
+3. [Searching](#3-searching)
+    - [Binary Search](#31-binary-search)
+4. [Sorting](#4-sorting)
+5. [Time Complexity Breakdown](#5-time-complexity-breakdown)
+
+### Overview
 > step by step to solve problem
 
 
 ### Time Complexity  
 > A measure of how the execution time of an algorithm grows with the size of the input data
 
-| Name | Symbol | code |
-| ----------- | ----------- |----------- |
-| constant | O(1) | ```arr[1];```|
-| logarithmic | O(log n) | binary search|
-| Logarithmic Base 2 | O(logn base 2) | ``` for(i=o;i<n;i=i/3)``` |
-| Logarithmic Base 3 | O(logn base 3) | ``` for(i-0;i<n;i=i/2)``` |
-| Square Root | O(sqrt(n))  | ``` for(i=0;i*i<n;i++)```  |
-| linear | O(n) | ``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)``` |
-| linearLogarithmic | O(nlog n) ||
-| quadratic | O(n<sup>2</sup>)  | 2 nested for loop |
-| cubic | O(n<sup>3</sup>)  | 3 nested forloop|
-| exponential | O(2<sup>n</sup>)  | |
+| Name                  | Symbol        | code                      |
+| ----------------------| --------------|---------------------------|
+| constant              | O(1)          | ```arr[1];```             |
+| logarithmic           | O(log n)      | binary search             |
+| Logarithmic Base 2    | O(logn base 2)| ``` for(i=o;i<n;i=i/3)``` |
+| Logarithmic Base 3    | O(logn base 3)| ``` for(i-0;i<n;i=i/2)``` |
+| Square Root           | O(sqrt(n))    | ``` for(i=0;i*i<n;i++)``` |
+| linear                | O(n)          | ``` for(i=0;i<n;i++) or for(i=n;i>0;i--) or for(i=0;i<n;i+2)``` |
+| linearLogarithmic     | O(nlog n)     |                           |
+| quadratic             | O(n<sup>2</sup>)  | 2 nested for loop     |
+| cubic                 | O(n<sup>3</sup>)  | 3 nested forloop      |
+| exponential           | O(2<sup>n</sup>)  |                       |
 
 ### Type of Cases
 1. **Worst Case** (Big Oh): Represents the maximum time taken for any input size.
