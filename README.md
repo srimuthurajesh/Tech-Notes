@@ -11,7 +11,7 @@
    1. [Data Struture](datastructure-algorithm/data-structure)
    2. [Algorithmn](datastructure-algorithm/algorithm) 
    2. [My Striver's List](datastructure-algorithm/my-strivers-list)
-   4. [Interview dsa handy notes](Computer%20science/interview-dsa-handy-notes.html)
+   4. [Interview dsa handy notes](datastructure-algorithm/interview-dsa-handy-notes)
    9. [Blind 75](datastructure-algorithm/blind75.html)
 
 ## Web Design 
@@ -51,5 +51,5 @@
    2. [C](others/c-c++/C)
    3. [C++](others/c-c++/C)
    4. [Php](others/PHP)
-   
+
 
