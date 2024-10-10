@@ -488,33 +488,41 @@ Note: Dont use $this for static, its error
 3. $_SERVER[‘HTTP_HOST’]			-return host headers
 4. $_SERVER[‘HTTP_REFERER’]		-complete url
 5. $_SERVER[‘HTTP_USER_AGENT’]		-browser platform details
-$_SERVER[‘SCRIPT_NAME’]			-current script filename
-$_SERVER[‘GATEWAY_INTERFACE’]	-version of cgi
-$_SERVER[‘SERVER_ADDR’]			-ip of host
-$_SERVER[‘SERVER_SOFTWARE’]		-server identification string(apache/2.2.24)
-$_SERVER[‘SERVER_PROTOCOL’]		-name and revision of port (HTTP/1.1)
-$_SERVER[‘REQUEST_METHOD’]		-GET,POST
-$_SERVER[‘REQUEST_TIME’]		- timestamp of request time
-$_SERVER[‘QUERY_STRING’]		-return if query string exist
-$_SERVER[‘HHTP_ACCEPT’]			-accept header of request
-$_SERVER[‘HTTPS’]				-true false if https
-$_SERVER[‘REMOTE_ADDR’]			-ip of user
-$_SERVER[‘REMOTE_HOST’]			-hostname of user
-$_SERVER[‘REMOTE_PORT’]			-port used on user machine
-$_SERVER[‘SCRIPT_FILENAME’]		-seradmine directive 
-$_SERVER[‘SERVER_NAME’]			- absolute filepath of script  
-$_SERVER[‘SERVER_PORT’]			-return port 80
-$_SERVER[‘SERVER_SIGNATURE’]	-server version virtual host script
-$_SERVER[‘PATH_TRANSLATED’]		-file system path of current 
-$_SERVER[‘SCRIPT_URI’]			-Url of current page
+6. $_SERVER[‘SCRIPT_NAME’]			-current script filename
+7. $_SERVER[‘GATEWAY_INTERFACE’]	-version of cgi
+8. $_SERVER[‘SERVER_ADDR’]			-ip of host
+9. $_SERVER[‘SERVER_SOFTWARE’]		-server identification string(apache/2.2.24)
+10. $_SERVER[‘SERVER_PROTOCOL’]		-name and revision of port (HTTP/1.1)
+11. $_SERVER[‘REQUEST_METHOD’]		-GET,POST
+12. $_SERVER[‘REQUEST_TIME’]		- timestamp of request time
+13. $_SERVER[‘QUERY_STRING’]		-return if query string exist
+14. $_SERVER[‘HHTP_ACCEPT’]			-accept header of request
+15. $_SERVER[‘HTTPS’]				-true false if https
+16. $_SERVER[‘REMOTE_ADDR’]			-ip of user
+17. $_SERVER[‘REMOTE_HOST’]			-hostname of user
+18. $_SERVER[‘REMOTE_PORT’]			-port used on user machine
+19. $_SERVER[‘SCRIPT_FILENAME’]		-seradmine directive 
+20. $_SERVER[‘SERVER_NAME’]			- absolute filepath of script  
+21. $_SERVER[‘SERVER_PORT’]			-return port 80
+22. $_SERVER[‘SERVER_SIGNATURE’]	-server version virtual host script
+23. $_SERVER[‘PATH_TRANSLATED’]		-file system path of current 
+24. $_SERVER[‘SCRIPT_URI’]			-Url of current page
 
-MAIL: mail($to,$subject,$body,$header);
-XML: simplexml_load_file(‘xmlfile’);
-JSON:	encode(), decode, f
-SERIEALIZE: serialize($obj); unserialize(string);		//make the obj into string, and we can use it with own values
+## MAIL: 
+`mail($to,$subject,$body,$header);`
+
+## XML: 
+`simplexml_load_file(‘xmlfile’);`
+
+## JSON:	
+`encode(), decode`
+
+## SERIEALIZE: 
+`serialize($obj); unserialize(string);		//make the obj into string, and we can use it with own values`
 
 
-TYPES OF EXCEPTION:
+## TYPES OF EXCEPTION:
+```
 THROWABLE
 	ERROR -notice,fatal,warning
 		Arithmatic Error
@@ -545,19 +553,21 @@ THROWABLE
 			RangeException
 			UnderFlowException
 			UnExpectedValueException
+```
+### ERROR REPORTING:
+1. error_reporting = 0 //make E_ALL
+2. ini_set(‘error_reporting’,’E_ALL’);
 
-ERROR REPORTING:
-	error_reporting = 0 //make E_ALL
-	ini_set(‘error_reporting’,’E_ALL’);
-
-TYPES OF ERROR:
-	1.Notice – small, non-critical error  (E_NOTICE, E_USER_NOTICE)
-	2.warning- error does not terminate script (E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED)
-	3.Fatal error -  critical error, cause script to terminate (E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR)
-	3.Parse error – syntax error (E_PARSE)
-	5.Strick standard notices - suggestions	(E_STRICT)
+### TYPES OF ERROR:
+1. Notice – small, non-critical error  (E_NOTICE, E_USER_NOTICE)
+2. warning- error does not terminate script (E_WARNING, E_CORE_WARNING, E_COMPILE_WARNING, E_USER_WARNING, E_DEPRECATED, E_USER_DEPRECATED)
+3. Fatal error -  critical error, cause script to terminate (E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR)
+4. Parse error – syntax error (E_PARSE)
+5. Strick standard notices - suggestions	(E_STRICT)
 	
-EXCEPTION HANDLING:
+## EXCEPTION HANDLING:
+	
+```php	
 	try{
 	}
 	catch (Exception $e){ var_dump($e->getTrace();)
@@ -567,26 +577,33 @@ EXCEPTION HANDLING:
 	throw new rajeshexception();
 	}
 	catch (rajeshException $e){	}
+```
+
+## WEBSERVICE:
+### JSON
 	
-WEBSERVICE:
-	#JSON
+```php
 	header('Content-type: text/json');
 	echo json_encode(array("name"=>"rajesh"));
+```
 
+### XML 
 
-	#XML 
-	$xml = new SimpleXMLElement("<student />");
-	$xml->addChild("name","rajesh");
-	$xml->addChild("age","23");
-	$dom = dom_import_simplexml($xml)->ownerDocument;
-	$dom->formatOutput = true;
-	echo $dom->saveXML();
+```php
+$xml = new SimpleXMLElement("<student />");
+$xml->addChild("name","rajesh");
+$xml->addChild("age","23");
+$dom = dom_import_simplexml($xml)->ownerDocument;
+$dom->formatOutput = true;
+echo $dom->saveXML();
+```
+##### xml result in page source
 
-			#xml result in page source
-			<?xml version="1.0"?>
-			<student>
-			  <name>rajesh</name>
-			  <age>23</age>
-			</student>	
-	
+```xml
+<?xml version="1.0"?>
+<student>
+	<name>rajesh</name>
+	<age>23</age>
+</student>	
+```
 	
