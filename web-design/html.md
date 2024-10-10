@@ -3,22 +3,19 @@
 
 - Latest version is HTML 5.2
 - is not case sensitive  
+- html element defined by tags `<tagName>content</tagName>`
 
 ### Basic Syntax  
 ```html
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
-   <head>
-       <title>Page Title</title>
-       <link rel="stylesheet" href="styles.css">
-	<meta charset="UTF-8">
-  	<meta name="description" content="Free Web tutorials">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
-   <h1>This is a Heading</h1>
-   <p>This is a paragraph.</p>
-</body>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+  </body>
 </html>
 ```
 
@@ -30,21 +27,19 @@
 | `<html>`              | Defines the root of an HTML document.           |
 | `<body>`              | Defines the body of the document.               |
 | `<head>`              | Contains metadata like title, links, and meta tags. |
+| `<title>`             | title in browser's title bar or in the page's tab |
 
 ### Common tags
 
-| Tag                    | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| `<h1>`, `<h2>`, `<h3>` | Defines headings and subheadings from level 1 (largest) to level 6 (smallest).|
-| `<p>`                  | Defines a paragraph. Does not preserve line breaks.                         |
-| `<pre>`                | Defines preformatted text. Preserves spaces and line breaks.                 |
-| `<a>`                  | Creates hyperlinks to connect different pages. Example: `<a href=”url”>`.    |
-| `<img>`                | Embeds an image on the web page. Includes attributes like `src`, `alt`, etc. |
- 
-### Line break 
-`</br>`  
-### Comments tag: 
-`<!--this is comment-->`  
+| Tag             | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| `<h1>`to `<h6>` | Defines headings from level 1 (largest) to level 6 (smallest). important for seo|
+| `<p>`           | Defines a paragraph. Does not preserve line breaks.                         |
+| `<pre>`         | Defines preformatted text. Preserves spaces and line breaks.                |
+| `<a>`           | Creates hyperlinks for different pages. attributes `title`, `href`          |
+| `<img>`         | Embeds an image. Includes attributes like `src`, `alt`, `heigth`, `width` etc. |
+| `<br>`          | Line break                                                                  |
+| `<!-- -->`      | Comment tag                                                                 | 
 
 ### Format Elements
 
@@ -91,9 +86,6 @@
 |`<section>`    | defines section of webpage|
 |`<time>`       | display time              |    
 |`<wbr>`        | wont break the word if browser shrinks|
-
-## Form: 
-`<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
 
 ## Input(Textarea):
 `<textarea rows="4" cols="50"></textarea>`
@@ -254,36 +246,38 @@ This alone shown in  <span style="color:red">red color</span>
 > Inline-surround only small parts of content’
  
 
-### FORM Element
+### Forms
 
 ```html
 <body>
-   	<form action=”http:rajesh.com” method=”GET”>	//show details in url
-<input type=”text” name=”usr”> enter username:</input>
-</form>
-<form action=”http:rajesh.com” method=”POST”>	//not show details
-<input type=”password” name=”pwd”> enter password:</input>
-<input type=”radio” name=”gender” value=”male”> male</input>
-<input type=”checkbox” name=”gender” value=”female”> male</input>
-<input type=”submit” value=”enter”></input>
-</form>
+  <form action=”http:rajesh.com” method=”GET”>	//show details in url
+    <input type=”text” name=”usr”> enter username:</input>
+  </form>
+  <form action=”http:rajesh.com” method=”POST”>	//not show details
+    <input type=”password” name=”pwd”> enter password:</input>
+    <input type=”radio” name=”gender” value=”male”> male</input>
+    <input type=”checkbox” name=”gender” value=”female”> male</input>
+    <input type=”submit” value=”enter”></input>
+  </form>
 </body>
 ```
+`<form action="/action_page.php" method="get" autocomplete="on" enctype="multipart/form-data" enctype="text/plain">`
 
 
-HTML 5
-doctype declaration					<!doctype html>
-The character encoding (charset) declaration 	<meta charset="UTF-8">
 
-New in HTML5
+# HTML 5
+- doctype declaration					`<!doctype html>`
+- The character encoding (charset) declaration 	`<meta charset="UTF-8">`
+- introduced in 2014  
+## New features in HTML5
 
-Forms
+## Forms
 - The Web Forms 2.0 specification allows for creation of more powerful forms 
 - Date pickers, color pickers, and numeric stepper controls have been added.
 - Input field types now include email, search, and URL.
 - PUT and DELETE form methods are now supported.
 
-Integrated API (Application Programming Interfaces) 
+### Integrated API (Application Programming Interfaces) 
 - Drag and Drop, Audio and Video, Offline Web Applications, History, Local Storage, Geolocation, Web Messaging.
 
 
@@ -354,7 +348,7 @@ AUDIO
 <audio controls autoplay> 	automatically play without need of visitor permission
 <audio controls autoplay loop> make a loop
 
-VIDEO
+## Video
 <video controls>
 <source src="video.mp4" type="video/mp4"> Video is not supported by your browser
 </video>
@@ -363,13 +357,14 @@ VIDEO
 <source src="video.ogg" type="video/ogg"> Video is not supported by your browser
 </video>
 
-PROGRESS BAR
-Status loading: <progress min="0" max="100" value="35">
-</progress>
+## Progress bar
+Status loading: `<progress min="0" max="100" value="35"></progress>`
 
-HTML5 webstorage:
-Before that storage done by javascript cookies
-Two types: 1.session storage(destroy when browser close) 2.local storage(local storage)
+## HTML5 webstorage:
+Before that storage done by javascript cookies  
+Two types:   
+1. session storage(destroy when browser close) 
+2. local storage(local storage)
 
 Storing a Value:
 localStorage.setItem("key1", "value1");
@@ -496,7 +491,7 @@ id="mysearch" name="searchitem" type="search" list=”colours”	//a search bar
 
 <input type="text" name="email" autofocus/>	// makes the desired input focus when the form loads(normal uh varum)
 
-HTML5 added several new input types:
+## New input types:
 - color
 - date
 - datetime
@@ -511,7 +506,7 @@ HTML5 added several new input types:
 - url
 - week
 
-New input attributes in HTML5:
+## New input attributes in HTML5:
 - autofocus
 - form
 - formaction
