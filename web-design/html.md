@@ -22,20 +22,27 @@
 </html>
 ```
 
-### Basic tags  
-**`<!DOCTYPE html>`** : Indicates the HTML version as 5.   
-**`<html>`**: defines root of an HTML document  
-**`<body>`**: defines document's body  
-**`<head>`**: contains metadata like title,link,meta   
+### Core tags  
+| Tag                   | Description                                     |
+|-----------------------|-------------------------------------------------|
+| `<!DOCTYPE html>`     | Declares the HTML version as 5.                 |
+| `<html>`              | Defines the root of an HTML document.           |
+| `<body>`              | Defines the body of the document.               |
+| `<head>`              | Contains metadata like title, links, and meta tags. |
 
-**Heading**: defines heading and subheading `<h1>`,`<h2>`,`<h3>`, `<h4>`, `<h5>`, and `<h6>`      
-**Paragraph**: define a paragraph. `<p> this is paragraph, doesnt follow line breaks</p>`  
-**Pre**: define preformated text `<pre> this follows exact line breaks </pre>`  
-**Links**: hyperlinks to connect different pages `<a href=”fb.com” target="_blank">click facebook</a>`  
-**Images**: embed images to web page `<img src=”Rajesh.jpg” alt=”Rajesh2.jpg” width=”104” height=”120”>`  
+### Common tags
+| Tag                    | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `<h1>`, `<h2>`, `<h3>` | Defines headings and subheadings from level 1 (largest) to level 6 (smallest).|
+| `<p>`                  | Defines a paragraph. Does not preserve line breaks.                         |
+| `<pre>`                | Defines preformatted text. Preserves spaces and line breaks.                 |
+| `<a>`                  | Creates hyperlinks to connect different pages. Example: `<a href=”url”>`.    |
+| `<img>`                | Embeds an image on the web page. Includes attributes like `src`, `alt`, etc. |
  
-**Line break** new line `</br>`  
-**Comments**: `<!--this is comment-->`  
+### Line break 
+`</br>`  
+### Comments tag: 
+`<!--this is comment-->`  
 
 |  Formated Elements | Details  | Semantic Alternative | Details  | Output|
 |---|---|---|---|--|
