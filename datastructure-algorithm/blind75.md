@@ -124,7 +124,8 @@ You can return the answer in any order.
 Input: nums = [2,7,11,15], target = 9  
 Output: [0,1]  
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
-[My Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
+[Answer](DSA-problems-solutions/array#two-sum)
+
 ---
 
 ### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
@@ -137,7 +138,8 @@ Input: prices = [7,1,5,3,6,4]
 Output: 5  
 Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
 profit = 6-1 = 5.  
-[My Answer](#2-best-time-to-buy-and-sell-stock---answer)
+[Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
+
 ---
 
 ### 3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)

@@ -38,6 +38,24 @@ public class LargestNumber {
 
 ```
 
+## Two Sum
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> tempMap = new HashMap<Integer, Integer>();
+        for(int i=0;i<nums.length;i++){
+            if(tempMap.get(nums[i])!=null){
+                return new int[]{tempMap.get(nums[i]), i};
+
+            }
+            tempMap.put(target-nums[i], i);
+        }
+        return new int[2];
+    }
+}
+```
+
 ## Best Time to Buy and Sell Stock
 
 ```java
