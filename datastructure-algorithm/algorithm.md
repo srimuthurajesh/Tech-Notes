@@ -2,12 +2,12 @@
 
 # Table of Contents
 
-1. [Time Complexity](#1-time-complexity)
-2. [Type of Cases](#2-type-of-cases)
-3. [Searching](#3-searching)
-    - [Binary Search](#31-binary-search)
-4. [Sorting](#4-sorting)
-5. [Time Complexity Breakdown](#5-time-complexity-breakdown)
+1. [Time Complexity](#time-complexity)
+2. [Type of Cases](#type-of-cases)
+3. [Searching](#searching)
+    - [Binary Search](#binary-search)
+4. [Sorting](#sorting)
+5. [Time Complexity Breakdown](#time-complexity-breakdown)
 
 ### Overview
 > step by step to solve problem
