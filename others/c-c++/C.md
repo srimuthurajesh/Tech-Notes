@@ -40,15 +40,15 @@ int main(){				//c program starts from main function
 Typedef: rename a datatype, syntax: typedef int rajesh;   rajesh a=10;//rajesh become int  
 
 ### OPERATORS: 
-1) Arithmetic operators			+-*/%
-2) Relational operators			<, <=,>,>=, ==,! =,Take !a>=400 as a<=400.
-3) Logical operators			&&(and),||(or),!(not) is for bytes
-4) Assignment operators			x+=y is x=x+y
-5) Increment decrement operators	++,--
-6) Conditional operators(ternary)	condition?exp1:exp2;
-7) Bitwise operators			&(and),|(or),^(xor),~(1s compliment), <<(left),>>(rigth)		                
-8) Special operators		comma, sizeof, pointer, member selection
-9) Typecasting  			z=x(float)/y(float) where x and y is int
+1. Arithmetic operators			+-*/%
+2. Relational operators			<, <=,>,>=, ==,! =,Take !a>=400 as a<=400.
+3. Logical operators			&&(and),||(or),!(not) is for bytes
+4. Assignment operators			x+=y is x=x+y
+5. Increment decrement operators	++,--
+6. Conditional operators(ternary)	condition?exp1:exp2;
+7. Bitwise operators			&(and),|(or),^(xor),~(1s compliment), <<(left),>>(rigth)		                
+8. Special operators		comma, sizeof, pointer, member selection
+9. Typecasting  			z=x(float)/y(float) where x and y is int
 	
 	
 ### FLOW CONTROL:  
@@ -66,14 +66,15 @@ Typedef: rename a datatype, syntax: typedef int rajesh;   rajesh a=10;//rajesh b
 6. continue;
 
 ### INPUT OUTPUT:
-1.formatted - scanf(); printf(); fscan(); fprint();
-2.unformatted - getc(variable);getchar(variable);gets(variable); putc(variable); putchar(variable) puts(variable);
-Conditional statements
-	1. %c	character
-	2. %d 	integer
-	3. %s	string
-	4. %f	float
-	5. %p  pointer
+1. formatted - scanf(); printf(); fscan(); fprint();
+2. unformatted - getc(variable);getchar(variable);gets(variable); putc(variable); putchar(variable) puts(variable);  
+
+#### Conditional statements  
+1. %c	character
+2. %d 	integer
+3. %s	string
+4. %f	float
+5. %p  pointer
 
 ### ARRAY: 
 > collection of similar datatype
