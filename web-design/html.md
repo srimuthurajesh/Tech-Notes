@@ -1,9 +1,11 @@
-### Hypertext markup language 
-- standard markup language for creating web page in browsers
+# Hypertext markup language 
+>  standard markup language for creating web page in browsers
+
 - Latest version is HTML 5.2
 - is not case sensitive  
 
-```
+### Basic Syntax  
+```html
 <!DOCTYPE html>  
 <html>
    <head>
@@ -20,7 +22,8 @@
 </html>
 ```
 
-**`<!DOCTYPE html>`** - Indicates the HTML version as 5.   
+### Basic tags  
+**`<!DOCTYPE html>`** : Indicates the HTML version as 5.   
 **`<html>`**: defines root of an HTML document  
 **`<body>`**: defines document's body  
 **`<head>`**: contains metadata like title,link,meta   
@@ -84,14 +87,14 @@
 **Input**:
 `<textarea rows="4" cols="50"></textarea>`
 **Select autocomplete**:  
-```
+```html
 <input list="browsers" name="browser" id="browser">
   <datalist id="browsers">
     <option value="Edge">
     <option value="Chrome">
   </datalist>
 ```
-```
+```html
 <select name="cars" id="cars">
     <optgroup label="Swedish Cars">
       <option value="volvo">Volvo</option>
@@ -108,7 +111,7 @@
 `<button type="button/submit/reset" disabled="false" formaction="URL" formmethod="post">Click Me!</button>`    
 
 **Description**: creates a decription list  
-```
+```html
 <dl>
   <dt>Coffee</dt>
   <dd>Black hot drink</dd>
@@ -118,7 +121,7 @@
 ```
 
 **Detail Element**: minimize maximize content
-```
+```html
 <details>
   <summary>Epcot Center</summary>
   <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
@@ -130,7 +133,7 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
 
 
 **Map & area**: we can write hrefs inside an image based co ordinatinates    
-```
+```html
 <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
 <map name="workmap">
   <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
@@ -138,14 +141,14 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
 </map>
 ```
 **Audio**: embed sound content   
-```
+```html
 <audio controls>
   <source src="horse.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 ```
 **Video**: 
-```
+```html
 <video width="320" height="240" controls>
   <source src="forrest_gump.mp4" type="video/mp4">
   <source src="forrest_gump.ogg" type="video/ogg">
@@ -155,19 +158,27 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
 ```
 **base**
 
-**List**:  
-```
+### List: 
+1. Ordered List 
+
+```html
 <ol>
    <li>hiii</li>	//will give with number in front 
     <li>hello</li>
 </ol>
 ```
+2. Unordered List  
 
+```html
 <ul>
 <li>hiii</li>	//will give with dot in front of list 
 <li>hello</li>
 </ul>
+```
 
+### Table
+
+```html
 <table>
 	<caption>This is table caption</caption>
   <colgroup>
@@ -183,8 +194,9 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
     <td>$53</td>
   </tr></tfoot>
 </table>
+```
 
-
+```html
 <table border=”2”>
    <tr align=”center”>
       <td colspan=”2”></td>
@@ -192,25 +204,34 @@ embed, frame, font, frameset, noframes, object, tt, applet, acronym, basefont, b
       <td></td>
    </tr>
 </table>
+```
 
+### Inline style
+
+```html
 <html>
  <body>
 <div style="background-color:green; color:white; padding:20px;"></div>
 This alone shown in  <span style="color:red">red color</span>
  </body>
 </html>
+```
 
-Blocks vs Inline:
-Block- they will appear on a new line, and any content that goes after it will also appear on a new line.
-	<div><p><address><blockquote><dd><dl><dt><fieldset><form><h1><hr><li><main><nav><noscript><ol><pre><tables><tfoot><ul>
+### Blocks vs Inline:
+> Block- they will appear on a new line, and any content that goes after it will also appear on a new line.
+	
+`<div><p><address><blockquote><dd><dl><dt><fieldset><form><h1><hr><li><main><nav><noscript><ol><pre><tables><tfoot><ul>`
 
-html5
-<article><aside><canvas><figcaption><footer><figure><header><hgroup><output><section><video>
+## html5
 
-Inline-surround only small parts of content’
+`<article><aside><canvas><figcaption><footer><figure><header><hgroup><output><section><video>`
+
+> Inline-surround only small parts of content’
  
 
-FORM Element
+### FORM Element
+
+```html
 <body>
    	<form action=”http:rajesh.com” method=”GET”>	//show details in url
 <input type=”text” name=”usr”> enter username:</input>
@@ -222,7 +243,7 @@ FORM Element
 <input type=”submit” value=”enter”></input>
 </form>
 </body>
-
+```
 
 
 HTML 5
