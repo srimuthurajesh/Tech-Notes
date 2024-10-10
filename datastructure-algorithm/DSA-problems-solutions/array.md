@@ -37,7 +37,7 @@ public class LargestNumber {
 }
 
 ```
-
+---
 ## Two Sum
 
 ```java
@@ -55,7 +55,7 @@ class Solution {
     }
 }
 ```
-
+---
 ## Best Time to Buy and Sell Stock
 
 ```java
@@ -70,6 +70,22 @@ class Solution {
                 res = prices[i]-min;    
         }
         return res;
+    }
+}
+```
+--- 
+## Contains Duplicate
+
+```java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        for(int num:nums){
+            if(!set.add(num)){
+                return true;
+            }
+        }
+        return false;       
     }
 }
 ```
