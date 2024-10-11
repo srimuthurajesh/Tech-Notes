@@ -37,3 +37,8 @@ Types of distribution
     | **Graph Store**       | Neo4j, AWS Neptune | Stores as nodes & relationships.     | `(User: John) -[FRIEND]-> (User: Jane)`   |
     | **Column Store**      | Cassandra          | Stores in columns,for read-heavy ops.| `plaintext row_key column1 column2 column3 user123 name:John email:john@example.com phone:1234567890 `|
     | **Document Store**    | MongoDB            | Stores as documents ie.JSON/BSON.    | `{"id": "123", "name": "John Doe"}`       |
+
+### Database replication
+1. Master - for write
+2. Slave - for read
+Note: mostly the number slave is more than master since read to write ratio will be high  
