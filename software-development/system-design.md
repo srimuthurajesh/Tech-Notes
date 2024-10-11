@@ -31,11 +31,9 @@ Types of distribution
 ## Database
 1. RDBMS
 2. Nosql(Non relational DB)
-    1. **key-value pair**: Suitable for simple lookups.Ex: Redis, DynamoDB `"user123": "John Doe"`
-    2. **graph store**: Stores data as nodes & relationships  Neo4j, Amazon Neptune `(User: John) -[FRIEND]-> (User: Jane)`  
-    3. **column store**: Stores data in columns efficient for read-heavy. Cassandra  
-        ```
-        row_key    column1   column2   column3
-        user123    name:John email:john@example.com phone:1234567890
-        ```
-    4. **document store**: Stores data as documents, typically in JSON or BSON. MongoDB `{"id": "123", "name": "John Doe",}` 
+    | Type                  | Examples           | Description                          | Data                                      |
+    |-----------------------|--------------------|--------------------------------------|-------------------------------------------|
+    | **Key-Value Pair**    | Redis, DynamoDB    | Suitable for simple lookups.         | `"user123": "John Doe"`                   |
+    | **Graph Store**       | Neo4j, AWS Neptune | Stores as nodes & relationships.     | `(User: John) -[FRIEND]-> (User: Jane)`   |
+    | **Column Store**      | Cassandra          | Stores in columns,for read-heavy ops.| `plaintext row_key column1 column2 column3 user123 name:John email:john@example.com phone:1234567890 `|
+    | **Document Store**    | MongoDB            | Stores as documents ie.JSON/BSON.    | `{"id": "123", "name": "John Doe"}`       |
