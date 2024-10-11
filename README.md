@@ -37,8 +37,9 @@
    1. [Aws](devops/AWS.html)
 
 ## Software Architecture & Design
-   1. [Design Patterns](software-development/design-patterns)
-   2. [SOLID Principles](software-development/solid_principles.md) 
+   1. [System Design](software-development/system-design)
+   2. [Design Patterns](software-development/design-patterns)
+   3. [SOLID Principles](software-development/solid_principles.md) 
     
 
 ## Project Management 
