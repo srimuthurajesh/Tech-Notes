@@ -89,3 +89,27 @@ class Solution {
     }
 }
 ```
+
+---
+## Product of Array Except Self
+
+```java
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+        result[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            result[i] = nums[i] * result[i - 1];
+        }
+        int temp;
+        result[nums.length - 1] = result[nums.length - 2];
+        temp = nums[nums.length - 1];
+        for (int j = nums.length - 2; j > 0; j--) {
+            result[j] = result[j - 1] * temp;
+            temp = temp * nums[j];
+        }
+        result[0]=temp;
+        return result;
+    }
+}
+```
