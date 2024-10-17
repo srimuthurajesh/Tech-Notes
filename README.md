@@ -45,6 +45,7 @@
 ## Project Management 
    1. [Scrum](project-management/scrum.html)
    2. [Kanban](project-management/kanban.html)
+   3. [Release](project-management/release-management.html)
 
 
 ## Others
