@@ -149,7 +149,8 @@ for (Float item : list) {
 1. `add(element)`, `addAll(collection)` - ArrayList, Vector, CopyOnWriteArrayList
 2. `add(element), addFirst(element), addLast(element)`- LinkedList
 3. `put(key, value)` - HashMap, ConcurrentHashMap
-4. `add(element)` - HashSet, TreeSet, PriorityQueue
+4. `add(element)` - HashSet, TreeSet 
+5. `add(element)`, `offer(element)` - PriorityQueue
 
 ### Remove element
 1. `remove(index), remove(element), removeAll(collection)` - ArrayList, Vector, CopyOnWriteArrayList
@@ -240,3 +241,63 @@ Ex: ArrayList, HashMap , HashSet, LinkedList
 - allowing safe traversal, even if the collection is modified during iteration.  
 - suits when collection modification are expected   
 Ex: CopyOnWriteArrayList, ConcurrentHashMap     
+
+
+
+
+
+## Locks in Hibernate
+Locks are mechanisms used in Hibernate to manage concurrent access to data in a database. They help maintain data integrity and consistency when multiple transactions are trying to access or modify the same entity simultaneously.
+
+Types of Locks
+Optimistic Locking:
+
+Definition: Optimistic locking assumes that multiple transactions can complete without affecting each other. Instead of locking the data when it is read, it checks for data integrity only when the transaction is about to be committed.
+Implementation: This is typically achieved using a version field in the entity.
+When an entity is updated, the version number is incremented.
+If the version number in the database does not match the one in the entity during an update, a StaleObjectStateException is thrown.
+Use Case: Suitable for scenarios with low contention and where conflicts are rare.
+Pessimistic Locking:
+
+Definition: Pessimistic locking assumes that conflicts will occur and locks the data as soon as it is read, preventing other transactions from accessing it until the lock is released.
+Implementation:
+Pessimistic Read Lock: Allows multiple transactions to read the data but prevents them from modifying it.
+Pessimistic Write Lock: Prevents any other transaction from reading or writing the data.
+Use Case: Suitable for high contention scenarios where conflicts are expected.
+Lock Modes in Hibernate
+Hibernate provides several lock modes that can be specified when retrieving an entity:
+
+LockMode.NONE:
+
+No locking is applied. This is the default behavior.
+LockMode.READ:
+
+A shared lock is acquired for reading the entity. Multiple transactions can read the data concurrently, but no updates are allowed.
+LockMode.UPGRADE:
+
+An exclusive lock is acquired, preventing other transactions from acquiring any locks on the entity. This is useful when you plan to update the entity.
+LockMode.OPTIMISTIC:
+
+Used for optimistic locking. Hibernate checks the version of the entity before committing changes.
+LockMode.OPTIMISTIC_FORCE_INCREMENT:
+
+Similar to OPTIMISTIC, but forces the version number to increment even if no actual changes are made to the entity.
+LockMode.PESSIMISTIC_READ:
+
+Acquires a pessimistic read lock. Other transactions can read the data but cannot modify it.
+LockMode.PESSIMISTIC_WRITE:
+
+Acquires a pessimistic write lock, preventing any other transaction from reading or writing the data.
+
+
+
+
+## Steps to Handle Transaction Failures in Hibernate
+Use Transactions: Always enclose your operations in a transaction block. Begin a transaction, perform operations, and commit or roll back as necessary.
+
+Exception Handling: Use try-catch blocks to catch exceptions related to transactions. Common exceptions include HibernateException, RollbackException, and TransactionRequiredException.
+
+Rollback the Transaction: If an exception occurs, rollback the transaction to revert any changes made during that transaction.
+
+Close the Session: Always ensure that the Hibernate session is closed to free up resources.
+

@@ -33,7 +33,7 @@
 1. Make class & variables as final.
 2. Use parameterized constructor to initialize variables.
 3. Provide only getters (no setters).
-4. Return a copy of objects in the clone() method.
+4. Return a new instance of objects in the clone() method.
 
 ##### Common class Exceptions:
 1. **NoClassDefFoundError**: Class present at compiletime but missing at runtime.    
