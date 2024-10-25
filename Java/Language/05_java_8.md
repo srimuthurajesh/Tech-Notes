@@ -217,13 +217,26 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 
 ## Stream problems examples  
 1. find the sum of squares of all even numbers      
-`Arrays.stream(input).filter(x->x%2==0).map(x->x*x).forEach(System.out::println)`
+```java 
+  Arrays.stream(input)
+    .filter(x->x%2==0)
+    .map(x->x*x)
+    .forEach(System.out::println)
+```
 
 2. Find second max of student age.  
-`int age = list.stream.mapToInt(student::getAge).skip(1).max();`
+```java 
+  int age = list.stream
+              .mapToInt(student::getAge)
+              .skip(1).max();
+```
 
-3. Find list of unique characters present in all the strings.  
-`strings.stream().mapToObj(ch -> (char) ch).collect(Collectors.toSet());`
+3. Find list of unique characters present in all the string.  
+```java
+  Set<Character> uniqueChars = listOfStrings.stream()
+                                .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
+                                .collect(Collectors.toSet());
+```
 
 4. Group students count by age.   
 `list.stream().collect(Collectors.groupingBy(Student::getAge, Collectors.counting()));`
