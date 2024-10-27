@@ -88,6 +88,10 @@ SELECT * FROM table_name [WHERE Clause] [GROUP BY Clause] [HAVING Clause] [ORDER
 **Limit**: SELECT column FROM table LIMIT 0,1;  
 **Null**: SELECT column_name FROM table_name WHERE column_name {IS NULL | IS NOT NULL};  
 
+1. COUNT(1)	- Counts all rows, Ignores null values  
+2. COUNT(column)- Counts non-null Fast (but checks values)
+3. COUNT(*) -  fastest include all not-null  
+
 INSERT INTO table_name (col_name) VALUES ('col_value');  
 UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;  
 DELETE FROM table_name WHERE condition;  
