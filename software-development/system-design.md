@@ -10,6 +10,8 @@
 | **Details**   | Modules, data flow, database architecture | Class structure, data structures, API details, DB fields  |
 | **Example**   | explain dataflow b/w each services in MS  | explain particular service in MS                          |
 
+## Examples
+1. (Tracking tool)[#examples/tracking-tool]
 
 ### Scaling:
 
