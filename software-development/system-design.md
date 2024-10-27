@@ -27,7 +27,8 @@
 -----------------------------------------------------------------
 
 ### Load Balancing
-Types of distribution  
+
+#### Types of distribution  
 1. Random
 2. Round Robin
 3. Random(weight for ram and cpu cycles)
