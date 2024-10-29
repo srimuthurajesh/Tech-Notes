@@ -23,15 +23,16 @@ Note: RabbitMQ & ActiveMQ are point to point messaging system. In traditional qu
 
 ### Components of kafka:  
 1. **Zookeeper**:  maintain/store configuration infos and leader election. Kafka brokers depend on Zookeeper for metadata and coordination 
-2. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers. if one goes down another will come.       
-3. **Topic**: category/name for records published, similar to DB table    
+2. **Cluster**: The full set of brokers working together in Kafka with help of zookeeper
+2. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers       
+3. **Topic**: category/name for bucket of messages, similar to DB table    
+6. **Partition**: each topic divided into several parts called partition, ordered, immutable. Replication implemented in partition level.  
+every partition has one server acting as leader and rest of them are followers.    
+7. **Offset**: unique id for each message/record in partition. usually 0 1 2 3 4 5 ...   
 4. **Producers**: Application that publish the kafka topics
 5. **Consumers**: Applications that subscribe topics and consume messages. 
-6. **Partition**: topic splits into several parts, ordered, immutable  
-7. **Offset**: unique id for each record in partition  
 8. **replication factor**: number of copies of data over multiple brokers  
 9. **GroupId**: avoid multiple delivery, by giving same groupid for multiple same projects   
-10. **Cluster**: The full set of brokers working together in Kafka
 11. **Correlation Ids**: track messages and debug
 
 **Kafka Core APIs**:  
