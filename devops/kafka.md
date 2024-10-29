@@ -19,10 +19,11 @@ Note: RabbitMQ & ActiveMQ are point to point messaging system. In traditional qu
 | **Persistence**   | Messages persisted to disk with configurable retention | Messages can be persisted, but focus on delivery |
 | **Scalability**   | Easy horizontal scaling with partitions            | Scalable but more complex, involves clustering and federation |
 | **Ordering**      | Strong ordering within partitions                  | Weaker ordering guarantees, especially in clusters |
+| **Msg Retention** | policy based retain only for 30 days               | msg removed once acknowledged or processed |
 
 ### Components of kafka:  
 1. **Zookeeper**:  maintain/store configuration infos and leader election. Kafka brokers depend on Zookeeper for metadata and coordination 
-2. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
+2. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers. if one goes down another will come.       
 3. **Topic**: category/name for records published, similar to DB table    
 4. **Producers**: Application that publish the kafka topics
 5. **Consumers**: Applications that subscribe topics and consume messages. 
@@ -31,7 +32,7 @@ Note: RabbitMQ & ActiveMQ are point to point messaging system. In traditional qu
 8. **replication factor**: number of copies of data over multiple brokers  
 9. **GroupId**: avoid multiple delivery, by giving same groupid for multiple same projects   
 10. **Cluster**: The full set of brokers working together in Kafka
-
+11. **Correlation Ids**: track messages and debug
 
 **Kafka Core APIs**:  
 1. Producer API: write data to topics    
@@ -50,37 +51,38 @@ effectively transforming the input streams to output streams.
 
 ---
 
-###Commands:
+### Commands:
 
-#start zookeeper
-zookeeper-server-start.bat config\zookeeper.properties
-#start kafka server
-kafka-server-start.bat config\server.properties
+1. start zookeeper
+`zookeeper-server-start.bat config\zookeeper.properties`
+2. start kafka server
+`kafka-server-start.bat config\server.properties`
 
-#create topics with 3 partition, 1 replication    
-kafka-topics --zookeeper 127.0.01:2181 --topic second_topic --create --partitions 3 --replication 1  
-#list all topics   
-kafka-topics --zookeeper 127.0.0.1:2181 --list  
-#detail info of given topic  
-kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --describe   
+3. create topics with 3 partition, 1 replication    
+`kafka-topics --zookeeper 127.0.01:2181 --topic second_topic --create --partitions 3 --replication 1  `
 
-#create producer 
-kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic
+4. list all topics   
+`kafka-topics --zookeeper 127.0.0.1:2181 --list`  
+5. detail info of given topic  
+`kafka-topics --zookeeper 127.0.0.1:2181 --topic first_topic --describe`
+
+6. create producer 
+`kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic`
  
-### Consumer
-#create consumer for topic, with default group name = console-consumer <id>   
-kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic
-#create consumer get all previous messages from beginning 
-kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
+#### Consumer
+7. create consumer for topic, with default group name = console-consumer <id>   
+`kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic`
+8. create consumer get all previous messages from beginning 
+`kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning`
 
-#consumers of same groupname will share messages from topic    
-kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my_first_app
+9. consumers of same groupname will share messages from topic    
+`kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my_first_app`
 
-#list all consumer groups
-kafka-consumer-groups --bootstrap-server localhost:9092 --list
-#describe lag, current offset, log end offset etc   
-kafka-consumer-groups --bootstrap-server localhost:9092 --group my_first_app --describe
-kafka-consumer-groups --bootstrap-server localhost:9092 --group mygroup --reset-offsets --topic first_topic  --to-earliest --execute 
+10. list all consumer groups
+`kafka-consumer-groups --bootstrap-server localhost:9092 --list`
+11. describe lag, current offset, log end offset etc   
+`kafka-consumer-groups --bootstrap-server localhost:9092 --group my_first_app --describe`
+`kafka-consumer-groups --bootstrap-server localhost:9092 --group mygroup --reset-offsets --topic first_topic  --to-earliest --execute `
 
 	
 ## Spring Boot Kafka Consumer  

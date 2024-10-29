@@ -2,8 +2,24 @@
 ### Load Balancer
 > simple load balancing and routing are your primary needs, an AWS Load Balancer with an Ingress Controller is typically sufficient.
 
+## S3 Bucket
+> S3 (Simple Storage Service) is an object storage service 
+
+**Advantages**: designed for scalability, data availability, security, and performance.
+
+- Each object/Bucket has a key (unique identifier), metadata, and data (file content).
+**Global Unique Name**: Each bucket name must be unique across all AWS accounts globally.
+
+``` 
+aws.accessKeyId=YOUR_ACCESS_KEY
+aws.secretKey=YOUR_SECRET_KEY
+aws.region=YOUR_REGION
+```
+
+
 ### API Gateway
 > API-specific features like rate limiting, access control, and request transformations, API Gateway can add value, especially for public APIs.
+
 **StreamHandler.java**  
 ```
 public class StreamHandler implements RequestStreamHandler{
