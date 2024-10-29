@@ -1,6 +1,15 @@
 ## Apache Kafka  
--open-source stream-processing software platform  
--handles real-time data storage   
+> publish subscribe based messaging system
+
+- Developed by Linkedin, later Apache took over  
+- Also used as a storage system
+
+Note: RabbitMQ & ActiveMQ are point to point messaging system. In traditional queue each message wil go to only one consumer.  
+
+**Advantages**:
+1. Loose coupling
+2. Scalable and Distributed in nature  
+4. Kafka steram APIs, enable aggregation & joins of input and output stream  
 
 | Feature           | Kafka                                              | RabbitMQ                                          |
 |---------------------------------|----------------------------------------------------|--------------------------------------------------|
@@ -12,17 +21,16 @@
 | **Ordering**      | Strong ordering within partitions                  | Weaker ordering guarantees, especially in clusters |
 
 ### Components of kafka:  
-1. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
-2. **Topic**: category/name for records published, similar to DB table    
-3. **Producers**: Application that publish the kafka topics
-4. **Consumers**: Applications that subscribe topics and consume messages. 
-5. **Zookeeper**: Manages and coordinate kafka broker and maintain configuration infos and leader election.  
+1. **Zookeeper**:  maintain/store configuration infos and leader election. Kafka brokers depend on Zookeeper for metadata and coordination 
+2. **Brokers**(kafka servers): container that holds several topics, kafka cluster composed of brokers      
+3. **Topic**: category/name for records published, similar to DB table    
+4. **Producers**: Application that publish the kafka topics
+5. **Consumers**: Applications that subscribe topics and consume messages. 
 6. **Partition**: topic splits into several parts, ordered, immutable  
 7. **Offset**: unique id for each record in partition  
 8. **replication factor**: number of copies of data over multiple brokers  
 9. **GroupId**: avoid multiple delivery, by giving same groupid for multiple same projects   
- 
-
+10. **Cluster**: The full set of brokers working together in Kafka
 
 
 **Kafka Core APIs**:  
@@ -138,3 +146,4 @@ public class kafkaConfig{
   }
 }
 ```
+

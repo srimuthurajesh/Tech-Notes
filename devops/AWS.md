@@ -1,3 +1,9 @@
+
+### Load Balancer
+> simple load balancing and routing are your primary needs, an AWS Load Balancer with an Ingress Controller is typically sufficient.
+
+### API Gateway
+> API-specific features like rate limiting, access control, and request transformations, API Gateway can add value, especially for public APIs.
 **StreamHandler.java**  
 ```
 public class StreamHandler implements RequestStreamHandler{
