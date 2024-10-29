@@ -1,3 +1,34 @@
+# Microservices
+
+1. [Types of Architectural Patterns](#types-of-architectural-patterns)
+2. [Service Registry](#service-registry)
+3. [API Gateway](#api-gateway)
+4. [Load Balancing](#load-balancing)
+5. [Rate Limiter Pattern](#rate-limiter-pattern)
+6. [Fault Tolerance](#fault-tolerance)
+  - [Circuit Breakers](#circuit-breakers)
+  - [Retry Mechanism](#retry-mechanism)
+  - [Timeouts](#timeouts)
+  - [Fallbacks](#fallbacks)
+  - [Service Mesh](#service-mesh)
+  - [Bulkheads](#bulkheads)
+7. [Inbox-Outbox Pattern](#inbox-outbox-pattern)
+8. [The Twelve Factors](#the-twelve-factors)
+9. [Security](#security)
+  - [JWT (JSON Web Token)](#jwt-json-web-token)
+10. [Monitering](#application-performance-monitoring-tool-apm)
+11. [Alerting](#alerting)
+12. [Logging](#logging-tools)
+13. [Distributed Tracing](#distributed-tracing)
+14. [Distributed Transaction](#distributed-transaction)
+15. [Microservice Internal Communication](#microservice-internal-communication)
+15. [Connection Pool](#connection-pool)
+    - [HTTP Connection Pool](#http-connection-pool)
+16. [CI/CD Pipeline Steps](#cicd-pipeline-steps)
+17. [How to Implement Microservices](#how-to-implement-microservices)
+18. [Interview Questions](#interview-questions)
+
+
 ## Types of Architectural patterns
 
 1. Monolithic Architecture - all components are combined into one large single tiered application.  
@@ -126,6 +157,11 @@ Other APM tools: AppDynamics, Datadog, Dynatrace, New Relic.
 2. Spring cloud sleuth: add trace and span id to logs automatically, easier to trace flow of requests. 
 
 ## Distributed transaction
+### 1. Synchronous
+1. Two phase
+2. Three phase
+
+### 2. Ashynchronus
 Saga pattern
 a) Choreography based. 
 b) Orchestrator based - prefered 
