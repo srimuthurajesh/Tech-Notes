@@ -24,6 +24,7 @@
 
 **Thread**: unit of execution within the process  
 **Thread Pool**: group of worker threads that are waiting for the job and reuse many times.    
+**Java thread dump**: snapshot of all threads state running within JVM at a particular moment.    
 
 ## Ways to Implement Thread
 #### 1. Extends Thread class  
@@ -124,12 +125,11 @@ because each process is holding a resource and waiting for another resource acqu
 ### Java Concurrency Utilities
 > introduced in java5(2004). to make multithreading easier, safer, and more efficient.
 
-#### Executer Framework : 
+### Executer Framework : 
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
 ##### Types of Executer Service:
 1. **FixedThreadPool**: fixed-size pool of worker threads, suits for task with limited resource usage.  
-` ExecutorService executer = Executors.FixedThreadPool(); `. 
 2. **SingleThreadExecutor**: Uses single worker thread, sequential execution    
 3. **CachedThreadPool**: dynamically adjust pool size, suits for short-lived tasks with varying loads.  
 4. **ScheduledThreadPool**: same like FixedThreadPool along with delayed/periodic execution.  
@@ -141,7 +141,6 @@ executor.submit(() -> { // Task to be executed asynchronously});
 executor.submit(new MyRunnableImpl());
 executor.shutdown();
 ```
-
 
 **Methods of ExecuterService:**
 1. execute(Runnable)  - is void
@@ -167,8 +166,6 @@ System.out.println("size of mypool: " + mypool.getPoolSize());
 System.out.println("Total number threads scheduled): "+ mypool.getTaskCount());   
 mypool.shutdown();
 ```
-
-**Java thread dump**: snapshot of all threads state running within JVM at a particular moment.    
 
 **ReentrantLock**: same as Synchronized, but more flexible  
 
