@@ -33,59 +33,6 @@
 - Write Once, Run Anywhere
 - lot of oppurtunities, already lot of projects using java  
 
-1. Class Loader Subsystem
-Definition: Responsible for loading class files into memory.
-Functionality:
-Loading: Loads classes from different sources (e.g., local file system, network).
-Linking: Validates, prepares (allocates memory for static variables), and resolves class references.
-Initialization: Initializes class variables and static blocks.
-2. Runtime Data Areas
-The JVM divides memory into several runtime data areas:
-
-Method Area:
-
-Stores class structures, including metadata, constant pool, and static variables.
-Shared among all threads.
-Heap Area:
-
-The runtime data area used for dynamic memory allocation.
-Objects and their instance variables are stored here.
-Garbage collection occurs in this area.
-Java Stack:
-
-Each thread has its own stack, which stores frames.
-Each frame contains local variables, operand stack, and a reference to the runtime constant pool of the class of the current method.
-The stack follows a Last In, First Out (LIFO) structure.
-PC (Program Counter) Register:
-
-Each thread has its own PC register, which holds the address of the currently executing instruction.
-Helps in branching and returning from method calls.
-Native Method Stack:
-
-Similar to the Java stack, but it is used for native methods written in languages like C or C++.
-3. Execution Engine
-The execution engine is responsible for executing the bytecode instructions:
-
-Interpreter:
-
-Reads and executes bytecode instructions line by line.
-Suitable for quick execution, but slower for repetitive tasks.
-Just-In-Time (JIT) Compiler:
-
-Compiles bytecode into native machine code at runtime.
-Improves performance by translating frequently executed methods into native code.
-Garbage Collector:
-
-Manages memory by automatically reclaiming memory from objects that are no longer referenced.
-Helps in efficient memory management and prevents memory leaks.
-4. Native Interface
-Java Native Interface (JNI):
-Allows Java code to interact with applications and libraries written in other languages like C and C++.
-Enables the use of platform-specific features and optimizations.
-5. Java Native Method Libraries
-Definition: Libraries that contain native methods, enabling the JVM to interact with the underlying operating system.
-Functionality: Provides a way for Java programs to call native code libraries for performance-critical operations.
-
 
 **Other lang** : Code -> Compiler -> Machine code  
 **Java lang** : Code -> Compiler -> Interpreter(JVM) -> Machine code  
@@ -95,9 +42,16 @@ Functionality: Provides a way for Java programs to call native code libraries fo
 **JVM** is Interpreter execute byte code to machine code, contains JustInTime compiler  
 
 **Byte code**: low level representation of source code, not readable  
-**JIT**: Just-In-Time (JIT) compiler, a component of JVM, that efficiently compiles bytecode into native machine code  
-**ClassLoader**: part of JRE, loads class file to JVM    
+#### JVM components
+1. Class Loader Subsystem:Loads classes into memory and initializes variables and static blocks.
+2. Runtime Data Areas:  heap, stack, and program counter (PC), which tracks the current instruction for each thread.
+3. Execution Engine: executes bytecode
+4. Just-In-Time (JIT) Compiler: Boosts performance by converting frequently used methods to native code.
+5. Garbage Collector: Automatically reclaims memory from unused objects.
+6. Native Interface (JNI): Enables Java to interact with code in other languages (e.g., C/C++) for platform-specific features.
+7. Java Native Method Libraries: Contains OS-level native methods for high-performance tasks.
 
+#### Commands
 1. how to compile: `javac -d directory javafilename.java`           	
 2. how to run: `java myppack.javafilename`         
 

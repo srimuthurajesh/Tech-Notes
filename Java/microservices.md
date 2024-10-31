@@ -159,12 +159,17 @@ Other APM tools: AppDynamics, Datadog, Dynatrace, New Relic.
 ## Distributed transaction
 ### 1. Synchronous
 1. Two phase
+`client -> coordinator -> participants`
+    a) corodinator query participants to vote yes or NO
+    b) based on above response, the coorodinator ask to commit or rollback   
+    c) if acknoledgement fails again rollback will be intimated  
 2. Three phase
+> extra pre commit phase, reduce the coordinator went down issue  
 
 ### 2. Ashynchronus
 Saga pattern
-a) Choreography based. 
-b) Orchestrator based - prefered 
+a) Choreography based - each service involved in the saga is responsible for triggering the next action in the process.
+b) Orchestrator based - prefered, central coordinator (orchestrator) controls the transaction flow 
 
 ## Microservice internal communication
 1. Synchronous: Rest or gRPC
