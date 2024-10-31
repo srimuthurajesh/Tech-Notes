@@ -42,7 +42,7 @@
 **JVM** is Interpreter execute byte code to machine code, contains JustInTime compiler  
 
 **Byte code**: low level representation of source code, not readable  
-#### JVM components
+### JVM components
 1. Class Loader Subsystem:Loads classes into memory and initializes variables and static blocks.
 2. Runtime Data Areas:  heap, stack, and program counter (PC), which tracks the current instruction for each thread.
 3. Execution Engine: executes bytecode
@@ -51,7 +51,7 @@
 6. Native Interface (JNI): Enables Java to interact with code in other languages (e.g., C/C++) for platform-specific features.
 7. Java Native Method Libraries: Contains OS-level native methods for high-performance tasks.
 
-#### Commands
+### Commands
 1. how to compile: `javac -d directory javafilename.java`           	
 2. how to run: `java myppack.javafilename`         
 
