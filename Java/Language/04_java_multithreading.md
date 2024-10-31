@@ -65,10 +65,11 @@ threadObj.setPriority(Thread.MIN_PRIORITY) //1
 threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
+**Daemon threads** - low priority threads which always run in background. Ex:Garbage collector       
+`t1.setDaemon(true);t1.isDaemon(true);`
 
 #### Thread class Methods:
-1. **join()**: wait for another thread to comlete execution  
-   `thread3.join(); thread4.join(200); //wait for 200ms`       
+1. **join()**: wait for another thread to comlete execution `thread3.join(); thread4.join(200); //wait for 200ms`         
 2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
 3. **sleep** : `Thread.sleep(1000);` //goes to runnable for given time  
 4. start()- start thread by calling run method  
@@ -77,11 +78,10 @@ threadObj.setPriority(Thread.NORM_PRIORITY) //5
 7. isAlive()- check if thread is running  
 
 #### Inter-thread communication:   
-Note: we need to maintin a seperate object method to perform this. 
 1. **wait()**- causes current thread to wait until notify(), notifyall()  
 2. **notify()**-wakes up a single thread that waiting for object moniter    
-3. **notifyAll()**- wakes up all threads that waiting for object moniter  
-
+3. **notifyAll()**- wakes up all threads that waiting for object moniter    
+Note: these are methods of Object class  
 
 ### Gathering data using legacy way instead of Executer Service
 ```java
@@ -104,9 +104,6 @@ Note: we need to maintin a seperate object method to perform this.
 2. **Synchronized block** - lock on current object, synchronized(){ }  
 3. **Static synchronization** - lock on class, synchronized static void func(){  }   
 
-**Daemon threads** - low priority threads which always run in background. Ex:Garbage collector       
-`t1.setDaemon(true);t1.isDaemon(true);`
-
 ### DeadLock  
 > situation where a set of processes are blocked   
 
@@ -115,12 +112,14 @@ because each process is holding a resource and waiting for another resource acqu
 2. Lock Only What is Required
 3. Avoid waiting indefinitely  
 
-**How to resolve**: try to interrupt thread1 and later call it
+**How to resolve**: try to interrupt thread1 and later call it  
 `if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}`           
 
 **Interrupting Thread**:  
 1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
 2. Thread.interrupted() - return true/false   
+
+---
 
 ### Java Concurrency Utilities
 > introduced in java5(2004). to make multithreading easier, safer, and more efficient.
@@ -128,7 +127,7 @@ because each process is holding a resource and waiting for another resource acqu
 ### Executer Framework : 
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
-##### Types of Executer Service:
+#### Types of Executer Service:
 1. **FixedThreadPool**: fixed-size pool of worker threads, suits for task with limited resource usage.  
 2. **SingleThreadExecutor**: Uses single worker thread, sequential execution    
 3. **CachedThreadPool**: dynamically adjust pool size, suits for short-lived tasks with varying loads.  
@@ -154,7 +153,7 @@ executor.shutdown();
 9. scheduleAtFixedRate(runnableTask, 100, 450, TimeUnit.MILLISECONDS); - task schedules at fixed rate  
 
 
-#### ThreadPoolExecutor
+### ThreadPoolExecutor
 > class that implements ExecutorService, offers more control and customization options. 
 
 Syntax:
@@ -188,7 +187,7 @@ mypool.shutdown();
     executorService.shutdown();
 ```
 
-#### Thread safe collections
+### Thread safe collections
 1. **ConcurrentHashMap** - modern thread-safe map implementation.  
 2. **CopyOnWriteArrayList** - uses a copy-on-write strategy.   
 3. **Collections.synchronizedList** - will force to use synchronized block otherwise throw exception.  
