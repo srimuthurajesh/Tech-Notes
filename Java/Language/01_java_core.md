@@ -137,7 +137,7 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 
 ### 2. Non Premitive datatype  
 1. [String](#string)
-2. [Array](#Array)
+2. [Array](#array)
 3. Class
 
 

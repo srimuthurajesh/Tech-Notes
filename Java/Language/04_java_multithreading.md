@@ -3,7 +3,7 @@
 - [Ways to Implement Thread](#ways-to-implement-thread)
     - [Extends Thread class](#1-extends-thread-class)
     - [Implements Runnable](#2-implementing-the-runnable-interface)
-- [Difference states of Thread](#difference-states-of-thread)
+- [Difference states of Thread](#different-states-of-thread)
 - [Priority of a thread](#priority-of-a-thread)
 - [Gathering data using Thread](#gathering-data-using-legacy-thread-class)
 - [Synchronized](#synchronized)
@@ -23,6 +23,7 @@
 > concurrent execution of thread  
 
 **Thread**: unit of execution within the process  
+**Thread Pool**: group of worker threads that are waiting for the job and reuse many times.    
 
 ## Ways to Implement Thread
 #### 1. Extends Thread class  
@@ -47,14 +48,14 @@ class MyThread implements Runnable {
 }
 ```
 
-### Difference states of Thread:
+#### Different states of Thread:
 1. New - obj of thread created but start not yet called  
 2. Runnable - start called but no cpu available, so not running  
 3. Running - start called running  
 4. Waiting/Blocked - wait for i/o or another thread  
 5. Terminated/Dead - completed  
 	
-### Priority of a Thread  
+#### Priority of a Thread  
 > Thread scheduler prioritize based on (Range 1-10) (default-5)
 
 ```java
@@ -64,38 +65,7 @@ threadObj.setPriority(Thread.MAX_PRIORITY) //10
 threadObj.setPriority(Thread.NORM_PRIORITY) //5
 ```
 
-### Gathering data using legacy Thread class
-```java
-    Map<String, String> results = new ConcurrentHashMap<>();
-
-    Thread thread1 = new Thread(() -> results.put("Thread 1", "Result from Thread 1"));
-    Thread thread2 = new Thread(() -> results.put("Thread 2", "Result from Thread 2"));
-    Thread thread3 = new Thread(() -> results.put("Thread 3", "Result from Thread 3"));
-
-    thread1.start(); thread2.start(); thread3.start();
-
-    // Wait for each thread to complete using join()
-    thread1.join();
-    System.out.println("Thread 1 completed: " + results.get("Thread 1"));
-
-    thread2.join();
-    System.out.println("Thread 2 completed: " + results.get("Thread 2"));
-
-    thread3.join();
-    System.out.println("Thread 3 completed: " + results.get("Thread 3"));
-
-```
-
-### Synchronized. 
->  allow only one thread to access the shared resource.  
-
-**Synchronized method** - prevent multiple thread execute on same object  
-**Synchronized block** - lock on current object, synchronized(){ }  
-**Static synchronization** - lock on class, synchronized static void func(){  }   
-**Daemon threads** - low priority threads which always run in background. Ex:GC     
-t1.setDaemon(true);t1.isDaemon(true);   
-
-### Thread class Methods:
+#### Thread class Methods:
 1. **join()**: wait for another thread to comlete execution  
    `thread3.join(); thread4.join(200); //wait for 200ms`       
 2. **Yield** : (pause)change thread Running to Runnable, give chance to other wait thread 
@@ -105,17 +75,36 @@ t1.setDaemon(true);t1.isDaemon(true);
 6. getPriority()-Get thread priority  
 7. isAlive()- check if thread is running  
 
-**Inter-thread communication**:   
+#### Inter-thread communication:   
 Note: we need to maintin a seperate object method to perform this. 
 1. **wait()**- causes current thread to wait until notify(), notifyall()  
 2. **notify()**-wakes up a single thread that waiting for object moniter    
 3. **notifyAll()**- wakes up all threads that waiting for object moniter  
 
-**Interrupting Thread**:  
-1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
-2. Thread.interrupted() - return true/false   
 
----
+### Gathering data using legacy way instead of Executer Service
+```java
+    Map<String, String> results = new ConcurrentHashMap<>();
+    Thread thread1 = new Thread(() -> results.put("Thread 1", "Result from Thread 1"));
+    Thread thread2 = new Thread(() -> results.put("Thread 2", "Result from Thread 2"));
+    thread1.start(); thread2.start(); 
+    // Wait for each thread to complete using join()
+    thread1.join();thread2.join();
+    System.out.println(results.get("Thread 1"));
+    System.out.println(results.get("Thread 2"));
+```
+
+### Synchronized. 
+>  allow only one thread to access the shared resource.  
+
+**Race condition**: When multiple threads try to access same resources 
+
+1. **Synchronized method** - prevent multiple thread execute on same object  
+2. **Synchronized block** - lock on current object, synchronized(){ }  
+3. **Static synchronization** - lock on class, synchronized static void func(){  }   
+
+**Daemon threads** - low priority threads which always run in background. Ex:Garbage collector       
+`t1.setDaemon(true);t1.isDaemon(true);`
 
 ### DeadLock  
 > situation where a set of processes are blocked   
@@ -124,14 +113,17 @@ because each process is holding a resource and waiting for another resource acqu
 1. Avoid nested locks
 2. Lock Only What is Required
 3. Avoid waiting indefinitely  
+
 **How to resolve**: try to interrupt thread1 and later call it
 `if (thread1.getState() == Thread.State.BLOCKED && thread2.getState() == Thread.State.BLOCKED) {thread1.interrupt();}`           
-**Race condition**: When multiple threads try to access same resources 
 
-### Thread Pool:   
-> group of worker threads that are waiting for the job and reuse many times.    
+**Interrupting Thread**:  
+1. t1.interrupt() - call this method to stop thread and throw InterruptedException. for only sleeping threads    
+2. Thread.interrupted() - return true/false   
 
 ### Java Concurrency Utilities
+> introduced in java5(2004). to make multithreading easier, safer, and more efficient.
+
 #### Executer Framework : 
 >  interface from java.util.concurrent, manages and executes asynchronous tasks concurrently 
 
