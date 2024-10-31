@@ -414,29 +414,29 @@ class InvalidAgeException extends Exception{
 | **FileNotFoundException**        | Thrown when a file with the specified pathname does not exist.                  | Checked               |
 | **ClassNotFoundException**       | Thrown when trying to load a class that cannot be found.                        | Checked               |
 | **NullPointerException**         | Thrown when an application attempts to use null where an object is required.    | Unchecked             |
-| **ArrayIndexOutOfBoundsException**| Occurs when trying to access an array index that is out of bounds.              | Unchecked             |
+| **ArrayIndexOutOfBoundsException**| Occurs when trying to access an array index that is out of bounds.             | Unchecked             |
 | **ArithmeticException**          | Occurs during illegal arithmetic operations, such as division by zero.          | Unchecked             |
 | **IllegalArgumentException**     | Thrown when a method receives an illegal argument.                              | Unchecked             |
-| **NumberFormatException**        | Occurs when trying to convert a string into a number but the string is not valid.| Unchecked             |
+| **NumberFormatException**        | Occurs when trying to convert string into a number but the string is not valid. | Unchecked             |
 | **ClassCastException**           | Thrown when trying to cast an object to a subclass it is not an instance of.    | Unchecked             |
 | **OutOfMemoryError**             | Thrown when the JVM cannot allocate more memory.                                | Error                 |
-| **StackOverflowError**           | Thrown when the stack space is exhausted, usually due to deep or infinite recursion.| Error              |
-| **NoClassDefFoundError**         | Occurs when the JVM or class loader cannot find a required class definition during runtime.| Error       |
+| **StackOverflowError**           | Thrown when stack space is exhausted, usually due to deep or infinite recursion.| Error              	 |
+| **NoClassDefFoundError**         | Occurs when the JVM/class loader cannot find a required class 					 | Error       			 |
 
 
 ## Annotations:
 > metadata that provides data about a program to compiler  
 
 1. Built-In Java Annotations used in Java code
- - @Override: Indicates method is intended to override method in parent class
- - @SuppressWarnings: ignore specific warnings 
- - @Deprecated: indicating code may be removed in future versions
- - @SafeVarargs: indicates method with varargs 
+ i) @Override: Indicates method is intended to override method in parent class
+ ii) @SuppressWarnings: ignore specific warnings 
+ iii) @Deprecated: indicating code may be removed in future versions
+ iv) @SafeVarargs: indicates method with varargs 
 2. Built-In Java Annotations used in other annotations
- - @Target
- - @Retention
- - @Inherited
- - @Documented - ensure class is available in javadoc
+ i) @Target
+ ii) @Retention
+iii) @Inherited
+ vi) @Documented - ensure class is available in javadoc
 
 ### Custom annotation
 ```java
@@ -482,7 +482,7 @@ System.out.println(Pattern.matches(".s", "as")); //line 4
 | `\s`      | Any whitespace character                | `"\s"`              | `" "`, `"\t"`, `"\n"`, etc.               |
 | `\S`      | Any non-whitespace character            | `"\S"`              | `"a"`, `"1"`, `"!"`, etc.                 |
 
-## Keywords List
+## Keywords categories List
 1. **Access Modifiers:** private, public, protected
 2. **Data Types:** boolean, byte, short, int, long, float, double, char, enum
 3. **Control Flow:** if, else, switch, for, while, do, break, continue, return, case, default
