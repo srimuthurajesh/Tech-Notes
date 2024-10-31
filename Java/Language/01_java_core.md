@@ -144,8 +144,8 @@ At the end of float number _f_ or _F_ is necessary otherwise when we use dot(.) 
 ## Variable:  
 > Named storage location. ie name for the datatype.
 
-1. Declaration: int age;
-2. Defination: age = 28;
+1. **Declaration**: int age;
+2. **Defination**: age = 28;
 
 ## Operators:  
 
