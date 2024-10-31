@@ -167,8 +167,6 @@ System.out.println("Total number threads scheduled): "+ mypool.getTaskCount());
 mypool.shutdown();
 ```
 
-**ReentrantLock**: same as Synchronized, but more flexible  
-
 ### Callable & Future: 
 **Callable**: interface that represents task, have call method that returns result.  
 **Future**: interface that represent result of callable->call method     
@@ -221,7 +219,7 @@ Note: This scenario is cache incoherence.
 3. AtomicBoolean  
 4. AtomicReference  
 
-**Atomic Methods**  :
+#### Atomic Methods:
 1. get() 
 2. set(value)
 3. compareAndSet(expectedValue, newValue):  sets value to newValue if current value equals expectedValue.
@@ -240,7 +238,7 @@ Note: This scenario is cache incoherence.
 5. Phaser
 
 ### Locks
-1. **ReentrantLock**: ensures that only one thread can access a resource at a time  
+1. **ReentrantLock**: ensures that only one thread can access a resource at a time, same as Synchronized, but more flexible     
 2. **ReadWriteLock**: allow multiple threads to read a resource simultaneously but only one thread to write at a time
 
 
