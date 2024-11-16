@@ -102,6 +102,7 @@
 
 
 ## Tricky Questions:
+
 | Question                                                                 | Answer                              |
 |--------------------------------------------------------------------------|-------------------------------------|
 | Is Empty `.java` file name a valid source file name?                     | Yes                                |

@@ -394,6 +394,7 @@ try {
 } finally {
     // Code that always executes, regardless of whether an exception was thrown or not
     // Note: `finally` will not execute if the JVM exits (e.g., System.exit()) or if there's a system crash.
+	// only one finally block is allowed
 }
 ```
 **Throws** :  indicates caller functions of that method  to handling that exception.  void methodName throws Exception{ }
