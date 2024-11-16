@@ -427,12 +427,15 @@ class InvalidAgeException extends Exception{
 ## Reflection
 > allows runtime inspection, modification, and invocation of classes, methods, fields, and constructors  
 
-Class: `Class<?> cls = Class.forName("java.lang.String");`    
-Access Public: `getMethods()`, `getFields()`, `getConstructors()`    
-Access also Private: `getDeclaredMethods()`, `getDeclaredFields()`, `getDeclaredConstructors()`   
-Invoke: `method.invoke(object, args)`  
-Field: `field.get(object)`, `field.set(object, value)`   
-Object Creation : `constructor.newInstance(args)`  
+| Topic              | Code/Description                                |
+|---------------------|------------------------------------------------|
+| **Class**          | `Class<?> cls = Class.forName("java.lang.String");` |
+| **Access Public**  | `getMethods()`, `getFields()`, `getConstructors()` |
+| **Access Private** | `getDeclaredMethods()`, `getDeclaredFields()`, `getDeclaredConstructors()` |
+| **Invoke**         | `method.invoke(object, args)`                  |
+| **Field**          | `field.get(object)`, `field.set(object, value)` |
+| **Object Creation**| `constructor.newInstance(args)`                |
+  
 
 
 ## Annotations:

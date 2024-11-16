@@ -143,6 +143,7 @@
 | Can we import the same package/class two times?                          | Yes                                |
 | Can there be an abstract method without an abstract class?               | Yes, in an interface               |
 | Can we have multiple static blocks in a class?                           | Yes, executes sequentially         |
+| Does Functional interface can extend another interface ?                 | Yes, but parent should have one method|
 
 ## Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
