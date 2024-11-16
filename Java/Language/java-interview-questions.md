@@ -12,11 +12,13 @@
 7. What are keywords in java?  
 `words with special meaning`   
 8. Write java input/output syntax.  
-`define the type of data. 1.primitive 2.non primitive`  
 9. What are datatype and its types?
-10. Java is not 100% oops language, why?
+`define the type of data. 1.primitive 2.non primitive`  
+10. Java is not 100% oops language, why?  
+`becz it supports primitive datatype`  
 11. What are variable and its types?
 12. What is operators and its types?
+`perform mathematical operations`
 13. What is array? and list important methods
 14. What is string? and list important methods
 15. Why string is immutable?
