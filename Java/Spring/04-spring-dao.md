@@ -180,6 +180,7 @@ so beingtransaction,transaction.commit are not needed.. to enable this we need @
 or in xml file //<tx:annotation-driven transaction-manager="myTransactionManager" />
 
 Note: Transaction is alterntive for session.begin, session.commit, session.rollback  
+Syntax: `@Transactional(propagation = Propagation.REQUIRED)`
 
 | Propagation Type  | Description                         | Use Case                                     |
 |-------------------|-------------------------------------|----------------------------------------------|
@@ -191,7 +192,6 @@ Note: Transaction is alterntive for session.begin, session.commit, session.rollb
 | `NOT_SUPPORTED`   | Runs outside of transactions.       | Ensure no transaction context.               |
 | `NEVER`           | Fails if a transaction exists.      | Must not run within a transaction.           |
 
-`@Transactional(propagation = Propagation.REQUIRED)`
 
 ## Hibernate Configuration
 ### 1. XML Configuration

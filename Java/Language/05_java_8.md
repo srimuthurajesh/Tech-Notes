@@ -45,7 +45,7 @@ Ex: IntFunction<R>, LongFunction<R>, DoubleFunction<R>
 > anonymous function implements functional interface
 
 Syntax: `(argument-list) -> {body}`
-**Anonymous class**: 
+**Legacy Anonymous class**: 
 ```java
 interface Action { void execute(); } 
 Action action = new Action() {
