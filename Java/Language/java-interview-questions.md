@@ -102,43 +102,45 @@
 
 
 ## Tricky Questions:
-1. Is Empty .java file name a valid source file name?
-2. If I don't provide any arguments on the command line, then arg will be empty or NULL?
-3. What if I write static public void instead of public static void?
-4. Is constructor inherited? N
-5. Can you make a constructor final/static? no final
-5. Can you make a abstract method static? not allowed
-6. Default constutor wont work if i give any one constructor explictly? Y
-7.  Can we override the private and static methods?N
-8. Arrange the order of execution blocks. static,instance,constructor,main
-9.  Can we execute a program without main() method? `Yes, using static block`
-10. What if static modifier is removed from main method? NoSuchMethodError
-11. Can declare static variables and methods in abstract class?
-12. Is method overloading possible with return type, why?N
-13. Can we use abstract and final in both method?
-14. Can we use static and abstract at same time for a method?
-15. Can we make declare an interface method as static?
-16. Can interface be final?N
-17. Can we use private,protected for members of interface?N
-18. What is readonly and writeonly class? 
-19. Do i need to import java.lang.package? N default
-20. Is it necassary that each try block must be followed by catch block?N finally
-21. Can finally block be used without catch?Y
-23. Is there any case finally block will not executed?Y System.exit()
-24. Can exception be rethrown? Y, only unchecked
-25. How many object created in String a = new String("ra");? 2
-26. How can we make immutable class in java? make final members and class
-27. Can a class have an interface?Y nested interface
-28. Can interface have class? Y static implicitly
-29. What is System.gc()?
-30. What are the 3 ways object be unreferenced?
-31. Is it possible to start a thread twice?N
-32. Can we call the run() method instead of start()? Y but N
-33. Does each thread have its stack in multithreaded programming?Y
-34. In which way of object creation constructor not called? clone
-35. Can we import same package/class two times? Y
-36. Can there be an abstract method without an abstract class? Y interface
-37. Can we have multiple static block in class? `yes, executes sequentially`
+| Question                                                                 | Answer                              |
+|--------------------------------------------------------------------------|-------------------------------------|
+| Is Empty `.java` file name a valid source file name?                     | Yes                                |
+| If I don’t provide any arguments on the command line                     | arg will be Empty                   |
+| What if I write `static public void` instead of `public static void`?    | Valid                              |
+| Is constructor inherited?                                               | No                                 |
+| Can you make a constructor final/static?                                 | No, final not allowed              |
+| Can you make an abstract method static?                                  | Not allowed                        |
+| Default constructor won't work if I give any one constructor explicitly? | Yes                                |
+| Can we override the private and static methods?                          | No                                 |
+| Arrange the order of execution blocks.                                   | Static, instance, constructor, main|
+| Can we execute a program without `main()` method?                        | Yes, using static block            |
+| What if static modifier is removed from `main` method?                   | NoSuchMethodError                  |
+| Can we declare static variables and methods in abstract class?           | Yes                                |
+| Is method overloading possible with return type? Why?                    | No, it doesn't distinguish methods |
+| Can we use abstract and final in the same method?                        | No                                 |
+| Can we use static and abstract at the same time for a method?            | No                                 |
+| Can we declare an interface method as static?                            | No                                 |
+| Can an interface be final?                                               | No                                 |
+| Can we use private/protected for members of an interface?                | No                                 |
+| What is readonly and writeonly class?                                    | Not applicable in Java             |
+| Do I need to import `java.lang` package?                                 | No, it’s default                   |
+| Is it necessary that each try block must be followed by catch block?     | No, finally can follow             |
+| Can finally block be used without catch?                                 | Yes                                |
+| Is there any case where the finally block will not be executed?          | Yes, `System.exit()`               |
+| Can exception be rethrown?                                               | Yes, only unchecked exceptions     |
+| How many objects are created in `String a = new String(“ra”);`?          | Two                                |
+| How can we make an immutable class in Java?                              | Use final members and class        |
+| Can a class have an interface?                                           | Yes, as a nested interface         |
+| Can an interface have a class?                                           | Yes, static implicitly             |
+| What is `System.gc()`?                                                   | Suggests garbage collection        |
+| What are the 3 ways objects can be unreferenced?                         | Nullify reference, reassign, isolate|
+| Is it possible to start a thread twice?                                  | No                                 |
+| Can we call the `run()` method instead of `start()`?                     | Yes, but thread won't start        |
+| Does each thread have its stack in multithreaded programming?            | Yes                                |
+| In which way of object creation constructor is not called?               | Cloning                            |
+| Can we import the same package/class two times?                          | Yes                                |
+| Can there be an abstract method without an abstract class?               | Yes, in an interface               |
+| Can we have multiple static blocks in a class?                           | Yes, executes sequentially         |
 
 ## Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
