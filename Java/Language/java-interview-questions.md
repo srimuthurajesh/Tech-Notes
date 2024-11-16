@@ -127,6 +127,7 @@
 | Do I need to import `java.lang` package?                                 | No, it’s default                   |
 | Is it necessary that each try block must be followed by catch block?     | No, finally can follow             |
 | Can finally block be used without catch?                                 | Yes                                |
+| Does multiple finally block allowed?                                      | No                                |
 | Is there any case where the finally block will not be executed?          | Yes, `System.exit()`               |
 | Can exception be rethrown?                                               | Yes, only unchecked exceptions     |
 | How many objects are created in `String a = new String(“ra”);`?          | Two                                |

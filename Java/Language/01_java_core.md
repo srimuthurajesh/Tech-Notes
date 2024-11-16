@@ -424,6 +424,16 @@ class InvalidAgeException extends Exception{
 | **StackOverflowError**           | Thrown when stack space is exhausted, usually due to deep or infinite recursion.| Error              	 |
 | **NoClassDefFoundError**         | Occurs when the JVM/class loader cannot find a required class 					 | Error       			 |
 
+## Reflection
+> allows runtime inspection, modification, and invocation of classes, methods, fields, and constructors  
+
+Class: `Class<?> cls = Class.forName("java.lang.String");`    
+Access Public: `getMethods()`, `getFields()`, `getConstructors()`    
+Access also Private: `getDeclaredMethods()`, `getDeclaredFields()`, `getDeclaredConstructors()`   
+Invoke: `method.invoke(object, args)`  
+Field: `field.get(object)`, `field.set(object, value)`   
+Object Creation : `constructor.newInstance(args)`  
+
 
 ## Annotations:
 > metadata that provides data about a program to compiler  
