@@ -108,7 +108,7 @@
 6. Default constutor wont work if i give any one constructor explictly? Y
 7.  Can we override the private and static methods?N
 8. Arrange the order of execution blocks. static,instance,constructor,main
-9.  Can we execute a program without main() method?N
+9.  Can we execute a program without main() method? `Yes, using static block`
 10. What if static modifier is removed from main method? NoSuchMethodError
 11. Can declare static variables and methods in abstract class?
 12. Is method overloading possible with return type, why?N
