@@ -43,24 +43,27 @@
 
 
 ## OOPS:
-1. What is constuctor and its types?
-1. What is lamda expression?
-2. What is interface? and its types.
-3. What is marker interface and example.
-3. What are the types of access specifier?
-4. What are the seven methods of Object class?
-5. What are the four ways to create object?
-5. What is object cloning?  
-6. When garbage collection get triggers?
-7. What is method and vararg?
-7. What are the types and subtypes of encapsulation?
-8. What are inheriance and give its types?
-9. What is super and super()?
-10. What is polymorphism and its types?
-11. What is abstract class?
-12. What is interface and its types?
-13. What is IS-A and HAS-A relationship?
-15. What is shallow and deep copy?   
+
+| Question                                      | Answer                                                |
+|-----------------------------------------------|-------------------------------------------------------|
+| What is constructor and its types?            | Special method to initialize objects |
+| What is lambda expression?                    | A concise way to write functions using `()->{}` syntax. |
+| What is interface? and its types.             | A contract for classes; types: Functional, Marker, Normal. |
+| What is marker interface and example.         | Interface with no methods; Example: `Serializable`.   |
+| What are the types of access specifier?       | Public, Private, Protected, Default.                 |
+| What are the seven methods of Object class?   | `toString()`, `hashCode()`, `equals()`, `clone()`, `getClass()`, `wait()`, `notify()`. |
+| What are the four ways to create object?      | `new`, Reflection, Cloning, Deserialization.         |
+| What is object cloning?                       | Creating a copy of an object using the `clone()` method. |
+| When garbage collection gets triggered?       | When JVM runs out of memory or explicitly via `System.gc()`. |
+| What is method and vararg?                    | Method: Block of code; Vararg: Variable-length arguments (`...`). |
+| What are the types and subtypes of encapsulation? | Types: Data Encapsulation, Behavioral Encapsulation.  |
+| What are inheritance and its types?           | Acquiring properties; types: Single, Multiple (via interface), Multilevel, Hierarchical. |
+| What is `super` and `super()`?                | `super`: Access parent class members; `super()`: Call parent constructor. |
+| What is polymorphism and its types?           | Single entity with many forms; types: Compile-time, Runtime. |
+| What is abstract class?                       | Class with abstract methods, cannot be instantiated.  |
+| What is interface and its types?              | A contract for classes; types: Functional, Marker, Normal. |
+| What is IS-A and HAS-A relationship?          | IS-A: Inheritance; HAS-A: Composition.               |
+| What is shallow and deep copy?                | Shallow: Copies references; Deep: Copies entire objects. |
 
 
 ## MultiThreading:
@@ -118,6 +121,7 @@
 | Can we override the private and static methods?                          | No                                 |
 | Arrange the order of execution blocks.                                   | Static, instance, constructor, main|
 | Can we execute a program without `main()` method?                        | Yes, using static block            |
+| Can we override/overload main method?                                    | override No, Overload No       |
 | What if static modifier is removed from `main` method?                   | NoSuchMethodError                  |
 | Can we declare static variables and methods in abstract class?           | Yes                                |
 | Is method overloading possible with return type? Why?                    | No, it doesn't distinguish methods |

@@ -43,7 +43,8 @@ PUT     | update customer       | http://www.example.com/v1/api/customers       
 PATCH   | partial update customer| http://www.example.com/v1/api/customers           | 
 DELETE  | delete customer       | http://www.example.com/v1/api/customers/{cusId}   |   
 
-Versioning:  
+### Versioning:
+> to support backward compatibility 
 
 Request param, query. 
 
