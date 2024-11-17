@@ -22,24 +22,24 @@
 | What is StringBuffer?                         | Thread-safe, mutable strings                                              |
 | What is StringBuilder?                        | Non-thread-safe, faster mutable strings.                                  |
 | What are types of String comparisons?         | `==` (reference),   `.equals()` (content), `.compareTo()` (lexicographical). |
-| What is String Tokenizer?                     | split strings into tokens (e.g., words).                                       |
-| What is Static Variable, Static Class?        | Static Variable: Belongs to the class, not instances. Static Class: A nested class.       |
-| What is Static Block? When does it execute?   | A block of code executed when the class is loaded into memory.                            |
-| What is Final Variable, Method & Class?       |   |
+| What is String Tokenizer?                     | split strings into tokens (e.g., words).                                  |
+| What is Static Variable & Class?              | create only one time, called without reference                            |
+| What is Static Block?                         | A block of code executed when the class is loaded into memory.            |
+| What is Final Variable, Method & Class?       | assigned only once, cannot modify once it assigned                        |
 | What is Final, Finalize, Finally?             |  |
-| What is Constants?                            | Fixed values declared using `final`.                                                     |
-| What is Enum?                                 | A special class to define constants                       |
-| What is Package and Import?                   | Groups related classes and interfaces |
-| What is Wrapper Class?                        | wrap around primitive datatype & give object appearence  |
-| What is Autoboxing & Unboxing?                |  **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive |
-| What is Typecasting?                          | Converting one data type to another            |
-| What is Generics?                             | type-safe to class                       |
-| What is Exception Handling?                   | Mechanism to handle runtime errors  |
+| What is Constants?                            | Immutable. Declare as final static                                        |
+| What is Enum?                                 | A special class to define constants                                       |
+| What is Package and Import?                   | Groups related classes and interfaces                                     |
+| What is Wrapper Class?                        | wrap around primitive datatype & give object appearence                   |
+| What is Autoboxing & Unboxing?                |  **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive     |
+| What is Typecasting?                          | Converting one data type to another                                       |
+| What is Generics?                             | type-safe to class                                                        |
+| What is Exception Handling?                   | Mechanism to handle runtime errors                                        |
 | What are Checked and Unchecked Exceptions?    | Compile-time (e.g., `IOException`). Runtime (e.g., `NullPointerException`). |
 | What are throw and throws?                    | |
-| When do ClassNotFoundException?               | Runtime, when a class is not found |
-| When do NoClassDefFoundError occur?           | Runtime, when a compiled class is unavailable. |
-| What is Serialization? Syntax?                | Converting an object to a byte stream. |
+| When do ClassNotFoundException?               | when a class is not found                                                 |
+| When do NoClassDefFoundError occur?           | when a compiled class is unavailable.                                     |
+| What is Serialization?                        | Converting an object to a byte stream.                                    |
 
 
 ## OOPS:
