@@ -1,16 +1,17 @@
 # Spring Boot  
 
-## Advantages of spring boot:
-1. Starter dependencies
-2. Actuator
+> simplifies Java app development by providing pre-configured setups for creating standalone, microservice-based applications.
+
+## Features of spring boot:
+1. [Starter dependencies](#starter-dependencies)
+2. [Actuator](#actuator)
 3. Embedded server
-4. Cli tool
-5. Auto configuration
+4. [Cli tool](#cli-)
+5. [Auto configuration](#auto-configuration)
 6. Spring dev tools
 
 
-## Features:
-**Auto Configuration** - It as lot of default configurations.  
+
 ### Starter dependencies    
 1. spring-boot-starter-web : it consists of tomcat,validation,jackson-databind,spring-webmvc   
 2. spring-boot-devtools : fast restarts, LiveReload  
@@ -30,8 +31,10 @@
 `management.endpoints.web.exposure.exclude=beans,mapping`  	// endpoints to exclude  
 `management.endpoints.web.base-path=/actuatorSample` 		// http://localhost:8080/actuatorSample/health  
 
+### Auto Configuration
+> It has lot of default configurations.  
 
-### CLI Commands:    
+### CLI :    
 `mvn spring-boot:run`    // only if maven locally installed  
 `mvnw spring-boot:run` // if maven not installed   
 `mvn package` 	// to make jar file in taget folder  
@@ -42,8 +45,11 @@
 -combines of @Configuration,@EnableAutoConfiguraion,@ComponentScan    
 -scan its current package/subpackage for componentscan controllers   
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
-2. @EnableAutoConfiguration: configure your application based on the dependencies that you have added to your project
-
+2. @EnableAutoConfiguration: configure your application based on the dependencies that you have added to your project  
+-triggers the auto-configuration process.  
+-Spring Boot scans the classpath for dependencies and applies relevant configuration classes  
+-These configuration classes define beans and their dependencies.   
+-How to disable- `@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class})`
 ### Application.properties File 
 -File path: src/resources/  
 -https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html   

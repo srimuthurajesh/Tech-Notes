@@ -67,38 +67,45 @@
 
 
 ## MultiThreading:
-1. What is multithreading?
-2. What is process and thread?
-3. What are the 5 different states of lifecycle in Thread
-4. What is thread priority? and its values. 
-5. What is sychronized method?
-6. What is Synchronized block?
-7. What is static synchronized?
-8. What are the Thread class methods?
-9. Explain wait, notify, notifyall
-10. What is deadLock, how to avoid?
-11. What is race condition?
-12. What are the methods available in Thread Object?
-13. What is volatile keyword?
-14. How do you stop the thread in java?  
-15. Explain about ExecuterService?
-16. What is Atomic variables. 
-17. List and explain thread safe collections 
+
+| Question                                     | Answer                                                 |
+|----------------------------------------------|--------------------------------------------------------|
+| What is multithreading?                      | Executing multiple threads concurrently.               |
+| What is process and thread?                  | Process: Independent program; Thread: Lightweight process within a process. |
+| What are the lifecycle in Thread?             | New, Runnable, Running, Blocked/Waiting, Terminated.   |
+| What is thread priority? and its values.     | Determines execution priority; Values: MIN(1), NORM(5), MAX(10). |
+| What is synchronized method?                 | Ensures only one thread executes the method at a time. |
+| What is synchronized block?                  | Limits synchronization to a specific block of code.    |
+| What is static synchronized?                 | Synchronizes static methods, locking the class object. |
+| What are the Thread class methods?           | `start()`, `run()`, `sleep()`, `join()`, `interrupt()`.|
+| Explain wait, notify, notifyAll.             | `wait()`: Pauses thread; `notify()`: Wakes one thread; `notifyAll()`: Wakes all threads. |
+| What is deadlock, how to avoid?              | Circular waiting of threads; Avoid by using proper locking order or timeout. |
+| What is race condition?                      | Incorrect results due to concurrent access to shared resources. |
+| What are the methods available in Thread Object? | `wait()`, `notify()`, `notifyAll()`, `join()`, `sleep()`, `yield()`. |
+| What is volatile keyword?                    | Ensures visibility of changes to variables across threads. |
+| How do you stop the thread in java?          | Use flags or interruption (`Thread.interrupt()`); `stop()` is deprecated. |
+| Explain about ExecutorService?               | A framework for managing thread pools and task execution. |
+| What is atomic variables?                    | Variables providing atomic updates to avoid race conditions. |
+| List and explain thread-safe collections.    | `ConcurrentHashMap`, `CopyOnWriteArrayList`, `CopyOnWriteArraySet`: Support safe multi-threaded operations. |
 
 
 ## Collection:
-1. How to calculate new arrayList size? and default size.
-2. How does CopyOnWriteArrayList handle modifications?
-2. How to convert a collection to iterator?
-3. Why String is popular HashMap key in Java?  
-4. What is difference between ArrayList & LinkedList? 
-5. What is comparable & comparator interface?  
-7. What is difference between hashmap and hashtable  
-8. What is iterator and list_iterator
-9. What is difference between collection and collections  
-11. How HashMap handles collision
-12. What is the difference between poll() and remove() in queue? 
-14. What is the difference between failfast and failsafe iterator?
+
+| Question                                           | Answer                                                                 |
+|----------------------------------------------------|------------------------------------------------------------------------|
+| How to calculate new ArrayList size? and default size. | Default size: 10; New size: `(oldCapacity * 3/2) + 1`.                 |
+| How does CopyOnWriteArrayList handle modifications? | Creates a new copy of the list on each modification.                  |
+| How to convert a collection to iterator?           | Use `collection.iterator()`.                                          |
+| Why String is popular HashMap key in Java?         | Immutable, efficient `hashCode()` and `equals()` implementations.     |
+| What is the difference between ArrayList & LinkedList? | ArrayList: Dynamic array, faster random access; LinkedList: Doubly linked list, better for insert/delete. |
+| What is Comparable & Comparator interface?         | Comparable: Single sort order (`compareTo()`); Comparator: Custom sort order (`compare()`). |
+| What is the difference between HashMap and Hashtable? | HashMap: Non-synchronized, allows nulls; Hashtable: Synchronized, no nulls. |
+| What is Iterator and ListIterator?                | Iterator: Traverse in one direction; ListIterator: Bidirectional traversal. |
+| What is the difference between Collection and Collections? | Collection: Interface; Collections: Utility class for collection operations. |
+| How HashMap handles collision?                    | Uses chaining (linked lists) in buckets.                              |
+| What is the difference between `poll()` and `remove()` in Queue? | `poll()`: Returns null if queue is empty; `remove()`: Throws exception. |
+| What is the difference between fail-fast and fail-safe iterator? | Fail-fast: Throws `ConcurrentModificationException`; Fail-safe: Works on a copy, no exception. |
+
 
 ## Miscellenous questions:
 1. Why we overrider hashcode and equals?
