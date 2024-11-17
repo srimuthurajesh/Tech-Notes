@@ -19,12 +19,13 @@
 | What is String?                               | sequence of characters|
 | Why is String immutable?                      | To ensure security, thread safety, and better performance in the string pool.             |
 | What is StringBuffer and StringBuilder?       | **StringBuffer**: Thread-safe, mutable strings. **StringBuilder**: Non-thread-safe, faster mutable strings. |
-| What are types of String comparisons?         | `==` (reference comparison), `.equals()` (content comparison), `.compareTo()` (lexicographical). |
+| What are types of String comparisons?         | `==` (reference comparison),   
+`.equals()` (content comparison), `.compareTo()` (lexicographical). |
 | What is String Tokenizer?                     | A class to split strings into tokens (e.g., words).                                       |
 | What is Static Variable, Static Class?        | Static Variable: Belongs to the class, not instances. Static Class: A nested class.       |
 | What is Static Block? When does it execute?   | A block of code executed when the class is loaded into memory.                            |
-| What is Final Variable, Final Method, Final Class? | Final Variable: Constant, cannot be reassigned. Final Method: Cannot be overridden. Final Class: Cannot be subclassed. |
-| What is Final, Finalize, Finally?             | **Final**: Keyword for constants, methods, classes. **Finalize**: Cleanup before GC. **Finally**: Executes after try-catch. |
+| What is Final Variable, Final Method, Final Class? ||
+| What is Final, Finalize, Finally?             |  |
 | What is Constants?                            | Fixed values declared using `final`.                                                     |
 | What is Enum?                                 | A special class to define constants (e.g., `enum Days {MON, TUE}`).                       |
 | Is null case-sensitive? What does `null == null` return? | Null is not case-sensitive; `null == null` returns `true`.                                |
