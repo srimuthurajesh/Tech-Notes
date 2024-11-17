@@ -27,16 +27,16 @@
 | What is Final Variable, Final Method, Final Class? ||
 | What is Final, Finalize, Finally?             |  |
 | What is Constants?                            | Fixed values declared using `final`.                                                     |
-| What is Enum?                                 | A special class to define constants (e.g., `enum Days {MON, TUE}`).                       |
-| What is Package and Import?                   | **Package**: Groups related classes. **Import**: Allows using classes from other packages. |
+| What is Enum?                                 | A special class to define constants                       |
+| What is Package and Import?                   | Groups related classes and interfaces |
 | What is Wrapper Class, Autoboxing & Unboxing? Advantages? | **Wrapper Class**: Converts primitives to objects. **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive. Advantages: Collections support, null handling. |
-| What is Typecasting?                          | Converting one data type to another (e.g., `int` to `float`).                             |
-| What is Generics?                             | Allows type-safe operations in collections (e.g., `List<String>`).                        |
-| What is Exception Handling?                   | Mechanism to handle runtime errors using `try-catch`.                                     |
+| What is Typecasting?                          | Converting one data type to another            |
+| What is Generics?                             | type-safe to class                       |
+| What is Exception Handling?                   | Mechanism to handle runtime errors  |
 | What are Checked and Unchecked Exceptions?    | **Checked**: Compile-time (e.g., `IOException`). **Unchecked**: Runtime (e.g., `NullPointerException`). |
 | What are throw and throws?                    | **throw**: Explicitly throws an exception. **throws**: Declares exceptions a method can throw. |
 | When do ClassNotFoundException and NoClassDefFoundError occur? | **ClassNotFoundException**: Runtime, when a class is not found. **NoClassDefFoundError**: Runtime, when a compiled class is unavailable. |
-| What is Serialization? Syntax?                | Converting an object to a byte stream. **Syntax**: `class MyClass implements Serializable {}`. |
+| What is Serialization? Syntax?                | Converting an object to a byte stream. |
 
 
 ## OOPS:
