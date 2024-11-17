@@ -436,6 +436,23 @@ class InvalidAgeException extends Exception{
 | **Field**          | `field.get(object)`, `field.set(object, value)` |
 | **Object Creation**| `constructor.newInstance(args)`                |
   
+```java
+import java.lang.reflect.*;
+public class ReflectionExample {
+    public static void main(String[] args) throws Exception {
+        Class<?> cls = Class.forName("java.lang.String");
+		Method[] methods = cls.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println(method.getName());
+        }
+        Constructor<?> constructor = cls.getConstructor(String.class);
+        Object obj = constructor.newInstance("Hello Reflection");
+        Method lengthMethod = cls.getMethod("length");
+        int length = (int) lengthMethod.invoke(obj);
+        System.out.println("\nLength of string: " + length);
+    }
+}
+```
 
 
 ## Annotations:
