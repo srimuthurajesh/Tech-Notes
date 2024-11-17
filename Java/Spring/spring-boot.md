@@ -13,17 +13,40 @@
 
 
 ### Starter dependencies    
-1. spring-boot-starter-web : it consists of tomcat,validation,jackson-databind,spring-webmvc   
-2. spring-boot-devtools : fast restarts, LiveReload  
-3. spring-boot-starter-data-jpa : JPA API using Spring DataRepository and Hibernate  
-4. database driver - h2,mysql etc  
+>  pre-defined dependencies that bundle a set of commonly used libraries  
+
+| Starter Dependency                 | Purpose                                              |
+|------------------------------------|------------------------------------------------------|
+| `spring-boot-starter`              | Core starter, includes auto-configuration and logging. |
+| `spring-boot-starter-web`          | it consists of tomcat,validation,jackson-databind,spring-webmvc  |
+| `spring-boot-starter-data-jpa`     | For working with databases using JPA and Hibernate.  |
+| `spring-boot-starter-security`     | Adds Spring Security for authentication and authorization. |
+| `spring-boot-starter-test`         | Includes testing libraries like JUnit, Mockito, and AssertJ. |
+| `spring-boot-starter-thymeleaf`    | For server-side rendering using Thymeleaf templates. |
+| `spring-boot-starter-actuator`     | Provides production-ready features like health checks and metrics. |
+| `spring-boot-starter-mail`         | For sending emails using JavaMailSender.            |
+| `spring-boot-starter-validation`   | Includes Bean Validation API for validating user inputs. |
+| `spring-boot-starter-aop`          | For aspect-oriented programming (AOP) using Spring AOP. |
+| `spring-boot-starter-logging`      | Default logging setup with Logback and SLF4J.       |
+| `spring-boot-starter-data-mongodb` | For MongoDB database integration.                  |
+| `spring-boot-starter-cache`        | Adds caching support for the application.           |
+| `spring-boot-starter-cloud`        | For building cloud-native applications (part of Spring Cloud). |
+
+
+### spring-boot-devtools
+> enhances dev experience by providing features like automatic restarts, live reload, and quick debugging support.
+
+`spring-boot-devtools`
 
 ### Actuator: 
-	a) http://localhost:8080/actuator/health =>UP or DOWN    
-	b) http://localhost:8080/actuator/env => port, active profile  
-	c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
-	d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
-	e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
+> provides production-ready features like monitoring, metrics, health checks, and application insights   
+
+a) http://localhost:8080/actuator/health =>UP or DOWN    
+b) http://localhost:8080/actuator/env => port, active profile  
+c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
+d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
+e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
+
 #### Steps to enable actuater:  
 1. Add dependencies `spring-boot-starter-actuator`.  
 2. Add it in appliction.properties  
