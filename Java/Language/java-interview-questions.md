@@ -11,24 +11,23 @@
 | What is an Expression?                        | combination of variables, operators, and literal       |
 | What are Keywords in Java?                    | Reserved words                                             |
 | Write Java input/output syntax.               |       |
-| What are Datatypes and its types?             | Define type of data. 1)Primitive, 2)Non-Primitive |
+| What are Datatypes and its types?             | Define the type of data |
 | Java is not 100% OOPs language, why?          | becz it supports primitive data types                       |
 | What are Variables and its types?             | Types: Local, Instance, and Static variables.                                             |
-| What is Operator and its types?               | Operators perform operations; types include Arithmetic, Logical, Relational, etc.         |
-| What is Array?                                | A fixed-size, indexed collection of elements. **Methods**: `Arrays.sort()`, `Arrays.toString()`. |
+| What is Operator and its types?               | perform math operations         |
+| What is Array?                                | collection of similar datatype, fixed-size|
 | What is String?                               | sequence of characters|
 | Why is String immutable?                      | To ensure security, thread safety, and better performance in the string pool.             |
-| What is StringBuffer and StringBuilder?       | **StringBuffer**: Thread-safe, mutable strings. **StringBuilder**: Non-thread-safe, faster mutable strings. |
-| What are types of String comparisons?         | `==` (reference comparison),   
-`.equals()` (content comparison), `.compareTo()` (lexicographical). |
-| What is String Tokenizer?                     | A class to split strings into tokens (e.g., words).                                       |
+| What is StringBuffer?                         | Thread-safe, mutable strings |
+| What is StringBuilder?                        | Non-thread-safe, faster mutable strings. |
+| What are types of String comparisons?         | `==` (reference),   `.equals()` (content), `.compareTo()` (lexicographical). |
+| What is String Tokenizer?                     | split strings into tokens (e.g., words).                                       |
 | What is Static Variable, Static Class?        | Static Variable: Belongs to the class, not instances. Static Class: A nested class.       |
 | What is Static Block? When does it execute?   | A block of code executed when the class is loaded into memory.                            |
 | What is Final Variable, Final Method, Final Class? ||
 | What is Final, Finalize, Finally?             |  |
 | What is Constants?                            | Fixed values declared using `final`.                                                     |
 | What is Enum?                                 | A special class to define constants (e.g., `enum Days {MON, TUE}`).                       |
-| Is null case-sensitive? What does `null == null` return? | Null is not case-sensitive; `null == null` returns `true`.                                |
 | What is Package and Import?                   | **Package**: Groups related classes. **Import**: Allows using classes from other packages. |
 | What is Wrapper Class, Autoboxing & Unboxing? Advantages? | **Wrapper Class**: Converts primitives to objects. **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive. Advantages: Collections support, null handling. |
 | What is Typecasting?                          | Converting one data type to another (e.g., `int` to `float`).                             |
@@ -145,6 +144,7 @@
 | Can there be an abstract method without an abstract class?               | Yes, in an interface               |
 | Can we have multiple static blocks in a class?                           | Yes, executes sequentially         |
 | Does Functional interface can extend another interface ?                 | Yes, but parent should have one method|
+| Is null case-sensitive? What does `null == null` return? | Null is not case-sensitive; `null == null` returns `true`.                                |
 
 ## Output questions:
 1.  System.out.println(10 + 20 + "Javatpoint");    //30Javatpoint
