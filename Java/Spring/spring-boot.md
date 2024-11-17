@@ -73,23 +73,15 @@ To Disable : `spring.autoconfigure.exclude=org.springframework.boot.autoconfigur
 | Command                                                           | Description                                                        	|
 |-------------------------------------------------------------------|--------------------------------------------------------------------|
 | `mvn spring-boot:run`                                           	| Runs the Spring Boot application using Maven.                      |
+| `mvnw spring-boot:run`                                           	| if maven not installed                      							|
 | `mvn clean install`                                             	| Cleans and installs the project in the local Maven repository.     |
 | `mvn install -DskipTests`                                       	| Installs the project without running the tests.                    |
 | `mvn dependency:tree`                                             | Displays the dependency tree of your project.                       |
-| `mvn clean package`                                             	| Packages the project into a JAR/WAR file.                          |
-| `mvn compile`                                                   	| Compiles the source code of the application.                       |
-| `mvn test`                                                      	| Runs the unit tests of your application.                           |
-| `mvn clean package spring-boot:repackage`                        	| Creates an executable JAR file for the Spring Boot application.    |
 | `mvn clean validate`                                            	| Validates the project setup and dependencies.                      |
-| `mvn plugin:dependencies`                                        	| Lists all the plugins used in your project.                        |
 | `mvn spring-boot:run -Dspring.profiles.active=dev`               	| Runs the application with a specific Spring profile (e.g., dev).   |
-| `mvn clean`                                                       | Cleans the project by removing the `target` directory.             |
 | `mvn archetype:generate -DgroupId=com.example -DartifactId=myapp`	| Generates a new Spring Boot project using Spring Initializr.       |
 
-`mvn spring-boot:run`    // only if maven locally installed  
-`mvnw spring-boot:run` // if maven not installed   
-`mvn package` 	// to make jar file in taget folder  
-`java -jar app.jar`  // to run jar file  
+Command to run jar : `java -jar app.jar`  
 
 ### Annotations:
 1. **@SpringBootApplication**  
