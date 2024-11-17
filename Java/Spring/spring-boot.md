@@ -8,7 +8,7 @@
 3. Embedded server
 4. [Cli tool](#cli-)
 5. [Auto configuration](#auto-configuration)
-6. Spring dev tools
+6. [Spring dev tools](#spring-boot-dev-tools)
 
 
 
@@ -33,19 +33,26 @@
 | `spring-boot-starter-cloud`        | For building cloud-native applications (part of Spring Cloud). |
 
 
-### spring-boot-devtools
-> enhances dev experience by providing features like automatic restarts, live reload, and quick debugging support.
-
-`spring-boot-devtools`
-
 ### Actuator: 
 > provides production-ready features like monitoring, metrics, health checks, and application insights   
 
-a) http://localhost:8080/actuator/health =>UP or DOWN    
-b) http://localhost:8080/actuator/env => port, active profile  
-c) http://localhost:8080/actuator/beans => list of beans Eg:HelloController in Demo  
-d) http://localhost:8080/actuator/configprops => list all properties Eg:ApiConfig in Demo  
-e) http://localhost:8080/actuator/mappings => list all end poitns: Eg:/hello mappings  
+| Actuator Endpoint      		| Description                                      |
+|-------------------------------|--------------------------------------------------|
+| `/actuator/health`            | Displays the health status of the application.   |
+| `/actuator/env`               | Displays environment properties (e.g., active profiles, system properties). |
+| `/actuator/beans`             | Lists all Spring beans in the application.       |
+| `/actuator/mappings`          | Displays all HTTP request mappings and associated controllers. |
+| `/actuator/metrics`           | Provides metrics such as JVM memory usage, thread counts, etc. |
+| `/actuator/info`              | Displays custom application information such as build version, description, etc. |
+| `/actuator/configprops`       | Lists all configuration properties used in the application. |
+| `/actuator/loggers`           | Allows querying and modifying log levels of application loggers. |
+| `/actuator/threaddump`        | Displays a thread dump of the JVM.                |
+| `/actuator/scheduledtasks`    | Displays information about scheduled tasks in the application. |
+| `/actuator/auditevents`       | Provides information about application audit events (if auditing is enabled). |
+| `/actuator/heapdump`          | Provides a heap dump of the JVM.                  |
+| `/actuator/jvm`               | Displays JVM-related metrics like memory usage, garbage collection stats. |
+| `/actuator/httptrace`         | Displays HTTP request/response trace (similar to a recent log). |
+| `/actuator/conditions`        | Lists all the conditions and their status that were evaluated during application startup. |
 
 #### Steps to enable actuater:  
 1. Add dependencies `spring-boot-starter-actuator`.  
