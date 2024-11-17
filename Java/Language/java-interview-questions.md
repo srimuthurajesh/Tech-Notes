@@ -24,18 +24,20 @@
 | What is String Tokenizer?                     | split strings into tokens (e.g., words).                                       |
 | What is Static Variable, Static Class?        | Static Variable: Belongs to the class, not instances. Static Class: A nested class.       |
 | What is Static Block? When does it execute?   | A block of code executed when the class is loaded into memory.                            |
-| What is Final Variable, Final Method, Final Class? ||
+| What is Final Variable, Method & Class?       |   |
 | What is Final, Finalize, Finally?             |  |
 | What is Constants?                            | Fixed values declared using `final`.                                                     |
 | What is Enum?                                 | A special class to define constants                       |
 | What is Package and Import?                   | Groups related classes and interfaces |
-| What is Wrapper Class, Autoboxing & Unboxing? Advantages? | **Wrapper Class**: Converts primitives to objects. **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive. Advantages: Collections support, null handling. |
+| What is Wrapper Class?                        | wrap around primitive datatype & give object appearence  |
+| What is Autoboxing & Unboxing?                |  **Autoboxing**: Primitive → Object. **Unboxing**: Object → Primitive |
 | What is Typecasting?                          | Converting one data type to another            |
 | What is Generics?                             | type-safe to class                       |
 | What is Exception Handling?                   | Mechanism to handle runtime errors  |
-| What are Checked and Unchecked Exceptions?    | **Checked**: Compile-time (e.g., `IOException`). **Unchecked**: Runtime (e.g., `NullPointerException`). |
-| What are throw and throws?                    | **throw**: Explicitly throws an exception. **throws**: Declares exceptions a method can throw. |
-| When do ClassNotFoundException and NoClassDefFoundError occur? | **ClassNotFoundException**: Runtime, when a class is not found. **NoClassDefFoundError**: Runtime, when a compiled class is unavailable. |
+| What are Checked and Unchecked Exceptions?    | Compile-time (e.g., `IOException`). Runtime (e.g., `NullPointerException`). |
+| What are throw and throws?                    | |
+| When do ClassNotFoundException?               | Runtime, when a class is not found |
+| When do NoClassDefFoundError occur?           | Runtime, when a compiled class is unavailable. |
 | What is Serialization? Syntax?                | Converting an object to a byte stream. |
 
 
