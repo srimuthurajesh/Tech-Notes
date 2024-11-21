@@ -233,8 +233,7 @@ int age = list.stream()
 ```
 2a. Convert a matrix into stream
 ```java
-Arrays.stream(nestedArray)
-            .flatMapToInt(Arrays::stream)
+Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
 ```
 2b. Convert intstream into objects
 ```java
@@ -257,25 +256,20 @@ str.chars().boxed().collect(
 
 5. Convert a list into map  
 ```java
-list.stream()
-  .collect(
+list.stream().collect(
     Collection.toMap(Function.identity(),Function.identity()));
 ```
 
 5.  Group The Student By Department Names
 ```java
-Map<String, List<Student>> groupByStudent = studentList.stream().collect(Collectors.groupingBy(Student::getDept));
+studentList.stream().collect(Collectors.groupingBy(Student::getDept));
 ```
 
-8. Sort by salary & name  
+8. Sort by salary & name & primitive  
 ```java
 employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary));
 employeeList.stream().sorted(Comparator.comparing(Employee::getName), Comparator.reverseOrder());
 Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder());
-```
-
-9. Find employee with lowest salary
-```java
 employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
 ```
 
@@ -283,27 +277,15 @@ employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
 ```java
 Arrays.stream(names).collect(Collectors.joining(","));
 ```
-11. Combine array matrix values in a set
-```java
-Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
-```
+
 12. Get all departments from student obj
 ```java
-studentList.stream().collect(Collectors.groupingBy(Student::getDept)).entrySet().stream().map(value -> value.getKey()).distinct().toList();
-```
-
-13. Find the department who is having maximum number of students
-```java
+studentList.stream().collect(Collectors.groupingBy(Student::getDept)).entrySet().stream().map(value -> value.getKey()).distinct();
 studentList.stream().collect(Collectors.groupingBy(Student::getDept, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get();
-```
-14. Find the average age of male and female students
-```java
-Map<String,Double> deptWiseStudentAge = studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.averagingInt(Student::getAge)));
-```
-15. Find the highest rank in each department
-```java
+studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.averagingInt(Student::getAge)));
 studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.maxBy(Comparator.comparing(Student::getDept))));
 ```
+
 16. Find the student who has second rank
 ```java
 studentList.stream().sorted(Comparator.comparing(Student::getRank,Comparator.reverseOrder())).skip(1).limit(1).findFirst();
