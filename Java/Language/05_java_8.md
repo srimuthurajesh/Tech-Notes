@@ -141,7 +141,7 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | `filter()`       | Select elements based on a predicate. |
 | `flatMap()`      | combination of flat&map, convert stream of stream into single stream |
 | `flatMapToInt()` | converting nested primitive arrays into a single stream of primitives  |
-| `flatMapToObj()` |   |
+| `flatMapToObj()` | convert primitive to object  |
 | `distinct()`     | Remove duplicate for primitive datatypes |
 | `sorted()`       | Sort elements.                        |
 | `limit(5)`       | Limit the number of elements.         |
@@ -231,19 +231,28 @@ int age = list.stream()
               .mapToInt(student::getAge)
               .skip(1).max();
 ```
-
+2a. Convert a matrix into stream
+```java
+Arrays.stream(nestedArray)
+            .flatMapToInt(Arrays::stream)
+```
+2b. Convert intstream into objects
+```java
+intStream.flatMapToObj(num -> Stream.of("Number-" + num));
+```
 3. Find list of unique characters present in all the string.  
 ```java
-Set<Character> uniqueChars = listOfStrings.stream()
-                                          .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
-                                          .collect(Collectors.toSet());
+listOfStrings.stream()
+            .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
+            .collect(Collectors.toSet());
 ```
 
-4. Group students count by age.   
+4. Count of object and primitive   
 ```java
-list.stream()
-  .collect(
+list.stream().collect(
       Collectors.groupingBy(Student::getAge, Collectors.counting()));
+str.chars().boxed().collect(
+    Collectors.groupingBy(Function.identity(), Collectors.counting()));
 ```
 
 5. Convert a list into map  
@@ -252,20 +261,7 @@ list.stream()
   .collect(
     Collection.toMap(Function.identity(),Function.identity()));
 ```
-6. Sort and reverseorder
-```java
-Arrays.stream(arr)
-  .boxed()
-  .sorted(Comparator.reverseOrder())
-  .limit(2)
-```
-7. Get count of each char    
-```java 
-str.chars()
-  .boxed()
-  .collect(
-    Collectors.groupingBy(Function.identity(), Collectors.counting()));
-``` 
+
 5.  Group The Student By Department Names
 ```java
 Map<String, List<Student>> groupByStudent = studentList.stream().collect(Collectors.groupingBy(Student::getDept));
@@ -273,8 +269,9 @@ Map<String, List<Student>> groupByStudent = studentList.stream().collect(Collect
 
 8. Sort by salary & name  
 ```java
-employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
-employeeList.stream().sorted(Comparator.comparing(Employee::getName), Comparator.reverseOrder())
+employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary));
+employeeList.stream().sorted(Comparator.comparing(Employee::getName), Comparator.reverseOrder());
+Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder());
 ```
 
 9. Find employee with lowest salary
