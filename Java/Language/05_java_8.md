@@ -174,15 +174,10 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | `collect(Collectors.toList())`  | Collect elements into a collection.                 |
 | `findFirst()`                   | return Optional so handle orElse()                  |
 | `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param  |
-| `min()`                         | return min value                                    |
-| `max()`                         | return max value                                    |
-| `anyMatch()`                    | return boolean if any element matches a predicate   |
-| `allMatch()`                    | return boolean if all element matches a predicate   |
-| `noneMatch()`                   | return boolean if no elements match a predicate.    |
+| `min()`,`max()`,`average()`,`sum()`| return min/max value(only for primitive)  |
+| `anyMatch()`,`allMatch()`,`noneMatch()`                    | return boolean if all element matches a predicate   |
 | `findAny()`                     | Find any element (non-deterministic).               |
 | `toArray(String[]::new)`        | return array                                        |
-| `average()`                     | only for primitive streams IntStream                |
-| `sum()`                         | only for primitive streams IntStream                |
 | `mapToInt()`                    | convert obj list into intstream                     |
 | `summaryStatistics()`           | only for primitive streams IntStream, we can use .getMax(), getMin() etc                |
 | `forEachOrdered()`              |                                                     |
@@ -244,14 +239,6 @@ intStream.flatMapToObj(num -> Stream.of("Number-" + num));
 listOfStrings.stream()
             .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
             .collect(Collectors.toSet());
-```
-
-4. Count of object and primitive   
-```java
-list.stream().collect(
-      Collectors.groupingBy(Student::getAge, Collectors.counting()));
-str.chars().boxed().collect(
-    Collectors.groupingBy(Function.identity(), Collectors.counting()));
 ```
 
 5. Convert a list into map  
