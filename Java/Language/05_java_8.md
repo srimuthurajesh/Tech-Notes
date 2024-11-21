@@ -260,10 +260,6 @@ list.stream().collect(
     Collection.toMap(Function.identity(),Function.identity()));
 ```
 
-5.  Group The Student By Department Names
-```java
-studentList.stream().collect(Collectors.groupingBy(Student::getDept));
-```
 
 8. Sort by salary & name & primitive  
 ```java
