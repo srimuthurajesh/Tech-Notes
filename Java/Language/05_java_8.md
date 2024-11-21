@@ -221,16 +221,16 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 1. find the sum of squares of all even numbers      
 ```java 
 Arrays.stream(input)
-  .filter(x->x%2==0)
-  .map(x->x*x)
-  .forEach(System.out::println)
+      .filter(x->x%2==0)
+      .map(x->x*x)
+      .forEach(System.out::println)
 ```
 
 2. Find second max of student age.  
 ```java 
-int age = list.stream
-            .mapToInt(student::getAge)
-            .skip(1).max();
+int age = list.stream()
+              .mapToInt(student::getAge)
+              .skip(1).max();
 ```
 
 3. Find list of unique characters present in all the string.  
