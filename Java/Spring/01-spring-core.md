@@ -173,7 +173,7 @@ Annotation                  | Usage                                             
 @Lazy                       | Delays bean creation and intialized when it is first requested.           | Class/Method
 @ConfigurationProperties    | Specifies configuration properties for entire POJO classes.               | Class
 
-
+Note: @Repository Automatically translates database exceptions (e.g., SQLException) into Spring’s consistent DataAccessException hierarchy.
 
 
 **Classes of ApplicationContext**:  

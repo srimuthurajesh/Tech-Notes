@@ -7,8 +7,8 @@
 2. [Actuator](#actuator)
 3. Embedded server
 4. [Cli tool](#cli-)
-5. [Auto configuration](#auto-configuration)
-6. [Spring dev tools](#spring-boot-dev-tools)
+5. [Spring dev tools](#spring-boot-dev-tools)
+6. [Application Properties](#applicationproperties-file)
 
 
 
@@ -61,11 +61,6 @@
 `management.endpoints.web.exposure.exclude=beans,mapping`  	// endpoints to exclude  
 `management.endpoints.web.base-path=/actuatorSample` 		// http://localhost:8080/actuatorSample/health  
 
-### Auto Configuration
-> configures your Spring app based on libraries(pom.xml) & properties(application.properties)
-
-Note: in legacy we use @Configuration in class    
-To Disable : `spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration`
 
 
 ### CLI :    
@@ -85,7 +80,7 @@ Command to run jar : `java -jar app.jar`
 
 ### Annotations:
 1. **@SpringBootApplication**  
--combines of @Configuration,@EnableAutoConfiguraion,@ComponentScan    
+-combines of `@Configuration` + `@EnableAutoConfiguraion` + `@ComponentScan`    
 -scan its current package/subpackage for componentscan controllers   
 -to mention explict packages use @SpringBootApplication(scanBasePackages={"org.cont","com.cont"})  
 2. @EnableAutoConfiguration: configure your application based on the dependencies that you have added to your project  
@@ -93,6 +88,7 @@ Command to run jar : `java -jar app.jar`
 -Spring Boot scans the classpath for dependencies and applies relevant configuration classes  
 -These configuration classes define beans and their dependencies.   
 -How to disable- `@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class})`
+
 ### Application.properties File 
 -File path: src/resources/  
 -https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html   
@@ -119,6 +115,12 @@ server.servlet.context-path=/ClientApp
 //**Spring profiles**    
 spring.profiles.active=qa    //then spring will consider application-qa.properties file
 //also give it via -D in commandline
+
+### Auto Configuration
+> configures your Spring app based on libraries(pom.xml) & properties(application.properties)
+
+Note: in legacy we use @Configuration in class    
+To Disable : `spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration`
 
 ---
 
@@ -155,6 +157,33 @@ public interface EmployeeDaoJpaRepository extends JpaRepository<Employee, Intege
      */
 }
 ```
+1. CrudRepository  - provides save(), findById(), findAll(), delete()  
+2. PagingAndSortingRepository - findAll(Pageable pageable) and findAll(Sort sort). extends CrudRespository
+3. JpaRepository - Adds JPA-specific functionality to PagingAndSortingRepository. flush(), saveAndFlush(), deleteInBatch()
+4. Repository - marker interface, base for spring jpa, no CRUD methods  
+5. QueryByExampleExecutor - findOne(Example<S>), findAll(Example<S>), and count(Example<S>)
+6. MongoRepository
+7. ElasticsearchRepository
+8. CassandraRepository
+9. Neo4jRepository, CouchbaseRepository
+10. ReactiveCrudRepository
+
+| Repository Interface         | Purpose                              | Best Use Case                        |
+|------------------------------|--------------------------------------|--------------------------------------|
+| `CrudRepository`             | Basic CRUD functionality            | Applications needing basic data access. |
+| `PagingAndSortingRepository` | Adds pagination and sorting         | When pagination/sorting is required. |
+| `JpaRepository`              | Full JPA-specific functionality     | Advanced JPA operations and custom queries. |
+| `Repository`                 | Marker interface                    | Custom repository definitions.       |
+| `QueryByExampleExecutor`     | Query-by-example support            | Simplified queries without defining methods. |
+| `MongoRepository`            | MongoDB operations                  | Applications using MongoDB.          |
+| `ElasticsearchRepository`    | Elasticsearch operations            | Full-text search and analytics.      |
+| `CassandraRepository`        | Cassandra operations                | Applications using Cassandra.        |
+| `Neo4jRepository`            | Neo4j graph database operations     | Applications with graph databases.   |
+| `CouchbaseRepository`        | Couchbase operations                | Applications using Couchbase.        |
+| `ReactiveCrudRepository`     | Reactive CRUD functionality         | Reactive programming use cases.      |
+
+
+
 #### 4. Spring data rest: no need of controllers  
 a)add pom.xml spring-boot-starter-data-rest  
 b)create entity class Employee  
