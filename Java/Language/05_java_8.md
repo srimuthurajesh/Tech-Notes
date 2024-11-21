@@ -131,15 +131,26 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | mapObj.entrySet.stream()  | Stream from collection Map    |
 | Arrays.stream(array)      | generate IntStream,DoubleStream,LongStream |
 | str.chars().stream()      | need to use mapToObj(c->(Char)c) |
+| Stream.empty()            | return empty stream|
+
+Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
+
+##### Other Source operations
+1. `Stream.of("1","b")`        
+2. `Stream.builder().add(1).build()` 
+3. `Stream.concat(Stream.of("A"), Stream.of("B"))`
+4. `Stream.generate(random::nextInteger).limit(10)` java 10
+5. `Stream.iterate(1, n -> n + 1).limit(10)` java9
+6. `Stream.ofNullable(name)` java9 //return empty stream instead of null |
+
+
 | Stream.of("1","b")        |  |
 | Stream.builder()          | Stream.builder().add(1).build() |
 | Stream.concat()           | Stream.concat(Stream.of("A"), Stream.of("B"))|
-| Stream.empty()            | return empty stream|
 | Stream.generate()-java10  | Stream.generate(random::nextInteger).limit(10); |
 | Stream.iterate() - java9  | Stream.iterate(1, n -> n + 1).limit(10) |
 | Stream.ofNullable()-java9 | Stream.ofNullable(name);//return empty stream instead of null |
 
-Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
 
 #### Intermediate Operation
 
@@ -236,8 +247,8 @@ int age = list.stream()
 3. Find list of unique characters present in all the string.  
 ```java
 Set<Character> uniqueChars = listOfStrings.stream()
-                              .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
-                              .collect(Collectors.toSet());
+                                          .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
+                                          .collect(Collectors.toSet());
 ```
 
 4. Group students count by age.   
