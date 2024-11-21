@@ -133,25 +133,6 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | str.chars().stream()      | need to use mapToObj(c->(Char)c) |
 | Stream.empty()            | return empty stream|
 
-Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `mapEntry().stream()`.    
-
-##### Other Source operations
-1. `Stream.of("1","b")`        
-2. `Stream.builder().add(1).build()` 
-3. `Stream.concat(Stream.of("A"), Stream.of("B"))`
-4. `Stream.generate(random::nextInteger).limit(10)` java 10
-5. `Stream.iterate(1, n -> n + 1).limit(10)` java9
-6. `Stream.ofNullable(name)` java9 //return empty stream instead of null |
-
-
-| Stream.of("1","b")        |  |
-| Stream.builder()          | Stream.builder().add(1).build() |
-| Stream.concat()           | Stream.concat(Stream.of("A"), Stream.of("B"))|
-| Stream.generate()-java10  | Stream.generate(random::nextInteger).limit(10); |
-| Stream.iterate() - java9  | Stream.iterate(1, n -> n + 1).limit(10) |
-| Stream.ofNullable()-java9 | Stream.ofNullable(name);//return empty stream instead of null |
-
-
 #### Intermediate Operation
 
 | Intermediate Operation        | Definition                            |
@@ -226,6 +207,13 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 3. same like 2, but store in treemap: `Collectors.groupingBy(obj::getYear, TreeMap::new, Collectors.toSet())`.  
 4. groupby count : `collect(Collectors.groupingBy(Function.identity(),Collectors.counting());`
 
+##### Other Source operations
+1. `Stream.of("1","b")`        
+2. `Stream.builder().add(1).build()` 
+3. `Stream.concat(Stream.of("A"), Stream.of("B"))`
+4. `Stream.generate(random::nextInteger).limit(10)` java 10
+5. `Stream.iterate(1, n -> n + 1).limit(10)` java9
+6. `Stream.ofNullable(name)` java9 //return empty stream instead of null 
 
 
 ## Stream problems examples  
