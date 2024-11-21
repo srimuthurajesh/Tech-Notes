@@ -137,17 +137,17 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 
 | Operation        | Definition                            |
 |------------------|---------------------------------------|
-| `map()`                       | Transform each element.               |
-| `filter()`                    | Select elements based on a predicate. |
-| `flatMap()`                   | combination of flat&map, convert stream of stream into single stream |
+| `map()`          | Transform each element.               |
+| `filter()`       | Select elements based on a predicate. |
+| `flatMap()`      | combination of flat&map, convert stream of stream into single stream |
 | `flatMapToInt()` | converting nested primitive arrays into a single stream of primitives  |
 | `flatMapToObj()` |   |
-| `distinct()`                  | Remove duplicate for primitive datatypes |
-| `sorted()`                    | Sort elements.                        |
-| `limit(5)`                    | Limit the number of elements.         |
-| `skip()`                      | Skip upto given index                 |
-| `boxed()`                     | convert premitive stream into wrapped type  |
-| `peek()`                      | used to debug stream elements         |
+| `distinct()`     | Remove duplicate for primitive datatypes |
+| `sorted()`       | Sort elements.                        |
+| `limit(5)`       | Limit the number of elements.         |
+| `skip()`         | Skip upto given index                 |
+| `boxed()`        | convert premitive stream into wrapped type  |
+| `peek()`         | used to debug stream elements         |
 
 ##### Sorted
 1. sorted(Collections.reverseOrder())    
