@@ -268,13 +268,23 @@ str.chars()
 ``` 
 
 8. Sort by salary  
-`employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))`
+```java
+employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
+```
+
 9. Find employee with lowest salary
-`employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))`
+```java
+employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
+```
+
 10. Join given list values with comma
-`Arrays.stream(names).collect(Collectors.joining(","));`
-11. Combine array matrix values in a set
-`Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())`
+```java
+Arrays.stream(names).collect(Collectors.joining(","));
+```
+a11. Combine array matrix values in a set
+```java
+Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
+```
 
 
 ## Java11
