@@ -127,21 +127,21 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 
 | Source Operation          | description                   |
 |---------------------------|-------------------------------|
-| collectionObj.stream()    | Stream from collection object |
-| mapObj.entrySet.stream()  | Stream from collection Map    |
-| Arrays.stream(array)      | generate IntStream,DoubleStream,LongStream |
-| str.chars().stream()      | need to use mapToObj(c->(Char)c) |
-| Stream.empty()            | return empty stream|
+| `collectionObj.stream()`  | Stream from collection object |
+| `mapObj.entrySet.stream()`| Stream from collection Map    |
+| `Arrays.stream(array)`    | generate IntStream,DoubleStream,LongStream |
+| `str.chars().stream()`    | need to use mapToObj(c->(Char)c) |
+| `Stream.empty()`          | return empty stream|
 
 #### Intermediate Operation
 
-| Intermediate Operation        | Definition                            |
-|-------------------------------|---------------------------------------|
-| `map((a)=>{return a*10})`     | Transform each element.               |
-| `filter((a)=>{return })`      | Select elements based on a predicate. |
+| Operation        | Definition                            |
+|------------------|---------------------------------------|
+| `map()`                       | Transform each element.               |
+| `filter()`                    | Select elements based on a predicate. |
 | `flatMap()`                   | combination of flat&map, convert stream of stream into single stream |
-| `flatMapToInt(String::chars)` | converting nested primitive arrays into a single stream of primitives  |
-| `flatMapToObj(String::chars)` |   |
+| `flatMapToInt()` | converting nested primitive arrays into a single stream of primitives  |
+| `flatMapToObj()` |   |
 | `distinct()`                  | Remove duplicate for primitive datatypes |
 | `sorted()`                    | Sort elements.                        |
 | `limit(5)`                    | Limit the number of elements.         |
