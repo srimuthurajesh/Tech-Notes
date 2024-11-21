@@ -198,6 +198,7 @@ Note: Only List,Queue,Dequeu,set are directly call `.stream()`, others need `map
 | Collectors Function   | Description                                                                                 |
 |-----------------------|---------------------------------------------------------------------------------------------|
 | To Collections        | `Collectors.toList()`, `Collectors.toSet()`, `Collectors.toMap()`                           |
+| To Collections        | `toList()`, `toSet()`, `toMap()` (from Java 16)                                             |
 | Joining               | `Collectors.joining(",")`                                                                   |
 | Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, `Collectors.summarizingLong()` |
 | Grouping By           | `Collectors.groupingBy(obj::getYear)` `Collectors.groupingBy(Map.Entry::getValue)`          |
@@ -266,10 +267,15 @@ str.chars()
   .collect(
     Collectors.groupingBy(Function.identity(), Collectors.counting()));
 ``` 
+5.  Group The Student By Department Names
+```java
+Map<String, List<Student>> groupByStudent = studentList.stream().collect(Collectors.groupingBy(Student::getDept));
+```
 
-8. Sort by salary  
+8. Sort by salary & name  
 ```java
 employeeList.stream().sorted(Comparator.comparingInt(Employee::getSalary))
+employeeList.stream().sorted(Comparator.comparing(Employee::getName), Comparator.reverseOrder())
 ```
 
 9. Find employee with lowest salary
@@ -281,11 +287,31 @@ employeeList.stream().min(Comparator.comparingInt(Employee::getSalary))
 ```java
 Arrays.stream(names).collect(Collectors.joining(","));
 ```
-a11. Combine array matrix values in a set
+11. Combine array matrix values in a set
 ```java
 Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
 ```
+12. Get all departments from student obj
+```java
+studentList.stream().collect(Collectors.groupingBy(Student::getDept)).entrySet().stream().map(value -> value.getKey()).distinct().toList();
+```
 
+13. Find the department who is having maximum number of students
+```java
+studentList.stream().collect(Collectors.groupingBy(Student::getDept, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get();
+```
+14. Find the average age of male and female students
+```java
+Map<String,Double> deptWiseStudentAge = studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.averagingInt(Student::getAge)));
+```
+15. Find the highest rank in each department
+```java
+studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.maxBy(Comparator.comparing(Student::getDept))));
+```
+16. Find the student who has second rank
+```java
+studentList.stream().sorted(Comparator.comparing(Student::getRank,Comparator.reverseOrder())).skip(1).limit(1).findFirst();
+```    
 
 ## Java11
 1. **var**: allows the compiler to infer the type of a local variable based on the assigned value.
