@@ -176,24 +176,18 @@ str.add("muthu").add("rajesh");    // Output : [muthu,rajesh]
 | `reduce((a, b) -> a + b)`       | return single value, takes BinaryOperator as param  |
 | `min()`,`max()`,`average()`,`sum()`| return min/max value(only for primitive)  |
 | `anyMatch()`,`allMatch()`,`noneMatch()`                    | return boolean if all element matches a predicate   |
-| `findAny()`                     | Find any element (non-deterministic).               |
-| `toArray(String[]::new)`        | return array                                        |
-| `mapToInt()`                    | convert obj list into intstream                     |
-| `summaryStatistics()`           | only for primitive streams IntStream, we can use .getMax(), getMin() etc                |
-| `forEachOrdered()`              |                                                     |
 
 | Collectors Function   | Description                                                                                 |
 |-----------------------|---------------------------------------------------------------------------------------------|
 | To Collections        | `Collectors.toList()`, `Collectors.toSet()`, `Collectors.toMap()`                           |
-| To Collections        | `toList()`, `toSet()`, `toMap()` (from Java 16)                                             |
 | Joining               | `Collectors.joining(",")`                                                                   |
-| Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, `Collectors.summarizingLong()` |
 | Grouping By           | `Collectors.groupingBy(obj::getYear)` `Collectors.groupingBy(Map.Entry::getValue)`          |
 | Partitioning By       | `Collectors.partitioningBy(m-> m.getRating() > 3)`  //map<boolean, obj>                     |
-| Averaging             | `Collectors.averagingInt()`, Collectors.averagingDouble(), Collectors.averagingLong()       |
+| Averaging             | `Collectors.averagingInt()`, `Collectors.averagingDouble()`, `Collectors.averagingLong()`   |
+| Summarizing           | `Collectors.summarizingInt(), Collectors.summarizingDouble()`, `Collectors.summarizingLong()`|
 | Reducing              | `Collectors.reducing()` collect(Collectors.reducing(0, Integer::intValue, Integer::sum));   |
 | Counting              | `Collectors.counting()`                                                                     |
-| Uniqueu               | `Collectors.toSet()`                                                                        |
+| To Collections        | `toList()`, `toSet()`, `toMap()` (from Java 16)                                             |
 
 ### Grouping By
 Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`  
@@ -209,6 +203,13 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 4. `Stream.generate(random::nextInteger).limit(10)` java 10
 5. `Stream.iterate(1, n -> n + 1).limit(10)` java9
 6. `Stream.ofNullable(name)` java9 //return empty stream instead of null 
+
+###### Other terminal operations
+1. `findAny()`                     - Find any element (non-deterministic).               
+2. `toArray(String[]::new)`        - return array                                        
+3. `mapToInt()`                    - convert obj list into intstream                     
+4. `summaryStatistics()`           - only for primitive streams IntStream, we can use .getMax(), getMin() etc                
+5. `forEachOrdered()`                                                                  
 
 
 ## Stream problems examples  
