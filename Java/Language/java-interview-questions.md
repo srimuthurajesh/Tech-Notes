@@ -106,6 +106,21 @@
 | What is the difference between `poll()` and `remove()` in Queue? | `poll()`: Returns null if queue is empty; `remove()`: Throws exception. |
 | What is the difference between fail-fast and fail-safe iterator? | Fail-fast: Throws `ConcurrentModificationException`; Fail-safe: Works on a copy, no exception. |
 
+| S. No | Question                                           | Answer                                                                 |
+|-------|----------------------------------------------------|------------------------------------------------------------------------|
+| 1     | How to calculate new ArrayList size? and default size. | Default size: 10; New size: `(oldCapacity * 3/2) + 1`.                 |
+| 2     | How does CopyOnWriteArrayList handle modifications? | Creates a new copy of the list on each modification.                  |
+| 3     | How to convert a collection to iterator?           | Use `collection.iterator()`.                                          |
+| 4     | Why String is popular HashMap key in Java?         | Immutable, efficient `hashCode()` and `equals()` implementations.     |
+| 5     | What is the difference between ArrayList & LinkedList? | ArrayList: Dynamic array, faster random access; LinkedList: Doubly linked list, better for insert/delete. |
+| 6     | What is Comparable & Comparator interface?         | Comparable: Single sort order (`compareTo()`); Comparator: Custom sort order (`compare()`). |
+| 7     | What is the difference between HashMap and Hashtable? | HashMap: Non-synchronized, allows nulls; Hashtable: Synchronized, no nulls. |
+| 8     | What is Iterator and ListIterator?                | Iterator: Traverse in one direction; ListIterator: Bidirectional traversal. |
+| 9     | What is the difference between Collection and Collections? | Collection: Interface; Collections: Utility class for collection operations. |
+| 10    | How HashMap handles collision?                    | Uses chaining (linked lists) in buckets.                              |
+| 11    | What is the difference between `poll()` and `remove()` in Queue? | `poll()`: Returns null if queue is empty; `remove()`: Throws exception. |
+| 12    | What is the difference between fail-fast and fail-safe iterator? | Fail-fast: Throws `ConcurrentModificationException`; Fail-safe: Works on a copy, no exception. |
+
 
 ## Miscellenous questions:
 1. Why we overrider hashcode and equals?
