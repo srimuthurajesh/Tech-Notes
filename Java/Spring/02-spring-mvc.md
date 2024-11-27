@@ -8,6 +8,40 @@
 5. Model - represents data in business logic  
 6. Entity - maps db table
 
+```
+job-api
+├── src
+│   └── main
+│       └── java
+│           └── com/yourcompany/yourproject/jobapi
+│               ├── controller
+│               │   └── JobController.java
+│               ├── service
+│               │   ├── JobService.java
+│               │   └── JobServiceImpl.java
+│               ├── repository
+│               │   └── JobRepository.java
+│               ├── model
+│               │   └── Job.java
+│               ├── dto
+│               │   ├── JobRequestDto.java
+│               │   └── JobResponseDto.java
+│               ├── exception
+│               │   └── JobNotFoundException.java
+│               └── util
+│                   └── JobConstants.java
+│
+└── test
+    └── java
+        └── com/yourcompany/yourproject/jobapi
+            ├── controller
+            │   └── JobControllerTest.java
+            ├── service
+            │   └── JobServiceTest.java
+            └── repository
+                └── JobRepositoryTest.java
+```
+
 | Annotation        | Usage                                                                 | Level    |
 |-------------------|-----------------------------------------------------------------------|----------|
 | @Controller       | Handle req/res. returns string(view name) used by view resolver       | Class    |
