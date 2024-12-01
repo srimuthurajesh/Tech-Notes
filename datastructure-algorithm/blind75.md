@@ -12,6 +12,19 @@
 9. [ ] - [3Sum](#9-3sum)
 10. [ ] - [Container With Most Water](#10-container-with-most-water)
 
+| #   | Problem                                      | Status | Link                                                                                     | Answer                                                                                   |
+|-----|----------------------------------------------|--------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| 1   | [Two Sum](#1-two-sum)                        | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#two-sum)                                           |
+| 2   | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | ✅     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)               | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)                  |
+| 3   | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)             | ✅     | [LeetCode](https://leetcode.com/problems/contains-duplicate/)                            | [Answer](DSA-problems-solutions/array#contains-duplicate)                               |
+| 4   | [Product of Array Except Self](#4-product-of-array-except-self)                    | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#product-of-array-except-self)                     |
+| 5   | [Maximum Subarray](#5-maximum-subarray)      | ❌     | -                                                                                        | -                                                                                        |
+| 6   | [Maximum Product Subarray](#6-maximum-product-subarray)                            | ❌     | -                                                                                        | -                                                                                        |
+| 7   | [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)    | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)             |
+| 8   | [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)                | ❌     | -                                                                                        | -                                                                                        |
+| 9   | [3Sum](#9-3sum)                              | ❌     | -                                                                                        | -                                                                                        |
+| 10  | [Container With Most Water](#10-container-with-most-water)                         | ❌     | -                                                                                        | -                                                                                        |
+
 
 ## Binary
 
