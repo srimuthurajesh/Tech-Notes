@@ -1,15 +1,15 @@
 ## Array
 
 1. [x] - [Two Sum](#1-two-sum)
-2. [ ] - [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock)
-3. [ ] [Contains Duplicate](#3-contains-duplicate)
-4. [ ] [Product of Array Except Self](#4-product-of-array-except-self)
-5. [ ] [Maximum Subarray](#5-maximum-subarray)
-6. [ ] [Maximum Product Subarray](#6-maximum-product-subarray)
-7. [ ] [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)
-8. [ ] [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)
-9. [ ] [3Sum](#9-3sum)
-10. [ ] [Container With Most Water](#10-container-with-most-water)
+2. [x] - [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock)
+3. [x] - [Contains Duplicate](#3-contains-duplicate)
+4. [x] - [Product of Array Except Self](#4-product-of-array-except-self)
+5. [ ] - [Maximum Subarray](#5-maximum-subarray)
+6. [ ] - [Maximum Product Subarray](#6-maximum-product-subarray)
+7. [ ] - [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)
+8. [ ] - [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)
+9. [ ] - [3Sum](#9-3sum)
+10. [ ] - [Container With Most Water](#10-container-with-most-water)
 
 
 ## Binary
