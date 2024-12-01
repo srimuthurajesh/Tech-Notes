@@ -90,7 +90,12 @@ class Solution {
 ```
 --- 
 ## Contains Duplicate
-
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.  
+ 
+```
+Input: nums = [1,2,3,1]   Output: true  
+Explanation: The element 1 occurs at the indices 0 and 3.  
+```
 ```java
 class Solution {
     public boolean containsDuplicate(int[] nums) {
@@ -130,7 +135,12 @@ class Solution {
 ```
 ---
 ## Find Minimum in Rotated Sorted Array
-
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.  
+You must write an algorithm that runs in O(log n) time.  
+```
+Input: nums = [3,4,5,1,2]  Output: 1  
+Explanation: The original array was [1,2,3,4,5] rotated 3 times.  
+```
 ```java
 class Solution {
     public int findMin(int[] nums) {

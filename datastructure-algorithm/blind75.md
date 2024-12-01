@@ -1,29 +1,17 @@
 # Blind 75
 ## Array
-
-1. [x] - [Two Sum](#1-two-sum) - [Answer](DSA-problems-solutions/array#two-sum)
-2. [x] - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
-3. [x] - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) - [Answer](DSA-problems-solutions/array#contains-duplicate)
-4. [x] - [Product of Array Except Self](#4-product-of-array-except-self) - [Answer](DSA-problems-solutions/array#product-of-array-except-self)
-5. [ ] - [Maximum Subarray](#5-maximum-subarray)
-6. [ ] - [Maximum Product Subarray](#6-maximum-product-subarray)
-7. [x] - [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array) - [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)
-8. [ ] - [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)
-9. [ ] - [3Sum](#9-3sum)
-10. [ ] - [Container With Most Water](#10-container-with-most-water)
-
-| #   | Problem                                      | Status | Link                                                                                     | Answer                                                                                   |
-|-----|----------------------------------------------|--------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| 1   | [Two Sum](#1-two-sum)                        | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#two-sum)                                           |
-| 2   | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | ✅     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)               | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)                  |
-| 3   | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)             | ✅     | [LeetCode](https://leetcode.com/problems/contains-duplicate/)                            | [Answer](DSA-problems-solutions/array#contains-duplicate)                               |
-| 4   | [Product of Array Except Self](#4-product-of-array-except-self)                    | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#product-of-array-except-self)                     |
-| 5   | [Maximum Subarray](#5-maximum-subarray)      | ❌     | -                                                                                        | -                                                                                        |
-| 6   | [Maximum Product Subarray](#6-maximum-product-subarray)                            | ❌     | -                                                                                        | -                                                                                        |
-| 7   | [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)    | ✅     | -                                                                                        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)             |
-| 8   | [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)                | ❌     | -                                                                                        | -                                                                                        |
-| 9   | [3Sum](#9-3sum)                              | ❌     | -                                                                                        | -                                                                                        |
-| 10  | [Container With Most Water](#10-container-with-most-water)                         | ❌     | -                                                                                        | -                                                                                        |
+| #   | Problem                               | Status | Link                                                                       | Answer                                                                        |
+|-----|---------------------------------------|--------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| 1   | Two Sum                               | ✅     | [LeetCode](https://leetcode.com/problems/two-sum/description/)             | [Answer](DSA-problems-solutions/array#two-sum)                                |
+| 2   | Best Time to Buy and Sell Stock       | ✅     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)        |
+| 3   | Contains Duplicate                    | ✅     | [LeetCode](https://leetcode.com/problems/contains-duplicate/)              | [Answer](DSA-problems-solutions/array#contains-duplicate)                     |
+| 4   | Product of Array Except Self          | ✅     | [LeetCode](https://leetcode.com/problems/product-of-array-except-self/)    | [Answer](DSA-problems-solutions/array#product-of-array-except-self)           |
+| 5   | Maximum Subarray                      | ❌     | [LeetCode](https://leetcode.com/problems/maximum-subarray/)                | -                                                                             |
+| 6   | Maximum Product Subarray              | ❌     | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | -                                                                             |
+| 7   | Find Minimum in Rotated Sorted Array  | ✅     | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)   |
+| 8   | Search in Rotated Sorted Array        | ❌     | [LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array/)  | -                                                                             |
+| 9   | 3Sum                                  | ❌     | [LeetCode](https://leetcode.com/problems/3sum/)                            | -                                                                             |
+| 10  | Container With Most Water             | ❌     | [LeetCode](https://leetcode.com/problems/container-with-most-water/)       | -                                                                             |
 
 
 ## Binary
@@ -128,103 +116,4 @@
 
 ## Important Link:
 [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
-
-
-### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
-
-
----
-
-### 3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.  
- 
-Input: nums = [1,2,3,1]  
-Output: true  
-Explanation: The element 1 occurs at the indices 0 and 3.  
-[Answer](DSA-problems-solutions/array#contains-duplicate)
-
----
-
-### 4. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[I].  
-The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.  
-You must write an algorithm that runs in O(n) time and without using the division operation.  
-Input: nums = [1,2,3,4]  
-Output: [24,12,8,6]  
-
----
-
-### 5. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-Given an integer array nums, find the subarray with the largest sum, and return its sum.  (Medium)
-
-```
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4]  Output: 6    
-Explanation: The subarray [4,-1,2,1] has the largest sum 6.  
-```
-```
-Input: nums = [1]  Output: 1  
-Explanation: The subarray [1] has the largest sum of 1.  
-```
----
-
-### 6. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-Given an integer array nums, find a subarray that has the largest product, and return the product.  
-```
-Input: nums = [2,3,-2,4]  Output: 6  
-Explanation: [2,3] has the largest product 6.  
-```
-```
-Input: nums = [-2,0,-1]  Output: 0  
-Explanation: The result cannot be 2, because [-2,-1] is not a subarray
-```
---- 
-
-### 7. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-Given the sorted rotated array nums of unique elements, return the minimum element of this array.  
-You must write an algorithm that runs in O(log n) time.  
-```
-Input: nums = [3,4,5,1,2]  Output: 1  
-Explanation: The original array was [1,2,3,4,5] rotated 3 times.  
-```
-[Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)
-
----
-
-### 8. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-Given the array nums after the possible rotation and an integer target, return the index of the target if it is in nums,  
-or -1 if it is not in nums.  
-You must write an algorithm with O(log n) runtime complexity.  
-```
-Input: nums = [4,5,6,7,0,1,2], target = 0  Output: 4  
-Input: nums = [4,5,6,7,0,1,2], target = 3   Output: -1  
-```
----
-
-### 9. [3Sum](https://leetcode.com/problems/3sum/)  
-Given an integer array nums, return all the triplets [nums[i],nums[j], nums[k]]  
-such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.  
-Notice that the solution set must not contain duplicate triplets.  
-```
-Input: nums = [-1,0,1,2,-1,-4]  Output: [[-1,-1,2],[-1,0,1]]  
-Explanation:  
-nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.  
-nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.  
-nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.  
-The distinct triplets are [-1,0,1] and [-1,-1,2].  
-```
----
-
-### 10. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)  
-You are given an integer array height of length n.  
-There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[I]).  
-
-Find two lines that together with the x-axis form a container, such that the container contains the most water.  
-Return the maximum amount of water a container can store.  
-
-```
-Input: height = [1,8,6,2,5,4,8,3,7]  Output: 49  
-Explanation: The above vertical lines are represented by an array [1,8,6,2,5,4,8,3,7].  
-In this case, the max area of water (blue section) the container can contain is 49.
-```  
-
 
