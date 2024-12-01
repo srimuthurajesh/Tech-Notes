@@ -10,7 +10,7 @@
 ## Datastructure & Algorithm
    1. [Data Struture](datastructure-algorithm/data-structure)
    2. [Algorithmn](datastructure-algorithm/algorithm) 
-   2. [Striver's SDE Sheet](datastructure-algorithm/striver-sde-sheet)
+   2. [Striver's SDE Sheet](datastructure-algorithm/strivers-sde-sheet)
    2. [My Striver's List](datastructure-algorithm/my-strivers-list)
    4. [Interview dsa handy notes](datastructure-algorithm/interview-dsa-handy-notes)
    9. [Blind 75](datastructure-algorithm/blind75)
