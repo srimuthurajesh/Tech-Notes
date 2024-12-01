@@ -1,5 +1,5 @@
 # Striver's SDE Sheet
-## Array 1
+## Day 1: Arrays
 
 | #   | Problem                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|-----------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -10,9 +10,7 @@
 | 5   | Sort an array of 0's, 1's and 2's| Medium  | ❌     | [LeetCode](https://leetcode.com/problems/sort-colors/)      |        |
 | 6   | Stock Buy and Sell               | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) |        |
 
----
-
-## Array 2
+## Day 2: Arrays Part-II
 
 | #   | Problem                                        | Level   | Status | LeetCode Link                                             | Answer |
 |-----|------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -23,8 +21,7 @@
 | 5   | Repeat and Missing Number                      | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/repeated-dna-sequences/) |        |
 | 6   | Inversion of Array (Pre-req: Merge Sort)       | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) |        |
 
----
-## Arrays 3  
+## Day 3: Arrays Part-III  
 
 | #   | Problem                                      | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -35,8 +32,7 @@
 | 5   | Grid Unique Paths                            | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/unique-paths/)     |        |
 | 6   | Reverse Pairs (Leetcode)                     | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/reverse-pairs/)    |        |
 
----
-## Arrays 4
+## Day 4: Arrays Part-IV
 
 | #   | Problem                                        | Level   | Status | LeetCode Link                                             | Answer |
 |-----|------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -47,8 +43,7 @@
 | 5   | Count number of subarrays with given xor K     | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/subarray-xor-equals-k/) |        |
 | 6   | Longest Substring without repeat               | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) |        |
 
----
-## Linked List  
+## Day 5: Linked List 
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -59,8 +54,7 @@
 | 5   | Add two numbers as LinkedList                     | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/add-two-numbers/) |        |
 | 6   | Delete a given Node when a node is given.(O(1) solution) | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/delete-node-in-a-linked-list/) |        |
 
----
-## Linked List 2  
+## Day 6: Linked List Part-II
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -71,8 +65,7 @@
 | 5   | Find the starting point of the Loop of LinkedList | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/linked-list-cycle-ii/) |        |
 | 6   | Flattening of a LinkedList                        | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/) |        |
 
----
-## Linked List and Arrays  
+## Day 7: Linked List and Arrays
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -83,8 +76,7 @@
 | 5   | Remove Duplicate from Sorted array                | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) |        |
 | 6   | Max consecutive ones                              | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/max-consecutive-ones/) |        |
 
----
-## Greedy Algorithm  
+## Day 8: Greedy Algorithm
 
 | #   | Problem                                             | Level   | Status | LeetCode Link                                             | Answer |
 |-----|-----------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -95,9 +87,8 @@
 | 5   | Greedy algorithm to find minimum number of coins    | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/coin-change-2/)   |        |
 | 6   | Assign Cookies                                      | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/assign-cookies/) |        |
 
----
 
-## Recursion  
+## Day 9: Recursion  
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -108,8 +99,7 @@
 | 5   | Palindrome Partitioning                           | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/palindrome-partitioning/) |        |
 | 6   | K-th permutation Sequence                         | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/permutation-sequence/) |        |
 
----
-## Recursion and Backtracking  
+## Day 10: Recursion and Backtracking
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -120,10 +110,8 @@
 | 5   | Rat in a Maze                                     | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/rat-in-a-maze/)  |        |
 | 6   | Word Break (print all ways)                       | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/word-break-ii/)  |        |
 
----
 
 ## Day 11: Binary Search  
-**0 / 8**
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -136,10 +124,7 @@
 | 7   | Allocate Minimum Number of Pages                 | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/allocate-books/) |        |
 | 8   | Aggressive Cows                                  | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/aggressive-cows/) |        |
 
----
-
 ## Day 12: Heaps  
-**0 / 6**
 
 | #   | Problem                                           | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -150,10 +135,8 @@
 | 5   | Merge K sorted arrays                             | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/merge-k-sorted-lists/) |        |
 | 6   | K most frequent elements                          | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/top-k-frequent-elements/) |        |
 
----
 
 ## Day 13: Stack and Queue  
-**0 / 7**
 
 | #   | Problem                                            | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -165,9 +148,7 @@
 | 6   | Next Greater Element                               | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/next-greater-element-i/) |        |
 | 7   | Sort a Stack                                       | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/sort-a-stack/) |        |
 
----
 ## Day 14: Stack and Queue Part-II  
-**0 / 10**
 
 | #   | Problem                                                   | Level   | Status | LeetCode Link                                             | Answer |
 |-----|-----------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -182,9 +163,7 @@
 | 9   | Find the maximum of minimums of every window size         | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/maximum-of-minimum-of-every-window-size/) |        |
 | 10  | The Celebrity Problem                                     | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/the-celebrity-problem/) |        |
 
----
 ## Day 15: String  
-**0 / 6**
 
 | #   | Problem                                        | Level   | Status | LeetCode Link                                             | Answer |
 |-----|------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -195,10 +174,8 @@
 | 5   | Longest Common Prefix                          | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/longest-common-prefix/) |        |
 | 6   | Rabin Karp                                     | ❓      | ❌     | [LeetCode](https://leetcode.com/problems/rabin-karp-algorithm/) |        |
 
----
 
 ## Day 16: String Part-II  
-**0 / 6**
 
 | #   | Problem                                                       | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -209,9 +186,7 @@
 | 5   | Count and Say                                                 | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/count-and-say/)  |        |
 | 6   | Compare Version Numbers                                       | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/compare-version-numbers/) |        |
 
----
 ## Day 17: Binary Tree  
-**0 / 12**
 
 | #   | Problem                                                       | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -228,10 +203,8 @@
 | 11  | Root to Node Path in Binary Tree                               | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/path-sum/)       |        |
 | 12  | Max width of a Binary Tree                                     | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/maximum-width-of-binary-tree/) |        |
 
----
 
 ## Day 18: Binary Tree Part-II  
-**0 / 8**
 
 | #   | Problem                                                         | Level   | Status | LeetCode Link                                             | Answer |
 |-----|-----------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -244,10 +217,8 @@
 | 7   | Zig Zag Traversal of Binary Tree                                | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/zigzag-level-order-traversal/) |        |
 | 8   | Boundary Traversal of Binary Tree                               | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/boundary-of-binary-tree/) |        |
 
----
 
 ## Day 19: Binary Tree Part-III  
-**0 / 7**
 
 | #   | Problem                                                              | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -259,10 +230,8 @@
 | 6   | Check if Binary Tree is the mirror of itself or not                  | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/identical-binary-trees/) |        |
 | 7   | Check for Children Sum Property                                      | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/children-sum-property/) |        |
 
----
 
 ## Day 20: Binary Search Tree  
-**0 / 7**
 
 | #   | Problem                                                              | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -274,9 +243,8 @@
 | 6   | Find LCA of two nodes in BST                                         | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) |        |
 | 7   | Find the inorder predecessor/successor of a given Key in BST         | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/inorder-successor-in-bst/) |        |
 
----
+
 ## Day 21: Binary Search Tree Part-II  
-**0 / 8**
 
 | #   | Problem                                                              | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -289,10 +257,8 @@
 | 7   | Size of the largest BST in a Binary Tree                              | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/largest-bst-subtree/) |        |
 | 8   | Serialize and deserialize Binary Tree                                 | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) |        |
 
----
 
 ## Day 22: Binary Trees [Miscellaneous]  
-**0 / 6**
 
 | #   | Problem                                                              | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -303,10 +269,8 @@
 | 5   | K-th largest element in an unsorted array.                            | Easy    | ❌     | [LeetCode](https://leetcode.com/problems/kth-largest-element-in-an-unsorted-array/) |        |
 | 6   | Flood-fill Algorithm                                                  | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/flood-fill/) |        |
 
----
 
 ## Day 23: Graph  
-**0 / 12**
 
 | #   | Problem                                                              | Level   | Status | LeetCode Link                                             | Answer |
 |-----|----------------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -323,10 +287,8 @@
 | 11  | Bipartite Check using BFS                                             | Medium  | ❌     | [LeetCode](https://leetcode.com/problems/bipartite-check/) |        |
 | 12  | Bipartite Check using DFS                                             | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/bipartite-check/) |        |
 
----
 
 ## Day 24: Graph Part-II  
-**0 / 6**
 
 | #   | Problem                                                         | Level   | Status | LeetCode Link                                             | Answer |
 |-----|-----------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -337,9 +299,7 @@
 | 5   | MST using Prim's Algo                                           | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/minimum-spanning-tree/) |        |
 | 6   | MST using Kruskal’s Algo                                         | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/minimum-spanning-tree/) |        |
 
----
 ## Day 25: Dynamic Programming  
-**0 / 7**
 
 | #   | Problem                                                       | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -351,9 +311,7 @@
 | 6   | Maximum Sum Increasing Subsequence                            | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/maximum-sum-increasing-subsequence/) |        |
 | 7   | Matrix Chain Multiplication                                    | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/matrix-chain-multiplication/) |        |
 
----
 ## Day 26: Dynamic Programming Part-II  
-**0 / 8**
 
 | #   | Problem                                                       | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
@@ -366,10 +324,8 @@
 | 7   | Palindrome Partitioning (MCM Variation)                       | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/palindrome-partitioning/) |        |
 | 8   | Maximum Profit in Job Scheduling                              | Hard    | ❌     | [LeetCode](https://leetcode.com/problems/maximum-profit-in-job-scheduling/) |        |
 
----
 
 ## Day 27: Trie  
-**0 / 7**
 
 | #   | Problem                                                       | Level   | Status | LeetCode Link                                             | Answer |
 |-----|---------------------------------------------------------------|---------|--------|----------------------------------------------------------|--------|
