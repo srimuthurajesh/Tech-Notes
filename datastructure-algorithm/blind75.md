@@ -2,7 +2,7 @@
 ## Array
 
 1. [x] - [Two Sum](#1-two-sum) - [Answer](DSA-problems-solutions/array#two-sum)
-2. [x] - [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock)
+2. [x] - [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock) - [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
 3. [x] - [Contains Duplicate](#3-contains-duplicate)
 4. [x] - [Product of Array Except Self](#4-product-of-array-except-self)
 5. [ ] - [Maximum Subarray](#5-maximum-subarray)
@@ -116,30 +116,9 @@
 ## Important Link:
 [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 
-## Array
-### 1. [Two Sum](https://leetcode.com/problems/two-sum/)
-Given an array of integer nums and an integer target, return indices of the two numbers such that they add up to the target.  
-You may assume that each input would have exactly one solution,and you may not use the same element twice.
-You can return the answer in any order.
-
-Input: nums = [2,7,11,15], target = 9  
-Output: [0,1]  
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].  
-[Answer](DSA-problems-solutions/array#two-sum)
-
----
 
 ### 2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)  
-You are given an array of prices where prices[i] is the price of a given stock on an ith day.  
-You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.  
-Return the maximum profit you can achieve from this transaction.  
-If you cannot achieve any profit, return 0
 
-Input: prices = [7,1,5,3,6,4]  
-Output: 5  
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),  
-profit = 6-1 = 5.  
-[Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)
 
 ---
 
