@@ -1,7 +1,7 @@
 # Blind 75
 ## Array
 
-1. [x] - [Two Sum](#1-two-sum)
+1. [x] - [Two Sum](#1-two-sum) - [Answer](DSA-problems-solutions/array#two-sum)
 2. [x] - [Best Time to Buy and Sell Stock](#2-best-time-to-buy-and-sell-stock)
 3. [x] - [Contains Duplicate](#3-contains-duplicate)
 4. [x] - [Product of Array Except Self](#4-product-of-array-except-self)
