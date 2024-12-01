@@ -1,8 +1,9 @@
 # Blind 75
 ## Array
-| #   | Problem                               | Status | Link                                                                       | Answer                                                                        |
+
+| #   | Problem                               | Status | Level | Link                                                                       | Answer                                                                        |
 |-----|---------------------------------------|--------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| 1   | Two Sum                               | ✅     | [LeetCode](https://leetcode.com/problems/two-sum/description/)             | [Answer](DSA-problems-solutions/array#two-sum)                                |
+| 1   | Two Sum                               | ✅     | Easy  | [LeetCode](https://leetcode.com/problems/two-sum/description/)             | [Answer](DSA-problems-solutions/array#two-sum)                                |
 | 2   | Best Time to Buy and Sell Stock       | ✅     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)        |
 | 3   | Contains Duplicate                    | ✅     | [LeetCode](https://leetcode.com/problems/contains-duplicate/)              | [Answer](DSA-problems-solutions/array#contains-duplicate)                     |
 | 4   | Product of Array Except Self          | ✅     | [LeetCode](https://leetcode.com/problems/product-of-array-except-self/)    | [Answer](DSA-problems-solutions/array#product-of-array-except-self)           |
