@@ -215,7 +215,15 @@ logging.level.com.rajesh=DEBUG
 ```
 Seperate logging configuration xml file: logback-spring.xml or logback.xml
 
+#### Log Levels (Ascending Order): 
+1. TRACE - detailed level of logging, step-by-step traces of code execution.
+2. DEBUG - Logging method inputs/outputs or intermediate values during processing.
+3. INFO - important milestones, "Application started successfully" or "Job process completed."
+4. WARN - potential issue that might need attention but is not critical."Disk space is low" or "Retrying connection."
+5. ERROR - Indicates a failure or error condition that the application can still recover from. Logging exceptions
+6. FATAL - indicating a critical failure causing the application to terminate. "Application terminated due to an out-of-memory error."
 
+### Cache
 Cache annotation  
 1. @Cacheable
 2. @CachePut
