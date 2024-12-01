@@ -7,7 +7,7 @@
 4. [x] - [Product of Array Except Self](#4-product-of-array-except-self)
 5. [ ] - [Maximum Subarray](#5-maximum-subarray)
 6. [ ] - [Maximum Product Subarray](#6-maximum-product-subarray)
-7. [ ] - [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)
+7. [x] - [Find Minimum in Rotated Sorted Array](#7-find-minimum-in-rotated-sorted-array)
 8. [ ] - [Search in Rotated Sorted Array](#8-search-in-rotated-sorted-array)
 9. [ ] - [3Sum](#9-3sum)
 10. [ ] - [Container With Most Water](#10-container-with-most-water)
@@ -195,6 +195,8 @@ You must write an algorithm that runs in O(log n) time.
 Input: nums = [3,4,5,1,2]  Output: 1  
 Explanation: The original array was [1,2,3,4,5] rotated 3 times.  
 ```
+[Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)
+
 ---
 
 ### 8. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
