@@ -1,18 +1,18 @@
 # Blind 75
 ## Array
 
-| #   | Problem                               | Status | Level | Link                                                                       | Answer                                                                        |
-|-----|---------------------------------------|--------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| 1   | Two Sum                               | ✅     | Easy  | [LeetCode](https://leetcode.com/problems/two-sum/description/)             | [Answer](DSA-problems-solutions/array#two-sum)                                |
-| 2   | Best Time to Buy and Sell Stock       | ✅     | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)        |
-| 3   | Contains Duplicate                    | ✅     | [LeetCode](https://leetcode.com/problems/contains-duplicate/)              | [Answer](DSA-problems-solutions/array#contains-duplicate)                     |
-| 4   | Product of Array Except Self          | ✅     | [LeetCode](https://leetcode.com/problems/product-of-array-except-self/)    | [Answer](DSA-problems-solutions/array#product-of-array-except-self)           |
-| 5   | Maximum Subarray                      | ❌     | [LeetCode](https://leetcode.com/problems/maximum-subarray/)                | -                                                                             |
-| 6   | Maximum Product Subarray              | ❌     | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | -                                                                             |
-| 7   | Find Minimum in Rotated Sorted Array  | ✅     | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)   |
-| 8   | Search in Rotated Sorted Array        | ❌     | [LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array/)  | -                                                                             |
-| 9   | 3Sum                                  | ❌     | [LeetCode](https://leetcode.com/problems/3sum/)                            | -                                                                             |
-| 10  | Container With Most Water             | ❌     | [LeetCode](https://leetcode.com/problems/container-with-most-water/)       | -                                                                             |
+| #   | Problem                               | Status | Level  | Link                                                                       | Answer                                                                        |
+|-----|---------------------------------------|--------|--------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| 1   | Two Sum                               | ✅     | Easy   | [LeetCode](https://leetcode.com/problems/two-sum/description/)             | [Answer](DSA-problems-solutions/array#two-sum)                                |
+| 2   | Best Time to Buy and Sell Stock       | ✅     | Easy   | [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Answer](DSA-problems-solutions/array#best-time-to-buy-and-sell-stock)        |
+| 3   | Contains Duplicate                    | ✅     | Easy   | [LeetCode](https://leetcode.com/problems/contains-duplicate/)              | [Answer](DSA-problems-solutions/array#contains-duplicate)                     |
+| 4   | Product of Array Except Self          | ✅     | Medium | [LeetCode](https://leetcode.com/problems/product-of-array-except-self/)    | [Answer](DSA-problems-solutions/array#product-of-array-except-self)           |
+| 5   | Maximum Subarray                      | ❌     | Medium | [LeetCode](https://leetcode.com/problems/maximum-subarray/)                | -                                                                             |
+| 6   | Maximum Product Subarray              | ❌     | Medium | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | -                                                                             |
+| 7   | Find Minimum in Rotated Sorted Array  | ✅     | Medium | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)   |
+| 8   | Search in Rotated Sorted Array        | ❌     | Medium | [LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array/)  | -                                                                             |
+| 9   | 3Sum                                  | ❌     | Medium | [LeetCode](https://leetcode.com/problems/3sum/)                            | -                                                                             |
+| 10  | Container With Most Water             | ❌     | Medium | [LeetCode](https://leetcode.com/problems/container-with-most-water/)       | -                                                                             |
 
 
 ## Binary
