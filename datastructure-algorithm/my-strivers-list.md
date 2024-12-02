@@ -1,30 +1,43 @@
-### Math logic
-1. [Swap two number without temp](DSA-problems-solutions/math-logic#swap-without-temp)
-2. [Swap two number without arithmetic oper] (DSA-problems-solutions/math-logic#swap-without-temp-without-arithmetic-opr)
-3. [Coun digits](DSA-problems-solutions/math-logic#count-digits)
-4. [Factorial](DSA-problems-solutions/math-logic#factorial)
-5. [Print pattern](DSA-problems-solutions/math-logic#print-astreik-pattern)
-6. [Reverse a number](DSA-problems-solutions/math-logic#reverse-a-number) - LC7
-7. [Prime](DSA-problems-solutions/math-logic#prime) - LC204
-8. [Palindrome](DSA-problems-solutions/math-logic#palindrome) - LC125
-9. [Armstrong](DSA-problems-solutions/math-logic#armsstrong) -LC1134
-10. [LCM](DSA-problems-solutions/math-logic#lcm)
-11. [GCD/HCF](DSA-problems-solutions/math-logic#gcdhcf)
+# My Striver's List
+
+## Math logic
+
+| #   | Problem                                                              | Level   | Status   | LeetCode Link                  | Answer                                                                 |
+|-----|----------------------------------------------------------------------|---------|----------|--------------------------------|------------------------------------------------------------------------|
+| 1   | [Swap two numbers without temp](DSA-problems-solutions/math-logic#swap-without-temp) | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#swap-without-temp)        |
+| 2   | [Swap two numbers without arithmetic operations](DSA-problems-solutions/math-logic#swap-without-temp-without-arithmetic-opr) | Medium  | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#swap-without-temp-without-arithmetic-opr) |
+| 3   | [Count digits](DSA-problems-solutions/math-logic#count-digits)        | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#count-digits)             |
+| 4   | [Factorial](DSA-problems-solutions/math-logic#factorial)              | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#factorial)                |
+| 5   | [Print pattern](DSA-problems-solutions/math-logic#print-astreik-pattern) | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#print-astreik-pattern)    |
+| 6   | [Reverse a number](DSA-problems-solutions/math-logic#reverse-a-number) | Easy    | Pending  | [LeetCode](https://leetcode.com/problems/reverse-integer/) | [Solution](DSA-problems-solutions/math-logic#reverse-a-number)         |
+| 7   | [Prime](DSA-problems-solutions/math-logic#prime)                     | Medium  | Pending  | [LeetCode](https://leetcode.com/problems/count-primes/) | [Solution](DSA-problems-solutions/math-logic#prime)                   |
+| 8   | [Palindrome](DSA-problems-solutions/math-logic#palindrome)           | Easy    | Pending  | [LeetCode](https://leetcode.com/problems/valid-palindrome/) | [Solution](DSA-problems-solutions/math-logic#palindrome)               |
+| 9   | [Armstrong](DSA-problems-solutions/math-logic#armsstrong)            | Medium  | Pending  | [LeetCode](https://leetcode.com/problems/armstrong-number/) | [Solution](DSA-problems-solutions/math-logic#armsstrong)               |
+| 10  | [LCM](DSA-problems-solutions/math-logic#lcm)                         | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#lcm)                      |
+| 11  | [GCD/HCF](DSA-problems-solutions/math-logic#gcdhcf)                  | Easy    | Pending  | N/A                            | [Solution](DSA-problems-solutions/math-logic#gcdhcf)                   |
 
 ### Searching
-1. [Binary Search](DSA-problems-solutions/search#binary-search) - LC704. 
-    i) [Search insert position](DSA-problems-solutions/search#search-insert-position) - LC35.   
+
+| #   | Problem                                 | Level   | Status   | LeetCode Link                                       | Answer                                                                 |
+|-----|-----------------------------------------|---------|----------|---------------------------------------------------|------------------------------------------------------------------------|
+| 1   | [Binary Search](DSA-problems-solutions/search#binary-search)          | Easy    | Pending  | [LC704](https://leetcode.com/problems/binary-search/) | [Solution](DSA-problems-solutions/search#binary-search)                |
+| 1.i | [Search Insert Position](DSA-problems-solutions/search#search-insert-position) | Easy    | Pending  | [LC35](https://leetcode.com/problems/search-insert-position/) | [Solution](DSA-problems-solutions/search#search-insert-position)       |
 
 ### Sorting
-1. [Bubble sort](DSA-problems-solutions/sort#bubble-sort)
-2. [Selection sort](DSA-problems-solutions/sort#selection-sort)
-3. [Insertion sort](DSA-problems-solutions/sort#insertion-sort)
-4. [Merge sort](DSA-problems-solutions/sort#merge-sort)
-5. [Quick sort](DSA-problems-solutions/sort#quick-sort)
+
+| #   | Problem                                                      | Level   | Status   | LeetCode Link | Answer                                                          |
+|-----|--------------------------------------------------------------|---------|----------|---------------|-----------------------------------------------------------------|
+| 1   | [Bubble Sort](DSA-problems-solutions/sort#bubble-sort)       | Easy    | Pending  | N/A           | [Solution](DSA-problems-solutions/sort#bubble-sort)            |
+| 2   | [Selection Sort](DSA-problems-solutions/sort#selection-sort) | Easy    | Pending  | N/A           | [Solution](DSA-problems-solutions/sort#selection-sort)         |
+| 3   | [Insertion Sort](DSA-problems-solutions/sort#insertion-sort) | Easy    | Pending  | N/A           | [Solution](DSA-problems-solutions/sort#insertion-sort)         |
+| 4   | [Merge Sort](DSA-problems-solutions/sort#merge-sort)         | Medium  | Pending  | N/A           | [Solution](DSA-problems-solutions/sort#merge-sort)             |
+| 5   | [Quick Sort](DSA-problems-solutions/sort#quick-sort)         | Medium  | Pending  | N/A           | [Solution](DSA-problems-solutions/sort#quick-sort)             |
 
 ### Array
-1. Find Second Largest Element 
-2. 
+
+| #   | Problem                                     | Level   | Status   | LeetCode Link | Answer                                                        |
+|-----|---------------------------------------------|---------|----------|---------------|---------------------------------------------------------------|
+| 1   | Find Second Largest Element                 | Easy    | Pending  | N/A           | [Solution](DSA-problems-solutions/array#find-second-largest-element) |
 
 ### String
 1. Reverse a string - LC#344
