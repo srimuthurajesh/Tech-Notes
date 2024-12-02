@@ -108,7 +108,7 @@
 | #   | Problem                                              | Status   | Level   | Link                                                                                     | Answer |
 |-----|------------------------------------------------------|----------|---------|------------------------------------------------------------------------------------------|--------|
 | 1   | Maximum Depth of Binary Tree                         | ✅       | Easy    | [LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)                  | [Answer](DSA-problems-solutions/tree/#maximum-depth-of-binary-tree)       |
-| 2   | Same Tree                                            | ❌       | Easy    | [LeetCode](https://leetcode.com/problems/same-tree/)                                       |        |
+| 2   | Same Tree                                            | ✅       | Easy    | [LeetCode](https://leetcode.com/problems/same-tree/)                                       | [Answer](DSA-problems-solutions/tree/#same-tree)       |
 | 3   | Invert/Flip Binary Tree                              | ❌       | Easy    | [LeetCode](https://leetcode.com/problems/invert-binary-tree/)                             |        |
 | 4   | Binary Tree Maximum Path Sum                         | ❌       | Hard    | [LeetCode](https://leetcode.com/problems/binary-tree-maximum-path-sum/)                  |        |
 | 5   | Binary Tree Level Order Traversal                    | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal/)             |        |
