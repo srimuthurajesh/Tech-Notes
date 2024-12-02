@@ -97,7 +97,7 @@
 | 3   | Minimum Window Substring                    | ❌        | Hard    | [LeetCode](https://leetcode.com/problems/minimum-window-substring/)                      |        |
 | 4   | Valid Anagram                               | ❌        | Easy    | [LeetCode](https://leetcode.com/problems/valid-anagram/)                                 |        |
 | 5   | Group Anagrams                              | ❌        | Easy    | [LeetCode](https://leetcode.com/problems/group-anagrams/)                                |        |
-| 6   | Valid Parentheses                           | ❌        | Easy    | [LeetCode](https://leetcode.com/problems/valid-parentheses/)                             |        |
+| 6   | Valid Parentheses                           | ❌        | Easy    | [LeetCode](https://leetcode.com/problems/valid-parentheses/)                             | [Answer](DSA-problems-solutions/string#valid-paranthesis)       |
 | 7   | Valid Palindrome                            | ❌        | Easy    | [LeetCode](https://leetcode.com/problems/valid-palindrome/)                              |        |
 | 8   | Longest Palindromic Substring               | ❌        | Medium  | [LeetCode](https://leetcode.com/problems/longest-palindromic-substring/)                 |        |
 | 9   | Palindromic Substrings                      | ❌        | Medium  | [LeetCode](https://leetcode.com/problems/palindromic-substrings/)                        |        |

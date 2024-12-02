@@ -48,7 +48,7 @@
 | 2   | Check vowel present in the string           | ❌       | Easy    | N/A                          |  |
 | 3   | Remove duplicates in array                  | ❌       | Easy    | N/A                          | |
 | 4   | Check string has all unique characters      | ❌       | Easy    | N/A                          |  |
-| 5   | Find if one string is permutation of other  | ❌   | Easy    | N/A                          |  |
+| 5   | Find if one string is permutation of other  | ❌       | Easy    | N/A                          |  |
 | 6   | Replace all spaces in a string with '%20'   | ❌       | Easy    | N/A                          |    |
 
 | #   | Problem                                     | Status   | Level   | LeetCode Link                | Answer                                                      |
@@ -111,7 +111,7 @@
 | 3   | Postorder Traversal                         | ❌       | Easy    | [LeetCode](https://leetcode.com/problems/binary-tree-postorder-traversal/) |  |
 | 4   | Level Order Traversal                       | ❌       | Easy    | [LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal/) |  |
 | 5   | Build Binary Tree from Preorder & Inorder   | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |  |
-| 6   | Build Binary Tree from Inorder & Postorder  | ❌     | Medium  | [LeetCode](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |  |
+| 6   | Build Binary Tree from Inorder & Postorder  | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |  |
 | 7   | Top View of Binary Tree                     | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/binary-tree-right-side-view/) |  |
 | 8   | Bottom View of Binary Tree                  | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/binary-tree-right-side-view/) |  |
 | 9   | Height of Binary Tree                       | ❌       | Easy    | [LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) |  |
