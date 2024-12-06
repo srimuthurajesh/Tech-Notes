@@ -88,3 +88,41 @@ class Solution {
     }
 }
 ```
+
+## Remove Nth Node From End Of List
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head.next==null && n>0){
+           return head.next;     
+        }
+        ListNode currentNode = head;
+        ListNode temp = head;
+        int initialCounter=0;
+        int endCounter=0;
+        while(currentNode!=null){
+            if(initialCounter>n){
+                temp = temp.next;
+            } 
+            initialCounter++;     // 1  2 3
+            currentNode = currentNode.next; //1-index //2-index
+        }
+        if(initialCounter==n){
+            head=head.next;
+        } else {
+            temp.next = temp.next.next;
+        }
+        return head;
+    }
+}
+```

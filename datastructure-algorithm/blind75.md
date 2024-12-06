@@ -74,7 +74,7 @@
 | 2   | Detect Cycle in a Linked List         | ✅       | Easy    | [LeetCode](https://leetcode.com/problems/linked-list-cycle/)                             | [Answer](DSA-problems-solutions/list#detect-cycle-in-a-linked-list)      |
 | 3   | Merge Two Sorted Lists                | ✅       | Easy    | [LeetCode](https://leetcode.com/problems/merge-two-sorted-lists/)                        | [Answer](DSA-problems-solutions/list#merge-two-sorted-list)         |
 | 4   | Merge K Sorted Lists                  | ❌       | Hard    | [LeetCode](https://leetcode.com/problems/merge-k-sorted-lists/)                          |        |
-| 5   | Remove Nth Node From End Of List      | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)              |        |
+| 5   | Remove Nth Node From End Of List      | ✅       | Medium  | [LeetCode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)              | [Answer](DSA-problems-solutions/list#remove-nth-node-from-end-of-list)       |
 | 6   | Reorder List                          | ❌       | Medium  | [LeetCode](https://leetcode.com/problems/reorder-list/)                                  |        |
 
 
