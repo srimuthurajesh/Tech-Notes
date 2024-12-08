@@ -1,3 +1,9 @@
+# System Design
+> a systematic approach to building and engineering systems
+
+- process of defining the architecture, interfaces, and data for a system that satisfies specific requirements
+
+
 ## High-Level Design (HLD) vs. Low-Level Design (LLD)
 > are two phases and each focusing on different levels of system design.
 
@@ -11,13 +17,13 @@
 | **Example**   | explain dataflow b/w each services in MS  | explain particular service in MS                          |
 
 ## System design Examples 
-1. (Tracking tool)[#examples/tracking-tool]
+1. [URL Shortners](system-design-interview-examples/url-shortner.md)
 
 ### Scaling:
 
 (https://www.youtube.com/watch?v=Nx4bvwU0DqE)[https://www.youtube.com/watch?v=Nx4bvwU0DqE]
 
------------------------------------------------------------------
+
 | Horizontal scaling 		|	Vertical scaling                |
 |---------------------------|-----------------------------------|
 | More number of servers	|	Bigger server				    |
