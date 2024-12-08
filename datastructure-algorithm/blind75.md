@@ -12,7 +12,7 @@
 | 7   | Find Minimum in Rotated Sorted Array  | ✅     | Medium | [LeetCode](https://leetcode.com/problems/maximum-product-subarray/)        | [Answer](DSA-problems-solutions/array#find-minimum-in-rotated-sorted-array)   |
 | 8   | Search in Rotated Sorted Array        | ❌     | Medium | [LeetCode](https://leetcode.com/problems/search-in-rotated-sorted-array/)  | -                                                                             |
 | 9   | 3Sum                                  | ❌     | Medium | [LeetCode](https://leetcode.com/problems/3sum/)                            | -                                                                             |
-| 10  | Container With Most Water             | ❌     | Medium | [LeetCode](https://leetcode.com/problems/container-with-most-water/)       | -                                                                             |
+| 10  | Container With Most Water             | ✅     | Medium | [LeetCode](https://leetcode.com/problems/container-with-most-water/)       | [Answer](DSA-problems-solutions/array#container-with-most-water)                                                                              |
 
 
 ## Binary

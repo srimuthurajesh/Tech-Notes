@@ -154,3 +154,31 @@ class Solution {
     }
 }
 ```
+
+## Container With Most Water
+```java
+class Solution {
+    public int maxArea(int[] height) {
+       
+        int leftIndex = 0;
+        int rightIndex = height.length-1;
+        int maxCapacity = 0;
+        while(leftIndex<rightIndex){
+            int minHeigth = Math.min(height[leftIndex],height[rightIndex]);
+            int tempMaxCapacity = minHeigth*(rightIndex-leftIndex);
+            if(tempMaxCapacity>maxCapacity){
+                maxCapacity = tempMaxCapacity;    
+            }
+            //we are reducing distance between leftindex and rightindex based on its height
+            if(height[leftIndex]<height[rightIndex]){
+                leftIndex++;
+            } else {
+                rightIndex--;
+            }
+        }
+        
+
+        return maxCapacity;
+    }
+}
+```

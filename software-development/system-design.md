@@ -10,7 +10,7 @@
 | **Details**   | Modules, data flow, database architecture | Class structure, data structures, API details, DB fields  |
 | **Example**   | explain dataflow b/w each services in MS  | explain particular service in MS                          |
 
-## Examples
+## System design Examples 
 1. (Tracking tool)[#examples/tracking-tool]
 
 ### Scaling:
@@ -29,11 +29,14 @@
 -----------------------------------------------------------------
 
 ### Load Balancing
-
 #### Types of distribution  
 1. Random
 2. Round Robin
 3. Random(weight for ram and cpu cycles)
+
+### categories of load balancing
+1. stateless - round robin
+2. statefull - least connections
 
 ### Important points to consider when system design:
 1. Scalability
@@ -44,3 +47,11 @@
 6. Interoperability: work seamlessly with other systems  
 7. Usability: clear user interface.
 8. Cost-effectiveness  
+
+## CDN
+> Content delivery network
+
+- static pages, images, files, videos will be served from cdn
+
+## Logging & Monitoring
+## Observability
