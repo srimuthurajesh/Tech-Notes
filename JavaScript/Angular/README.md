@@ -10,3 +10,4 @@
 - [NgRx](ngrx.html)
 - [MicroFrontend](micro-frontend.html)
 - [Versions](angular_version.html)
+- [Interview](interview_notes.html)
