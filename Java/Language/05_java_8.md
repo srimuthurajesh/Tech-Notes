@@ -218,15 +218,21 @@ Syntax `Collectors.groupingBy(classifier, Hashmap::new, toList());`
 Arrays.stream(input)
       .filter(x->x%2==0)
       .map(x->x*x)
-      .forEach(System.out::println)
+      .sum()
 ```
 
 2. Find second max of student age.  
 ```java 
 int age = list.stream()
-              .mapToInt(student::getAge)
-              .skip(1).max();
+              .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
+              .skip(1).findFirst();
 ```
+5. Convert a list into map  
+```java
+list.stream().collect(
+    Collection.toMap(Function.identity(),Function.identity()));
+```
+
 2a. Convert a matrix into stream
 ```java
 Arrays.stream(matrixInput).flatMapToInt(Arrays::stream).boxed().collect(Collectors.toList())
@@ -238,15 +244,11 @@ intStream.flatMapToObj(num -> Stream.of("Number-" + num));
 3. Find list of unique characters present in all the string.  
 ```java
 listOfStrings.stream()
-            .flatMap(str -> str.chars().mapToObj(ch -> (char) ch))
+            .flatMap(str -> str.chars())
+            .mapToObj(ch -> (char) ch)
             .collect(Collectors.toSet());
 ```
 
-5. Convert a list into map  
-```java
-list.stream().collect(
-    Collection.toMap(Function.identity(),Function.identity()));
-```
 
 
 8. Sort by salary & name & primitive  
@@ -270,11 +272,11 @@ studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.a
 studentList.stream().collect(Collectors.groupingBy(Student::getDept,Collectors.maxBy(Comparator.comparing(Student::getDept))));
 ```
 
-16. Find the student who has second rank
+13. Find odd even numbers
 ```java
-studentList.stream().sorted(Comparator.comparing(Student::getRank,Comparator.reverseOrder())).skip(1).limit(1).findFirst();
-```    
-
+numbers.stream()
+       .collect(Collectors.partitioningBy(n -> n % 2 == 0)); 
+```
 ## Java11
 1. **var**: allows the compiler to infer the type of a local variable based on the assigned value.
 ```java
