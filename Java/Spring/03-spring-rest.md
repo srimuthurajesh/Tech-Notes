@@ -56,6 +56,7 @@ Url version: /api/v1/items
 
 Stateless: 
 > we need to make token authentication instead of cookies based authentication, since we are using microservices 
+
 **REST VS SOAP**  
 Rest - architectural style, Representation state transfer, No WSDL file\
 Soap - protocol, simple object access protocol
