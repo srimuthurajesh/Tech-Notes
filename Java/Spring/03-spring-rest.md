@@ -47,6 +47,8 @@ DELETE  | delete customer       | http://www.example.com/v1/api/customers/{cusId
 ### Versioning:
 > to support backward compatibility 
 
+Format:  `MAJOR.MINOR.PATCH-<label` eg. 1.1.2-beta
+
 Request param, query. 
 
 Url standards: GET /api/items?page=2&size=10&sort=name,asc&sort=date,desc
