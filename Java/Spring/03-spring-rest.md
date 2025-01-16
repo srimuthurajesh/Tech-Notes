@@ -11,6 +11,7 @@
 | 500  | server error              |
 
 #### other must know http codes
+
 | Code | Message                          |
 |------|----------------------------------|
 | 200  | OK - Success                     |
